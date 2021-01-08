@@ -1,4 +1,4 @@
-Cuukin - MVP 2021
+# Cuukin - MVP 2021
 
 Work in progress to release the first MVP of [Cuukin](https://www.cuukin.app/).
 
