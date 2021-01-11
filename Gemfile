@@ -35,6 +35,9 @@ gem 'simple_form'
 # Authentication & Authorization Gems
 gem 'devise'
 
+# Image and Video Hosting
+gem 'cloudinary', '~> 1.16.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
