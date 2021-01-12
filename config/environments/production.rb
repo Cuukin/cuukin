@@ -63,6 +63,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Mailer default url for production
+  config.action_mailer.delivery_method = :smtp
   host = 'cuukin.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
 
