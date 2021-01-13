@@ -38,6 +38,10 @@ gem 'devise'
 # Image and Video Hosting
 gem 'cloudinary', '~> 1.16.0'
 
+# Sidekiq for enqueing processes
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
