@@ -6,6 +6,7 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :created_at
+    column :last_sign_in_at
     column :admin
     actions
   end
