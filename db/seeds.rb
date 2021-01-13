@@ -59,9 +59,11 @@ julia = {
 
 admin_users = [helena, faris, guilherme, wanmeng, elie, ricardo, julia]
 
-admin_users.each do |user|
-  User.create(user)
-  puts "Created #{user[:first_name]}."
+admin_users.each do |admin|
+  user = User.new(admin)
+  user.skip_confirmation!
+  user.save!
+  puts "Created #{admin[:first_name]}."
 end
 
 puts "Remember them to confirm their emails and change their password 🍕"
