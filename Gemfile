@@ -42,6 +42,10 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# Active Admin - UI to handle DB
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
