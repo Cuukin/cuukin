@@ -24,13 +24,12 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "last_name" }%>
+            <i class="far fa-eye toggle-password"></i>
             <%= f.input :password,
                         hint: "leave it blank if you don't want to change it",
                         required: false,
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: false,
-                        input_html: { autocomplete: "new-password" } %>
+                        label: "New Password",
+                        input_html: { autocomplete: "new-password", class: "my-password" } %>
             <%= f.input :current_password,
                         hint: "we need your current password to confirm your changes",
                         required: true,
@@ -41,8 +40,6 @@
             <%= f.button :submit, "Update", class: "btn-devise" %>
           </div>
         <% end %>
-
-        <h3>Cancel my account</h3>
 
         <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
