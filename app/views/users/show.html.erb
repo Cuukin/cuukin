@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-lg-6">
+
+      <div class="card-user-profile">
+
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-user-profile-avatar" %>
+        <% else %>
+          <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}", class: "card-user-profile-avatar" %>
+        <% end %>
+
+        <div class="card-user-profile-edit-container">
+          <%= link_to 'Edit profile', edit_user_path(current_user), class: 'btn-edit-profile' %>
+          <%= link_to 'Account settings', edit_user_registration_path(current_user), class: 'btn-edit-profile' %>
+        </div>
+
+        <div class="card-user-profile-info">
+          <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+          <p><%= current_user.username %></p>
+          <p class="card-user-profile-bio"><%= @user&.bio %></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

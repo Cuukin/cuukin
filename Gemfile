@@ -34,6 +34,7 @@ gem 'simple_form'
 
 # Authentication & Authorization Gems
 gem 'devise'
+gem 'pundit'
 
 # Image and Video Hosting
 gem 'cloudinary', '~> 1.16.0'
