@@ -7,6 +7,7 @@ const togglePasswordVisibility = () => {
       const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
       password.setAttribute('type', type);
       passwordToggle.classList.toggle('fa-eye-slash');
+      passwordToggle.classList.toggle('fa-eye');
     });
   }
 }

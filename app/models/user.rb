@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   after_create :set_username
   before_update :check_username_presence
+  after_create :async_set_avatar
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -31,5 +32,9 @@ class User < ApplicationRecord
 
   def check_username_presence
     set_username if !(self.username) || self.username == ""
+  end
+
+  def async_set_avatar
+    SetAvatarJob.perform_later(self)
   end
 end
