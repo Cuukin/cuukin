@@ -13,16 +13,20 @@
             <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
             <%= f.input :first_name,
                         autofocus: true,
-                        input_html: { autocomplete: "first_name" }%>
+                        input_html: { autocomplete: "first_name" },
+                        label: 'First Name' %>
             <%= f.input :last_name,
                         autofocus: true,
-                        input_html: { autocomplete: "last_name" }%>
+                        input_html: { autocomplete: "last_name" },
+                        label: 'Last Name' %>
             <%= f.input :username,
                         autofocus: true,
-                        input_html: { autocomplete: "username" }%>
+                        input_html: { autocomplete: "username" } %>
             <%= f.input :bio,
                         autofocus: true,
-                        input_html: { autocomplete: "bio" }%>
+                        input_html: { autocomplete: "bio", rows: '4', class: 'bio' },
+                        label: 'Share a word about yourself',
+                        placeholder: 'Learning how to cook to impress my friends' %>
           </div>
 
           <div class="form-actions">

@@ -10,3 +10,8 @@
 #photo-preview {
   margin-bottom: 16px;
 }
+
+.bio:focus::placeholder {
+  opacity: 0;
+  transition: ease-in .2s;
+}
