@@ -82,5 +82,5 @@ skills = %w(Chopping Seasoning Oven CookPasta CookVegetables CookChicken CookRic
 
 skills.each do |skill|
   new_skill = Skill.create(name: skill)
-  puts "Created #{new_skill[:name]} skill"
+  puts "Created #{new_skill.name} skill"
 end
