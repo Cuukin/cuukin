@@ -27,7 +27,9 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { togglePasswordVisibility } from '../components/password_visibility_toggle';
+import { previewImageOnFileSelect } from '../components/photo_preview';
 
 document.addEventListener('turbolinks:load', () => {
   togglePasswordVisibility();
+  previewImageOnFileSelect();
 });

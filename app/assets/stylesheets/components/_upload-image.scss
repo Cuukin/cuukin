@@ -1,0 +1,17 @@
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+}
+
+#photo-preview {
+  margin-bottom: 16px;
+}
+
+.bio:focus::placeholder {
+  opacity: 0;
+  transition: ease-in .2s;
+}
