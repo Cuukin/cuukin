@@ -79,3 +79,8 @@ puts "Remember them to confirm their emails and change their password 🍕"
 # Skills
 
 skills = %w(Chopping Seasoning Oven CookPasta CookVegetables CookChicken CookRice PanFry Platting FreshPasta)
+
+skills.each do |skill|
+  new_skill = Skill.create(name: skill)
+  puts "Created #{new_skill[:name]} skill"
+end
