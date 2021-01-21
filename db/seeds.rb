@@ -74,3 +74,8 @@ admin_users.each do |admin|
 end
 
 puts "Remember them to confirm their emails and change their password 🍕"
+
+
+# Skills
+
+skills = %w(Chopping Seasoning Oven CookPasta CookVegetables CookChicken CookRice PanFry Platting FreshPasta)
