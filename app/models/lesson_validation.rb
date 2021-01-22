@@ -6,11 +6,14 @@ class LessonValidation < ApplicationRecord
 
   enum difficulcy: { easy: 0, medium: 1, hard: 2 }
 
-  validates :difficulcy, presence: true
+  validates :difficulcy, :photo, presence: true
+  validates :lesson, uniqueness: { scope: :user, message: 'This lesson has already been validated' }
 
   after_create :update_completed
 
   def update_completed
-    self.completed = true if self.image.attach
+    self.completed = true if self.photo.attached?
+    self.user.touch
+    self.save
   end
 end
