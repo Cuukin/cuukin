@@ -12,6 +12,9 @@ class LessonValidation < ApplicationRecord
   after_create :update_completed
 
   def update_completed
+    # Method is called whenever a lesson validation is created
+    # If the lesson validation has a photo, the completed column is updated to true
+    # and the user instance is touched - to call the user's callback methods
     self.completed = true if self.photo.attached?
     self.user.touch
     self.save
