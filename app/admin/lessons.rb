@@ -1,5 +1,5 @@
 ActiveAdmin.register Lesson do
 
-  permit_params :name, :description, :xp, :level_id
+  permit_params :name, :description, :xp, :book_id
 
 end

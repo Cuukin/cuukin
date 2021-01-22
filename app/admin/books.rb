@@ -1,4 +1,4 @@
-ActiveAdmin.register Level do
+ActiveAdmin.register Book do
 
   permit_params :name, :description, :xp
 
