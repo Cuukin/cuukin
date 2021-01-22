@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  enum level: { newbie: 0, chef_in_progress: 1, chef_of_party: 2, sous_chef: 3, master_chef: 4 }
+
   validates :first_name, :last_name, presence: true
   validates :username, uniqueness: true
 
