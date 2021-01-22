@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserLessonTest < ActiveSupport::TestCase
+class SkillBadgeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,4 +1,4 @@
-class UserLesson < ApplicationRecord
+class LessonValidation < ApplicationRecord
   belongs_to :user
   belongs_to :lesson
 
