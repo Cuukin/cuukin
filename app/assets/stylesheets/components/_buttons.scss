@@ -1,0 +1,28 @@
+.primary-btn, .primary-btn:hover {
+  background-color: $cuukin;
+  color: $white;
+  text-align: center;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 20px;
+
+  &:disabled {
+    background-color: $gray;
+    color: $light-gray;
+  }
+}
+
+.secondary-btn {
+  background-color: $white;
+  color: $black;
+  text-align: center;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+
+  &:disabled {
+    background-color: $gray;
+    color: $light-gray;
+  }
+}
