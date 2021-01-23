@@ -27,3 +27,24 @@
     color: $light-gray;
   }
 }
+
+.previous-btn, .previous-btn:hover {
+  background-color: transparent;
+  border: 2px solid $black;
+  color: $black;
+  text-align: center;
+  font-size: 24pt;
+  padding: 20px 32px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.next-btn, .next-btn:hover {
+  background-color: $cuukin;
+  color: $white;
+  text-align: center;
+  font-size: 24pt;
+  padding: 20px 32px;
+  border-radius: 50%;
+  display: inline-block;
+}
