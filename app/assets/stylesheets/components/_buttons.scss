@@ -5,7 +5,7 @@
   width: 100%;
   border-radius: 8px;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 15px 25px;
 
   &:disabled {
     background-color: $gray;
@@ -30,21 +30,26 @@
 
 .previous-btn, .previous-btn:hover {
   background-color: transparent;
-  border: 2px solid $black;
+  // border: 2px solid $black;
+  -webkit-box-shadow:inset 0px 0px 0px 2px $black;
+  -moz-box-shadow:inset 0px 0px 0px 2px $black;
+  box-shadow:inset 0px 0px 0px 2px $black;
   color: $black;
   text-align: center;
-  font-size: 20pt;
-  padding: 20px 30px;
+  font-size: 16pt;
+  padding: 15px 25px;
   border-radius: 50%;
   display: inline-block;
+  margin: 0 4px;
 }
 
 .next-btn, .next-btn:hover {
   background-color: $cuukin;
   color: $white;
   text-align: center;
-  font-size: 20pt;
-  padding: 20px 30px;
+  font-size: 16pt;
+  padding: 15px 25px;
   border-radius: 50%;
   display: inline-block;
+  margin: 0 4px;
 }

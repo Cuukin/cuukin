@@ -2,19 +2,30 @@
 
   <div class="home-carousel-slide">
 
-      <%= image_tag('home-01.png', class:'carousel-img') %>
+      <%= image_tag('home-icons-01.png', class:'carousel-img') %>
 
-      <%= image_tag('home-02.png', class:'carousel-img') %>
+      <%= image_tag('home-icons-02.png', class:'carousel-img') %>
 
-      <%= image_tag('home-03.png', class:'carousel-img') %>
+      <%= image_tag('home-icons-03.png', class:'carousel-img') %>
 
-      <%= image_tag('home-04.png', class:'carousel-img', id: 'img04') %>
+      <%= image_tag('home-icons-04.png', class:'carousel-img') %>
 
-      <%= image_tag('home-05.png', class:'carousel-img') %>
+      <%= image_tag('home-icons-05.png', class:'carousel-img', id: 'last-image') %>
 
   </div>
 
+  <div class="home-progress-bar">
+    <div class="circle"></div>
+    <div class="circle circle-disabled"></div>
+    <div class="circle circle-disabled"></div>
+    <div class="circle circle-disabled"></div>
+    <div class="circle circle-disabled"></div>
+  </div>
+
+  <div class="home-carousel-btns">
+    <div class="previous-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></div>
+    <div class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></div>
+  </div>
 </div>
 
-<div class="previous-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></div>
-<div class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></div>
+<%= link_to 'Register to Cuukin', new_user_registration_path, class: 'primary-btn' %>
