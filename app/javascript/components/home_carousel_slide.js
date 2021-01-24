@@ -1,7 +1,7 @@
 const homeCarousel = () => {
   // Get prev-next buttons and carousel divs
   const carouselSlide = document.querySelector('.home-carousel-slide');
-  const carouselImg = document.querySelectorAll('.carousel-img');
+  const carouselImg = document.querySelectorAll('.home-carousel-item');
 
   const prevBtn = document.querySelector('#prevBtn');
   const nextBtn = document.querySelector('#nextBtn');
