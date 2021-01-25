@@ -10,9 +10,8 @@ const homeCarousel = () => {
 
   let counter = 0;
 
-  const size = carouselItem[0].clientWidth;
-
   if (nextBtn && carouselItem[counter].id !== 'last-image') {
+    const size = carouselItem[0].clientWidth;
     nextBtn.addEventListener('click', () => {
       carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter += 1;

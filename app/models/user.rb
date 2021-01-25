@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable, :trackable, :lockable
+         :rememberable, :validatable, :confirmable, :trackable, :lockable,
+         :omniauthable, omniauth_providers: %i[facebook]
 
   has_one_attached :photo
 
@@ -10,7 +11,7 @@ class User < ApplicationRecord
 
   enum level: { newbie: 0, chef_in_progress: 1, chef_of_party: 2, sous_chef: 3, master_chef: 4 }
 
-  validates :first_name, :last_name, presence: true
+  validates :name, presence: true
   validates :username, uniqueness: true
 
   after_create :set_username
@@ -21,6 +22,18 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name   # assuming the user model has a name
+      user.image = auth.info.photo # assuming the user model has an image
+      # If you are using confirmable and the provider(s) you use validate emails,
+      # uncomment the line below to skip the confirmation emails.
+      user.skip_confirmation!
+    end
   end
 
   private

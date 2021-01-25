@@ -33,7 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 # Authentication & Authorization Gems
-gem 'devise'
+# gem 'devise'
 gem 'pundit'
 
 # Image and Video Hosting
@@ -46,6 +46,11 @@ gem 'sidekiq-failures', '~> 1.0'
 # Active Admin - UI to handle DB
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+#OmniAuth - external authentication
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection', '~> 0.1.2' # prevent OmniAuth::AuthenticityError with :post method
 
 group :development, :test do
   gem 'pry-byebug'
