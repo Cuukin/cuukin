@@ -1,7 +1,7 @@
 const homeCarousel = () => {
   // Get prev-next buttons and carousel divs
   const carouselSlide = document.querySelector('.home-carousel-slide');
-  const carouselImg = document.querySelectorAll('.home-carousel-item');
+  const carouselItem = document.querySelectorAll('.home-carousel-item');
 
   const prevBtn = document.querySelector('#prevBtn');
   const nextBtn = document.querySelector('#nextBtn');
@@ -10,9 +10,9 @@ const homeCarousel = () => {
 
   let counter = 0;
 
-  const size = carouselImg[0].clientWidth;
+  const size = carouselItem[0].clientWidth;
 
-  if (nextBtn && carouselImg[counter].id !== 'last-image') {
+  if (nextBtn && carouselItem[counter].id !== 'last-image') {
     nextBtn.addEventListener('click', () => {
       carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter += 1;

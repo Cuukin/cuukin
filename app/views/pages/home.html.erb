@@ -1,35 +1,45 @@
-<div class="home-carousel-container">
+<div class="home-carousel-container" >
 
   <div class="home-carousel-slide">
 
       <div class="home-carousel-item">
-        <%= image_tag('home-icons-01.png', class:'carousel-img') %>
-        <h2>Frustrated about your cooking?</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        <%= image_tag('home-01.png', class:'carousel-img') %>
+        <div class="home-carousel-item-content">
+          <h2>Frustrated about your cooking?</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        </div>
       </div>
 
       <div class="home-carousel-item">
-        <%= image_tag('home-icons-02.png', class:'carousel-img') %>
-        <h2>Learn to cook with structure, fun & ease</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        <%= image_tag('home-02.png', class:'carousel-img') %>
+        <div class="home-carousel-item-content">
+          <h2>Learn to cook with structure, fun & ease</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        </div>
       </div>
 
       <div class="home-carousel-item">
-        <%= image_tag('home-icons-03.png', class:'carousel-img') %>
-        <h2>STEP 1: Watch your first "Cuuk Book" lesson</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        <%= image_tag('home-03.png', class:'carousel-img') %>
+        <div class="home-carousel-item-content">
+          <h2>STEP 1: Watch your first "Cuuk Book" lesson</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        </div>
       </div>
 
       <div class="home-carousel-item">
-        <%= image_tag('home-icons-04.png', class:'carousel-img') %>
-        <h2>STEP 2: Put your skills to practice</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        <%= image_tag('home-04.png', class:'carousel-img') %>
+        <div class="home-carousel-item-content">
+          <h2>STEP 2: Put your skills to practice</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        </div>
       </div>
 
       <div class="home-carousel-item">
-        <%= image_tag('home-icons-05.png', class:'carousel-img', id: 'last-image') %>
-        <h2>STEP 3: Level up & unlock more Cuuk Books</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        <%= image_tag('home-05.png', class:'carousel-img', id: 'last-image') %>
+        <div class="home-carousel-item-content">
+          <h2>STEP 3: Level up & unlock more Cuuk Books</h2>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+        </div>
       </div>
 
   </div>
@@ -46,6 +56,7 @@
     <div class="previous-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></div>
     <div class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></div>
   </div>
+
 </div>
 
 <%= link_to 'Register to Cuukin', new_user_registration_path, class: 'primary-btn' %>

@@ -1,5 +1,5 @@
 .home-carousel-container {
-  width: 100vw;
+  width: 100%;
   margin: auto;
   overflow: hidden;
   background-color: $white;
@@ -7,47 +7,37 @@
 }
 
 .home-carousel-slide {
-  display: flex;
   width: 100%;
-  min-height: 100vh;
+  display: flex;
+  min-height: 80vh;
 }
 
 .home-carousel-item {
-  width: 100vw;
+  // width: 100vw;
+  // margin: auto;
+  align-self: center;
   text-align: center;
-  margin-bottom: 24px;
+  padding: 24px;
 
   h2 {
     color: $dark-red;
-    margin: 40px 0;
+    margin: 16px 0;
   }
 }
 
+.home-carousel-item-content {
+  padding: 24px;
+}
+
 .carousel-img {
-  width: 100vw;
-  margin: auto;
+  width: 400px;
 }
 
-// .home-carousel-content {
-//   // display: flex;
-//   // justify-content: center;
-//   width: 100%;
-//   text-align: center;
-
-//   img {
-//     width: 800px;
-//   }
-// }
-
-.home-carousel-btns {
-  display: flex;
-  justify-content: center;
-  margin: 24px 0;
-}
+// buttons and progress bar
 
 .home-progress-bar {
   width: 25%;
-  margin: auto;
+  margin: 24px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -62,4 +52,10 @@
 
 .circle-disabled {
   opacity: 0.4;
+}
+
+.home-carousel-btns {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 40px;
 }
