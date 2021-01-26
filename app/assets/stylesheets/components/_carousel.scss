@@ -1,5 +1,5 @@
 .home-carousel-container {
-  width: 100%;
+  width: 500px;
   margin: auto;
   overflow: hidden;
   background-color: $white;
@@ -13,15 +13,17 @@
 }
 
 .home-carousel-item {
-  // width: 100vw;
-  // margin: auto;
+  width: 500px;
+  // margin: 16px 0 0 0;
   align-self: center;
   text-align: center;
-  padding: 24px;
 
   h2 {
     color: $dark-red;
-    margin: 16px 0;
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -30,14 +32,14 @@
 }
 
 .carousel-img {
-  width: 400px;
+  width: 500px;
 }
 
 // buttons and progress bar
 
 .home-progress-bar {
-  width: 25%;
-  margin: 24px auto;
+  width: 30%;
+  margin: 8px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -58,4 +60,52 @@
   display: flex;
   justify-content: center;
   margin: 32px 0 40px;
+}
+
+.carousel-previous {
+  display: flex;
+  justify-content: flex-start;
+  margin: 24px;
+}
+
+.previous-btn, .previous-btn:hover {
+  background-color: $light-gray;
+  // border: 2px solid $black;
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 10px 20px;
+  border-radius: 50%;
+  // display: inline-block;
+  margin: 0 4px;
+}
+
+.next-btn, .next-btn:hover {
+  background-color: $cuukin;
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 15px 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+// @media (max-width: 960px) {
+//   /* For a screen < 960px, this CSS will be read */
+//   .home-carousel-container, .home-carousel-item, .carousel-img {
+//     width: 700px;
+//   }
+// }
+// @media (max-width: 720px) {
+//   /* For a screen < 720px, this CSS will be read */
+//   .home-carousel-container, .home-carousel-item, .carousel-img {
+//     width: 700px;
+//   }
+// }
+@media (max-width: 450px) {
+  /* For a screen < 540px, this CSS will be read */
+  .home-carousel-container, .home-carousel-item, .carousel-img {
+    width: 300px;
+  }
 }

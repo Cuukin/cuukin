@@ -1,7 +1,7 @@
 const homeCarousel = () => {
   // Get prev-next buttons and carousel divs
   const carouselSlide = document.querySelector('.home-carousel-slide');
-  const carouselItem = document.querySelectorAll('.home-carousel-item');
+  const carouselItem = document.querySelectorAll('.carousel-img');
 
   const prevBtn = document.querySelector('#prevBtn');
   const nextBtn = document.querySelector('#nextBtn');
@@ -10,9 +10,9 @@ const homeCarousel = () => {
 
   let counter = 0;
 
-  if (nextBtn && carouselItem[counter].id !== 'last-image') {
-    const size = carouselItem[0].clientWidth;
+  if (nextBtn) {
     nextBtn.addEventListener('click', () => {
+      let size = carouselItem[0].clientWidth;
       carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter += 1;
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -23,6 +23,7 @@ const homeCarousel = () => {
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
+      let size = carouselItem[0].clientWidth;
       carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter -= 1;
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -60,6 +61,8 @@ const homeCarousel = () => {
 
   // delete prev button and only have next?
   // if not, first image shouldnt have the back button
+
+  // carouselItem[counter].id !== 'last-image'
 }
 
 export { homeCarousel };
