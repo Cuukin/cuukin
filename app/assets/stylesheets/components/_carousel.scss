@@ -9,13 +9,13 @@
 .home-carousel-slide {
   width: 100%;
   display: flex;
+  align-item: flex-end;
   min-height: 80vh;
 }
 
 .home-carousel-item {
-  width: 500px;
   // margin: 16px 0 0 0;
-  align-self: center;
+  // align-self: center;
   text-align: center;
 
   h2 {
