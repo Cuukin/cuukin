@@ -10,7 +10,7 @@ const homeCarousel = () => {
   const startBtn = document.querySelector('#startBtn');
   const prevBtn = document.querySelector('#prevBtn');
   const nextBtn = document.querySelector('#nextBtn');
-  const registerBtn = document.querySelector('#registerBtn');
+  const registerBtn = document.querySelector('.registerBtn');
 
   const progressCircles = document.querySelectorAll('.circle');
 
@@ -40,6 +40,11 @@ const homeCarousel = () => {
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
       progressCircles[counter - 2].classList.add('circle-disabled');
       progressCircles[counter - 1].classList.remove('circle-disabled');
+
+      if (counter == 5) {
+        nextBtn.style.display = "none";
+        registerBtn.style.display = "block";
+      };
     });
   };
 
@@ -49,35 +54,24 @@ const homeCarousel = () => {
       carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter -= 1;
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-      progressCircles[counter].classList.add('circle-disabled');
-      progressCircles[counter - 1].classList.remove('circle-disabled');
 
-      if (carouselSlide.scrollWidth <= size) {
+      if (progressCircles[counter] && progressCircles[counter-1]) {
+        progressCircles[counter].classList.add('circle-disabled');
+        progressCircles[counter - 1].classList.remove('circle-disabled');
+      };
+
+      if (counter == 4) {
+        nextBtn.style.display = "block";
+        registerBtn.style.display = "none";
+      };
+
+      if (counter == 0) {
+        primaryBtns.style.display = "block";
         carouselNav.style.display = "none";
         prevBtn.style.display = "none";
-        primaryBtns.style.display = "block";
-      }
+      };
     });
   };
-
-  // Upload images as svgs + cr-slide has wave svg background (with a faster transition - parallax)
-
-  // `<%= link_to 'Register to Cuukin', new_user_registration_path, class: 'primary-btn' %>`
-
-  // if (carouselSlide) {
-  //   carouselSlide.addEventListener('transitionend', () => {
-  //     if (carouselImg[counter].id === 'img04') {
-  //       // transition with 0.4s for transform etc
-  //       // remove prev/next button
-  //       // input register button html
-  //     };
-  //   });
-  // };
-
-  // delete prev button and only have next?
-  // if not, first image shouldnt have the back button
-
-  // carouselItem[counter].id !== 'last-image'
 }
 
 export { homeCarousel };

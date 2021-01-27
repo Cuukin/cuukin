@@ -1,6 +1,5 @@
 .home-carousel-container {
   width: 500px;
-  max-height: 100%;
   margin: auto;
   overflow: hidden;
   background-color: $white;
@@ -40,7 +39,7 @@
 .home-carousel-item-content {
   padding: 24px 24px 0;
   position: relative;
-  top: -32px;
+  top: -44px;
 }
 
 .carousel-img {
@@ -51,17 +50,22 @@
 
 .home-carousel-nav {
   position: relative;
-  top: -32px;
+  top: -40px;
 }
 
 .carousel-primary-btns {
   position: relative;
-  top: -64px;
+  top: -88px;
+  padding: 0 16px;
+}
+
+.registerBtn {
+  padding: 0 16px;
 }
 
 .home-progress-bar {
   width: 80px;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 24px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -76,12 +80,6 @@
 
 .circle-disabled {
   opacity: 0.4;
-}
-
-.home-carousel-btns {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
 }
 
 .carousel-previous {
@@ -103,6 +101,12 @@
   z-index: 1000;
 }
 
+
+.container-next-btn {
+  display: flex;
+  justify-content: center;
+}
+
 .next-btn, .next-btn:hover {
   background-color: $cuukin;
   color: $white;
@@ -111,11 +115,7 @@
   padding: 15px 25px;
   border-radius: 50%;
   display: inline-block;
-  margin: 0 4px;
-}
-
-.carousel-primary-btns {
-  padding: 0 16px;
+  margin: auto;
 }
 
 // @media (max-width: 960px) {
@@ -124,13 +124,15 @@
 //     width: 700px;
 //   }
 // }
-// @media (max-width: 720px) {
-//   /* For a screen < 720px, this CSS will be read */
-//   .home-carousel-container, .home-carousel-item, .carousel-img {
-//     width: 700px;
-//   }
-// }
-@media (max-width: 450px) {
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .home-carousel-container, .home-carousel-item, .carousel-img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
   /* For a screen < 540px, this CSS will be read */
   .home-carousel-container, .home-carousel-item, .carousel-img {
     width: 300px;
