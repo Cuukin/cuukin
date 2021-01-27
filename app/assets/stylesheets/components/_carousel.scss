@@ -1,5 +1,6 @@
 .home-carousel-container {
   width: 500px;
+  max-height: 100%;
   margin: auto;
   overflow: hidden;
   background-color: $white;
@@ -11,26 +12,35 @@
   width: 100%;
   display: flex;
   align-item: flex-end;
-  min-height: 80vh;
+  position: relative;
+  top: -40px;
 }
 
 .home-carousel-item {
   // margin: 16px 0 0 0;
   // align-self: center;
+  // height: 20px;
   text-align: center;
+  // position: relative;
+  // top: -40px;
 
   h2 {
     color: $dark-red;
-    margin-bottom: 1em;
+    font-weight: 800;
+    margin-bottom: 16px;
+    font-size: 18pt;
   }
 
   p {
+    font-size: 16pt;
     margin: 0;
   }
 }
 
 .home-carousel-item-content {
-  padding: 16px;
+  padding: 24px 24px 0;
+  position: relative;
+  top: -32px;
 }
 
 .carousel-img {
@@ -39,17 +49,27 @@
 
 // buttons and progress bar
 
+.home-carousel-nav {
+  position: relative;
+  top: -32px;
+}
+
+.carousel-primary-btns {
+  position: relative;
+  top: -64px;
+}
+
 .home-progress-bar {
-  width: 30%;
-  margin: 8px auto;
+  width: 80px;
+  margin: 0 auto 16px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .circle {
-  width: 16px;
-  height: 16px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background-color: $cuukin;
 }
@@ -61,7 +81,7 @@
 .home-carousel-btns {
   display: flex;
   justify-content: center;
-  margin: 32px 0 40px;
+  margin-top: 24px;
 }
 
 .carousel-previous {
@@ -80,6 +100,7 @@
   border-radius: 50%;
   // display: inline-block;
   margin: 0 4px;
+  z-index: 1000;
 }
 
 .next-btn, .next-btn:hover {
