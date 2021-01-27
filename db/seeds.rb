@@ -63,7 +63,7 @@ admin_users.each do |admin|
   user = User.new(admin)
   user.skip_confirmation!
   user.save!
-  puts "Created #{admin[:name]}."
+  puts "Created #{admin[:first_name]}."
 end
 
 puts "Remember them to confirm their emails and change their password 🍕"
