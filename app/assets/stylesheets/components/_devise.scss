@@ -36,7 +36,7 @@
   }
 
   .form-group, .password, .required, .user_password {
-    margin: 0;
+    // margin: 0;
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -77,6 +77,12 @@
     font-size: 32pt;
     color: $gray;
     margin: 0 8px;
+  }
+}
+
+.register-devise {
+  .form-group {
+    margin: 0;
   }
 }
 
