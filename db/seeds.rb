@@ -3,7 +3,7 @@
 
 helena = {
   admin: true,
-  name: 'Helena',
+  first_name: 'Helena',
   username: 'LovelyCarrot20',
   email: 'helenad.mim2021@london.edu',
   password: 'cuukin2020'
@@ -11,7 +11,7 @@ helena = {
 
 faris = {
   admin: true,
-  name: 'Faris',
+  first_name: 'Faris',
   username: 'HappySpinach33',
   email: 'fraucci.mba2022@london.edu',
   password: 'cuukin2020'
@@ -19,7 +19,7 @@ faris = {
 
 guilherme = {
   admin: true,
-  name: 'Guilherme',
+  first_name: 'Guilherme',
   username: 'CrazyBroccoli504',
   email: 'guilhermevmanhaes@gmail.com',
   password: 'cuukin2020'
@@ -27,7 +27,7 @@ guilherme = {
 
 wanmeng = {
   admin: true,
-  name: 'Wanmeng',
+  first_name: 'Wanmeng',
   username: 'AmazingGarlic208',
   email: 'wzhang.mba2022@london.edu',
   password: 'cuukin2020'
@@ -35,7 +35,7 @@ wanmeng = {
 
 elie = {
   admin: true,
-  name: 'Elie',
+  first_name: 'Elie',
   username: 'CoolPotato94',
   email: 'emhanna.mba2021@london.edu',
   password: 'cuukin2020'
@@ -43,7 +43,7 @@ elie = {
 
 ricardo = {
   admin: true,
-  name: 'Ricardo',
+  first_name: 'Ricardo',
   username: 'GloriousMushroom45',
   email: 'ricardob.mba2021@london.edu',
   password: 'cuukin2020'
@@ -51,7 +51,7 @@ ricardo = {
 
 julia = {
   admin: true,
-  name: 'Julia',
+  first_name: 'Julia',
   username: 'CheeryZucchini83',
   email: 'julia-frederico@outlook.com',
   password: 'cuukin2020'
