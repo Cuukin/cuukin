@@ -50,6 +50,10 @@
     display: flex;
     justify-content: space-between;
   }
+
+  p {
+    color: $black;
+  }
 }
 
 .devise-extra-links {
@@ -62,6 +66,18 @@
 .devise-p {
   font-size: 14pt;
   color: $cuukin;
+}
+
+.social-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 32pt;
+    color: $gray;
+    margin: 0 8px;
+  }
 }
 
 @media (max-width: 500px) {
