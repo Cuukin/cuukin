@@ -1,11 +1,14 @@
 .primary-btn, .primary-btn:hover {
+  font-size: 16pt;
   background-color: $cuukin;
   color: $white;
   text-align: center;
   width: 100%;
   border-radius: 8px;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 4px 0;
 
   &:disabled {
     background-color: $gray;
@@ -13,13 +16,18 @@
   }
 }
 
-.secondary-btn {
+.secondary-btn, .secondary-btn:hover {
+  font-size: 16pt;
   background-color: $white;
+  border: 1px solid $black;
   color: $black;
   text-align: center;
   width: 100%;
   border-radius: 8px;
   font-weight: 500;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 4px 0;
 
   &:disabled {
     background-color: $gray;

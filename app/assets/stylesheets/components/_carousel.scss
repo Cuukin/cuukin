@@ -1,0 +1,140 @@
+.home-carousel-container {
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+  padding: 24px 0;
+}
+
+.home-carousel-slide {
+  width: 100%;
+  display: flex;
+  align-item: flex-end;
+  position: relative;
+  top: -40px;
+}
+
+.home-carousel-item {
+  // margin: 16px 0 0 0;
+  // align-self: center;
+  // height: 20px;
+  text-align: center;
+  // position: relative;
+  // top: -40px;
+
+  h2 {
+    color: $dark-red;
+    font-weight: 800;
+    margin-bottom: 16px;
+    font-size: 18pt;
+  }
+
+  p {
+    font-size: 16pt;
+    margin: 0;
+  }
+}
+
+.home-carousel-item-content {
+  padding: 24px 24px 0;
+  position: relative;
+  top: -44px;
+}
+
+.carousel-img {
+  width: 500px;
+}
+
+// buttons and progress bar
+
+.home-carousel-nav {
+  position: relative;
+  top: -40px;
+}
+
+.carousel-primary-btns {
+  position: relative;
+  top: -88px;
+  padding: 0 16px;
+}
+
+.registerBtn {
+  padding: 0 16px;
+}
+
+.home-progress-bar {
+  width: 80px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: $cuukin;
+}
+
+.circle-disabled {
+  opacity: 0.4;
+}
+
+.carousel-previous {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 24px;
+}
+
+.previous-btn, .previous-btn:hover {
+  background-color: $light-gray;
+  // border: 2px solid $black;
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 10px 20px;
+  border-radius: 50%;
+  // display: inline-block;
+  margin: 0 4px;
+  z-index: 1000;
+}
+
+
+.container-next-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.next-btn, .next-btn:hover {
+  background-color: $cuukin;
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 15px 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+}
+
+// @media (max-width: 960px) {
+//   /* For a screen < 960px, this CSS will be read */
+//   .home-carousel-container, .home-carousel-item, .carousel-img {
+//     width: 700px;
+//   }
+// }
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .home-carousel-container, .home-carousel-item, .carousel-img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .home-carousel-container, .home-carousel-item, .carousel-img {
+    width: 300px;
+  }
+}
