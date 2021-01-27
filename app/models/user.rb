@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   enum level: { newbie: 0, chef_in_progress: 1, chef_of_party: 2, sous_chef: 3, master_chef: 4 }
 
-  validates :name, presence: true
+  validates :first_name, presence: true
   validates :username, uniqueness: true
 
   after_create :set_username
@@ -19,6 +19,10 @@ class User < ApplicationRecord
   after_create :async_set_avatar
   after_touch :update_user_level
   after_touch :update_user_cuukies
+
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
