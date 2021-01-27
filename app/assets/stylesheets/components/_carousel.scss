@@ -16,12 +16,7 @@
 }
 
 .home-carousel-item {
-  // margin: 16px 0 0 0;
-  // align-self: center;
-  // height: 20px;
   text-align: center;
-  // position: relative;
-  // top: -40px;
 
   h2 {
     color: $dark-red;
@@ -90,13 +85,11 @@
 
 .previous-btn, .previous-btn:hover {
   background-color: $light-gray;
-  // border: 2px solid $black;
   color: $white;
   text-align: center;
   font-size: 16pt;
   padding: 10px 20px;
   border-radius: 50%;
-  // display: inline-block;
   margin: 0 4px;
   z-index: 1000;
 }

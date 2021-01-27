@@ -1,32 +1,89 @@
 .form-devise {
   background: white;
-  padding: 15px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  width: 500px;
+  margin: auto;
+  padding: 40px 24px;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+
   h2 {
-    color: $dark-gray;
-    font-size: 25px;
+    color: $dark-red;
+    font-size: 24pt;
     font-weight: bold;
-    margin-bottom: 30px;
     text-align: center;
   }
-  .btn-devise {
-    width: 100%;
-    margin-bottom: 20px;
-    background-color: $blue;
-    color: $white;
-  }
+
   .form-inputs {
     color: $dark-gray;
   }
-  p {
-    color: $dark-gray;
-    font-size: 12pt;
+
+  .devise-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .devise-img {
+    width: 400px;
+    height: auto;
+    margin: 24px 0;
+  }
+
+  .form-control {
+    border-radius: 8px;
+    font-size: 14pt;
+    padding: 10px 15px;
+  }
+
+  .form-group, .password, .required, .user_password {
+    margin: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .double-form-input {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .double-btn {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
+.devise-extra-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .devise-p {
-  color: $dark-gray;
-  margin: 0;
+  font-size: 14pt;
+  color: $cuukin;
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .form-devise {
+    width: 400px;
+  }
+
+  .devise-img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .form-devise {
+    width: 300px;
+  }
+
+  .devise-img {
+    width: 200px;
+    height: auto;
+  }
 }

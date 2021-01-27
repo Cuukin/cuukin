@@ -1,40 +1,47 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-lg-6">
+<div class="form-devise">
 
-      <div class="form-devise">
-        <h2>Sign up</h2>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :first_name,
-                        required: true,
-                        autofocus: true,
-                        label: 'How should we call you?',
-                        input_html: { autocomplete: "first_name" }%>
-            <%= f.input :last_name,
-                        autofocus: true,
-                        label: 'Last Name (optional)',
-                        input_html: { autocomplete: "last_name" }%>
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }%>
-            <i class="far fa-eye-slash toggle-password"></i>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password", class: "my-password" } %>
-          </div>
-
-          <div class="form-actions mb-3">
-            <%= f.button :submit, "Sign Up", class: 'primary-btn' %>
-          </div>
-        <% end %>
-
-      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-      </div>
-    </div>
+  <div class="devise-header mb-3">
+    <h2>Let's get you Cuukin!</h2>
+    <%= image_tag('signup-00.png', class:'devise-img') %>
   </div>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div class="double-form-input mb-3">
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    placeholder: 'First Name',
+                    input_html: { autocomplete: "first_name" }%>
+        <%= f.input :last_name,
+                    autofocus: true,
+                    label: false,
+                    placeholder: 'Last Name (optional)',
+                    input_html: { autocomplete: "last_name" }%>
+      </div>
+
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  label: false,
+                  placeholder: 'Email',
+                  input_html: { autocomplete: "email" }%>
+
+      <i class="far fa-eye-slash toggle-password"></i>
+      <%= f.input :password,
+                  required: true,
+                  label: false,
+                  placeholder: 'Password',
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password", class: "my-password" } %>
+    </div>
+
+    <div class="form-actions double-btn mt-3">
+      <%= f.button :submit, "Sign Up", class: 'primary-btn mr-1' %>
+      <%= link_to "or Log In", new_user_session_path, class: 'secondary-btn ml-1' %>
+    </div>
+  <% end %>
 </div>

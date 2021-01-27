@@ -16,9 +16,11 @@ const homeCarousel = () => {
 
   let counter = 0;
 
-  carouselNav.style.display = "none";
-  prevBtn.style.display = "none";
-  registerBtn.style.display = "none";
+  if (carouselNav && prevBtn && registerBtn) {
+    carouselNav.style.display = "none";
+    prevBtn.style.display = "none";
+    registerBtn.style.display = "none";
+  };
 
   if (startBtn) {
     startBtn.addEventListener('click', () => {
