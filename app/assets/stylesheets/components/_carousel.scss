@@ -4,6 +4,7 @@
   overflow: hidden;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+  padding: 24px 0;
 }
 
 .home-carousel-slide {
@@ -20,6 +21,7 @@
 
   h2 {
     color: $dark-red;
+    margin-bottom: 1em;
   }
 
   p {
@@ -28,7 +30,7 @@
 }
 
 .home-carousel-item-content {
-  padding: 24px;
+  padding: 16px;
 }
 
 .carousel-img {
@@ -65,7 +67,7 @@
 .carousel-previous {
   display: flex;
   justify-content: flex-start;
-  margin: 24px;
+  margin: 0 24px;
 }
 
 .previous-btn, .previous-btn:hover {
@@ -89,6 +91,10 @@
   border-radius: 50%;
   display: inline-block;
   margin: 0 4px;
+}
+
+.carousel-primary-btns {
+  padding: 0 16px;
 }
 
 // @media (max-width: 960px) {
