@@ -7,7 +7,7 @@
   <div style="background-color: #EDEDED; width: 100%; height: 100%; padding: 50px 0;">
     <div style="padding: 32px 32px; background-color: #FFFFFF; width: 60%; margin: auto;">
 
-      <h2 style="color: #F86464; font-size: 16pt; font-weight: 800; margin-bottom: 1em; font-family: 'Nunito', sans-serif;">Hello, <%= @resource.name.capitalize %>!</h2>
+      <h2 style="color: #F86464; font-size: 16pt; font-weight: 800; margin-bottom: 1em; font-family: 'Nunito', sans-serif;">Hello, <%= @resource.first_name.capitalize %>!</h2>
 
       <% if @resource.try(:unconfirmed_email?) %>
         <p style="color: #1B1C1D; font-size: 12pt; font-weight: 400; margin-bottom: 0.5em;">We're contacting you to notify you that your email at Cuukin is being changed to <%= @resource.unconfirmed_email %>.</p>
