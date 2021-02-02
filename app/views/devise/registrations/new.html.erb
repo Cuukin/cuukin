@@ -17,23 +17,18 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <div class="double-form-input mb-3">
         <%= f.input :first_name,
                     required: true,
-                    autofocus: true,
                     label: false,
                     placeholder: 'First Name',
-                    input_html: { autocomplete: "first_name" }%>
+                    input_html: { autocomplete: "first_name", class: "mb-3" }%>
         <%= f.input :last_name,
-                    autofocus: true,
                     label: false,
                     placeholder: 'Last Name (optional)',
-                    input_html: { autocomplete: "last_name" }%>
-      </div>
+                    input_html: { autocomplete: "last_name", class: "mb-3" }%>
 
       <%= f.input :email,
                   required: true,
-                  autofocus: true,
                   label: false,
                   placeholder: 'Email',
                   input_html: { autocomplete: "email" }%>

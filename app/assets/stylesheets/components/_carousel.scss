@@ -121,13 +121,13 @@
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .home-carousel-container, .home-carousel-item, .carousel-img {
-    width: 400px;
+    width: 100vw;
   }
 }
 
 @media (max-width: 400px) {
   /* For a screen < 540px, this CSS will be read */
   .home-carousel-container, .home-carousel-item, .carousel-img {
-    width: 300px;
+    width: 100vw;
   }
 }

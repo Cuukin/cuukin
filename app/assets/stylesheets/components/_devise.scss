@@ -89,23 +89,35 @@
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .form-devise {
-    width: 400px;
-  }
+    width: 100vw;
 
-  .devise-img {
-    width: 300px;
-    height: auto;
+    .devise-img {
+      width: 400px;
+      height: auto;
+    }
   }
 }
 
 @media (max-width: 400px) {
   /* For a screen < 540px, this CSS will be read */
   .form-devise {
-    width: 300px;
-  }
+    width: 100vw;
 
-  .devise-img {
-    width: 200px;
-    height: auto;
+    .devise-img {
+      width: 300px;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  /* For a screen < 540px, this CSS will be read */
+  .form-devise {
+    width: 100vw;
+
+    .devise-img {
+      width: 200px;
+      height: auto;
+    }
   }
 }

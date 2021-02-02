@@ -21,7 +21,7 @@ class User < ApplicationRecord
   after_touch :update_user_cuukies
 
   def name
-    self.last_name ? "#{self.first_name} #{self.last_name}" : "#{self.first_name}"
+    self.last_name ? "#{self.first_name.capitalize} #{self.last_name.capitalize}" : "#{self.first_name.capitalize}"
   end
 
   def send_devise_notification(notification, *args)
