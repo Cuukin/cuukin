@@ -17,6 +17,109 @@
 
 // Cuukin navbar
 
-.container-cuukin-navbar {
+.content-container {
+  margin-top: 80px;
+}
 
+.container-user-navbar {
+  background-color: $cuukin;
+  display: flex;
+  height: 80px;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.nv-user-item {
+
+  p {
+    margin: 0;
+    font-size: 14pt;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  #nv-level {
+    color: #FFFFFF;
+  }
+
+  #nv-xp {
+    color: #A4EAD1;
+  }
+
+  #nv-cuukie {
+    color: #FFEA65;
+  }
+
+  #nv-dish {
+    color: #0D6E9A;
+  }
+}
+
+// Expanded Navbar
+
+.expanded-navbar {
+  background-color: $cuukin;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  #close-btn {
+    height: 28px;
+    width: auto;
+    align-self: flex-end;
+    margin: 20px;
+  }
+}
+
+.expanded-menu {
+  position: relative;
+  top: -40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 24pt;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  li, a, a:hover, a:active {
+    color: $white;
+  }
+}
+
+// Visitor Navbar
+
+.container-visitor-navbar {
+  padding: 0 20px;
+  background-color: $cuukin;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+
+  a, a:hover, a:active {
+    color: $white;
+    font-size: 16pt;
+  }
+}
+
+.navbar-brand img {
+  width: 56px;
 }

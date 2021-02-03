@@ -29,10 +29,12 @@ import "bootstrap";
 import { togglePasswordVisibility } from '../components/password_visibility_toggle';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { homeCarousel } from '../components/home_carousel_slide';
+import { expandedNavbar } from '../components/expanded_navbar';
 // import { swal_data } from '../components/data_dialog';
 
 document.addEventListener('turbolinks:load', () => {
   togglePasswordVisibility();
   previewImageOnFileSelect();
   homeCarousel();
+  expandedNavbar();
 });

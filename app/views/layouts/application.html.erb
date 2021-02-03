@@ -13,7 +13,13 @@
 
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/simple-navbar' %>
-    <%= yield %>
+    <% if current_user %>
+      <%= render 'shared/user-navbar' %>
+    <% else %>
+      <%= render 'shared/visitor-navbar' %>
+    <% end %>
+    <div class="content-container">
+      <%= yield %>
+    </div>
   </body>
 </html>
