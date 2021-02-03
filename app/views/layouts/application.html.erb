@@ -12,14 +12,21 @@
   </head>
 
   <body>
+
     <%= render 'shared/flashes' %>
+
     <% if current_user %>
       <%= render 'shared/user-navbar' %>
+      <div class="user-content-container">
+        <%= yield %>
+      </div>
+
     <% else %>
       <%= render 'shared/visitor-navbar' %>
+      <div class="content-container">
+        <%= yield %>
+      </div>
     <% end %>
-    <div class="content-container">
-      <%= yield %>
-    </div>
+
   </body>
 </html>

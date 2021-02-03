@@ -1,24 +1,11 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $cuukin;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.nav-link {
-  color: white !important;
-}
-
-// Cuukin navbar
+// User navbar
 
 .content-container {
   margin-top: 80px;
+}
+
+.user-content-container {
+  margin: 80px 0;
 }
 
 .container-user-navbar {
@@ -58,6 +45,17 @@
   #nv-dish {
     color: #0D6E9A;
   }
+}
+
+// User Footer Navbar
+
+.container-user-navbar-footer {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: $light-gray;
+  box-shadow: 0px -4px 30px rgba(0,0,0,0.1);
 }
 
 // Expanded Navbar
@@ -101,7 +99,7 @@
   }
 }
 
-// Visitor Navbar
+// Visitor navbar
 
 .container-visitor-navbar {
   padding: 0 20px;
