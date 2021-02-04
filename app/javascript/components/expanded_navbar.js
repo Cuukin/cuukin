@@ -10,7 +10,7 @@ const expandedNavbar = () => {
 
     if (openBtn) {
       openBtn.addEventListener('click', () => {
-        expandedNB.style.transition = "opacity 0.4s ease-in";
+        expandedNB.style.transition = "opacity 850ms cubic-bezier(0.68, -0.6, 0.32, 1.1)";
         expandedNB.style.opacity = "1";
         expandedNB.style.zIndex = "10000";
         userNB.style.zIndex = "0";
