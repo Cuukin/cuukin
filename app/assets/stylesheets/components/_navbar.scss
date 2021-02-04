@@ -1,11 +1,11 @@
 // Content Container
 
 .content-container {
-  margin-top: 80px;
+  margin-top: 64px;
 }
 
 .user-content-container {
-  margin: 80px 0 56px;
+  margin: 64px 0;
 }
 
 // User navbar
@@ -13,7 +13,7 @@
 .container-user-navbar {
   background-color: $cuukin;
   display: flex;
-  height: 80px;
+  height: 64px;
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -187,7 +187,7 @@
   padding: 0 20px;
   background-color: $cuukin;
   display: flex;
-  height: 80px;
+  height: 64px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -202,5 +202,5 @@
 }
 
 .navbar-brand img {
-  width: 56px;
+  width: 48px;
 }
