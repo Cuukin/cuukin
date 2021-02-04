@@ -30,7 +30,8 @@ import { togglePasswordVisibility } from '../components/password_visibility_togg
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { homeCarousel } from '../components/home_carousel_slide';
 import { expandedNavbar } from '../components/expanded_navbar';
-import { navbarIcons } from '../components/navbar_icons';
+// import { navbarIcons } from '../components/navbar_icons'; // not being used
+import { welcome } from '../components/welcome';
 // import { swal_data } from '../components/data_dialog';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,5 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   homeCarousel();
   expandedNavbar();
-  navbarIcons();
+  welcome();
 });

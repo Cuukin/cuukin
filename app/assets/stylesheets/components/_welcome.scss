@@ -1,3 +1,60 @@
 .container-welcome {
-  transition: all 850ms cubic-bezier(0.68, -0.6, 0.32, 1.1);
+  text-align: center;
+  padding: 80px 20px;
+
+  h1 {
+    margin-bottom: 1.5em;
+  }
+
+  #welcome-kin, #welcome-p, #welcome-congrats {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16pt;
+    font-weight: 600;
+    opacity: 0;
+  }
+
+  #welcome-p {
+    display: none;
+  }
+
+  #welcome-congrats {
+    color: $cuukin;
+  }
+}
+
+.container-welcome-animation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+#welcome-smoke {
+  height: 160px;
+}
+
+#cuukin-gray, #welcome-star, #welcome-level, #welcome-cuukie {
+  height: 50px;
+}
+
+#welcome-star, #welcome-level, #welcome-cuukie {
+  position: relative;
+  top: -100px;
+}
+
+#welcome-gift {
+  height: 112px;
+}
+
+#welcome-gift-shadow {
+  height: 12px;
+}
+
+#welcome-gift {
+  position: relative;
+  top: -96px;
+}
+
+#welcome-gift-shadow {
+  position: relative;
+  top: -72px;
 }
