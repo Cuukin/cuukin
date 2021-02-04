@@ -1,12 +1,14 @@
-// User navbar
+// Content Container
 
 .content-container {
   margin-top: 80px;
 }
 
 .user-content-container {
-  margin: 80px 0;
+  margin: 80px 0 56px;
 }
+
+// User navbar
 
 .container-user-navbar {
   background-color: $cuukin;
@@ -50,12 +52,88 @@
 // User Footer Navbar
 
 .container-user-navbar-footer {
-  height: 80px;
+  height: 56px;
   width: 100%;
   position: fixed;
   bottom: 0;
   background-color: $light-gray;
   box-shadow: 0px -4px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.journey-icons {
+  .journey {
+    display: block;
+  }
+  .journey-active {
+    display: none;
+  }
+}
+
+.journey-icons:hover, .journey-icons:active {
+  .journey {
+    display: none;
+  }
+  .journey-active {
+    display: block;
+  }
+}
+
+.book-icons {
+  .book {
+    display: block;
+  }
+  .book-active {
+    display: none;
+  }
+}
+
+.book-icons:hover, .book-icons:active {
+  .book {
+    display: none;
+  }
+  .book-active {
+    display: block;
+  }
+}
+
+.community-icons {
+  .community {
+    display: block;
+  }
+  .community-active {
+    display: none;
+  }
+}
+
+.community-icons:hover, .community-icons:active {
+  .community {
+    display: none;
+  }
+  .community-active {
+    display: block;
+  }
+}
+
+.profile-icons {
+  .profile {
+    display: block;
+  }
+  .profile-active {
+    display: none;
+  }
+}
+
+.profile-icons:hover, .profile-icons:active {
+  .profile {
+    display: none;
+  }
+  .profile-active {
+    display: block;
+  }
 }
 
 // Expanded Navbar

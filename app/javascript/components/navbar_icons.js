@@ -1,22 +1,20 @@
 const navbarIcons = () => {
-  const nvIcons = document.querySelectorAll('.nv-user-item');
+  // const journey = document.querySelector('#journey');
+  // const journeyActive = document.querySelector('#journey-active');
+  // const book = document.querySelector('#book');
+  // const bookActive = document.querySelector('#book-active');
+  // const community = document.querySelector('#community');
+  // const communityActive = document.querySelector('#community-active');
+  // const profile = document.querySelector('#profile');
+  // const profileActive = document.querySelector('#profile-active');
 
-  // const levelIcon = document.querySelector('.nv-level');
-  // const xpIcon = document.querySelector('.nv-xp');
-  // const cuukieIcon = document.querySelector('.nv-cuukie');
-  // const dishIcon = document.querySelector('.nv-dish');
+  // const iconBtns = document.querySelectorAll('.nv-footer-icon');
 
-  let current_rotation = 0;
+  // for (let i = 0; i < iconBtns.length, i++) {
+  //   iconBtns[i].addEventListener('click', () => {
 
-  const rotateIcon = (icon) => {
-    icon.addEventListener('click', () => {
-      icon.style.transform = 'rotate(' + current_rotation + 'deg)';
-    });
-  };
-
-  if (nvIcons) {
-    nvIcons.forEach(rotateIcon);
-  };
+  //   });
+  // };
 };
 
 export { navbarIcons };

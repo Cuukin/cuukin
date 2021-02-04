@@ -35,5 +35,20 @@
 </div>
 
 <div class="container-user-navbar-footer">
-
+  <%= link_to root_path, class: 'journey-icons' do %>
+    <%= image_tag('journey.svg', class: 'journey') %>
+    <%= image_tag('journey-active.svg', class: 'journey-active') %>
+  <% end %>
+  <%= link_to root_path, class: 'book-icons' do %>
+    <%= image_tag('book.svg', class: 'book') %>
+    <%= image_tag('book-active.svg', class: 'book-active') %>
+  <% end %>
+  <%= link_to root_path, class: 'community-icons' do %>
+    <%= image_tag('community.svg', class: 'community') %>
+    <%= image_tag('community-active.svg', class: 'community-active') %>
+  <% end %>
+  <%= link_to user_path(current_user), class: 'profile-icons' do %>
+    <%= image_tag('profile.svg', class: 'profile') %>
+    <%= image_tag('profile-active.svg', class: 'profile-active') %>
+  <% end %>
 </div>
