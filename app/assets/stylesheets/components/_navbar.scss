@@ -172,8 +172,12 @@
     font-family: 'Nunito', sans-serif;
   }
 
-  li, a, a:hover, a:active {
+  li, a {
     color: $white;
+
+    a:hover, a:active {
+      color: $light-gray;
+    }
   }
 }
 
