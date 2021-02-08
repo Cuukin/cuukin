@@ -21,6 +21,10 @@
   width: 100%;
   overflow: hidden;
   z-index: 100;
+
+  #open-btn {
+    cursor: pointer;
+  }
 }
 
 .nv-user-item {
@@ -148,18 +152,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: -10000;
+  opacity: 0;
 
   #close-btn {
     height: 28px;
     width: auto;
-    align-self: flex-start;
+    align-self: flex-end;
     margin: 20px;
+    cursor: pointer;
   }
 
   .expanded-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    top: -40%;
+    position: relative;
 
     ul {
       list-style: none;
