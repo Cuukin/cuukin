@@ -1,0 +1,55 @@
+<div class="container-user-navbar">
+  <div class="nv-user-item">
+    <%= image_tag('nv-1-level.svg', class: 'nv-level' ) %>
+    <p id="nv-level">0</p>
+  </div>
+  <div class="nv-user-item">
+    <%= image_tag('nv-2-xp.svg', class: 'nv-xp') %>
+    <p id="nv-xp">0</p>
+  </div>
+  <div class="nv-user-item">
+    <%= image_tag('nv-3-cuukie.svg', class: 'nv-cuukie') %>
+    <p id="nv-cuukie">0</p>
+  </div>
+  <div class="nv-user-item">
+    <%= image_tag('nv-4-dish.svg', class: 'nv-dish') %>
+    <p id="nv-dish">0</p>
+  </div>
+  <%= image_tag('nv-menu.svg', id: 'open-btn') %>
+</div>
+
+<div class="container-user-navbar-footer">
+  <%= link_to root_path, class: 'journey-icons' do %>
+    <%= image_tag('journey.svg', class: 'journey') %>
+    <%= image_tag('journey-active.svg', class: 'journey-active') %>
+  <% end %>
+  <%= link_to root_path, class: 'book-icons' do %>
+    <%= image_tag('book.svg', class: 'book') %>
+    <%= image_tag('book-active.svg', class: 'book-active') %>
+  <% end %>
+  <%= link_to root_path, class: 'community-icons' do %>
+    <%= image_tag('community.svg', class: 'community') %>
+    <%= image_tag('community-active.svg', class: 'community-active') %>
+  <% end %>
+  <%= link_to user_path(current_user), class: 'profile-icons' do %>
+    <%= image_tag('profile.svg', class: 'profile') %>
+    <%= image_tag('profile-active.svg', class: 'profile-active') %>
+  <% end %>
+</div>
+
+<div class="expanded-navbar">
+  <%= image_tag('btn-close.svg', id: 'close-btn') %>
+  <div class="expanded-menu">
+    <ul>
+      <li><%=link_to 'About Cuukin', 'https://www.cuukin.app/' %></li>
+      <li><%=link_to 'Sharing is Caring', 'https://www.cuukin.app/' %></li>
+      <li><%=link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+
+      <% if current_user.admin? %>
+        <li>-</li>
+        <li><%= link_to "Admin Dashboard", admin_root_path %></li>
+        <li><%= link_to "Sidekiq", sidekiq_web_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

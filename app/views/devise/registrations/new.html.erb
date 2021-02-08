@@ -42,9 +42,12 @@
                   input_html: { autocomplete: "new-password", class: "my-password" } %>
     </div>
 
-    <div class="form-actions double-btn mt-3">
+    <div class="form-actions mt-3">
       <%= f.button :submit, "Sign Up", class: 'primary-btn mr-1' %>
-      <%= link_to "or Log In", new_user_session_path, class: 'secondary-btn ml-1' %>
     </div>
   <% end %>
+
+  <div class="devise-extra-links">
+    <%= link_to "Already have an account? Log In", new_user_session_path, class: 'devise-p mt-4' %>
+  </div>
 </div>

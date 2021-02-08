@@ -1,16 +1,214 @@
-.navbar-lewagon {
+// Content Container
+
+.content-container {
+  margin-top: 64px;
+}
+
+.user-content-container {
+  margin: 64px 0;
+}
+
+// User navbar
+
+.container-user-navbar {
+  background-color: $cuukin;
+  display: flex;
+  height: 64px;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 100;
+
+  #open-btn {
+    cursor: pointer;
+  }
+}
+
+.nv-user-item {
+
+  p {
+    margin: 0;
+    font-size: 14pt;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  #nv-level {
+    color: #FFFFFF;
+  }
+
+  #nv-xp {
+    color: #A4EAD1;
+  }
+
+  #nv-cuukie {
+    color: #FFEA65;
+  }
+
+  #nv-dish {
+    color: #0D6E9A;
+  }
+}
+
+// User Footer Navbar
+
+.container-user-navbar-footer {
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: $light-gray;
+  box-shadow: 0px -4px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+
+.journey-icons {
+  .journey {
+    display: block;
+  }
+  .journey-active {
+    display: none;
+  }
+}
+
+.journey-icons:hover, .journey-icons:active {
+  .journey {
+    display: none;
+  }
+  .journey-active {
+    display: block;
+  }
+}
+
+.book-icons {
+  .book {
+    display: block;
+  }
+  .book-active {
+    display: none;
+  }
+}
+
+.book-icons:hover, .book-icons:active {
+  .book {
+    display: none;
+  }
+  .book-active {
+    display: block;
+  }
+}
+
+.community-icons {
+  .community {
+    display: block;
+  }
+  .community-active {
+    display: none;
+  }
+}
+
+.community-icons:hover, .community-icons:active {
+  .community {
+    display: none;
+  }
+  .community-active {
+    display: block;
+  }
+}
+
+.profile-icons {
+  .profile {
+    display: block;
+  }
+  .profile-active {
+    display: none;
+  }
+}
+
+.profile-icons:hover, .profile-icons:active {
+  .profile {
+    display: none;
+  }
+  .profile-active {
+    display: block;
+  }
+}
+
+// Expanded Navbar
+
+.expanded-navbar {
+  background-color: $cuukin;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  background: $cuukin;
+  z-index: -10000;
+  opacity: 0;
+
+  #close-btn {
+    height: 28px;
+    width: auto;
+    align-self: flex-end;
+    margin: 20px;
+    cursor: pointer;
+  }
+
+  .expanded-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: -40%;
+    position: relative;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      font-size: 24pt;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    li, a {
+      color: $white;
+
+      a:hover, a:active {
+        color: $light-gray;
+      }
+    }
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+// Visitor navbar
+
+.container-visitor-navbar {
+  padding: 0 20px;
+  background-color: $cuukin;
+  display: flex;
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: space-between;
+
+  a, a:hover, a:active {
+    color: $white;
+    font-size: 16pt;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.nav-link {
-  color: white !important;
+.navbar-brand img {
+  width: 48px;
 }
