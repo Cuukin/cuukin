@@ -6,7 +6,7 @@
     <h2>Edit Profile</h2>
   </div>
 
-  <%= simple_form_for(current_user, url: user_path(current_user), method: 'patch') do |f| %>
+  <%= simple_form_for(current_user, url: user_user_path(current_user), method: 'patch') do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
