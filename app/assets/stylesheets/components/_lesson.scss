@@ -1,0 +1,48 @@
+.container-lesson-overview {
+  width: 500px;
+  margin: auto;
+}
+
+.lesson-photo {
+  width: 500px;
+}
+
+.card-lesson-overview {
+  background-color: $white;
+  border-radius: 24px 24px 0 0;
+  padding: 16px;
+  position: relative;
+  top: -32px;
+
+  h2 {
+    color: $cuukin;
+    font-size: 24pt;
+    font-weight: 700;
+  }
+}
+
+.lesson-overview-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  li {
+    display: inline;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo {
+    width: 100vw;
+  }
+}

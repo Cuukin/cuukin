@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: [ :show, :edit, :update ]
 
+  get '/lesson', to: "pages#lesson"
+
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
