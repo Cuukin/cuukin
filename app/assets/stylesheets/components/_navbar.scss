@@ -20,7 +20,7 @@
   top: 0;
   width: 100%;
   overflow: hidden;
-  z-index: 10000;
+  z-index: 100;
 }
 
 .nv-user-item {
@@ -61,6 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 100;
 }
 
 
@@ -151,32 +152,30 @@
   #close-btn {
     height: 28px;
     width: auto;
-    align-self: flex-end;
+    align-self: flex-start;
     margin: 20px;
   }
-}
 
-.expanded-menu {
-  position: relative;
-  top: -40%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  .expanded-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-size: 24pt;
-    font-family: 'Nunito', sans-serif;
-  }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      font-size: 24pt;
+      font-family: 'Nunito', sans-serif;
+    }
 
-  li, a {
-    color: $white;
+    li, a {
+      color: $white;
 
-    a:hover, a:active {
-      color: $light-gray;
+      a:hover, a:active {
+        color: $light-gray;
+      }
     }
   }
 }

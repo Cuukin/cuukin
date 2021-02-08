@@ -30,9 +30,11 @@ import { togglePasswordVisibility } from '../components/password_visibility_togg
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { homeCarousel } from '../components/home_carousel_slide';
 // import { swal_data } from '../components/data_dialog';
+import { expandedNavbar } from '../components/expanded_navbar';
 
 document.addEventListener('turbolinks:load', () => {
   togglePasswordVisibility();
   previewImageOnFileSelect();
   homeCarousel();
+  expandedNavbar();
 });
