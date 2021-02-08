@@ -30,12 +30,12 @@
     </div>
 
     <div class="form-actions double-btn mt-3">
-      <%= f.button :submit, "Log In", class: 'primary-btn mr-1' %>
-      <%= link_to "or Sign Up", new_user_registration_path, class: 'secondary-btn ml-1' %>
+      <%= f.button :submit, "Log In", class: 'primary-btn' %>
     </div>
   <% end %>
 
   <div class="devise-extra-links">
-    <%= link_to "Forgot password?", new_user_password_path, class: 'devise-p mt-3'  %>
+    <%= link_to "Forgot password?", new_user_password_path, class: 'devise-p mt-4' %>
+    <%= link_to "No account? Sign Up", new_user_registration_path, class: 'devise-p mt-1'  %>
   </div>
 </div>
