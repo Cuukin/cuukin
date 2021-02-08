@@ -91,7 +91,7 @@
 }
 
 .previous-btn, .previous-btn:hover {
-  background-color: $light-gray;
+  background-color: rgba(191, 191, 191, .5); // $light-gray
   color: $white;
   text-align: center;
   font-size: 16pt;
@@ -112,7 +112,7 @@
   color: $white;
   text-align: center;
   font-size: 16pt;
-  padding: 15px 25px;
+  padding: 10px 20px;
   border-radius: 50%;
   display: inline-block;
   margin: auto;
