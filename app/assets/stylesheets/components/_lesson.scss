@@ -1,4 +1,39 @@
+// Prev Btn
+
+.lesson-prev-btn {
+  position: absolute;
+}
+
+.prev-btn, .prev-btn:hover {
+  position: fixed;
+  background-color: rgba(191, 191, 191, .5); // $light-gray
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 10px 20px;
+  border-radius: 50%;
+  margin: 16px 0 0 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.prev-chap-btn, .prev-chap-btn:hover {
+  position: fixed;
+  background-color: rgba(191, 191, 191, .5); // $light-gray
+  color: $white;
+  text-align: center;
+  font-size: 16pt;
+  padding: 14px 19px;
+  border-radius: 50%;
+  margin: 24px 0 0 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+// Lesson Overview [FIRST CARD]
+
 .container-lesson-overview {
+  position: relative;
   width: 500px;
   margin: auto;
   background-color: $white;
@@ -71,6 +106,7 @@
   .serving-btn {
     height: 30px;
     margin: 0 16px;
+    cursor: pointer;
   }
 }
 
@@ -162,6 +198,7 @@
 
 .ingredient-measure, .equipment-measure {
   text-align: right;
+  // min-width: 16px;
 }
 
 .lesson-important {
@@ -217,5 +254,154 @@
       height: 24px;
       margin: 0 14px;
     }
+  }
+}
+
+// Container overflow SKILL VIDEOS + RECIPE METHODS
+
+.container-lesson {
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.lesson-slide {
+  width: 100%;
+  display: flex;
+}
+
+// Lesson Skill Chapter [second++ cards]
+
+.container-lesson-chapter {
+  position: relative;
+  width: 500px;
+  margin: auto;
+  background-color: $white;
+}
+
+.card-lesson-chapter {
+  background-color: $white;
+  border-radius: 24px 24px 0 0;
+  padding: 16px;
+  position: relative;
+  top: -24px;
+
+  h2 {
+    color: $cuukin;
+    font-size: 24pt;
+    font-weight: 700;
+  }
+
+  h3 {
+    color: $black;
+    margin: 24px 0;
+  }
+
+  p {
+    margin: 24px 0;
+  }
+}
+
+.lesson-skill-video {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  video {
+    width: auto;
+    height: 500px;
+  }
+}
+
+.meter {
+  height: 16px;
+  width: 100%;
+  background-color: $light-gray;
+  position: relative;
+  z-index: 10;
+
+  span {
+    height: 100%;
+    width: 50%;
+    display: block;
+    background-color: $cuukin;
+    border-radius: 0 8px 8px 0;
+    position: absolute;
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-lesson, .container-lesson-chapter, .lesson-skill-video {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson, .container-lesson-chapter, .lesson-skill-video {
+    width: 100vw;
+  }
+}
+
+// Lesson Recipe Method
+
+.container-lesson-recipe {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  background-color: $white;
+}
+
+.card-lesson-recipe {
+  background-color: $white;
+  padding: 16px;
+  position: relative;
+  top: -24px;
+
+  h4 {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 18pt;
+  }
+
+  h2 {
+    color: $cuukin;
+    font-size: 24pt;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 24px 0;
+  }
+}
+
+.lesson-recipe-video {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  video {
+    width: auto;
+    height: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-lesson-recipe, .lesson-recipe-video {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson-recipe, .lesson-recipe-video {
+    width: 100vw;
   }
 }
