@@ -1,13 +1,14 @@
 .container-lesson-overview {
   width: 500px;
   margin: auto;
+  background-color: $white;
 }
 
 .lesson-photo {
   width: 500px;
   height: 300px;
-  background-size: cover;
-  background-position: center;
+  background-size: auto 50%;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -43,6 +44,7 @@
   justify-content: center;
   color: $gray;
   margin-top: 24px;
+  flex-wrap: wrap;
 
   li {
     font-size: 16pt;
@@ -91,6 +93,8 @@
     margin-right: 24px;
     margin-bottom: 8px;
     font-size: 14pt;
+    max-width: 77px;
+    text-align: center;
   }
 
   img {
@@ -143,6 +147,42 @@
   padding: 8px 0;
 }
 
+.lesson-overview-equipment, .lesson-overview-ingredients {
+  margin: 24px 0;
+
+  table {
+    margin-left: 24px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 14pt;
+  }
+}
+
+.ingredient-measure, .equipment-measure {
+  text-align: right;
+}
+
+.lesson-important {
+  color: $dark-gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 16px;
+
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 8px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14pt;
+  }
+}
+
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .container-lesson-overview, .lesson-photo {
@@ -154,5 +194,28 @@
   /* For a screen < 540px, this CSS will be read */
   .container-lesson-overview, .lesson-photo {
     width: 100vw;
+  }
+
+  .lesson-overview-details {
+    li {
+      font-size: 14pt;
+      display: inline;
+      margin: 0 14px;
+    }
+
+    .lesson-icons {
+      height: 16px;
+    }
+  }
+
+  .lesson-overview-serving {
+    p {
+      margin: 0 0 0 4px;
+    }
+
+    .serving-btn {
+      height: 24px;
+      margin: 0 14px;
+    }
   }
 }
