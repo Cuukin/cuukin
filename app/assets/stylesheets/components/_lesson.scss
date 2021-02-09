@@ -5,6 +5,16 @@
 
 .lesson-photo {
   width: 500px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.lesson-dash {
+  display: block;
+  margin: 8px auto 16px;
 }
 
 .card-lesson-overview {
@@ -12,12 +22,16 @@
   border-radius: 24px 24px 0 0;
   padding: 16px;
   position: relative;
-  top: -32px;
+  top: -24px;
 
   h2 {
     color: $cuukin;
     font-size: 24pt;
     font-weight: 700;
+  }
+
+  h3 {
+    color: $black;
   }
 }
 
@@ -27,10 +41,106 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  color: $gray;
+  margin-top: 24px;
 
   li {
+    font-size: 16pt;
     display: inline;
+    margin: 0 16px;
   }
+
+  .lesson-icons {
+    height: 20px;
+  }
+}
+
+.lesson-overview-serving {
+  color: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+
+  p {
+    margin: 0 0 0 8px;
+  }
+
+  .serving-btn {
+    height: 30px;
+    margin: 0 16px;
+  }
+}
+
+.lesson-overview-skills {
+  margin: 24px 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 24px;
+    margin-bottom: 8px;
+    font-size: 14pt;
+  }
+
+  img {
+    height: 77px;
+    width: 77px;
+  }
+}
+
+.lesson-overview-nutri {
+  margin: 24px 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    font-size: 14pt;
+
+    background-color: $cuukin;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.nutri-data {
+  background-color: rgb(246, 234, 234);
+  border-radius: 12px;
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nutri-metric {
+  color: $white;
+  padding: 8px 0;
 }
 
 @media (max-width: 500px) {

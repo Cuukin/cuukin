@@ -1,8 +1,12 @@
 <!-- first div with general info + btn to start lesson -->
 <div class="container-lesson-overview">
-  <%= image_tag('lesson-photo.png', class: 'lesson-photo') %>
+  <div class="lesson-photo" style="background-image: url('<%= image_path "lesson-photo.png"%>')">
+  </div>
+
   <div class="card-lesson-overview">
+    <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
     <h2 class="text-center">Balsamic Carrots</h2>
+
     <ul class="lesson-overview-details">
       <li>
         <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
@@ -17,6 +21,79 @@
         Eggs
       </li>
     </ul>
+
+    <div class="lesson-overview-serving">
+      <%= image_tag('minus-btn.svg', class: 'serving-btn', id: 'minusBtn') %>
+      <%= image_tag('lesson-serving.svg') %>
+      <p>1 serving(s)</p>
+      <%= image_tag('plus-btn.svg', class: 'serving-btn', id: 'plusBtn') %>
+    </div>
+
+    <div class="lesson-overview-skills">
+      <h3>Skills practiced</h3>
+      <ul>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Eggs 101
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Frying basics
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Frying pan
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Oils
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-nutri">
+      <h3>Nutritional data per serving</h3>
+      <ul>
+        <li>
+          <p class="nutri-data">356</p>
+          <p class="nutri-metric">kcal</p>
+        </li>
+        <li>
+          <p class="nutri-data">2.5</p>
+          <p class="nutri-metric">fat</p>
+        </li>
+        <li>
+          <p class="nutri-data">4.2</p>
+          <p class="nutri-metric">protein</p>
+        </li>
+        <li>
+          <p class="nutri-data">45</p>
+          <p class="nutri-metric">carbs</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-equipment">
+      <h3>Equipment needed</h3>
+      <ul>
+        <li>
+          <p>1x</p>
+          <p>Non-stick pan (e.g. teflon)</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-ingredients">
+      <h3>Ingredients</h3>
+      <ul>
+        <li>
+          <p>1 tsp</p>
+          <p>Eggs (large, free range)</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="primary-btn" style="cursor: pointer;">Start the Lesson</p>
   </div>
 </div>
 
