@@ -15,13 +15,13 @@
     background-color: $gray;
     color: $light-gray;
   }
+
+  &:hover {
+    color: $white;
+  }
 }
 
-.primary-btn:hover {
-  color: $white;
-}
-
-.secondary-btn, .secondary-btn:hover {
+.secondary-btn {
   font-size: 16pt;
   background-color: $white;
   -webkit-box-shadow:inset 0px 0px 0px 1px $black;
@@ -40,5 +40,9 @@
   &:disabled {
     background-color: $gray;
     color: $light-gray;
+  }
+
+  &:hover {
+    color: $black;
   }
 }
