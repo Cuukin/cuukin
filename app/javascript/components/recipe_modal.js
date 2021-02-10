@@ -3,8 +3,6 @@ const recipeModal = () => {
   const startRecipe = document.querySelector('#startRecipe');
 
   if (startRecipe) {
-    modal.style.transition = "all 800ms ease-in-out";
-
     const openModal = () => {
       setTimeout(function() {
         modal.style.display = "block";
