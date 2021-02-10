@@ -89,10 +89,10 @@
 
 .book-icons {
   .book {
-    display: block;
+    display: none;
   }
   .book-active {
-    display: none;
+    display: block;
   }
 }
 
@@ -154,6 +154,7 @@
   justify-content: space-between;
   z-index: -10000;
   opacity: 0;
+  visibility: hidden;
 
   #close-btn {
     height: 28px;

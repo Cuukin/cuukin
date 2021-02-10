@@ -1,0 +1,223 @@
+<!-- first div with general info + btn to start lesson -->
+
+<div class="container-lesson-overview">
+  <div class="lesson-prev-btn"><%= link_to icon('fas', 'chevron-left'), :back, class: 'prev-btn' %></div>
+
+  <div class="lesson-photo" style="background-image: url('<%= image_path "lesson-photo.png"%>')">
+  </div>
+
+  <div class="card-lesson-overview">
+    <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+    <h2 class="text-center">Balsamic Carrots</h2>
+
+    <ul class="lesson-overview-details">
+      <li>
+        <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
+        60 min
+      </li>
+      <li>
+        <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
+        Level 1
+      </li>
+      <li>
+        <%= image_tag('lesson-ingredient.svg', class: 'lesson-icons') %>
+        Eggs
+      </li>
+    </ul>
+
+    <div class="lesson-overview-serving">
+      <%= image_tag('minus-btn.svg', class: 'serving-btn', id: 'minusBtn') %>
+      <%= image_tag('lesson-serving.svg') %>
+      <p>1 serving(s)</p>
+      <%= image_tag('plus-btn.svg', class: 'serving-btn', id: 'plusBtn') %>
+    </div>
+
+    <div class="lesson-overview-skills">
+      <h3>Skills practiced</h3>
+      <ul>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Eggs 101
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Frying basics
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Frying pan
+        </li>
+        <li>
+          <%= image_tag('lesson-skill.png') %>
+          Oils
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-nutri">
+      <h3>Nutritional data per serving</h3>
+      <ul>
+        <li>
+          <p class="nutri-data">356</p>
+          <p class="nutri-metric">kcal</p>
+        </li>
+        <li>
+          <p class="nutri-data">2.5</p>
+          <p class="nutri-metric">fat</p>
+        </li>
+        <li>
+          <p class="nutri-data">4.2</p>
+          <p class="nutri-metric">protein</p>
+        </li>
+        <li>
+          <p class="nutri-data">45</p>
+          <p class="nutri-metric">carbs</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-equipment">
+      <h3>Equipment needed</h3>
+      <table>
+        <tr>
+          <td class="equipment-measure">1x</td>
+          <td>Non-stick pan (e.g. teflon)</td>
+        </tr>
+        <tr>
+          <td class="equipment-measure">1x</td>
+          <td>Spatula (silicone or wood tip)</td>
+        </tr>
+        <tr>
+          <td class="equipment-measure">1x</td>
+          <td>Large bowl (can contain 3 eggs)</td>
+        </tr>
+      </table>
+
+      <div class="lesson-important">
+        <%= image_tag('lesson-important.svg') %>
+        <p>Don't have one of these? Click on any to see Kin's recommendation on what to get</p>
+      </div>
+    </div>
+
+    <div class="lesson-overview-ingredients">
+      <h3>Ingredients</h3>
+      <table>
+        <tr>
+          <td class="ingredient-measure"><span>3</span></td>
+          <td>Eggs (large, free range)</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure"><span>1</span> tbsp</td>
+          <td>Butter (room temperature) | olive oil | canola oil</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure"><span>1</span> tbsp</td>
+          <td>Salt & pepper</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure">Dash</td>
+          <td>Truffle oil</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+  </div>
+</div>
+
+<!-- overflow hidden container with all skill chapters -->
+<div class="container-lesson">
+  <div class="lesson-prev-btn"><i class="fas fa-chevron-left prev-chap-btn"></i></div>
+
+  <div class="meter">
+    <span style="width: 25%"></span>
+  </div>
+
+  <div class="lesson-slide">
+
+    <div class="container-lesson-chapter">
+      <div class="lesson-skill-video">
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+      </div>
+
+      <div class="card-lesson-chapter">
+        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+        <h2 class="text-center">Carrots 101</h2>
+        <h3>Summary</h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+        <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
+      </div>
+    </div>
+
+    <div class="container-lesson-chapter">
+      <div class="lesson-skill-video">
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+      </div>
+
+      <div class="card-lesson-chapter">
+        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+        <h2 class="text-center">Seasoning basics</h2>
+        <h3>Summary</h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+        <p class="primary-btn lesson-next-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
+      </div>
+    </div>
+
+    <div class="container-lesson-recipe">
+      <div class="lesson-recipe-video">
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+      </div>
+
+      <div class="card-lesson-recipe">
+        <div class="card-lesson-recipe-header">
+          <div class="recipe-header-left">
+            <h4>Balsamic Carrots</h4>
+            <h2>Step 1 / 3</h2>
+          </div>
+          <div class='next-btn lesson-next-btn'><i class='fas fa-chevron-right'></i></div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+      </div>
+    </div>
+
+    <div class="container-lesson-recipe">
+      <div class="lesson-recipe-video">
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+      </div>
+
+      <div class="card-lesson-recipe">
+        <div class="card-lesson-recipe-header">
+          <div class="recipe-header-left">
+            <h4>Balsamic Carrots</h4>
+            <h2>Step 2 / 3</h2>
+          </div>
+          <div class='next-btn lesson-next-btn'><i class='fas fa-chevron-right'></i></div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+      </div>
+    </div>
+
+    <div class="container-lesson-recipe">
+      <div class="lesson-recipe-video">
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+      </div>
+
+      <div class="card-lesson-recipe">
+        <div class="card-lesson-recipe-header">
+          <div class="recipe-header-left">
+            <h4>Balsamic Carrots</h4>
+            <h2>Step 3 / 3</h2>
+          </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+        <p class="primary-btn" style="cursor: pointer;">Complete Lesson</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- overflow hidden container with all recipe methods -->

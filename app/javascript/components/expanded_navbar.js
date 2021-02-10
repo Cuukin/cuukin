@@ -12,6 +12,7 @@ const expandedNavbar = () => {
         expandedNB.style.transition = "opacity 850ms cubic-bezier(0.68, -0.6, 0.32, 1.1)";
         expandedNB.style.opacity = "1";
         expandedNB.style.zIndex = "10000";
+        expandedNB.style.visibility = "visible";
       });
     };
 
@@ -20,6 +21,7 @@ const expandedNavbar = () => {
         expandedNB.style.transition = "opacity 0s linear";
         expandedNB.style.zIndex = "-10000";
         expandedNB.style.opacity = "0";
+        expandedNB.style.visibility = "hidden";
       });
     };
   };
