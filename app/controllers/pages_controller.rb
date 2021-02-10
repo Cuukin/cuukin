@@ -3,9 +3,4 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  def lesson
-    @lesson_validation = LessonValidation.new
-    authorize @lesson_validation, policy_class: LessonValidationPolicy
-  end
 end
