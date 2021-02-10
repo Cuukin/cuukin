@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: [ :show, :edit, :update ]
 
-  get '/lesson', to: "pages#lesson"
+  get '/lesson', to: "pages#lesson" # this will be show on lesson controller
+  get '/lessons', to: "pages#lessons" # this will be index on lesson controller
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
