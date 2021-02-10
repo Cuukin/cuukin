@@ -169,6 +169,31 @@
   }
 }
 
+.nutri-header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8px;
+
+  img {
+    margin-left: 8px;
+    height: 24px;
+    cursor: pointer;
+    filter: brightness(0.4);
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.nutri-hide-btn {
+  display: none;
+}
+
+.nutri-content {
+  display: none;
+}
+
 .nutri-data {
   background-color: rgb(246, 234, 234);
   border-radius: 12px;
