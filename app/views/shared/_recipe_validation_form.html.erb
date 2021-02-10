@@ -1,0 +1,33 @@
+<div class="recipe-validation-modal">
+  <div class="recipe-validation-modal-content">
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
+
+    <%= simple_form_for(@lesson_validation, url: lesson_lesson_validation_index_path(@lesson), method: 'post') do |f| %>
+
+      <h3>Take a photo of your dish</h3>
+      <p>Your photo will verify lesson completition</p>
+      <p class="primary-btn">Upload a photo</p>
+      <h3>Tell us about your lesson</h3>
+      <p>How easy did you find it?</p>
+
+      <div class="lesson-validation-options">
+        <div class="lv-option">
+          <%= image_tag('lesson-validation-icon-1') %>
+          <p>Piece of cake</p>
+        </div>
+        <div class="lv-option">
+          <%= image_tag('lesson-validation-icon-2') %>
+          <p>Just right</p>
+        </div>
+        <div class="lv-option">
+          <%= image_tag('lesson-validation-icon-3') %>
+          <p>Burnt it all</p>
+        </div>
+      </div>
+
+      <p>Do you want to leave any notes or comments about this lesson?</p>
+
+    <% end %>
+
+  </div>
+</div>

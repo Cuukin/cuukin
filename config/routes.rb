@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: [ :show, :edit, :update ]
 
+  resources :lessons, only: [ :index, :show ] do
+    resources :lesson_validation, only: [ :create ]
+  end
+
   get '/lesson', to: "pages#lesson" # this will be show on lesson controller
   get '/lessons', to: "pages#lessons" # this will be index on lesson controller
 
