@@ -1,4 +1,4 @@
-.primary-btn, .primary-btn:hover {
+.primary-btn {
   font-size: 16pt;
   background-color: $cuukin;
   color: $white;
@@ -9,11 +9,16 @@
   padding: 10px 15px;
   display: inline-block;
   margin: 4px 0;
+  cursor: pointer;
 
   &:disabled {
     background-color: $gray;
     color: $light-gray;
   }
+}
+
+.primary-btn:hover {
+  color: $white;
 }
 
 .secondary-btn, .secondary-btn:hover {

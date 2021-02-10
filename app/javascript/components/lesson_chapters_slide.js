@@ -6,25 +6,26 @@ const lessonChaptersSlide = () => {
 
   const lessonOverviewContainer = document.querySelector('.container-lesson-overview');
 
-  const startLesson = document.querySelector('#startLesson');
+  const startLessonBtn = document.querySelector('#startLesson');
 
-  const nextChapter = document.querySelectorAll('.nextChapter');
+  const nextBtn = lessonContainer.querySelectorAll('.lesson-next-btn');
+
   const prevBtn = document.querySelector('.prev-chap-btn');
 
-  const startRecipe = document.querySelector('#startRecipe');
+  const startRecipeBtn = document.querySelector('#startRecipe');
 
   let counter = 0;
 
   if (lessonOverviewContainer) {
     lessonContainer.style.display = "none";
 
-    startLesson.addEventListener('click', () => {
+    startLessonBtn.addEventListener('click', () => {
       lessonOverviewContainer.style.display = "none";
       lessonContainer.style.display = "block";
       counter = 0;
     });
 
-    nextChapter.forEach((btn) => {
+    nextBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
