@@ -1,4 +1,4 @@
-ActiveAdmin.register Ingredient do
+ActiveAdmin.register Tool do
 
   permit_params :name, :category
 

@@ -1,7 +1,7 @@
 class Ingredient < ApplicationRecord
-  validates :name, :type, presence: true
+  validates :name, :category, presence: true
   validates :name, uniqueness: true
-  enum type: ['fuit', 'fake veggie', 'seeds and grain', 'stem greens',
+  enum category: ['fruits', 'fake veggies', 'seeds and grains', 'stem greens',
     'leafy greens', 'bulbs', 'roots', 'herbs', 'bread', 'pasta', 'sweets',
     'fats and oils', 'chicken', 'pork', 'beef', 'fish', 'eggs', 'funghi',
     'seafood', 'dairy', 'seasonings', 'sauces']
