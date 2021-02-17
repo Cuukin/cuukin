@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Close_button" data-name="Close button" transform="translate(209 770) rotate(180)">
+    <rect id="Retângulo_436" data-name="Retângulo 436" width="42" height="42" rx="21" transform="translate(167 728)" fill="rgba(191,191,191,0.5)"/>
+    <path id="ic_close_24px" d="M25.036,7.018,23.018,5l-8,8-8-8L5,7.018l8,8-8,8,2.018,2.018,8-8,8,8,2.018-2.018-8-8Z" transform="translate(203.018 764.103) rotate(180)" fill="#fff"/>
+  </g>
+</svg>

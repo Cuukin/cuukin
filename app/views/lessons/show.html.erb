@@ -57,26 +57,26 @@
       </ul>
     </div>
 
-    <div class="lesson-overview-nutri">
-      <h3>Nutritional data per serving</h3>
-      <ul>
-        <li>
-          <p class="nutri-data">356</p>
-          <p class="nutri-metric">kcal</p>
-        </li>
-        <li>
-          <p class="nutri-data">2.5</p>
-          <p class="nutri-metric">fat</p>
-        </li>
-        <li>
-          <p class="nutri-data">4.2</p>
-          <p class="nutri-metric">protein</p>
-        </li>
-        <li>
-          <p class="nutri-data">45</p>
-          <p class="nutri-metric">carbs</p>
-        </li>
-      </ul>
+    <div class="lesson-overview-ingredients">
+      <h3>Ingredients</h3>
+      <table>
+        <tr>
+          <td class="ingredient-measure"><span>3</span></td>
+          <td>Eggs (large, free range)</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure"><span>1</span> tbsp</td>
+          <td>Butter (room temperature) | olive oil | canola oil</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure"><span>1</span> tbsp</td>
+          <td>Salt & pepper</td>
+        </tr>
+        <tr>
+          <td class="ingredient-measure">Dash</td>
+          <td>Truffle oil</td>
+        </tr>
+      </table>
     </div>
 
     <div class="lesson-overview-equipment">
@@ -102,26 +102,33 @@
       </div>
     </div>
 
-    <div class="lesson-overview-ingredients">
-      <h3>Ingredients</h3>
-      <table>
-        <tr>
-          <td class="ingredient-measure"><span>3</span></td>
-          <td>Eggs (large, free range)</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure"><span>1</span> tbsp</td>
-          <td>Butter (room temperature) | olive oil | canola oil</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure"><span>1</span> tbsp</td>
-          <td>Salt & pepper</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure">Dash</td>
-          <td>Truffle oil</td>
-        </tr>
-      </table>
+    <div class="lesson-overview-nutri">
+      <div class="nutri-header">
+        <h3>Nutritional data per serving</h3>
+        <%= image_tag('plus-btn.svg', class: 'nutri-show-btn') %>
+        <%= image_tag('minus-btn.svg', class: 'nutri-hide-btn') %>
+      </div>
+
+      <div class="nutri-content">
+        <ul>
+          <li>
+            <p class="nutri-data">356</p>
+            <p class="nutri-metric">kcal</p>
+          </li>
+          <li>
+            <p class="nutri-data">2.5</p>
+            <p class="nutri-metric">fat</p>
+          </li>
+          <li>
+            <p class="nutri-data">4.2</p>
+            <p class="nutri-metric">protein</p>
+          </li>
+          <li>
+            <p class="nutri-data">45</p>
+            <p class="nutri-metric">carbs</p>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
@@ -216,7 +223,7 @@
         </div>
 
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn" style="cursor: pointer;">Complete Lesson</p>
+        <p class="primary-btn" style="cursor: pointer;" id="completeLesson">Complete Lesson</p>
       </div>
     </div>
 

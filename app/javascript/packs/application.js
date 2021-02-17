@@ -22,6 +22,8 @@ import { homeCarousel } from '../components/home_carousel_slide';
 import { expandedNavbar } from '../components/expanded_navbar';
 import { lessonChaptersSlide } from '../components/lesson_chapters_slide';
 import { lessonServingCalc } from '../components/lesson_serving';
+import { recipeModal } from '../components/recipe_modal';
+import { lessonNutriData } from '../components/lesson_nutri_data';
 
 document.addEventListener('turbolinks:load', () => {
   togglePasswordVisibility();
@@ -30,4 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   expandedNavbar();
   lessonChaptersSlide();
   lessonServingCalc();
+  recipeModal();
+  lessonNutriData();
 });

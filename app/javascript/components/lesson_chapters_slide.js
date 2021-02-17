@@ -12,8 +12,6 @@ const lessonChaptersSlide = () => {
 
   const prevBtn = document.querySelector('.prev-chap-btn');
 
-  const startRecipeBtn = document.querySelector('#startRecipe');
-
   let counter = 0;
 
   if (lessonOverviewContainer) {
