@@ -163,3 +163,98 @@ create_ingredient(seafood, 'seafood')
 create_ingredient(dairy, 'dairy')
 create_ingredient(seasonings, 'seasonings')
 create_ingredient(sauces, 'sauces')
+
+# Books, Lessons and Recipes
+
+book_1 = {
+  name: 'Kitchen SOS'
+  description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
+  level: 'newbie',
+  xp: 100
+}
+
+book_2 = {
+  name: 'Kitchen Basics'
+  description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
+  level: 'chef_in_progress',
+  xp: 100
+}
+
+books = [book_1, book_2]
+
+books.each do |book|
+  new_book = Book.create(book)
+  puts "Created #{new_book.name} 📗"
+end
+
+recipe_1 = {
+  title: 'Avotoast',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+}
+
+recipe_2 = {
+  title: 'Spaghetti al Carbonara',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+}
+
+recipe_3 = {
+  title: 'Baked Portobello',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+}
+
+recipe_4 = {
+  title: 'Strawberry Fondue',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+}
+
+recipes = [recipe_1, recipe_2, recipe_3, recipe_4]
+
+recipes.each do |recipe|
+  new_recipe = Recipe.create(recipe)
+  puts "Created #{new_recipe.title} 🍌"
+end
+
+lesson_1 = {
+  name: 'Avotoast',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  recipe_id: 1,
+  book_id: 1,
+  xp: 50
+}
+
+lesson_2 = {
+  name: 'Spaghetti al Carbonara',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  recipe_id: 2,
+  book_id: 1,
+  xp: 50
+}
+
+lesson_3 = {
+  name: 'Baked Portobello',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  recipe_id: 3,
+  book_id: 1,
+  xp: 50
+}
+
+lesson_4 = {
+  name: 'Strawberry Fondue',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  recipe_id: 4,
+  book_id: 1,
+  xp: 50
+}
+
+lessons = [lesson_1, lesson_2, lesson_3, lesson_4]
+
+lessons.each do |lesson|
+  new_lesson = Lesson.create(lesson)
+  puts "Created #{new_lesson.name} 🌯"
+end
+
+recipe_method_1 = {
+  recipe_id: 1,
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
