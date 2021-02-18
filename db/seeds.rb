@@ -290,3 +290,53 @@ recipe_method_2 = {
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
+
+recipe_methods = [recipe_method_1, recipe_method_2]
+
+recipe_methods.each do |recipe_method|
+  new_recipe_method = RecipeMethod.create(recipe_method)
+  puts "Created #{new_recipe_method.title}"
+end
+
+skill_chapter_1 = {
+  lesson_id: 1,
+  badge_id: 1,
+  title: 'Onions 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_2 = {
+  lesson_id: 1,
+  badge_id: 2,
+  title: 'Oil 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_3 = {
+  lesson_id: 1,
+  badge_id: 3,
+  title: 'Carrots',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3]
+
+skill_chapters.each do |skill_chapter|
+  new_skill_chapter = SkillChapter.create(skill_chapter)
+  puts "Created #{new_skill_chapter.title}"
+end
+
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, measure: 2, unit: 'tbsp')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, measure: 4, unit: 'lts')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 4, measure: 1)
+
+RecipeTool.create(recipe_id: 1, tool_id: 1)
+RecipeTool.create(recipe_id: 1, tool_id: 2)
+RecipeTool.create(recipe_id: 1, tool_id: 3)
+
+RecipeTechnique.create(recipe_id: 1, technique_id: 1)
+RecipeTechnique.create(recipe_id: 1, technique_id: 2)
+RecipeTechnique.create(recipe_id: 1, technique_id: 3)
