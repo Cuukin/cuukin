@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   after_create :set_username
   before_update :check_username_presence
-  after_create :async_set_avatar
+  # after_create :async_set_avatar
   after_touch :update_user_level
   after_touch :update_user_cuukies
 
@@ -66,10 +66,10 @@ class User < ApplicationRecord
     set_username if !(self.username) || self.username == ""
   end
 
-  def async_set_avatar
+  # def async_set_avatar
     # Calls background job to set avatar when user creates profile
-    SetAvatarJob.perform_later(self)
-  end
+    # SetAvatarJob.perform_later(self)
+  # end
 
   def update_user_level
     unless self.lesson_validations.empty?
