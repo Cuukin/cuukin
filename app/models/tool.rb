@@ -1,6 +1,7 @@
 class Tool < ApplicationRecord
-  validates :name, :category, presence: true
+  belongs_to :badge
+  has_many :recipe_tools
+
+  validates :name, :score_1, :score_2, :suggested_product, presence: true
   validates :name, uniqueness: true
-  enum category: ['pots and pans', 'mechanicals', 'heating',
-    'containers', 'cutting', 'utensils', 'disposables', 'refrigerators']
 end

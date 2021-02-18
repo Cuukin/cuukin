@@ -1,8 +1,8 @@
-class CreateRecipeTools < ActiveRecord::Migration[6.0]
+class CreateRecipeTechniques < ActiveRecord::Migration[6.0]
   def change
-    create_table :recipe_tools do |t|
+    create_table :recipe_techniques do |t|
       t.references :recipe, null: false, foreign_key: true
-      t.references :tool, null: false, foreign_key: true
+      t.references :technique, null: false, foreign_key: true
       t.boolean :optional, null: false, default: false
 
       t.timestamps

@@ -68,15 +68,41 @@ end
 
 puts "Remember them to confirm their emails and change their password 🍕"
 
+# Badges
+# Ingredient Badges
 
-# Skills
+ingredient_badges = ['Root Vegetables', 'Bulbs', 'Greens', 'not Veggies', 'Fruits', 'Seeds and Grains',
+                    'Legumes', 'Funghi', 'Chicken', 'Beef', 'Pork', 'Fish', 'Seafood', 'Eggs', 'Dairy',
+                    'Fats and Oils', 'Condiments', 'Herbs and Spices', 'Cooking Alcohols', 'Stocks and Sauces',
+                    'Sweeteners and Chocolate', 'Bread, Flour and Pasta']
 
-# skills = %w(Chopping Seasoning Oven CookPasta CookVegetables CookChicken CookRice PanFry Platting FreshPasta)
+ingredient_badges.each do |i_badge|
+  new_badge = Badge.new(name: i_badge)
+  new_badge.category = 'ingredient'
+  new_badge.save
+end
 
-# skills.each do |skill|
-#   new_skill = Skill.create(name: skill)
-#   puts "Created #{new_skill.name} skill"
-# end
+# Tool Badges
+
+tool_badges = ['Cutting', 'Utensils', 'Pots and Pans', 'Containers', 'Disposables',
+              'Heating', 'Storage', 'Appliances']
+
+tool_badges.each do |t_badge|
+  new_badge = Badge.new(name: t_badge)
+  new_badge.category = 'tool'
+  new_badge.save
+end
+
+# Technique Badges
+
+technique_badges = ['Chopping', 'Seasoning', 'Preserving', 'Mixing', 'Prepping',
+                    'Oven Cooking', 'Stove-top Cooking', 'Alternative Cooking']
+
+technique_badges.each do |tec_badge|
+  new_badge = Badge.new(name: tec_badge)
+  new_badge.category = 'technique'
+  new_badge.save
+end
 
 # Tools
 
@@ -87,25 +113,23 @@ containers = ['Baking Tray', 'Bowl', 'Colander', 'Ovenproof Container']
 cutting = ['Knife', 'Peeler', 'Grader']
 utensils = ['Spatula', 'Whisk', 'Cutting Board', 'Spoon', 'Fork']
 disposables = ['Cling Film', 'Paper Towels', 'Parchment Paper', 'Aluminum Foil']
-refrigerators = ['Fridge', 'Freezer']
 
 def create_tool(tools_array, category)
   tools_array.each do |tool|
     new_tool = Tool.new(name: tool)
-    new_tool.category = category
+    new_tool.badge = Badge.find_by(name: category)
     new_tool.save
-    puts "Created #{new_tool.name} under category #{new_tool.category}"
+    puts "Created #{new_tool.name} under Badge #{new_tool.badge.name}"
   end
 end
 
-create_tool(pots_and_pans, 'pots and pans')
-create_tool(mechanicals, 'mechanicals')
-create_tool(heating, 'heating')
-create_tool(containers, 'containers')
-create_tool(cutting, 'cutting')
-create_tool(utensils, 'utensils')
-create_tool(disposables, 'disposables')
-create_tool(refrigerators, 'refrigerators')
+create_tool(pots_and_pans, 'Pots and Pans')
+create_tool(mechanicals, 'Utensils')
+create_tool(heating, 'Heating')
+create_tool(containers, 'Containers')
+create_tool(cutting, 'Cutting')
+create_tool(utensils, 'Utensils')
+create_tool(disposables, 'Disposables')
 
 # Ingredients
 
@@ -135,46 +159,46 @@ sauces = ['Tomato Sauce', 'Bechamel Sauce', 'Tartar Sauce', 'Vegetable Stock', '
 def create_ingredient(ingredients_array, category)
   ingredients_array.each do |ingredient|
     new_ingredient = Ingredient.new(name: ingredient)
-    new_ingredient.category = category
+    new_ingredient.badge = Badge.find_by(name: category)
     new_ingredient.save
-    puts "Created #{new_ingredient.name} under category #{new_ingredient.category}"
+    puts "Created #{new_ingredient.name} under Badge #{new_ingredient.badge.name}"
   end
 end
 
-create_ingredient(fruits, 'fruits')
-create_ingredient(fake_veggies, 'fake veggies')
-create_ingredient(seeds_grains, 'seeds and grains')
-create_ingredient(stem_greens, 'stem greens')
-create_ingredient(leafy_greens, 'leafy greens')
-create_ingredient(bulbs, 'bulbs')
-create_ingredient(roots, 'roots')
-create_ingredient(herbs, 'herbs')
-create_ingredient(bread, 'bread')
-create_ingredient(pasta, 'pasta')
-create_ingredient(sweets, 'sweets')
-create_ingredient(fats_oil, 'fats and oils')
-create_ingredient(chicken, 'chicken')
-create_ingredient(pork, 'pork')
-create_ingredient(beef, 'beef')
-create_ingredient(fish, 'fish')
-create_ingredient(eggs, 'eggs')
-create_ingredient(funghi, 'funghi')
-create_ingredient(seafood, 'seafood')
-create_ingredient(dairy, 'dairy')
-create_ingredient(seasonings, 'seasonings')
-create_ingredient(sauces, 'sauces')
+create_ingredient(fruits, 'Fruits')
+create_ingredient(fake_veggies, 'not Veggies')
+create_ingredient(seeds_grains, 'Seeds and Grains')
+create_ingredient(stem_greens, 'Greens')
+create_ingredient(leafy_greens, 'Greens')
+create_ingredient(bulbs, 'Bulbs')
+create_ingredient(roots, 'Root Vegetables')
+create_ingredient(herbs, 'Herbs and Spices')
+create_ingredient(bread, 'Bread, Flour and Pasta')
+create_ingredient(pasta, 'Bread, Flour and Pasta')
+create_ingredient(sweets, 'Sweeteners and Chocolate')
+create_ingredient(fats_oil, 'Fats and Oils')
+create_ingredient(chicken, 'Chicken')
+create_ingredient(pork, 'Pork')
+create_ingredient(beef, 'Beef')
+create_ingredient(fish, 'Fish')
+create_ingredient(eggs, 'Eggs')
+create_ingredient(funghi, 'Funghi')
+create_ingredient(seafood, 'Seafood')
+create_ingredient(dairy, 'Dairy')
+create_ingredient(seasonings, 'Herbs and Spices')
+create_ingredient(sauces, 'Stocks and Sauces')
 
 # Books, Lessons and Recipes
 
 book_1 = {
-  name: 'Kitchen SOS'
+  title: 'Kitchen SOS',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'newbie',
   xp: 100
 }
 
 book_2 = {
-  name: 'Kitchen Basics'
+  title: 'Kitchen Basics',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'chef_in_progress',
   xp: 100
@@ -184,7 +208,7 @@ books = [book_1, book_2]
 
 books.each do |book|
   new_book = Book.create(book)
-  puts "Created #{new_book.name} 📗"
+  puts "Created #{new_book.title} 📗"
 end
 
 recipe_1 = {
@@ -215,7 +239,7 @@ recipes.each do |recipe|
 end
 
 lesson_1 = {
-  name: 'Avotoast',
+  title: 'Avotoast',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 1,
   book_id: 1,
@@ -223,7 +247,7 @@ lesson_1 = {
 }
 
 lesson_2 = {
-  name: 'Spaghetti al Carbonara',
+  title: 'Spaghetti al Carbonara',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 2,
   book_id: 1,
@@ -231,7 +255,7 @@ lesson_2 = {
 }
 
 lesson_3 = {
-  name: 'Baked Portobello',
+  title: 'Baked Portobello',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 3,
   book_id: 1,
@@ -239,7 +263,7 @@ lesson_3 = {
 }
 
 lesson_4 = {
-  name: 'Strawberry Fondue',
+  title: 'Strawberry Fondue',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 4,
   book_id: 1,
@@ -250,11 +274,69 @@ lessons = [lesson_1, lesson_2, lesson_3, lesson_4]
 
 lessons.each do |lesson|
   new_lesson = Lesson.create(lesson)
-  puts "Created #{new_lesson.name} 🌯"
+  puts "Created #{new_lesson.title} 🌯"
 end
 
 recipe_method_1 = {
   recipe_id: 1,
+  title: 'Heating Oil',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
+
+recipe_method_2 = {
+  recipe_id: 1,
+  title: 'Chopping Onions',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_methods = [recipe_method_1, recipe_method_2]
+
+recipe_methods.each do |recipe_method|
+  new_recipe_method = RecipeMethod.create(recipe_method)
+  puts "Created #{new_recipe_method.title}"
+end
+
+skill_chapter_1 = {
+  lesson_id: 1,
+  badge_id: 1,
+  title: 'Onions 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_2 = {
+  lesson_id: 1,
+  badge_id: 2,
+  title: 'Oil 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_3 = {
+  lesson_id: 1,
+  badge_id: 3,
+  title: 'Carrots',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3]
+
+skill_chapters.each do |skill_chapter|
+  new_skill_chapter = SkillChapter.create(skill_chapter)
+  puts "Created #{new_skill_chapter.title}"
+end
+
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, measure: 2, unit: 'tbsp')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, measure: 4, unit: 'lts')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 4, measure: 1)
+
+RecipeTool.create(recipe_id: 1, tool_id: 1)
+RecipeTool.create(recipe_id: 1, tool_id: 2)
+RecipeTool.create(recipe_id: 1, tool_id: 3)
+
+RecipeTechnique.create(recipe_id: 1, technique_id: 1)
+RecipeTechnique.create(recipe_id: 1, technique_id: 2)
+RecipeTechnique.create(recipe_id: 1, technique_id: 3)

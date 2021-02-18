@@ -4,5 +4,6 @@ class Lesson < ApplicationRecord
   has_one_attached :photo # change this to photo url as string later
   has_many :skill_chapters, dependent: :destroy
   has_many :skill_badges, through: :skill_chapters
-  validates :name, :description, :xp, presence: true
+
+  validates :title, :description, :xp, presence: true
 end
