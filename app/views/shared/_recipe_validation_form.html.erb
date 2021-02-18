@@ -18,28 +18,30 @@
         <!-- <legend class="col-form-label pt-0">Rating</legend> -->
         <input type="hidden" name="lesson_validation[difficulcy]" value="">
 
-        <div class="form-check lesson-validation-options">
-          <input class="form-check-input radio_buttons optional" type="radio" value="easy" name="restaurant[rating]" id="lesson_validation_difficulcy_1">
-          <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_1">
-            <%= image_tag('lesson-validation-icon-1') %>
-            <p>Piece of cake</p>
-          </label>
-        </div>
+        <div class="lesson-validation-options-container">
+          <div class="form-check lesson-validation-options">
+            <input class="form-check-input radio_buttons" type="radio" value="easy" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_1">
+            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_1">
+              <%= image_tag('lesson-validation-icon-1') %>
+              <p>Piece of cake</p>
+            </label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input radio_buttons optional" type="radio" value="medium" name="restaurant[rating]" id="lesson_validation_difficulcy_2">
-          <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_2">
-            <%= image_tag('lesson-validation-icon-2') %>
-            <p>Just right</p>
-          </label>
-        </div>
+          <div class="form-check lesson-validation-options">
+            <input class="form-check-input radio_buttons" type="radio" value="medium" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_2">
+            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_2">
+              <%= image_tag('lesson-validation-icon-2') %>
+              <p>Just right</p>
+            </label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input radio_buttons optional" type="radio" value="hard" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_3">
-          <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_3">
-            <%= image_tag('lesson-validation-icon-3') %>
-            <p>Burnt it all</p>
-          </label>
+          <div class="form-check lesson-validation-options">
+            <input class="form-check-input radio_buttons" type="radio" value="hard" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_3">
+            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_3">
+              <%= image_tag('lesson-validation-icon-3') %>
+              <p>Burnt it all</p>
+            </label>
+          </div>
         </div>
 
       </fieldset>
