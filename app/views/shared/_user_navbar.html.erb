@@ -1,7 +1,7 @@
 <div class="container-user-navbar">
   <div class="nv-user-item">
     <%= image_tag('nv-1-level.svg', class: 'nv-level' ) %>
-    <p id="nv-level">0</p>
+    <p id="nv-level"><%= current_user.level %></p>
   </div>
   <div class="nv-user-item">
     <%= image_tag('nv-2-xp.svg', class: 'nv-xp') %>
@@ -9,7 +9,7 @@
   </div>
   <div class="nv-user-item">
     <%= image_tag('nv-3-cuukie.svg', class: 'nv-cuukie') %>
-    <p id="nv-cuukie">0</p>
+    <p id="nv-cuukie"><%= current_user.cuukies %></p>
   </div>
   <div class="nv-user-item">
     <%= image_tag('nv-4-dish.svg', class: 'nv-dish') %>
@@ -20,20 +20,28 @@
 
 <div class="container-user-navbar-footer">
   <%= link_to root_path, class: 'journey-icons' do %>
-    <%= image_tag('journey.svg', class: 'journey') %>
-    <%= image_tag('journey-active.svg', class: 'journey-active') %>
+    <% if params[:controller] == 'books' %>
+      <%= image_tag('journey-active.svg', class: 'journey-active') %>
+    <% else %>
+      <%= image_tag('journey.svg', class: 'journey') %>
+    <% end %>
   <% end %>
   <%= link_to root_path, class: 'book-icons' do %>
-    <%= image_tag('book.svg', class: 'book') %>
-    <%= image_tag('book-active.svg', class: 'book-active') %>
+    <% if params[:controller] == 'lessons' %>
+      <%= image_tag('book-active.svg', class: 'book-active') %>
+    <% else %>
+      <%= image_tag('book.svg', class: 'book') %>
+    <% end %>
   <% end %>
   <%= link_to root_path, class: 'community-icons' do %>
     <%= image_tag('community.svg', class: 'community') %>
-    <%= image_tag('community-active.svg', class: 'community-active') %>
   <% end %>
   <%= link_to user_path(current_user), class: 'profile-icons' do %>
-    <%= image_tag('profile.svg', class: 'profile') %>
-    <%= image_tag('profile-active.svg', class: 'profile-active') %>
+    <% if params[:controller] == 'users' %>
+      <%= image_tag('profile-active.svg', class: 'profile-active') %>
+    <% else %>
+      <%= image_tag('profile.svg', class: 'profile') %>
+    <% end %>
   <% end %>
 </div>
 

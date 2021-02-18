@@ -28,12 +28,12 @@
 }
 
 .nv-user-item {
+  text-align: center;
 
   p {
     margin: 0;
     font-size: 14pt;
-    font-weight: 600;
-    text-align: center;
+    font-weight: 500;
   }
 
   #nv-level {
@@ -69,77 +69,77 @@
 }
 
 
-.journey-icons {
-  .journey {
-    display: block;
-  }
-  .journey-active {
-    display: none;
-  }
-}
+// .journey-icons {
+//   .journey {
+//     display: block;
+//   }
+//   .journey-active {
+//     display: none;
+//   }
+// }
 
-.journey-icons:hover, .journey-icons:active {
-  .journey {
-    display: none;
-  }
-  .journey-active {
-    display: block;
-  }
-}
+// .journey-icons:hover, .journey-icons:active {
+//   .journey {
+//     display: none;
+//   }
+//   .journey-active {
+//     display: block;
+//   }
+// }
 
-.book-icons {
-  .book {
-    display: none;
-  }
-  .book-active {
-    display: block;
-  }
-}
+// .book-icons {
+//   .book {
+//     display: none;
+//   }
+//   .book-active {
+//     display: block;
+//   }
+// }
 
-.book-icons:hover, .book-icons:active {
-  .book {
-    display: none;
-  }
-  .book-active {
-    display: block;
-  }
-}
+// .book-icons:hover, .book-icons:active {
+//   .book {
+//     display: none;
+//   }
+//   .book-active {
+//     display: block;
+//   }
+// }
 
-.community-icons {
-  .community {
-    display: block;
-  }
-  .community-active {
-    display: none;
-  }
-}
+// .community-icons {
+//   .community {
+//     display: block;
+//   }
+//   .community-active {
+//     display: none;
+//   }
+// }
 
-.community-icons:hover, .community-icons:active {
-  .community {
-    display: none;
-  }
-  .community-active {
-    display: block;
-  }
-}
+// .community-icons:hover, .community-icons:active {
+//   .community {
+//     display: none;
+//   }
+//   .community-active {
+//     display: block;
+//   }
+// }
 
-.profile-icons {
-  .profile {
-    display: block;
-  }
-  .profile-active {
-    display: none;
-  }
-}
+// .profile-icons {
+//   .profile {
+//     display: block;
+//   }
+//   .profile-active {
+//     display: none;
+//   }
+// }
 
-.profile-icons:hover, .profile-icons:active {
-  .profile {
-    display: none;
-  }
-  .profile-active {
-    display: block;
-  }
-}
+// .profile-icons:hover, .profile-icons:active {
+//   .profile {
+//     display: none;
+//   }
+//   .profile-active {
+//     display: block;
+//   }
+// }
 
 // Expanded Navbar
 
