@@ -37,7 +37,7 @@
     <%= image_tag('community.svg', class: 'community') %>
   <% end %>
   <%= link_to user_path(current_user), class: 'profile-icons' do %>
-    <% if params[:controller] == 'users' %>
+    <% if params[:controller] == 'users' || params[:controller] == 'devise/registrations' %>
       <%= image_tag('profile-active.svg', class: 'profile-active') %>
     <% else %>
       <%= image_tag('profile.svg', class: 'profile') %>
