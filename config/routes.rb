@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :books, only: [ :show ]
   resources :lessons, only: [ :show ] do
-    resources :lesson_validation, only: [ :create ]
+    resources :lesson_validations, only: [ :create ]
   end
 
   # get '/lesson', to: "pages#lesson" # this will be show on lesson controller

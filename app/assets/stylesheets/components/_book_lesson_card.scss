@@ -1,0 +1,64 @@
+.container-book-lesson {
+  padding: 40px;
+
+  h1 {
+    color: $cuukin;
+  }
+
+  p {
+    color: $black;
+  }
+
+  img {
+    height: 80px;
+  }
+}
+
+.book-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+
+  p {
+    margin: 0 16px 0 0;
+  }
+}
+
+.container-lesson-card {
+  position: relative;
+
+  img {
+    height: 56px;
+    position: absolute;
+    top: 32px;
+    left: -28px;
+  }
+}
+
+.lesson-card {
+  background-color: $white;
+  border-radius: 16px;
+  padding: 24px 40px;
+  margin: 16px 0;
+
+  p {
+    color: $dark-gray;
+    margin: 0;
+  }
+
+  h2 {
+    color: $black;
+  }
+}
+
+.lesson-card:hover {
+  background-color: $cuukin;
+
+  p {
+    color: $dark-red;
+  }
+  h2 {
+    color: $white;
+  }
+}

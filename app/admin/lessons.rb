@@ -1,6 +1,6 @@
 ActiveAdmin.register Lesson do
 
-  permit_params :name, :description, :xp, :photo, :book_id, :recipe_id
+  permit_params :title, :description, :xp, :photo, :book_id, :recipe_id
 
   # form do |f|
   #   f.inputs do
