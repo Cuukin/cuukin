@@ -1,5 +1,5 @@
 ActiveAdmin.register Book do
 
-  permit_params :name, :description, :xp, :level
+  permit_params :title, :description, :xp, :level
 
 end
