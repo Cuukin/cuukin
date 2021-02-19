@@ -6,8 +6,8 @@ const previewImageOnFileSelect = () => {
     input.addEventListener('change', () => {
       // we call the displayPreview function (who retrieve the image url and display it)
       displayPreview(input);
-    })
-  }
+    });
+  };
 }
 
 const displayPreview = (input) => {
@@ -17,8 +17,11 @@ const displayPreview = (input) => {
       document.getElementById('photo-preview').src = event.currentTarget.result;
     }
     reader.readAsDataURL(input.files[0])
-    document.getElementById('photo-preview').classList.remove('hidden');
-  }
+    const photoPreview = document.getElementById('photo-preview')
+    if (photoPreview) {
+      photoPreview.classList.remove('hidden');
+    };
+  };
 }
 
 export { previewImageOnFileSelect };
