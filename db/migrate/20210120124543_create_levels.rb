@@ -3,7 +3,7 @@ class CreateLevels < ActiveRecord::Migration[6.0]
     create_table :levels do |t|
       t.string :name
       t.text :description
-      t.integer :xp
+      t.integer :xp, null: false, default: 0
 
       t.timestamps
     end
