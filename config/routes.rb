@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [ :show, :edit, :update ]
 
+  authenticated :user do
+    root to: 'books#show', as: 'authenticated_root'
+  end
+
   # Pages
   root to: 'pages#home'
   get '/community', to: "pages#community"
