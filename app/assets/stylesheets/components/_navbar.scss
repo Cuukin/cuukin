@@ -36,6 +36,10 @@
     font-weight: 500;
   }
 
+  img {
+    height: 24px;
+  }
+
   #nv-level {
     color: #FFFFFF;
   }
@@ -53,6 +57,10 @@
   }
 }
 
+#open-btn {
+  height: 20px;
+}
+
 // User Footer Navbar
 
 .container-user-navbar-footer {
@@ -67,79 +75,6 @@
   justify-content: space-around;
   z-index: 100;
 }
-
-
-// .journey-icons {
-//   .journey {
-//     display: block;
-//   }
-//   .journey-active {
-//     display: none;
-//   }
-// }
-
-// .journey-icons:hover, .journey-icons:active {
-//   .journey {
-//     display: none;
-//   }
-//   .journey-active {
-//     display: block;
-//   }
-// }
-
-// .book-icons {
-//   .book {
-//     display: none;
-//   }
-//   .book-active {
-//     display: block;
-//   }
-// }
-
-// .book-icons:hover, .book-icons:active {
-//   .book {
-//     display: none;
-//   }
-//   .book-active {
-//     display: block;
-//   }
-// }
-
-// .community-icons {
-//   .community {
-//     display: block;
-//   }
-//   .community-active {
-//     display: none;
-//   }
-// }
-
-// .community-icons:hover, .community-icons:active {
-//   .community {
-//     display: none;
-//   }
-//   .community-active {
-//     display: block;
-//   }
-// }
-
-// .profile-icons {
-//   .profile {
-//     display: block;
-//   }
-//   .profile-active {
-//     display: none;
-//   }
-// }
-
-// .profile-icons:hover, .profile-icons:active {
-//   .profile {
-//     display: none;
-//   }
-//   .profile-active {
-//     display: block;
-//   }
-// }
 
 // Expanded Navbar
 

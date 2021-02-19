@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25.267" height="24.03" viewBox="0 0 25.267 24.03">
-  <g id="star" transform="translate(0 -12.27)">
-    <path id="Caminho_1586" data-name="Caminho 1586" d="M263.273,21.449l-8.368-1.766L250.64,12.27V32.81l7.808,3.49-.906-8.5Z" transform="translate(-238.007)" fill="#80ecc6"/>
-    <path id="Caminho_1587" data-name="Caminho 1587" d="M8.368,19.682,0,21.449,5.732,27.8l-.906,8.5,7.808-3.49V12.27Z" fill="#9fc"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 25.3 24" style="enable-background:new 0 0 25.3 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#80ECC6;}
+	.st1{fill:#99FFCC;}
+</style>
+<g id="star" transform="translate(0 -12.27)">
+	<path id="Caminho_1586" class="st0" d="M25.3,21.4l-8.4-1.8l-4.3-7.4v20.5l7.8,3.5l-0.9-8.5L25.3,21.4z"/>
+	<path id="Caminho_1587" class="st1" d="M8.4,19.7L0,21.4l5.7,6.4l-0.9,8.5l7.8-3.5V12.3L8.4,19.7z"/>
+</g>
 </svg>
