@@ -25,10 +25,21 @@
   }
 }
 
+.container-lesson-card {
+  position: relative;
+
+  img {
+    height: 56px;
+    position: absolute;
+    top: 32px;
+    left: -28px;
+  }
+}
+
 .lesson-card {
   background-color: $white;
   border-radius: 16px;
-  padding: 24px;
+  padding: 24px 40px;
   margin: 16px 0;
 
   p {
