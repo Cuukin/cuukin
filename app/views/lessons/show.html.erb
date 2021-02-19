@@ -6,21 +6,21 @@
 <div class="container-lesson-overview">
   <div class="lesson-prev-btn"><%= link_to icon('fas', 'chevron-left'), :back, class: 'prev-btn' %></div>
 
-  <div class="lesson-photo" style="background-image: url('<%= image_path "lesson-photo.png"%>')">
+  <div class="lesson-photo" style="background-image: url('<%= image_path "#{@lesson.recipe.photo_url}"%>')">
   </div>
 
   <div class="card-lesson-overview">
     <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-    <h2 class="text-center">Balsamic Carrots</h2>
+    <h2 class="text-center"><%= @lesson.title %></h2>
 
     <ul class="lesson-overview-details">
       <li>
         <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
-        60 min
+        <%= @lesson.recipe.prep_time %>
       </li>
       <li>
         <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
-        Level 1
+        Level <%= @lesson.book.level.capitalize %>
       </li>
       <li>
         <%= image_tag('lesson-ingredient.svg', class: 'lesson-icons') %>
@@ -147,7 +147,7 @@
 
     <div class="container-lesson-chapter">
       <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
       </div>
 
       <div class="card-lesson-chapter">
@@ -161,7 +161,7 @@
 
     <div class="container-lesson-chapter">
       <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
       </div>
 
       <div class="card-lesson-chapter">
@@ -175,7 +175,7 @@
 
     <div class="container-lesson-recipe">
       <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
       </div>
 
       <div class="card-lesson-recipe">
@@ -193,7 +193,7 @@
 
     <div class="container-lesson-recipe">
       <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
       </div>
 
       <div class="card-lesson-recipe">
@@ -211,7 +211,7 @@
 
     <div class="container-lesson-recipe">
       <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1612883783/Cuukin-prot2_at3nly.mp4" controls></video>
+        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
       </div>
 
       <div class="card-lesson-recipe">
