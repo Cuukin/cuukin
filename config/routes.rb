@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Pages
   root to: 'pages#home'
   get '/community', to: "pages#community"
+  get '/credits', to: "pages#credits"
 
   # Journey, Book, Lesson and Lesson Validation
   resources :books, only: [ :show ]

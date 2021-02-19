@@ -1,4 +1,4 @@
-.container-community {
+.container-center-pages {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -10,13 +10,13 @@
     margin-bottom: 1.5em;
   }
 
-  img {
+  .construction-img {
     width: 340px;
     margin-bottom: 40px;
   }
 }
 
-.community-content {
+.center-pages-content {
   right: 50%;
   bottom: 50%;
   transform: translate(50%,50%);
@@ -24,10 +24,28 @@
   padding: 8px;
 }
 
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 11px;
+    width: 11px;
+    margin: 0 4px 0 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 10px;
+    color: $dark-gray;
+  }
+}
+
 @media (max-width: 340px) {
   /* For a screen < 540px, this CSS will be read */
-  .container-community {
-    img {
+  .container-center-pages {
+    .construction-img {
       width: 240px;
     }
   }
@@ -35,8 +53,8 @@
 
 @media (max-width: 240px) {
   /* For a screen < 540px, this CSS will be read */
-  .container-community {
-    img {
+  .container-center-pages {
+    .construction-img {
       width: 140px;
     }
   }
