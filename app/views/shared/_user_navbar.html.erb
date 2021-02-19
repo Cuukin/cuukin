@@ -33,8 +33,12 @@
       <%= image_tag('book.svg', class: 'book') %>
     <% end %>
   <% end %>
-  <%= link_to root_path, class: 'community-icons' do %>
-    <%= image_tag('community.svg', class: 'community') %>
+  <%= link_to community_path, class: 'community-icons' do %>
+    <% if current_page?('/community') %>
+      <%= image_tag('community-active.svg', class: 'community-active') %>
+    <% else %>
+      <%= image_tag('community.svg', class: 'community') %>
+    <% end %>
   <% end %>
   <%= link_to user_path(current_user), class: 'profile-icons' do %>
     <% if params[:controller] == 'users' || params[:controller] == 'devise/registrations' %>
