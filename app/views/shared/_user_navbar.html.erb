@@ -19,7 +19,7 @@
 </div>
 
 <div class="container-user-navbar-footer">
-  <%= link_to root_path, class: 'journey-icons' do %>
+  <%= link_to book_path(1), class: 'journey-icons' do %>
     <% if params[:controller] == 'books' %>
       <%= image_tag('journey-active.svg', class: 'journey-active') %>
     <% else %>
