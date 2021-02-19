@@ -1,13 +1,3 @@
-// Content Container
-
-.content-container {
-  margin-top: 64px;
-}
-
-.user-content-container {
-  margin: 64px 0 56px;
-}
-
 // User navbar
 
 .container-user-navbar {
@@ -23,34 +13,41 @@
   z-index: 100;
 
   #open-btn {
+    height: 20px;
     cursor: pointer;
   }
 }
 
-.nv-user-item {
+.nb-user-item {
   text-align: center;
 
   p {
     margin: 0;
-    font-size: 14pt;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
   }
 
-  #nv-level {
-    color: #FFFFFF;
+  img {
+    height: 24px;
   }
+}
 
-  #nv-xp {
-    color: #A4EAD1;
-  }
+// User navbar top icons
 
-  #nv-cuukie {
-    color: #FFEA65;
-  }
+#nb-level {
+  color: #FFFFFF;
+}
 
-  #nv-dish {
-    color: #0D6E9A;
-  }
+#nb-xp {
+  color: #A4EAD1;
+}
+
+#nb-cuukie {
+  color: #FFEA65;
+}
+
+#nb-dish {
+  color: #0D6E9A;
 }
 
 // User Footer Navbar
@@ -66,80 +63,11 @@
   align-items: center;
   justify-content: space-around;
   z-index: 100;
+
+  img {
+    height: 28px;
+  }
 }
-
-
-// .journey-icons {
-//   .journey {
-//     display: block;
-//   }
-//   .journey-active {
-//     display: none;
-//   }
-// }
-
-// .journey-icons:hover, .journey-icons:active {
-//   .journey {
-//     display: none;
-//   }
-//   .journey-active {
-//     display: block;
-//   }
-// }
-
-// .book-icons {
-//   .book {
-//     display: none;
-//   }
-//   .book-active {
-//     display: block;
-//   }
-// }
-
-// .book-icons:hover, .book-icons:active {
-//   .book {
-//     display: none;
-//   }
-//   .book-active {
-//     display: block;
-//   }
-// }
-
-// .community-icons {
-//   .community {
-//     display: block;
-//   }
-//   .community-active {
-//     display: none;
-//   }
-// }
-
-// .community-icons:hover, .community-icons:active {
-//   .community {
-//     display: none;
-//   }
-//   .community-active {
-//     display: block;
-//   }
-// }
-
-// .profile-icons {
-//   .profile {
-//     display: block;
-//   }
-//   .profile-active {
-//     display: none;
-//   }
-// }
-
-// .profile-icons:hover, .profile-icons:active {
-//   .profile {
-//     display: none;
-//   }
-//   .profile-active {
-//     display: block;
-//   }
-// }
 
 // Expanded Navbar
 
@@ -157,26 +85,27 @@
   visibility: hidden;
 
   #close-btn {
-    height: 28px;
-    width: auto;
-    align-self: flex-end;
-    margin: 20px;
     cursor: pointer;
+    height: 28px;
+    align-self: flex-end;
+    margin: 32px 32px 0 0;
   }
 
   .expanded-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    top: -40%;
-    position: relative;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+    position: absolute;
 
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
       text-align: center;
-      font-size: 24pt;
+      font-size: 24px;
       font-family: 'Nunito', sans-serif;
     }
 
@@ -206,7 +135,7 @@
 
   a, a:hover, a:active {
     color: $white;
-    font-size: 16pt;
+    font-size: 16px;
   }
 }
 

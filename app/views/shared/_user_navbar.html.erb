@@ -1,62 +1,72 @@
 <div class="container-user-navbar">
-  <div class="nv-user-item">
-    <%= image_tag('nv-1-level.svg', class: 'nv-level' ) %>
-    <p id="nv-level"><%= current_user.level %></p>
+  <div class="nb-user-item" id="nb-level">
+    <%= image_tag('nb-1-level.svg') %>
+    <p><%= current_user.level %></p>
   </div>
-  <div class="nv-user-item">
-    <%= image_tag('nv-2-xp.svg', class: 'nv-xp') %>
-    <p id="nv-xp">0</p>
+  <div class="nb-user-item" id="nb-xp">
+    <%= image_tag('nb-2-xp.svg') %>
+    <p>0</p>
   </div>
-  <div class="nv-user-item">
-    <%= image_tag('nv-3-cuukie.svg', class: 'nv-cuukie') %>
-    <p id="nv-cuukie"><%= current_user.cuukies %></p>
+  <div class="nb-user-item" id="nb-cuukie">
+    <%= image_tag('nb-3-cuukie.svg') %>
+    <p><%= current_user.cuukies %></p>
   </div>
-  <div class="nv-user-item">
-    <%= image_tag('nv-4-dish.svg', class: 'nv-dish') %>
-    <p id="nv-dish">0</p>
+  <div class="nb-user-item" id="nb-dish">
+    <%= image_tag('nb-4-dish.svg') %>
+    <p>0</p>
   </div>
-  <%= image_tag('nv-menu.svg', id: 'open-btn') %>
+  <%= image_tag('nb-5-menu.svg', id: 'open-btn') %>
 </div>
 
 <div class="container-user-navbar-footer">
+
   <%= link_to book_path(1), class: 'journey-icons' do %>
     <% if params[:controller] == 'books' %>
-      <%= image_tag('journey-active.svg', class: 'journey-active') %>
+      <%= image_tag('nb-journey-active.svg', id: 'journey-active') %>
     <% else %>
-      <%= image_tag('journey.svg', class: 'journey') %>
+      <%= image_tag('nb-journey.svg', id: 'journey') %>
     <% end %>
   <% end %>
+
   <%= link_to root_path, class: 'book-icons' do %>
     <% if params[:controller] == 'lessons' %>
-      <%= image_tag('book-active.svg', class: 'book-active') %>
+      <%= image_tag('nb-book-active.svg', id: 'book-active') %>
     <% else %>
-      <%= image_tag('book.svg', class: 'book') %>
+      <%= image_tag('nb-book.svg', id: 'book') %>
     <% end %>
   <% end %>
-  <%= link_to root_path, class: 'community-icons' do %>
-    <%= image_tag('community.svg', class: 'community') %>
+
+  <%= link_to community_path, class: 'community-icons' do %>
+    <% if current_page?('/community') %>
+      <%= image_tag('nb-community-active.svg', id: 'community-active') %>
+    <% else %>
+      <%= image_tag('nb-community.svg', id: 'community') %>
+    <% end %>
   <% end %>
+
   <%= link_to user_path(current_user), class: 'profile-icons' do %>
     <% if params[:controller] == 'users' || params[:controller] == 'devise/registrations' %>
-      <%= image_tag('profile-active.svg', class: 'profile-active') %>
+      <%= image_tag('nb-profile-active.svg', id: 'profile-active') %>
     <% else %>
-      <%= image_tag('profile.svg', class: 'profile') %>
+      <%= image_tag('nb-profile.svg', id: 'profile') %>
     <% end %>
   <% end %>
+
 </div>
 
 <div class="expanded-navbar">
   <%= image_tag('btn-close.svg', id: 'close-btn') %>
   <div class="expanded-menu">
     <ul>
-      <li><%=link_to 'About Cuukin', 'https://www.cuukin.app/' %></li>
-      <li><%=link_to 'Sharing is Caring', 'https://www.cuukin.app/' %></li>
+      <li><%=link_to 'About Cuukin', 'https://www.cuukin.app/', target: '_blank' %></li>
+      <li><%=link_to 'Sharing is Caring', 'https://www.cuukin.app/', target: '_blank' %></li>
+      <li><%= link_to 'Credits', credits_path %></li>
       <li><%=link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
 
       <% if current_user.admin? %>
         <li>-</li>
-        <li><%= link_to "Admin Dashboard", admin_root_path %></li>
-        <li><%= link_to "Sidekiq", sidekiq_web_path %></li>
+        <li><%= link_to "Admin Dashboard", admin_root_path, target: '_blank' %></li>
+        <li><%= link_to "Sidekiq", sidekiq_web_path, target: '_blank' %></li>
       <% end %>
     </ul>
   </div>

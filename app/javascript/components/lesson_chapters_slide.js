@@ -10,7 +10,7 @@ const lessonChaptersSlide = () => {
 
   const nextBtn = document.querySelectorAll('.lesson-next-btn');
 
-  const prevBtn = document.querySelector('.prev-chap-btn');
+  const prevBtn = document.querySelector('#prev-chap-btn');
 
   let counter = 0;
 

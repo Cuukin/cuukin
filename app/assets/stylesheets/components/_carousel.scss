@@ -4,31 +4,29 @@
   overflow: hidden;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
-  padding: 24px 0;
+  padding: 16px 0;
 }
 
 .home-carousel-slide {
   width: 100%;
   display: flex;
   align-item: flex-end;
-  // position: relative;
-  // top: -40px;
 }
 
 .home-carousel-item {
   text-align: center;
   position: relative;
-  top: -64px;
+  top: -16px;
 
   h2 {
     color: $dark-red;
     font-weight: 800;
     margin-bottom: 16px;
-    font-size: 18pt;
+    font-size: 24px;
   }
 
   p {
-    font-size: 16pt;
+    font-size: 16px;
     margin: 0;
   }
 }
@@ -41,7 +39,7 @@
 .home-carousel-item-content {
   padding: 24px 24px 0;
   position: relative;
-  top: -64px;
+  top: -80px;
 }
 
 .carousel-img {
@@ -52,12 +50,12 @@
 
 .home-carousel-nav {
   position: relative;
-  top: -88px;
+  top: -56px;
 }
 
 .carousel-primary-btns {
   position: relative;
-  top: -80px;
+  top: -72px;
   padding: 0 16px;
 }
 
@@ -84,48 +82,24 @@
   opacity: 0.4;
 }
 
-.carousel-previous {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 24px;
+#nextBtn {
+  height: 48px;
+  display: block;
+  margin: 0 auto;
 }
 
-.previous-btn, .previous-btn:hover {
-  background-color: rgba(191, 191, 191, .5); // $light-gray
-  color: $white;
-  text-align: center;
-  font-size: 16pt;
-  padding: 10px 20px;
-  border-radius: 50%;
-  margin: 0 4px;
+.home-btn-back {
+  margin-left: 16px;
   z-index: 10;
   cursor: pointer;
+  height: 42px;
+  position: fixed;
 }
-
 
 .container-next-btn {
   display: flex;
   justify-content: center;
 }
-
-.next-btn, .next-btn:hover {
-  background-color: $cuukin;
-  color: $white;
-  text-align: center;
-  font-size: 16pt;
-  padding: 10px 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: auto;
-  cursor: pointer;
-}
-
-// @media (max-width: 960px) {
-//   /* For a screen < 960px, this CSS will be read */
-//   .home-carousel-container, .home-carousel-item, .carousel-img {
-//     width: 700px;
-//   }
-// }
 
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
