@@ -1,13 +1,3 @@
-// Content Container
-
-.content-container {
-  margin-top: 64px;
-}
-
-.user-content-container {
-  margin: 64px 0 56px;
-}
-
 // User navbar
 
 .container-user-navbar {
@@ -23,42 +13,41 @@
   z-index: 100;
 
   #open-btn {
+    height: 20px;
     cursor: pointer;
   }
 }
 
-.nv-user-item {
+.nb-user-item {
   text-align: center;
 
   p {
     margin: 0;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   img {
     height: 24px;
   }
-
-  #nv-level {
-    color: #FFFFFF;
-  }
-
-  #nv-xp {
-    color: #A4EAD1;
-  }
-
-  #nv-cuukie {
-    color: #FFEA65;
-  }
-
-  #nv-dish {
-    color: #0D6E9A;
-  }
 }
 
-#open-btn {
-  height: 20px;
+// User navbar top icons
+
+#nb-level {
+  color: #FFFFFF;
+}
+
+#nb-xp {
+  color: #A4EAD1;
+}
+
+#nb-cuukie {
+  color: #FFEA65;
+}
+
+#nb-dish {
+  color: #0D6E9A;
 }
 
 // User Footer Navbar
@@ -74,6 +63,10 @@
   align-items: center;
   justify-content: space-around;
   z-index: 100;
+
+  img {
+    height: 28px;
+  }
 }
 
 // Expanded Navbar
@@ -92,19 +85,20 @@
   visibility: hidden;
 
   #close-btn {
-    height: 28px;
-    width: auto;
-    align-self: flex-end;
-    margin: 20px;
     cursor: pointer;
+    height: 28px;
+    align-self: flex-end;
+    margin: 32px 32px 0 0;
   }
 
   .expanded-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    top: -40%;
-    position: relative;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+    position: absolute;
 
     ul {
       list-style: none;
