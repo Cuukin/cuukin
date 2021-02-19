@@ -213,22 +213,30 @@ end
 
 recipe_1 = {
   title: 'Avotoast',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  photo_url: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  prep_time: "30 min"
 }
 
 recipe_2 = {
   title: 'Spaghetti al Carbonara',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  photo_url: "https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  prep_time: "20 min"
 }
 
 recipe_3 = {
   title: 'Baked Portobello',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  photo_url: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1285&q=80",
+  prep_time: "40 min"
 }
 
 recipe_4 = {
   title: 'Strawberry Fondue',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  photo_url: "https://images.unsplash.com/photo-1588575866383-e2a07af0e7d6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+  prep_time: "30 min"
 }
 
 recipes = [recipe_1, recipe_2, recipe_3, recipe_4]
