@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit, :update ]
 
   authenticated :user do
-    root to: 'books#show', as: 'authenticated_root'
+    root to: 'books#index', as: 'authenticated_root'
   end
 
   # Pages

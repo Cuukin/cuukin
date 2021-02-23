@@ -1,0 +1,27 @@
+.journey-container {
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+  border-right: 1px solid $black;
+  border-left: 1px solid $black;
+
+  img {
+    width: 1200px;
+    position: relative;
+    right: 280px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .journey-container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .journey-container {
+    width: 100vw;
+  }
+}
