@@ -5,10 +5,11 @@
   font-weight: 500;
   background: white;
   border-radius: 2px;
+  margin: 0;
 }
 
 #photo-preview {
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 .bio:focus::placeholder {

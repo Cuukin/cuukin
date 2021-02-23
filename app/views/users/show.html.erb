@@ -1,28 +1,35 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-lg-6">
+<div class="profile-container">
 
-      <div class="card-user-profile">
+  <div class="profile-info">
+    <div class="profile-text-content">
+      <h2><%= current_user.username %></h2>
+      <h3>Level <%= current_user.level.capitalize %></h3>
+      <%= link_to edit_user_path(current_user) do %>
+        <p><%= icon('fas', 'cog') %>Edit Profile</p>
+      <% end %>
+    </div>
 
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-user-profile-avatar" %>
-        <% else %>
-          <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}", class: "card-user-profile-avatar" %>
-        <% end %>
-
-        <div class="card-user-profile-edit-container">
-          <%= link_to 'Edit profile', edit_user_path(current_user), class: 'btn-edit-profile' %>
-          <%= link_to 'Account settings', edit_user_registration_path(current_user), class: 'btn-edit-profile' %>
-        </div>
-
-        <div class="card-user-profile-info">
-          <h3><%= @user.name %></h3>
-          <p><%= current_user.username %></p>
-          <p class="card-user-profile-bio"><%= @user&.bio %></p>
-        </div>
-
-      </div>
-
+    <div class="profile-image-content">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}" %>
+      <% end %>
     </div>
   </div>
+
+  <hr class="">
+
+  <div class="profile-heading">
+    <hr>
+    <h4>AWARDS</h4>
+    <hr>
+  </div>
+
+  <div class="profile-heading">
+    <hr>
+    <h4>BADGES</h4>
+    <hr>
+  </div>
+
 </div>

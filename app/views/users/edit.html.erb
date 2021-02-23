@@ -1,11 +1,4 @@
 <div class="form-devise">
-
-  <%= link_to icon('fas', 'chevron-left'), :back %>
-
-  <div class="devise-header mb-3">
-    <h2>Edit Profile</h2>
-  </div>
-
   <%= simple_form_for(current_user, url: user_path(current_user), method: 'patch') do |f| %>
     <%= f.error_notification %>
 
@@ -30,9 +23,9 @@
                   placeholder: 'Learning how to cook to impress my friends' %>
     </div>
 
-    <div class="form-actions mt-3">
-      <%= f.button :submit, "Update", class: "primary-btn" %>
+    <div class="form-actions mt-3 double-btn">
+      <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+      <%= f.button :submit, "Update", class: "primary-btn ml-1" %>
     </div>
   <% end %>
-
 </div>
