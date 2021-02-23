@@ -1,52 +1,84 @@
-.card-user-profile {
-  background-color: white;
-  padding: 40px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-
-  .card-user-profile-avatar {
-    align-self: center;
-    border-radius: 50%;
-    height: 160px;
-    width: 160px;
-    object-fit: cover;
-  }
-
-  .card-user-profile-edit-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 24px;
-  }
-
-  .btn-edit-profile {
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: $light-gray;
-    background-color: $dark-gray;
-    font-size: 12px;
-    margin: 0 8px;
-  }
+.profile-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-.card-user-profile-info {
-  align-self: center;
-  text-align: center;
-  margin-top: 24px;
+.profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-text-content {
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: $cuukin;
+  }
 
   h3 {
-    color: $black;
+    margin-bottom: 16px;
   }
 
   p {
-    margin: 0;
+    font-size: 16px;
     color: $dark-gray;
+    padding: 6px 12px;
+    border: 1px solid $dark-gray;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0;
   }
 
-  .card-user-profile-bio {
-    margin-top: 16px;
+  i {
+    color: $gray;
+    margin-right: 8px;
+  }
+}
+
+.profile-image-content {
+  .edit-photo-btn {
+    height: 35px;
+    position: relative;
+    top: 46px;
+    left: 131px;
+  }
+
+  .user-img {
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.profile-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  hr {
+    border: 1px solid $gray;
+    width: 200px;
+    border-radius: 8px;
+  }
+
+  h4 {
+    color: $dark-gray;
+    margin: 0 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .profile-container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .profile-container {
+    width: 100vw;
   }
 }
