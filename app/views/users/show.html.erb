@@ -4,16 +4,19 @@
     <div class="profile-text-content">
       <h2><%= current_user.username %></h2>
       <h3>Level <%= current_user.level.capitalize %></h3>
-      <%= link_to edit_user_path(current_user) do %>
+      <%= link_to edit_user_registration_path(current_user) do %>
         <p><%= icon('fas', 'cog') %>Edit Profile</p>
       <% end %>
     </div>
 
     <div class="profile-image-content">
+      <%= link_to edit_user_path(current_user) do %>
+        <%= image_tag('edit-photo.svg', class: 'edit-photo-btn') %>
+      <% end %>
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img' %>
       <% else %>
-        <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}" %>
+        <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}", class: 'user-img' %>
       <% end %>
     </div>
   </div>

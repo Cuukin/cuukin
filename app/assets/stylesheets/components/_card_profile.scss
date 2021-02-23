@@ -38,7 +38,14 @@
 }
 
 .profile-image-content {
-  img {
+  .edit-photo-btn {
+    height: 35px;
+    position: relative;
+    top: 46px;
+    left: 131px;
+  }
+
+  .user-img {
     height: 130px;
     object-fit: cover;
     border-radius: 50%;
