@@ -24,6 +24,7 @@ import { lessonChaptersSlide } from '../components/lesson_chapters_slide';
 import { lessonServingCalc } from '../components/lesson_serving';
 import { recipeModal } from '../components/recipe_modal';
 import { lessonNutriData } from '../components/lesson_nutri_data';
+import { journeyMap } from '../components/journey_map';
 
 document.addEventListener('turbolinks:load', () => {
   togglePasswordVisibility();
@@ -34,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   lessonServingCalc();
   recipeModal();
   lessonNutriData();
+  journeyMap();
 });
