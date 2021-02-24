@@ -27,6 +27,7 @@ import { lessonNutriData } from '../components/lesson_nutri_data';
 import { journeyMap } from '../components/journey_map';
 
 document.addEventListener('turbolinks:load', () => {
+  journeyMap();
   togglePasswordVisibility();
   previewImageOnFileSelect();
   homeCarousel();
@@ -35,5 +36,4 @@ document.addEventListener('turbolinks:load', () => {
   lessonServingCalc();
   recipeModal();
   lessonNutriData();
-  journeyMap();
 });

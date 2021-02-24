@@ -1,8 +1,8 @@
 const lessonServingCalc = () => {
   const servingContainer = document.querySelector('.lesson-overview-serving');
-  const addBtn = servingContainer.querySelector('#plusBtn');
-  const minusBtn = servingContainer.querySelector('#minusBtn');
-  const servingNumber = servingContainer.querySelector('p');
+  const addBtn = document.querySelector('#plusBtn');
+  const minusBtn = document.querySelector('#minusBtn');
+  const servingNumber = document.querySelector('.serving-paragraph');
 
   const ingredientMeasures = document.querySelectorAll('.ingredient-measure span');
 
