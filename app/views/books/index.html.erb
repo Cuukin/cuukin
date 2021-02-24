@@ -1,3 +1,11 @@
 <div class="journey-container">
   <%= image_tag('journey-map.svg') %>
+  <div class="journey-books-icons">
+    <%= link_to book_path(1) do %>
+      <%= image_tag('book1-icon.svg', id: 'book1') %>
+    <% end %>
+    <%= link_to book_path(2) do %>
+      <%= image_tag('book2-icon.svg', id: 'book2') %>
+    <% end %>
+  </div>
 </div>
