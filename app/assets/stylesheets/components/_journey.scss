@@ -1,0 +1,48 @@
+.journey-container {
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+  border-right: 1px solid $black;
+  border-left: 1px solid $black;
+  position: relative;
+
+  img {
+    width: 1200px;
+    position: relative;
+    right: 280px;
+  }
+}
+
+.journey-books-icons {
+  position: absolute;
+
+  img {
+    height: 68px;
+  }
+
+  #book1 {
+    // position: absolute;
+    top: -1434px;
+    left: -333px;
+  }
+
+  #book2 {
+    // position: absolute;
+    top: -1361px;
+    left: -350px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .journey-container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .journey-container {
+    width: 100vw;
+  }
+}

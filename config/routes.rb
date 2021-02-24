@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit, :update ]
 
   authenticated :user do
-    root to: 'books#show', as: 'authenticated_root'
+    root to: 'books#index', as: 'authenticated_root'
   end
 
   # Pages
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/credits', to: "pages#credits"
 
   # Journey, Book, Lesson and Lesson Validation
-  resources :books, only: [ :show ]
+  resources :books, only: [ :index, :show ]
   resources :lessons, only: [ :show ] do
     resources :lesson_validations, only: [ :create ]
   end
