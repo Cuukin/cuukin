@@ -134,7 +134,11 @@
       </div>
     </div>
 
-    <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+    <% if @current_lesson&.include?(@lesson) || @user_validations&.include?(@lesson) || @first_lesson.include?(@lesson) %>
+      <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+    <% else %>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Lesson Blocked</p>
+    <% end %>
   </div>
 </div>
 
