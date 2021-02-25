@@ -1,0 +1,34 @@
+.body-lighter-bg {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F0F0F0;
+}
+
+.welcome-container {
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  position: absolute;
+  width: 380px;
+}
+
+.welcome-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 880px) {
+  /* For a screen < 720px, this CSS will be read */
+  .welcome-container {
+    width: 330px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* For a screen < 720px, this CSS will be read */
+  .welcome-container {
+    width: 100vw;
+  }
+}

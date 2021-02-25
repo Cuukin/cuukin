@@ -21,7 +21,7 @@
 <div class="container-user-navbar-footer">
 
   <%= link_to books_path, class: 'journey-icons' do %>
-    <% if params[:controller] == 'books' %>
+    <% if params[:controller] == 'books' || current_page?('/welcome') %>
       <%= image_tag('nb-journey-active.svg', id: 'journey-active') %>
     <% else %>
       <%= image_tag('nb-journey.svg', id: 'journey') %>
