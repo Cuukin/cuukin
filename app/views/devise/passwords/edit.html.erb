@@ -1,29 +1,31 @@
-<div class="form-devise">
+<div class="body-white-bg">
+  <div class="form-devise">
 
-  <div class="devise-header mb-3">
-    <h2>Change your password</h2>
-    <%= image_tag('devise-password-reset.svg', class:'devise-img') %>
-    <p class="text-center mt-3">Your new password has to be different from previously used passwords</p>
+    <div class="devise-header mb-3">
+      <h2>Change your password</h2>
+      <%= image_tag('devise-password-reset.svg', class:'devise-img') %>
+      <p class="text-center mt-3">Your new password has to be different from previously used passwords</p>
+    </div>
+
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.full_error :reset_password_token %>
+
+      <div class="form-inputs">
+        <i class="far fa-eye-slash toggle-password"></i>
+        <%= f.input :password,
+                    label: false,
+                    placeholder: 'New Password',
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: "my-password" } %>
+      </div>
+
+      <div class="form-actions mt-3">
+        <%= f.button :submit, "Change my password", class: "primary-btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-
-    <%= f.input :reset_password_token, as: :hidden %>
-    <%= f.full_error :reset_password_token %>
-
-    <div class="form-inputs">
-      <i class="far fa-eye-slash toggle-password"></i>
-      <%= f.input :password,
-                  label: false,
-                  placeholder: 'New Password',
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "my-password" } %>
-    </div>
-
-    <div class="form-actions mt-3">
-      <%= f.button :submit, "Change my password", class: "primary-btn" %>
-    </div>
-  <% end %>
 </div>

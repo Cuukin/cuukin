@@ -1,53 +1,55 @@
-<div class="form-devise register-devise">
+<div class="body-white-bg">
+  <div class="form-devise register-devise">
 
-  <div class="devise-header mb-3">
-    <h2>Let's get you Cuukin!</h2>
-    <%= image_tag('devise-signup.svg', class:'devise-img') %>
-  </div>
+    <div class="devise-header mb-3">
+      <h2>Let's get you Cuukin!</h2>
+      <%= image_tag('devise-signup.svg', class:'devise-img') %>
+    </div>
 
-  <div class="social-btns mb-3">
-    <i class="fab fa-facebook"></i>
-    <i class="fab fa-google-plus"></i>
-    <i class="fab fa-twitter-square"></i>
-  </div>
+    <div class="social-btns mb-3">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-google-plus"></i>
+      <i class="fab fa-twitter-square"></i>
+    </div>
 
-  <p class="text-center mb-3">or</p>
+    <p class="text-center mb-3">or</p>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-        <%= f.input :first_name,
+      <div class="form-inputs">
+          <%= f.input :first_name,
+                      required: true,
+                      label: false,
+                      placeholder: 'First Name',
+                      input_html: { autocomplete: "first_name", class: "mb-3" }%>
+          <%= f.input :last_name,
+                      label: false,
+                      placeholder: 'Last Name (optional)',
+                      input_html: { autocomplete: "last_name", class: "mb-3" }%>
+
+        <%= f.input :email,
                     required: true,
                     label: false,
-                    placeholder: 'First Name',
-                    input_html: { autocomplete: "first_name", class: "mb-3" }%>
-        <%= f.input :last_name,
+                    placeholder: 'Email',
+                    input_html: { autocomplete: "email" }%>
+
+        <i class="far fa-eye-slash toggle-password"></i>
+        <%= f.input :password,
+                    required: true,
                     label: false,
-                    placeholder: 'Last Name (optional)',
-                    input_html: { autocomplete: "last_name", class: "mb-3" }%>
+                    placeholder: 'Password',
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password", class: "my-password" } %>
+      </div>
 
-      <%= f.input :email,
-                  required: true,
-                  label: false,
-                  placeholder: 'Email',
-                  input_html: { autocomplete: "email" }%>
+      <div class="form-actions mt-3">
+        <%= f.button :submit, "Sign Up", class: 'primary-btn mr-1' %>
+      </div>
+    <% end %>
 
-      <i class="far fa-eye-slash toggle-password"></i>
-      <%= f.input :password,
-                  required: true,
-                  label: false,
-                  placeholder: 'Password',
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "my-password" } %>
+    <div class="devise-extra-links">
+      <%= link_to "Already have an account? Log In", new_user_session_path, class: 'devise-p mt-4' %>
     </div>
-
-    <div class="form-actions mt-3">
-      <%= f.button :submit, "Sign Up", class: 'primary-btn mr-1' %>
-    </div>
-  <% end %>
-
-  <div class="devise-extra-links">
-    <%= link_to "Already have an account? Log In", new_user_session_path, class: 'devise-p mt-4' %>
   </div>
 </div>

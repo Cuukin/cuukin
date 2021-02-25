@@ -1,41 +1,43 @@
-<div class="form-devise register-devise">
+<div class="body-white-bg">
+  <div class="form-devise register-devise">
 
-  <div class="devise-header mb-3">
-    <h2>Welcome back!</h2>
-    <%= image_tag('devise-login.svg', class: 'devise-img') %>
-  </div>
-
-  <div class="social-btns mb-3">
-    <i class="fab fa-facebook"></i>
-    <i class="fab fa-google-plus"></i>
-    <i class="fab fa-twitter-square"></i>
-  </div>
-
-  <p class="text-center mb-3">or</p>
-
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  label: false,
-                  placeholder: 'Email',
-                  input_html: { autocomplete: "email" } %>
-      <i class="far fa-eye-slash toggle-password"></i>
-      <%= f.input :password,
-                  required: false,
-                  label: false,
-                  placeholder: 'Password',
-                  input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <div class="devise-header mb-3">
+      <h2>Welcome back!</h2>
+      <%= image_tag('devise-login.svg', class: 'devise-img') %>
     </div>
 
-    <div class="form-actions double-btn mt-3">
-      <%= f.button :submit, "Log In", class: 'primary-btn' %>
+    <div class="social-btns mb-3">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-google-plus"></i>
+      <i class="fab fa-twitter-square"></i>
     </div>
-  <% end %>
 
-  <div class="devise-extra-links">
-    <%= link_to "Forgot password?", new_user_password_path, class: 'devise-p mt-4' %>
-    <%= link_to "No account? Sign Up", new_user_registration_path, class: 'devise-p mt-1'  %>
+    <p class="text-center mb-3">or</p>
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    label: false,
+                    placeholder: 'Email',
+                    input_html: { autocomplete: "email" } %>
+        <i class="far fa-eye-slash toggle-password"></i>
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    placeholder: 'Password',
+                    input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions double-btn mt-3">
+        <%= f.button :submit, "Log In", class: 'primary-btn' %>
+      </div>
+    <% end %>
+
+    <div class="devise-extra-links">
+      <%= link_to "Forgot password?", new_user_password_path, class: 'devise-p mt-4' %>
+      <%= link_to "No account? Sign Up", new_user_registration_path, class: 'devise-p mt-1'  %>
+    </div>
   </div>
 </div>
