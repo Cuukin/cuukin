@@ -25,9 +25,11 @@ import { lessonServingCalc } from '../components/lesson_serving';
 import { recipeModal } from '../components/recipe_modal';
 import { lessonNutriData } from '../components/lesson_nutri_data';
 import { journeyMap } from '../components/journey_map';
+import { currenciesModal } from '../components/currencies_modal';
 
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
+  currenciesModal();
   togglePasswordVisibility();
   previewImageOnFileSelect();
   homeCarousel();
