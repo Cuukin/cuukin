@@ -9,11 +9,20 @@
     <%= image_tag('book-level-1.svg') %>
   </div>
 
-  <% @lessons.each do |lesson| %>
+  <% @lessons.each_with_index do |lesson, l_index| %>
     <%= link_to lesson_path(lesson) do %>
 
       <div class="container-lesson-card">
-        <%= image_tag('lesson-3-done.svg') %>
+        <% if l_index == 0 && !(@validated_lessons.include?(lesson)) %>
+          <%= image_tag('lesson-2-current.svg') %>
+        <% elsif @validated_lessons.include?(lesson) %>
+          <%= image_tag('lesson-3-done.svg') %>
+        <% elsif @validated_lessons.last == @lessons[l_index - 1]  %>
+          <%= image_tag('lesson-2-current.svg') %>
+        <% else %>
+          <%= image_tag('lesson-1-blocked.svg') %>
+        <% end %>
+
         <div class="lesson-card">
           <p>Duration: <%= lesson.recipe.prep_time %></p>
           <h2><%= lesson.title %></h2>
