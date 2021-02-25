@@ -33,6 +33,21 @@
   left: 742px;
 }
 
+.locate-btn-container {
+  position: absolute;
+  width: 500px;
+  height: 100vh;
+  margin: auto;
+}
+
+#locateBtn {
+  position: fixed;
+  cursor: pointer;
+  margin: 16px;
+  height: 42px;
+  width: 42px;
+}
+
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
