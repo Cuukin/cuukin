@@ -16,13 +16,17 @@ const lessonChaptersSlide = () => {
 
   if (lessonOverviewContainer) {
     lessonContainer.style.display = "none";
+  };
 
+  if (startLessonBtn) {
     startLessonBtn.addEventListener('click', () => {
       lessonOverviewContainer.style.display = "none";
       lessonContainer.style.display = "block";
       counter = 0;
     });
+  };
 
+  if (nextBtn) {
     nextBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
         let size = lessonChapter[0].clientWidth;
@@ -31,7 +35,9 @@ const lessonChaptersSlide = () => {
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
       });
     });
+  };
 
+  if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       counter -= 1;
 
