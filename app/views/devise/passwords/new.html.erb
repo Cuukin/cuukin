@@ -1,24 +1,26 @@
-<div class="form-devise">
+<div class="body-white-bg">
+  <div class="form-devise">
 
-  <div class="devise-header mb-3">
-    <h2>Reset password</h2>
-    <%= image_tag('devise-password-email.svg', class:'devise-img') %>
-    <p class="text-center mt-4">Please insert your email and check your inbox with the link to reset your password.</p>
+    <div class="devise-header mb-3">
+      <h2>Reset password</h2>
+      <%= image_tag('devise-password-email.svg', class:'devise-img') %>
+      <p class="text-center mt-4">Please insert your email and check your inbox with the link to reset your password.</p>
+    </div>
+
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: 'Email',
+                    input_html: { autocomplete: "email" } %>
+      </div>
+
+      <div class="form-actions mt-3">
+        <%= f.button :submit, "Send me password instructions", class: "primary-btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  label: false,
-                  placeholder: 'Email',
-                  input_html: { autocomplete: "email" } %>
-    </div>
-
-    <div class="form-actions mt-3">
-      <%= f.button :submit, "Send me password instructions", class: "primary-btn" %>
-    </div>
-  <% end %>
 </div>

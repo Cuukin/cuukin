@@ -1,22 +1,24 @@
-<div class="form-devise">
+<div class="body-white-bg">
+  <div class="form-devise">
 
-  <div class="devise-header mb-3">
-    <h2>Resend confirmation instructions</h2>
+    <div class="devise-header mb-3">
+      <h2>Resend confirmation instructions</h2>
+    </div>
+
+    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.full_error :confirmation_token %>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                    input_html: { autocomplete: "email" } %>
+      </div>
+
+      <div class="form-actions mt-3">
+        <%= f.button :submit, "Resend confirmation instructions", class: "primary-btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-    <%= f.error_notification %>
-    <%= f.full_error :confirmation_token %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                  input_html: { autocomplete: "email" } %>
-    </div>
-
-    <div class="form-actions mt-3">
-      <%= f.button :submit, "Resend confirmation instructions", class: "primary-btn" %>
-    </div>
-  <% end %>
 </div>

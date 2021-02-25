@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.5;fill:#BFBFBF;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g id="Locate_me_button" transform="translate(-255 -480)">
+	<path id="Locate_me" class="st0" d="M276,522L276,522c-11.6,0-21-9.4-21-21l0,0c0-11.6,9.4-21,21-21l0,0c11.6,0,21,9.4,21,21l0,0
+		C297,512.6,287.6,522,276,522z"/>
+	<path id="Icon_material-my-location" class="st1" d="M276,496.6c-2.4,0-4.3,1.9-4.3,4.3c0,2.4,1.9,4.3,4.3,4.3s4.3-1.9,4.3-4.3
+		c0,0,0,0,0,0C280.3,498.6,278.4,496.6,276,496.6C276,496.6,276,496.6,276,496.6z M285.7,499.9c-0.5-4.5-4.1-8.1-8.6-8.6V489h-2.2
+		v2.2c-4.5,0.5-8.1,4.1-8.6,8.6H264v2.2h2.2c0.5,4.5,4.1,8.1,8.6,8.6v2.2h2.2v-2.2c4.5-0.5,8.1-4.1,8.6-8.6h2.2v-2.2H285.7z
+		 M276,508.6c-4.2,0-7.6-3.4-7.6-7.6s3.4-7.6,7.6-7.6s7.6,3.4,7.6,7.6C283.6,505.2,280.2,508.6,276,508.6
+		C276,508.6,276,508.6,276,508.6z"/>
+</g>
+</svg>

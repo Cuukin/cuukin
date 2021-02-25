@@ -1,12 +1,16 @@
 <div class="journey-container">
-<!--   <div class="journey-content"> -->
+    <%= image_tag('journey-map-locate-btn.svg', id: 'locateBtn') %>
     <%= image_tag('journey-map.svg', class: 'journey-map') %>
 
-    <%= link_to book_path(1) do %>
-      <%= image_tag('book1-icon.svg', id: 'book1') %>
-    <% end %>
-    <%= link_to book_path(2) do %>
-      <%= image_tag('book2-icon.svg', id: 'book2') %>
-    <% end %>
-<!--   </div> -->
+    <div id="book1">
+      <%= link_to book_path(1) do %>
+        <%= image_tag('book1-icon.svg', class: 'book-icon') %>
+      <% end %>
+    </div>
+
+    <div id="book2">
+      <%= link_to book_path(2) do %>
+        <%= image_tag('book2-icon.svg', class: 'book-icon') %>
+      <% end %>
+    </div>
 </div>

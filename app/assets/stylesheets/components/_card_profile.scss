@@ -38,11 +38,13 @@
 }
 
 .profile-image-content {
+  position: relative;
+
   .edit-photo-btn {
     height: 35px;
-    position: relative;
-    top: 46px;
-    left: 131px;
+    position: absolute;
+    top: 96px;
+    left: 89px;
   }
 
   .user-img {
@@ -82,5 +84,19 @@
   /* For a screen < 540px, this CSS will be read */
   .profile-container {
     width: 100vw;
+  }
+}
+
+@media (max-width: 330px) {
+  .profile-image-content {
+    .user-img {
+      height: 100px;
+      width: 100px;
+    }
+    .edit-photo-btn {
+      height: 32px;
+      top: 73px;
+      left: 65px;
+    }
   }
 }
