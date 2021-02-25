@@ -17,8 +17,9 @@ class User < ApplicationRecord
   after_create :set_username
   before_update :check_username_presence
   # after_create :async_set_avatar
+  after_touch :update_user_xp
   after_touch :update_user_level
-  after_touch :update_user_cuukies
+  after_create :update_user_cuukies
 
   def name
     self.last_name ? "#{self.first_name.capitalize} #{self.last_name.capitalize}" : "#{self.first_name.capitalize}"
@@ -71,12 +72,19 @@ class User < ApplicationRecord
     # SetAvatarJob.perform_later(self)
   # end
 
+  def update_user_xp
+    unless self.lesson_validations.empty?
+      self.xp += self.lesson_validations.last.lesson.xp
+      self.save
+    end
+  end
+
   def update_user_level
     unless self.lesson_validations.empty?
       if self.lesson_validations.last.lesson.book.level != self.level
         last_book = Book.find_by(level: self.level)
         last_book_xp = last_book.xp
-        self.cuukies += last_book_xp
+        self.xp += last_book_xp
         self.level = self.lesson_validations.last.lesson.book.level
         self.save
       end
@@ -87,9 +95,13 @@ class User < ApplicationRecord
     # Unless user hasn't validated any lessons yet, then it adds to user cuukies
     # the xp value of the last lesson validated, then saves to DB
     # Method is called whenever a new lesson validation is created
-    unless self.lesson_validations.empty?
-      self.cuukies += self.lesson_validations.last.lesson.xp
-      self.save
-    end
+    # unless self.lesson_validations.empty?
+    #   self.cuukies += self.lesson_validations.last.lesson.xp
+    #   self.save
+    # end
+
+    # MVP - user gains 20 cuukies when signs up and in no other circumstance
+    self.cuukies = 20
+    self.save
   end
 end
