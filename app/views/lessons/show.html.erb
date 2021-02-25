@@ -5,7 +5,7 @@
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
-  <%= link_to :back do %>
+  <%= link_to book_path(@lesson.book) do %>
     <%= image_tag('btn-back.svg', class: 'btn-back') %>
   <% end %>
 
