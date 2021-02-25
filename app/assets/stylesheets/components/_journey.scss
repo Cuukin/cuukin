@@ -9,26 +9,37 @@
 
   img {
     width: 1400px;
-    height: 100%;
-    // display: block;
-    // margin: auto;
   }
 }
+
+// .journey-content {
+//   width: 1400px;
+// }
 
 #book1 {
   position: absolute;
   height: 80px;
-  width: 80px;
   top: 45px;
-  right: -180px;
+  left: -62px;
+
+  // position: absolute;
+  // height: 80px;
+  // width: 80px;
+  // top: 45px;
+  // right: -180px;
 }
 
 #book2 {
   position: absolute;
   height: 80px;
-  width: 80px;
   top: 209px;
-  right: -160px;
+  left: -82px;
+
+  // position: absolute;
+  // height: 80px;
+  // width: 80px;
+  // top: 209px;
+  // right: -160px;
 }
 
 @media (max-width: 500px) {
