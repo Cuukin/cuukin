@@ -11,6 +11,7 @@ const journeyMap = () => {
     locateBtn.addEventListener('click', () => {
 
       journeyContainer.scrollTo({
+        top: 0,
         left: (journeyImg.scrollWidth - journeyContainer.clientWidth) / 2.4,
         behavior: 'smooth'
       });
