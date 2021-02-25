@@ -1,5 +1,7 @@
 .container-book-lesson {
-  padding: 40px;
+  padding: 40px 16px;
+  width: 500px;
+  margin: 0 auto;
 
   h1 {
     color: $cuukin;
@@ -21,7 +23,7 @@
   margin-bottom: 32px;
 
   p {
-    margin: 0 16px 0 0;
+    margin: 0 40px 0 0;
   }
 }
 
@@ -60,5 +62,23 @@
   }
   h2 {
     color: $white;
+  }
+}
+
+.container-lessons-cards {
+  padding: 0 0 0 40px;
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-book-lesson {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-book-lesson {
+    width: 100vw;
   }
 }
