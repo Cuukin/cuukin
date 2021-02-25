@@ -13,11 +13,11 @@
     <%= link_to lesson_path(lesson) do %>
 
       <div class="container-lesson-card">
-        <% if l_index == 0 && !(@validated_lessons.include?(lesson)) %>
+        <% if l_index == 0 && @blocked_lessons.include?(lesson) %>
           <%= image_tag('lesson-2-current.svg') %>
         <% elsif @validated_lessons.include?(lesson) %>
           <%= image_tag('lesson-3-done.svg') %>
-        <% elsif @validated_lessons.last == @lessons[l_index - 1]  %>
+        <% elsif @open_lesson&.include?(lesson)  %>
           <%= image_tag('lesson-2-current.svg') %>
         <% else %>
           <%= image_tag('lesson-1-blocked.svg') %>
