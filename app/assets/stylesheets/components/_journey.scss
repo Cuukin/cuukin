@@ -7,39 +7,28 @@
   position: relative;
   touch-action: pan-x pan-y;
 
-  img {
-    width: 1400px;
+  .journey-map {
+    width: 1800px;
   }
 }
 
-// .journey-content {
-//   width: 1400px;
-// }
+.book-icon {
+  height: 105px;
+  width: 105px;
+}
 
 #book1 {
   position: absolute;
-  height: 80px;
-  top: 45px;
-  left: -62px;
-
-  // position: absolute;
-  // height: 80px;
-  // width: 80px;
-  // top: 45px;
-  // right: -180px;
+  width: 100%;
+  top: 57px;
+  left: 767px;
 }
 
 #book2 {
   position: absolute;
-  height: 80px;
-  top: 209px;
-  left: -82px;
-
-  // position: absolute;
-  // height: 80px;
-  // width: 80px;
-  // top: 209px;
-  // right: -160px;
+  width: 100%;
+  top: 268px;
+  left: 742px;
 }
 
 @media (max-width: 500px) {
