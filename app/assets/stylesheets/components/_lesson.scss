@@ -2,10 +2,17 @@
 
 .btn-back {
   height: 42px;
+  width: 42px;
   cursor: pointer;
   position: fixed;
   z-index: 10;
   margin: 16px 0 0 16px;
+}
+
+.recipe-next-btn {
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
 }
 
 // Lesson Overview [FIRST CARD]

@@ -11,14 +11,14 @@
   margin: 4px 0;
   cursor: pointer;
 
-  &:disabled {
-    background-color: $gray;
-    color: $light-gray;
-  }
-
   &:hover {
     color: $white;
   }
+}
+
+.disabled {
+  background-color: $gray;
+  color: $light-gray;
 }
 
 .secondary-btn {

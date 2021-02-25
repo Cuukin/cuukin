@@ -18,15 +18,17 @@
 #book1 {
   position: absolute;
   height: 80px;
+  width: 80px;
   top: 45px;
-  left: -62px;
+  right: -180px;
 }
 
 #book2 {
   position: absolute;
   height: 80px;
+  width: 80px;
   top: 209px;
-  left: -82px;
+  right: -160px;
 }
 
 @media (max-width: 500px) {
