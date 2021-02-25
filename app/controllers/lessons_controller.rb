@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
 
     unless @user_validations.empty?
       last_validated_lesson_id = @user_validations.last.id
-      @current_lesson = [Lesson.find(lesson_id: last_validated_lesson_id + 1)]
+      @current_lesson = [Lesson.find(last_validated_lesson_id + 1)]
     end
 
     book = Lesson.find(params[:id]).book
