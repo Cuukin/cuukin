@@ -17,7 +17,7 @@ class LessonSkipsController < ApplicationController
   private
 
   def find_lesson
-    @lesson = Lesson.find(params[:id])
+    @lesson = Lesson.find(params[:lesson_id])
     current_lesson_id = params[:lesson_id].to_i
     @lesson_skipped = Lesson.find(current_lesson_id - 1)
   end
