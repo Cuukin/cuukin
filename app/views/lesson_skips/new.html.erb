@@ -5,7 +5,7 @@
     <%= simple_form_for(@lesson_skip, url: lesson_lesson_skips_path(@lesson), method: 'post') do |f| %>
       <%= f.error_notification %>
       <%= f.input :reason %>
-      <%= f.button :submit, 'Skip Lesson 🍪', class: 'primary-btn' %>
+      <%= f.button :submit, 'Unblock Lesson 🍪', class: 'primary-btn' %>
 
     <% end %>
   </div>

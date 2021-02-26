@@ -9,7 +9,9 @@ class LessonsController < ApplicationController
 
     unless @user_validations.empty?
       last_validated_lesson_id = @user_validations.last.id
-      @current_lesson = [Lesson.find(last_validated_lesson_id + 1)]
+      unless @lesson.id >= Lesson.all.count
+        @current_lesson = [Lesson.find(last_validated_lesson_id + 1)]
+      end
     end
 
     book = Lesson.find(params[:id]).book

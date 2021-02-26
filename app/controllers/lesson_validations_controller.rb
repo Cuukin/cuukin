@@ -9,7 +9,7 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.save
-      redirect_to lesson_path(@lesson), notice: "Lesson validated"
+      redirect_to book_path(@lesson.book), notice: "Lesson validated"
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end

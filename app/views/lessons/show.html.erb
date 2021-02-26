@@ -1,8 +1,14 @@
 <!-- first div with general info + btn to start lesson -->
 
 <%= render 'shared/recipe_modal' %>
-<%= render template: 'lesson_validations/new' %>
-<%= render template: 'lesson_skips/new' %>
+
+<% unless @user_validations.include?(@lesson) %>
+  <%= render template: 'lesson_validations/new' %>
+<% end %>
+
+<% unless @first_lesson.include?(@lesson) || @user_validations.include?(Lesson.find(@lesson.id - 1)) %>
+  <%= render template: 'lesson_skips/new' %>
+<% end %>
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
@@ -135,7 +141,7 @@
       </div>
     </div>
 
-    <% if @current_lesson&.include?(@lesson) || @user_validations&.include?(@lesson) || @first_lesson.include?(@lesson) %>
+    <% if @current_lesson&.include?(@lesson) || @user_validations&.include?(@lesson) || @first_lesson.include?(@lesson) || @user_validations&.include?(Lesson.find(@lesson.id - 1)) %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
     <% else %>
       <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Lesson Blocked</p>
