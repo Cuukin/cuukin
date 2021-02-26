@@ -2,13 +2,13 @@ class LessonSkipsController < ApplicationController
   def create
     find_lesson
     @lesson_skip = LessonSkip.new(lesson_skip_params)
-    set_user(@lesson_skip, @lesson, current_user) if check_cuukies(current_user)
+    set_user(@lesson_skip, @lesson_skipped, current_user) if check_cuukies(current_user)
 
     authorize @lesson_skip, policy_class: LessonSkipPolicy
 
     if @lesson_skip.save
       redirect_to lesson_path(@lesson), notice: "Lesson skipped"
-      LessonValidation.create(lesson: @lesson, user: current_user, validated: false)
+      LessonValidation.create(lesson: @lesson_skipped, user: current_user, validated: false)
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't skip"
     end
@@ -17,8 +17,9 @@ class LessonSkipsController < ApplicationController
   private
 
   def find_lesson
+    @lesson = Lesson.find(params[:id])
     current_lesson_id = params[:lesson_id].to_i
-    @lesson = Lesson.find(current_lesson_id - 1)
+    @lesson_skipped = Lesson.find(current_lesson_id - 1)
   end
 
   def set_user(lesson_skip, lesson, user)
