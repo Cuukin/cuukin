@@ -1,6 +1,6 @@
 <!-- first div with general info + btn to start lesson -->
 
-<%= render 'shared/start_recipe_popup' %>
+<%= render 'start_recipe_popup' %>
 
 <% unless @user_validations.include?(@lesson) %>
   <%= render template: 'lesson_validations/new' %>
