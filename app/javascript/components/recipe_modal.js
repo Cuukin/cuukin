@@ -2,9 +2,13 @@ const recipeModal = () => {
   const modal = document.querySelector('.recipe-modal');
   const startRecipe = document.querySelector('#startRecipe');
 
-  const completeLessonModal = document.querySelector('.recipe-validation-modal');
+  const completeLessonModal = document.querySelector('#validation-modal');
   const completeLesson = document.querySelector('#completeLesson');
-  const modalCloseBtn = document.querySelector('.modal-close-btn');
+  const validationCloseBtn = document.querySelector('#closeValidation');
+
+  const skipLessonModal = document.querySelector('#skip-modal');
+  const skipLesson = document.querySelector('#unblockLesson');
+  const skipCloseBtn = document.querySelector('#closeSkip');
 
   if (startRecipe) {
     const openModal = () => {
@@ -27,8 +31,18 @@ const recipeModal = () => {
       completeLessonModal.style.display = "block";
     });
 
-    modalCloseBtn.addEventListener('click', () => {
+    validationCloseBtn.addEventListener('click', () => {
       completeLessonModal.style.display = "none";
+    });
+  };
+
+  if (skipLesson) {
+    skipLesson.addEventListener('click', () => {
+      skipLessonModal.style.display = "block";
+    });
+
+    skipCloseBtn.addEventListener('click', () => {
+      skipLessonModal.style.display = "block";
     });
   };
 }

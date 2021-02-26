@@ -3,7 +3,7 @@ class CreateUserLessons < ActiveRecord::Migration[6.0]
     create_table :user_lessons do |t|
       t.references :user, null: false, foreign_key: true
       t.references :lesson, null: false, foreign_key: true
-      t.boolean :completed, null: false, default: false
+      t.boolean :validated, null: false, default: true
       t.integer :difficulcy
       t.text :notes
 

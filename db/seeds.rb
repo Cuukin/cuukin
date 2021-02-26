@@ -194,14 +194,14 @@ book_1 = {
   title: 'Kitchen SOS',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'newbie',
-  xp: 100
+  xp: 200
 }
 
 book_2 = {
   title: 'Kitchen Basics',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'chef_in_progress',
-  xp: 100
+  xp: 200
 }
 
 books = [book_1, book_2]
@@ -251,7 +251,7 @@ lesson_1 = {
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 1,
   book_id: 1,
-  xp: 50
+  xp: 100
 }
 
 lesson_2 = {
@@ -259,7 +259,7 @@ lesson_2 = {
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 2,
   book_id: 1,
-  xp: 50
+  xp: 100
 }
 
 lesson_3 = {
@@ -267,7 +267,7 @@ lesson_3 = {
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 3,
   book_id: 1,
-  xp: 50
+  xp: 100
 }
 
 lesson_4 = {
@@ -275,7 +275,7 @@ lesson_4 = {
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 4,
   book_id: 1,
-  xp: 50
+  xp: 100
 }
 
 lessons = [lesson_1, lesson_2, lesson_3, lesson_4]

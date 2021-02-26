@@ -2,9 +2,9 @@ class LessonValidationsController < ApplicationController
 
   def create
     find_lesson
+
     @lesson_validation = LessonValidation.new(lesson_validation_params)
-    @lesson_validation.lesson = @lesson
-    @lesson_validation.user = current_user
+    set_user(@lesson_validation, @lesson, current_user)
 
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
@@ -19,6 +19,11 @@ class LessonValidationsController < ApplicationController
 
   def find_lesson
     @lesson = Lesson.find(params[:lesson_id])
+  end
+
+  def set_user(lesson_validation, lesson, user)
+    lesson_validation.lesson = lesson
+    lesson_validation.user = user
   end
 
   def lesson_validation_params

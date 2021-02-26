@@ -6,17 +6,23 @@ class LessonValidation < ApplicationRecord
 
   enum difficulcy: { easy: 0, medium: 1, hard: 2 }
 
-  validates :difficulcy, :photo, presence: true
+  # validates :difficulcy, :photo, presence: true
   validates :lesson, uniqueness: { scope: :user, message: 'This lesson has already been validated' }
 
-  after_create :update_completed
+  # after_create :update_status
 
-  def update_completed
+  after_create :transition_currencies
+
+  def transition_currencies
+    self.user.touch
+  end
+
+  # def update_status
     # Method is called whenever a lesson validation is created
     # If the lesson validation has a photo, the completed column is updated to true
     # and the user instance is touched - to call the user's callback methods
-    self.completed = true if self.photo.attached?
-    self.user.touch
-    self.save
-  end
+    # self.status = self.photo.attached? ? 'validated' : 'skipped'
+    # self.user.touch
+    # self.save
+  # end
 end
