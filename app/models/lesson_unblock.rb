@@ -1,4 +1,4 @@
-class LessonSkip < ApplicationRecord
+class LessonUnblock < ApplicationRecord
   belongs_to :lesson
   belongs_to :user
 end

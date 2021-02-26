@@ -7,7 +7,7 @@
 <% end %>
 
 <% unless @first_lesson.include?(@lesson) || @user_validations.include?(Lesson.find(@lesson.id - 1)) %>
-  <%= render template: 'lesson_skips/new' %>
+  <%= render template: 'lesson_unblocks/new' %>
 <% end %>
 
 <div class="container-lesson-overview">

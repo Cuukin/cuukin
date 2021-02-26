@@ -1,4 +1,4 @@
-class LessonSkipPolicy < ApplicationPolicy
+class LessonUnblockPolicy < ApplicationPolicy
   def create?
     true
   end
