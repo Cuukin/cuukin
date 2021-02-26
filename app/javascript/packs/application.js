@@ -17,15 +17,16 @@ import "bootstrap";
 // Internal imports, e.g:
 import { togglePasswordVisibility } from '../components/password_visibility_toggle';
 import { previewImageOnFileSelect } from '../components/photo_preview';
-import { homeCarousel } from '../components/home_carousel_slide';
-// import { swal_data } from '../components/data_dialog';
-import { expandedNavbar } from '../components/expanded_navbar';
-import { lessonChaptersSlide } from '../components/lesson_chapters_slide';
-import { lessonServingCalc } from '../components/lesson_serving';
-import { recipeModal } from '../components/recipe_modal';
-import { lessonNutriData } from '../components/lesson_nutri_data';
+import { homeCarousel } from '../components/home_carousel';
 import { journeyMap } from '../components/journey_map';
-import { currenciesModal } from '../components/currencies_modal';
+
+import { expandedNavbar } from '../components/popups/expanded_navbar';
+import { recipeModal } from '../components/popups/start_recipe_popup';
+import { currenciesModal } from '../components/popups/currency_popup';
+
+import { lessonChaptersSlide } from '../components/lessons/slide';
+import { lessonServingCalc } from '../components/lessons/edit_serving';
+import { lessonNutriData } from '../components/lessons/show_nutri';
 
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
