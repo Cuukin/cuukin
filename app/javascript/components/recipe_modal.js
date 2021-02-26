@@ -18,7 +18,7 @@ const recipeModal = () => {
 
       setTimeout(function() {
         modal.style.display = "none";
-      }, 2000);
+      }, 1600);
     }
 
     startRecipe.addEventListener('click', () => {
