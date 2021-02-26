@@ -17,7 +17,8 @@ class LessonSkipsController < ApplicationController
   private
 
   def find_lesson
-    @lesson = Lesson.find(params[:lesson_id])
+    current_lesson_id = params[:lesson_id].to_i
+    @lesson = Lesson.find(current_lesson_id - 1)
   end
 
   def set_user(lesson_skip, lesson, user)
