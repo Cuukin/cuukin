@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   before_update :check_username_presence
 
-  after_touch :lesson_validation_currencies
+  # after_touch :lesson_validation_currencies
   # after_touch :update_user_level
 
   def name
@@ -74,15 +74,15 @@ class User < ApplicationRecord
     # SetAvatarJob.perform_later(self)
   # end
 
-  def lesson_validation_currencies
-    if self.lesson_validations.last.validated
-      self.xp += self.lesson_validations.last.lesson.xp
-      self.save
-    else
-      self.cuukies -= 5
-      self.save
-    end
-  end
+  # def lesson_validation_currencies
+  #   if self.lesson_validations.last.validated
+  #     self.xp += self.lesson_validations.last.lesson.xp
+  #     self.save
+  #   else
+  #     self.cuukies -= 5
+  #     self.save
+  #   end
+  # end
 
   # def update_user_level
   #   unless self.lesson_validations.empty?

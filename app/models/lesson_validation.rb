@@ -11,11 +11,11 @@ class LessonValidation < ApplicationRecord
 
   # after_create :update_status
 
-  after_create :transition_currencies
+  # after_create :transition_currencies
 
-  def transition_currencies
-    self.user.touch
-  end
+  # def transition_currencies
+  #   self.user.touch
+  # end
 
   # def update_status
     # Method is called whenever a lesson validation is created
