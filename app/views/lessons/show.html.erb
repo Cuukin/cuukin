@@ -2,11 +2,11 @@
 
 <%= render 'start_recipe_popup' %>
 
-<% unless @user_validations.include?(@lesson) %>
+<% unless @validated || @skipped %>
   <%= render template: 'lesson_validations/new' %>
 <% end %>
 
-<% unless @first_lesson.include?(@lesson) || @user_validations.include?(Lesson.find(@lesson.id - 1)) %>
+<% if @open_to_unblock %>
   <%= render template: 'lesson_unblocks/new' %>
 <% end %>
 
@@ -141,10 +141,12 @@
       </div>
     </div>
 
-    <% if @current_lesson&.include?(@lesson) || @user_validations&.include?(@lesson) || @first_lesson.include?(@lesson) || @user_validations&.include?(Lesson.find(@lesson.id - 1)) %>
+    <% if @first || @open || @validated || @skipped %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+    <% elsif @open_to_unblock %>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Unblock Lesson</p>
     <% else %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Lesson Blocked</p>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Blocked</p>
     <% end %>
   </div>
 </div>
@@ -238,7 +240,7 @@
 
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
 
-        <% if @user_validations.include?(@lesson) %>
+        <% if @validated || @skipped %>
           <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
         <% else %>
           <p class="primary-btn" style="cursor: pointer;" id="completeLesson">Complete Lesson</p>
