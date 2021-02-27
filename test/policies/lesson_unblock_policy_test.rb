@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LessonSkipPolicyTest < ActiveSupport::TestCase
+class LessonUnblockPolicyTest < ActiveSupport::TestCase
   def test_scope
   end
 

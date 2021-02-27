@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :lesson_validations, dependent: :destroy
 
-  enum level: { newbie: 0, chef_in_progress: 1, chef_of_party: 2, sous_chef: 3, master_chef: 4 }
+  enum level: [ "dishwasher", "newbie", "chef in progress", "chef of party", "sous chef", "master chef" ]
 
   validates :first_name, presence: true
   validates :username, uniqueness: true
@@ -108,6 +108,7 @@ class User < ApplicationRecord
     # MVP - user gains 20 cuukies when signs up and in no other circumstance
     self.cuukies = 20
     self.xp = 100
+    self.level = "newbie"
     self.save
   end
 end

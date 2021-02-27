@@ -1,13 +1,14 @@
 <!-- first div with general info + btn to start lesson -->
 
-<%= render 'shared/recipe_modal' %>
+<%= render 'start_recipe_popup' %>
 
-<% unless @user_validations.include?(@lesson) %>
-  <%= render template: 'lesson_validations/new' %>
-<% end %>
-
-<% unless @first_lesson.include?(@lesson) || @user_validations.include?(Lesson.find(@lesson.id - 1)) %>
-  <%= render template: 'lesson_skips/new' %>
+<% unless @validated || @skipped %>
+  <% if @open_to_unblock %>
+    <%= render template: 'lesson_validations/new' %>
+    <%= render template: 'lesson_unblocks/new' %>
+  <% else %>
+    <%= render template: 'lesson_validations/new' %>
+  <% end %>
 <% end %>
 
 <div class="container-lesson-overview">
@@ -141,10 +142,12 @@
       </div>
     </div>
 
-    <% if @current_lesson&.include?(@lesson) || @user_validations&.include?(@lesson) || @first_lesson.include?(@lesson) || @user_validations&.include?(Lesson.find(@lesson.id - 1)) %>
+    <% if @open || @validated || @skipped || @first %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+    <% elsif @open_to_unblock %>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Unblock Lesson</p>
     <% else %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Lesson Blocked</p>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Blocked</p>
     <% end %>
   </div>
 </div>
@@ -183,7 +186,7 @@
         <h2 class="text-center">Seasoning basics</h2>
         <h3>Summary</h3>
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn lesson-next-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
+        <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
       </div>
     </div>
 
@@ -238,7 +241,7 @@
 
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
 
-        <% if @user_validations.include?(@lesson) %>
+        <% if @validated || @skipped %>
           <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
         <% else %>
           <p class="primary-btn" style="cursor: pointer;" id="completeLesson">Complete Lesson</p>

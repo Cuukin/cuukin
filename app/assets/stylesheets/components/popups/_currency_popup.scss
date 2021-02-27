@@ -56,3 +56,11 @@
     width: 88%;
   }
 }
+
+@media (max-width: 300px) {
+  .currency-modal-content {
+    .currency-icon {
+      width: 100px;
+    }
+  }
+}

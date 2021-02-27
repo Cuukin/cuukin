@@ -12,6 +12,8 @@ const lessonChaptersSlide = () => {
 
   const prevBtn = document.querySelector('#prev-chap-btn');
 
+  const startRecipe = document.querySelector('#startRecipe');
+
   let counter = 0;
 
   if (lessonOverviewContainer) {
@@ -34,6 +36,21 @@ const lessonChaptersSlide = () => {
         counter += 1;
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
       });
+    });
+  };
+
+  if (startRecipe) {
+    const moveSlider = () => {
+      setTimeout(function() {
+        let size = lessonChapter[0].clientWidth;
+        lessonSlide.style.transition = "transform 0.4s ease-in-out";
+        counter += 1;
+        lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+      }, 2100);
+    }
+
+    startRecipe.addEventListener('click', () => {
+      moveSlider();
     });
   };
 

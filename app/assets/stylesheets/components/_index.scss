@@ -1,15 +1,16 @@
-// Import your components CSS files here.
-@import "alert";
-@import "navbar";
-@import "devise";
-@import "password_toggle";
-@import "card_profile";
-@import "buttons";
-@import "upload_image";
-@import "carousel";
-@import "lesson";
-@import "recipe_modal";
-@import "recipe_validation_form";
-@import "book_lesson_card";
-@import "journey";
-@import "currency_modal";
+@import "generals/alert";
+@import "generals/navbar";
+@import "generals/buttons";
+
+@import "forms/devise";
+@import "forms/password_toggle";
+@import "forms/lesson_validation";
+@import "forms/upload_image";
+
+@import "popups/currency_popup";
+@import "popups/start_recipe_popup";
+
+@import "page_journey";
+@import "page_book";
+@import "page_lesson";
+@import "page_profile";

@@ -18,13 +18,13 @@
     <%= render 'shared/currencies/cuukies_popup' %>
 
     <% if current_user %>
-      <%= render 'shared/user_navbar' %>
+      <%= render 'shared/navbars/user_navbar' %>
       <div class="user-content-container">
         <%= yield %>
       </div>
 
     <% else %>
-      <%= render 'shared/visitor_navbar' %>
+      <%= render 'shared/navbars/visitor_navbar' %>
       <div class="content-container">
         <%= yield %>
       </div>

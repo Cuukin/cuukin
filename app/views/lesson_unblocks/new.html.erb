@@ -2,7 +2,7 @@
   <div class="recipe-validation-modal-content">
     <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeSkip') %>
 
-    <%= simple_form_for(@lesson_skip, url: lesson_lesson_skips_path(@lesson), method: 'post') do |f| %>
+    <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>
       <%= f.error_notification %>
       <%= f.input :reason %>
       <%= f.button :submit, 'Unblock Lesson 🍪', class: 'primary-btn' %>

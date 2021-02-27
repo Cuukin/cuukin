@@ -10,15 +10,17 @@
   </div>
 
   <div class="container-lessons-cards">
-    <% @lessons.each_with_index do |lesson, l_index| %>
+    <% @lessons.each do |lesson| %>
       <%= link_to lesson_path(lesson) do %>
 
         <div class="container-lesson-card">
-          <% if l_index == 0 && @blocked_lessons.include?(lesson) %>
-            <%= image_tag('lesson-2-current.svg') %>
-          <% elsif @validated_lessons.include?(lesson) %>
+          <% if @validated.include?(lesson) %>
             <%= image_tag('lesson-3-done.svg') %>
-          <% elsif @open_lesson&.include?(lesson)  %>
+          <% elsif @skipped.include?(lesson) %>
+            <%= image_tag('lesson-2-current.svg') %>
+          <% elsif @lessons.first == lesson  %>
+            <%= image_tag('lesson-2-current.svg') %>
+          <% elsif @validated_lessons.include?(Lesson.find(lesson.id - 1)) %>
             <%= image_tag('lesson-2-current.svg') %>
           <% else %>
             <%= image_tag('lesson-1-blocked.svg') %>

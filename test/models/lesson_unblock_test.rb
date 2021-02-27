@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LessonSkipsControllerTest < ActionDispatch::IntegrationTest
+class LessonUnblockTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

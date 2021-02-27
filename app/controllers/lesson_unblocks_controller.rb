@@ -1,12 +1,12 @@
-class LessonSkipsController < ApplicationController
+class LessonUnblocksController < ApplicationController
   def create
     find_lessons
-    @lesson_skip = LessonSkip.new(lesson_skip_params)
-    set_user(@lesson_skip, @lesson, current_user) if check_cuukies(current_user)
+    @lesson_unblock = LessonUnblock.new(lesson_skip_params)
+    set_user(@lesson_unblock, @lesson, current_user) if check_cuukies(current_user)
 
-    authorize @lesson_skip, policy_class: LessonSkipPolicy
+    authorize @lesson_unblock, policy_class: LessonUnblockPolicy
 
-    if @lesson_skip.save
+    if @lesson_unblock.save
       redirect_to lesson_path(@lesson), notice: "Lesson skipped"
       LessonValidation.create(lesson: @lesson_validated, user: current_user, validated: false)
     else
@@ -22,9 +22,9 @@ class LessonSkipsController < ApplicationController
     @lesson_validated = Lesson.find(lesson_id)
   end
 
-  def set_user(lesson_skip, lesson, user)
-    lesson_skip.lesson = lesson
-    lesson_skip.user = user
+  def set_user(lesson_unblock, lesson, user)
+    lesson_unblock.lesson = lesson
+    lesson_unblock.user = user
   end
 
   def check_cuukies(user)
@@ -32,6 +32,6 @@ class LessonSkipsController < ApplicationController
   end
 
   def lesson_skip_params
-    params.require(:lesson_skip).permit(:reason)
+    params.require(:lesson_unblock).permit(:reason)
   end
 end
