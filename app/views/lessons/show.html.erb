@@ -3,11 +3,12 @@
 <%= render 'start_recipe_popup' %>
 
 <% unless @validated || @skipped %>
-  <%= render template: 'lesson_validations/new' %>
-<% end %>
-
-<% if @open_to_unblock %>
-  <%= render template: 'lesson_unblocks/new' %>
+  <% if @open_to_unblock %>
+    <%= render template: 'lesson_validations/new' %>
+    <%= render template: 'lesson_unblocks/new' %>
+  <% else %>
+    <%= render template: 'lesson_validations/new' %>
+  <% end %>
 <% end %>
 
 <div class="container-lesson-overview">
@@ -141,7 +142,7 @@
       </div>
     </div>
 
-    <% if @first || @open || @validated || @skipped %>
+    <% if @open || @validated || @skipped || @first %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
     <% elsif @open_to_unblock %>
       <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLesson">Unblock Lesson</p>
