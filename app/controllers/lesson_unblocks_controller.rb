@@ -12,6 +12,8 @@ class LessonUnblocksController < ApplicationController
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't skip"
     end
+
+    transition_currency(current_user)
   end
 
   private
@@ -29,6 +31,11 @@ class LessonUnblocksController < ApplicationController
 
   def check_cuukies(user)
     user.cuukies >= 5
+  end
+
+  def transition_currency(user)
+    user.cuukies -= 5
+    user.save
   end
 
   def lesson_skip_params

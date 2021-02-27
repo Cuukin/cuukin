@@ -4,28 +4,25 @@ class LessonValidationsController < ApplicationController
     find_lesson
 
     @lesson_validation = LessonValidation.new(lesson_validation_params)
+    @lesson_validation.validated = true
     set_user(@lesson_validation, @lesson, current_user)
 
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.save
       redirect_to book_path(@lesson.book), notice: "Lesson validated"
-      transition_currencies(@lesson_validation, current_user)
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
+
+    transition_currency(@lesson, current_user)
   end
 
   private
 
-  def transition_currencies(lesson_validation, user)
-    if lesson_validation.validated
-      user.xp += lesson_validation.lesson.xp
-      user.save
-    else
-      user.cuukies -= 5
-      user.save
-    end
+  def transition_currency(lesson, user)
+    user.xp += lesson.xp
+    user.save
   end
 
   def find_lesson
