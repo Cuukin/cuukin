@@ -18,6 +18,14 @@ class LessonValidationsController < ApplicationController
     transition_currency(@lesson, current_user)
   end
 
+  def update
+    find_lesson
+    @lesson_validation = LessonValidation.find_by(lesson: @lesson.id, user: current_user)
+    authorize @lesson_validation, policy_class: LessonValidationPolicy
+    @lesson_validation.update(lesson_validation_params)
+    redirect_to book_path(@lesson.book)
+  end
+
   private
 
   def transition_currency(lesson, user)
