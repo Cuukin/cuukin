@@ -11,6 +11,10 @@
   <% end %>
 <% end %>
 
+<% if @skipped %>
+  <%= render template: 'lesson_validations/edit' %>
+<% end %>
+
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
   <%= link_to book_path(@lesson.book) do %>
@@ -241,8 +245,10 @@
 
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
 
-        <% if @validated || @skipped %>
+        <% if @validated %>
           <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
+        <% elsif @skipped %>
+          <p class="primary-btn" style="cursor: pointer;" id="validateLesson">Complete Lesson</p>
         <% else %>
           <p class="primary-btn" style="cursor: pointer;" id="completeLesson">Complete Lesson</p>
         <% end %>

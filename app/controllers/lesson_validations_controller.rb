@@ -20,10 +20,15 @@ class LessonValidationsController < ApplicationController
 
   def update
     find_lesson
-    @lesson_validation = LessonValidation.find_by(lesson: @lesson.id, user: current_user)
+    @lesson_validation = LessonValidation.find_by(lesson_id: @lesson.id, user: current_user)
     authorize @lesson_validation, policy_class: LessonValidationPolicy
-    @lesson_validation.update(lesson_validation_params)
-    redirect_to book_path(@lesson.book)
+    if @lesson_validation.update(lesson_validation_params)
+      @lesson_validation.validated = true
+      @lesson_validation.save
+      redirect_to book_path(@lesson.book)
+    else
+      render :new
+    end
   end
 
   private

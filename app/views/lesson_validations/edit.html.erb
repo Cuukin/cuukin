@@ -1,8 +1,8 @@
-<div class="recipe-validation-modal" id="validation-modal">
+<div class="recipe-validation-modal" id="skipped-validation-modal">
   <div class="recipe-validation-modal-content">
     <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidation') %>
 
-    <%= simple_form_for(@lesson_validation, url: lesson_lesson_validation_path(@lesson_validation), method: 'patch') do |f| %>
+    <%= simple_form_for(@lesson_validation, url: lesson_lesson_validation_path(@lesson), method: 'patch') do |f| %>
       <%= f.error_notification %>
 
       <h3>Take a photo of your dish</h3>
