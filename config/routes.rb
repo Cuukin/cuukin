@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # Journey, Book, Lesson and Lesson Validation
   resources :books, only: [ :index, :show ]
   resources :lessons, only: [ :show ] do
-    resources :lesson_validations, only: [ :create ]
+    resources :lesson_validations, only: [ :create, :update ]
     resources :lesson_unblocks, only: [ :create ]
   end
 

@@ -1,12 +1,22 @@
-<div class="recipe-validation-modal" id="skip-modal">
+<div class="recipe-validation-modal" id="unblockModal">
   <div class="recipe-validation-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeSkip') %>
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeUnblockModal') %>
 
-    <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :reason %>
-      <%= f.button :submit, 'Unblock Lesson 🍪', class: 'primary-btn' %>
+    <h4>Before unlocking the lesson with Cuukies...<br><br>
+    Can you tell us <spam>why you did not want to complete</spam> the previous lesson?</h4>
 
-    <% end %>
+    <div class="unblock-lesson-form">
+      <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>
+        <%= f.error_notification %>
+        <div class="unblock-lesson-form-inputs">
+          <%= f.input :reason,
+            label: "",
+            collection: ["I do not like the lesson's recipe", "I already know the topic well",
+            "Lesson's recipe does not fit my dieatary restrictions", "Other"],
+            as: :radio_buttons %>
+        </div>
+        <%= f.button :submit, 'Submit & Unlock', class: 'primary-btn' %>
+      <% end %>
+    </div>
   </div>
 </div>
