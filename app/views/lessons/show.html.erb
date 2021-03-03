@@ -1,12 +1,12 @@
 <!-- first div with general info + btn to start lesson -->
 
 <%= render 'start_recipe_popup' %>
-<%= render 'unblock_recipe_popup' %>
 
 <% unless @validated || @skipped %>
   <% if @open_to_unblock %>
     <%= render template: 'lesson_validations/new' %>
     <%= render template: 'lesson_unblocks/new' %>
+    <%= render 'unblock_recipe_popup' %>
   <% else %>
     <%= render template: 'lesson_validations/new' %>
   <% end %>

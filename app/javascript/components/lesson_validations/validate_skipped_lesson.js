@@ -3,13 +3,18 @@ const validateSkippedLesson = () => {
   const validateSkippedBtn = document.querySelector('#validateSkippedBtn');
   const closeBtn = document.querySelector('#closeValidateSkippedModal');
 
+  const validateItem1 = document.querySelector('#recipe-validation-item-1');
+  const validateItem2 = document.querySelector('#recipe-validation-item-2');
+
   if (validateSkippedBtn) {
     validateSkippedBtn.addEventListener('click', () => {
       validateSkippedModal.style.display = "block";
+      validateItem1.style.display = "block";
     });
 
     closeBtn.addEventListener('click', () => {
       validateSkippedModal.style.display = "none";
+      validateItem2.style.display = "none";
     });
   };
 }

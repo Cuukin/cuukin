@@ -10,7 +10,7 @@ class LessonUnblocksController < ApplicationController
       redirect_to lesson_path(@lesson), notice: "Lesson skipped"
       LessonValidation.create(lesson: @lesson_validated, user: current_user, validated: false)
     else
-      redirect_to lesson_path(@lesson), alert: "Couldn't skip"
+      render :new
     end
 
     transition_currency(current_user)
