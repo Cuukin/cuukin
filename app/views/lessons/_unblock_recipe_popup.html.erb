@@ -1,5 +1,19 @@
 <div class="unblock-lesson-modal">
   <div class="unblock-lesson-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeUnblockModal') %>
+    <h4>Looks like you have <spam>not completed the previous lesson</spam> to unlock this lesson.<br><br>
+    To unlock this lesson...</h4>
+
+    <div class="unblock-options">
+      <div class="unblock-options-item">
+        <%= link_to lesson_path(@lesson.id - 1) do %>
+          <%= image_tag('unblock-watch.svg') %>
+        <% end %>
+        <p>Complete previous lesson</p>
+      </div>
+      <div class="unblock-options-item">
+        <%= image_tag('unblock-cuukies.svg', id: 'unblockLessonBtn') %>
+        <p>Pay 5 Cuukies to unlock</p>
+      </div>
+    </div>
   </div>
 </div>

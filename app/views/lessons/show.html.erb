@@ -1,6 +1,7 @@
 <!-- first div with general info + btn to start lesson -->
 
 <%= render 'start_recipe_popup' %>
+<%= render 'unblock_recipe_popup' %>
 
 <% unless @validated || @skipped %>
   <% if @open_to_unblock %>
@@ -149,7 +150,7 @@
     <% if @open || @validated || @skipped || @first %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
     <% elsif @open_to_unblock %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="unblockLessonBtn">Unblock Lesson</p>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="openUnblockOptionsBtn">Unblock Lesson</p>
     <% else %>
       <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Blocked</p>
     <% end %>
