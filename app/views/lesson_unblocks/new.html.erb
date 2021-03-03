@@ -1,6 +1,6 @@
-<div class="recipe-validation-modal" id="skip-modal">
+<div class="recipe-validation-modal" id="unblockModal">
   <div class="recipe-validation-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeSkip') %>
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeUnblockModal') %>
 
     <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>
       <%= f.error_notification %>

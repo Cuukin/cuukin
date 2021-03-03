@@ -28,6 +28,8 @@ import { lessonChaptersSlide } from '../components/lessons/slide';
 import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
 
+import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
+
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
   currenciesModal();
@@ -39,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   lessonServingCalc();
   recipeModal();
   lessonNutriData();
+  unblockLesson();
 });
