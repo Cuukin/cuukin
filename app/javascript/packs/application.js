@@ -24,13 +24,14 @@ import { expandedNavbar } from '../components/popups/expanded_navbar';
 import { recipeModal } from '../components/popups/start_recipe_popup';
 import { currenciesModal } from '../components/popups/currency_popup';
 
-import { lessonChaptersSlide } from '../components/lessons/slide';
+import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
 
 import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
 import { validateSkippedLesson } from '../components/lesson_validations/validate_skipped_lesson';
+import { lessonValidationSlide } from '../components/lesson_validations/lesson_validation_slide';
 
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
@@ -46,4 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   unblockLesson();
   validateLesson();
   validateSkippedLesson();
+  lessonValidationSlide();
 });
