@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [ :show, :edit, :update ]
 
   def show
-    user_awards = UserAward.where(user_id: current_user.id)
-    @user_awards = user_awards.map {|ua| ua.award}
+    @user_awards = UserAward.joins(:award).where(user_id: current_user.id)
   end
 
   def edit

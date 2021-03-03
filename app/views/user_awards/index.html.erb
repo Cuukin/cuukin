@@ -1,5 +1,5 @@
 <div class="user-awards-container">
-  <% @user_awards.each do |award| %>
-    <%= image_tag("#{award.icon}", class: 'award') %>
+  <% @user_awards.each do |user_award| %>
+    <%= image_tag("#{user_award.award.icon}", class: 'award') %>
   <% end %>
 </div>
