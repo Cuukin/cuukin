@@ -8,7 +8,7 @@
       <div id="recipe-validation-item-1">
         <h3>Take a photo of your dish</h3>
         <p>Your photo will verify lesson completition</p>
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: '📷 Choose a photo' %>
         <%= image_tag "", class: "hidden", id: "photo-preview" %>
         <p class="primary-btn" id="validateLessonNext">Next</p>
         <p class="devise-p text-center mt-2" id="validateLessonWithoutPhotoNext">Yikes, I forgot to take the photo</p>
@@ -55,7 +55,7 @@
         <p>Do you want to leave any notes or comments about this lesson?</p>
         <%= f.input :notes, label: false, input_html: { rows: '5'} %>
 
-        <%= f.button :submit, 'Submit', class: 'primary-btn' %>
+        <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
       </div>
 
     <% end %>
