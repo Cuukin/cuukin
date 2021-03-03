@@ -29,6 +29,8 @@ class LessonValidationsController < ApplicationController
     else
       render :new
     end
+
+    transition_currency(@lesson, current_user)
   end
 
   private
