@@ -29,6 +29,7 @@ import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
 
 import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
+import { validateLesson } from '../components/lesson_validations/validate_lesson';
 
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
@@ -42,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   recipeModal();
   lessonNutriData();
   unblockLesson();
+  validateLesson();
 });

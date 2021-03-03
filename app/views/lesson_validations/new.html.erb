@@ -1,6 +1,6 @@
-<div class="recipe-validation-modal" id="validation-modal">
+<div class="recipe-validation-modal" id="validateLessonModal">
   <div class="recipe-validation-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidation') %>
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidateModal') %>
 
     <%= simple_form_for(@lesson_validation, url: lesson_lesson_validations_path(@lesson), method: 'post') do |f| %>
       <%= f.error_notification %>
