@@ -22,6 +22,12 @@ const displayPreview = (input) => {
       photoPreview.classList.remove('hidden');
     };
   };
+
+  const preview = document.getElementById('photo-preview');
+  const btn = document.getElementById('validateLessonWithoutPhotoNext');
+  if (preview.src && btn) {
+    btn.style.display = "none";
+  };
 }
 
 export { previewImageOnFileSelect };
