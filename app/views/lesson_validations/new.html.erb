@@ -3,59 +3,60 @@
     <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidateModal') %>
 
     <%= simple_form_for(@lesson_validation, url: lesson_lesson_validations_path(@lesson), method: 'post') do |f| %>
-    <%= f.error_notification %>
+      <%= f.error_notification %>
 
-    <div id="recipe-validation-item-1">
-      <h3>Take a photo of your dish</h3>
-      <p>Your photo will verify lesson completition</p>
-      <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
-      <%= image_tag "", class: "hidden", id: "photo-preview" %>
-      <p class="primary-btn" id="validateLessonNext">Next</p>
-    </div>
+      <div id="recipe-validation-item-1">
+        <h3>Take a photo of your dish</h3>
+        <p>Your photo will verify lesson completition</p>
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: '📷 Choose a photo' %>
+        <%= image_tag "", class: "hidden", id: "photo-preview" %>
+        <p class="primary-btn" id="validateLessonNext">Upload Photo</p>
+        <p class="devise-p text-center mt-2" id="validateLessonWithoutPhotoNext">Yikes, I forgot to take the photo</p>
+      </div>
 
-    <div id="recipe-validation-item-2">
-      <h3>Tell us about your lesson</h3>
-      <p>How easy did you find it?</p>
+      <div id="recipe-validation-item-2">
+        <h3>Tell us about your lesson</h3>
+        <p>How easy did you find it?</p>
 
-      <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
+        <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
 
-      <fieldset class="form-group radio_buttons optional">
-        <!-- <legend class="col-form-label pt-0">Rating</legend> -->
-        <input type="hidden" name="lesson_validation[difficulcy]" value="">
+        <fieldset class="form-group radio_buttons optional">
+          <!-- <legend class="col-form-label pt-0">Rating</legend> -->
+          <input type="hidden" name="lesson_validation[difficulcy]" value="">
 
-        <div class="lesson-validation-options-container">
-          <div class="form-check lesson-validation-options">
-            <input class="form-check-input radio_buttons" type="radio" value="easy" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_1">
-            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_1">
-              <%= image_tag('lesson-validation-icon-1.svg') %>
-              <p>Piece of cake</p>
-            </label>
+          <div class="lesson-validation-options-container">
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="easy" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_1">
+              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_1">
+                <%= image_tag('lesson-validation-icon-1.svg') %>
+                <p>Piece of cake</p>
+              </label>
+            </div>
+
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="medium" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_2">
+              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_2">
+                <%= image_tag('lesson-validation-icon-2.svg') %>
+                <p>Just right</p>
+              </label>
+            </div>
+
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="hard" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_3">
+              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_3">
+                <%= image_tag('lesson-validation-icon-3.svg') %>
+                <p>Burnt it all</p>
+              </label>
+            </div>
           </div>
 
-          <div class="form-check lesson-validation-options">
-            <input class="form-check-input radio_buttons" type="radio" value="medium" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_2">
-            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_2">
-              <%= image_tag('lesson-validation-icon-2.svg') %>
-              <p>Just right</p>
-            </label>
-          </div>
+        </fieldset>
 
-          <div class="form-check lesson-validation-options">
-            <input class="form-check-input radio_buttons" type="radio" value="hard" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_3">
-            <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_3">
-              <%= image_tag('lesson-validation-icon-3.svg') %>
-              <p>Burnt it all</p>
-            </label>
-          </div>
-        </div>
+        <p>Do you want to leave any notes or comments about this lesson?</p>
+        <%= f.input :notes, label: false, input_html: { rows: '5'} %>
 
-      </fieldset>
-
-      <p>Do you want to leave any notes or comments about this lesson?</p>
-      <%= f.input :notes, label: false, input_html: { rows: '5'} %>
-
-      <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
-    </div>
+        <%= f.button :submit, 'Submit', class: 'primary-btn' %>
+      </div>
 
     <% end %>
   </div>
