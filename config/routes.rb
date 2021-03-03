@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :lesson_unblocks, only: [ :create ]
   end
 
+  resources :user_awards, only: [ :index ]
+
   # get '/lesson', to: "pages#lesson" # this will be show on lesson controller
   # get '/lessons', to: "pages#lessons" # this will be index on lesson controller
 
