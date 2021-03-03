@@ -30,6 +30,7 @@ import { lessonNutriData } from '../components/lessons/show_nutri';
 
 import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
+import { validateSkippedLesson } from '../components/lesson_validations/validate_skipped_lesson';
 
 document.addEventListener('turbolinks:load', () => {
   journeyMap();
@@ -44,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   lessonNutriData();
   unblockLesson();
   validateLesson();
+  validateSkippedLesson();
 });
