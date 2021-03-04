@@ -1,3 +1,3 @@
 class Award < ApplicationRecord
-  validates :title, :description, :icon, presence: true
+  validates :name, :description, :icon, presence: true
 end

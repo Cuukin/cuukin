@@ -418,7 +418,7 @@ awards = [award_1, award_2, award_3, award_4, award_5, award_6, award_7, award_8
 
 awards.each do |award|
   new_award = Award.create(award)
-  puts "Created award #{new_award.title} 👏"
+  puts "Created award #{new_award.name} 👏"
 end
 
 all_awards = Award.all
