@@ -6,19 +6,18 @@ const cuukbook = () => {
   const completedContainer = document.querySelector('#completedRecipes');
 
   if (completedContainer) {
-    if (unlockedContainer.style.display == "") {
+    unlockedContainer.style.display = "none";
+
+    if (unlockedContainer.style.display == "none") {
       unlockedBtn.addEventListener('click', () => {
-        unlockedBtn.classList.toggle('recipe-navbar-active');
-        completedBtn.classList.toggle('recipe-navbar-active');
+        unlockedBtn.classList.add('recipe-navbar-active');
+        completedBtn.classList.remove('recipe-navbar-active');
         unlockedContainer.style.display = "flex";
         completedContainer.style.display = "none";
       });
-    };
-
-    if (completedContainer.style.display == "") {
       completedBtn.addEventListener('click', () => {
-        unlockedBtn.classList.toggle('recipe-navbar-active');
-        completedBtn.classList.toggle('recipe-navbar-active');
+        unlockedBtn.classList.remove('recipe-navbar-active');
+        completedBtn.classList.add('recipe-navbar-active');
         unlockedContainer.style.display = "none";
         completedContainer.style.display = "flex";
       });
