@@ -1,0 +1,22 @@
+<div class="user-awards-container">
+  <div class="row">
+    <% @user_awards.first(5).each do |user_award| %>
+      <div class="col">
+        <%= image_tag("#{user_award.award.icon}", class: 'award') %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if (@user_awards.count / 2 ) > 2 %>
+  <div class="row">
+    <% @user_awards[5..10].each do |user_award| %>
+      <div class="col">
+        <%= image_tag("#{user_award.award.icon}", class: 'award') %>
+      </div>
+    <% end %>
+    <% (5 - (@user_awards.count - 5)).times do %>
+      <div class="col"></div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
