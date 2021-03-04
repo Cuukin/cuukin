@@ -80,23 +80,22 @@
   }
 }
 
-@media (max-width: 400px) {
-  /* For a screen < 540px, this CSS will be read */
-  .profile-container {
-    width: 100vw;
-  }
-}
-
-@media (max-width: 330px) {
+@media (max-width: 390px) {
   .profile-image-content {
     .user-img {
-      height: 96px;
-      width: 96px;
+      height: 88px;
+      width: 88px;
     }
     .edit-photo-btn {
       height: 32px;
-      top: 73px;
-      left: 65px;
+      top: 65px;
+      left: 54px;
     }
+  }
+}
+
+@media (max-width: 355px) {
+  .profile-text-content {
+    max-width: 50%;
   }
 }
