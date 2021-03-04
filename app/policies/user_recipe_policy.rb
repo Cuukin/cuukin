@@ -1,4 +1,4 @@
-class UserAwardPolicy < ApplicationPolicy
+class UserRecipePolicy < ApplicationPolicy
   def index?
     true
   end
