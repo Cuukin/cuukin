@@ -349,6 +349,73 @@ RecipeTechnique.create(recipe_id: 1, technique_id: 1)
 RecipeTechnique.create(recipe_id: 1, technique_id: 2)
 RecipeTechnique.create(recipe_id: 1, technique_id: 3)
 
+# Extra Recipes
+
+avotoast_1 = {
+  title: "Avocado Bruschetta",
+  external_url: "https://www.bbc.co.uk/food/recipes/mozzarella_tomato_82203",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/mozzarella_tomato_82203_16x9.jpg"
+}
+
+avotoast_2 = {
+  title: "Vegetarian Tacos",
+  external_url: "https://www.bbc.co.uk/food/recipes/easy_vegetarian_tacos_88736",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/easy_vegetarian_tacos_88736_16x9.jpg"
+}
+
+carbonara_1 = {
+  title: "Creamy Mushroom Pasta",
+  external_url: "https://www.bbc.co.uk/food/recipes/creamy_mushroom_pasta_41818",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_mushroom_pasta_41818_16x9.jpg"
+}
+
+carbonara_2 = {
+  title: "Chilli Bacon Spaghetti",
+  external_url: "https://www.bbc.co.uk/food/recipes/creamy_chilli_bacon_and_60433",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_chilli_bacon_and_60433_16x9.jpg"
+}
+
+portobello_1 = {
+  title: "Stuffed Portobello",
+  external_url: "https://www.bbc.co.uk/food/recipes/stuffedportabellamus_85840",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/stuffedportabellamus_85840_16x9.jpg"
+}
+
+portobello_2 = {
+  title: "Baked Chicken Breast",
+  external_url: "https://www.bbc.co.uk/food/recipes/baked_chicken_breast_49731",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/baked_chicken_breast_49731_16x9.jpg"
+}
+
+fondue_1 = {
+  title: "Chocolate Fudge",
+  external_url: "https://www.bbc.co.uk/food/recipes/chocolate_fudge_cake_03213",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chocolate_fudge_cake_03213_16x9.jpg"
+}
+
+fondue_2 = {
+  title: "Cherry Mug Cake",
+  external_url: "https://www.bbc.co.uk/food/recipes/cherryandchocolateca_84273",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/cherryandchocolateca_84273_16x9.jpg"
+}
+
+def create_extra_recipe(recipe_title, extra_recipe)
+  new_rec = ExtraRecipe.new(extra_recipe)
+  new_rec.recipe = Recipe.find_by(title: recipe_title)
+  new_rec.save
+  puts "Created #{new_rec.title} for #{recipe_title}"
+end
+
+create_extra_recipe("Avotoast", avotoast_1)
+create_extra_recipe("Avotoast", avotoast_2)
+create_extra_recipe("Spaghetti al Carbonara", carbonara_1)
+create_extra_recipe("Spaghetti al Carbonara", carbonara_2)
+create_extra_recipe("Baked Portobello", portobello_1)
+create_extra_recipe("Baked Portobello", portobello_2)
+create_extra_recipe("Baked Portobello", portobello_1)
+create_extra_recipe("Strawberry Fondue", fondue_1)
+create_extra_recipe("Strawberry Fondue", fondue_2)
+
 # Awards
 
 award_1 = {

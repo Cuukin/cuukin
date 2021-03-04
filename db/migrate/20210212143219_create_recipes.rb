@@ -5,7 +5,6 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :photo_url
       t.string :prep_time
-      t.string :external_url
 
       t.timestamps
     end
