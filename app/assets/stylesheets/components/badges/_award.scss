@@ -1,11 +1,18 @@
 .user-awards-container {
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
   width: 100%;
-  // padding: 0 16px;
+  padding: 16px;
+
+  .row {
+    margin-bottom: 8px;
+  }
+
+  .col {
+    margin: 0 4px;
+    padding: 0;
+  }
 }
 
-.award {
-  height: 72px;
-}
+// .award {
+//   height: 72px;
+//   margin: 0 8px 8px;
+// }
