@@ -352,48 +352,48 @@ RecipeTechnique.create(recipe_id: 1, technique_id: 3)
 # Awards
 
 award_1 = {
-  title: "Sizzlin' Hot",
+  name: "Sizzlin' Hot",
   description: "You cooked our recipes 3+ days in a row this week!
 Keep it up to keep this award badge",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-sizzlin_hy3yzi.svg"
 }
 
 award_2 = {
-  title: "Cuukin up a Storm",
+  name: "Cuukin up a Storm",
   description: "A storm is brewing...
 You visited Cuukin for 3 days in a row, keep it coming to not lose this award!",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-storm_alb40e.svg"
 }
 
 award_3 = {
-  title: "Bookworm",
+  name: "Bookworm",
   description: "But like, a cute one, like Hermione!
 You finished all the books of Cuukin v1.0. Congrats! More will come and we will inform you when they do!",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-worm_seqtdd.svg"
 }
 
 award_4 = {
-  title: "Fire Dancer",
+  name: "Fire Dancer",
   description: "You have mastered all Cuukin v1.0 heating techniques -- like a cool(ass) fire dancer.",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-fire_o24654.svg"
 }
 
 award_5 = {
-  title: "Not a recipe virgin",
+  name: "Not a recipe virgin",
   description: "Congrats, first recipe is now done and dusted.
 Wasn't that bad right?!",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-first_tggawv.svg"
 }
 
 award_6 = {
-  title: "First book",
+  name: "First book",
   description: "Just like our first love, we will remember you dearly.
 Congrats on finishing the first book!",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-book_jqy52w.svg"
 }
 
 award_7 = {
-  title: "Supporter",
+  name: "Supporter",
   description: "Thank you for making a donation to our Patreon site. Kin sends his love.
 xoxoxx
 Kin",
@@ -401,14 +401,14 @@ Kin",
 }
 
 award_8 = {
-  title: "Oh hi there!",
+  name: "Oh hi there!",
   description: "This is your first ever log in, welcome my future chef!
 Have this award, you deserve it.",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-login_dueama.svg"
 }
 
 award_9 = {
-  title: "Samurai",
+  name: "Samurai",
   description: "You have mastered all the chopping techniques in Cuukin v1.0 -- quite impressive!
 You would make a stellar samurai...",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-samurai_mgycxs.svg"
