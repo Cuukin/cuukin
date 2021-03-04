@@ -16,6 +16,7 @@ class LessonValidationsController < ApplicationController
 
     transition_currency(@lesson, current_user)
     transition_recipe(@lesson.recipe, current_user)
+    transition_extra_recipes(@lesson.recipe, current_user)
   end
 
   def update
@@ -34,6 +35,12 @@ class LessonValidationsController < ApplicationController
   end
 
   private
+
+  def transition_extra_recipes(recipe, user)
+    recipe.extra_recipes.each do |extra_recipe|
+      UserRecipe.create(user: user, extra_recipe: extra_recipe, completed: false)
+    end
+  end
 
   def transition_recipe(recipe, user)
     UserRecipe.create(user: user, recipe: recipe, completed: true)
