@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :lesson_validations, dependent: :destroy
+  has_many :user_recipes, dependent: :destroy
+  has_many :user_awards, dependent: :destroy
 
   enum level: [ "dishwasher", "newbie", "chef in progress", "chef of party", "sous chef", "master chef" ]
 

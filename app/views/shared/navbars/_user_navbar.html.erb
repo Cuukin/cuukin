@@ -13,7 +13,7 @@
   </div>
   <div class="nb-user-item" id="nb-dish">
     <%= image_tag('nb-4-dish.svg') %>
-    <p>0</p>
+    <p><%= current_user.user_recipes.count %></p>
   </div>
   <%= image_tag('nb-5-menu.svg', id: 'open-btn') %>
 </div>
