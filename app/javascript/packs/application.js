@@ -19,6 +19,8 @@ import { togglePasswordVisibility } from '../components/password_visibility_togg
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { homeCarousel } from '../components/home_carousel';
 import { journeyMap } from '../components/journey_map';
+import { preventSelectDoubleClick } from '../components/prevent_select_click';
+import { cuukbook } from '../components/cuukbook';
 
 import { expandedNavbar } from '../components/popups/expanded_navbar';
 import { recipeModal } from '../components/popups/start_recipe_popup';
@@ -34,6 +36,7 @@ import { validateSkippedLesson } from '../components/lesson_validations/validate
 import { lessonValidationSlide } from '../components/lesson_validations/lesson_validation_slide';
 
 document.addEventListener('turbolinks:load', () => {
+  preventSelectDoubleClick();
   journeyMap();
   currenciesModal();
   togglePasswordVisibility();
@@ -48,4 +51,5 @@ document.addEventListener('turbolinks:load', () => {
   validateLesson();
   validateSkippedLesson();
   lessonValidationSlide();
+  cuukbook();
 });

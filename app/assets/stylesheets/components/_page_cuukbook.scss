@@ -1,0 +1,95 @@
+#unlockedRecipes {
+  display: none;
+}
+
+.recipes-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.recipes-navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: $gray;
+    text-align: center;
+    padding-bottom: 8px;
+    margin: 0;
+    max-width: 110px;
+    cursor: pointer;
+  }
+}
+
+.recipe-navbar-active {
+  border-bottom: 2px solid $cuukin;
+  color: $cuukin !important;
+}
+
+.recipes-cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  margin: 0 2px 14px;
+  // flex: 1 0 50%;
+  // margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    width: 148px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.recipe-card-image {
+  width: 156px;
+  height: 156px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  margin-bottom: 4px;
+  position: relative;
+
+  color: $white;
+}
+
+.recipe-card-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+
+  img {
+    width: 20px;
+    margin-right: 6px;
+  }
+
+  p {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+@media (max-width: 370px) {
+  .recipes-navbar {
+    h4 {
+      font-size: 16px;
+      max-width: 100px;
+    }
+  }
+}
