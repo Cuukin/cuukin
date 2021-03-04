@@ -46,7 +46,7 @@ class LessonsController < ApplicationController
   end
 
   def set_validations
-    @validated_lessons = LessonValidation.joins(:lesson).where(user: current_user)
+    @validated_lessons = LessonValidation.includes(:lesson).where(user: current_user)
   end
 
   def set_lesson
