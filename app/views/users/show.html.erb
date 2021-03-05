@@ -29,10 +29,26 @@
     <hr>
   </div>
 
+  <% unless current_user.user_awards.empty? %>
+    <%= render template: 'user_awards/index' %>
+  <% else %>
+    <div class="empty-container">
+      <p>Oops, you don't have any awards yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+    </div>
+  <% end %>
+
   <div class="profile-heading">
     <hr>
     <h4>BADGES</h4>
     <hr>
   </div>
+
+  <% unless current_user.user_badges.empty? %>
+    <p>Badges here</p>
+  <% else %>
+    <div class="empty-container">
+      <p>Oops, you don't have any badges yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+    </div>
+  <% end %>
 
 </div>

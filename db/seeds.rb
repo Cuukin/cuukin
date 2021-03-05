@@ -348,3 +348,168 @@ RecipeTool.create(recipe_id: 1, tool_id: 3)
 RecipeTechnique.create(recipe_id: 1, technique_id: 1)
 RecipeTechnique.create(recipe_id: 1, technique_id: 2)
 RecipeTechnique.create(recipe_id: 1, technique_id: 3)
+
+# Extra Recipes
+
+avotoast_1 = {
+  title: "Avocado Bruschetta",
+  external_url: "https://www.bbc.co.uk/food/recipes/mozzarella_tomato_82203",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/mozzarella_tomato_82203_16x9.jpg"
+}
+
+avotoast_2 = {
+  title: "Vegetarian Tacos",
+  external_url: "https://www.bbc.co.uk/food/recipes/easy_vegetarian_tacos_88736",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/easy_vegetarian_tacos_88736_16x9.jpg"
+}
+
+carbonara_1 = {
+  title: "Creamy Mushroom Pasta",
+  external_url: "https://www.bbc.co.uk/food/recipes/creamy_mushroom_pasta_41818",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_mushroom_pasta_41818_16x9.jpg"
+}
+
+carbonara_2 = {
+  title: "Chilli Bacon Spaghetti",
+  external_url: "https://www.bbc.co.uk/food/recipes/creamy_chilli_bacon_and_60433",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_chilli_bacon_and_60433_16x9.jpg"
+}
+
+portobello_1 = {
+  title: "Stuffed Portobello",
+  external_url: "https://www.bbc.co.uk/food/recipes/stuffedportabellamus_85840",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/stuffedportabellamus_85840_16x9.jpg"
+}
+
+portobello_2 = {
+  title: "Baked Chicken Breast",
+  external_url: "https://www.bbc.co.uk/food/recipes/baked_chicken_breast_49731",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/baked_chicken_breast_49731_16x9.jpg"
+}
+
+fondue_1 = {
+  title: "Chocolate Fudge",
+  external_url: "https://www.bbc.co.uk/food/recipes/chocolate_fudge_cake_03213",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chocolate_fudge_cake_03213_16x9.jpg"
+}
+
+fondue_2 = {
+  title: "Cherry Mug Cake",
+  external_url: "https://www.bbc.co.uk/food/recipes/cherryandchocolateca_84273",
+  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/cherryandchocolateca_84273_16x9.jpg"
+}
+
+extra_recipes = [avotoast_1, avotoast_2, carbonara_1, carbonara_2, portobello_1, portobello_2, fondue_1, fondue_2]
+
+extra_recipes.each do |recipe|
+  new_recipe = Recipe.create(recipe)
+  puts "Created recipe #{new_recipe.title}"
+end
+
+def create_recipe_connection(recipe_title, extra_recipes)
+  new_extra_recipe = RecipeConnection.create(recipe: Recipe.find_by(title: recipe_title), extra_recipes_titles: extra_recipes)
+  puts "Created extra recipes #{new_extra_recipe.extra_recipes_titles} for #{recipe_title}"
+end
+
+create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
+create_recipe_connection("Spaghetti al Carbonara", [carbonara_1[:title], carbonara_2[:title]])
+create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
+create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
+
+# def create_extra_recipe(recipe_title, extra_recipe)
+#   new_rec = ExtraRecipe.new(extra_recipe)
+#   new_rec.recipe = Recipe.find_by(title: recipe_title)
+#   new_rec.save
+#   puts "Created #{new_rec.title} for #{recipe_title}"
+# end
+
+# create_extra_recipe("Avotoast", avotoast_1)
+# create_extra_recipe("Avotoast", avotoast_2)
+# create_extra_recipe("Spaghetti al Carbonara", carbonara_1)
+# create_extra_recipe("Spaghetti al Carbonara", carbonara_2)
+# create_extra_recipe("Baked Portobello", portobello_1)
+# create_extra_recipe("Baked Portobello", portobello_2)
+# create_extra_recipe("Baked Portobello", portobello_1)
+# create_extra_recipe("Strawberry Fondue", fondue_1)
+# create_extra_recipe("Strawberry Fondue", fondue_2)
+
+# Awards
+
+award_1 = {
+  name: "Sizzlin' Hot",
+  description: "You cooked our recipes 3+ days in a row this week!
+Keep it up to keep this award badge",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-sizzlin_hy3yzi.svg"
+}
+
+award_2 = {
+  name: "Cuukin up a Storm",
+  description: "A storm is brewing...
+You visited Cuukin for 3 days in a row, keep it coming to not lose this award!",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-storm_alb40e.svg"
+}
+
+award_3 = {
+  name: "Bookworm",
+  description: "But like, a cute one, like Hermione!
+You finished all the books of Cuukin v1.0. Congrats! More will come and we will inform you when they do!",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-worm_seqtdd.svg"
+}
+
+award_4 = {
+  name: "Fire Dancer",
+  description: "You have mastered all Cuukin v1.0 heating techniques -- like a cool(ass) fire dancer.",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-fire_o24654.svg"
+}
+
+award_5 = {
+  name: "Not a recipe virgin",
+  description: "Congrats, first recipe is now done and dusted.
+Wasn't that bad right?!",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-first_tggawv.svg"
+}
+
+award_6 = {
+  name: "First book",
+  description: "Just like our first love, we will remember you dearly.
+Congrats on finishing the first book!",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-book_jqy52w.svg"
+}
+
+award_7 = {
+  name: "Supporter",
+  description: "Thank you for making a donation to our Patreon site. Kin sends his love.
+xoxoxx
+Kin",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-patreon_edny9i.svg"
+}
+
+award_8 = {
+  name: "Oh hi there!",
+  description: "This is your first ever log in, welcome my future chef!
+Have this award, you deserve it.",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-login_dueama.svg"
+}
+
+award_9 = {
+  name: "Samurai",
+  description: "You have mastered all the chopping techniques in Cuukin v1.0 -- quite impressive!
+You would make a stellar samurai...",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-samurai_mgycxs.svg"
+}
+
+awards = [award_1, award_2, award_3, award_4, award_5, award_6, award_7, award_8, award_9]
+
+awards.each do |award|
+  new_award = Award.create(award)
+  puts "Created award #{new_award.name} 👏"
+end
+
+all_awards = Award.all
+all_users = User.all
+
+all_awards.each do |award|
+  all_users.each do |user|
+    UserAward.create(award_id: award.id, user_id: user.id)
+  end
+end

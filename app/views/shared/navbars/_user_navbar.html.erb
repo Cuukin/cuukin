@@ -13,7 +13,7 @@
   </div>
   <div class="nb-user-item" id="nb-dish">
     <%= image_tag('nb-4-dish.svg') %>
-    <p>0</p>
+    <p><%= current_user.user_recipes.count %></p>
   </div>
   <%= image_tag('nb-5-menu.svg', id: 'open-btn') %>
 </div>
@@ -21,15 +21,15 @@
 <div class="container-user-navbar-footer">
 
   <%= link_to books_path, class: 'journey-icons' do %>
-    <% if params[:controller] == 'books' || current_page?('/welcome') %>
+    <% if params[:controller] == 'books' || current_page?('/welcome') || params[:controller] == 'lessons' %>
       <%= image_tag('nb-journey-active.svg', id: 'journey-active') %>
     <% else %>
       <%= image_tag('nb-journey.svg', id: 'journey') %>
     <% end %>
   <% end %>
 
-  <%= link_to root_path, class: 'book-icons' do %>
-    <% if params[:controller] == 'lessons' %>
+  <%= link_to user_recipes_path, class: 'book-icons' do %>
+    <% if params[:controller] == 'user_recipes' %>
       <%= image_tag('nb-book-active.svg', id: 'book-active') %>
     <% else %>
       <%= image_tag('nb-book.svg', id: 'book') %>
@@ -62,12 +62,6 @@
       <li><%=link_to 'Sharing is Caring', 'https://www.cuukin.app/', target: '_blank' %></li>
       <li><%= link_to 'Credits', credits_path %></li>
       <li><%=link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
-
-      <% if current_user.admin? %>
-        <li>-</li>
-        <li><%= link_to "Admin Dashboard", admin_root_path, target: '_blank' %></li>
-        <li><%= link_to "Sidekiq", sidekiq_web_path, target: '_blank' %></li>
-      <% end %>
     </ul>
   </div>
 </div>

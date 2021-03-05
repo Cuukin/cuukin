@@ -62,6 +62,7 @@
 .devise-p {
   font-size: 16px;
   color: $cuukin;
+  cursor: pointer;
 }
 
 .social-btns {
@@ -104,20 +105,21 @@
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-  padding: 80px 0;
-  z-index: 20;
+  padding: 80px 8px;
+  z-index: 1000;
 }
 
 .form-devise-modal-content {
   background-color: $white;
   margin: auto;
   padding: 24px;
-  width: 400px;
+  max-width: 400px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, .16);
+  margin: 0 auto;
 }
 
 .double-btn {
@@ -134,6 +136,10 @@
       width: 300px;
       height: auto;
     }
+  }
+
+  .form-devise-modal-content {
+    width: 100%;
   }
 }
 
