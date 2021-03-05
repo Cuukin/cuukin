@@ -6,10 +6,13 @@
       <%= f.error_notification %>
 
       <div id="recipe-validation-item-1">
-        <h3>Take a photo of your dish</h3>
-        <p>Your photo will verify lesson completition</p>
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
-        <%= image_tag "", class: "hidden", id: "photo-preview" %>
+        <div class="form-group-photo">
+          <h3>Take a photo of your dish</h3>
+          <p>Your photo will verify lesson completition</p>
+          <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
+          <%= image_tag "", class: "hidden", id: "photo-preview" %>
+        </div>
+
         <p class="primary-btn" id="validateLessonNext">Next</p>
         <p class="devise-p text-center mt-2" id="validateLessonWithoutPhotoNext">Too late... ate it already!</p>
       </div>
