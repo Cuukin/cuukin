@@ -399,22 +399,39 @@ fondue_2 = {
   photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/cherryandchocolateca_84273_16x9.jpg"
 }
 
-def create_extra_recipe(recipe_title, extra_recipe)
-  new_rec = ExtraRecipe.new(extra_recipe)
-  new_rec.recipe = Recipe.find_by(title: recipe_title)
-  new_rec.save
-  puts "Created #{new_rec.title} for #{recipe_title}"
+extra_recipes = [avotoast_1, avotoast_2, carbonara_1, carbonara_2, portobello_1, portobello_2, fondue_1, fondue_2]
+
+extra_recipes.each do |recipe|
+  new_recipe = Recipe.create(recipe)
+  puts "Created recipe #{new_recipe.title}"
 end
 
-create_extra_recipe("Avotoast", avotoast_1)
-create_extra_recipe("Avotoast", avotoast_2)
-create_extra_recipe("Spaghetti al Carbonara", carbonara_1)
-create_extra_recipe("Spaghetti al Carbonara", carbonara_2)
-create_extra_recipe("Baked Portobello", portobello_1)
-create_extra_recipe("Baked Portobello", portobello_2)
-create_extra_recipe("Baked Portobello", portobello_1)
-create_extra_recipe("Strawberry Fondue", fondue_1)
-create_extra_recipe("Strawberry Fondue", fondue_2)
+def create_recipe_connection(recipe_title, extra_recipes)
+  new_extra_recipe = RecipeConnection.create(recipe: Recipe.find_by(title: recipe_title), extra_recipes_titles: extra_recipes)
+  puts "Created extra recipes #{new_extra_recipe.extra_recipes_titles} for #{recipe_title}"
+end
+
+create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
+create_recipe_connection("Spaghetti al Carbonara", [carbonara_1[:title], carbonara_2[:title]])
+create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
+create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
+
+# def create_extra_recipe(recipe_title, extra_recipe)
+#   new_rec = ExtraRecipe.new(extra_recipe)
+#   new_rec.recipe = Recipe.find_by(title: recipe_title)
+#   new_rec.save
+#   puts "Created #{new_rec.title} for #{recipe_title}"
+# end
+
+# create_extra_recipe("Avotoast", avotoast_1)
+# create_extra_recipe("Avotoast", avotoast_2)
+# create_extra_recipe("Spaghetti al Carbonara", carbonara_1)
+# create_extra_recipe("Spaghetti al Carbonara", carbonara_2)
+# create_extra_recipe("Baked Portobello", portobello_1)
+# create_extra_recipe("Baked Portobello", portobello_2)
+# create_extra_recipe("Baked Portobello", portobello_1)
+# create_extra_recipe("Strawberry Fondue", fondue_1)
+# create_extra_recipe("Strawberry Fondue", fondue_2)
 
 # Awards
 

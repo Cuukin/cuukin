@@ -1,5 +1,5 @@
 class LessonValidationsController < ApplicationController
-  before_action :set_lesson, only: [ :create ]
+  before_action :set_lesson, only: [ :create, :update ]
 
   def create
     @lesson_validation = LessonValidation.new(lesson_validation_params)
@@ -20,7 +20,6 @@ class LessonValidationsController < ApplicationController
   end
 
   def update
-    find_lesson
     @lesson_validation = LessonValidation.find_by(lesson_id: @lesson.id, user: current_user)
     authorize @lesson_validation, policy_class: LessonValidationPolicy
     if @lesson_validation.update(lesson_validation_params)
@@ -31,14 +30,17 @@ class LessonValidationsController < ApplicationController
       render :new
     end
 
+    transition_recipe(@lesson.recipe, current_user)
+    transition_extra_recipes(@lesson.recipe, current_user)
     transition_currency(@lesson, current_user)
   end
 
   private
 
   def transition_extra_recipes(recipe, user)
-    recipe.extra_recipes.each do |extra_recipe|
-      UserRecipe.create(user: user, extra_recipe: extra_recipe, completed: false)
+    extra_recipes = recipe.recipe_connections.first.extra_recipes_titles
+    extra_recipes.each do |extra_recipe|
+      UserRecipe.create(user: user, recipe: Recipe.find_by(title: extra_recipe), completed: false)
     end
   end
 

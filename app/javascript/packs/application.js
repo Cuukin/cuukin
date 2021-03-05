@@ -36,12 +36,12 @@ import { validateSkippedLesson } from '../components/lesson_validations/validate
 import { lessonValidationSlide } from '../components/lesson_validations/lesson_validation_slide';
 
 document.addEventListener('turbolinks:load', () => {
+  homeCarousel();
   preventSelectDoubleClick();
   journeyMap();
   currenciesModal();
   togglePasswordVisibility();
   previewImageOnFileSelect();
-  homeCarousel();
   expandedNavbar();
   lessonChaptersSlide();
   lessonServingCalc();
