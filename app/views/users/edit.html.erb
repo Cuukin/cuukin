@@ -5,8 +5,8 @@
       <%= f.error_notification %>
 
       <div class="form-group-photo">
-        <p>Choose your avatar</p>
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
+        <!-- <p>Choose your avatar</p> -->
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Upload a photo' %>
         <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
       </div>
 

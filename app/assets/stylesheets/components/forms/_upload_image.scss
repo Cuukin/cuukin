@@ -4,13 +4,17 @@
   cursor: pointer;
   font-weight: 500;
   background: white;
-  border-radius: 2px;
+  border-radius: 8px;
   margin: 0;
 }
 
 .form-group-photo {
   .form-group {
     margin-bottom: 16px;
+  }
+  .upload-photo {
+    text-align: center;
+    width: 100%;
   }
 }
 
