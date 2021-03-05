@@ -63,6 +63,10 @@
   font-size: 16px;
   color: $cuukin;
   cursor: pointer;
+
+  &:hover {
+    opacity: .8;
+  }
 }
 
 .social-btns {
