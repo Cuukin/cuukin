@@ -43,9 +43,13 @@
 #locateBtn {
   position: fixed;
   cursor: pointer;
-  margin: 16px;
-  height: 42px;
-  width: 42px;
+  bottom: 80px;
+  right: 24px;
+  //margin: 16px;
+  height: 56px;
+  width: 56px;
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .12));
+  filter: drop-shadow( 3px 3px 6px rgba(0, 0, 0, .12));
 }
 
 @media (max-width: 500px) {
