@@ -20,13 +20,17 @@ const displayPreview = (input) => {
     const photoPreview = document.getElementById('photo-preview')
     if (photoPreview) {
       photoPreview.classList.remove('hidden');
+      photoPreview.style.display = "block";
     };
   };
 
   const preview = document.getElementById('photo-preview');
-  const btn = document.getElementById('validateLessonWithoutPhotoNext');
-  if (preview.src && btn) {
-    btn.style.display = "none";
+  const skipBtn = document.getElementById('validateLessonWithoutPhotoNext');
+  const nextBtn = document.getElementById('validateLessonNext');
+
+  if (preview.src && skipBtn) {
+    skipBtn.style.display = "none";
+    nextBtn.style.display = "block";
   };
 }
 
