@@ -8,7 +8,14 @@
   margin: 0;
 }
 
+.form-group-photo {
+  .form-group {
+    margin-bottom: 16px;
+  }
+}
+
 #photo-preview {
+  display: none;
   width: 100%;
   margin-bottom: 16px;
 }
