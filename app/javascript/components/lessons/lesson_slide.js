@@ -1,5 +1,4 @@
 const lessonChaptersSlide = () => {
-
   const lessonContainer = document.querySelector('.container-lesson');
   const lessonSlide = document.querySelector('.lesson-slide');
   const lessonChapter = document.querySelectorAll('.container-lesson-chapter');
@@ -18,6 +17,8 @@ const lessonChaptersSlide = () => {
 
   let counter = 0;
 
+  const progressBar = document.querySelector('.meter-progression');
+
   if (lessonOverviewContainer) {
     lessonContainer.style.display = "none";
   };
@@ -31,6 +32,10 @@ const lessonChaptersSlide = () => {
         top: 0
       });
       lessonVideos[counter].play();
+
+      let totalItems = document.querySelectorAll('.lesson-slide > div').length;
+      let progressBarWidth = 100 * (counter + 1) / totalItems;
+      progressBar.style.width = progressBarWidth + '%';
     });
   };
 
@@ -46,6 +51,10 @@ const lessonChaptersSlide = () => {
         });
         lessonVideos[counter].play();
         lessonVideos[counter - 1].pause();
+
+        let totalItems = document.querySelectorAll('.lesson-slide > div').length;
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
       });
     });
   };
@@ -62,6 +71,10 @@ const lessonChaptersSlide = () => {
         });
         lessonVideos[counter].play();
         lessonVideos[counter - 1].pause();
+
+        let totalItems = document.querySelectorAll('.lesson-slide > div').length;
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
       }, 2100);
     }
 
@@ -81,6 +94,10 @@ const lessonChaptersSlide = () => {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+        let totalItems = document.querySelectorAll('.lesson-slide > div').length;
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
       };
 
       lessonVideos[counter + 1].pause();

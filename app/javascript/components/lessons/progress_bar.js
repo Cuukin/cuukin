@@ -1,5 +1,0 @@
-const progressBar = () => {
-
-}
-
-export { progressBar };

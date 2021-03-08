@@ -29,7 +29,6 @@ import { currenciesModal } from '../components/popups/currency_popup';
 import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
-import { progressBar } from '../components/lessons/progress_bar';
 
 import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
@@ -53,5 +52,4 @@ document.addEventListener('turbolinks:load', () => {
   validateSkippedLesson();
   lessonValidationSlide();
   cuukbook();
-  progressBar();
 });
