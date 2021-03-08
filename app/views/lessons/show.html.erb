@@ -91,7 +91,7 @@
         <% @lesson.recipe.recipe_ingredients.each do |r_ingredient| %>
           <tr>
             <td class="ingredient-measure"><span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %></td>
-            <td><%= r_ingredient.ingredient.name %></td>
+            <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
           </tr>
         <% end %>
       </table>
@@ -100,18 +100,11 @@
     <div class="lesson-overview-equipment">
       <h3>Equipment needed</h3>
       <table>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Non-stick pan (e.g. teflon)</td>
-        </tr>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Spatula (silicone or wood tip)</td>
-        </tr>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Large bowl (can contain 3 eggs)</td>
-        </tr>
+        <% @lesson.recipe.recipe_tools.each do |r_tool| %>
+          <tr>
+            <td class="equipment-name"><%= r_tool.tool.name %></td>
+          </tr>
+        <% end %>
       </table>
 
       <div class="lesson-important">

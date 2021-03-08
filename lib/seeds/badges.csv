@@ -1,41 +1,41 @@
-id,badge_name,cathegory,image
-1,Root Vegetables,ingredient,
-2,Bulbs,ingredient,
-3,Greens,ingredient,
-4,(not) Veggies,ingredient,
-5,Fruits,ingredient,
-6,Fresh herbs,ingredient,
-7,Seeds and Grains,ingredient,
-8,Legumes,ingredient,
-9,Funghi,ingredient,
-10,Chicken,ingredient,
-11,Beef,ingredient,
-12,Pork,ingredient,
-13,Fish,ingredient,
-14,Seafood,ingredient,
-15,Eggs,ingredient,
-16,Dairy,ingredient,
-17,Fats and oils,ingredient,
-18,Condiments,ingredient,
-19,Dry herbs and spices,ingredient,
-20,Cooking alcohols,ingredient,
-21,Stocks and sauces,ingredient,
-22,Sweeteners and chocolate,ingredient,
-23,"Bread, flour and pasta",ingredient,
-24,Cutting tools,tool,
-25,Utensils,tool,
-26,Pots and pans,tool,
-27,Containers,tool,
-28,Disposables,tool,
-29,Heating equipment,tool,
-30,Storage,tool,
-31,Appliances,tool,
-32,Chopping,technique,
-33,Seasoning,technique,
-34,Preserving,technique,
-35,Mixing,technique,
-36,Prepping techniques,technique,
-37,Oven cooking,technique,
-38,Stove-top cooking,technique,
-39,Alternative cooking techniques,technique,
-40,Plating,technique,
+id,badge_name,category
+1,Root Vegetables,ingredient
+2,Bulbs,ingredient
+3,Greens,ingredient
+4,(not) Veggies,ingredient
+5,Fruits,ingredient
+6,Fresh herbs,ingredient
+7,Seeds and Grains,ingredient
+8,Legumes,ingredient
+9,Funghi,ingredient
+10,Chicken,ingredient
+11,Beef,ingredient
+12,Pork,ingredient
+13,Fish,ingredient
+14,Seafood,ingredient
+15,Eggs,ingredient
+16,Dairy,ingredient
+17,Fats and oils,ingredient
+18,Condiments,ingredient
+19,Dry herbs and spices,ingredient
+20,Cooking alcohols,ingredient
+21,Stocks and sauces,ingredient
+22,Sweeteners and chocolate,ingredient
+23,"Bread, flour and pasta",ingredient
+24,Cutting tools,tool
+25,Utensils,tool
+26,Pots and pans,tool
+27,Containers,tool
+28,Disposables,tool
+29,Heating equipment,tool
+30,Storage,tool
+31,Appliances,tool
+32,Chopping,technique
+33,Seasoning,technique
+34,Preserving,technique
+35,Mixing,technique
+36,Prepping techniques,technique
+37,Oven cooking,technique
+38,Stove-top cooking,technique
+39,Alternative cooking techniques,technique
+40,Plating,technique
