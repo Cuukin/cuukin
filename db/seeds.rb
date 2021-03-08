@@ -242,13 +242,56 @@ recipe_method_1 = {
 }
 
 recipe_method_2 = {
-  recipe_id: 1,
+  recipe_id: 2,
   title: 'Chopping Onions',
   description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
 
-recipe_methods = [recipe_method_1, recipe_method_2]
+recipe_method_3 = {
+  recipe_id: 2,
+  title: 'Heating Oil',
+  description: "Boil the water and dump the egg in there when you're ready.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_method_4 = {
+  recipe_id: 2,
+  title: 'Chopping Onions',
+  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_method_5 = {
+  recipe_id: 3,
+  title: 'Heating Oil',
+  description: "Boil the water and dump the egg in there when you're ready.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_method_6 = {
+  recipe_id: 3,
+  title: 'Chopping Onions',
+  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_method_7 = {
+  recipe_id: 4,
+  title: 'Heating Oil',
+  description: "Boil the water and dump the egg in there when you're ready.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+recipe_method_8 = {
+  recipe_id: 4,
+  title: 'Chopping Onions',
+  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+
+recipe_methods = [recipe_method_1, recipe_method_2, recipe_method_3, recipe_method_4, recipe_method_5, recipe_method_6, recipe_method_7, recipe_method_8]
 
 recipe_methods.each do |recipe_method|
   new_recipe_method = RecipeMethod.create(recipe_method)
@@ -257,7 +300,6 @@ end
 
 skill_chapter_1 = {
   lesson_id: 1,
-  badge_id: 1,
   title: 'Onions 101',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
@@ -265,7 +307,6 @@ skill_chapter_1 = {
 
 skill_chapter_2 = {
   lesson_id: 1,
-  badge_id: 2,
   title: 'Oil 101',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
@@ -273,13 +314,75 @@ skill_chapter_2 = {
 
 skill_chapter_3 = {
   lesson_id: 1,
-  badge_id: 3,
   title: 'Carrots',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
 
-skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3]
+skill_chapter_4 = {
+  lesson_id: 2,
+  title: 'Onions 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_5 = {
+  lesson_id: 2,
+  title: 'Oil 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_6 = {
+  lesson_id: 2,
+  title: 'Carrots',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_7 = {
+  lesson_id: 3,
+  title: 'Onions 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_8 = {
+  lesson_id: 3,
+  title: 'Oil 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_9 = {
+  lesson_id: 3,
+  title: 'Carrots',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_10 = {
+  lesson_id: 4,
+  title: 'Onions 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_11 = {
+  lesson_id: 4,
+  title: 'Oil 101',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapter_12 = {
+  lesson_id: 4,
+  title: 'Carrots',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
+}
+
+skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3, skill_chapter_4, skill_chapter_5, skill_chapter_6, skill_chapter_7, skill_chapter_8, skill_chapter_9, skill_chapter_10, skill_chapter_11, skill_chapter_12]
 
 skill_chapters.each do |skill_chapter|
   new_skill_chapter = SkillChapter.create(skill_chapter)
