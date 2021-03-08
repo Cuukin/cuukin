@@ -242,7 +242,7 @@ recipe_method_1 = {
 }
 
 recipe_method_2 = {
-  recipe_id: 2,
+  recipe_id: 1,
   title: 'Chopping Onions',
   description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
@@ -289,7 +289,6 @@ recipe_method_8 = {
   description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
-
 
 recipe_methods = [recipe_method_1, recipe_method_2, recipe_method_3, recipe_method_4, recipe_method_5, recipe_method_6, recipe_method_7, recipe_method_8]
 
@@ -385,8 +384,9 @@ skill_chapter_12 = {
 skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3, skill_chapter_4, skill_chapter_5, skill_chapter_6, skill_chapter_7, skill_chapter_8, skill_chapter_9, skill_chapter_10, skill_chapter_11, skill_chapter_12]
 
 skill_chapters.each do |skill_chapter|
-  new_skill_chapter = SkillChapter.create(skill_chapter)
+  new_skill_chapter = SkillChapter.new(skill_chapter)
   new_skill_chapter.badge_id = rand(1..40)
+  new_skill_chapter.save
   puts "Created #{skill_chapter[:title]}"
 end
 
