@@ -4,6 +4,8 @@ const lessonValidationSlide = () => {
   const validateItem1 = document.querySelector('#recipe-validation-item-1');
   const validateItem2 = document.querySelector('#recipe-validation-item-2');
 
+  const rememberText = document.querySelector('#rememberPhotoText');
+
   const validateFunction = (btn) => {
     if (btn) {
       btn.addEventListener('click', () => {
@@ -13,8 +15,15 @@ const lessonValidationSlide = () => {
     };
   };
 
+  if (validateLessonWithoutPhotoNextBtn) {
+    validateLessonWithoutPhotoNextBtn.addEventListener('click', () => {
+      validateItem1.style.display = "none";
+      validateItem2.style.display = "block";
+      rememberText.style.display = "block";
+    });
+  };
+
   validateFunction(validateLessonNextBtn);
-  validateFunction(validateLessonWithoutPhotoNextBtn);
 }
 
 export { lessonValidationSlide };
