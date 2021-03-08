@@ -149,11 +149,11 @@
 
   <div class="lesson-slide">
 
-    <% @lesson.skill_chapters.each do |skill_chapter| %>
+    <% @lesson.skill_chapters.each_with_index do |skill_chapter, index| %>
 
       <div class="container-lesson-chapter">
         <div class="lesson-skill-video">
-          <video src="https://res.cloudinary.com/juliaf1/video/upload/v1615229396/Cuukin%20-%20Skill%20Videos/Egg_final_svgbqw.mp4" controls></video>
+          <video class="skillVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615229396/Cuukin%20-%20Skill%20Videos/Egg_final_svgbqw.mp4" controls></video>
         </div>
 
         <div class="card-lesson-chapter">
@@ -176,7 +176,7 @@
 
       <div class="container-lesson-recipe">
         <div class="lesson-recipe-video">
-          <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
+          <video class="methodVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615235460/Cuukin%20-%20Skill%20Videos/recipe_test_jn27vr.mp4" controls></video>
         </div>
 
         <div class="card-lesson-recipe">
@@ -195,7 +195,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
-                <p><%= "#{recipe_ingredient.quantity} #{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name}" %></p>
+                <p><%= "#{recipe_ingredient.quantity} #{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
               <% end %>
             </div>
             <div class="recipe-method-description">

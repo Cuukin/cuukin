@@ -399,8 +399,8 @@
 .card-lesson-recipe {
   background-color: $white;
   padding: 16px;
-  position: relative;
-  top: -24px;
+  //position: relative;
+  //top: -24px;
 
   h4 {
     font-weight: 100;
@@ -417,14 +417,13 @@
 
 .lesson-recipe-video {
   width: 500px;
-  height: 500px;
   display: flex;
   justify-content: center;
   overflow: hidden;
 
   video {
-    width: auto;
-    height: 500px;
+    width: 100%;
+    height: auto;
   }
 }
 
