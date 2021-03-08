@@ -6,14 +6,6 @@
       <%= image_tag('devise-login.svg', class: 'devise-img') %>
     </div>
 
-    <div class="social-btns mb-3">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-google-plus"></i>
-      <i class="fab fa-twitter-square"></i>
-    </div>
-
-    <p class="text-center mb-3">or</p>
-
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
