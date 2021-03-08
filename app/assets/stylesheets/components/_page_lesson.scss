@@ -305,6 +305,7 @@
 
 .container-lesson {
   width: 500px;
+  min-height: 100vh;
   margin: auto;
   overflow: hidden;
 }
@@ -318,6 +319,7 @@
 
 .container-lesson-chapter {
   width: 500px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: $white;
 }
@@ -369,7 +371,6 @@
     width: 50%;
     display: block;
     background-color: $cuukin;
-    //position: absolute;
   }
 }
 
@@ -392,6 +393,7 @@
 
 .container-lesson-recipe {
   width: 500px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: $white;
 }
@@ -399,8 +401,6 @@
 .card-lesson-recipe {
   background-color: $white;
   padding: 16px;
-  //position: relative;
-  //top: -24px;
 
   h4 {
     font-weight: 100;
