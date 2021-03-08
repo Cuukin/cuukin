@@ -1,0 +1,173 @@
+id,name,badge_name,score1,score2
+1,Potato,Root Vegetables,5,1
+2,Sweet potato,Root Vegetables,5,1
+3,Carrot,Root Vegetables,5,1
+4,Radish,Root Vegetables,5,1
+5,Ginger,Root Vegetables,5,1
+6,Onion,Bulbs,5,1
+7,Garlic,Bulbs,5,1
+8,Green Onion,Bulbs,5,1
+9,Red onion,Bulbs,5,1
+10,Lettuce,Greens,5,1
+11,Kale,Greens,5,1
+12,Spinach,Greens,5,1
+13,Watercress,Greens,5,1
+14,Salad,Greens,5,1
+15,Cabbage,Greens,5,1
+16,Broccoli,Greens,5,1
+17,Asparagus,Greens,5,1
+18,Celery,Greens,5,1
+19,Pepper,(not) Veggies,5,1
+20,Cucumber,(not) Veggies,5,1
+21,Tomato,(not) Veggies,5,1
+22,Butternut squash,(not) Veggies,5,1
+23,Zucchini,(not) Veggies,5,1
+24,Cherry tomato,(not) Veggies,5,1
+25,Red pepper,(not) Veggies,5,1
+26,Aubergine,(not) Veggies,5,1
+27,Bell pepper,(not) Veggies,5,1
+28,Apple,Fruits,5,1
+29,Banana,Fruits,5,1
+30,Pear,Fruits,5,1
+31,Strawberry,Fruits,5,1
+32,Lemon,Fruits,5,1
+33,Avocado,Fruits,5,1
+34,Oregano,Fresh herbs,5,1
+35,Basil,Fresh herbs,5,1
+36,Parsley,Fresh herbs,5,1
+37,Coriander,Fresh herbs,5,1
+38,Thyme,Fresh herbs,5,1
+39,Sage,Fresh herbs,5,1
+40,Fresh Mint,Fresh herbs,5,1
+41,Dill,Fresh herbs,5,1
+42,White rice,Seeds and Grains,5,1
+43,Cashew nut,Seeds and Grains,5,1
+44,Pine nut,Seeds and Grains,5,1
+45,Sesame seed,Seeds and Grains,5,1
+46,Risotto rice,Seeds and Grains,5,1
+47,Pistacchio,Seeds and Grains,5,1
+48,Sushi rice,Seeds and Grains,5,1
+49,Medium grain rice,Seeds and Grains,5,1
+50,Chickpea,Legumes,5,1
+51,Black bean,Legumes,5,1
+52,Red lentil,Legumes,5,1
+53,Frozen pea,Legumes,5,1
+54,Kidney bean,Legumes,5,1
+55,Shimeji Mushroom,Funghi,5,1
+56,Portobello Mushroom,Funghi,5,1
+57,Shitake Mushroom,Funghi,5,1
+58,White Mushroom,Funghi,5,1
+59,Chestnut Mushroom,Funghi,5,1
+60,Dried porccini Mushroom,Funghi,5,1
+61,Chicken thigh,Chicken,5,1
+62,Chicken breast,Chicken,5,1
+63,Ground beef,Beef,5,1
+64,Sirloin steak,Beef,5,1
+65,Filet mignon,Beef,5,1
+66,Burger,Beef,5,1
+67,Bacon,Pork,5,1
+68,Pork ribs,Pork,5,1
+69,Pepperoni,Pork,5,1
+70,Prosciutto,Pork,5,1
+71,Ham,Pork,5,1
+72,Minced pork,Pork,5,1
+73,Sausage,Pork,5,1
+74,Pork chop,Pork,5,1
+75,Pancetta,Pork,5,1
+76,Salmon,Fish,5,1
+77,Cod,Fish,5,1
+78,Tuna steak,Fish,5,1
+79,Fresh fish,Fish,5,1
+80,Canned tuna,Fish,5,1
+81,Prawn,Seafood,5,1
+82,Oyster,Seafood,5,1
+83,Tiger King Prawn,Seafood,5,1
+84,Clam,Seafood,5,1
+85,Mussel,Seafood,5,1
+86,Egg,Eggs,5,1
+87,Milk,Dairy,5,1
+88,Mozzarella cheese,Dairy,5,1
+89,Heavy Cream,Dairy,5,1
+90,Parmesan cheese,Dairy,5,1
+91,Soured cream,Dairy,5,1
+92,Goat cheese,Dairy,5,1
+93,Cheese,Dairy,5,1
+94,Pecorino cheese,Dairy,5,1
+95,Alternative milk,Dairy,5,1
+96,Feta cheese,Dairy,5,1
+97,Coconut cream,Dairy,5,1
+98,Mature cheddar cheese,Dairy,5,1
+99,Butter,Fats and oils,5,1
+100,Olive oil,Fats and oils,5,1
+101,Coconut oil,Fats and oils,5,1
+102,Cooking oil,Fats and oils,5,1
+103,Apple vinegar,Condiments,5,1
+104,White vinegar,Condiments,5,1
+105,Dijon mustard,Condiments,5,1
+106,Ketchup,Condiments,5,1
+107,Vanilla extract,Condiments,5,1
+108,Balsamic vinegar,Condiments,5,1
+109,Oyster sauce,Condiments,5,1
+110,Soy sauce,Condiments,5,1
+111,Olive,Condiments,5,1
+112,Balsamic vinegar,Condiments,5,1
+113,Mayonnaise,Condiments,5,1
+114,Curry paste,Condiments,5,1
+115,Dried oregano,Herbs and spices,5,1
+116,Dried mint,Herbs and spices,5,1
+117,Salt,Herbs and spices,5,1
+118,Sea salt,Herbs and spices,5,1
+119,Black pepper,Herbs and spices,5,1
+120,Paprika,Herbs and spices,5,1
+121,Flaky salt,Herbs and spices,5,1
+122,Red chilli,Herbs and spices,5,1
+123,Japanese curry cube,Herbs and spices,5,1
+124,Mixed herbs,Herbs and spices,5,1
+125,Red chili,Herbs and spices,5,1
+126,Cumin,Herbs and spices,5,1
+127,Cinnamon,Herbs and spices,5,1
+128,Brandy,Cooking alcohols,5,1
+129,White wine,Cooking alcohols,5,1
+130,Red wine,Cooking alcohols,5,1
+131,Tomato sauce,Stocks and sauces,5,1
+132,Bechamel sauce,Stocks and sauces,5,1
+133,Tartar sauce,Stocks and sauces,5,1
+134,Vegetable stock,Stocks and sauces,5,1
+135,Beef Stock,Stocks and sauces,5,1
+136,Curry sauce,Stocks and sauces,5,1
+137,Worcestershire sauce,Stocks and sauces,5,1
+138,Fish stock,Stocks and sauces,5,1
+139,Chicken stock,Stocks and sauces,5,1
+140,Coconut milk,Stocks and sauces,5,1
+141,Pesto,Stocks and sauces,5,1
+142,Canned tomatoes,Stocks and sauces,5,1
+143,Sugar,Sweeteners and chocolate,5,1
+144,Chocolate,Sweeteners and chocolate,5,1
+145,Dark Chocolate,Sweeteners and chocolate,5,1
+146,Nutella,Sweeteners and chocolate,5,1
+147,Honey,Sweeteners and chocolate,5,1
+148,Light Brown Sugar,Sweeteners and chocolate,5,1
+149,Chocolate chip,Sweeteners and chocolate,5,1
+150,Cocoa powder,Sweeteners and chocolate,5,1
+151,Sliced Bread,"Bread, flour and pasta",5,1
+152,Focaccia,"Bread, flour and pasta",5,1
+153,Baguette,"Bread, flour and pasta",5,1
+154,Yeast,"Bread, flour and pasta",5,1
+155,Fresh bread,"Bread, flour and pasta",5,1
+156,Puff Pastry,"Bread, flour and pasta",5,1
+157,Bread,"Bread, flour and pasta",5,1
+158,English muffin,"Bread, flour and pasta",5,1
+159,Pitta bread,"Bread, flour and pasta",5,1
+160,Burger bun,"Bread, flour and pasta",5,1
+161,Dried spaghetti,"Bread, flour and pasta",5,1
+162,Dried pasta,"Bread, flour and pasta",5,1
+163,Lasagne Sheet,"Bread, flour and pasta",5,1
+164,Panko,"Bread, flour and pasta",5,1
+165,Corn Flour,"Bread, flour and pasta",5,1
+166,Wheat Flour,"Bread, flour and pasta",5,1
+167,Breading flour,"Bread, flour and pasta",5,1
+168,Flour,"Bread, flour and pasta",5,1
+169,Baking soda,"Bread, flour and pasta",5,1
+170,Fusilli,"Bread, flour and pasta",5,1
+171,Baking powder,"Bread, flour and pasta",5,1
+172,Guanciale,Pork,5,1

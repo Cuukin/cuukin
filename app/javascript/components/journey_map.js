@@ -4,7 +4,7 @@ const journeyMap = () => {
   const locateBtn = document.querySelector('#locateBtn');
 
   if (journeyContainer) {
-    journeyContainer.scrollLeft = (journeyImg.scrollWidth - journeyContainer.clientWidth) / 2.4;
+    journeyContainer.scrollLeft = (journeyImg.scrollWidth - journeyContainer.clientWidth) / 2.1;
   };
 
   if (locateBtn) {
@@ -12,7 +12,7 @@ const journeyMap = () => {
 
       journeyContainer.scrollTo({
         top: 0,
-        left: (journeyImg.scrollWidth - journeyContainer.clientWidth) / 2.4,
+        left: (journeyImg.scrollWidth - journeyContainer.clientWidth) / 2.1,
         behavior: 'smooth'
       });
 

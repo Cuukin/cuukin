@@ -27,7 +27,7 @@
 .lesson-photo {
   width: 500px;
   height: 300px;
-  background-size: auto 50%;
+  background-size: auto 75%;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -36,7 +36,7 @@
 .lesson-dash {
   width: 43px;
   display: block;
-  margin: 8px auto 16px;
+  margin: 4px auto 24px;
 }
 
 .card-lesson-overview {
@@ -44,7 +44,7 @@
   border-radius: 24px 24px 0 0;
   padding: 16px;
   position: relative;
-  top: -24px;
+  top: -32px;
 
   h2 {
     color: $cuukin;
@@ -79,20 +79,24 @@
 }
 
 .lesson-overview-serving {
-  color: $gray;
+  color: $dark-gray;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 24px 0;
 
   p {
-    margin: 0 0 0 8px;
+    margin: 0 0 0 10px;
   }
 
   .serving-btn {
     height: 30px;
     margin: 0 16px;
     cursor: pointer;
+  }
+
+  .serving-icon {
+    height: 20px;
   }
 }
 
@@ -112,16 +116,40 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 24px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    max-width: 77px;
+    margin: 0 8px 8px 0;
+  }
+
+  p {
+    font-weight: 16px;
+    line-height: 1;
+    margin: 8px 0 0;
+    // width: 50%;
     text-align: center;
   }
 
   img {
-    height: 77px;
-    width: 77px;
+    height: 70px;
+    width: 70px;
+  }
+
+  .badge-container {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .badge1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .0));
+    filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
+  }
+
+  .badge2 {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -198,18 +226,23 @@
   margin: 24px 0;
 
   table {
-    margin-left: 24px;
+    width: 100%;
   }
 
   td {
-    padding: 4px;
-    font-size: 14px;
+    font-size: 16px;
+    display: inline-block;
   }
 }
 
 .ingredient-measure, .equipment-measure {
   text-align: right;
+  width: 64px;
   // min-width: 16px;
+}
+
+.ingredient-name, .equipment-name {
+  padding-left: 16px;
 }
 
 .lesson-important {
@@ -246,9 +279,9 @@
 
   .lesson-overview-details {
     li {
-      font-size: 14px;
+      font-size: 16px;
       display: inline;
-      margin: 0 14px;
+      margin: 0 10px;
     }
 
     .lesson-icons {
@@ -258,7 +291,7 @@
 
   .lesson-overview-serving {
     p {
-      margin: 0 0 0 4px;
+      margin: 0 0 0 8px;
     }
 
     .serving-btn {
@@ -272,6 +305,7 @@
 
 .container-lesson {
   width: 500px;
+  min-height: 100vh;
   margin: auto;
   overflow: hidden;
 }
@@ -284,62 +318,59 @@
 // Lesson Skill Chapter [second++ cards]
 
 .container-lesson-chapter {
-  position: relative;
   width: 500px;
-  margin: auto;
+  min-height: 100vh;
+  margin: 0 auto;
   background-color: $white;
 }
 
 .card-lesson-chapter {
+  width: 100%;
   background-color: $white;
-  border-radius: 24px 24px 0 0;
   padding: 16px;
-  position: relative;
-  top: -32px;
 
   h2 {
     color: $cuukin;
     font-size: 24px;
     font-weight: 700;
+    margin-bottom: 24px;
   }
 
   h3 {
     color: $black;
-    margin: 24px 0;
+    margin-bottom: 16px;
   }
 
-  p {
-    margin: 24px 0;
+  .skill-description {
+    margin-bottom: 24px;
   }
 }
 
 .lesson-skill-video {
-  width: 500px;
-  height: 500px;
   display: flex;
   justify-content: center;
   overflow: hidden;
+  width: 500px;
 
   video {
-    width: auto;
-    height: 500px;
+    width: 100%;
+    height: auto;
   }
 }
 
 .meter {
   height: 16px;
   width: 100%;
+  padding: 2px 0;
   background-color: $light-gray;
   position: relative;
   z-index: 10;
 
   span {
     height: 100%;
-    width: 50%;
+    width: 0;
     display: block;
     background-color: $cuukin;
-    border-radius: 0 8px 8px 0;
-    position: absolute;
   }
 }
 
@@ -361,8 +392,8 @@
 // Lesson Recipe Method
 
 .container-lesson-recipe {
-  position: relative;
   width: 500px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: $white;
 }
@@ -370,8 +401,6 @@
 .card-lesson-recipe {
   background-color: $white;
   padding: 16px;
-  position: relative;
-  top: -24px;
 
   h4 {
     font-weight: 100;
@@ -384,22 +413,17 @@
     font-size: 24px;
     font-weight: 700;
   }
-
-  p {
-    margin: 24px 0;
-  }
 }
 
 .lesson-recipe-video {
   width: 500px;
-  height: 500px;
   display: flex;
   justify-content: center;
   overflow: hidden;
 
   video {
-    width: auto;
-    height: 500px;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -407,10 +431,40 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 16px;
 
   .next-btn {
     margin: 0;
   }
+}
+
+.recipe-method-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-method-ingredients {
+  padding: 8px;
+  border: 1px dashed $black;
+  width: 40%;
+
+  h5 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.recipe-method-description {
+  width: 60%;
+  padding: 0 16px;
+}
+
+.finish-lesson {
+  margin-top: 24px;
 }
 
 @media (max-width: 500px) {

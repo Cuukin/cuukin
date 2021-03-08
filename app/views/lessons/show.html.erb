@@ -18,7 +18,7 @@
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
-  <%= link_to book_path(@lesson.book) do %>
+  <%= link_to :back do %>
     <%= image_tag('btn-back.svg', class: 'btn-back') %>
   <% end %>
 
@@ -36,17 +36,17 @@
       </li>
       <li>
         <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
-        Level <%= @lesson.book.level.capitalize %>
+        Level <%= Book.levels[@lesson.book.level] %>
       </li>
       <li>
-        <%= image_tag('lesson-ingredient.svg', class: 'lesson-icons') %>
-        Eggs
+        <%= image_tag('lesson-xp.svg', class: 'lesson-icons') %>
+        <%= @lesson.xp %> Stars
       </li>
     </ul>
 
     <div class="lesson-overview-serving">
       <%= image_tag('btn-decrease.svg', class: 'serving-btn', id: 'minusBtn') %>
-      <%= image_tag('lesson-serving.svg') %>
+      <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>
       <p class="serving-paragraph">1 serving(s)</p>
       <%= image_tag('btn-increase.svg', class: 'serving-btn', id: 'plusBtn') %>
     </div>
@@ -54,62 +54,44 @@
     <div class="lesson-overview-skills">
       <h3>Skills practiced</h3>
       <ul>
-        <li>
-          <%= image_tag('lesson-skill.png') %>
-          Eggs 101
-        </li>
-        <li>
-          <%= image_tag('lesson-skill.png') %>
-          Frying basics
-        </li>
-        <li>
-          <%= image_tag('lesson-skill.png') %>
-          Frying pan
-        </li>
-        <li>
-          <%= image_tag('lesson-skill.png') %>
-          Oils
-        </li>
+        <% @lesson.skill_chapters.each do |skill_chapter| %>
+          <li>
+            <div class="badge-container">
+              <% if skill_chapter.badge.category == 'tool' %>
+                <%= image_tag('badge_white_tool.svg', class: 'badge1') %>
+              <% elsif skill_chapter.badge.category == 'technique' %>
+                <%= image_tag('badge_white_technique.svg', class: 'badge1') %>
+              <% else %>
+                <%= image_tag('badge_white_ingredient.svg', class: 'badge1') %>
+              <% end %>
+              <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
+            </div>
+            <p><%= skill_chapter.title %></p>
+          </li>
+        <% end %>
       </ul>
     </div>
 
     <div class="lesson-overview-ingredients">
       <h3>Ingredients</h3>
       <table>
-        <tr>
-          <td class="ingredient-measure"><span>3</span></td>
-          <td>Eggs (large, free range)</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure"><span>1</span> tbsp</td>
-          <td>Butter (room temperature) | olive oil | canola oil</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure"><span>1</span> tbsp</td>
-          <td>Salt & pepper</td>
-        </tr>
-        <tr>
-          <td class="ingredient-measure">Dash</td>
-          <td>Truffle oil</td>
-        </tr>
+        <% @lesson.recipe.recipe_ingredients.each do |r_ingredient| %>
+          <tr>
+            <td class="ingredient-measure"><span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %></td>
+            <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
+          </tr>
+        <% end %>
       </table>
     </div>
 
     <div class="lesson-overview-equipment">
       <h3>Equipment needed</h3>
       <table>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Non-stick pan (e.g. teflon)</td>
-        </tr>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Spatula (silicone or wood tip)</td>
-        </tr>
-        <tr>
-          <td class="equipment-measure">1x</td>
-          <td>Large bowl (can contain 3 eggs)</td>
-        </tr>
+        <% @lesson.recipe.recipe_tools.each do |r_tool| %>
+          <tr>
+            <td class="equipment-name"><%= r_tool.tool.name %></td>
+          </tr>
+        <% end %>
       </table>
 
       <div class="lesson-important">
@@ -162,99 +144,79 @@
   <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
 
   <div class="meter">
-    <span style="width: 25%"></span>
+    <span class="meter-progression"></span>
   </div>
 
   <div class="lesson-slide">
 
-    <div class="container-lesson-chapter">
-      <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
+    <% @lesson.skill_chapters.each_with_index do |skill_chapter, index| %>
 
-      <div class="card-lesson-chapter">
-        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-        <h2 class="text-center">Carrots 101</h2>
-        <h3>Summary</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
-      </div>
-    </div>
-
-    <div class="container-lesson-chapter">
-      <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-chapter">
-        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-        <h2 class="text-center">Seasoning basics</h2>
-        <h3>Summary</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
-      </div>
-    </div>
-
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 1 / 3</h2>
-          </div>
-          <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+      <div class="container-lesson-chapter">
+        <div class="lesson-skill-video">
+          <video class="skillVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615229396/Cuukin%20-%20Skill%20Videos/Egg_final_svgbqw.mp4" controls="controls"></video>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-      </div>
-    </div>
+        <div class="card-lesson-chapter">
+          <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+          <h2 class="text-center"><%= skill_chapter.title %></h2>
+          <h3>Summary</h3>
+          <p class="skill-description"><%= skill_chapter.description %></p>
 
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
+          <% unless @lesson.skill_chapters.last == skill_chapter  %>
+            <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
+          <% else %>
+            <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
+          <% end %>
+        </div>
       </div>
 
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 2 / 3</h2>
-          </div>
-          <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+    <% end %>
+
+    <% @lesson.recipe.recipe_methods.each_with_index do |recipe_method, index| %>
+
+      <div class="container-lesson-recipe">
+        <div class="lesson-recipe-video">
+          <video class="methodVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615235460/Cuukin%20-%20Skill%20Videos/recipe_test_jn27vr.mp4" controls></video>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-      </div>
-    </div>
+        <div class="card-lesson-recipe">
+          <div class="card-lesson-recipe-header">
+            <div class="recipe-header-left">
+              <h4><%= recipe_method.title %></h4>
+              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count}" %></h2>
+            </div>
 
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 3 / 3</h2>
+            <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
+              <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+            <% end %>
           </div>
+
+          <div class="recipe-method-content">
+            <div class="recipe-method-ingredients">
+              <h5>Ingredients</h5>
+              <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
+                <p><%= "#{recipe_ingredient.quantity} #{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
+              <% end %>
+            </div>
+            <div class="recipe-method-description">
+              <p><%= recipe_method.description %></p>
+            </div>
+          </div>
+
+          <% if @lesson.recipe.recipe_methods.last == recipe_method %>
+            <% if @validated %>
+              <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+            <% elsif @skipped %>
+              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
+            <% else %>
+              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
+            <% end %>
+          <% end %>
+
         </div>
-
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-
-        <% if @validated %>
-          <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
-        <% elsif @skipped %>
-          <p class="primary-btn" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
-        <% else %>
-          <p class="primary-btn" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
-        <% end %>
       </div>
-    </div>
+
+    <% end %>
 
   </div>
 </div>

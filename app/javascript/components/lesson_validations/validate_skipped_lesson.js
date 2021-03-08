@@ -6,6 +6,8 @@ const validateSkippedLesson = () => {
   const validateItem1 = document.querySelector('#recipe-validation-item-1');
   const validateItem2 = document.querySelector('#recipe-validation-item-2');
 
+  const rememberText = document.querySelector('#rememberPhotoText');
+
   if (validateSkippedBtn) {
     validateSkippedBtn.addEventListener('click', () => {
       validateSkippedModal.style.display = "block";
@@ -15,6 +17,7 @@ const validateSkippedLesson = () => {
     closeBtn.addEventListener('click', () => {
       validateSkippedModal.style.display = "none";
       validateItem2.style.display = "none";
+      rememberText.style.display = "none";
     });
   };
 }

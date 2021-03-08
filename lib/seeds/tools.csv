@@ -1,0 +1,38 @@
+id,name,badge_name,score1,score2
+1,Knife,Cutting tools,10,1
+2,Peeler,Cutting tools,10,1
+3,Grader,Cutting tools,10,1
+4,Spatula,Utensils,10,1
+5,Whisk,Utensils,10,1
+6,Cutting board,Utensils,10,1
+7,Spoon,Utensils,10,1
+8,Fork,Utensils,10,1
+9,Measuring cups,Utensils,10,1
+10,Measuring spoons,Utensils,10,1
+11,Slotted spoon,Utensils,10,1
+12,Frying pan,Pots and pans,10,1
+13,Sautese,Pots and pans,10,1
+14,Pot,Pots and pans,10,1
+15,Saucepan,Pots and pans,10,1
+16,Preassure pot,Pots and pans,10,1
+17,Wok,Pots and pans,10,1
+18,Baking tray,Containers,10,1
+19,Bowl,Containers,10,1
+20,Colander,Containers,10,1
+21,Ovenproof container,Containers,10,1
+22,Cling film,Disposables,10,1
+23,Paper towls,Disposables,10,1
+24,Parchment paper,Disposables,10,1
+25,Aluminum foil,Disposables,10,1
+26,Microwave,Heating equipment,10,1
+27,Stove,Heating equipment,10,1
+28,Oven,Heating equipment,10,1
+29,Airfryer,Heating equipment,10,1
+30,Fridge,Storage,10,1
+31,Freezer,Storage,10,1
+32,Food processor,Appliances,10,1
+33,Suvid,Appliances,10,1
+34,Blender,Appliances,10,1
+35,Thermometer,Appliances,10,1
+36,Scale,Appliances,10,1
+37,Rolling pin,Utensils,10,1

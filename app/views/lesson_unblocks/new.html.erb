@@ -3,7 +3,7 @@
     <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeUnblockModal') %>
 
     <h4>Before unlocking the lesson with Cuukies...<br><br>
-    Can you tell us <spam>why you did not want to complete</spam> the previous lesson?</h4>
+    Can you tell us <span>why you did not want to complete</span> the previous lesson?</h4>
 
     <div class="unblock-lesson-form">
       <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>

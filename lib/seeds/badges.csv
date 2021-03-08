@@ -1,0 +1,41 @@
+id,badge_name,category,icon
+1,Root Vegetables,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228876/Cuukin%20-%20Badges/root_bvc77i.svg
+2,Bulbs,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/bulbs_rqydni.svg
+3,Greens,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228875/Cuukin%20-%20Badges/greens_isj691.svg
+4,(not) Veggies,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/fake_qdc5lb.svg
+5,Fruits,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/fruits_xqptnf.svg
+6,Fresh herbs,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228875/Cuukin%20-%20Badges/herbs_sbihnt.svg
+7,Seeds and Grains,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228877/Cuukin%20-%20Badges/seeds_fq1wdg.svg
+8,Legumes,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228875/Cuukin%20-%20Badges/legumes_is4un6.svg
+9,Funghi,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/funghi_ybjja8.svg
+10,Chicken,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/chicken_kfdwk3.svg
+11,Beef,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/beef_fawp9d.svg
+12,Pork,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228875/Cuukin%20-%20Badges/pork_if2aba.svg
+13,Fish,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/fish_qjfoaf.svg
+14,Seafood,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228878/Cuukin%20-%20Badges/seafood_yvlxf2.svg
+15,Eggs,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/eggs_q6niqc.svg
+16,Dairy,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228873/Cuukin%20-%20Badges/dairy_ybjjv6.svg
+17,Fats and oils,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228875/Cuukin%20-%20Badges/oils_xiyyfq.svg
+18,Condiments,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/condiment_stcesz.svg
+19,Dry herbs and spices,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228877/Cuukin%20-%20Badges/spices_rppl4e.svg
+20,Cooking alcohols,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/alcohol_dakyic.svg
+21,Stocks and sauces,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228877/Cuukin%20-%20Badges/sauces_h3sq3w.svg
+22,Sweeteners and chocolate,ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228878/Cuukin%20-%20Badges/sweets_alwz4d.svg
+23,"Bread, flour and pasta",ingredient,https://res.cloudinary.com/juliaf1/image/upload/v1615228871/Cuukin%20-%20Badges/bread_ccr3ih.svg
+24,Cutting tools,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/cutting_prrjc6.svg
+25,Utensils,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228658/Cuukin%20-%20Badges/utensils_wytmrs.svg
+26,Pots and pans,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/potspans_c8zhkr.svg
+27,Containers,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/containers_j8vlhp.svg
+28,Disposables,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/disposables_nwrm0e.svg
+29,Heating equipment,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/heating_pqkgvh.svg
+30,Storage,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228658/Cuukin%20-%20Badges/storage_zj2ecb.svg
+31,Appliances,tool,https://res.cloudinary.com/juliaf1/image/upload/v1615228656/Cuukin%20-%20Badges/appliances_gcqulo.svg
+32,Chopping,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228754/Cuukin%20-%20Badges/chopping_hrbihf.svg
+33,Seasoning,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228756/Cuukin%20-%20Badges/seasoning_fn61le.svg
+34,Preserving,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228756/Cuukin%20-%20Badges/preserving_p8pihz.svg
+35,Mixing,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228755/Cuukin%20-%20Badges/mixing_ecnfks.svg
+36,Prepping techniques,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228755/Cuukin%20-%20Badges/prepping_b557d8.svg
+37,Oven cooking,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228755/Cuukin%20-%20Badges/oven_ficuj8.svg
+38,Stove-top cooking,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228757/Cuukin%20-%20Badges/stovetop_nbznif.svg
+39,Alternative cooking techniques,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228754/Cuukin%20-%20Badges/alternative_qsion1.svg
+40,Plating,technique,https://res.cloudinary.com/juliaf1/image/upload/v1615228755/Cuukin%20-%20Badges/plating_oym6ej.svg

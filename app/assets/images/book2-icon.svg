@@ -5,97 +5,118 @@
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 	.st1{fill:none;stroke:#F86464;stroke-width:8;}
-	.st2{fill:#E3E0E4;}
-	.st3{fill:#D4CFD5;}
-	.st4{fill:#C5BEC6;}
-	.st5{fill:#FEE6B9;}
-	.st6{fill:#FDD27A;}
-	.st7{fill:#FFFAF0;}
-	.st8{fill:#B5ADB7;}
-	.st9{fill:#EDBF66;}
-	.st10{fill:#FDEBC8;}
-	.st11{fill:#A59DA7;}
+	.st2{display:none;}
+	.st3{display:inline;}
+	.st4{fill:#E3E0E4;}
+	.st5{fill:#D4CFD5;}
+	.st6{fill:#C5BEC6;}
+	.st7{fill:#FEE6B9;}
+	.st8{fill:#FDD27A;}
+	.st9{fill:#FFFAF0;}
+	.st10{fill:#B5ADB7;}
+	.st11{fill:#EDBF66;}
+	.st12{fill:#FDEBC8;}
+	.st13{fill:#A59DA7;}
+	.st14{display:inline;fill:#FDD27A;}
+	.st15{fill:#AD7979;}
+	.st16{fill:#F6BB00;}
+	.st17{fill:#EDA600;}
+	.st18{fill:#8A4444;}
 </style>
 <g id="Elipse_284" transform="translate(343.407 146)">
 	<circle class="st0" cx="-308.4" cy="-110.9" r="35"/>
 	<circle class="st1" cx="-308.4" cy="-110.9" r="31"/>
 </g>
-<g id="_013-kitchen" transform="translate(-0.543)">
-	<g id="Grupo_1417" transform="translate(20.809 2.335)">
-		<path id="Caminho_3382" class="st2" d="M27.9,17.2l-4.4-0.7l-4.1,0.7l-3,5.7l7.8,0.7l6.7-0.7L27.9,17.2z"/>
+<g id="_013-kitchen" transform="translate(-0.543)" class="st2">
+	<g id="Grupo_1417" transform="translate(20.809 2.335)" class="st3">
+		<path id="Caminho_3382" class="st4" d="M27.9,17.2l-4.4-0.7l-4.1,0.7l-3,5.7l7.8,0.7l6.7-0.7L27.9,17.2z"/>
 	</g>
-	<g id="Grupo_1418" transform="translate(23.764 0)">
-		<path id="Caminho_3383" class="st3" d="M24.9,19.5h-8.5l0-2.5c0-0.3,0.3-0.6,0.6-0.6h7.2c0.3,0,0.6,0.3,0.6,0.6L24.9,19.5z"/>
+	<g id="Grupo_1418" transform="translate(23.764 0)" class="st3">
+		<path id="Caminho_3383" class="st5" d="M24.9,19.5h-8.5V17c0-0.3,0.3-0.6,0.6-0.6h7.2c0.3,0,0.6,0.3,0.6,0.6L24.9,19.5z"/>
 	</g>
-	<g id="Grupo_1419" transform="translate(30.034 2.335)">
-		<path id="Caminho_3384" class="st3" d="M18.6,17.2l-1.2-0.7l-1.1,0.7l3,5.7l1.4,0.7l0.8-0.7L18.6,17.2z"/>
+	<g id="Grupo_1419" transform="translate(30.034 2.335)" class="st3">
+		<path id="Caminho_3384" class="st5" d="M18.6,17.2l-1.2-0.7l-1.1,0.7l3,5.7l1.4,0.7l0.8-0.7L18.6,17.2z"/>
 	</g>
-	<g id="Grupo_1420" transform="translate(29.907)">
-		<path id="Caminho_3385" class="st4" d="M18.1,16.4h-1.7l0.1,3.1h2.2L18.7,17C18.6,16.7,18.4,16.4,18.1,16.4L18.1,16.4z"/>
+	<g id="Grupo_1420" transform="translate(29.907)" class="st3">
+		<path id="Caminho_3385" class="st6" d="M18.1,16.4h-1.7l0.1,3.1h2.2V17C18.6,16.7,18.4,16.4,18.1,16.4L18.1,16.4z"/>
 	</g>
-	<g id="Grupo_1421" transform="translate(0.543 0.2)">
-		<path id="Caminho_3386" class="st5" d="M32.1,27.6H16.9c-0.3,0-0.5-0.2-0.5-0.5V16.9c0-0.3,0.2-0.5,0.5-0.5h15.2
-			c0.3,0,0.5,0.2,0.5,0.5v10.2C32.6,27.4,32.4,27.6,32.1,27.6C32.1,27.6,32.1,27.6,32.1,27.6L32.1,27.6z"/>
+	<g id="Grupo_1421" transform="translate(0.543 0.2)" class="st3">
+		<path id="Caminho_3386" class="st7" d="M32.1,27.6H16.9c-0.3,0-0.5-0.2-0.5-0.5V16.9c0-0.3,0.2-0.5,0.5-0.5h15.2
+			c0.3,0,0.5,0.2,0.5,0.5v10.2C32.6,27.4,32.4,27.6,32.1,27.6L32.1,27.6L32.1,27.6z"/>
 	</g>
-	<g id="Grupo_1422" transform="translate(19.775 8.815)">
-		<path id="Caminho_3387" class="st6" d="M32.2,19H16.9c-0.3,0-0.5-0.2-0.5-0.5c0,0,0,0,0,0v-1.6c0-0.3,0.2-0.5,0.5-0.5l0,0h15.3
-			c0.3,0,0.5,0.2,0.5,0.5c0,0,0,0,0,0v1.6C32.6,18.8,32.4,19,32.2,19L32.2,19z"/>
+	<g id="Grupo_1422" transform="translate(19.775 8.815)" class="st3">
+		<path id="Caminho_3387" class="st8" d="M32.2,19H16.9c-0.3,0-0.5-0.2-0.5-0.5l0,0v-1.6c0-0.3,0.2-0.5,0.5-0.5l0,0h15.3
+			c0.3,0,0.5,0.2,0.5,0.5l0,0v1.6C32.6,18.8,32.4,19,32.2,19L32.2,19z"/>
 	</g>
-	<g id="Grupo_1423" transform="translate(0.543 21.346)">
-		<path id="Caminho_3388" class="st7" d="M52.7,32.4H17.3c-0.5,0-0.9-0.4-0.9-0.9l0,0V17.2L34,16.4l19.6,0.7v14.3
+	<g id="Grupo_1423" transform="translate(0.543 21.346)" class="st3">
+		<path id="Caminho_3388" class="st9" d="M52.7,32.4H17.3c-0.5,0-0.9-0.4-0.9-0.9l0,0V17.2L34,16.4l19.6,0.7v14.3
 			C53.6,32,53.2,32.4,52.7,32.4z"/>
 	</g>
-	<g id="Grupo_1424" transform="translate(20.599 17.784)">
-		<path id="Caminho_3389" class="st8" d="M31.8,18.7l-7.7,0.7l-7.7-0.7v-1.4c0-0.4,0.4-0.8,0.8-0.8H31c0.4,0,0.8,0.4,0.8,0.8
-			L31.8,18.7L31.8,18.7z"/>
+	<g id="Grupo_1424" transform="translate(20.599 17.784)" class="st3">
+		<path id="Caminho_3389" class="st10" d="M31.8,18.7l-7.7,0.7l-7.7-0.7v-1.4c0-0.4,0.4-0.8,0.8-0.8H31c0.4,0,0.8,0.4,0.8,0.8V18.7
+			L31.8,18.7z"/>
 	</g>
-	<g id="Grupo_1425" transform="translate(14.084 0.2)">
-		<path id="Caminho_3390" class="st6" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5v10.2c0,0.3-0.2,0.5-0.5,0.5h2.2
+	<g id="Grupo_1425" transform="translate(14.084 0.2)" class="st3">
+		<path id="Caminho_3390" class="st8" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5v10.2c0,0.3-0.2,0.5-0.5,0.5h2.2
 			c0.3,0,0.5-0.2,0.5-0.5V16.9C19.1,16.6,18.9,16.4,18.6,16.4L18.6,16.4z"/>
 	</g>
-	<g id="Grupo_1426" transform="translate(33.315 8.815)">
-		<path id="Caminho_3391" class="st9" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5c0,0,0,0,0,0v1.6c0,0.3-0.2,0.5-0.5,0.5l0,0h2.2
-			c0.3,0,0.5-0.2,0.5-0.5c0,0,0,0,0,0v-1.6C19.1,16.6,18.9,16.4,18.6,16.4L18.6,16.4z"/>
+	<g id="Grupo_1426" transform="translate(33.315 8.815)" class="st3">
+		<path id="Caminho_3391" class="st11" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5l0,0v1.6c0,0.3-0.2,0.5-0.5,0.5l0,0h2.2
+			c0.3,0,0.5-0.2,0.5-0.5l0,0v-1.6C19.1,16.6,18.9,16.4,18.6,16.4L18.6,16.4z"/>
 	</g>
-	<g id="Grupo_1427" transform="translate(34.581 21.346)">
-		<path id="Caminho_3392" class="st10" d="M17.3,17.2v14.3c0,0.5-0.4,0.9-0.9,0.9l0,0h2.2c0.5,0,0.9-0.4,0.9-0.9l0,0V17.2l-1-0.7
+	<g id="Grupo_1427" transform="translate(34.581 21.346)" class="st3">
+		<path id="Caminho_3392" class="st12" d="M17.3,17.2v14.3c0,0.5-0.4,0.9-0.9,0.9l0,0h2.2c0.5,0,0.9-0.4,0.9-0.9l0,0V17.2l-1-0.7
 			L17.3,17.2z"/>
 	</g>
-	<g id="Grupo_1428" transform="translate(32.972 17.784)">
-		<path id="Caminho_3393" class="st11" d="M18.6,16.4h-2.2c0.4,0,0.8,0.4,0.8,0.8v1.4l1.3,0.7l1-0.7v-1.4
-			C19.4,16.8,19.1,16.4,18.6,16.4C18.6,16.4,18.6,16.4,18.6,16.4z"/>
+	<g id="Grupo_1428" transform="translate(32.972 17.784)" class="st3">
+		<path id="Caminho_3393" class="st13" d="M18.6,16.4h-2.2c0.4,0,0.8,0.4,0.8,0.8v1.4l1.3,0.7l1-0.7v-1.4
+			C19.4,16.8,19.1,16.4,18.6,16.4L18.6,16.4z"/>
 	</g>
-	<g id="Grupo_1429" transform="translate(17.005 24.389)">
-		<path id="Caminho_3394" class="st5" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6l0,0V17c0-0.3,0.2-0.6,0.6-0.6s0.6,0.2,0.6,0.6
-			c0,0,0,0,0,0v1.3C17.5,18.6,17.3,18.9,16.9,18.9C16.9,18.9,16.9,18.9,16.9,18.9z"/>
+	<g id="Grupo_1429" transform="translate(17.005 24.389)" class="st3">
+		<path id="Caminho_3394" class="st7" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6l0,0V17c0-0.3,0.2-0.6,0.6-0.6s0.6,0.2,0.6,0.6l0,0v1.3
+			C17.5,18.6,17.3,18.9,16.9,18.9L16.9,18.9z"/>
 	</g>
-	<g id="Grupo_1430" transform="translate(33.315 24.389)">
-		<path id="Caminho_3395" class="st5" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6v0V17c0-0.3,0.2-0.6,0.6-0.6c0.3,0,0.6,0.2,0.6,0.6
-			c0,0,0,0,0,0v1.3C17.5,18.6,17.3,18.9,16.9,18.9z"/>
+	<g id="Grupo_1430" transform="translate(33.315 24.389)" class="st3">
+		<path id="Caminho_3395" class="st7" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6l0,0V17c0-0.3,0.2-0.6,0.6-0.6c0.3,0,0.6,0.2,0.6,0.6
+			l0,0v1.3C17.5,18.6,17.3,18.9,16.9,18.9z"/>
 	</g>
-	<g id="Grupo_1431" transform="translate(7.605 24.389)">
-		<path id="Caminho_3396" class="st5" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6l0,0V17c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6
-			v1.3C17.5,18.6,17.3,18.9,16.9,18.9C16.9,18.9,16.9,18.9,16.9,18.9z"/>
-	</g>
-	<g id="Grupo_1432" transform="translate(5.857 6.94)">
-		<path id="Caminho_3397" class="st6" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6V17c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6l0,0
+	<g id="Grupo_1431" transform="translate(7.605 24.389)" class="st3">
+		<path id="Caminho_3396" class="st7" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6l0,0V17c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6
 			v1.3C17.5,18.6,17.3,18.9,16.9,18.9L16.9,18.9z"/>
 	</g>
-	<g id="Grupo_1433" transform="translate(10.224 6.94)">
-		<path id="Caminho_3398" class="st6" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6V17c0-0.3,0.2-0.6,0.6-0.6c0.3,0,0.6,0.2,0.6,0.6
-			c0,0,0,0,0,0v1.3C17.5,18.6,17.3,18.9,16.9,18.9L16.9,18.9z"/>
+	<g id="Grupo_1432" transform="translate(5.857 6.94)" class="st3">
+		<path id="Caminho_3397" class="st8" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6V17c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6l0,0
+			v1.3C17.5,18.6,17.3,18.9,16.9,18.9L16.9,18.9z"/>
 	</g>
-	<path id="Caminho_3399" class="st6" d="M24.5,16.6h1.1v11.2h-1.1V16.6z"/>
-	<g id="Grupo_1434" transform="translate(9.821 22.095)">
-		<path id="Caminho_3400" class="st6" d="M25.9,16.4H27v15.2h-1.1V16.4z"/>
-		<path id="Caminho_3401" class="st6" d="M16.4,16.4h1.1v15.2h-1.1V16.4z"/>
+	<g id="Grupo_1433" transform="translate(10.224 6.94)" class="st3">
+		<path id="Caminho_3398" class="st8" d="M16.9,18.9c-0.3,0-0.6-0.3-0.6-0.6V17c0-0.3,0.2-0.6,0.6-0.6c0.3,0,0.6,0.2,0.6,0.6l0,0
+			v1.3C17.5,18.6,17.3,18.9,16.9,18.9L16.9,18.9z"/>
 	</g>
-	<g id="Grupo_1435" transform="translate(0.543 20.013)">
-		<path id="Caminho_3402" class="st5" d="M16.4,18.5v-1.6c0-0.3,0.2-0.5,0.5-0.5c0,0,0,0,0,0h36.3c0.3,0,0.5,0.2,0.5,0.5l0,0v1.6"/>
+	<path id="Caminho_3399" class="st14" d="M24.5,16.6h1.1v11.2h-1.1V16.6z"/>
+	<g id="Grupo_1434" transform="translate(9.821 22.095)" class="st3">
+		<path id="Caminho_3400" class="st8" d="M25.9,16.4H27v15.2h-1.1V16.4z"/>
+		<path id="Caminho_3401" class="st8" d="M16.4,16.4h1.1v15.2h-1.1V16.4z"/>
 	</g>
-	<g id="Grupo_1436" transform="translate(35.058 20.013)">
-		<path id="Caminho_3403" class="st6" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5c0,0,0,0,0,0v1.6h2.2v-1.6
-			C19.1,16.6,18.9,16.4,18.6,16.4z"/>
+	<g id="Grupo_1435" transform="translate(0.543 20.013)" class="st3">
+		<path id="Caminho_3402" class="st7" d="M16.4,18.5v-1.6c0-0.3,0.2-0.5,0.5-0.5l0,0h36.3c0.3,0,0.5,0.2,0.5,0.5l0,0v1.6"/>
 	</g>
+	<g id="Grupo_1436" transform="translate(35.058 20.013)" class="st3">
+		<path id="Caminho_3403" class="st8" d="M18.6,16.4h-2.2c0.3,0,0.5,0.2,0.5,0.5l0,0v1.6h2.2v-1.6C19.1,16.6,18.9,16.4,18.6,16.4z"
+			/>
+	</g>
+</g>
+<g id="_001-apron" transform="translate(-24 -24)">
+	<path id="Caminho_5591" class="st15" d="M52.5,43.2v2.6c0,4.2-2.2,8.2-5.8,10.4l0,0v19.5h24.5V56.2l0,0c-3.6-2.2-5.8-6.2-5.8-10.4
+		v-2.6H52.5z"/>
+	<path id="Caminho_5592" class="st16" d="M56.1,33.8v9.4h-2.9v-6.5C53.2,35.1,54.5,33.8,56.1,33.8z"/>
+	<path id="Caminho_5593" class="st16" d="M61.9,33.8c1.6,0,2.9,1.3,2.9,2.9v6.5h-2.9V33.8z"/>
+	<path id="Caminho_5594" class="st17" d="M56.1,33.8h5.8v2.9h-5.8V33.8z"/>
+	<path id="Caminho_5595" class="st18" d="M68.4,63.4v6.5l-2.2,2.2H52.5l-2.2-2.2v-6.5H68.4z"/>
+	<path id="Caminho_5597" class="st16" d="M71.3,59.1l6.5,4.3V67l-6.5-4.3V59.1z"/>
+	<path id="Caminho_5598" class="st17" d="M77.8,67l-3.6,1.4v-3.9L77.8,67z"/>
+	<path id="Caminho_5599" class="st16" d="M74.2,68.5l5.8,3.6v3.6l-5.8-3.6V68.5z"/>
+	<path id="Caminho_5600" class="st16" d="M46.7,59.1l-6.5,4.3V67l6.5-4.3V59.1z"/>
+	<path id="Caminho_5601" class="st17" d="M40.2,67l3.6,1.4v-3.9L40.2,67z"/>
+	<path id="Caminho_5602" class="st16" d="M43.8,68.5l-5.8,3.6v3.6l5.8-3.6V68.5z"/>
 </g>
 </svg>

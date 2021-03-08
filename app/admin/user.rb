@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :admin, :level, :cuukies
+  permit_params :admin, :level, :cuukies, :xp
 
   index do
     selectable_column
@@ -13,6 +13,7 @@ ActiveAdmin.register User do
     column :admin
     column :level
     column :cuukies
+    column :xp
     actions
   end
 end

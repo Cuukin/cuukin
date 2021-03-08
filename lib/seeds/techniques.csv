@@ -1,0 +1,68 @@
+id,name,badge_name,score1,score2
+1,Roughly chopping,Chopping,15,2
+2,Dicing 1,Chopping,15,2
+3,Dicing 2,Chopping,15,2
+4,Batonnet,Chopping,15,2
+5,Mincing 1,Chopping,15,2
+6,Mincing 2,Chopping,15,2
+7,Chopping herbs,Chopping,15,2
+8,Chopping Mushroom,Chopping,15,2
+9,Chopping fruits,Chopping,15,2
+10,Slicing,Chopping,15,2
+11,Salting 1,Seasoning,15,2
+12,Salting 2,Seasoning,15,2
+13,Salting 3,Seasoning,15,2
+14,Seasoning 1,Seasoning,15,2
+15,Seasoning 2,Seasoning,15,2
+16,Seasoning 3,Seasoning,15,2
+17,Marinating 1,Seasoning,15,2
+18,Marinating 2,Seasoning,15,2
+19,Infusing,Seasoning,15,2
+20,Freezing,Preserving,15,2
+21,Curing,Preserving,15,2
+22,Pickling,Preserving,15,2
+23,Refrigerating,Preserving,15,2
+24,Blending,Mixing,15,2
+25,Mixing,Mixing,15,2
+26,Whisking 1,Mixing,15,2
+27,Whisking 2,Mixing,15,2
+28,Tenderizing,Prepping techniques,15,2
+29,Kneading,Prepping techniques,15,2
+30,Drying,Prepping techniques,15,2
+31,Rehidrating,Prepping techniques,15,2
+32,Mashing,Prepping techniques,15,2
+33,Squeezing,Prepping techniques,15,2
+34,Roasting,Oven cooking,15,2
+35,Baking 1,Oven cooking,15,2
+36,Baking 2,Oven cooking,15,2
+37,Baking 3,Oven cooking,15,2
+38,Grating,Oven cooking,15,2
+39,Pan frying 1,Stove-top cooking,15,2
+40,Pan frying 2,Stove-top cooking,15,2
+41,Grilling,Stove-top cooking,15,2
+42,Sauteeing 1,Stove-top cooking,15,2
+43,Sauteeing 2,Stove-top cooking,15,2
+44,Searing,Stove-top cooking,15,2
+45,Braising,Stove-top cooking,15,2
+46,Flambing,Stove-top cooking,15,2
+47,Deep frying,Stove-top cooking,15,2
+48,Stir Frying 1,Stove-top cooking,15,2
+49,Stir Frying 2,Stove-top cooking,15,2
+50,Steaming,Stove-top cooking,15,2
+51,Boiling,Stove-top cooking,15,2
+52,Simmering,Stove-top cooking,15,2
+53,Poaching,Stove-top cooking,15,2
+54,Caramelising 1,Stove-top cooking,15,2
+55,Caramelising 2,Stove-top cooking,15,2
+56,Deglazing 1,Stove-top cooking,15,2
+57,Deglazing 2,Stove-top cooking,15,2
+58,Water-bathing,Stove-top cooking,15,2
+59,Reducing,Stove-top cooking,15,2
+60,Bain-marie,Stove-top cooking,15,2
+61,Double boiler,Stove-top cooking,15,2
+62,Air-frying,Alternative cooking techniques,15,2
+63,Microwaving,Alternative cooking techniques,15,2
+64,Toasting,Alternative cooking techniques,15,2
+65,Smoking,Alternative cooking techniques,15,2
+66,Plating,Plating,15,2
+67,Measuring,Prepping techniques,15,2
