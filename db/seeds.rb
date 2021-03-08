@@ -1,3 +1,16 @@
+require 'csv'
+
+badges_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'badges.csv'))
+badges_csv = CSV.parse(badges_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+badges_csv.each do |row|
+  b = Badge.new
+  b.name = row['badge_name']
+  b.category = row['cathegory']
+  b.save
+  puts "created #{b.name}"
+end
+
 # Admin Users
 # Remember everyone to update their password
 
@@ -71,122 +84,122 @@ puts "Remember them to confirm their emails and change their password 🍕"
 # Badges
 # Ingredient Badges
 
-ingredient_badges = ['Root Vegetables', 'Bulbs', 'Greens', 'not Veggies', 'Fruits', 'Seeds and Grains',
-                    'Legumes', 'Funghi', 'Chicken', 'Beef', 'Pork', 'Fish', 'Seafood', 'Eggs', 'Dairy',
-                    'Fats and Oils', 'Condiments', 'Herbs and Spices', 'Cooking Alcohols', 'Stocks and Sauces',
-                    'Sweeteners and Chocolate', 'Bread, Flour and Pasta']
+# ingredient_badges = ['Root Vegetables', 'Bulbs', 'Greens', 'not Veggies', 'Fruits', 'Seeds and Grains',
+#                     'Legumes', 'Funghi', 'Chicken', 'Beef', 'Pork', 'Fish', 'Seafood', 'Eggs', 'Dairy',
+#                     'Fats and Oils', 'Condiments', 'Herbs and Spices', 'Cooking Alcohols', 'Stocks and Sauces',
+#                     'Sweeteners and Chocolate', 'Bread, Flour and Pasta']
 
-ingredient_badges.each do |i_badge|
-  new_badge = Badge.new(name: i_badge)
-  new_badge.category = 'ingredient'
-  new_badge.save
-end
+# ingredient_badges.each do |i_badge|
+#   new_badge = Badge.new(name: i_badge)
+#   new_badge.category = 'ingredient'
+#   new_badge.save
+# end
 
 # Tool Badges
 
-tool_badges = ['Cutting', 'Utensils', 'Pots and Pans', 'Containers', 'Disposables',
-              'Heating', 'Storage', 'Appliances']
+# tool_badges = ['Cutting', 'Utensils', 'Pots and Pans', 'Containers', 'Disposables',
+#               'Heating', 'Storage', 'Appliances']
 
-tool_badges.each do |t_badge|
-  new_badge = Badge.new(name: t_badge)
-  new_badge.category = 'tool'
-  new_badge.save
-end
+# tool_badges.each do |t_badge|
+#   new_badge = Badge.new(name: t_badge)
+#   new_badge.category = 'tool'
+#   new_badge.save
+# end
 
 # Technique Badges
 
-technique_badges = ['Chopping', 'Seasoning', 'Preserving', 'Mixing', 'Prepping',
-                    'Oven Cooking', 'Stove-top Cooking', 'Alternative Cooking']
+# technique_badges = ['Chopping', 'Seasoning', 'Preserving', 'Mixing', 'Prepping',
+#                     'Oven Cooking', 'Stove-top Cooking', 'Alternative Cooking']
 
-technique_badges.each do |tec_badge|
-  new_badge = Badge.new(name: tec_badge)
-  new_badge.category = 'technique'
-  new_badge.save
-end
+# technique_badges.each do |tec_badge|
+#   new_badge = Badge.new(name: tec_badge)
+#   new_badge.category = 'technique'
+#   new_badge.save
+# end
 
 # Tools
 
-pots_and_pans = ['Frying Pan', 'Sautese', 'Pot', 'Sauce Pan', 'Pressure Pot']
-mechanicals = ['Food Processor', 'Suvid', 'Blender', 'Thermometer', 'Scale', 'Rolling Pin']
-heating = ['Microwave', 'Stove', 'Oven', 'Airfryer']
-containers = ['Baking Tray', 'Bowl', 'Colander', 'Ovenproof Container']
-cutting = ['Knife', 'Peeler', 'Grader']
-utensils = ['Spatula', 'Whisk', 'Cutting Board', 'Spoon', 'Fork']
-disposables = ['Cling Film', 'Paper Towels', 'Parchment Paper', 'Aluminum Foil']
+# pots_and_pans = ['Frying Pan', 'Sautese', 'Pot', 'Sauce Pan', 'Pressure Pot']
+# mechanicals = ['Food Processor', 'Suvid', 'Blender', 'Thermometer', 'Scale', 'Rolling Pin']
+# heating = ['Microwave', 'Stove', 'Oven', 'Airfryer']
+# containers = ['Baking Tray', 'Bowl', 'Colander', 'Ovenproof Container']
+# cutting = ['Knife', 'Peeler', 'Grader']
+# utensils = ['Spatula', 'Whisk', 'Cutting Board', 'Spoon', 'Fork']
+# disposables = ['Cling Film', 'Paper Towels', 'Parchment Paper', 'Aluminum Foil']
 
-def create_tool(tools_array, category)
-  tools_array.each do |tool|
-    new_tool = Tool.new(name: tool)
-    new_tool.badge = Badge.find_by(name: category)
-    new_tool.save
-    puts "Created #{new_tool.name} under Badge #{new_tool.badge.name}"
-  end
-end
+# def create_tool(tools_array, category)
+#   tools_array.each do |tool|
+#     new_tool = Tool.new(name: tool)
+#     new_tool.badge = Badge.find_by(name: category)
+#     new_tool.save
+#     puts "Created #{new_tool.name} under Badge #{new_tool.badge.name}"
+#   end
+# end
 
-create_tool(pots_and_pans, 'Pots and Pans')
-create_tool(mechanicals, 'Utensils')
-create_tool(heating, 'Heating')
-create_tool(containers, 'Containers')
-create_tool(cutting, 'Cutting')
-create_tool(utensils, 'Utensils')
-create_tool(disposables, 'Disposables')
+# create_tool(pots_and_pans, 'Pots and Pans')
+# create_tool(mechanicals, 'Utensils')
+# create_tool(heating, 'Heating')
+# create_tool(containers, 'Containers')
+# create_tool(cutting, 'Cutting')
+# create_tool(utensils, 'Utensils')
+# create_tool(disposables, 'Disposables')
 
 # Ingredients
 
-fruits = ['Apple', 'Banana', 'Pear', 'Strawberry', 'Lemon', 'Avocado']
-fake_veggies = ['Pepper', 'Cuccumber', 'Tomato', 'Butternut Squash', 'Eggplant', 'Cherry Tomato', 'Red Pepper', 'Aubergine']
-seeds_grains = ['White Rice', 'Cashew Nuts', 'Black Beans', 'Chickpea', 'Wholemeal Flour', 'Wheat Flour', 'Corn Flour', 'Breading Flour', 'Pine Nuts', 'Flour', 'Seasame Seeds', 'Risoto Rice', 'Pistacchio', 'Red Lentils']
-stem_greens = ['Broccoli', 'Aspargus', 'Celery']
-leafy_greens = ['Lettuce', 'Kale', 'Spinach', 'Watercress', 'Salad', 'Cabbage']
-bulbs = ['Onion', 'Garlic', 'Green Onion', 'Red Onion', 'Ginger']
-roots = ['Potato', 'Sweet Potato', 'Carrot', 'Radish']
-herbs = ['Fresh Oregano', 'Basil', 'Parsley', 'Coriander', 'Thyme', 'Sage', 'Fresh Mint', 'Dried Oregano', 'Dried Mint']
-bread = ['Sliced Bread', 'Focaccia', 'Baguette', 'Yeast', 'Fresh Bread', 'Puff Pastry', 'English Muffin', 'Pitta Bread', 'Burger Bun']
-pasta = ['Dried Spaghetti', 'Lasagne Sheet']
-sweets = ['Sugar', 'Chocolate', 'Dark Chocolate', 'Nutella', 'Honey', 'Light Brown Sugar', 'Chocolate Chips']
-fats_oil = ['Butter', 'Olive Oil', 'Coconout Oil', 'Cooking Oil']
-chicken = ['Chicken Legs', 'Chicken Breast']
-pork = ['Bacon', 'Pork Ribs', 'Pepperoni', 'Prosciutto', 'Ham', 'Minced Pork', 'Sausage']
-beef = ['Ground Beef', 'Sirloin Steak', 'Filet Mignon', 'Burger']
-fish = ['Salmon', 'Cod', 'Tuna Steak', 'Fresh Fish']
-eggs = ['Egg']
-funghi = ['Shimeji Mushrooms', 'Portobello Mushrooms', 'Shitake Mushrooms', 'White Mushrooms', 'Chestnut Mushrooms', 'Dried Porccini Mushrooms']
-seafood = ['Oysters', 'Prawns']
-dairy = ['Milk', 'Mozzarella Cheese', 'Heavy Cream', 'Parmesan Cheese', 'Soured Cream', 'Goat Cheese', 'Cheese', 'Alternative Milk', 'Coconut Cream', 'Feta Cheese', 'Mature Cheddar', 'Pecorino Cheese']
-seasonings = ['Salt', 'Sea Salt', 'Black Pepper', 'Paprika', 'Apple Vinegar', 'White Vinegar', 'Dijon Mustard', 'Ketchup', 'Brandy', 'White Wine', 'Dill', 'Vanilla Extract', 'Flaky Salt', 'Cocoa Powder', 'Balsamic Vinegar', 'Oyster Sauce', 'Soy Sauce', 'Olives']
-sauces = ['Tomato Sauce', 'Bechamel Sauce', 'Tartar Sauce', 'Vegetable Stock', 'Mayonnaise', 'Chicken Stock', 'Beef Stock', 'Fish Stock', 'Curry Sauce', 'Worcestershire Sauce']
+# fruits = ['Apple', 'Banana', 'Pear', 'Strawberry', 'Lemon', 'Avocado']
+# fake_veggies = ['Pepper', 'Cuccumber', 'Tomato', 'Butternut Squash', 'Eggplant', 'Cherry Tomato', 'Red Pepper', 'Aubergine']
+# seeds_grains = ['White Rice', 'Cashew Nuts', 'Black Beans', 'Chickpea', 'Wholemeal Flour', 'Wheat Flour', 'Corn Flour', 'Breading Flour', 'Pine Nuts', 'Flour', 'Seasame Seeds', 'Risoto Rice', 'Pistacchio', 'Red Lentils']
+# stem_greens = ['Broccoli', 'Aspargus', 'Celery']
+# leafy_greens = ['Lettuce', 'Kale', 'Spinach', 'Watercress', 'Salad', 'Cabbage']
+# bulbs = ['Onion', 'Garlic', 'Green Onion', 'Red Onion', 'Ginger']
+# roots = ['Potato', 'Sweet Potato', 'Carrot', 'Radish']
+# herbs = ['Fresh Oregano', 'Basil', 'Parsley', 'Coriander', 'Thyme', 'Sage', 'Fresh Mint', 'Dried Oregano', 'Dried Mint']
+# bread = ['Sliced Bread', 'Focaccia', 'Baguette', 'Yeast', 'Fresh Bread', 'Puff Pastry', 'English Muffin', 'Pitta Bread', 'Burger Bun']
+# pasta = ['Dried Spaghetti', 'Lasagne Sheet']
+# sweets = ['Sugar', 'Chocolate', 'Dark Chocolate', 'Nutella', 'Honey', 'Light Brown Sugar', 'Chocolate Chips']
+# fats_oil = ['Butter', 'Olive Oil', 'Coconout Oil', 'Cooking Oil']
+# chicken = ['Chicken Legs', 'Chicken Breast']
+# pork = ['Bacon', 'Pork Ribs', 'Pepperoni', 'Prosciutto', 'Ham', 'Minced Pork', 'Sausage']
+# beef = ['Ground Beef', 'Sirloin Steak', 'Filet Mignon', 'Burger']
+# fish = ['Salmon', 'Cod', 'Tuna Steak', 'Fresh Fish']
+# eggs = ['Egg']
+# funghi = ['Shimeji Mushrooms', 'Portobello Mushrooms', 'Shitake Mushrooms', 'White Mushrooms', 'Chestnut Mushrooms', 'Dried Porccini Mushrooms']
+# seafood = ['Oysters', 'Prawns']
+# dairy = ['Milk', 'Mozzarella Cheese', 'Heavy Cream', 'Parmesan Cheese', 'Soured Cream', 'Goat Cheese', 'Cheese', 'Alternative Milk', 'Coconut Cream', 'Feta Cheese', 'Mature Cheddar', 'Pecorino Cheese']
+# seasonings = ['Salt', 'Sea Salt', 'Black Pepper', 'Paprika', 'Apple Vinegar', 'White Vinegar', 'Dijon Mustard', 'Ketchup', 'Brandy', 'White Wine', 'Dill', 'Vanilla Extract', 'Flaky Salt', 'Cocoa Powder', 'Balsamic Vinegar', 'Oyster Sauce', 'Soy Sauce', 'Olives']
+# sauces = ['Tomato Sauce', 'Bechamel Sauce', 'Tartar Sauce', 'Vegetable Stock', 'Mayonnaise', 'Chicken Stock', 'Beef Stock', 'Fish Stock', 'Curry Sauce', 'Worcestershire Sauce']
 
-def create_ingredient(ingredients_array, category)
-  ingredients_array.each do |ingredient|
-    new_ingredient = Ingredient.new(name: ingredient)
-    new_ingredient.badge = Badge.find_by(name: category)
-    new_ingredient.save
-    puts "Created #{new_ingredient.name} under Badge #{new_ingredient.badge.name}"
-  end
-end
+# def create_ingredient(ingredients_array, category)
+#   ingredients_array.each do |ingredient|
+#     new_ingredient = Ingredient.new(name: ingredient)
+#     new_ingredient.badge = Badge.find_by(name: category)
+#     new_ingredient.save
+#     puts "Created #{new_ingredient.name} under Badge #{new_ingredient.badge.name}"
+#   end
+# end
 
-create_ingredient(fruits, 'Fruits')
-create_ingredient(fake_veggies, 'not Veggies')
-create_ingredient(seeds_grains, 'Seeds and Grains')
-create_ingredient(stem_greens, 'Greens')
-create_ingredient(leafy_greens, 'Greens')
-create_ingredient(bulbs, 'Bulbs')
-create_ingredient(roots, 'Root Vegetables')
-create_ingredient(herbs, 'Herbs and Spices')
-create_ingredient(bread, 'Bread, Flour and Pasta')
-create_ingredient(pasta, 'Bread, Flour and Pasta')
-create_ingredient(sweets, 'Sweeteners and Chocolate')
-create_ingredient(fats_oil, 'Fats and Oils')
-create_ingredient(chicken, 'Chicken')
-create_ingredient(pork, 'Pork')
-create_ingredient(beef, 'Beef')
-create_ingredient(fish, 'Fish')
-create_ingredient(eggs, 'Eggs')
-create_ingredient(funghi, 'Funghi')
-create_ingredient(seafood, 'Seafood')
-create_ingredient(dairy, 'Dairy')
-create_ingredient(seasonings, 'Herbs and Spices')
-create_ingredient(sauces, 'Stocks and Sauces')
+# create_ingredient(fruits, 'Fruits')
+# create_ingredient(fake_veggies, 'not Veggies')
+# create_ingredient(seeds_grains, 'Seeds and Grains')
+# create_ingredient(stem_greens, 'Greens')
+# create_ingredient(leafy_greens, 'Greens')
+# create_ingredient(bulbs, 'Bulbs')
+# create_ingredient(roots, 'Root Vegetables')
+# create_ingredient(herbs, 'Herbs and Spices')
+# create_ingredient(bread, 'Bread, Flour and Pasta')
+# create_ingredient(pasta, 'Bread, Flour and Pasta')
+# create_ingredient(sweets, 'Sweeteners and Chocolate')
+# create_ingredient(fats_oil, 'Fats and Oils')
+# create_ingredient(chicken, 'Chicken')
+# create_ingredient(pork, 'Pork')
+# create_ingredient(beef, 'Beef')
+# create_ingredient(fish, 'Fish')
+# create_ingredient(eggs, 'Eggs')
+# create_ingredient(funghi, 'Funghi')
+# create_ingredient(seafood, 'Seafood')
+# create_ingredient(dairy, 'Dairy')
+# create_ingredient(seasonings, 'Herbs and Spices')
+# create_ingredient(sauces, 'Stocks and Sauces')
 
 # Books, Lessons and Recipes
 
