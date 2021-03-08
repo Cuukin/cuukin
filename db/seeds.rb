@@ -146,14 +146,14 @@ book_1 = {
   title: 'Kitchen SOS',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'newbie',
-  xp: 200
+  xp: 500
 }
 
 book_2 = {
   title: 'Kitchen Basics',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
   level: 'newbie',
-  xp: 200
+  xp: 500
 }
 
 books = [book_1, book_2]
