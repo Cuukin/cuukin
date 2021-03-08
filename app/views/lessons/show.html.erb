@@ -149,94 +149,64 @@
 
   <div class="lesson-slide">
 
-    <div class="container-lesson-chapter">
-      <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
+    <% @lesson.skill_chapters.each do |skill_chapter| %>
 
-      <div class="card-lesson-chapter">
-        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-        <h2 class="text-center">Carrots 101</h2>
-        <h3>Summary</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
-      </div>
-    </div>
-
-    <div class="container-lesson-chapter">
-      <div class="lesson-skill-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-chapter">
-        <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-        <h2 class="text-center">Seasoning basics</h2>
-        <h3>Summary</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-        <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
-      </div>
-    </div>
-
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 1 / 3</h2>
-          </div>
-          <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+      <div class="container-lesson-chapter">
+        <div class="lesson-skill-video">
+          <video src="https://res.cloudinary.com/juliaf1/video/upload/v1615229396/Cuukin%20-%20Skill%20Videos/Egg_final_svgbqw.mp4" controls></video>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-      </div>
-    </div>
+        <div class="card-lesson-chapter">
+          <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+          <h2 class="text-center"><%= skill_chapter.title %></h2>
+          <h3>Summary</h3>
+          <p><%= skill_chapter.description %></p>
 
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
+          <% unless @lesson.skill_chapters.last == skill_chapter  %>
+            <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
+          <% else %>
+            <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
+          <% end %>
+        </div>
       </div>
 
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 2 / 3</h2>
-          </div>
-          <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+    <% end %>
+
+    <% @lesson.recipe.recipe_methods.each_with_index do |recipe_method, index| %>
+
+      <div class="container-lesson-recipe">
+        <div class="lesson-recipe-video">
+          <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
         </div>
 
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-      </div>
-    </div>
+        <div class="card-lesson-recipe">
+          <div class="card-lesson-recipe-header">
+            <div class="recipe-header-left">
+              <h4><%= recipe_method.title %></h4>
+              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count}" %></h2>
+            </div>
 
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video src="https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4" controls></video>
-      </div>
-
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4>Balsamic Carrots</h4>
-            <h2>Step 3 / 3</h2>
+            <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
+              <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+            <% end %>
           </div>
+
+          <p><%= recipe_method.description %></p>
+
+          <% if @lesson.recipe.recipe_methods.last == recipe_method %>
+            <% if @validated %>
+              <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
+            <% elsif @skipped %>
+              <p class="primary-btn" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
+            <% else %>
+              <p class="primary-btn" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
+            <% end %>
+          <% end %>
+
         </div>
-
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-
-        <% if @validated %>
-          <p class="primary-btn disabled" style="cursor: pointer;">Lesson Validated</p>
-        <% elsif @skipped %>
-          <p class="primary-btn" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
-        <% else %>
-          <p class="primary-btn" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
-        <% end %>
       </div>
-    </div>
+
+    <% end %>
 
   </div>
 </div>

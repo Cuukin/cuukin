@@ -25,6 +25,9 @@ const lessonChaptersSlide = () => {
       lessonOverviewContainer.style.display = "none";
       lessonContainer.style.display = "block";
       counter = 0;
+      window.scrollTo({
+        top: 0
+      });
     });
   };
 
@@ -35,6 +38,9 @@ const lessonChaptersSlide = () => {
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         counter += 1;
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        window.scrollTo({
+          top: 0
+        });
       });
     });
   };
@@ -46,6 +52,9 @@ const lessonChaptersSlide = () => {
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         counter += 1;
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        window.scrollTo({
+          top: 0
+        });
       }, 2100);
     }
 

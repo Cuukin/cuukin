@@ -237,14 +237,14 @@ end
 recipe_method_1 = {
   recipe_id: 1,
   title: 'Heating Oil',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  description: "Boil the water and dump the egg in there when you're ready.",
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
 
 recipe_method_2 = {
   recipe_id: 1,
   title: 'Chopping Onions',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
   video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
 }
 
