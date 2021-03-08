@@ -3,7 +3,7 @@ class CreateRecipeIngredients < ActiveRecord::Migration[6.0]
     create_table :recipe_ingredients do |t|
       t.references :recipe, null: false, foreign_key: true
       t.references :ingredient, null: false, foreign_key: true
-      t.integer :measure
+      t.integer :quantity
       t.string :unit
       t.boolean :optional, null: false, default: false
 

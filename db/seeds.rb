@@ -248,7 +248,6 @@ end
 
 lesson_1 = {
   title: 'Avotoast',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 1,
   book_id: 1,
   xp: 100
@@ -256,7 +255,6 @@ lesson_1 = {
 
 lesson_2 = {
   title: 'Spaghetti al Carbonara',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 2,
   book_id: 1,
   xp: 100
@@ -264,7 +262,6 @@ lesson_2 = {
 
 lesson_3 = {
   title: 'Baked Portobello',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 3,
   book_id: 1,
   xp: 100
@@ -272,7 +269,6 @@ lesson_3 = {
 
 lesson_4 = {
   title: 'Strawberry Fondue',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   recipe_id: 4,
   book_id: 1,
   xp: 100
@@ -337,9 +333,9 @@ skill_chapters.each do |skill_chapter|
   puts "Created #{new_skill_chapter.title}"
 end
 
-RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, measure: 2, unit: 'tbsp')
-RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, measure: 4, unit: 'lts')
-RecipeIngredient.create(recipe_id: 1, ingredient_id: 4, measure: 1)
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, quantity: 2, unit: 'tbsp')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, quantity: 4, unit: 'lts')
+RecipeIngredient.create(recipe_id: 1, ingredient_id: 4, quantity: 1)
 
 RecipeTool.create(recipe_id: 1, tool_id: 1)
 RecipeTool.create(recipe_id: 1, tool_id: 2)
