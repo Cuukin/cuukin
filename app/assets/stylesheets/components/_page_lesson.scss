@@ -413,10 +413,6 @@
     font-size: 24px;
     font-weight: 700;
   }
-
-  p {
-    margin: 24px 0;
-  }
 }
 
 .lesson-recipe-video {
@@ -436,10 +432,35 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 16px;
 
   .next-btn {
     margin: 0;
   }
+}
+
+.recipe-method-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-method-ingredients {
+  padding: 8px;
+  border: 1px dashed $black;
+  width: 40%;
+
+  h5 {
+    font-size: 16px;
+  }
+}
+
+.recipe-method-description {
+  width: 60%;
+  padding: 0 16px;
+}
+
+.finish-lesson {
+  margin-top: 24px;
 }
 
 @media (max-width: 500px) {

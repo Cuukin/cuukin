@@ -50,7 +50,7 @@ class LessonsController < ApplicationController
   end
 
   def set_lesson
-    @lesson = Lesson.find(params[:id])
+    @lesson = Lesson.includes(:recipe).find(params[:id])
     @book = @lesson.book
   end
 end
