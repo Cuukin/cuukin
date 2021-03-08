@@ -16,7 +16,7 @@
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img' %>
       <% else %>
-        <%= image_tag "https://ui-avatars.com/api/?name=#{current_user.first_name}+#{current_user.last_name}", class: 'user-img' %>
+        <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img' %>
       <% end %>
     </div>
   </div>
