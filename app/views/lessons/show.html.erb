@@ -36,7 +36,7 @@
       </li>
       <li>
         <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
-        Level <%= @lesson.book.level.capitalize %>
+        Level <%= Book.levels[@lesson.book.level] %>
       </li>
       <li>
         <%= image_tag('lesson-ingredient.svg', class: 'lesson-icons') %>
