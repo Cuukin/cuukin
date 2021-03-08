@@ -358,7 +358,7 @@
 .meter {
   height: 16px;
   width: 100%;
-  padding: 4px 0;
+  padding: 2px 0;
   background-color: $light-gray;
   position: relative;
   z-index: 10;
@@ -368,7 +368,7 @@
     width: 50%;
     display: block;
     background-color: $cuukin;
-    position: absolute;
+    //position: absolute;
   }
 }
 
