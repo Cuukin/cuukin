@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :lesson_validations, dependent: :destroy
+  has_many :lesson_unblocks, dependent: :destroy
   has_many :user_recipes, dependent: :destroy
   has_many :user_awards, dependent: :destroy
   has_many :user_badges, dependent: :destroy

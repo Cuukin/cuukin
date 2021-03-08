@@ -200,7 +200,7 @@ book_1 = {
 book_2 = {
   title: 'Kitchen Basics',
   description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
-  level: 'chef_in_progress',
+  level: 'newbie',
   xp: 200
 }
 
@@ -208,7 +208,7 @@ books = [book_1, book_2]
 
 books.each do |book|
   new_book = Book.create(book)
-  puts "Created #{new_book.title} 📗"
+  puts "Created #{book[:title]} 📗"
 end
 
 recipe_1 = {
@@ -243,7 +243,7 @@ recipes = [recipe_1, recipe_2, recipe_3, recipe_4]
 
 recipes.each do |recipe|
   new_recipe = Recipe.create(recipe)
-  puts "Created #{new_recipe.title} 🍌"
+  puts "Created #{recipe[:title]} 🍌"
 end
 
 lesson_1 = {
@@ -299,7 +299,7 @@ recipe_methods = [recipe_method_1, recipe_method_2]
 
 recipe_methods.each do |recipe_method|
   new_recipe_method = RecipeMethod.create(recipe_method)
-  puts "Created #{new_recipe_method.title}"
+  puts "Created #{recipe_method[:title]}"
 end
 
 skill_chapter_1 = {
@@ -330,7 +330,7 @@ skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3]
 
 skill_chapters.each do |skill_chapter|
   new_skill_chapter = SkillChapter.create(skill_chapter)
-  puts "Created #{new_skill_chapter.title}"
+  puts "Created #{skill_chapter[:title]}"
 end
 
 RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, quantity: 2, unit: 'tbsp')
@@ -399,7 +399,7 @@ extra_recipes = [avotoast_1, avotoast_2, carbonara_1, carbonara_2, portobello_1,
 
 extra_recipes.each do |recipe|
   new_recipe = Recipe.create(recipe)
-  puts "Created recipe #{new_recipe.title}"
+  puts "Created recipe #{recipe[:title]}"
 end
 
 def create_recipe_connection(recipe_title, extra_recipes)
@@ -411,23 +411,6 @@ create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
 create_recipe_connection("Spaghetti al Carbonara", [carbonara_1[:title], carbonara_2[:title]])
 create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
 create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
-
-# def create_extra_recipe(recipe_title, extra_recipe)
-#   new_rec = ExtraRecipe.new(extra_recipe)
-#   new_rec.recipe = Recipe.find_by(title: recipe_title)
-#   new_rec.save
-#   puts "Created #{new_rec.title} for #{recipe_title}"
-# end
-
-# create_extra_recipe("Avotoast", avotoast_1)
-# create_extra_recipe("Avotoast", avotoast_2)
-# create_extra_recipe("Spaghetti al Carbonara", carbonara_1)
-# create_extra_recipe("Spaghetti al Carbonara", carbonara_2)
-# create_extra_recipe("Baked Portobello", portobello_1)
-# create_extra_recipe("Baked Portobello", portobello_2)
-# create_extra_recipe("Baked Portobello", portobello_1)
-# create_extra_recipe("Strawberry Fondue", fondue_1)
-# create_extra_recipe("Strawberry Fondue", fondue_2)
 
 # Awards
 
@@ -498,7 +481,7 @@ awards = [award_1, award_2, award_3, award_4, award_5, award_6, award_7, award_8
 
 awards.each do |award|
   new_award = Award.create(award)
-  puts "Created award #{new_award.name} 👏"
+  puts "Created award #{award[:name]} 👏"
 end
 
 all_awards = Award.all
@@ -509,3 +492,79 @@ all_awards.each do |award|
     UserAward.create(award_id: award.id, user_id: user.id)
   end
 end
+
+# Dietary Restrictions Listing
+
+soy = {
+  name: "Soy",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/soy_eh96vh.svg"
+}
+
+gluten = {
+  name: "Gluten",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/gluten_cwkiry.svg"
+}
+
+sugar = {
+  name: "Low sugar",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/lowsugar_moqpep.svg"
+}
+
+shell = {
+  name: "Shellfish",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/shellfish_msezlr.svg"
+}
+
+nuts = {
+  name: "Nuts",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/nuts_a5kkpn.svg"
+}
+
+veggie = {
+  name: "Vegetarian",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/veggie_tbvw1y.svg"
+}
+
+vegan = {
+  name: "Vegan",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/vegan_mohegz.svg"
+}
+
+halal = {
+  name: "Halal",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/halal_rsv5ep.svg"
+}
+
+dairy = {
+  name: "Dairy",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/dairy_mtcdrd.svg"
+}
+
+gluten = {
+  name: "Gluten",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/gluten_cwkiry.svg"
+}
+
+kosher = {
+  name: "Kosher",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/kosher_bwm5re.svg"
+}
+
+fat = {
+  name: "Low fat",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/lowfat_xuve1a.svg"
+}
+
+egg = {
+  name: "Eggs",
+  icon: "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/egg_qqrhsl.svg"
+}
+
+dietary_restrictions = [soy, gluten, sugar, shell, nuts, veggie, vegan, halal, dairy, gluten, kosher, fat, egg]
+
+dietary_restrictions.each do |dietary_restriction|
+  new_dietary_restriction = DietaryRestriction.create(dietary_restriction)
+  puts "Created #{dietary_restriction[:name]}"
+end
+
+
