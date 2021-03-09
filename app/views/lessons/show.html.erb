@@ -206,8 +206,16 @@
             <% if @validated %>
               <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
             <% elsif @skipped %>
+              <div class="warning-completion">
+                <%= image_tag('warning.svg') %>
+                <h5>Remember to verify lesson completion below</h5>
+              </div>
               <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateSkippedBtn"><%= image_tag('btn-complete.svg', class: 'complete-lesson-icon') %> Complete Lesson</p>
             <% else %>
+              <div class="warning-completion">
+                <%= image_tag('warning.svg') %>
+                <h5>Remember to verify lesson completion below</h5>
+              </div>
               <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateLessonBtn"><%= image_tag('btn-complete.svg', class: 'complete-lesson-icon') %> Complete Lesson</p>
             <% end %>
           <% end %>

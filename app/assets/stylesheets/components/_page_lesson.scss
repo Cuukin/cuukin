@@ -27,12 +27,32 @@
   margin-right: 4px;
 }
 
+.warning-completion {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 16px;
+  margin-top: 24px;
+
+  img {
+    height: 48px;
+    margin-right: 4px;
+  }
+
+  h5 {
+    color: $cuukin;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
 // Lesson Overview [FIRST CARD]
 
 .container-lesson-overview {
-  position: relative;
+  // position: relative;
   width: 500px;
-  margin: auto;
+  margin: 0 auto;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
 }
