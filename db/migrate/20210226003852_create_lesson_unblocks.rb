@@ -4,6 +4,7 @@ class CreateLessonUnblocks < ActiveRecord::Migration[6.0]
       t.references :lesson, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.string :reason
+      t.string :other_reason
 
       t.timestamps
     end

@@ -12,8 +12,9 @@
           <%= f.input :reason,
             label: "",
             collection: ["I do not like the lesson's recipe", "I already know the topic well",
-            "Lesson's recipe does not fit my dieatary restrictions", "Other"],
+            "Lesson's recipe does not fit my dieatary restrictions"],
             as: :radio_buttons %>
+          <%= f.input :other_reason, label: false, placeholder: "Other" %>
         </div>
         <%= f.button :submit, 'Submit & Unlock', class: 'primary-btn' %>
       <% end %>
