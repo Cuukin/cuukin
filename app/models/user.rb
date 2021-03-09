@@ -24,30 +24,38 @@ class User < ApplicationRecord
 
   before_update :check_username_presence
 
+  after_touch :validate_book_completion
+
   # after_touch :lesson_validation_currencies
   # after_touch :update_user_level
-
-  def name
-    self.last_name ? "#{self.first_name.capitalize} #{self.last_name.capitalize}" : "#{self.first_name.capitalize}"
-  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.photo # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use validate emails,
-      # uncomment the line below to skip the confirmation emails.
-      user.skip_confirmation!
-    end
-  end
+  # def self.from_omniauth(auth)
+  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  #     user.email = auth.info.email
+  #     user.password = Devise.friendly_token[0, 20]
+  #     user.name = auth.info.name   # assuming the user model has a name
+  #     user.image = auth.info.photo # assuming the user model has an image
+  #     # If you are using confirmable and the provider(s) you use validate emails,
+  #     # uncomment the line below to skip the confirmation emails.
+  #     user.skip_confirmation!
+  #   end
+  # end
 
   private
+
+  def validate_book_completion
+    book = self.lesson_validations.last.lesson.book
+    lesson_validations = self.lesson_validations.where(validated: true)
+    lesson_validations = lesson_validations.select {|lv| lv.lesson.book == book}
+    if lesson_validations.count == book.lessons.count
+      self.xp += book.xp
+      self.save
+    end
+  end
 
   def create_username
     # Method to generate a random username

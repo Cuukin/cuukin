@@ -22,6 +22,7 @@ class LessonValidationsController < ApplicationController
   def update
     @lesson_validation = LessonValidation.find_by(lesson_id: @lesson.id, user: current_user)
     authorize @lesson_validation, policy_class: LessonValidationPolicy
+
     if @lesson_validation.update(lesson_validation_params)
       @lesson_validation.validated = true
       @lesson_validation.save

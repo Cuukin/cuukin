@@ -13,6 +13,15 @@ class LessonValidation < ApplicationRecord
 
   # after_create :transition_currencies
 
+  after_create :touch_self
+  after_update :touch_self
+
+  private
+
+  def touch_self
+    self.user.touch
+  end
+
   # def transition_currencies
   #   self.user.touch
   # end
