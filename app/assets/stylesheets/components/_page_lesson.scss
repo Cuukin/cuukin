@@ -341,6 +341,8 @@
 .lesson-slide {
   width: 100%;
   display: flex;
+  position: relative;
+  top: 16px;
 }
 
 // Lesson Skill Chapter [second++ cards]
@@ -384,8 +386,9 @@
   width: 500px;
 
   video {
+    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 
@@ -454,8 +457,9 @@
   overflow: hidden;
 
   video {
+    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 

@@ -32,7 +32,7 @@ const lessonChaptersSlide = () => {
         top: 0
       });
 
-      // lessonVideos[counter].play();
+      lessonVideos[counter].play();
 
       let totalItems = document.querySelectorAll('.lesson-slide > div').length;
       let progressBarWidth = 100 * (counter + 1) / totalItems;
@@ -51,7 +51,7 @@ const lessonChaptersSlide = () => {
           top: 0
         });
 
-        // lessonVideos[counter].play();
+        lessonVideos[counter].play();
         lessonVideos[counter - 1].pause();
 
         let totalItems = document.querySelectorAll('.lesson-slide > div').length;
@@ -72,7 +72,7 @@ const lessonChaptersSlide = () => {
           top: 0
         });
 
-        // lessonVideos[counter].play();
+        lessonVideos[counter].play();
         lessonVideos[counter - 1].pause();
 
         let totalItems = document.querySelectorAll('.lesson-slide > div').length;

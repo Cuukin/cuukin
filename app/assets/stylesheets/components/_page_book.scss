@@ -55,6 +55,23 @@
   }
 }
 
+.lesson-card-current {
+  background-color: $cuukin;
+  border-radius: 16px;
+  padding: 32px 8px 32px 40px;
+  margin: 16px 0;
+
+  p {
+    color: $dark-red;
+    margin: 0;
+  }
+
+  h2 {
+    color: $white;
+    margin: 0;
+  }
+}
+
 .lesson-card:hover {
   background-color: $cuukin;
 
