@@ -12,11 +12,11 @@
     <div class="profile-image-content">
       <%= link_to edit_user_path(current_user) do %>
         <%= image_tag('edit-photo.svg', class: 'edit-photo-btn') %>
-      <% end %>
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img' %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img' %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img' %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img' %>
+        <% end %>
       <% end %>
     </div>
   </div>
