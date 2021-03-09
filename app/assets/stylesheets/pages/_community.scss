@@ -24,6 +24,11 @@
     width: 300px;
     margin-bottom: 40px;
   }
+
+  a, a:hover {
+    font-weight: 600;
+    color: $cuukin;
+  }
 }
 
 .center-pages-content {

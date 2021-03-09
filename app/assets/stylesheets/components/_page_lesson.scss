@@ -6,7 +6,7 @@
   cursor: pointer;
   position: fixed;
   z-index: 10;
-  margin: 16px 0 0 16px;
+  margin: 24px 0 0 16px;
 }
 
 .recipe-next-btn {
@@ -16,19 +16,45 @@
 }
 
 .nutri-show-btn {
-  height: 16px;
+  height: 14px;
   cursor: pointer;
   transition: transform ease-in-out 0.4s;
   transform-origin: 50% 50%;
 }
 
+.complete-lesson-icon {
+  height: 20px;
+  margin-right: 4px;
+}
+
+.warning-completion {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 16px;
+  margin-top: 24px;
+
+  img {
+    height: 48px;
+    margin-right: 4px;
+  }
+
+  h5 {
+    color: $cuukin;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
 // Lesson Overview [FIRST CARD]
 
 .container-lesson-overview {
-  position: relative;
+  // position: relative;
   width: 500px;
-  margin: auto;
+  margin: 0 auto;
   background-color: $white;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
 }
 
 .lesson-photo {
@@ -43,13 +69,13 @@
 .lesson-dash {
   width: 43px;
   display: block;
-  margin: 4px auto 24px;
+  margin: 0 auto 24px;
 }
 
 .card-lesson-overview {
   background-color: $white;
   border-radius: 24px 24px 0 0;
-  padding: 16px;
+  padding: 10px 16px 16px;
   position: relative;
   top: -32px;
 
@@ -123,7 +149,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 8px 8px 0;
+    margin: 0 12px 12px 0;
   }
 
   p {
@@ -135,8 +161,8 @@
   }
 
   img {
-    height: 70px;
-    width: 70px;
+    height: 77px;
+    width: 77px;
   }
 
   .badge-container {
@@ -151,12 +177,14 @@
     left: 0;
     -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .0));
     filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
+    // padding: 4px;
   }
 
   .badge2 {
     position: absolute;
     top: 0;
     left: 0;
+    // padding: 4px;
   }
 }
 
@@ -199,10 +227,6 @@
   h3 {
     margin: 0;
   }
-}
-
-.nutri-hide-btn {
-  display: none;
 }
 
 .nutri-content {
@@ -311,6 +335,7 @@
   min-height: 100vh;
   margin: auto;
   overflow: hidden;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
 }
 
 .lesson-slide {
@@ -330,7 +355,10 @@
 .card-lesson-chapter {
   width: 100%;
   background-color: $white;
-  padding: 16px;
+  padding: 10px 16px 16px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  top: -10px;
 
   h2 {
     color: $cuukin;
@@ -364,9 +392,10 @@
 .meter {
   height: 16px;
   width: 100%;
+  max-width: 500px;
   padding: 2px 0;
   background-color: $light-gray;
-  position: relative;
+  position: fixed;
   z-index: 10;
 
   span {
@@ -398,11 +427,11 @@
   width: 500px;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: $white;
+  background-color: $light-gray;
 }
 
 .card-lesson-recipe {
-  background-color: $white;
+  background-color: $light-gray;
   padding: 16px;
 
   h4 {

@@ -18,7 +18,7 @@
         <% end %>
         <p><%= user_recipe.recipe.title %></p>
       <% else %>
-        <%= link_to "#{user_recipe.recipe.external_url}", target: "blank" do %>
+        <%= link_to "#{user_recipe.recipe.external_url}", target: "_blank" do %>
           <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.4)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
             <div class="recipe-card-info">
               <% if user_recipe.recipe.external_url %>

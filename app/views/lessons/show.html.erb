@@ -18,8 +18,14 @@
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
-  <%= link_to :back do %>
-    <%= image_tag('btn-back.svg', class: 'btn-back') %>
+  <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
+    <%= link_to user_recipes_path do %>
+      <%= image_tag('btn-back.svg', class: 'btn-back') %>
+    <% end %>
+  <% else %>
+    <%= link_to book_path(@lesson.book) do %>
+      <%= image_tag('btn-back.svg', class: 'btn-back') %>
+    <% end %>
   <% end %>
 
   <div class="lesson-photo" style="background-image: url('<%= image_path "#{@lesson.recipe.photo_url}"%>')">
@@ -181,8 +187,8 @@
         <div class="card-lesson-recipe">
           <div class="card-lesson-recipe-header">
             <div class="recipe-header-left">
-              <h4><%= recipe_method.title %></h4>
-              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count}" %></h2>
+              <h4><%= @lesson.title %></h4>
+              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count} #{recipe_method.title}" %></h2>
             </div>
 
             <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
@@ -206,9 +212,17 @@
             <% if @validated %>
               <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
             <% elsif @skipped %>
-              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
+              <div class="warning-completion">
+                <%= image_tag('warning.svg') %>
+                <h5>Remember to verify lesson completion below</h5>
+              </div>
+              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateSkippedBtn"><%= image_tag('btn-complete.svg', class: 'complete-lesson-icon') %> Complete Lesson</p>
             <% else %>
-              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
+              <div class="warning-completion">
+                <%= image_tag('warning.svg') %>
+                <h5>Remember to verify lesson completion below</h5>
+              </div>
+              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateLessonBtn"><%= image_tag('btn-complete.svg', class: 'complete-lesson-icon') %> Complete Lesson</p>
             <% end %>
           <% end %>
 

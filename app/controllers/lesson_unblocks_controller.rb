@@ -39,6 +39,6 @@ class LessonUnblocksController < ApplicationController
   end
 
   def lesson_skip_params
-    params.require(:lesson_unblock).permit(:reason)
+    params.require(:lesson_unblock).permit(:reason, :other_reason)
   end
 end
