@@ -18,8 +18,14 @@
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
-  <%= link_to :back do %>
-    <%= image_tag('btn-back.svg', class: 'btn-back') %>
+  <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
+    <%= link_to user_recipes_path do %>
+      <%= image_tag('btn-back.svg', class: 'btn-back') %>
+    <% end %>
+  <% else %>
+    <%= link_to book_path(@lesson.book) do %>
+      <%= image_tag('btn-back.svg', class: 'btn-back') %>
+    <% end %>
   <% end %>
 
   <div class="lesson-photo" style="background-image: url('<%= image_path "#{@lesson.recipe.photo_url}"%>')">
