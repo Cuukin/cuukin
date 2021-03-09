@@ -181,8 +181,8 @@
         <div class="card-lesson-recipe">
           <div class="card-lesson-recipe-header">
             <div class="recipe-header-left">
-              <h4><%= recipe_method.title %></h4>
-              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count}" %></h2>
+              <h4><%= @lesson.title %></h4>
+              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count} #{recipe_method.title}" %></h2>
             </div>
 
             <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
