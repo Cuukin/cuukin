@@ -44,7 +44,7 @@
   </div>
 
   <% unless current_user.user_badges.empty? %>
-    <p>Badges here</p>
+    <%= render template: 'user_badges/index' %>
   <% else %>
     <div class="empty-container">
       <p>Oops, you don't have any badges yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>

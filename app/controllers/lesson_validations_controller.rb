@@ -9,6 +9,8 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.save
+      UpdateBadgesJob.perform_later(current_user, @lesson)
+      ValidateBookCompletionJob.perform_later(current_user, @lesson_validation)
       redirect_to book_path(@lesson.book), notice: "Lesson validated"
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
@@ -24,16 +26,18 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.update(lesson_validation_params)
+      UpdateBadgesJob.perform_later(current_user, @lesson)
       @lesson_validation.validated = true
       @lesson_validation.save
       redirect_to book_path(@lesson.book)
     else
-      render :new
+      redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
 
     transition_recipe(@lesson.recipe, current_user)
     transition_extra_recipes(@lesson.recipe, current_user)
     transition_currency(@lesson, current_user)
+    ValidateBookCompletionJob.perform_later(current_user, @lesson_validation)
   end
 
   private

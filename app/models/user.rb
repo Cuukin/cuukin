@@ -24,8 +24,6 @@ class User < ApplicationRecord
 
   before_update :check_username_presence
 
-  after_touch :validate_book_completion
-
   # after_touch :lesson_validation_currencies
   # after_touch :update_user_level
 
@@ -46,16 +44,6 @@ class User < ApplicationRecord
   # end
 
   private
-
-  def validate_book_completion
-    book = self.lesson_validations.last.lesson.book
-    lesson_validations = self.lesson_validations.where(validated: true)
-    lesson_validations = lesson_validations.select {|lv| lv.lesson.book == book}
-    if lesson_validations.count == book.lessons.count
-      self.xp += book.xp
-      self.save
-    end
-  end
 
   def create_username
     # Method to generate a random username
