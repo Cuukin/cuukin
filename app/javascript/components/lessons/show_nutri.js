@@ -5,15 +5,20 @@ const lessonNutriData = () => {
 
   if (nutriData) {
     showBtn.addEventListener('click', () => {
-      nutriData.style.display = "block";
-      showBtn.style.display = "none";
-      hideBtn.style.display = "block";
-    });
+      if (showBtn.style.transform == "rotate(0deg)" || showBtn.style.transform == "") {
+        nutriData.style.display = "block";
+        showBtn.style.transform = 'rotate(180deg)';
+        setTimeout(function() {
+          nutriData.style.opacity = 1;
+        }, 50);
+      } else if (showBtn.style.transform == "rotate(180deg)") {
+        nutriData.style.opacity = .1;
+        showBtn.style.transform = 'rotate(0deg)';
 
-    hideBtn.addEventListener('click', () => {
-      nutriData.style.display = "none";
-      showBtn.style.display = "block";
-      hideBtn.style.display = "none";
+        setTimeout(function() {
+          nutriData.style.display = "none";
+        }, 200);
+      };
     });
   };
 }

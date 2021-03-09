@@ -15,6 +15,13 @@
   cursor: pointer;
 }
 
+.nutri-show-btn {
+  height: 16px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.4s;
+  transform-origin: 50% 50%;
+}
+
 // Lesson Overview [FIRST CARD]
 
 .container-lesson-overview {
@@ -186,14 +193,8 @@
 .nutri-header {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   margin-bottom: 8px;
-
-  img {
-    margin-left: 8px;
-    height: 24px;
-    cursor: pointer;
-    filter: brightness(0.4);
-  }
 
   h3 {
     margin: 0;
@@ -206,6 +207,8 @@
 
 .nutri-content {
   display: none;
+  opacity: .1;
+  transition: opacity ease-in 0.25s;
 }
 
 .nutri-data {
