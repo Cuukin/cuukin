@@ -211,7 +211,9 @@
 
           <% if @lesson.recipe.recipe_methods.last == recipe_method %>
             <% if @validated %>
-              <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+              <%= link_to book_path(@lesson.book) do %>
+                <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+              <% end %>
             <% elsif @skipped %>
               <div class="warning-completion">
                 <%= image_tag('warning.svg') %>
