@@ -342,7 +342,7 @@
   width: 100%;
   display: flex;
   position: relative;
-  top: 16px;
+  top: 17px;
 }
 
 // Lesson Skill Chapter [second++ cards]
@@ -400,6 +400,7 @@
   background-color: $light-gray;
   position: fixed;
   z-index: 10;
+  box-shadow: 0px 3px 6px rgba(30,30,30,0.08);
 
   span {
     height: 100%;
