@@ -13,7 +13,7 @@
   display: none;
 }
 
-.recipe-next-btn {
+.recipe-next-btn, .lesson-recipe-next-btn {
   height: 42px;
   width: 42px;
   cursor: pointer;
@@ -346,7 +346,7 @@
   width: 100%;
   display: flex;
   position: relative;
-  top: 17px;
+  top: 16px;
 }
 
 // Lesson Skill Chapter [second++ cards]
@@ -434,13 +434,14 @@
 .container-lesson-recipe {
   width: 500px;
   min-height: 100vh;
+  width: 100%;
   margin: 0 auto;
   background-color: $light-gray;
 }
 
 .card-lesson-recipe {
   background-color: $light-gray;
-  padding: 16px;
+  padding: 16px 16px 24px;
 
   h4 {
     font-weight: 100;

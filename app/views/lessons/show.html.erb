@@ -192,7 +192,8 @@
             </div>
 
             <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
-              <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+              <%= image_tag('btn-next.svg', class: 'lesson-next-btn lesson-recipe-next-btn') %>
+              <%= image_tag('btn-next.svg', class: 'recipe-next-btn', style: 'display: none;') %>
             <% end %>
           </div>
 

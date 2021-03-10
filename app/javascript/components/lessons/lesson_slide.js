@@ -27,7 +27,9 @@ const lessonChaptersSlide = () => {
     startLessonBtn.addEventListener('click', () => {
       lessonOverviewContainer.style.display = "none";
       lessonContainer.style.display = "block";
+
       counter = 0;
+
       window.scrollTo({
         top: 0
       });
@@ -46,7 +48,9 @@ const lessonChaptersSlide = () => {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         counter += 1;
+
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
         window.scrollTo({
           top: 0
         });
@@ -93,6 +97,7 @@ const lessonChaptersSlide = () => {
       if (counter == -1) {
         lessonOverviewContainer.style.display = "block";
         lessonContainer.style.display = "none";
+        counter = 0;
       } else {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
