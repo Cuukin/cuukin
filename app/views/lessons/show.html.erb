@@ -128,7 +128,12 @@
       </div>
     </div>
 
-    <% if @open || @validated || @skipped || @first %>
+    <% if @validated %>
+      <div class="double-btn">
+        <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
+        <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
+      </div>
+    <% elsif @open || @skipped || @first %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
     <% elsif @open_to_unblock %>
       <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
@@ -141,6 +146,7 @@
 <!-- overflow hidden container with all skill chapters -->
 <div class="container-lesson">
   <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
+  <%= image_tag('btn-back.svg', class: 'btn-back', id: 'skiptorecipe-prev-btn') %>
 
   <div class="meter">
     <span class="meter-progression"></span>
