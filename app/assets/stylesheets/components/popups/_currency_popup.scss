@@ -38,6 +38,11 @@
     width: 130px;
     margin: 0 auto 24px;
   }
+
+  a {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .currency-text-content {
