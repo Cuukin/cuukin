@@ -201,7 +201,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
-                <p><%= "#{recipe_ingredient.quantity} #{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
+                <p class="ingredient-measure"><span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
               <% end %>
             </div>
             <div class="recipe-method-description">

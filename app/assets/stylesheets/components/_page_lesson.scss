@@ -264,12 +264,12 @@
     font-size: 16px;
     display: inline-block;
   }
-}
 
-.ingredient-measure, .equipment-measure {
-  text-align: right;
-  width: 64px;
-  // min-width: 16px;
+  .ingredient-measure, .equipment-measure {
+    text-align: right;
+    width: 64px;
+    // min-width: 16px;
+  }
 }
 
 .ingredient-name, .equipment-name {
