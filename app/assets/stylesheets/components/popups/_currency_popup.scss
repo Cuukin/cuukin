@@ -39,7 +39,7 @@
     margin: 0 auto 24px;
   }
 
-  a {
+  .close-btn-a {
     display: flex;
     justify-content: flex-end;
   }
@@ -54,6 +54,10 @@
   width: 42px;
   align-self: flex-end;
   cursor: pointer;
+}
+
+.currency-bold {
+  font-weight: 600;
 }
 
 @media (max-width: 360px) {
