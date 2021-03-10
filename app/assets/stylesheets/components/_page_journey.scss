@@ -15,22 +15,22 @@
 }
 
 .book-icon {
-  height: 105px;
-  width: 105px;
+  height: 100px;
+  width: 100px;
 }
 
 #book1 {
   position: absolute;
   width: 100%;
-  top: 59px;
-  left: 647px;
+  top: 79px;
+  left: 649px;
 }
 
 #book2 {
   position: absolute;
   width: 100%;
-  top: 274px;
-  left: 620px;
+  top: 283px;
+  left: 624px;
 }
 
 .locate-btn-container {
@@ -53,7 +53,7 @@
   filter: drop-shadow( 3px 3px 6px rgba(0, 0, 0, .12));
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
     width: 100vw;

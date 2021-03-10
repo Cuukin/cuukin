@@ -148,17 +148,20 @@ puts "Remember them to confirm their emails and change their password 🍕"
 
 book_1 = {
   title: 'Kitchen SOS',
-  description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
+  description: "New to cooking? Don't worry, we got your back. These basic recipes are a perfect starting point.",
   level: 'newbie',
   xp: 500
 }
 
 book_2 = {
   title: 'Kitchen Basics',
-  description: "So just for the cooking beginner, some basic information I hope will help as you bravely go forth into the wonderful world of recipes.",
+  description: "Coming up soon, please check our first book in the meantime.",
   level: 'newbie',
   xp: 500
 }
+
+# Description for Book 2 once its ready
+# "You have the essentials down, lets move onto some new recipes. Don't worry, we're taking it easy on you still!"
 
 books = [book_1, book_2]
 
@@ -175,7 +178,7 @@ recipe_1 = {
 }
 
 recipe_2 = {
-  title: 'Spaghetti al Carbonara',
+  title: 'Spaghetti Carbonara',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   photo_url: "https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
   prep_time: "20 min"
