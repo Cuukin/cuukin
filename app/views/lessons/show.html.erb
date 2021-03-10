@@ -63,13 +63,7 @@
         <% @lesson.skill_chapters.each do |skill_chapter| %>
           <li>
             <div class="badge-container">
-              <% if skill_chapter.badge.category == 'tool' %>
-                <%= image_tag('badge_white_tool.svg', class: 'badge1') %>
-              <% elsif skill_chapter.badge.category == 'technique' %>
-                <%= image_tag('badge_white_technique.svg', class: 'badge1') %>
-              <% else %>
-                <%= image_tag('badge_white_ingredient.svg', class: 'badge1') %>
-              <% end %>
+              <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
               <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
             </div>
             <p><%= skill_chapter.title %></p>

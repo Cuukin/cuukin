@@ -1,13 +1,8 @@
 <div class="user-awards-container">
   <% @user_badges.each do |user_badge| %>
     <div class="user-badge-container">
-      <% if user_badge.badge.category == 'tool' %>
-        <%= image_tag('badge_bronze_tool.svg', class: 'badge1') %>
-      <% elsif user_badge.badge.category == 'ingredient' %>
-        <%= image_tag('badge_bronze_ingredient.svg', class: 'badge1') %>
-      <% else %>
-        <%= image_tag('badge_bronze_technique.svg', class: 'badge1') %>
-      <% end %>
+      <% medal = user_badge.medal %>
+      <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
       <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
     </div>
   <% end %>

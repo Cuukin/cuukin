@@ -11,6 +11,8 @@ class UserBadge < ApplicationRecord
   def update_medal
     if self.xp > 200
       self.medal = 'silver'
+    else
+      self.medal = 'bronze'
     end
   end
 end
