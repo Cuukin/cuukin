@@ -1,23 +1,23 @@
 const lessonChaptersSlide = () => {
+  // Containers
   const lessonContainer = document.querySelector('.container-lesson');
   const lessonSlide = document.querySelector('.lesson-slide');
   const lessonChapter = document.querySelectorAll('.container-lesson-chapter');
-
   const lessonOverviewContainer = document.querySelector('.container-lesson-overview');
 
+  // Buttons
   const startLessonBtn = document.querySelector('#startLesson');
-
+  const startRecipe = document.querySelector('#startRecipe');
   const nextBtn = document.querySelectorAll('.lesson-next-btn');
-
   const prevBtn = document.querySelector('#prev-chap-btn');
 
-  const startRecipe = document.querySelector('#startRecipe');
-
+  // Videos
   const lessonVideos = document.querySelectorAll('.lesson-slide video');
 
-  let counter = 0;
-
+  // Progress Bar
   const progressBar = document.querySelector('.meter-progression');
+
+  let counter = 0;
 
   if (lessonOverviewContainer) {
     lessonContainer.style.display = "none";
@@ -27,7 +27,9 @@ const lessonChaptersSlide = () => {
     startLessonBtn.addEventListener('click', () => {
       lessonOverviewContainer.style.display = "none";
       lessonContainer.style.display = "block";
+
       counter = 0;
+
       window.scrollTo({
         top: 0
       });
@@ -46,7 +48,9 @@ const lessonChaptersSlide = () => {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         counter += 1;
+
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
         window.scrollTo({
           top: 0
         });
@@ -93,6 +97,7 @@ const lessonChaptersSlide = () => {
       if (counter == -1) {
         lessonOverviewContainer.style.display = "block";
         lessonContainer.style.display = "none";
+        counter = 0;
       } else {
         let size = lessonChapter[0].clientWidth;
         lessonSlide.style.transition = "transform 0.4s ease-in-out";

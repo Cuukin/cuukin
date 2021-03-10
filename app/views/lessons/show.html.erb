@@ -128,7 +128,12 @@
       </div>
     </div>
 
-    <% if @open || @validated || @skipped || @first %>
+    <% if @validated %>
+      <div class="double-btn">
+        <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
+        <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
+      </div>
+    <% elsif @open || @skipped || @first %>
       <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
     <% elsif @open_to_unblock %>
       <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
@@ -141,6 +146,7 @@
 <!-- overflow hidden container with all skill chapters -->
 <div class="container-lesson">
   <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
+  <%= image_tag('btn-back.svg', class: 'btn-back', id: 'skiptorecipe-prev-btn') %>
 
   <div class="meter">
     <span class="meter-progression"></span>
@@ -186,7 +192,8 @@
             </div>
 
             <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
-              <%= image_tag('btn-next.svg', class: 'lesson-next-btn recipe-next-btn') %>
+              <%= image_tag('btn-next.svg', class: 'lesson-next-btn lesson-recipe-next-btn') %>
+              <%= image_tag('btn-next.svg', class: 'recipe-next-btn', style: 'display: none;') %>
             <% end %>
           </div>
 
@@ -194,7 +201,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
-                <p><%= "#{recipe_ingredient.quantity} #{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
+                <p class="ingredient-measure"><span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
               <% end %>
             </div>
             <div class="recipe-method-description">
@@ -204,7 +211,9 @@
 
           <% if @lesson.recipe.recipe_methods.last == recipe_method %>
             <% if @validated %>
-              <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+              <%= link_to book_path(@lesson.book) do %>
+                <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+              <% end %>
             <% elsif @skipped %>
               <div class="warning-completion">
                 <%= image_tag('warning.svg') %>
