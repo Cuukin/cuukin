@@ -73,14 +73,11 @@
 }
 
 .lesson-card:hover {
-  background-color: $cuukin;
+  box-shadow: 1px 1px 6px rgba(120,120,120,0.05);
+}
 
-  p {
-    color: $dark-red;
-  }
-  h2 {
-    color: $white;
-  }
+.lesson-card-current:hover {
+  box-shadow: 1px 1px 6px rgba(120,120,120,0.1);
 }
 
 .container-lessons-cards {
