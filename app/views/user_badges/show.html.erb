@@ -1,0 +1,22 @@
+<div class="currency-modal" style="display: block;">
+  <div class="currency-modal-content">
+    <%= link_to user_path(current_user) do %>
+      <%= image_tag('btn-close-rounded.svg', class: 'currency-modal-close-btn') %>
+    <% end %>
+
+    <div class="user-badge-container badge-popup">
+      <% if @user_badge.medal == 'bronze' %>
+        <%= image_tag("#{@user_badge.badge.bronze}", class: 'badge1') %>
+      <% elsif @user_badge.medal == 'silver' %>
+        <%= image_tag("#{@user_badge.badge.silver}", class: 'badge1') %>
+      <% end %>
+      <%= image_tag("#{@user_badge.badge.icon}", class: 'badge2') %>
+    </div>
+
+    <h1 class="badge-name"><%= @user_badge.badge.name %></h1>
+
+    <div class="currency-text-content">
+      <p><%= @user_badge.badge.description %></p>
+    </div>
+  </div>
+</div>

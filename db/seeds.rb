@@ -9,7 +9,10 @@ badges_csv.each do |row|
   b = Badge.new
   b.name = row['badge_name']
   b.category = row['category']
+  b.description = row['description']
   b.icon = row['icon']
+  b.bronze = row['bronze']
+  b.white = row['white']
   b.save
   puts "Created BADGE - #{b.name}"
 end

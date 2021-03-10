@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user_awards = UserAward.where(user_id: current_user.id).includes(:award)
-    @user_badges = UserBadge.where(user_id: current_user.id).includes(:badge)
+    @user_badges = UserBadge.where(user_id: current_user.id).includes(:badge).sort_by {|ub| ub.badge.category}
   end
 
   def edit

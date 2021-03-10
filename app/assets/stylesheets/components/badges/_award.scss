@@ -37,3 +37,16 @@
     left: 0;
   }
 }
+
+.badge-popup {
+  margin: 0 auto 24px;
+
+  img {
+    height: 130px;
+  }
+}
+
+.badge-name {
+  color: $cuukin;
+  margin-bottom: 16px !important;
+}
