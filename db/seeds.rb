@@ -459,7 +459,7 @@ def create_recipe_connection(recipe_title, extra_recipes)
 end
 
 create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
-create_recipe_connection("Spaghetti al Carbonara", [carbonara_1[:title], carbonara_2[:title]])
+create_recipe_connection("Spaghetti Carbonara", [carbonara_1[:title], carbonara_2[:title]])
 create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
 create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
 
