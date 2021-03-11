@@ -9,16 +9,13 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.save
+      ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson)
-      ValidateBookCompletionJob.perform_later(current_user, @lesson_validation)
+      TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
       redirect_to book_path(@lesson.book), notice: "Lesson validated"
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
-
-    transition_currency(@lesson, current_user)
-    transition_recipe(@lesson.recipe, current_user)
-    transition_extra_recipes(@lesson.recipe, current_user)
   end
 
   def update
@@ -26,37 +23,18 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.update(lesson_validation_params)
-      UpdateBadgesJob.perform_later(current_user, @lesson)
       @lesson_validation.validated = true
       @lesson_validation.save
+      ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
+      UpdateBadgesJob.perform_later(current_user, @lesson)
+      TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
       redirect_to book_path(@lesson.book)
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
-
-    transition_recipe(@lesson.recipe, current_user)
-    transition_extra_recipes(@lesson.recipe, current_user)
-    transition_currency(@lesson, current_user)
-    ValidateBookCompletionJob.perform_later(current_user, @lesson_validation)
   end
 
   private
-
-  def transition_extra_recipes(recipe, user)
-    extra_recipes = recipe.recipe_connections.first.extra_recipes_titles
-    extra_recipes.each do |extra_recipe|
-      UserRecipe.create(user: user, recipe: Recipe.find_by(title: extra_recipe), completed: false)
-    end
-  end
-
-  def transition_recipe(recipe, user)
-    UserRecipe.create(user: user, recipe: recipe, completed: true)
-  end
-
-  def transition_currency(lesson, user)
-    user.xp += lesson.xp
-    user.save
-  end
 
   def set_lesson
     @lesson = Lesson.find(params[:lesson_id])

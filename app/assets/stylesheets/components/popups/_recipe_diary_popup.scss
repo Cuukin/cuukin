@@ -1,0 +1,138 @@
+.recipe-diary-modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10000;
+}
+
+.recipe-diary-modal-content {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  padding: 16px;
+
+  width: 330px;
+
+  background-color: $white;
+  border-radius: 16px;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, .16);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: $cuukin;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 18px;
+    color: $black;
+    font-style: italic;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+}
+
+.recipe-diary-details {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+
+  color: $dark-gray;
+
+  li {
+    font-size: 16px;
+    display: inline;
+    margin: 0 8px 4px;
+  }
+
+  img {
+    height: 20px;
+  }
+}
+
+.recipe-diary-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.feedback, .expert-review {
+  padding: 4px;
+  border: 2px dashed $gray;
+  border-radius: 8px;
+  width: 100%;
+
+  h3 {
+    color: $dark-gray;
+    text-align: center;
+  }
+
+  h4 {
+    color: $olive;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.1;
+    text-align: center;
+  }
+}
+
+.difficulcy-feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+
+  img {
+    height: 30px;
+    margin-right: 4px;
+  }
+}
+
+.recipe-diary-notes {
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.recipe-diary-modal-close-btn {
+  height: 40px;
+  width: 40px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+
+@media (max-width: 360px) {
+  .recipe-diary-modal-content {
+    width: 88%;
+  }
+}

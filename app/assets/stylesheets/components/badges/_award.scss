@@ -21,6 +21,8 @@
 
   img {
     height: 64px;
+    transition: transform ease-in-out 0.4s;
+    transform-origin: 50% 50%;
   }
 
   .badge1 {
@@ -48,5 +50,9 @@
 
 .badge-name {
   color: $cuukin;
-  margin-bottom: 16px !important;
+  margin-bottom: 12px !important;
 }
+
+// #badge-icon, .badge-icon {
+//   opacity: .2;
+// }

@@ -26,6 +26,7 @@ tools_csv.each do |row|
   t = Tool.new
   t.name = row['name']
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
+  t.suggested_product = row['buy_url']
   t.score_1 = row['score1']
   t.score_2 = row['score2']
   t.save
@@ -459,7 +460,7 @@ def create_recipe_connection(recipe_title, extra_recipes)
 end
 
 create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
-create_recipe_connection("Spaghetti al Carbonara", [carbonara_1[:title], carbonara_2[:title]])
+create_recipe_connection("Spaghetti Carbonara", [carbonara_1[:title], carbonara_2[:title]])
 create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
 create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
 
@@ -589,3 +590,16 @@ create_recipe_techniques(1)
 create_recipe_techniques(2)
 create_recipe_techniques(3)
 create_recipe_techniques(4)
+
+# Dietary Restrictions
+
+recipe_dietary_restrictions_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_dietary_restrictions.csv'))
+recipe_dietary_restrictions_csv = CSV.parse(recipe_dietary_restrictions_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_dietary_restrictions_csv.each do |row|
+  recipe_diet = RecipeDietaryRestriction.new
+  recipe_diet.dietary_restriction = DietaryRestriction.find_by(name: "#{row['restriction_name']}")
+  recipe_diet.recipe = Recipe.find_by(title: "#{row['recipe_name']}")
+  recipe_diet.save
+  puts "Created DIET - #{recipe_diet.dietary_restriction.name} for #{recipe_diet.recipe.title}"
+end

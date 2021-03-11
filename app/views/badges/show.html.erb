@@ -1,17 +1,18 @@
 <div class="currency-modal" style="display: block;">
   <div class="currency-modal-content">
-    <%= link_to user_path(current_user), class: 'close-btn-a' do %>
+    <%= link_to :back, class: 'close-btn-a' do %>
       <%= image_tag('btn-close-rounded.svg', class: 'currency-modal-close-btn') %>
     <% end %>
 
     <div class="user-badge-container badge-popup">
-      <%= image_tag("#{@user_award.award.icon}", id: 'badge-icon') %>
+      <%= image_tag("#{@badge.white}", class: 'badge1 badge-icon') %>
+      <%= image_tag("#{@badge.icon}", class: 'badge2 badge-icon') %>
     </div>
 
-    <h1 class="badge-name"><%= @user_award.award.name %></h1>
+    <h1 class="badge-name"><%= @badge.name %></h1>
 
     <div class="currency-text-content">
-      <p><%= @user_award.award.description %></p>
+      <p><%= @badge.description %></p>
     </div>
   </div>
 </div>
