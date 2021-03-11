@@ -12,4 +12,5 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   has_many :tools, through: :recipe_tools
   has_many :techniques, through: :recipe_techniques
+  has_many :dietary_restrictions, through: :recipe_dietary_restrictions
 end

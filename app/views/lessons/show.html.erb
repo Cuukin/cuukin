@@ -50,6 +50,17 @@
       </li>
     </ul>
 
+    <% unless @lesson.recipe.dietary_restrictions.empty? %>
+      <ul class="lesson-overview-details dietary-restrictions">
+        <% @lesson.recipe.dietary_restrictions.each do |diet| %>
+          <li>
+            <%= image_tag("#{diet.icon}", class: 'lesson-icons') %>
+            <%= diet.name %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <div class="lesson-overview-serving">
       <%= image_tag('btn-decrease.svg', class: 'serving-btn', id: 'minusBtn') %>
       <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>

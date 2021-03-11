@@ -107,12 +107,16 @@
   li {
     font-size: 16px;
     display: inline;
-    margin: 0 16px;
+    margin: 4px 8px;
   }
 
   .lesson-icons {
-    height: 20px;
+    height: 18px;
   }
+}
+
+.dietary-restrictions {
+  margin-top: 4px !important;
 }
 
 .lesson-overview-serving {
@@ -312,17 +316,16 @@
     width: 100vw;
   }
 
-  .lesson-overview-details {
-    li {
-      font-size: 16px;
-      display: inline;
-      margin: 0 10px;
-    }
+  // .lesson-overview-details {
+  //   li {
+  //     font-size: 16px;
+  //     display: inline;
+  //   }
 
-    .lesson-icons {
-      height: 16px;
-    }
-  }
+  //   .lesson-icons {
+  //     height: 16px;
+  //   }
+  // }
 
   .lesson-overview-serving {
     p {
