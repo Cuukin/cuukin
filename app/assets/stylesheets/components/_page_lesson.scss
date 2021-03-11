@@ -265,6 +265,10 @@
     display: inline-block;
   }
 
+  a, a:hover {
+    color: $black;
+  }
+
   .ingredient-measure, .equipment-measure {
     text-align: right;
     width: 64px;

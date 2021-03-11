@@ -91,7 +91,11 @@
       <table>
         <% @lesson.recipe.recipe_tools.each do |r_tool| %>
           <tr>
-            <td class="equipment-name"><%= r_tool.tool.name %></td>
+            <td class="equipment-name">
+              <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
+                <%= r_tool.tool.name %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </table>
