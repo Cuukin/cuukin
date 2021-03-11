@@ -72,11 +72,11 @@
   }
 }
 
-.lesson-card:hover {
+.lesson-card:hover, .lesson-card:active {
   box-shadow: 1px 1px 6px rgba(120,120,120,0.05);
 }
 
-.lesson-card-current:hover {
+.lesson-card-current:hover, .lesson-card-current:active {
   box-shadow: 1px 1px 6px rgba(120,120,120,0.1);
 }
 

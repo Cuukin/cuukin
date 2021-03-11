@@ -600,6 +600,6 @@ recipe_dietary_restrictions_csv.each do |row|
   recipe_diet = RecipeDietaryRestriction.new
   recipe_diet.dietary_restriction = DietaryRestriction.find_by(name: "#{row['restriction_name']}")
   recipe_diet.recipe = Recipe.find_by(title: "#{row['recipe_name']}")
-  t.save
+  recipe_diet.save
   puts "Created DIET - #{recipe_diet.dietary_restriction.name} for #{recipe_diet.recipe.title}"
 end
