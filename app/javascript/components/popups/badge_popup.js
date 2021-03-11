@@ -31,10 +31,6 @@ const badgePopup = () => {
           badgeIcon.style.transition = 'transform ease-in-out 0.4s';
           badgeIcon.style.transform += 'rotate(360deg)';
         }, 90);
-
-      badgeIcon.addEventListener('click', () => {
-        badgeIcon.style.transform += 'rotate(360deg)';
-      });
     });
   };
 }

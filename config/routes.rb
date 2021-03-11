@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :user_recipes, only: :index
   resources :user_badges, only: :show
   resources :user_awards, only: :show
+  resources :badges, only: :show
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
