@@ -214,7 +214,7 @@ lesson_1 = {
 }
 
 lesson_2 = {
-  title: 'Spaghetti al Carbonara',
+  title: 'Spaghetti Carbonara',
   recipe_id: 2,
   book_id: 1,
   xp: 100
