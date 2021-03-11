@@ -7,7 +7,8 @@ class Recipe < ApplicationRecord
   has_many :recipe_tools, dependent: :destroy
   has_many :recipe_techniques, dependent: :destroy
   has_many :recipe_dietary_restrictions, dependent: :destroy
-  has_many :recipe_connections, dependent: :destroy
+
+  has_one :recipe_connection, dependent: :destroy
 
   has_many :ingredients, through: :recipe_ingredients
   has_many :tools, through: :recipe_tools

@@ -74,16 +74,6 @@ class User < ApplicationRecord
     # SetAvatarJob.perform_later(self)
   # end
 
-  # def lesson_validation_currencies
-  #   if self.lesson_validations.last.validated
-  #     self.xp += self.lesson_validations.last.lesson.xp
-  #     self.save
-  #   else
-  #     self.cuukies -= 5
-  #     self.save
-  #   end
-  # end
-
   # def update_user_level
   #   unless self.lesson_validations.empty?
   #     if self.lesson_validations.last.lesson.book.level != self.level
@@ -97,14 +87,6 @@ class User < ApplicationRecord
   # end
 
   def welcome_currencies
-    # Unless user hasn't validated any lessons yet, then it adds to user cuukies
-    # the xp value of the last lesson validated, then saves to DB
-    # Method is called whenever a new lesson validation is created
-    # unless self.lesson_validations.empty?
-    #   self.cuukies += self.lesson_validations.last.lesson.xp
-    #   self.save
-    # end
-
     # MVP - user gains 20 cuukies when signs up and in no other circumstance
     self.cuukies = 20
     self.xp = 100
