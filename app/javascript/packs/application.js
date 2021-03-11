@@ -26,6 +26,7 @@ import { expandedNavbar } from '../components/popups/expanded_navbar';
 import { recipeModal } from '../components/popups/start_recipe_popup';
 import { currenciesModal } from '../components/popups/currency_popup';
 import { badgePopup } from '../components/popups/badge_popup';
+import { recipeDiary } from '../components/popups/recipe_diary';
 
 import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 import { lessonServingCalc } from '../components/lessons/edit_serving';
@@ -56,4 +57,5 @@ document.addEventListener('turbolinks:load', () => {
   cuukbook();
   skipToRecipe();
   badgePopup();
+  recipeDiary();
 });

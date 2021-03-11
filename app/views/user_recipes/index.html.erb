@@ -10,7 +10,7 @@
   <div class="recipes-cards-container" id="completedRecipes">
     <% @completed_recipes.each do |user_recipe| %>
 
-      <div class="recipe-diary-modal" style="display: block;">
+      <div class="recipe-diary-modal userRecipe<%= user_recipe.id %>">
         <% validation = LessonValidation.find_by(user: current_user, lesson: user_recipe.recipe.lessons.first) %>
 
         <div class="recipe-diary-modal-content">
@@ -71,20 +71,18 @@
         </div>
       </div>
 
-      <div class="recipe-card">
-        <%= link_to lesson_path(Lesson.find_by(recipe: user_recipe.recipe)) do %>
-          <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.4)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
-            <div class="recipe-card-info">
-              <% if user_recipe.recipe.external_url %>
-                <%= image_tag('recipe-url.svg') %>
-                <p>External link</p>
-              <% else %>
-                <%= image_tag('recipe-time.svg') %>
-                <p><%= user_recipe.recipe.prep_time %></p>
-              <% end %>
-            </div>
+      <div class="recipe-card" id="userRecipe<%= user_recipe.id %>">
+        <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.4)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
+          <div class="recipe-card-info">
+            <% if user_recipe.recipe.external_url %>
+              <%= image_tag('recipe-url.svg') %>
+              <p>External link</p>
+            <% else %>
+              <%= image_tag('recipe-time.svg') %>
+              <p><%= user_recipe.recipe.prep_time %></p>
+            <% end %>
           </div>
-        <% end %>
+        </div>
         <p><%= user_recipe.recipe.title %></p>
       </div>
 
