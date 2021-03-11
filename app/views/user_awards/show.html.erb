@@ -5,7 +5,7 @@
     <% end %>
 
     <div class="user-badge-container badge-popup">
-      <%= image_tag("#{@user_award.award.icon}") %>
+      <%= image_tag("#{@user_award.award.icon}", id: 'badge-icon') %>
     </div>
 
     <h1 class="badge-name"><%= @user_award.award.name %></h1>

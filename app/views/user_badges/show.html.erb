@@ -6,11 +6,11 @@
 
     <div class="user-badge-container badge-popup">
       <% if @user_badge.medal == 'bronze' %>
-        <%= image_tag("#{@user_badge.badge.bronze}", class: 'badge1') %>
+        <%= image_tag("#{@user_badge.badge.bronze}", class: 'badge1 badge-icon') %>
       <% elsif @user_badge.medal == 'silver' %>
-        <%= image_tag("#{@user_badge.badge.silver}", class: 'badge1') %>
+        <%= image_tag("#{@user_badge.badge.silver}", class: 'badge1 badge-icon') %>
       <% end %>
-      <%= image_tag("#{@user_badge.badge.icon}", class: 'badge2') %>
+      <%= image_tag("#{@user_badge.badge.icon}", class: 'badge2 badge-icon') %>
     </div>
 
     <h1 class="badge-name"><%= @user_badge.badge.name %></h1>
