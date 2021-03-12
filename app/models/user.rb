@@ -20,6 +20,7 @@ class User < ApplicationRecord
 
   after_create :set_username
   after_create :welcome_currencies
+  after_create :give_welcome_badge
   # after_create :async_set_avatar
 
   before_update :check_username_presence
@@ -92,5 +93,9 @@ class User < ApplicationRecord
     self.xp = 100
     self.level = "newbie"
     self.save
+  end
+
+  def give_welcome_badge
+    UserAward.create(user: self, award: Award.find_by(name: 'Oh hi there!'))
   end
 end

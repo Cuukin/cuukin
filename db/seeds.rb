@@ -468,7 +468,7 @@ create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title
 
 award_1 = {
   name: "Sizzlin' Hot",
-  description: "You cooked our recipes 3+ days in a row this week!
+  description: "You cooked 3+ recipes this week!
 Keep it up to keep this award badge",
   icon: "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-sizzlin_hy3yzi.svg"
 }
@@ -536,13 +536,17 @@ awards.each do |award|
   puts "Created award #{award[:name]} 👏"
 end
 
-all_awards = Award.all
+# all_awards = Award.all
 all_users = User.all
 
-all_awards.each do |award|
-  all_users.each do |user|
-    UserAward.create(award_id: award.id, user_id: user.id)
-  end
+# all_awards.each do |award|
+#   all_users.each do |user|
+#     UserAward.create(award_id: award.id, user_id: user.id)
+#   end
+# end
+
+all_users.each do |user|
+  UserAward.create(award: Award.find_by(name: 'Oh hi there!'), user: user)
 end
 
 # Random Ingredients, Tools and Techniques per Recipe :)
