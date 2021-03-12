@@ -1,12 +1,18 @@
 // Prev Btn
 
-.btn-back {
+.lesson-btns {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 24px 16px 0;
+  z-index: 10;
+}
+
+.btn-back, .btn-help {
   height: 42px;
   width: 42px;
   cursor: pointer;
-  position: fixed;
-  z-index: 10;
-  margin: 24px 0 0 16px;
 }
 
 #skiptorecipe-prev-btn {
@@ -305,14 +311,14 @@
 
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
-  .container-lesson-overview, .lesson-photo {
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
     width: 100vw;
   }
 }
 
 @media (max-width: 400px) {
   /* For a screen < 540px, this CSS will be read */
-  .container-lesson-overview, .lesson-photo {
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
     width: 100vw;
   }
 
