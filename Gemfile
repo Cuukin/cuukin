@@ -47,6 +47,9 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+# Blazer - explore data with SQL
+gem 'blazer'
+
 #OmniAuth - external authentication
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth-facebook'
