@@ -12,7 +12,7 @@ class LessonValidationsController < ApplicationController
       ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
-      TransitionAwards.perform_later(current_user)
+      TransitionAwardsJob.perform_later(current_user)
       redirect_to book_path(@lesson.book), notice: "Lesson validated"
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
@@ -29,7 +29,7 @@ class LessonValidationsController < ApplicationController
       ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
-      TransitionAwards.perform_later(current_user)
+      TransitionAwardsJob.perform_later(current_user)
       redirect_to book_path(@lesson.book)
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"

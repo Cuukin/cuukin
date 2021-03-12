@@ -537,13 +537,17 @@ awards.each do |award|
 end
 
 # all_awards = Award.all
-# all_users = User.all
+all_users = User.all
 
 # all_awards.each do |award|
 #   all_users.each do |user|
 #     UserAward.create(award_id: award.id, user_id: user.id)
 #   end
 # end
+
+all_users.each do |user|
+  UserAward.create(award: Award.find_by(name: 'Oh hi there!'), user: user)
+end
 
 # Random Ingredients, Tools and Techniques per Recipe :)
 
