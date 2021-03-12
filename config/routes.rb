@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :lesson_unblocks, only: [ :create ]
   end
 
+  resources :lesson_validations, only: :show
+
   resources :user_recipes, only: :index
   resources :user_badges, only: :show
   resources :user_awards, only: :show

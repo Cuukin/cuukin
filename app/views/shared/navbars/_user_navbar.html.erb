@@ -1,21 +1,21 @@
 <div class="container-user-navbar">
   <div class="nb-user-item" id="nb-level">
-    <%= image_tag('nb-1-level.svg') %>
+    <%= image_tag('nb-level.svg') %>
     <p><%= User.levels[current_user.level] %></p>
   </div>
   <div class="nb-user-item" id="nb-xp">
-    <%= image_tag('nb-2-xp.svg') %>
+    <%= image_tag('nb-xp.svg') %>
     <p><%= current_user.xp %></p>
   </div>
   <div class="nb-user-item" id="nb-cuukie">
-    <%= image_tag('nb-3-cuukie.svg') %>
+    <%= image_tag('nb-cuukie.svg') %>
     <p><%= current_user.cuukies %></p>
   </div>
   <div class="nb-user-item" id="nb-dish">
-    <%= image_tag('nb-4-dish.svg') %>
+    <%= image_tag('nb-dish.svg') %>
     <p><%= current_user.user_recipes.count %></p>
   </div>
-  <%= image_tag('nb-5-menu.svg', id: 'open-btn') %>
+  <%= image_tag('nb-menu.svg', id: 'open-btn') %>
 </div>
 
 <div class="container-user-navbar-footer">

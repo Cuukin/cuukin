@@ -1,4 +1,8 @@
 class LessonValidationPolicy < ApplicationPolicy
+  def show?
+    record.user == user
+  end
+
   def create?
     true
   end

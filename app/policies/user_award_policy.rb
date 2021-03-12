@@ -4,7 +4,7 @@ class UserAwardPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.user == user
   end
 
   class Scope < Scope

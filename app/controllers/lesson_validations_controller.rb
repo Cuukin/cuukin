@@ -1,6 +1,11 @@
 class LessonValidationsController < ApplicationController
   before_action :set_lesson, only: [ :create, :update ]
 
+  def show
+    @lesson_validation = LessonValidation.find(params[:id])
+    authorize @lesson_validation, policy_class: LessonValidationPolicy
+  end
+
   def create
     @lesson_validation = LessonValidation.new(lesson_validation_params)
     @lesson_validation.validated = true
@@ -13,7 +18,7 @@ class LessonValidationsController < ApplicationController
       UpdateBadgesJob.perform_later(current_user, @lesson)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
       TransitionAwardsJob.perform_later(current_user)
-      redirect_to book_path(@lesson.book), notice: "Lesson validated"
+      redirect_to lesson_validation_path(@lesson_validation), notice: "Lesson validated"
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
@@ -30,7 +35,7 @@ class LessonValidationsController < ApplicationController
       UpdateBadgesJob.perform_later(current_user, @lesson)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
       TransitionAwardsJob.perform_later(current_user)
-      redirect_to book_path(@lesson.book)
+      lesson_validation_path(@lesson_validation)
     else
       redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
     end
