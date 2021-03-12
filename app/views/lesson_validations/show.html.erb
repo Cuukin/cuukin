@@ -1,7 +1,7 @@
 <div class="lesson-completion-modal" style="display: block;">
 
   <div class="lesson-completion-modal-content">
-    <%= link_to book_path(@lesson_validation.lesson), class: 'close-btn-a' do %>
+    <%= link_to book_path(@lesson_validation.lesson.book), class: 'close-btn-a' do %>
       <%= image_tag('btn-close-rounded.svg', class: 'lesson-completion-modal-close-btn') %>
     <% end %>
 
