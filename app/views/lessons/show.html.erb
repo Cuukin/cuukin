@@ -1,6 +1,7 @@
 <!-- first div with general info + btn to start lesson -->
 
 <%= render 'start_recipe_popup' %>
+<%= render 'help_popup' %>
 
 <% unless @validated || @skipped %>
   <% if @open_to_unblock %>
@@ -18,15 +19,19 @@
 
 <div class="container-lesson-overview">
   <!-- <div class="lesson-prev-btn"> -->
-  <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
-    <%= link_to user_recipes_path do %>
-      <%= image_tag('btn-back.svg', class: 'btn-back') %>
+  <div class="lesson-btns">
+    <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
+      <%= link_to user_recipes_path do %>
+        <%= image_tag('btn-back.svg', class: 'btn-back') %>
+      <% end %>
+    <% else %>
+      <%= link_to book_path(@lesson.book) do %>
+        <%= image_tag('btn-back.svg', class: 'btn-back') %>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= link_to book_path(@lesson.book) do %>
-      <%= image_tag('btn-back.svg', class: 'btn-back') %>
-    <% end %>
-  <% end %>
+
+    <%= image_tag('btn-help.svg', class: 'btn-help') %>
+  </div>
 
   <div class="lesson-photo" style="background-image: url('<%= image_path "#{@lesson.recipe.photo_url}"%>')">
   </div>
@@ -162,8 +167,11 @@
 
 <!-- overflow hidden container with all skill chapters -->
 <div class="container-lesson">
-  <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
-  <%= image_tag('btn-back.svg', class: 'btn-back', id: 'skiptorecipe-prev-btn') %>
+  <div class="lesson-btns">
+    <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
+    <%= image_tag('btn-back.svg', class: 'btn-back', id: 'skiptorecipe-prev-btn') %>
+    <%= image_tag('btn-help.svg', class: 'btn-help') %>
+  </div>
 
   <div class="meter">
     <span class="meter-progression"></span>
