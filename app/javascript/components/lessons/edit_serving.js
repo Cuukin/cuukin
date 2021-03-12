@@ -17,12 +17,16 @@ const lessonServingCalc = () => {
   });
 
   if (servingContainer) {
+    minusBtn.style.visibility = "hidden";
     addBtn.addEventListener('click', () => {
+      minusBtn.style.visibility = "";
       counter += 1;
-      if (counter == 5) {
-        counter = 1;
+      if (counter == 4) {
+        addBtn.style.visibility = "hidden";
+        servingNumber.innerText = `${counter} serving(s)`;
+      } else {
+        servingNumber.innerText = `${counter} serving(s)`;
       };
-      servingNumber.innerText = `${counter} serving(s)`;
 
       let index = -1;
       ingredientMeasuresArray.forEach((measure) => {
@@ -33,11 +37,14 @@ const lessonServingCalc = () => {
     });
 
     minusBtn.addEventListener('click', () => {
+      addBtn.style.visibility = "";
       counter -= 1;
-      if (counter == 0) {
-        counter = 4;
+      if (counter == 1) {
+        minusBtn.style.visibility = "hidden";
+        servingNumber.innerText = `${counter} serving(s)`;
+      } else {
+        servingNumber.innerText = `${counter} serving(s)`;
       };
-      servingNumber.innerText = `${counter} serving(s)`;
 
       let index = -1;
       ingredientMeasuresArray.forEach((measure) => {
