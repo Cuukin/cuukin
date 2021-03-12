@@ -1,0 +1,57 @@
+<div class="lesson-completion-modal" style="display: block;">
+
+  <div class="lesson-completion-modal-content">
+    <%= link_to book_path(@lesson_validation.lesson), class: 'close-btn-a' do %>
+      <%= image_tag('btn-close-rounded.svg', class: 'lesson-completion-modal-close-btn') %>
+    <% end %>
+
+    <h2><%= @lesson_validation.lesson.title %></h2>
+
+    <ul class="lesson-completion-details">
+      <li>
+        <%= image_tag('validation-time.svg') %>
+        <%= @lesson_validation.lesson.recipe.prep_time %>
+      </li>
+      <li>
+        <%= image_tag('validation-level.svg') %>
+        Level <%= Book.levels[@lesson_validation.lesson.book.level] %>
+      </li>
+    </ul>
+
+    <div class="lesson-completion-items-container">
+
+      <h1>Lesson Completed</h1>
+      <h2>You've earned</h2>
+
+      <div class="currencies">
+
+        <div class="currency-item">
+          <%= image_tag('nb-xp.svg') %>
+          <h4 class="xp-p"><%= @lesson_validation.lesson.xp %> XP</h4>
+        </div>
+
+        <div class="currency-item">
+          <%= image_tag('nb-dish.svg') %>
+          <h4 class="dish-p"><%= @lesson_validation.lesson.recipe.recipe_connection.extra_recipes_titles.count %> Dishes</h4>
+        </div>
+
+      </div>
+
+      <div class="badges">
+        <% @lesson_validation.lesson.skill_chapters.each do |chapter| %>
+          <div class="badge-item">
+            <div class="user-badge-container">
+              <%= image_tag("#{chapter.badge.bronze}", class: 'badge1') %>
+              <%= image_tag("#{chapter.badge.icon}", class: 'badge2') %>
+            </div>
+            <h4><%= chapter.badge.name %></h4>
+          </div>
+        <% end %>
+      </div>
+
+      </div>
+
+      <%= image_tag('kin.svg', class: 'kin') %>
+
+  </div>
+</div>

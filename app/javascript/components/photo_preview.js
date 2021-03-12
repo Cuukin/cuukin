@@ -24,6 +24,11 @@ const displayPreview = (input) => {
     };
   };
 
+  const photoCancel = document.getElementById('photoCancel');
+  const photoUpload = document.getElementById('photoUpdate');
+
+  // photoUpload.style.display = "none";
+
   const preview = document.getElementById('photo-preview');
   const skipBtn = document.getElementById('validateLessonWithoutPhotoNext');
   const nextBtn = document.getElementById('validateLessonNext');
@@ -32,6 +37,11 @@ const displayPreview = (input) => {
     skipBtn.style.display = "none";
     nextBtn.style.display = "block";
   };
+
+  if (preview.src) {
+    photoUpload.style.display = "block";
+  };
+
 }
 
 export { previewImageOnFileSelect };

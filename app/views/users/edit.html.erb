@@ -11,8 +11,8 @@
       </div>
 
       <div class="form-actions double-btn">
-        <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
-        <%= f.button :submit, "Update", class: "primary-btn ml-1" %>
+        <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1', id: "photoCancel" %>
+        <%= f.button :submit, "Update", class: "primary-btn ml-1", id: "photoUpdate", style: "display: none;" %>
       </div>
     <% end %>
   </div>
