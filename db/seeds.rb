@@ -24,7 +24,7 @@ tools_csv = CSV.parse(tools_csv, :headers => true, :encoding => 'ISO-8859-1')
 
 tools_csv.each do |row|
   t = Tool.new
-  t.name = row['name']
+  t.name = row['name'].titlecase
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
   t.suggested_product = row['buy_url']
   t.score_1 = row['score1']
@@ -40,7 +40,7 @@ ingredients_csv = CSV.parse(ingredients_csv, :headers => true, :encoding => 'ISO
 
 ingredients_csv.each do |row|
   i = Ingredient.new
-  i.name = row['name']
+  i.name = row['name'].titlecase
   i.badge = Badge.find_by(name: "#{row['badge_name']}")
   i.score_1 = row['score1']
   i.score_2 = row['score2']
@@ -55,7 +55,7 @@ techniques_csv = CSV.parse(techniques_csv, :headers => true, :encoding => 'ISO-8
 
 techniques_csv.each do |row|
   t = Technique.new
-  t.name = row['name']
+  t.name = row['name'].titlecase
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
   t.score_1 = row['score1']
   t.score_2 = row['score2']
@@ -70,13 +70,176 @@ dietary_restrictions_csv = CSV.parse(dietary_restrictions_csv, :headers => true,
 
 dietary_restrictions_csv.each do |row|
   dr = DietaryRestriction.new
-  dr.name = row['restriction_name']
+  dr.name = row['restriction_name'].titlecase
   dr.icon = row['icon']
   dr.save
   puts "Created DIETARY RESTRICTION - #{dr.name}"
 end
 
-# Admin Users
+
+# Books
+
+book_1 = {
+  title: 'Kitchen SOS',
+  description: "New to cooking? Don't worry, we got your back. These basic recipes are a perfect starting point.",
+  level: 'newbie',
+  xp: 500
+}
+
+book_2 = {
+  title: 'Kitchen basics',
+  description: "You have the essentials down, lets move onto some new recipes. Don't worry, we're taking it easy on you still!",
+  level: 'newbie',
+  xp: 500
+}
+
+books = [book_1, book_2]
+
+books.each do |book|
+  new_book = Book.create(book)
+  puts "Created #{book[:title]} 📗"
+end
+
+
+# Recipes
+
+recipes_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipes.csv'))
+recipes_csv = CSV.parse(recipes_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipes_csv.each do |row|
+  r = Recipe.new
+  r.title = row['title'].titlecase
+  r.prep_time = "#{row['prep_time']} min"
+  r.photo_url = row['photo_url']
+  r.external_url = row['external_url']
+  r.save
+  puts "Created RECIPE - #{r.title}"
+end
+
+# Recipe Ingredients
+
+recipe_ingredients_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_ingredients.csv'))
+recipe_ingredients_csv = CSV.parse(recipe_ingredients_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_ingredients_csv.each do |row|
+  r = RecipeIngredient.new
+  r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  r.ingredient = Ingredient.find_by(name: "#{row['ingredient_name'].titlecase}")
+  r.quantity = row['measure']
+  r.unit = row['unit']
+  r.optional = row['optional']
+  r.save!
+end
+
+# Recipe Tools
+
+recipe_tools_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_tools.csv'))
+recipe_tools_csv = CSV.parse(recipe_tools_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_tools_csv.each do |row|
+  r = RecipeTool.new
+  r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  r.tool = Tool.find_by(name: "#{row['tool_name'].titlecase}")
+  r.save!
+end
+
+# Recipe Techniques
+
+recipe_techniques_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_techniques.csv'))
+recipe_techniques_csv = CSV.parse(recipe_techniques_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_techniques_csv.each do |row|
+  r = RecipeTechnique.new
+  r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  r.technique = Technique.find_by(name: "#{row['technique_name'].titlecase}")
+  r.save!
+end
+
+# Recipe Nutritional Data
+
+recipe_nutritional_data_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_nutritional_data.csv'))
+recipe_nutritional_data_csv = CSV.parse(recipe_nutritional_data_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_nutritional_data_csv.each do |row|
+  r = RecipeNutritionalInfo.new
+  r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  r.value = row['value']
+  r.nutrient = row['nutrient']
+  r.save!
+end
+
+# Recipe Methods
+
+recipe_methods_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_methods.csv'))
+recipe_methods_csv = CSV.parse(recipe_methods_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_methods_csv.each do |row|
+  r = RecipeMethod.new
+  r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  r.title = row['title']
+  r.description = row['description']
+  r.video_url = row['video']
+  r.save!
+end
+
+
+# Recipe Dietary Restrictions
+
+recipe_dietary_restrictions_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_dietary_restrictions.csv'))
+recipe_dietary_restrictions_csv = CSV.parse(recipe_dietary_restrictions_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+recipe_dietary_restrictions_csv.each do |row|
+  recipe_diet = RecipeDietaryRestriction.new
+  recipe_diet.dietary_restriction = DietaryRestriction.find_by(name: "#{row['restriction_name'].titlecase}")
+  recipe_diet.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  recipe_diet.save!
+end
+
+
+# Lesson
+
+lessons_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'lessons.csv'))
+lessons_csv = CSV.parse(lessons_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+lessons_csv.each do |row|
+  lesson = Lesson.new
+  lesson.title = row['title'].titlecase
+  lesson.book = Book.find_by(title: "#{row['book_name']}")
+  lesson.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
+  lesson.xp = 100
+  lesson.save!
+end
+
+
+# Skill Chapters
+
+skillchapters_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'skillchapters.csv'))
+skillchapters_csv = CSV.parse(skillchapters_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+skillchapters_csv.each do |row|
+  skill = SkillChapter.new
+  skill.title = row['title']
+  skill.lesson = Lesson.find_by(title: "#{row['lesson_name'].titlecase}")
+  skill.badge = Badge.find_by(name: "#{row['badge_name']}")
+  skill.description = row['description']
+  skill.video_url = row['video_url']
+  skill.save!
+end
+
+# Extra Recipes
+
+def create_recipe_connection(recipe_title, extra_recipes)
+  new_extra_recipe = RecipeConnection.create(recipe: Recipe.find_by(title: recipe_title), extra_recipes_titles: extra_recipes)
+  puts "Created extra recipes #{new_extra_recipe.extra_recipes_titles} for #{recipe_title}"
+end
+
+create_recipe_connection("Avotoast", ["Toast With Smoked Salmon", "Club Sandwich"])
+create_recipe_connection("Spaghetti Carbonara", ["Mug Cake", "Peanut Butter And Jam Brownies"])
+create_recipe_connection("Baked Portobello", ["Portobello With Blue Cheese", "Baked Potato"])
+create_recipe_connection("Strawberry Fondue", ["Mushroom Pasta", "Pesto Pasta"])
+
+
+# Admin Users + MVP Awards
 
 helena = {
   admin: true,
@@ -144,325 +307,6 @@ admin_users.each do |admin|
 end
 
 puts "Remember them to confirm their emails and change their password 🍕"
-
-# Books, Lessons and Recipes
-
-book_1 = {
-  title: 'Kitchen SOS',
-  description: "New to cooking? Don't worry, we got your back. These basic recipes are a perfect starting point.",
-  level: 'newbie',
-  xp: 500
-}
-
-book_2 = {
-  title: 'Kitchen Basics',
-  description: "Coming up soon, please check our first book in the meantime.",
-  level: 'newbie',
-  xp: 500
-}
-
-# Description for Book 2 once its ready
-# "You have the essentials down, lets move onto some new recipes. Don't worry, we're taking it easy on you still!"
-
-books = [book_1, book_2]
-
-books.each do |book|
-  new_book = Book.create(book)
-  puts "Created #{book[:title]} 📗"
-end
-
-recipe_1 = {
-  title: 'Avotoast',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  photo_url: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  prep_time: "30 min"
-}
-
-recipe_2 = {
-  title: 'Spaghetti Carbonara',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  photo_url: "https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  prep_time: "20 min"
-}
-
-recipe_3 = {
-  title: 'Baked Portobello',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  photo_url: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1285&q=80",
-  prep_time: "40 min"
-}
-
-recipe_4 = {
-  title: 'Strawberry Fondue',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  photo_url: "https://images.unsplash.com/photo-1588575866383-e2a07af0e7d6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-  prep_time: "30 min"
-}
-
-recipes = [recipe_1, recipe_2, recipe_3, recipe_4]
-
-recipes.each do |recipe|
-  new_recipe = Recipe.create(recipe)
-  puts "Created #{recipe[:title]} 🍌"
-end
-
-lesson_1 = {
-  title: 'Avotoast',
-  recipe_id: 1,
-  book_id: 1,
-  xp: 100
-}
-
-lesson_2 = {
-  title: 'Spaghetti Carbonara',
-  recipe_id: 2,
-  book_id: 1,
-  xp: 100
-}
-
-lesson_3 = {
-  title: 'Baked Portobello',
-  recipe_id: 3,
-  book_id: 1,
-  xp: 100
-}
-
-lesson_4 = {
-  title: 'Strawberry Fondue',
-  recipe_id: 4,
-  book_id: 1,
-  xp: 100
-}
-
-lessons = [lesson_1, lesson_2, lesson_3, lesson_4]
-
-lessons.each do |lesson|
-  new_lesson = Lesson.create(lesson)
-  puts "Created #{new_lesson.title} 🌯"
-end
-
-recipe_method_1 = {
-  recipe_id: 1,
-  title: 'Heating Oil',
-  description: "Boil the water and dump the egg in there when you're ready.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_2 = {
-  recipe_id: 1,
-  title: 'Chopping Onions',
-  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_3 = {
-  recipe_id: 2,
-  title: 'Heating Oil',
-  description: "Boil the water and dump the egg in there when you're ready.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_4 = {
-  recipe_id: 2,
-  title: 'Chopping Onions',
-  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_5 = {
-  recipe_id: 3,
-  title: 'Heating Oil',
-  description: "Boil the water and dump the egg in there when you're ready.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_6 = {
-  recipe_id: 3,
-  title: 'Chopping Onions',
-  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_7 = {
-  recipe_id: 4,
-  title: 'Heating Oil',
-  description: "Boil the water and dump the egg in there when you're ready.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_method_8 = {
-  recipe_id: 4,
-  title: 'Chopping Onions',
-  description: "Serve on your preferable plate the pasta with bits of guaciale. You can add a little black pepper on top and some grated cheese as final touches. Serve immediately.",
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-recipe_methods = [recipe_method_1, recipe_method_2, recipe_method_3, recipe_method_4, recipe_method_5, recipe_method_6, recipe_method_7, recipe_method_8]
-
-recipe_methods.each do |recipe_method|
-  new_recipe_method = RecipeMethod.create(recipe_method)
-  puts "Created #{recipe_method[:title]}"
-end
-
-skill_chapter_1 = {
-  lesson_id: 1,
-  title: 'Onions 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_2 = {
-  lesson_id: 1,
-  title: 'Oil 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_3 = {
-  lesson_id: 1,
-  title: 'Carrots',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_4 = {
-  lesson_id: 2,
-  title: 'Onions 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_5 = {
-  lesson_id: 2,
-  title: 'Oil 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_6 = {
-  lesson_id: 2,
-  title: 'Carrots',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_7 = {
-  lesson_id: 3,
-  title: 'Onions 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_8 = {
-  lesson_id: 3,
-  title: 'Oil 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_9 = {
-  lesson_id: 3,
-  title: 'Carrots',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_10 = {
-  lesson_id: 4,
-  title: 'Onions 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_11 = {
-  lesson_id: 4,
-  title: 'Oil 101',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapter_12 = {
-  lesson_id: 4,
-  title: 'Carrots',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  video_url: 'https://res.cloudinary.com/cuukin/video/upload/v1613661861/Cuukin-prot2_juwuht.mp4'
-}
-
-skill_chapters = [skill_chapter_1, skill_chapter_2, skill_chapter_3, skill_chapter_4, skill_chapter_5, skill_chapter_6, skill_chapter_7, skill_chapter_8, skill_chapter_9, skill_chapter_10, skill_chapter_11, skill_chapter_12]
-
-skill_chapters.each do |skill_chapter|
-  new_skill_chapter = SkillChapter.new(skill_chapter)
-  new_skill_chapter.badge_id = rand(1..40)
-  new_skill_chapter.save
-  puts "Created #{skill_chapter[:title]}"
-end
-
-# Extra Recipes
-
-avotoast_1 = {
-  title: "Avocado Bruschetta",
-  external_url: "https://www.bbc.co.uk/food/recipes/mozzarella_tomato_82203",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/mozzarella_tomato_82203_16x9.jpg"
-}
-
-avotoast_2 = {
-  title: "Vegetarian Tacos",
-  external_url: "https://www.bbc.co.uk/food/recipes/easy_vegetarian_tacos_88736",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/easy_vegetarian_tacos_88736_16x9.jpg"
-}
-
-carbonara_1 = {
-  title: "Creamy Mushroom Pasta",
-  external_url: "https://www.bbc.co.uk/food/recipes/creamy_mushroom_pasta_41818",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_mushroom_pasta_41818_16x9.jpg"
-}
-
-carbonara_2 = {
-  title: "Chilli Bacon Spaghetti",
-  external_url: "https://www.bbc.co.uk/food/recipes/creamy_chilli_bacon_and_60433",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/creamy_chilli_bacon_and_60433_16x9.jpg"
-}
-
-portobello_1 = {
-  title: "Stuffed Portobello",
-  external_url: "https://www.bbc.co.uk/food/recipes/stuffedportabellamus_85840",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/stuffedportabellamus_85840_16x9.jpg"
-}
-
-portobello_2 = {
-  title: "Baked Chicken Breast",
-  external_url: "https://www.bbc.co.uk/food/recipes/baked_chicken_breast_49731",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/baked_chicken_breast_49731_16x9.jpg"
-}
-
-fondue_1 = {
-  title: "Chocolate Fudge",
-  external_url: "https://www.bbc.co.uk/food/recipes/chocolate_fudge_cake_03213",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chocolate_fudge_cake_03213_16x9.jpg"
-}
-
-fondue_2 = {
-  title: "Cherry Mug Cake",
-  external_url: "https://www.bbc.co.uk/food/recipes/cherryandchocolateca_84273",
-  photo_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/cherryandchocolateca_84273_16x9.jpg"
-}
-
-extra_recipes = [avotoast_1, avotoast_2, carbonara_1, carbonara_2, portobello_1, portobello_2, fondue_1, fondue_2]
-
-extra_recipes.each do |recipe|
-  new_recipe = Recipe.create(recipe)
-  puts "Created recipe #{recipe[:title]}"
-end
-
-def create_recipe_connection(recipe_title, extra_recipes)
-  new_extra_recipe = RecipeConnection.create(recipe: Recipe.find_by(title: recipe_title), extra_recipes_titles: extra_recipes)
-  puts "Created extra recipes #{new_extra_recipe.extra_recipes_titles} for #{recipe_title}"
-end
-
-create_recipe_connection("Avotoast", [avotoast_1[:title], avotoast_2[:title]])
-create_recipe_connection("Spaghetti Carbonara", [carbonara_1[:title], carbonara_2[:title]])
-create_recipe_connection("Baked Portobello", [portobello_1[:title], portobello_2[:title]])
-create_recipe_connection("Strawberry Fondue", [fondue_1[:title], fondue_2[:title]])
 
 # Awards
 
@@ -536,74 +380,8 @@ awards.each do |award|
   puts "Created award #{award[:name]} 👏"
 end
 
-# all_awards = Award.all
 all_users = User.all
-
-# all_awards.each do |award|
-#   all_users.each do |user|
-#     UserAward.create(award_id: award.id, user_id: user.id)
-#   end
-# end
 
 all_users.each do |user|
   UserAward.create(award: Award.find_by(name: 'Oh hi there!'), user: user)
-end
-
-# Random Ingredients, Tools and Techniques per Recipe :)
-
-def create_recipe_ingredients(recipe)
-  5.times do
-    r = RecipeIngredient.new
-    r.recipe_id = recipe
-    r.ingredient_id = rand(1..40)
-    r.quantity = rand(1..4)
-    r.unit = ['tbsp', 'cup', 'tsp', 'g'].sample
-    r.save
-  end
-end
-
-create_recipe_ingredients(1)
-create_recipe_ingredients(2)
-create_recipe_ingredients(3)
-create_recipe_ingredients(4)
-
-def create_recipe_tools(recipe)
-  5.times do
-    t = RecipeTool.new
-    t.recipe_id = recipe
-    t.tool_id = rand(1..30)
-    t.save
-  end
-end
-
-create_recipe_tools(1)
-create_recipe_tools(2)
-create_recipe_tools(3)
-create_recipe_tools(4)
-
-def create_recipe_techniques(recipe)
-  5.times do
-    t = RecipeTechnique.new
-    t.recipe_id = recipe
-    t.technique_id = rand(1..60)
-    t.save
-  end
-end
-
-create_recipe_techniques(1)
-create_recipe_techniques(2)
-create_recipe_techniques(3)
-create_recipe_techniques(4)
-
-# Dietary Restrictions
-
-recipe_dietary_restrictions_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipe_dietary_restrictions.csv'))
-recipe_dietary_restrictions_csv = CSV.parse(recipe_dietary_restrictions_csv, :headers => true, :encoding => 'ISO-8859-1')
-
-recipe_dietary_restrictions_csv.each do |row|
-  recipe_diet = RecipeDietaryRestriction.new
-  recipe_diet.dietary_restriction = DietaryRestriction.find_by(name: "#{row['restriction_name']}")
-  recipe_diet.recipe = Recipe.find_by(title: "#{row['recipe_name']}")
-  recipe_diet.save
-  puts "Created DIET - #{recipe_diet.dietary_restriction.name} for #{recipe_diet.recipe.title}"
 end

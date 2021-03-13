@@ -12,7 +12,7 @@ const lessonServingCalc = () => {
 
   ingredientMeasures.forEach((measure) => {
     let measureNumber = measure.innerText;
-    measureNumber = Number.parseInt(measureNumber, 10);
+    measureNumber = Number.parseFloat(measureNumber);
     ingredientMeasuresArray.push(measureNumber);
   });
 

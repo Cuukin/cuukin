@@ -1,11 +1,18 @@
-id,recipe_name,restriction_name
-1,Strawberry Fondue,Dairy
-2,Strawberry Fondue,Vegetarian
-3,Strawberry Fondue,Halal
-4,Strawberry Fondue,Kosher
-5,Spaghetti Carbonara,Eggs
-6,Avotoast,Gluten
-7,Avotoast,Vegan
-8,Avotoast,Low sugar
-9,Avotoast,Halal
-10,Avotoast,Kosher
+recipe_name,restriction_name
+Chocolate kissed strawberries,Dairy
+Chocolate kissed strawberries,Vegetarian
+Chocolate kissed strawberries,Halal
+Chocolate kissed strawberries,Kosher
+spaghetti alla carbonara,Eggs
+spaghetti alla carbonara,Halal
+spaghetti alla carbonara,Kosher
+Baked Portobello,Vegan
+Baked Portobello,Kosher
+Baked Portobello,Halal
+Baked Portobello,Low fat
+Baked Portobello,low sugar
+Avotoast,Gluten
+Avotoast,Vegan
+Avotoast,Low sugar
+Avotoast,Halal
+Avotoast,Kosher

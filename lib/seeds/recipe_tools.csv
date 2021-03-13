@@ -1,0 +1,24 @@
+id,recipe_name,tool_name,optional
+1,Avotoast,knife,
+2,Avotoast,cutting board,
+3,Avotoast,spoon,
+4,Avotoast,serrated knife,1
+5,baked portobello,oven,
+6,baked portobello,spoon,
+7,baked portobello,bowl,
+8,baked portobello,baking tray,
+9,Chocolate kissed strawberries,Bowl,
+10,Chocolate kissed strawberries,microwave,
+11,Chocolate kissed strawberries,spoon,
+12,Chocolate kissed strawberries,paper towels,
+13,Chocolate kissed strawberries,glasses,
+14,Chocolate kissed strawberries,cutting board,1
+15,Chocolate kissed strawberries,knife,1
+16,Spaghetti Alla Carbonara,pot,
+17,Spaghetti Alla Carbonara,frying pan,
+18,Spaghetti Alla Carbonara,spatula,
+19,Spaghetti Alla Carbonara,bowl,
+20,Spaghetti Alla Carbonara,grater,
+21,Spaghetti Alla Carbonara,stove,
+22,Spaghetti Alla Carbonara,Tong,
+23,Spaghetti Alla Carbonara,Colander,
