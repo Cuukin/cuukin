@@ -234,9 +234,9 @@ def create_recipe_connection(recipe_title, extra_recipes)
 end
 
 create_recipe_connection("Avotoast", ["Toast With Smoked Salmon", "Club Sandwich"])
-create_recipe_connection("Spaghetti Carbonara", ["Mug Cake", "Peanut Butter And Jam Brownies"])
+create_recipe_connection("Chocolate Kissed Strawberries", ["Mug Cake", "Peanut Butter And Jam Brownies"])
 create_recipe_connection("Baked Portobello", ["Portobello With Blue Cheese", "Baked Potato"])
-create_recipe_connection("Strawberry Fondue", ["Mushroom Pasta", "Pesto Pasta"])
+create_recipe_connection("Spaghetti Carbonara", ["Mushroom Pasta", "Pesto Pasta"])
 
 
 # Admin Users + MVP Awards
