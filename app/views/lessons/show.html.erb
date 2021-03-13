@@ -95,7 +95,13 @@
       <table>
         <% @lesson.recipe.recipe_ingredients.each do |r_ingredient| %>
           <tr>
-            <td class="ingredient-measure"><span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %></td>
+            <td class="ingredient-measure">
+              <% if r_ingredient.quantity %>
+                <span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %>
+              <% else %>
+                <%= r_ingredient.unit %>
+              <% end %>
+            </td>
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
           </tr>
         <% end %>
@@ -130,37 +136,31 @@
 
       <div class="nutri-content">
         <ul>
-          <li>
-            <p class="nutri-data">356</p>
-            <p class="nutri-metric">kcal</p>
-          </li>
-          <li>
-            <p class="nutri-data">2.5</p>
-            <p class="nutri-metric">fat</p>
-          </li>
-          <li>
-            <p class="nutri-data">4.2</p>
-            <p class="nutri-metric">protein</p>
-          </li>
-          <li>
-            <p class="nutri-data">45</p>
-            <p class="nutri-metric">carbs</p>
-          </li>
+          <% @lesson.recipe.recipe_nutritional_infos.each do |nutri_data| %>
+            <li>
+              <p class="nutri-data"><%= nutri_data.value %></p>
+              <p class="nutri-metric"><%= nutri_data.nutrient %></p>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
 
-    <% if @validated %>
-      <div class="double-btn">
-        <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
-        <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
-      </div>
-    <% elsif @open || @skipped || @first %>
-      <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
-    <% elsif @open_to_unblock %>
-      <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
+    <% if @lesson.title == 'Avotoast' || @lesson.title == "Chocolate Kissed Strawberries" %>
+      <% if @validated %>
+        <div class="double-btn">
+          <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
+          <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
+        </div>
+      <% elsif @open || @skipped || @first %>
+        <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+      <% elsif @open_to_unblock %>
+        <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
+      <% else %>
+        <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
+      <% end %>
     <% else %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
+      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
     <% end %>
   </div>
 </div>
@@ -183,7 +183,7 @@
 
       <div class="container-lesson-chapter">
         <div class="lesson-skill-video">
-          <video class="skillVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615229396/Cuukin%20-%20Skill%20Videos/Egg_final_svgbqw.mp4" controls playsinline></video>
+          <video class="skillVideo" src="<%= skill_chapter.video_url %>" controls playsinline></video>
         </div>
 
         <div class="card-lesson-chapter">
@@ -206,7 +206,7 @@
 
       <div class="container-lesson-recipe">
         <div class="lesson-recipe-video">
-          <video class="methodVideo" src="https://res.cloudinary.com/juliaf1/video/upload/v1615235460/Cuukin%20-%20Skill%20Videos/recipe_test_jn27vr.mp4" controls playsinline loop></video>
+          <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>
         </div>
 
         <div class="card-lesson-recipe">
@@ -226,7 +226,13 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
-                <p class="ingredient-measure"><span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %></p>
+                <p class="ingredient-measure">
+                  <% if recipe_ingredient.quantity %>
+                    <span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                  <% else %>
+                    <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                  <% end %>
+                </p>
               <% end %>
             </div>
             <div class="recipe-method-description">

@@ -57,8 +57,14 @@
   }
 }
 
-.skill-description, .recipe-method-description {
+.skill-description {
   white-space: pre-wrap;
+}
+
+.recipe-method-description {
+  p {
+    white-space: pre-wrap;
+  }
 }
 
 // Lesson Overview [FIRST CARD]
@@ -285,7 +291,7 @@
 
   .ingredient-measure, .equipment-measure {
     text-align: right;
-    width: 64px;
+    width: 88px;
     // min-width: 16px;
   }
 }
@@ -499,6 +505,7 @@
 
 .recipe-method-content {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 

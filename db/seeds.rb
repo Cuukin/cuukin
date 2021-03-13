@@ -24,7 +24,7 @@ tools_csv = CSV.parse(tools_csv, :headers => true, :encoding => 'ISO-8859-1')
 
 tools_csv.each do |row|
   t = Tool.new
-  t.name = row['name']
+  t.name = row['name'].titlecase
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
   t.suggested_product = row['buy_url']
   t.score_1 = row['score1']
@@ -40,7 +40,7 @@ ingredients_csv = CSV.parse(ingredients_csv, :headers => true, :encoding => 'ISO
 
 ingredients_csv.each do |row|
   i = Ingredient.new
-  i.name = row['name']
+  i.name = row['name'].titlecase
   i.badge = Badge.find_by(name: "#{row['badge_name']}")
   i.score_1 = row['score1']
   i.score_2 = row['score2']
@@ -55,7 +55,7 @@ techniques_csv = CSV.parse(techniques_csv, :headers => true, :encoding => 'ISO-8
 
 techniques_csv.each do |row|
   t = Technique.new
-  t.name = row['name']
+  t.name = row['name'].titlecase
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
   t.score_1 = row['score1']
   t.score_2 = row['score2']
@@ -70,7 +70,7 @@ dietary_restrictions_csv = CSV.parse(dietary_restrictions_csv, :headers => true,
 
 dietary_restrictions_csv.each do |row|
   dr = DietaryRestriction.new
-  dr.name = row['restriction_name']
+  dr.name = row['restriction_name'].titlecase
   dr.icon = row['icon']
   dr.save
   puts "Created DIETARY RESTRICTION - #{dr.name}"
@@ -108,10 +108,10 @@ recipes_csv = CSV.parse(recipes_csv, :headers => true, :encoding => 'ISO-8859-1'
 
 recipes_csv.each do |row|
   r = Recipe.new
-  r.title = row['title']
+  r.title = row['title'].titlecase
   r.prep_time = "#{row['prep_time']} min"
   r.photo_url = row['photo_url']
-  r.photo_url = row['external_url']
+  r.external_url = row['external_url']
   r.save
   puts "Created RECIPE - #{r.title}"
 end
@@ -128,8 +128,7 @@ recipe_ingredients_csv.each do |row|
   r.quantity = row['measure']
   r.unit = row['unit']
   r.optional = row['optional']
-  r.save
-  puts "Created RECIPE INGREDIENT - #{r.ingredient.name} for #{r.recipe.title}"
+  r.save!
 end
 
 # Recipe Tools
@@ -141,10 +140,8 @@ recipe_tools_csv.each do |row|
   r = RecipeTool.new
   r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
   r.tool = Tool.find_by(name: "#{row['tool_name'].titlecase}")
-  r.save
-  puts "Created RECIPE TOOL - #{r.tool.name} for #{r.recipe.title}"
+  r.save!
 end
-
 
 # Recipe Techniques
 
@@ -155,8 +152,7 @@ recipe_techniques_csv.each do |row|
   r = RecipeTechnique.new
   r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
   r.technique = Technique.find_by(name: "#{row['technique_name'].titlecase}")
-  r.save
-  puts "Created RECIPE TECHNIQUE - #{r.technique.name} for #{r.recipe.title}"
+  r.save!
 end
 
 # Recipe Nutritional Data
@@ -169,7 +165,7 @@ recipe_nutritional_data_csv.each do |row|
   r.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
   r.value = row['value']
   r.nutrient = row['nutrient']
-  r.save
+  r.save!
 end
 
 # Recipe Methods
@@ -183,8 +179,7 @@ recipe_methods_csv.each do |row|
   r.title = row['title']
   r.description = row['description']
   r.video_url = row['video']
-  r.save
-  puts "Created RECIPE METHOD - #{r.title} for #{r.recipe.title}"
+  r.save!
 end
 
 
@@ -197,8 +192,7 @@ recipe_dietary_restrictions_csv.each do |row|
   recipe_diet = RecipeDietaryRestriction.new
   recipe_diet.dietary_restriction = DietaryRestriction.find_by(name: "#{row['restriction_name'].titlecase}")
   recipe_diet.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
-  recipe_diet.save
-  puts "Created DIET - #{recipe_diet.dietary_restriction.name} for #{recipe_diet.recipe.title}"
+  recipe_diet.save!
 end
 
 
@@ -213,8 +207,7 @@ lessons_csv.each do |row|
   lesson.book = Book.find_by(title: "#{row['book_name']}")
   lesson.recipe = Recipe.find_by(title: "#{row['recipe_name'].titlecase}")
   lesson.xp = 100
-  lesson.save
-  puts "Created LESSON - #{lesson.title}"
+  lesson.save!
 end
 
 
@@ -229,8 +222,8 @@ skillchapters_csv.each do |row|
   skill.lesson = Lesson.find_by(title: "#{row['lesson_name'].titlecase}")
   skill.badge = Badge.find_by(name: "#{row['badge_name']}")
   skill.description = row['description']
-  skill.save
-  puts "Created SKILL CHAPTER - #{skill.title}"
+  skill.video_url = row['video_url']
+  skill.save!
 end
 
 # Extra Recipes
@@ -240,9 +233,9 @@ def create_recipe_connection(recipe_title, extra_recipes)
   puts "Created extra recipes #{new_extra_recipe.extra_recipes_titles} for #{recipe_title}"
 end
 
-create_recipe_connection("Avotoast", ["Toast with smoked salmon", "Club Sandwich"])
-create_recipe_connection("Spaghetti Carbonara", ["Mug Cake", "Peanut Butter and Jam Brownies"])
-create_recipe_connection("Baked Portobello", ["Portobello with Blue Cheese", "Baked Potato"])
+create_recipe_connection("Avotoast", ["Toast With Smoked Salmon", "Club Sandwich"])
+create_recipe_connection("Spaghetti Carbonara", ["Mug Cake", "Peanut Butter And Jam Brownies"])
+create_recipe_connection("Baked Portobello", ["Portobello With Blue Cheese", "Baked Potato"])
 create_recipe_connection("Strawberry Fondue", ["Mushroom Pasta", "Pesto Pasta"])
 
 
