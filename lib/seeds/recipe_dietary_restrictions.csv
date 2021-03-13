@@ -1,11 +1,17 @@
-id,recipe_name,restriction_name
-1,Strawberry Fondue,Dairy
-2,Strawberry Fondue,Vegetarian
-3,Strawberry Fondue,Halal
-4,Strawberry Fondue,Kosher
-5,Spaghetti Carbonara,Eggs
-6,Avotoast,Gluten
-7,Avotoast,Vegan
-8,Avotoast,Low sugar
-9,Avotoast,Halal
-10,Avotoast,Kosher
+id,recipe_name,value,nutrient
+1,Avotoast,271,cal
+2,Avotoast,24.6g,fat
+3,Avotoast,13.7g,protein
+4,Avotoast,13.7g,carbs
+5,Chocolate kissed strawberries,471,cal
+6,Chocolate kissed strawberries,33.6g,fat
+7,Chocolate kissed strawberries,5.5g,protein
+8,Chocolate kissed strawberries,38.5g,carbs
+9,Baked Portobello,120,cal
+10,Baked Portobello,7g,fat
+11,Baked Portobello,8g,protein
+12,Baked Portobello,8.6g,carbs
+13,Spaghetti Alla Carbonara,747,cal
+14,Spaghetti Alla Carbonara,42.9g,fat
+15,Spaghetti Alla Carbonara,54g,protein
+16,Spaghetti Alla Carbonara,36.2g,carbs

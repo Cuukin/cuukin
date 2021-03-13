@@ -57,6 +57,10 @@
   }
 }
 
+.skill-description, .recipe-method-description {
+  white-space: pre-wrap;
+}
+
 // Lesson Overview [FIRST CARD]
 
 .container-lesson-overview {
