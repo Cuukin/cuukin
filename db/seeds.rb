@@ -26,7 +26,7 @@ tools_csv.each do |row|
   t = Tool.new
   t.name = row['name'].titlecase
   t.badge = Badge.find_by(name: "#{row['badge_name']}")
-  t.suggested_product = row['buy_url']
+  t.suggested_product = row['suggested_buy_link']
   t.score_1 = row['score1']
   t.score_2 = row['score2']
   t.save
