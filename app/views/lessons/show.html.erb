@@ -93,7 +93,7 @@
     <div class="lesson-overview-ingredients">
       <h3>Ingredients</h3>
       <table>
-        <% @lesson.recipe.recipe_ingredients.each do |r_ingredient| %>
+        <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
             <td class="ingredient-measure">
               <% if r_ingredient.quantity %>
@@ -111,7 +111,7 @@
     <div class="lesson-overview-equipment">
       <h3>Equipment needed</h3>
       <table>
-        <% @lesson.recipe.recipe_tools.each do |r_tool| %>
+        <% @lesson.recipe.recipe_tools.order(:id).each do |r_tool| %>
           <tr>
             <td class="equipment-name">
               <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
@@ -179,7 +179,7 @@
 
   <div class="lesson-slide">
 
-    <% @lesson.skill_chapters.each_with_index do |skill_chapter, index| %>
+    <% @lesson.skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
       <div class="container-lesson-chapter">
         <div class="lesson-skill-video">
@@ -202,7 +202,7 @@
 
     <% end %>
 
-    <% @lesson.recipe.recipe_methods.each_with_index do |recipe_method, index| %>
+    <% @lesson.recipe.recipe_methods.order(:id).each_with_index do |recipe_method, index| %>
 
       <div class="container-lesson-recipe">
         <div class="lesson-recipe-video">
@@ -225,7 +225,7 @@
           <div class="recipe-method-content">
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
-              <% recipe_method.recipe.recipe_ingredients.each do |recipe_ingredient| %>
+              <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
                 <p class="ingredient-measure">
                   <% if recipe_ingredient.quantity %>
                     <span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>

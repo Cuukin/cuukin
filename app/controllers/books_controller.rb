@@ -31,6 +31,6 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
-    @lessons = Lesson.where(book_id: @book.id).includes(:recipe)
+    @lessons = Lesson.where(book_id: @book.id).includes(:recipe).order(:id)
   end
 end
