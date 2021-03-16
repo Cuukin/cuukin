@@ -114,7 +114,7 @@
         <% @lesson.recipe.recipe_tools.order(:id).each do |r_tool| %>
           <tr>
             <td class="equipment-name">
-              <% if r_tool.suggested_product %>
+              <% if r_tool.tool.suggested_product %>
                 <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
                   <%= r_tool.tool.name %>
                 <% end %>
