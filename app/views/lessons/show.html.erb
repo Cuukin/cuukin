@@ -206,7 +206,7 @@
 
     <% end %>
 
-    <% @lesson.recipe.recipe_methods.order(:id).each_with_index do |recipe_method, index| %>
+    <% @lesson.recipe.recipe_methods.order(:method_index).each_with_index do |recipe_method, index| %>
 
       <div class="container-lesson-recipe">
         <div class="lesson-recipe-video">
