@@ -1,5 +1,5 @@
 ActiveAdmin.register RecipeMethod do
 
-  permit_params :title, :description, :video_url, :recipe_id, :method_index
+  permit_params :method_index, :title, :description, :video_url, :recipe_id
 
 end
