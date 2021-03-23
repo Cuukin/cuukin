@@ -15,6 +15,8 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+// import gtag from '../src/analytics';
+
 import { togglePasswordVisibility } from '../components/password_visibility_toggle';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { homeCarousel } from '../components/home_carousel';
