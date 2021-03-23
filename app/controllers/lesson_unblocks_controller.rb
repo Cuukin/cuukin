@@ -7,7 +7,7 @@ class LessonUnblocksController < ApplicationController
     authorize @lesson_unblock, policy_class: LessonUnblockPolicy
 
     if @lesson_unblock.save
-      redirect_to lesson_path(@lesson), notice: "Lesson skipped"
+      redirect_to lesson_path(@lesson)
       LessonValidation.create(lesson: @lesson_validated, user: current_user, validated: false)
     else
       render :new
