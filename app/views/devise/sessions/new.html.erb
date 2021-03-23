@@ -7,15 +7,17 @@
     </div>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
       <div class="form-inputs">
         <%= f.input :email,
-                    required: false,
+                    required: true,
                     label: false,
                     placeholder: 'Email',
                     input_html: { autocomplete: "email" } %>
         <i class="far fa-eye-slash toggle-password"></i>
         <%= f.input :password,
-                    required: false,
+                    required: true,
                     label: false,
                     placeholder: 'Password',
                     input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>

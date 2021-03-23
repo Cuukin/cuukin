@@ -18,9 +18,9 @@ class LessonValidationsController < ApplicationController
       UpdateBadgesJob.perform_later(current_user, @lesson)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
       TransitionAwardsJob.perform_later(current_user)
-      redirect_to lesson_validation_path(@lesson_validation), notice: "Lesson validated"
+      redirect_to lesson_validation_path(@lesson_validation)
     else
-      redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
+      redirect_to lesson_path(@lesson)
     end
   end
 
@@ -37,7 +37,7 @@ class LessonValidationsController < ApplicationController
       TransitionAwardsJob.perform_later(current_user)
       redirect_to lesson_validation_path(@lesson_validation)
     else
-      redirect_to lesson_path(@lesson), alert: "Couldn't validate your Lesson"
+      redirect_to lesson_path(@lesson)
     end
   end
 
