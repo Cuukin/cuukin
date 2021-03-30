@@ -91,7 +91,13 @@
     </div>
 
     <div class="lesson-overview-ingredients">
-      <h3>Ingredients</h3>
+      <div class="ingredients-header">
+        <h3>Ingredients</h3>
+        <div class="unit-conversion-btn">
+          <span class="unit unitSelected"><p>Metric</p></span>
+          <span class="unit"><p>Imperial</p></span>
+        </div>
+      </div>
       <table>
         <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
