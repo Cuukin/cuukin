@@ -6,6 +6,8 @@ const unitConversion = () => {
   // ingredients measure quantities
   const ingredientMeasures = document.querySelectorAll('.ingredient-measure');
 
+  let convertedValue = 0;
+
   // unit conversion function
   if (unitBtn) {
     unitBtn.addEventListener('click', () => {
@@ -27,23 +29,29 @@ const unitConversion = () => {
 
           if (measureUnit.innerText == 'g') {
             measureUnit.innerText = 'oz';
-            measureQuantity.innerText = (measureQuantityValue / 28.35).toFixed(1);
+            convertedValue = measureQuantityValue / 28.35;
+            measureQuantity.innerText = convertedValue.toFixed(1);
           } else if (measureUnit.innerText == 'oz') {
             measureUnit.innerText = 'g';
-            measureQuantity.innerText = (measureQuantityValue * 28.35).toFixed(1);
+            convertedValue = measureQuantityValue * 28.35;
+            measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
           } else if (measureUnit.innerText == 'ml') {
             measureUnit.innerText = 'cups';
-            measureQuantity.innerText = (measureQuantityValue / 284).toFixed(1);
+            convertedValue = measureQuantityValue / 284;
+            measureQuantity.innerText = convertedValue.toFixed(1);
           } else if (measureUnit.innerText == 'l') {
             measureUnit.innerText = 'cups';
-            measureQuantity.innerText = (measureQuantityValue * 3.52).toFixed(1);
+            convertedValue = measureQuantityValue * 3.52
+            measureQuantity.innerText = convertedValue.toFixed(1);
           } else if (measureUnit.innerText == 'cups') {
             if (measureQuantityValue < 3.5) {
               measureUnit.innerText = 'ml';
-              measureQuantity.innerText = (measureQuantityValue * 284).toFixed(1);
+              convertedValue = measureQuantityValue * 284;
+              measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
             } else {
               measureUnit.innerText = 'l';
-              measureQuantity.innerText = (measureQuantityValue / 3.52).toFixed(1);
+              convertedValue = measureQuantityValue / 3.52;
+              measureQuantity.innerText = convertedValue.toFixed(0);
             };
           };
         };
@@ -82,7 +90,9 @@ const unitConversion = () => {
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
           let initialValue = Number.parseFloat(measureQuantityValue) / (counter - 1);
 
-          if ((initialValue * counter) % 1 == 0) {
+          convertedValue = initialValue * counter;
+
+          if (convertedValue % 1 == 0) {
             measureQuantity.innerText = (initialValue * counter).toFixed(0);
           } else {
             measureQuantity.innerText = (initialValue * counter).toFixed(1);
@@ -111,7 +121,9 @@ const unitConversion = () => {
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
           let initialValue = Number.parseFloat(measureQuantityValue) / (counter + 1);
 
-          if ((initialValue * counter) % 1 == 0) {
+          convertedValue = initialValue * counter;
+
+          if (convertedValue % 1 == 0) {
             measureQuantity.innerText = (initialValue * counter).toFixed(0);
           } else {
             measureQuantity.innerText = (initialValue * counter).toFixed(1);
