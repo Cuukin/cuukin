@@ -31,7 +31,6 @@ import { recipeDiary } from '../components/popups/recipe_diary';
 import { helpPopup } from '../components/popups/help_popup';
 
 import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
-import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
 import { skipToRecipe } from '../components/lessons/skip_to_recipe';
 import { unitConversion } from '../components/lessons/edit_unit';
@@ -50,7 +49,6 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   expandedNavbar();
   lessonChaptersSlide();
-  lessonServingCalc();
   recipeModal();
   lessonModal();
   lessonNutriData();
