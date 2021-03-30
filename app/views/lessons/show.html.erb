@@ -104,9 +104,9 @@
           <tr>
             <td class="ingredient-measure">
               <% if r_ingredient.quantity %>
-                <span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %>
+                <span class="ingredient-quantity"><%= r_ingredient.quantity %></span> <span class="ingredient-unit"><%= r_ingredient.unit %></span>
               <% else %>
-                <%= r_ingredient.unit %>
+                <span class="ingredient-unit"><%= r_ingredient.unit %></span>
               <% end %>
             </td>
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
@@ -239,9 +239,9 @@
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
                 <p class="ingredient-measure">
                   <% if recipe_ingredient.quantity %>
-                    <span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                    <span class="ingredient-quantity"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <%= recipe_ingredient.ingredient.name.downcase %>
                   <% else %>
-                    <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                    <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <%= recipe_ingredient.ingredient.name.downcase %>
                   <% end %>
                 </p>
               <% end %>

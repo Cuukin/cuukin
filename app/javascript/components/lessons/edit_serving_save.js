@@ -1,31 +1,26 @@
 const lessonServingCalc = () => {
   const servingContainer = document.querySelector('.lesson-overview-serving');
-
   const addBtn = document.querySelector('#plusBtn');
   const minusBtn = document.querySelector('#minusBtn');
   const servingNumber = document.querySelector('.serving-paragraph');
 
-  let ingredientMeasures = document.querySelectorAll('.ingredient-quantity');
+  const ingredientMeasures = document.querySelectorAll('.ingredient-quantity');
+
+  let counter = 1;
 
   let ingredientMeasuresArray = []
 
-  ingredientMeasures.forEach((ingredientMeasure) => {
-    let measureNumber = ingredientMeasure.innerText;
+  ingredientMeasures.forEach((measure) => {
+    let measureNumber = measure.innerText;
     measureNumber = Number.parseFloat(measureNumber);
     ingredientMeasuresArray.push(measureNumber);
   });
 
-  let counter = 1;
-
   if (servingContainer) {
-
     minusBtn.style.visibility = "hidden";
-
     addBtn.addEventListener('click', () => {
       minusBtn.style.visibility = "";
-
       counter += 1;
-
       if (counter == 4) {
         addBtn.style.visibility = "hidden";
         servingNumber.innerText = `${counter} serving(s)`;
@@ -34,17 +29,16 @@ const lessonServingCalc = () => {
       };
 
       let index = -1;
-      ingredientMeasures.forEach((measure) => {
+      ingredientMeasuresArray.forEach((measure) => {
         index += 1;
-        measure.innerText = (Number.parseFloat(measure.innerText) + ingredientMeasuresArray[index]).toFixed();
+        let newMeasure = measure * counter;
+        ingredientMeasures[index].innerText = `${newMeasure}`;
       });
     });
 
     minusBtn.addEventListener('click', () => {
       addBtn.style.visibility = "";
-
       counter -= 1;
-
       if (counter == 1) {
         minusBtn.style.visibility = "hidden";
         servingNumber.innerText = `${counter} serving(s)`;
@@ -53,12 +47,14 @@ const lessonServingCalc = () => {
       };
 
       let index = -1;
-      ingredientMeasures.forEach((measure) => {
+      ingredientMeasuresArray.forEach((measure) => {
         index += 1;
-        measure.innerText = Number.parseFloat(measure.innerText) - ingredientMeasuresArray[index];
+        let newMeasure = measure * counter;
+        ingredientMeasures[index].innerText = `${newMeasure}`;
       });
     });
   };
+
 }
 
 export { lessonServingCalc };
