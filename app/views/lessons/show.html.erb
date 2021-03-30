@@ -1,6 +1,7 @@
 <!-- first div with general info + btn to start lesson -->
 
 <%= render 'start_recipe_popup' %>
+<%= render 'start_lesson_popup' %>
 <%= render 'help_popup' %>
 
 <% unless @validated || @skipped %>
@@ -91,15 +92,21 @@
     </div>
 
     <div class="lesson-overview-ingredients">
-      <h3>Ingredients</h3>
+      <div class="ingredients-header">
+        <h3>Ingredients</h3>
+        <div class="unit-conversion-btn">
+          <span class="unit unitSelected"><p>Metric</p></span>
+          <span class="unit"><p>Imperial</p></span>
+        </div>
+      </div>
       <table>
         <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
             <td class="ingredient-measure">
               <% if r_ingredient.quantity %>
-                <span><%= r_ingredient.quantity %></span> <%= r_ingredient.unit %>
+                <span class="ingredient-quantity"><%= r_ingredient.quantity %></span> <span class="ingredient-unit"><%= r_ingredient.unit %></span>
               <% else %>
-                <%= r_ingredient.unit %>
+                <span class="ingredient-unit"><%= r_ingredient.unit %></span>
               <% end %>
             </td>
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
@@ -232,9 +239,9 @@
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
                 <p class="ingredient-measure">
                   <% if recipe_ingredient.quantity %>
-                    <span><%= recipe_ingredient.quantity %></span> <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                    <span class="ingredient-quantity"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <%= recipe_ingredient.ingredient.name.downcase %>
                   <% else %>
-                    <%= "#{recipe_ingredient.unit} #{recipe_ingredient.ingredient.name.downcase}" %>
+                    <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <%= recipe_ingredient.ingredient.name.downcase %>
                   <% end %>
                 </p>
               <% end %>

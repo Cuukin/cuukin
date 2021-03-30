@@ -24,15 +24,16 @@ import { cuukbook } from '../components/cuukbook';
 
 import { expandedNavbar } from '../components/popups/expanded_navbar';
 import { recipeModal } from '../components/popups/start_recipe_popup';
+import { lessonModal } from '../components/popups/start_lesson_popup';
 import { currenciesModal } from '../components/popups/currency_popup';
 import { badgePopup } from '../components/popups/badge_popup';
 import { recipeDiary } from '../components/popups/recipe_diary';
 import { helpPopup } from '../components/popups/help_popup';
 
 import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
-import { lessonServingCalc } from '../components/lessons/edit_serving';
 import { lessonNutriData } from '../components/lessons/show_nutri';
 import { skipToRecipe } from '../components/lessons/skip_to_recipe';
+import { unitConversion } from '../components/lessons/edit_unit';
 
 import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
@@ -48,8 +49,8 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   expandedNavbar();
   lessonChaptersSlide();
-  lessonServingCalc();
   recipeModal();
+  lessonModal();
   lessonNutriData();
   unblockLesson();
   validateLesson();
@@ -60,4 +61,5 @@ document.addEventListener('turbolinks:load', () => {
   badgePopup();
   recipeDiary();
   helpPopup();
+  unitConversion();
 });

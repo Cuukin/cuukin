@@ -24,21 +24,27 @@ const lessonChaptersSlide = () => {
   };
 
   if (startLessonBtn) {
+    const startLesson = () => {
+      setTimeout(function() {
+        lessonOverviewContainer.style.display = "none";
+        lessonContainer.style.display = "block";
+
+        counter = 0;
+
+        window.scrollTo({
+          top: 0
+        });
+
+        lessonVideos[counter].play();
+
+        let totalItems = document.querySelectorAll('.lesson-slide > div').length;
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
+      }, 2100);
+    };
+
     startLessonBtn.addEventListener('click', () => {
-      lessonOverviewContainer.style.display = "none";
-      lessonContainer.style.display = "block";
-
-      counter = 0;
-
-      window.scrollTo({
-        top: 0
-      });
-
-      lessonVideos[counter].play();
-
-      let totalItems = document.querySelectorAll('.lesson-slide > div').length;
-      let progressBarWidth = 100 * (counter + 1) / totalItems;
-      progressBar.style.width = progressBarWidth + '%';
+      startLesson();
     });
   };
 
