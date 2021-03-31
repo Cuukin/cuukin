@@ -1,5 +1,16 @@
 // Prev Btn
 
+.ingredient-swap-btn {
+  padding: 1px 8px;
+  color: $cuukin;
+  -webkit-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  -moz-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  box-shadow:inset 0px 0px 0px 1px $cuukin;
+  border-radius: 50px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
 .lesson-btns {
   width: 500px;
   display: flex;
@@ -268,6 +279,7 @@
 .unit {
   border-radius: 50px;
   padding: 4px 8px;
+  align-text: center;
 
   p {
     color: $white;
@@ -303,7 +315,7 @@
 .nutri-data {
   background-color: rgb(246, 234, 234);
   border-radius: 12px;
-  padding: 8px 16px;
+  padding: 8px 12px;
   text-align: center;
   font-weight: 600;
   font-family: 'Nunito', sans-serif;
