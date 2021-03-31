@@ -1,4 +1,4 @@
-<div class="recipe-modal ingredient-swap-modal" id="swap-<%= recipe_ingredient.id %>">
+<div class="recipe-modal ingredient-swap-modal" id="<%= recipe_ingredient.id %>">
   <div class="recipe-modal-content">
 
     <div class="help-heading">
@@ -9,10 +9,10 @@
     <p>Pick your preferred substitute for <span style="font-weight: 800;"><%= recipe_ingredient.ingredient.name %></span></p>
 
     <% recipe_ingredient.recipe_ingredient_swaps.each do |swap| %>
-      <p class="secondary-btn" data-ingredient-quantity="<%= swap.quantity %>" data-ingredient-unit="<%= swap.unit %>"><%= swap.ingredient.name %></p>
+      <p class="secondary-btn swap-ingredient" id="<%= swap.ingredient.name %>" data-ingredient-quantity="<%= swap.quantity %>" data-ingredient-unit="<%= swap.unit %>"><%= swap.ingredient.name %></p>
     <% end %>
 
-    <p class="secondary-btn" id="close-swap-<%= recipe_ingredient.id %>">Keep using <%= recipe_ingredient.ingredient.name %></p>
+    <p class="secondary-btn swap-ingredient" id="<%= recipe_ingredient.ingredient.name %>">Keep using <%= recipe_ingredient.ingredient.name %></p>
 
   </div>
 </div>
