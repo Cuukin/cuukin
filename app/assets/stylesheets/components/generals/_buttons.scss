@@ -30,9 +30,9 @@
 .secondary-btn {
   font-size: 16px;
   background-color: transparent;
-  -webkit-box-shadow:inset 0px 0px 0px 1px $black;
-  -moz-box-shadow:inset 0px 0px 0px 1px $black;
-  box-shadow:inset 0px 0px 0px 1px $black;
+  -webkit-box-shadow:inset 0px 0px 0px 1px #707070;
+  -moz-box-shadow:inset 0px 0px 0px 1px #707070;
+  box-shadow:inset 0px 0px 0px 1px #707070;
   // border: 1px solid $black;
   color: $black;
   text-align: center;
@@ -43,11 +43,10 @@
   display: inline-block;
   margin: 4px 0;
 
-  &:hover {
-    color: $black;
-  }
-
-  &:active {
-    opacity: .8;
+  &:hover, &:active {
+  color: $black;
+  -webkit-box-shadow:inset 0px 0px 0px 3px #707070;
+  -moz-box-shadow:inset 0px 0px 0px 3px #707070;
+  box-shadow:inset 0px 0px 0px 3px #707070;
   }
 }
