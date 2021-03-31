@@ -103,11 +103,7 @@
         <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
             <td class="ingredient-measure">
-              <% if r_ingredient.quantity %>
-                <span class="ingredient-quantity"><%= r_ingredient.quantity %></span> <span class="ingredient-unit"><%= r_ingredient.unit %></span>
-              <% else %>
-                <span class="ingredient-unit"><%= r_ingredient.unit %></span>
-              <% end %>
+              <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
             </td>
             <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
@@ -242,11 +238,7 @@
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
                 <p class="ingredient-measure">
-                  <% if recipe_ingredient.quantity %>
-                    <span class="ingredient-quantity"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
-                  <% else %>
-                    <span class="ingredient-unit"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
-                  <% end %>
+                  <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
                 </p>
               <% end %>
             </div>
