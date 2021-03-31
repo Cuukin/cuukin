@@ -111,6 +111,9 @@
               <% end %>
             </td>
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
+            <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
+              <td class="ingredient-swap-btn">Swap</td>
+            <% end %>
           </tr>
         <% end %>
       </table>

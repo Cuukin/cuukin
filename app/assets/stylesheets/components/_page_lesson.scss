@@ -1,5 +1,14 @@
 // Prev Btn
 
+.ingredient-swap-btn {
+  padding: 1px 8px;
+  color: $cuukin;
+  -webkit-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  -moz-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  box-shadow:inset 0px 0px 0px 1px $cuukin;
+  border-radius: 50px;
+}
+
 .lesson-btns {
   width: 500px;
   display: flex;
