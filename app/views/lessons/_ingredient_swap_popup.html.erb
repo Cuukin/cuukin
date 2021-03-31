@@ -1,12 +1,18 @@
-<div class="recipe-modal" id="ingredientSwapModal" style="display: none;">
+<div class="recipe-modal ingredient-swap-modal" id="swap<%= recipe_ingredient.id %>" style="display: block;">
   <div class="recipe-modal-content">
+
     <div class="help-heading">
       <%= image_tag('lesson-important.svg') %>
       <p>What alternative ingredient can I use?</p>
     </div>
-    <p>Pick your preferred substitute for <span style="font-weight: 800;">squash</span></p>
-    <p class="secondary-btn">Carrots</p>
-    <p class="secondary-btn">Parnisp</p>
-    <p class="secondary-btn">Keep using squash</p>
+
+    <p>Pick your preferred substitute for <span style="font-weight: 800;"><%= recipe_ingredient.ingredient.name %></span></p>
+
+    <% recipe_ingredient.recipe_ingredient_swaps.each do |swap| %>
+      <p class="secondary-btn"><%= swap.ingredient.name %></p>
+    <% end %>
+
+    <p class="secondary-btn">Keep using <%= recipe_ingredient.ingredient.name %></p>
+
   </div>
 </div>

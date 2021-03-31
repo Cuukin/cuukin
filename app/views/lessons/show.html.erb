@@ -2,7 +2,6 @@
 
 <%= render 'start_recipe_popup' %>
 <%= render 'start_lesson_popup' %>
-<%= render 'ingredient_swap_popup' %>
 <%= render 'help_popup' %>
 
 <% unless @validated || @skipped %>
@@ -113,6 +112,7 @@
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
               <td class="ingredient-swap-btn">Swap</td>
+              <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
             <% end %>
           </tr>
         <% end %>
