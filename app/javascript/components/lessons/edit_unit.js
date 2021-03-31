@@ -172,7 +172,8 @@ const unitConversion = () => {
         });
       });
 
-      //
+      // when changing the unit & quantity - change everything back to metric and toggle the metric button
+      // create a convertion function that can be called here??
 
       // document.querySelector('.ingredient-swap-modal').querySelector('.secondary-btn').getAttribute('data-ingredient-unit') == "";
 
