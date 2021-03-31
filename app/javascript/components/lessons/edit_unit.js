@@ -16,7 +16,9 @@ const unitConversion = () => {
   if (ingredientQuantities) {
     ingredientQuantities.forEach((quantity) => {
       let quantityNumber = Number.parseFloat(quantity.innerText);
-      initialValues.push(quantityNumber);
+      if (quantityNumber != "") {
+        initialValues.push(quantityNumber);
+      };
     });
   };
 
@@ -35,7 +37,7 @@ const unitConversion = () => {
         let measureUnit = measure.querySelector('.ingredient-unit');
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
-        if (measureQuantity) {
+        if (measureQuantity && measureQuantity.innerText != "") {
           index += 1;
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
 
@@ -102,7 +104,7 @@ const unitConversion = () => {
       ingredientMeasures.forEach((measure) => {
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
-        if (measureQuantity) {
+        if (measureQuantity && measureQuantity.innerText != "") {
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
           let initialValue = Number.parseFloat(measureQuantityValue) / (counter - 1);
 
@@ -133,7 +135,7 @@ const unitConversion = () => {
       ingredientMeasures.forEach((measure) => {
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
-        if (measureQuantity) {
+        if (measureQuantity && measureQuantity.innerText != "") {
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
           let initialValue = Number.parseFloat(measureQuantityValue) / (counter + 1);
 
@@ -161,19 +163,31 @@ const unitConversion = () => {
       });
 
       let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
+      let quantities = document.querySelectorAll(`.quantity-${btn.classList[1]}`);
+      let units = document.querySelectorAll(`.unit-${btn.classList[1]}`);
       let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
 
       swapIngredientBtns.forEach((swapIngredient) => {
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
+
           ingredients.forEach((ing) => {
             ing.innerText = swapIngredient.id;
+          });
+
+          quantities.forEach((quantity) => {
+            quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity');
+          });
+
+          units.forEach((unit) => {
+            unit.innerText = swapIngredient.getAttribute('data-ingredient-unit');
           });
         });
       });
 
       // when changing the unit & quantity - change everything back to metric and toggle the metric button
       // create a convertion function that can be called here??
+      // update initial Values array here!!
 
       // document.querySelector('.ingredient-swap-modal').querySelector('.secondary-btn').getAttribute('data-ingredient-unit') == "";
 
