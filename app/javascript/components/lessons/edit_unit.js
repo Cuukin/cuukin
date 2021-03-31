@@ -15,8 +15,8 @@ const unitConversion = () => {
 
   if (ingredientQuantities) {
     ingredientQuantities.forEach((quantity) => {
-      let quantityNumber = Number.parseFloat(quantity.innerText);
-      if (quantityNumber != "") {
+      if (quantity.innerText != "") {
+        let quantityNumber = Number.parseFloat(quantity.innerText);
         initialValues.push(quantityNumber);
       };
     });
@@ -48,9 +48,6 @@ const unitConversion = () => {
           } else if (measureUnit.innerText == 'oz') {
             measureUnit.innerText = 'g';
             measureQuantity.innerText = initialValues[index] * counter;
-            //convertedValue = measureQuantityValue * 28.35;
-            //measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
-
           } else if (measureUnit.innerText == 'ml') {
             measureUnit.innerText = 'cups';
             convertedValue = measureQuantityValue / 284;
@@ -63,13 +60,9 @@ const unitConversion = () => {
             if (measureQuantityValue < 3.5) {
               measureUnit.innerText = 'ml';
               measureQuantity.innerText = initialValues[index] * counter;
-              //convertedValue = measureQuantityValue * 284;
-              //measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
             } else {
               measureUnit.innerText = 'l';
               measureQuantity.innerText = initialValues[index] * counter;
-              //convertedValue = measureQuantityValue / 3.52;
-              //measureQuantity.innerText = convertedValue.toFixed(0);
             };
           };
         };
@@ -168,6 +161,7 @@ const unitConversion = () => {
       let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
 
       swapIngredientBtns.forEach((swapIngredient) => {
+
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
 
@@ -176,21 +170,39 @@ const unitConversion = () => {
           });
 
           quantities.forEach((quantity) => {
-            quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity');
+            quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity') * counter;
           });
 
           units.forEach((unit) => {
             unit.innerText = swapIngredient.getAttribute('data-ingredient-unit');
           });
+
+          // Updating the INITIAL VALUES array!
+          let originalIngredientQuantity = swapIngredientBtns[swapIngredientBtns.length - 1].getAttribute('data-ingredient-quantity');
+          const originalQuantity = (element) => element == parseFloat(originalIngredientQuantity);
+          let quantityIndex = initialValues.findIndex(originalQuantity);
+          initialValues[quantityIndex] = swapIngredient.getAttribute('data-ingredient-quantity') / counter;
+
+          // Getting it back to metric if it isnt already there!
+          const imperialToggle = document.querySelector('#imperial-toggle');
+          const metricToggle = document.querySelector('#metric-toggle');
+
+          if (imperialToggle.classList[1] == 'unitSelected') {
+            // toggles unit button back to metric
+            imperialToggle.classList.toggle('unitSelected');
+            metricToggle.classList.toggle('unitSelected');
+
+            // shifts all quantities back to gram
+            ingredientQuantities.forEach((quantity) => {
+              if (quantity.innerText != "") {
+                const quantityNumber = (element) => element == Number.parseFloat(quantity.innerText);
+                let index = initialValues.findIndex(quantityNumber);
+                quantity.innerText == initialValues[index] * counter;
+              };
+            });
+          };
         });
       });
-
-      // when changing the unit & quantity - change everything back to metric and toggle the metric button
-      // create a convertion function that can be called here??
-      // update initial Values array here!!
-
-      // document.querySelector('.ingredient-swap-modal').querySelector('.secondary-btn').getAttribute('data-ingredient-unit') == "";
-
     });
   };
 };
