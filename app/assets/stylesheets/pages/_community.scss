@@ -32,11 +32,12 @@
 }
 
 .center-pages-content {
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%,50%);
-  position: absolute;
-  padding: 8px;
+  //right: 50%;
+  //bottom: 50%;
+  //transform: translate(50%,50%);
+  //position: absolute;
+  margin: 0 auto;
+  padding: 40px 0;
   text-align: center;
 }
 
