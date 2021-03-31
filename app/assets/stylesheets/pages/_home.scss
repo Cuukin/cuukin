@@ -1,10 +1,11 @@
 .home-carousel-container {
+  min-height: 100vh;
   width: 500px;
   margin: auto;
   overflow: hidden;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
-  padding: 16px 0;
+  padding: 56px 0;
 }
 
 .home-carousel-slide {
@@ -14,8 +15,7 @@
 
 .home-carousel-item {
   text-align: center;
-  position: relative;
-  top: -16px;
+  margin: 0 auto;
 
   h2 {
     color: $dark-red;
@@ -30,32 +30,20 @@
   }
 }
 
-#carousel-first-item {
-  position: relative;
-  top: -24px;
+.carousel-img {
+  height: 240px;
+  margin-bottom: 56px;
 }
 
 .home-carousel-item-content {
-  padding: 24px 24px 0;
-  position: relative;
-  top: -80px;
-}
-
-.carousel-img {
-  width: 500px;
+  margin-bottom: 16px;
 }
 
 // buttons and progress bar
 
-.home-carousel-nav {
-  position: relative;
-  top: -56px;
-}
-
 .carousel-primary-btns {
-  position: relative;
-  top: -72px;
   padding: 0 16px;
+  margin-top: 40px;
 }
 
 .registerBtn {

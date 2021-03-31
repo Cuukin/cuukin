@@ -168,10 +168,10 @@
       <% elsif @open_to_unblock %>
         <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
       <% else %>
-        <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
+        <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
       <% end %>
     <% else %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
+      <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
     <% end %>
   </div>
 </div>
@@ -250,7 +250,7 @@
           <% if @lesson.recipe.recipe_methods.last == recipe_method %>
             <% if @validated %>
               <%= link_to book_path(@lesson.book) do %>
-                <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+                <p class="disabled-btn finish-lesson" style="cursor: pointer;">Lesson Validated</p>
               <% end %>
             <% elsif @skipped %>
               <div class="warning-completion">
