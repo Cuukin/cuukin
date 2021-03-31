@@ -111,7 +111,7 @@
             </td>
             <td class="ingredient-name"><%= r_ingredient.ingredient.name %></td>
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
-              <td class="ingredient-swap-btn">Swap</td>
+              <td class="ingredient-swap-btn swap-<%= r_ingredient.id %>">Swap</td>
               <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
             <% end %>
           </tr>

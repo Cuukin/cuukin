@@ -148,6 +148,27 @@ const unitConversion = () => {
       });
     });
   };
-}
+
+  // Swap Ingredient
+  const swapBtns = document.querySelectorAll('.ingredient-swap-btn');
+
+  if (swapBtns) {
+    swapBtns.forEach((btn) => {
+      let swapModal = document.getElementById(`${btn.classList[1]}`);
+      let closeModalBtn = document.getElementById(`close-${btn.classList[1]}`);
+
+      btn.addEventListener('click', () => {
+        swapModal.style.display = "block";
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        swapModal.style.display = "none";
+      });
+
+      // document.querySelector('.ingredient-swap-modal').querySelector('.secondary-btn').getAttribute('data-ingredient-unit') == "";
+
+    });
+  };
+};
 
 export { unitConversion };
