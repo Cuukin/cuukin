@@ -155,31 +155,24 @@ const unitConversion = () => {
   if (swapBtns) {
     swapBtns.forEach((btn) => {
       let swapModal = document.getElementById(`${btn.classList[1]}`);
-      //let closeModalBtn = document.getElementById(`close-${btn.classList[1]}`);
-      //let ingredient = document.getElementById(`ingredient-${btn.classList[1]}`);
-
-      let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
 
       btn.addEventListener('click', () => {
         swapModal.style.display = "block";
       });
 
-      // closeModalBtn.addEventListener('click', () => {
-      //   swapModal.style.display = "none";
-      // });
-
+      let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
       let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
 
       swapIngredientBtns.forEach((swapIngredient) => {
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
-          //ingredient.innerText = swapIngredient.innerText;
-
           ingredients.forEach((ing) => {
             ing.innerText = swapIngredient.id;
           });
         });
       });
+
+      //
 
       // document.querySelector('.ingredient-swap-modal').querySelector('.secondary-btn').getAttribute('data-ingredient-unit') == "";
 
