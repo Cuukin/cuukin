@@ -3,39 +3,51 @@
 
     <%= image_tag('btn-back.svg', class: 'home-btn-back', id: 'prevBtn') %>
 
-    <div class="home-carousel-slide">
+    <div class="home-first-item">
+      <%= image_tag('home-00.svg', class:'carousel-img') %>
+      <div class="home-carousel-item-content">
+        <h2>Cooking school at your fingertips</h2>
+        <p>Learn. Cook. Have Fun.</p>
+      </div>
 
-      <div class="home-carousel-item" id="carousel-first-item">
-        <%= image_tag('home-00.svg', class:'carousel-img') %>
+      <div class="carousel-primary-btns">
+        <p class="primary-btn" id="registerBtn">Register</p>
+        <%= link_to 'Log-in', new_user_session_path, class: 'secondary-btn' %>
+      </div>
+    </div>
+
+    <div class="home-carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_path("route.svg") %>')">
+
+      <div class="home-carousel-item">
+        <%= image_tag('home-01.svg', class:'carousel-img') %>
         <div class="home-carousel-item-content">
-          <h2>Cooking school at your fingertips</h2>
-          <p>Learn. Cook. Have Fun.</p>
+          <h2>Frustrated about the meals you make?</h2>
+          <p>Recipes are challenging without the right skills and it's no fun when your dish does not come out the right way (again)</p>
         </div>
       </div>
 
-    </div>
-
-    <div class="carousel-primary-btns">
-      <!-- <p class="primary-btn" id="startBtn">Register</p> -->
-      <%= link_to 'Register', new_user_registration_path, class: 'primary-btn', id: 'registerBtn' %>
-      <%= link_to 'Log-in', new_user_session_path, class: 'secondary-btn' %>
+      <div class="home-carousel-item">
+        <h2>Let's start your cooking journey together</h2>
+        <div class="home-carousel-item-content">
+          <div class="content-wrap">
+            <!-- number + text + image display flex -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="home-carousel-nav">
+      <%= image_tag('btn-next.svg', id: 'nextBtn') %>
+
       <div class='home-progress-bar'>
         <div class='circle'></div>
         <div class='circle circle-disabled'></div>
         <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
       </div>
 
-      <%= image_tag('btn-next.svg', id: 'nextBtn') %>
-
-      <div class="registerBtn">
+      <div class="registerBtn" style="display: none;">
         <%= link_to 'Register to Cuuk!', new_user_registration_path, class: 'primary-btn', id: 'registerBtn' %>
       </div>
-
     </div>
   </div>
 </div>

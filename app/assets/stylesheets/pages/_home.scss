@@ -5,15 +5,19 @@
   overflow: hidden;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
-  padding: 56px 0;
+  padding: 16px 0 40px 0;
 }
 
 .home-carousel-slide {
   width: 100%;
-  display: flex;
+  display: none;
+
+  background-repeat: no-repeat;
+  background-size: inherit;
 }
 
-.home-carousel-item {
+.home-carousel-item, .home-first-item {
+  width: 100%;
   text-align: center;
   margin: 0 auto;
 
@@ -32,11 +36,12 @@
 
 .carousel-img {
   height: 240px;
-  margin-bottom: 56px;
+  margin: 40px 0;
 }
 
 .home-carousel-item-content {
   margin-bottom: 16px;
+  padding: 0 24px;
 }
 
 // buttons and progress bar
@@ -46,33 +51,34 @@
   margin-top: 40px;
 }
 
-.registerBtn {
-  padding: 0 16px;
-}
+.home-carousel-nav {
+  display: none;
+  margin-top: 16px;
 
-.home-progress-bar {
-  width: 80px;
-  margin: 0 auto 24px auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  #nextBtn {
+    height: 64px;
+    display: block;
+    margin: 0 auto 24px;
+  }
 
-.circle {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background-color: $cuukin;
-}
+  .home-progress-bar {
+    width: 48px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-.circle-disabled {
-  opacity: 0.4;
-}
+  .circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: $cuukin;
+  }
 
-#nextBtn {
-  height: 48px;
-  display: block;
-  margin: 0 auto;
+  .circle-disabled {
+    opacity: 0.4;
+  }
 }
 
 .home-btn-back {
@@ -81,11 +87,6 @@
   cursor: pointer;
   height: 42px;
   position: fixed;
-}
-
-.container-next-btn {
-  display: flex;
-  justify-content: center;
 }
 
 @media (max-width: 500px) {

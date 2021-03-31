@@ -1,77 +1,31 @@
 const homeCarousel = () => {
-  // Get carousel divs
-  const carouselContainer = document.querySelector('.home-carousel-container');
-  const carouselSlide = document.querySelector('.home-carousel-slide');
-  const carouselItem = document.querySelectorAll('.carousel-img');
+  const firstItem = document.querySelector('.home-first-item');
+
+  // buttons
+  const startCarouselBtn = document.querySelector('#registerBtn');
   const carouselNav = document.querySelector('.home-carousel-nav');
-
-  // Get prev/next buttons and navbars
-  const primaryBtns = document.querySelector('.carousel-primary-btns');
-  const startBtn = document.querySelector('#startBtn');
-  const prevBtn = document.querySelector('#prevBtn');
   const nextBtn = document.querySelector('#nextBtn');
-  const registerBtn = document.querySelector('.registerBtn');
 
-  const progressCircles = document.querySelectorAll('.circle');
+  // carousel
+  const carouselSlide = document.querySelector('.home-carousel-slide');
+  const carouselItems = document.querySelectorAll('.carousel-img');
 
-  let counter = 0;
+  const slide = document.querySelector('.home-carousel-slide');
 
-  if (carouselNav && prevBtn && registerBtn) {
-    carouselNav.style.display = "none";
-    prevBtn.style.display = "none";
-    registerBtn.style.display = "none";
-  };
+  if (startCarouselBtn) {
+    let counter = 0;
+    let size = carouselItems[0].clientWidth;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
 
-  if (startBtn) {
-    startBtn.addEventListener('click', () => {
-      let size = carouselItem[0].clientWidth;
-      carouselSlide.style.transition = "transform 0.4s ease-in-out";
-      counter += 1;
-      carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-      primaryBtns.style.display = "none";
+    startCarouselBtn.addEventListener('click', () => {
+      firstItem.style.display = "none";
+      slide.style.display = "flex";
       carouselNav.style.display = "block";
-      prevBtn.style.display = "block";
     });
-  };
 
-  if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      let size = carouselItem[0].clientWidth;
-      carouselSlide.style.transition = "transform 0.4s ease-in-out";
       counter += 1;
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-      progressCircles[counter - 2].classList.add('circle-disabled');
-      progressCircles[counter - 1].classList.remove('circle-disabled');
-
-      if (counter == 5) {
-        nextBtn.style.display = "none";
-        registerBtn.style.display = "block";
-      };
-    });
-  };
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      let size = carouselItem[0].clientWidth;
-      carouselSlide.style.transition = "transform 0.4s ease-in-out";
-      counter -= 1;
-      carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-      if (progressCircles[counter] && progressCircles[counter-1]) {
-        progressCircles[counter].classList.add('circle-disabled');
-        progressCircles[counter - 1].classList.remove('circle-disabled');
-      };
-
-      if (counter == 4) {
-        nextBtn.style.display = "block";
-        registerBtn.style.display = "none";
-      };
-
-      if (counter == 0) {
-        primaryBtns.style.display = "block";
-        carouselNav.style.display = "none";
-        prevBtn.style.display = "none";
-      };
     });
   };
 }
