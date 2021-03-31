@@ -8,6 +8,18 @@ const unitConversion = () => {
 
   let convertedValue = 0;
 
+  // ingredients original measure in metric
+  const ingredientQuantities = document.querySelectorAll('.ingredient-quantity');
+
+  let initialValues = []
+
+  if (ingredientQuantities) {
+    ingredientQuantities.forEach((quantity) => {
+      let quantityNumber = Number.parseFloat(quantity.innerText);
+      initialValues.push(quantityNumber);
+    });
+  };
+
   // unit conversion function
   if (unitBtn) {
     unitBtn.addEventListener('click', () => {
@@ -33,8 +45,10 @@ const unitConversion = () => {
             measureQuantity.innerText = convertedValue.toFixed(1);
           } else if (measureUnit.innerText == 'oz') {
             measureUnit.innerText = 'g';
-            convertedValue = measureQuantityValue * 28.35;
-            measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
+            measureQuantity.innerText = initialValues[index] * counter;
+            //convertedValue = measureQuantityValue * 28.35;
+            //measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
+
           } else if (measureUnit.innerText == 'ml') {
             measureUnit.innerText = 'cups';
             convertedValue = measureQuantityValue / 284;
@@ -46,12 +60,14 @@ const unitConversion = () => {
           } else if (measureUnit.innerText == 'cups') {
             if (measureQuantityValue < 3.5) {
               measureUnit.innerText = 'ml';
-              convertedValue = measureQuantityValue * 284;
-              measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
+              measureQuantity.innerText = initialValues[index] * counter;
+              //convertedValue = measureQuantityValue * 284;
+              //measureQuantity.innerText = Math.round(convertedValue / 2) * 2;
             } else {
               measureUnit.innerText = 'l';
-              convertedValue = measureQuantityValue / 3.52;
-              measureQuantity.innerText = convertedValue.toFixed(0);
+              measureQuantity.innerText = initialValues[index] * counter;
+              //convertedValue = measureQuantityValue / 3.52;
+              //measureQuantity.innerText = convertedValue.toFixed(0);
             };
           };
         };
