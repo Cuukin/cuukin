@@ -140,7 +140,7 @@ const unitConversion = () => {
   if (swapBtns) {
     swapBtns.forEach((btn) => {
       let swapModal = document.getElementById(`${btn.classList[1]}`);
-      
+
       let current_rotation = 0;
 
       btn.addEventListener('click', () => {
@@ -189,7 +189,7 @@ const unitConversion = () => {
               measureUnit.innerText = measure.getAttribute('data-ingredient-unit');
             });
           };
-          
+
           current_rotation += 360;
           let icon = btn.querySelector('i');
           icon.style.transition = "transform ease-in-out 0.6s";
@@ -216,9 +216,9 @@ const unitConversion = () => {
 
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
-              newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
+              let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
             } else {
-              newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
+              let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
             };
             updateTextWithOpacity(quantity, newQuantity);
           });
