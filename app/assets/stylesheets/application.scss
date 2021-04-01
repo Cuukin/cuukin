@@ -44,6 +44,10 @@ body {
   }
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 // Content Container
 
 .content-container {
