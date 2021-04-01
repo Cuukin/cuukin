@@ -29,6 +29,7 @@ import { currenciesModal } from '../components/popups/currency_popup';
 import { badgePopup } from '../components/popups/badge_popup';
 import { recipeDiary } from '../components/popups/recipe_diary';
 import { helpPopup } from '../components/popups/help_popup';
+import { openBadge } from '../components/popups/open_badge';
 
 import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 import { lessonNutriData } from '../components/lessons/show_nutri';
@@ -62,4 +63,5 @@ document.addEventListener('turbolinks:load', () => {
   recipeDiary();
   helpPopup();
   unitConversion();
+  openBadge();
 });

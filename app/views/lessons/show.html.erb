@@ -79,19 +79,19 @@
       <ul>
         <% @lesson.skill_chapters.each do |skill_chapter| %>
           <li>
-            <div class="badge-container">
-              <%= link_to badge_path(skill_chapter.badge) do %>
-                <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
-                <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
-              <% end %>
+            <div class="badge-container badge-btn <%= skill_chapter.badge.id %>">
+              <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
+              <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
             </div>
-            <p><%= skill_chapter.title %></p>
+            <p class="lesson-overview-skills-p"><%= skill_chapter.title %></p>
           </li>
+          <%= render 'badge', badge: skill_chapter.badge %>
         <% end %>
       </ul>
     </div>
 
     <div class="lesson-overview-ingredients">
+
       <div class="ingredients-header">
         <h3>Ingredients</h3>
         <div class="unit-conversion-btn">
@@ -99,13 +99,16 @@
           <span class="unit" id="imperial-toggle"><p>Imperial</p></span>
         </div>
       </div>
+
       <table>
         <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
-            <td class="ingredient-measure">
+            <td class="ingredient-measure" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
               <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
             </td>
+
             <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
+
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
               <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
               <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
@@ -113,6 +116,7 @@
           </tr>
         <% end %>
       </table>
+
     </div>
 
     <div class="lesson-overview-equipment">
@@ -201,8 +205,11 @@
         <div class="card-lesson-chapter">
           <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
           <h2 class="text-center"><%= skill_chapter.title %></h2>
-          <h3>Summary</h3>
-          <p class="skill-description"><%= skill_chapter.description %></p>
+          <h3>Transcription</h3>
+
+          <div class="skill-description-container">
+            <p class="skill-description"><%= skill_chapter.description %></p>
+          </div>
 
           <% unless @lesson.skill_chapters.last == skill_chapter  %>
             <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
@@ -238,7 +245,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
-                <p class="ingredient-measure">
+                <p class="ingredient-measure" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
                   <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
                 </p>
               <% end %>
