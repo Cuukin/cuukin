@@ -18,6 +18,9 @@ body {
   background-color: $light-gray;
   color: $black;
 
+  -ms-overflow-style: none;  /* IE and Edge - hiden scrollbar */
+  scrollbar-width: none;  /* Firefox - hiden scrollbar */
+
   h1 {
     font-size: 24px;
     font-weight: 800;
@@ -42,6 +45,10 @@ body {
     text-decoration: none;
     color: $cuukin;
   }
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 // Content Container
