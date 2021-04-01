@@ -8,12 +8,8 @@
   padding: 16px 0 40px 0;
 }
 
-.home-carousel-slide {
-  width: 100%;
+.home-carousel-item {
   display: none;
-
-  background-repeat: no-repeat;
-  background-size: inherit;
 }
 
 .home-carousel-item, .home-first-item {
@@ -35,13 +31,46 @@
 }
 
 .carousel-img {
-  height: 240px;
+  height: 280px;
+  margin: 40px 0;
+}
+
+.carousel-item-2-heading {
   margin: 40px 0;
 }
 
 .home-carousel-item-content {
   margin-bottom: 16px;
   padding: 0 24px;
+}
+
+.content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    color: $dark-red;
+    font-size: 90px;
+    font-weight: 800;
+    opacity: .1;
+    position: relative;
+    left: 24px;
+    z-index: 1;
+  }
+  p, h3 {
+    margin: 0;
+    max-width: 210px;
+    z-index: 3;
+    span {
+      font-weight: 600;
+    }
+  }
+  img {
+    position: relative;
+    right: 16px;
+    z-index: 1;
+  }
 }
 
 // buttons and progress bar
@@ -62,7 +91,7 @@
   }
 
   .home-progress-bar {
-    width: 48px;
+    width: 38px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
