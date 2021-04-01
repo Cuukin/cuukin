@@ -1,19 +1,29 @@
 const unitConversion = () => {
-  // convert unit button
-  const imperialToggle = document.querySelector('#imperial-toggle');
-  const unitBtn = document.querySelector('.unit-conversion-btn');
-  const units = document.querySelectorAll('.unit');
+  // GENERAL VARIABLES
+  // REUSED ALL OVER THE FUNCTION
 
-  // ingredients measure quantities (quantity + unit)
+  // unit btns
+  const imperialToggle = document.querySelector('#imperial-toggle');
+  const metricToggle = document.querySelector('#metric-toggle');
+  const unitBtn = document.querySelector('.unit-conversion-btn');
+
+  // serving buttons
+  const addBtn = document.querySelector('#plusBtn');
+  const minusBtn = document.querySelector('#minusBtn');
+  const servingNumber = document.querySelector('.serving-paragraph');
+
+  // swap btns
+  const swapBtns = document.querySelectorAll('.ingredient-swap-btn');
+
+  // ingredients measures (inside is quantity + unit)
   const ingredientMeasures = document.querySelectorAll('.ingredient-measure');
 
-  let convertedValue = 0;
+  // counter for serving
+  let counter = 1;
 
-  // unit conversion function
+  // UNIT CONVERSION
   if (unitBtn) {
     unitBtn.addEventListener('click', () => {
-
-      // unit conversion
       ingredientMeasures.forEach((measure) => {
         // initial units based on data set
         let initialUnit = measure.getAttribute('data-ingredient-unit');
@@ -34,24 +44,17 @@ const unitConversion = () => {
       });
 
       // button toggle
+      const units = document.querySelectorAll('.unit');
       units.forEach((unit) => {
         unit.classList.toggle('unitSelected');
       });
     });
   };
 
-  // edit serving buttons
-  const addBtn = document.querySelector('#plusBtn');
-  const minusBtn = document.querySelector('#minusBtn');
-  const servingNumber = document.querySelector('.serving-paragraph');
-
-  let counter = 1;
-
-  // edit serving function
+  // EDIT SERVING
   if (addBtn) {
     minusBtn.style.visibility = "hidden";
 
-    // more servings function
     addBtn.addEventListener('click', () => {
       minusBtn.style.visibility = "";
 
@@ -68,21 +71,20 @@ const unitConversion = () => {
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
         if (measureQuantity && measureQuantity.innerText != "") {
-          let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
-          let initialValue = Number.parseFloat(measureQuantityValue) / (counter - 1);
+          let quantityValue = Number.parseFloat(measureQuantity.innerText);
+          let initialQuantity = quantityValue / (counter - 1);
 
-          convertedValue = initialValue * counter;
+          let convertedQuantity = initialQuantity * counter;
 
-          if (convertedValue % 1 == 0) {
-            measureQuantity.innerText = (initialValue * counter).toFixed(0);
+          if (convertedQuantity % 1 == 0) {
+            measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
           } else {
-            measureQuantity.innerText = (initialValue * counter).toFixed(1);
+            measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
           };
         };
       });
     });
 
-    // less servings function
     minusBtn.addEventListener('click', () => {
       addBtn.style.visibility = "";
 
@@ -99,24 +101,22 @@ const unitConversion = () => {
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
         if (measureQuantity && measureQuantity.innerText != "") {
-          let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
-          let initialValue = Number.parseFloat(measureQuantityValue) / (counter + 1);
+          let quantityValue = Number.parseFloat(measureQuantity.innerText);
+          let initialQuantity = quantityValue / (counter + 1);
 
-          convertedValue = initialValue * counter;
+          let convertedValue = initialQuantity * counter;
 
           if (convertedValue % 1 == 0) {
-            measureQuantity.innerText = (initialValue * counter).toFixed(0);
+            measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
           } else {
-            measureQuantity.innerText = (initialValue * counter).toFixed(1);
+            measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
           };
         };
       });
     });
   };
 
-  // Swap Ingredient
-  const swapBtns = document.querySelectorAll('.ingredient-swap-btn');
-
+  // SWAP INGREDIENT
   if (swapBtns) {
     swapBtns.forEach((btn) => {
       let swapModal = document.getElementById(`${btn.classList[1]}`);
@@ -142,10 +142,6 @@ const unitConversion = () => {
       swapIngredientBtns.forEach((swapIngredient) => {
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
-
-          // Getting it back to metric if it isnt already there!
-          const imperialToggle = document.querySelector('#imperial-toggle');
-          const metricToggle = document.querySelector('#metric-toggle');
 
           if (imperialToggle.classList[1] == 'unitSelected') {
             // toggles unit button back to metric
