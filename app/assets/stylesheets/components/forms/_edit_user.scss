@@ -1,0 +1,12 @@
+#edit-commitment-btn {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0;
+  color: $cuukin;
+  padding: 1px;
+  border-bottom: 1px solid $cuukin;
+
+  &:hover {
+    opacity: .7;
+  }
+}
