@@ -179,16 +179,32 @@ const unitConversion = () => {
           icon.style.transformOrigin = "50% 50%";
           icon.style.transform = 'rotate(' + current_rotation + 'deg)';
 
+          const updateTextWithOpacity = (text, newInfo) => {
+            text.style.transition = "opacity ease-in-out 0.2s";
+            setTimeout(function() {
+              text.style.opacity = 0;
+            }, 0);
+            setTimeout(function() {
+              text.innerText = newInfo;
+            }, 300);
+            setTimeout(function() {
+              text.style.opacity = 1;
+            }, 500);
+          };
+
           ingredients.forEach((ing) => {
-            ing.innerText = swapIngredient.id;
+            let newIng = swapIngredient.id;
+            updateTextWithOpacity(ing, newIng);
           });
 
           quantities.forEach((quantity) => {
-            quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity') * counter;
+            let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity') * counter;
+            updateTextWithOpacity(quantity, newQuantity);
           });
 
           units.forEach((unit) => {
-            unit.innerText = swapIngredient.getAttribute('data-ingredient-unit');
+            let newUnit = swapIngredient.getAttribute('data-ingredient-unit');
+            updateTextWithOpacity(unit, newUnit);
           });
 
           // Updating the INITIAL VALUES array!
