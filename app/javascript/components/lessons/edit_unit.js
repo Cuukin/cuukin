@@ -1,5 +1,6 @@
 const unitConversion = () => {
   // convert unit button
+  const imperialToggle = document.querySelector('#imperial-toggle');
   const unitBtn = document.querySelector('.unit-conversion-btn');
   const units = document.querySelectorAll('.unit');
 
@@ -11,51 +12,30 @@ const unitConversion = () => {
   // unit conversion function
   if (unitBtn) {
     unitBtn.addEventListener('click', () => {
-      let index = -1;
-
-      // button toggle
-      units.forEach((unit) => {
-        unit.classList.toggle('unitSelected');
-      });
 
       // unit conversion
       ingredientMeasures.forEach((measure) => {
+        // initial units based on data set
+        let initialUnit = measure.getAttribute('data-ingredient-unit');
+        let initialQuantity = measure.getAttribute('data-ingredient-quantity');
+
+        // unit and quantity elements
         let measureUnit = measure.querySelector('.ingredient-unit');
         let measureQuantity = measure.querySelector('.ingredient-quantity');
 
         if (measureQuantity && measureQuantity.innerText != "") {
-          index += 1;
-          let initialQuantity = measure.getAttribute('data-ingredient-quantity');
-          let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
-
-          if (measureUnit.innerText == 'g') {
-            measureUnit.innerText = 'oz';
-            convertedValue = measureQuantityValue / 28.35;
-            measureQuantity.innerText = convertedValue.toFixed(1);
-          } else if (measureUnit.innerText == 'oz') {
-            measureUnit.innerText = 'g';
+          if (imperialToggle.classList[1] == 'unitSelected') {
+            measureUnit.innerText = initialUnit;
             measureQuantity.innerText = initialQuantity * counter;
-            //measureQuantity.innerText = initialValues[index] * counter;
-          } else if (measureUnit.innerText == 'ml') {
-            measureUnit.innerText = 'cups';
-            convertedValue = measureQuantityValue / 284;
-            measureQuantity.innerText = convertedValue.toFixed(1);
-          } else if (measureUnit.innerText == 'l') {
-            measureUnit.innerText = 'cups';
-            convertedValue = measureQuantityValue * 3.52
-            measureQuantity.innerText = convertedValue.toFixed(1);
-          } else if (measureUnit.innerText == 'cups') {
-            if (measureQuantityValue < 3.5) {
-              measureUnit.innerText = 'ml';
-              measureQuantity.innerText = initialQuantity * counter;
-              // measureQuantity.innerText = initialValues[index] * counter;
-            } else {
-              measureUnit.innerText = 'l';
-              measureQuantity.innerText = initialQuantity * counter;
-              //measureQuantity.innerText = initialValues[index] * counter;
-            };
+          } else {
+            fromMetricToImperial(measureQuantity, measureUnit);
           };
         };
+      });
+
+      // button toggle
+      units.forEach((unit) => {
+        unit.classList.toggle('unitSelected');
       });
     });
   };
@@ -217,10 +197,11 @@ const unitConversion = () => {
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
               let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
+              updateTextWithOpacity(quantity, newQuantity);
             } else {
               let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
+              updateTextWithOpacity(quantity, newQuantity);
             };
-            updateTextWithOpacity(quantity, newQuantity);
           });
 
           units.forEach((unit) => {
@@ -230,6 +211,21 @@ const unitConversion = () => {
         });
       });
     });
+  };
+};
+
+const fromMetricToImperial = (quantity, unit) => {
+  let quantityValue = Number.parseFloat(quantity.innerText);
+
+  if (unit.innerText == 'g') {
+    unit.innerText = 'oz';
+    quantity.innerText = (quantityValue / 28.35).toFixed(1);
+  } else if (unit.innerText == 'ml') {
+    unit.innerText = 'cups';
+    quantity.innerText = (quantityValue / 284).toFixed(1);
+  } else if (unit.innerText == 'l') {
+    unit.innerText == 'cups';
+    quantity.innerText = (quantityValue * 3.52).toFixed(1);
   };
 };
 
