@@ -25,6 +25,7 @@ const unitConversion = () => {
 
         if (measureQuantity && measureQuantity.innerText != "") {
           index += 1;
+          let initialQuantity = measure.getAttribute('data-ingredient-quantity');
           let measureQuantityValue = Number.parseFloat(measureQuantity.innerText);
 
           if (measureUnit.innerText == 'g') {
@@ -33,7 +34,7 @@ const unitConversion = () => {
             measureQuantity.innerText = convertedValue.toFixed(1);
           } else if (measureUnit.innerText == 'oz') {
             measureUnit.innerText = 'g';
-            measureQuantity.innerText = measure.getAttribute('data-ingredient-quantity') * counter;
+            measureQuantity.innerText = initialQuantity * counter;
             //measureQuantity.innerText = initialValues[index] * counter;
           } else if (measureUnit.innerText == 'ml') {
             measureUnit.innerText = 'cups';
@@ -46,11 +47,11 @@ const unitConversion = () => {
           } else if (measureUnit.innerText == 'cups') {
             if (measureQuantityValue < 3.5) {
               measureUnit.innerText = 'ml';
-              measureQuantity.innerText = measure.getAttribute('data-ingredient-quantity') * counter;
+              measureQuantity.innerText = initialQuantity * counter;
               // measureQuantity.innerText = initialValues[index] * counter;
             } else {
               measureUnit.innerText = 'l';
-              measureQuantity.innerText = measure.getAttribute('data-ingredient-quantity') * counter;
+              measureQuantity.innerText = initialQuantity * counter;
               //measureQuantity.innerText = initialValues[index] * counter;
             };
           };
@@ -147,6 +148,7 @@ const unitConversion = () => {
       let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
       let quantities = document.querySelectorAll(`.quantity-${btn.classList[1]}`);
       let units = document.querySelectorAll(`.unit-${btn.classList[1]}`);
+
       let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
 
       swapIngredientBtns.forEach((swapIngredient) => {
@@ -172,7 +174,8 @@ const unitConversion = () => {
               if (initialQuantity == "") {
                 measureQuantity.innerText = initialQuantity;
               } else {
-                measureQuantity.innerText = initialQuantity * counter;
+                let initialQuantityValue = Number.parseFloat(initialQuantity);
+                measureQuantity.innerText = initialQuantityValue * counter;
               };
 
               measureUnit.innerText = measure.getAttribute('data-ingredient-unit');
@@ -184,7 +187,11 @@ const unitConversion = () => {
           });
 
           quantities.forEach((quantity) => {
-            quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity') * counter;
+            if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
+              quantity.innerText = swapIngredient.getAttribute('data-ingredient-quantity');
+            } else {
+              quantity.innerText = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
+            };
           });
 
           units.forEach((unit) => {
