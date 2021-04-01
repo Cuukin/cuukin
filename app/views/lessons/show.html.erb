@@ -205,7 +205,10 @@
           <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
           <h2 class="text-center"><%= skill_chapter.title %></h2>
           <h3>Summary</h3>
-          <p class="skill-description"><%= skill_chapter.description %></p>
+
+          <div class="skill-description-container">
+            <p class="skill-description"><%= skill_chapter.description %></p>
+          </div>
 
           <% unless @lesson.skill_chapters.last == skill_chapter  %>
             <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
