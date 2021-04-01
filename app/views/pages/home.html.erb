@@ -4,11 +4,9 @@
     <%= image_tag('btn-back.svg', class: 'home-btn-back', id: 'prevBtn') %>
 
     <div class="home-first-item">
-      <%= image_tag('home-00.svg', class:'carousel-img') %>
-      <div class="home-carousel-item-content">
-        <h2>Cooking school at your fingertips</h2>
-        <p>Learn. Cook. Have Fun.</p>
-      </div>
+      <%= image_tag('home-00.svg', class:'carousel-img-0') %>
+      <h2>Cooking school at your fingertips</h2>
+      <p>Learn. Cook. Have Fun.</p>
 
       <div class="carousel-primary-btns">
         <p class="primary-btn" id="registerBtn">Register</p>
@@ -17,8 +15,8 @@
     </div>
 
     <div class="home-carousel-item">
-      <%= image_tag('home-01.svg', class:'carousel-img') %>
-      <div class="home-carousel-item-content">
+      <%= image_tag('home-01.svg', class:'carousel-img-1') %>
+      <div class="home-carousel-item-content" id="firstItem">
         <h2>Frustrated about the meals you make?</h2>
         <p>Recipes are challenging without the right skills and it's no fun when your dish does not come out the right way (again)</p>
       </div>
@@ -46,15 +44,14 @@
     </div>
 
     <div class="home-carousel-nav">
-      <%= image_tag('btn-next.svg', id: 'nextBtn') %>
+      <%= image_tag('btn-next.svg', class: 'nextBtn', id: 'nextBtn') %>
+      <%= link_to new_user_registration_path do %>
+        <%= image_tag('btn-next.svg', class: 'nextBtn', id: 'finishCarouselBtn') %>
+      <% end %>
 
       <div class='home-progress-bar'>
         <div class='circle'></div>
         <div class='circle circle-disabled'></div>
-      </div>
-
-      <div class="registerBtn" style="display: none;">
-        <%= link_to 'Register to Cuuk!', new_user_registration_path, class: 'primary-btn', id: 'registerBtn' %>
       </div>
     </div>
   </div>
