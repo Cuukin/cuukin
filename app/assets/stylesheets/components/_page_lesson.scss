@@ -340,6 +340,15 @@
 
   a, a:hover {
     color: $black;
+    position: relative;
+
+    i {
+      font-size: 12px;
+      position: absolute;
+      top: 4px;
+      margin-left: 4px;
+      color: $dark-gray;
+    }
   }
 
   .ingredient-measure, .equipment-measure {

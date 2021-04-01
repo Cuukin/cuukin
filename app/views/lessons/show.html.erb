@@ -124,6 +124,7 @@
               <% if r_tool.tool.suggested_product %>
                 <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
                   <%= r_tool.tool.name %>
+                  <%= icon('fas', 'external-link-alt') %>
                 <% end %>
               <% else %>
                 <%= r_tool.tool.name %>
