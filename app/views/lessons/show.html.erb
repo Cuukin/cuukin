@@ -107,7 +107,7 @@
             </td>
             <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
-              <td class="ingredient-swap-btn <%= r_ingredient.id %>">Swap</td>
+              <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
               <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
             <% end %>
           </tr>

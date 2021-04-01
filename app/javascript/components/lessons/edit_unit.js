@@ -151,8 +151,16 @@ const unitConversion = () => {
     swapBtns.forEach((btn) => {
       let swapModal = document.getElementById(`${btn.classList[1]}`);
 
+      let current_rotation = 0;
+
       btn.addEventListener('click', () => {
         swapModal.style.display = "block";
+
+        current_rotation += 360;
+        let icon = btn.querySelector('i');
+        icon.style.transition = "transform ease-in-out 0.6s";
+        icon.style.transformOrigin = "50% 50%";
+        icon.style.transform = 'rotate(' + current_rotation + 'deg)';
       });
 
       let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
@@ -164,6 +172,12 @@ const unitConversion = () => {
 
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
+
+          current_rotation += 360;
+          let icon = btn.querySelector('i');
+          icon.style.transition = "transform ease-in-out 0.6s";
+          icon.style.transformOrigin = "50% 50%";
+          icon.style.transform = 'rotate(' + current_rotation + 'deg)';
 
           ingredients.forEach((ing) => {
             ing.innerText = swapIngredient.id;
