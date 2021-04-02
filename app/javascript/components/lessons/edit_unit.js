@@ -18,8 +18,9 @@ const unitConversion = () => {
   // ingredients measures (inside is quantity + unit)
   const ingredientMeasures = document.querySelectorAll('.ingredient-measure');
 
-  // counter for serving
+  // counter for serving and unit
   let counter = 1;
+
 
   // UNIT CONVERSION
   if (unitBtn) {
@@ -119,13 +120,23 @@ const unitConversion = () => {
   // SWAP INGREDIENT
   if (swapBtns) {
     swapBtns.forEach((btn) => {
-      let swapModal = document.getElementById(`${btn.classList[1]}`);
-
       let current_rotation = 0;
 
-      btn.addEventListener('click', () => {
-        swapModal.style.display = "block";
+      // modal with swap options
+      // and all ingredient swap options from that modal
+      let swapModal = document.getElementById(`${btn.classList[1]}`);
+      let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
 
+      // placeholders from overview and recipe method
+      // that connects to the ingredient being swapped
+      let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
+      let quantities = document.querySelectorAll(`.quantity-${btn.classList[1]}`);
+      let units = document.querySelectorAll(`.unit-${btn.classList[1]}`);
+
+      btn.addEventListener('click', () => {
+        swapModal.style.display = "block"; // open modal from that button
+
+        // rotate icon from that btn
         current_rotation += 360;
         let icon = btn.querySelector('i');
         icon.style.transition = "transform ease-in-out 0.6s";
@@ -133,38 +144,14 @@ const unitConversion = () => {
         icon.style.transform = 'rotate(' + current_rotation + 'deg)';
       });
 
-      let ingredients = document.querySelectorAll(`.ingredient-${btn.classList[1]}`);
-      let quantities = document.querySelectorAll(`.quantity-${btn.classList[1]}`);
-      let units = document.querySelectorAll(`.unit-${btn.classList[1]}`);
-
-      let swapIngredientBtns = swapModal.querySelectorAll('.swap-ingredient');
-
       swapIngredientBtns.forEach((swapIngredient) => {
+
         swapIngredient.addEventListener('click', () => {
           swapModal.style.display = "none";
 
-          if (imperialToggle.classList[1] == 'unitSelected') {
-            // toggles unit button back to metric
-            imperialToggle.classList.toggle('unitSelected');
-            metricToggle.classList.toggle('unitSelected');
-
-            // shifts all quantities and units back to database original * counter
-            ingredientMeasures.forEach((measure) => {
-              let measureQuantity = measure.querySelector('.ingredient-quantity');
-              let measureUnit = measure.querySelector('.ingredient-unit');
-
-              let initialQuantity = measure.getAttribute('data-ingredient-quantity');
-
-              if (initialQuantity == "") {
-                measureQuantity.innerText = initialQuantity;
-              } else {
-                let initialQuantityValue = Number.parseFloat(initialQuantity);
-                measureQuantity.innerText = initialQuantityValue * counter;
-              };
-
-              measureUnit.innerText = measure.getAttribute('data-ingredient-unit');
-            });
-          };
+          // get information from ingredient swap
+          let ingredientUnit = swapIngredient.getAttribute('data-ingredient-unit');
+          let ingredientQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
 
           current_rotation += 360;
           let icon = btn.querySelector('i');
@@ -172,19 +159,14 @@ const unitConversion = () => {
           icon.style.transformOrigin = "50% 50%";
           icon.style.transform = 'rotate(' + current_rotation + 'deg)';
 
-          const updateTextWithOpacity = (text, newInfo) => {
-            text.style.transition = "opacity ease-in-out 0.2s";
-            setTimeout(function() {
-              text.style.opacity = 0;
-            }, 0);
-            setTimeout(function() {
-              text.innerText = newInfo;
-            }, 300);
-            setTimeout(function() {
-              text.style.opacity = 1;
-            }, 500);
+          // check if its imperial
+          if (imperialToggle.classList[1] == 'unitSelected') {
+            if (ingredientUnit == 'g' || ingredientUnit == 'ml' || ingredientUnit == 'l') {
+              fromMetricToImperialDataset(swapIngredient, ingredientQuantity, ingredientUnit);
+            };
           };
 
+          // update ingredient, quantity and unit
           ingredients.forEach((ing) => {
             let newIng = swapIngredient.id;
             updateTextWithOpacity(ing, newIng);
@@ -193,21 +175,37 @@ const unitConversion = () => {
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
               let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
+              quantity.dataset.ingredientQuantity = newQuantity;
               updateTextWithOpacity(quantity, newQuantity);
             } else {
               let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
+              quantity.dataset.ingredientQuantity = newQuantity / counter;
               updateTextWithOpacity(quantity, newQuantity);
             };
           });
 
           units.forEach((unit) => {
             let newUnit = swapIngredient.getAttribute('data-ingredient-unit');
+            unit.dataset.ingredientUnit = newUnit;
             updateTextWithOpacity(unit, newUnit);
           });
         });
       });
     });
   };
+};
+
+const updateTextWithOpacity = (text, newInfo) => {
+  text.style.transition = "opacity ease-in-out 0.2s";
+  setTimeout(function() {
+    text.style.opacity = 0;
+  }, 0);
+  setTimeout(function() {
+    text.innerText = newInfo;
+  }, 300);
+  setTimeout(function() {
+    text.style.opacity = 1;
+  }, 500);
 };
 
 const fromMetricToImperial = (quantity, unit) => {
@@ -222,6 +220,21 @@ const fromMetricToImperial = (quantity, unit) => {
   } else if (unit.innerText == 'l') {
     unit.innerText == 'cups';
     quantity.innerText = (quantityValue * 3.52).toFixed(1);
+  };
+};
+
+const fromMetricToImperialDataset = (element, quantity, unit) => {
+  let quantityValue = Number.parseFloat(quantity);
+
+  if (unit == 'g') {
+    element.dataset.ingredientUnit = 'oz';
+    element.dataset.ingredientQuantity = (quantityValue / 28.35).toFixed(1);
+  } else if (unit == 'ml') {
+    element.dataset.ingredientUnit = 'cups';
+    element.dataset.ingredientQuantity = (quantityValue / 284).toFixed(1);
+  } else if (unit == 'l') {
+    element.dataset.ingredientUnit == 'cups';
+    element.dataset.ingredientQuantity = (quantityValue * 3.52).toFixed(1);
   };
 };
 
