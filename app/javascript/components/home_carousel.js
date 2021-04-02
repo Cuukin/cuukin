@@ -62,11 +62,15 @@ const homeCarousel = () => {
         carouselItems[counter].style.display = "none";
       } else {
         counter -= 1;
+
         carouselItems[counter + 1].style.display = "none";
         carouselItems[counter].style.display = "block";
 
         progressCircles[counter + 1].classList.add('circle-disabled');
         progressCircles[counter].classList.remove('circle-disabled');
+
+        nextBtn.style.display = "block";
+        finishCarouselBtn.style.display = "none";
       };
       window.scrollTo({
         top: 0,
