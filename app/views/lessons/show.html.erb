@@ -103,14 +103,14 @@
       <table>
         <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
           <tr>
-            <td class="ingredient-measure" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
+            <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
               <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
             </td>
 
             <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
 
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
-              <td class="ingredient-swap-btn <%= r_ingredient.id %>">Swap</td>
+              <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
               <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
             <% end %>
           </tr>
@@ -128,6 +128,7 @@
               <% if r_tool.tool.suggested_product %>
                 <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
                   <%= r_tool.tool.name %>
+                  <%= icon('fas', 'external-link-alt') %>
                 <% end %>
               <% else %>
                 <%= r_tool.tool.name %>
@@ -172,10 +173,10 @@
       <% elsif @open_to_unblock %>
         <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
       <% else %>
-        <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
+        <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
       <% end %>
     <% else %>
-      <p class="primary-btn disabled" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
+      <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
     <% end %>
   </div>
 </div>
@@ -244,7 +245,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
-                <p class="ingredient-measure" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
+                <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
                   <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
                 </p>
               <% end %>
@@ -257,7 +258,7 @@
           <% if @lesson.recipe.recipe_methods.last == recipe_method %>
             <% if @validated %>
               <%= link_to book_path(@lesson.book) do %>
-                <p class="primary-btn disabled finish-lesson" style="cursor: pointer;">Lesson Validated</p>
+                <p class="disabled-btn finish-lesson" style="cursor: pointer;">Lesson Validated</p>
               <% end %>
             <% elsif @skipped %>
               <div class="warning-completion">
