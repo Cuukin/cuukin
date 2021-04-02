@@ -13,6 +13,16 @@
   padding: 0 16px;
 }
 
+.home-first-item {
+  h2 {
+    margin: 0 auto 16px;
+    max-width: 300px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
 .home-carousel-item, .home-first-item {
   width: 100%;
   text-align: center;
@@ -21,8 +31,8 @@
   h2 {
     color: $dark-red;
     font-weight: 800;
-    margin-bottom: 16px;
     font-size: 24px;
+    margin-bottom: 16px;
   }
 
   p {
@@ -32,33 +42,77 @@
 }
 
 .carousel-img-0 {
-  width: 280px;
-  margin: 32px 0 40px;
+  height: 264px;
+  margin: 32px 0 56px;
 }
 
 .carousel-img-1 {
-  width: 240px;
-  margin: 30px 0 40px;
+  height: 272px;
+  margin: 16px 0 44px;
 }
 
 .carousel-item-2-heading {
-  margin: 48px 0;
-  //padding: 0 16px;
+  margin: 40px auto 16px;
+  max-width: 280px;
 }
 
 .home-carousel-item-content {
-  margin: 0 auto 24px;
+  margin: 0 auto 18px;
 }
 
 #firstItem {
-  max-width: 300px;
+  max-width: 320px;
+  margin-bottom: 40px;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+}
+
+.content-wrap-container {
+  width: 100%;
+  min-height: 116px;
+  //padding: 0 16px;
+  position: relative;
+  margin-bottom: 16px;
+
+  p {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 0 4px;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.content-p {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-wrap {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
+  justify-content: space-around;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
 
   h3 {
     margin: 0;
@@ -66,31 +120,24 @@
     font-size: 90px;
     font-weight: 800;
     opacity: .1;
-    position: relative;
-    left: 24px;
-    z-index: 1;
   }
-  p {
-    margin: 0;
-    max-width: 220px;
-    z-index: 3;
-    span {
-      font-weight: 600;
-    }
-  }
+
   img {
-    flex-grow: 2;
-    position: relative;
-    right: 16px;
-    z-index: 1;
+    height: 116px;
+    width: 116px;
   }
 }
 
 // buttons and progress bar
 
 .carousel-primary-btns {
-  padding: 0 16px;
-  margin-top: 40px;
+  padding: 0 24px;
+  margin-top: 56px;
+
+  .primary-btn, .secondary-btn {
+    margin-bottom: 4px;
+    padding: 12px 15px;
+  }
 }
 
 .home-carousel-nav {
