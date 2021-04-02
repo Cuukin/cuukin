@@ -122,6 +122,9 @@ const unitConversion = () => {
     swapBtns.forEach((btn) => {
       let current_rotation = 0;
 
+      // measure item (contains both quantity and unit)
+      let measureItem = document.querySelector(`.measure-${btn.classList[1]}`);
+
       // modal with swap options
       // and all ingredient swap options from that modal
       let swapModal = document.getElementById(`${btn.classList[1]}`);
@@ -175,19 +178,22 @@ const unitConversion = () => {
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
               let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
-              quantity.dataset.ingredientQuantity = newQuantity;
               updateTextWithOpacity(quantity, newQuantity);
+              swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
+              measureItem.dataset.ingredientQuantity = ingredientQuantity;
             } else {
               let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
-              quantity.dataset.ingredientQuantity = newQuantity / counter;
               updateTextWithOpacity(quantity, newQuantity);
+              swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
+              measureItem.dataset.ingredientQuantity = ingredientQuantity;
             };
           });
 
           units.forEach((unit) => {
             let newUnit = swapIngredient.getAttribute('data-ingredient-unit');
-            unit.dataset.ingredientUnit = newUnit;
             updateTextWithOpacity(unit, newUnit);
+            swapIngredient.dataset.ingredientUnit = ingredientUnit;
+            measureItem.dataset.ingredientUnit = ingredientUnit;
           });
         });
       });
