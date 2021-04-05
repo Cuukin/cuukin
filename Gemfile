@@ -46,6 +46,7 @@ gem 'sidekiq-failures', '~> 1.0'
 # Active Admin - UI to handle DB
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin_addons'
 
 # Blazer - explore data with SQL
 gem 'blazer'
