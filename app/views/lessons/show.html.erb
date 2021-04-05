@@ -162,21 +162,17 @@
       </div>
     </div>
 
-    <% if @lesson.title == 'Avotoast' || @lesson.title == "Chocolate Kissed Strawberries" %>
-      <% if @validated %>
-        <div class="double-btn">
-          <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
-          <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
-        </div>
-      <% elsif @open || @skipped || @first %>
-        <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
-      <% elsif @open_to_unblock %>
-        <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
-      <% else %>
-        <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
-      <% end %>
+    <% if @validated %>
+      <div class="double-btn">
+        <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
+        <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
+      </div>
+    <% elsif @open || @skipped || @first %>
+      <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
+    <% elsif @open_to_unblock %>
+      <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
     <% else %>
-      <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Unavailable</p>
+      <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
     <% end %>
   </div>
 </div>
