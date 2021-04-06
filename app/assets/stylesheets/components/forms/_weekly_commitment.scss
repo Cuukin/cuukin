@@ -1,0 +1,29 @@
+.edit-commitment-container {
+  .form-check {
+    padding: 0;
+  }
+  .form-check-input {
+    position: absolute;
+    transform: scale(0);
+  }
+  .form-check-input + label {
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 100%;
+    background-color: transparent;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    margin-bottom: 4px;
+  }
+  .form-check-input:checked + label {
+    color: $white;
+    background-color: $cuukin;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    box-shadow:inset 0px 0px 0px 3px $dark-red;
+  }
+}
