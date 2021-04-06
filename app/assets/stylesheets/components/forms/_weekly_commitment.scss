@@ -1,4 +1,4 @@
-.edit-commitment-container {
+.edit-commitment-container, .unblock-lesson-form-inputs {
   .form-check {
     padding: 0;
   }
@@ -17,7 +17,7 @@
     -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     box-shadow:inset 0px 0px 0px 1px #AFAFAF;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
   .form-check-input:checked + label {
     color: $white;

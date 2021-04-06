@@ -2,19 +2,18 @@
   <div class="recipe-validation-modal-content">
     <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeUnblockModal') %>
 
-    <h4>Before unlocking the lesson with Cuukies...<br><br>
-    Can you tell us <span>why you did not want to complete</span> the previous lesson?</h4>
+    <h4>Can you tell us <span>why you did not want to complete</span> the previous lesson?</h4>
 
     <div class="unblock-lesson-form">
       <%= simple_form_for(@lesson_unblock, url: lesson_lesson_unblocks_path(@lesson), method: 'post') do |f| %>
         <%= f.error_notification %>
         <div class="unblock-lesson-form-inputs">
           <%= f.input :reason,
-            label: "",
+            legend_tag: false,
             collection: ["I do not like the lesson's recipe", "I already know the topic well",
             "Lesson's recipe does not fit my dieatary restrictions"],
             as: :radio_buttons %>
-          <%= f.input :other_reason, label: false, placeholder: "Other" %>
+          <%= f.input :other_reason, label: false, placeholder: "Other reason" %>
         </div>
         <%= f.button :submit, 'Submit & Unlock', class: 'primary-btn' %>
       <% end %>

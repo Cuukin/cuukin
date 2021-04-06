@@ -4,10 +4,21 @@
   }
 
   .lesson_unblock_other_reason {
-    margin-bottom: 12px;
+    //margin-bottom: 12px;
   }
 
   .form-check {
-    margin-bottom: 12px;
+    //margin-bottom: 12px;
+  }
+}
+
+.lesson_unblock_other_reason {
+  .form-control {
+    margin-bottom: 8px;
+    border-radius: 12px;
+    border: 0;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    box-shadow:inset 0px 0px 0px 1px #AFAFAF;
   }
 }
