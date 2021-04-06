@@ -34,7 +34,8 @@
     <%= image_tag('btn-help.svg', class: 'btn-help') %>
   </div>
 
-  <div class="lesson-photo" style="background-image: url('<%= image_path "#{@lesson.recipe.photo_url}"%>')">
+  <div class="lesson-photo">
+    <%= image_tag("#{@lesson.recipe.photo_url}") %>
   </div>
 
   <div class="card-lesson-overview">
