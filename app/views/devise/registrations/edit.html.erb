@@ -3,7 +3,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
+      <div class="form-inputs edit-user-main-container">
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -22,13 +22,24 @@
                     input_html: { rows: '2'},
                     label: 'Say something about yourself' %>
 
-        <%= f.input :email, required: true, label: 'Email', placeholder: 'Email' %>
+        <p class="mb-4" id="edit-commitment-btn">Edit weekly commitment</p>
 
+        <%= f.input :email_nudges, label: 'I want to receive reminders on my e-mail', input_html: { class: "toggle" } %>
+
+        <div class="form-actions mt-3 double-btn edit-user-btns">
+          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+          <%= f.button :submit, "Update", class: "primary-btn" %>
+        </div>
       </div>
 
-      <div class="form-actions mt-3 double-btn">
-        <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
-        <%= f.button :submit, "Update", class: "primary-btn" %>
+      <div class="form-inputs edit-commitment-container" style="display: none;">
+        <h3>How many lessons/meals per week do you aim to cook?</h3>
+        <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons, legend_tag: false %>
+
+        <div class="form-actions double-btn edit-user-btns">
+          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+          <%= f.button :submit, "Update", class: "primary-btn" %>
+        </div>
       </div>
     <% end %>
   </div>

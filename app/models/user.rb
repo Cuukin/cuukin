@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :username, uniqueness: true
+  validates :terms_of_service, acceptance: true
 
   after_create :set_username
   after_create :welcome_currencies

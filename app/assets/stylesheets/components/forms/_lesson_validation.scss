@@ -48,15 +48,6 @@
   cursor: pointer;
 }
 
-.lesson-validation-options-container {
-  display: flex;
-  justify-content: space-evenly;
-
-  .form-check {
-    padding: 0;
-  }
-}
-
 .lesson-validation-options {
   display: flex;
   flex-direction: column;
@@ -70,8 +61,8 @@
 
   p {
     font-size: 14px;
-    padding: 0 8px;
-
+    margin: 0;
+    max-width: 50px;
   }
 
   .lv-option {
@@ -81,17 +72,31 @@
 
 .lesson-validation-options-container {
   display: flex;
-  margin-bottom: 16px;
-  width: 100%;
+  justify-content: space-around;
 
-  .form-check-label {
-    text-align: center;
+  .form-check {
+    padding: 0;
   }
 
   .form-check-input {
     position: absolute;
-    top: 88px;
-    margin: 0;
+    transform: scale(0);
+  }
+
+  .form-check-label {
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    border-radius: 12px;
+    padding: 4px 16px;
+  }
+
+  .form-check-input:checked + label {
+    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    box-shadow:inset 0px 0px 0px 3px $dark-red;
   }
 }
 
@@ -139,6 +144,9 @@
 }
 
 @media (max-width: 320px) {
+  .recipe-validation-modal-content {
+    width: 96%;
+  }
   .lesson-validation-options-container {
     .form-check-input {
       position: absolute;
