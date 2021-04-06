@@ -22,7 +22,9 @@
                     input_html: { rows: '2'},
                     label: 'Say something about yourself' %>
 
-        <p id="edit-commitment-btn">Edit weekly commitment</p>
+        <p class="mb-4" id="edit-commitment-btn">Edit weekly commitment</p>
+
+        <%= f.input :email_check, label: 'I want to receive nudges on my e-mail', input_html: { class: "toggle" } %>
 
         <div class="form-actions mt-3 double-btn edit-user-btns">
           <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
