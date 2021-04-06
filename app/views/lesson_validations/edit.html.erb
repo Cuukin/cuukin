@@ -31,9 +31,6 @@
         <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
 
         <fieldset class="form-group radio_buttons optional">
-          <!-- <legend class="col-form-label pt-0">Rating</legend> -->
-          <input type="hidden" name="lesson_validation[difficulcy]" value="">
-
           <div class="lesson-validation-options-container">
             <div class="form-check lesson-validation-options">
               <input class="form-check-input radio_buttons" type="radio" value="easy" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_1">
