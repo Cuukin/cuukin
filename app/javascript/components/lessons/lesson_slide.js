@@ -114,7 +114,9 @@ const lessonChaptersSlide = () => {
         progressBar.style.width = progressBarWidth + '%';
       };
 
-      lessonVideos[counter + 1].pause();
+      lessonVideos.forEach((video) => {
+        video.pause();
+      });
     });
   };
 }

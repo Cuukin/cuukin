@@ -3,79 +3,68 @@
 
     <%= image_tag('btn-back.svg', class: 'home-btn-back', id: 'prevBtn') %>
 
-    <div class="home-carousel-slide">
+    <div class="home-first-item">
+      <%= image_tag('home-00.svg', class:'carousel-img-0') %>
+      <h2>Cooking school at your fingertips</h2>
+      <p>Learn. Cook. Have Fun.</p>
 
-      <div class="home-carousel-item" id="carousel-first-item">
-        <%= image_tag('home-00.png', class:'carousel-img') %>
-        <div class="home-carousel-item-content">
-          <h2>Cooking school at your fingertips</h2>
-          <p>Learn. Cook. Have Fun.</p>
-        </div>
+      <div class="carousel-primary-btns">
+        <p class="primary-btn" id="registerBtn">Register</p>
+        <%= link_to 'Log-in', new_user_session_path, class: 'secondary-btn' %>
       </div>
-
-      <div class="home-carousel-item">
-        <%= image_tag('home-01.png', class:'carousel-img') %>
-        <div class="home-carousel-item-content">
-          <h2>Frustrated about the meals you make?</h2>
-          <p>Recipes are challenging without the right skills and it's no fun when your dish does not come out the right way (again)</p>
-        </div>
-      </div>
-
-      <div class="home-carousel-item">
-        <%= image_tag('home-02.png', class:'carousel-img') %>
-        <div class="home-carousel-item-content">
-          <h2>Learn to cook with structure, fun & ease</h2>
-          <p>Online recipes too challenging? Don't have the right skillset?</p>
-        </div>
-      </div>
-
-      <div class="home-carousel-item">
-        <%= image_tag('home-03.png', class:'carousel-img') %>
-        <div class="home-carousel-item-content">
-          <h2>STEP 1: Watch your first "Cuuk Book" lesson</h2>
-          <p>Online recipes too challenging? Don't have the right skillset?</p>
-        </div>
-      </div>
-
-      <div class="home-carousel-item">
-        <%= image_tag('home-04.png', class:'carousel-img') %>
-        <div class="home-carousel-item-content">
-          <h2>STEP 2: Put your skills to practice</h2>
-          <p>Online recipes too challenging? Don't have the right skillset?</p>
-        </div>
-      </div>
-
-      <div class="home-carousel-item">
-        <%= image_tag('home-05.png', class:'carousel-img', id: 'last-image') %>
-        <div class="home-carousel-item-content">
-          <h2>STEP 3: Level up & unlock more Cuuk Books</h2>
-          <p>Online recipes too challenging? Don't have the right skillset?</p>
-        </div>
-      </div>
-
     </div>
 
-    <div class="carousel-primary-btns">
-      <!-- <p class="primary-btn" id="startBtn">Register</p> -->
-      <%= link_to 'Register', new_user_registration_path, class: 'primary-btn', id: 'registerBtn' %>
-      <%= link_to 'Log-in', new_user_session_path, class: 'secondary-btn' %>
+    <div class="home-carousel-item">
+      <%= image_tag('home-01.svg', class:'carousel-img-1') %>
+      <div class="home-carousel-item-content" id="firstItem">
+        <h2>Frustrated about the meals you make?</h2>
+        <p>Recipes are challenging without the right skills and it's no fun when your dish does not come out the right way (again)</p>
+      </div>
+    </div>
+
+    <div class="home-carousel-item">
+      <div class="home-carousel-item-content">
+        <h2 class="carousel-item-2-heading">Let's start your cooking journey together</h2>
+        <div class="content-wrap-container">
+          <div class="content-p">
+            <p>Start your cooking journey by learning the <span>building block skills</span> you need</p>
+          </div>
+          <div class="content-wrap">
+            <h3>1</h3>
+            <%= image_tag('home-image-1.png') %>
+          </div>
+        </div>
+        <div class="content-wrap-container">
+          <div class="content-p">
+            <p>Put the skills to practice with our <span>curated recipes & earn rewards</span> on the go</p>
+          </div>
+          <div class="content-wrap">
+            <h3>2</h3>
+            <%= image_tag('home-image-2.png') %>
+          </div>
+        </div>
+        <div class="content-wrap-container">
+          <div class="content-p">
+            <p>Unlock more lessons, have <span>fun & level up to be the chef</span> you're meant to be</p>
+          </div>
+          <div class="content-wrap">
+            <h3>3</h3>
+            <%= image_tag('home-image-3.png') %>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="home-carousel-nav">
+      <%= image_tag('btn-next.svg', class: 'nextBtn', id: 'nextBtn') %>
+      <%= link_to new_user_registration_path do %>
+        <%= image_tag('btn-next.svg', class: 'nextBtn', id: 'finishCarouselBtn') %>
+      <% end %>
+
       <div class='home-progress-bar'>
         <div class='circle'></div>
         <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
       </div>
-
-      <%= image_tag('btn-next.svg', id: 'nextBtn') %>
-
-      <div class="registerBtn">
-        <%= link_to 'Register to Cuuk!', new_user_registration_path, class: 'primary-btn', id: 'registerBtn' %>
-      </div>
-
     </div>
   </div>
 </div>

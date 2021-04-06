@@ -1,4 +1,5 @@
 .primary-btn {
+  border: 0;
   font-size: 16px;
   background-color: $cuukin;
   color: $white;
@@ -10,21 +11,33 @@
   display: inline-block;
   margin: 4px 0;
   cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
 
-  &:hover {
+  &:hover, &:active {
     color: $white;
-  }
-
-  &:active {
-    // background-color: $gray;
-    // color: $light-gray;
-    opacity: .8;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
+    box-shadow:inset 0px 0px 0px 3px $dark-red;
   }
 }
 
-.disabled {
+.disabled-btn {
+  font-size: 16px;
   background-color: $gray;
   color: $light-gray;
+  text-align: center;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 4px 0;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color: $gray;
+    color: $light-gray;
+  }
 }
 
 .secondary-btn {
@@ -42,6 +55,7 @@
   padding: 10px 15px;
   display: inline-block;
   margin: 4px 0;
+  transition: box-shadow .2s ease-in-out;
 
   &:hover, &:active {
   color: $black;
