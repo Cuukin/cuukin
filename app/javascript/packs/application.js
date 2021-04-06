@@ -22,6 +22,7 @@ import { journeyMap } from '../components/journey_map';
 import { preventSelectDoubleClick } from '../components/prevent_select_click';
 import { cuukbook } from '../components/cuukbook';
 import { editWeeklyCommitment } from '../components/edit_weekly_commitment';
+import { termsOfService } from '../components/terms_of_service';
 
 import { expandedNavbar } from '../components/popups/expanded_navbar';
 import { recipeModal } from '../components/popups/start_recipe_popup';
@@ -66,4 +67,5 @@ document.addEventListener('turbolinks:load', () => {
   unitConversion();
   openBadge();
   editWeeklyCommitment();
+  termsOfService();
 });

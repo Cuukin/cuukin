@@ -17,3 +17,13 @@
     cursor: pointer;
   }
 }
+
+#termsOfService {
+  display: none;
+
+  h1 {
+    text-align: center;
+    color: $cuukin;
+    margin-bottom: 16px;
+  }
+}
