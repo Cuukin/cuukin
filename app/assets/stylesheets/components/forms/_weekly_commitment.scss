@@ -26,9 +26,17 @@
     -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
     box-shadow:inset 0px 0px 0px 3px $dark-red;
   }
+
+  h3 {
+    margin-bottom: 12px;
+  }
 }
 
-.user_email_check {
+.user_weekly_commitment {
+  margin-bottom: 0 !important;
+}
+
+.user_email_nudges {
   .form-check {
     padding-left: 0 !important;
   }

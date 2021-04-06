@@ -1,0 +1,19 @@
+.terms-of-service {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  i {
+    margin-right: 4px;
+    color: $cuukin;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: $cuukin;
+    cursor: pointer;
+  }
+}

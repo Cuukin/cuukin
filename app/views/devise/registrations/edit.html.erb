@@ -24,7 +24,7 @@
 
         <p class="mb-4" id="edit-commitment-btn">Edit weekly commitment</p>
 
-        <%= f.input :email_check, label: 'I want to receive reminders on my e-mail', input_html: { class: "toggle" } %>
+        <%= f.input :email_nudges, label: 'I want to receive reminders on my e-mail', input_html: { class: "toggle" } %>
 
         <div class="form-actions mt-3 double-btn edit-user-btns">
           <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
@@ -33,10 +33,10 @@
       </div>
 
       <div class="form-inputs edit-commitment-container" style="display: none;">
+        <h3>How many lessons/meals per week do you aim to cook?</h3>
+        <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons, legend_tag: false %>
 
-        <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons %>
-
-        <div class="form-actions mt-3 double-btn edit-user-btns">
+        <div class="form-actions double-btn edit-user-btns">
           <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
           <%= f.button :submit, "Update", class: "primary-btn" %>
         </div>
