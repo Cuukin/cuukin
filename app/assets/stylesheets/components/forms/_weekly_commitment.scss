@@ -32,9 +32,9 @@
   }
 }
 
-.user_weekly_commitment {
-  margin-bottom: 0 !important;
-}
+// .user_weekly_commitment {
+//   margin-bottom: 0 !important;
+// }
 
 .user_email_nudges {
   .form-check {
@@ -86,4 +86,44 @@
 
 .toggle:checked + label::after {
   left: 18px;
+}
+
+// Weekly Commitment - Get Started Page
+
+.commitment-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px 16px;
+  text-align: center;
+
+  h1 {
+    color: $cuukin;
+  }
+
+  h3 {
+    margin-bottom: 24px;
+  }
+
+  .skip-btn {
+    //margin-top: 8px;
+    cursor: pointer;
+    color: $cuukin;
+    &:hover, &:active {
+      opacity: .8;
+    }
+  }
+
+  .commitment-message {
+    font-size: 14px;
+    margin-top: 12px;
+    color: $dark-gray;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .commitment-container {
+    width: 100vw;
+  }
 }

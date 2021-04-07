@@ -1,18 +1,37 @@
 <div class="body-white-bg">
+  <div class="commitment-container">
+
   <h1>Help us get to know you</h1>
-  <h3>Why do you want to improve your cooking skills?</h3>
-    <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
-      <%= f.error_notification %>
 
-      <div class="form-inputs edit-commitment-container">
-        <h3>How many lessons/meals per week do you aim to cook?</h3>
-        <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons, legend_tag: false %>
+  <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
+    <%= f.error_notification %>
 
-        <div class="form-actions double-btn edit-user-btns">
-          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
-          <%= f.button :submit, "Update", class: "primary-btn" %>
-        </div>
+    <div class="form-inputs edit-commitment-container" id="motivationContainer">
+      <h3>Why do you want to improve your cooking skills?</h3>
+      <%= f.input :motivation,
+        collection: ["To cook healthier", "To save money", "To impress friends/family", "To learn a skill", "To eat more sustainable food"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class="form-actions">
+        <p class="primary-btn" id="continueBtn">Continue</p>
+        <!-- <p class="skip-btn">Skip for now</p> -->
       </div>
+    </div>
 
-    <% end %>
+    <div class="form-inputs edit-commitment-container" style="display: none;" id="commitmentContainer">
+      <h3>How many lesson/meals per week do you aim to cook?</h3>
+      <%= f.input :weekly_commitment,
+        collection: [1, 2, 3, 4, "5 or more"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Get Started", class: "primary-btn" %>
+        <p class="commitment-message">You can always come back and change this later</p>
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+
 </div>
