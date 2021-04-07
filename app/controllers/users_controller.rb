@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [ :show, :edit, :update, :commitment ]
+  before_action :find_user, only: [ :show, :edit, :update ]
 
   def show
     @user_awards = UserAward.where(user_id: current_user.id).includes(:award)
@@ -18,6 +18,10 @@ class UsersController < ApplicationController
   end
 
   def commitment
+    @user = current_user
+  end
+
+  def create_commitment
     if @user.update(user_params)
       redirect_to root_path
     else

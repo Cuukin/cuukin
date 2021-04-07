@@ -1,0 +1,18 @@
+<div class="form-devise-modal">
+  <div class="form-devise-modal-content">
+    <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs edit-commitment-container">
+        <h3>How many lessons/meals per week do you aim to cook?</h3>
+        <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons, legend_tag: false %>
+
+        <div class="form-actions double-btn edit-user-btns">
+          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+          <%= f.button :submit, "Update", class: "primary-btn" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
