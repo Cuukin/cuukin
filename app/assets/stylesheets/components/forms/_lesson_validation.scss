@@ -49,9 +49,15 @@
 }
 
 .lesson-validation-options {
+  width: 100%;
+  margin: 0 2px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  text-align: center;
+  cursor: pointer;
 
   img {
     width: 50px;
@@ -61,8 +67,8 @@
 
   p {
     font-size: 14px;
-    margin: 0;
-    max-width: 50px;
+    margin: 0 auto;
+    max-width: 56px;
   }
 
   .lv-option {
@@ -84,8 +90,7 @@
   }
 
   .form-check-label {
-    text-align: center;
-    cursor: pointer;
+    width: 100%;
     -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     box-shadow:inset 0px 0px 0px 1px #AFAFAF;
@@ -98,6 +103,10 @@
     -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
     box-shadow:inset 0px 0px 0px 3px $dark-red;
   }
+}
+
+#lesson_validation_notes {
+  border-radius: 12px;
 }
 
 #validateLessonNext {
