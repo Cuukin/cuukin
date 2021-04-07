@@ -17,6 +17,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def commitment
+    @user = current_user
+    authorize @user
+  end
+
+  def create_commitment
+    @user = current_user
+    authorize @user
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render :commitment
+    end
+  end
+
   private
 
   def find_user
@@ -25,6 +40,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username)
+    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :weekly_commitment, :motivation)
   end
 end

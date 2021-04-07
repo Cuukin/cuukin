@@ -21,12 +21,16 @@
     <%= render 'shared/currencies/dishes_popup' %>
     <%= render 'shared/currencies/cuukies_popup' %>
 
-    <% if current_user %>
+    <% if current_page?('/commitment') %>
+      <%= render 'shared/navbars/visitor_navbar' %>
+      <div class="content-container">
+        <%= yield %>
+      </div>
+    <% elsif current_user %>
       <%= render 'shared/navbars/user_navbar' %>
       <div class="user-content-container">
         <%= yield %>
       </div>
-
     <% else %>
       <%= render 'shared/navbars/visitor_navbar' %>
       <div class="content-container">

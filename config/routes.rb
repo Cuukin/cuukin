@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   resources :users, only: [ :show, :edit, :update ]
 
+  get 'commitment', to: 'users#commitment'
+  patch 'create_commitment', to: 'users#create_commitment'
+
   authenticated :user do
     root to: 'books#index', as: 'authenticated_root'
   end
@@ -13,7 +16,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
-  get '/welcome', to: "pages#welcome"
+  # get '/welcome', to: "pages#welcome"
 
   # Journey, Book, Lesson and Lesson Validation
   resources :books, only: [ :index, :show ]

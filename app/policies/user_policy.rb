@@ -13,6 +13,14 @@ class UserPolicy < ApplicationPolicy
     owner?
   end
 
+  def commitment?
+    create_commitment?
+  end
+
+  def create_commitment?
+    user.sign_in_count <= 1
+  end
+
   def owner?
     record == user
   end
