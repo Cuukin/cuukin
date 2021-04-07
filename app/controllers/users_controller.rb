@@ -19,10 +19,12 @@ class UsersController < ApplicationController
 
   def commitment
     @user = current_user
+    authorize @user
   end
 
   def create_commitment
     @user = current_user
+    authorize @user
     if @user.update(user_params)
       redirect_to root_path
     else
