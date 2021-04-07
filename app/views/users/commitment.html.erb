@@ -1,5 +1,6 @@
-<div class="form-devise-modal">
-  <div class="form-devise-modal-content">
+<div class="body-white-bg">
+  <h1>Help us get to know you</h1>
+  <h3>Why do you want to improve your cooking skills?</h3>
     <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
       <%= f.error_notification %>
 
@@ -14,5 +15,4 @@
       </div>
 
     <% end %>
-  </div>
 </div>
