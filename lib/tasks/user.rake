@@ -5,7 +5,9 @@ namespace :user do
     users.each do |user|
       commitment = user.weekly_commitment
       validations = user.lesson_validations.where(validated:true, updated_at: 1.week.ago..Time.now)
-      UserMailer.nudge(user).deliver_later if validations.count < commitment
+      if (validations.count < commitment) && (Date.today.strftime("%A") == "Tuesday" || Date.today.strftime("%A") == "Friday")
+        UserMailer.nudge(user).deliver_later
+      end
     end
   end
 end
