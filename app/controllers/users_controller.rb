@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [ :show, :edit, :update ]
+  before_action :find_user, only: [ :show, :edit, :update, :commitment ]
 
   def show
     @user_awards = UserAward.where(user_id: current_user.id).includes(:award)
@@ -17,6 +17,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def commitment
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render :commitment
+    end
+  end
+
   private
 
   def find_user
@@ -25,6 +33,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username)
+    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :weekly_commitment, :motivation)
   end
 end

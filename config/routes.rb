@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # User - Devise & Personal
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
-  resources :users, only: [ :show, :edit, :update ]
+  resources :users, only: [ :show, :edit, :update, :commitment ]
 
   authenticated :user do
     root to: 'books#index', as: 'authenticated_root'
