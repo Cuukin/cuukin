@@ -1,7 +1,7 @@
 namespace :user do
   desc "Checking all users validations and commitments"
   task check_user_commitment: :environment do
-    if Date.today.strftime("%A") == "Wednesday" || Date.today.strftime("%A") == "Friday"
+    if Date.today.strftime("%A") == "Tuesday" || Date.today.strftime("%A") == "Friday"
       users = User.where.not(weekly_commitment: nil).where(email_nudges: true)
       users.each do |user|
         commitment = user.weekly_commitment
