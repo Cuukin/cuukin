@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [ :show, :edit, :update ]
 
+  def index
+    @users = User.order(xp: :desc).limit(10)
+    authorize @users
+    @top_3 = @users.first(3)
+    @top_7 = @users - @top_3
+  end
+
   def show
     @user_awards = UserAward.where(user_id: current_user.id).includes(:award)
     @user_badges = UserBadge.where(user_id: current_user.id).includes(:badge).sort_by {|ub| ub.badge.category}
