@@ -1,0 +1,76 @@
+.leaderboard-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px 16px;
+
+  h1 {
+    color: $cuukin;
+    text-align: center;
+  }
+  h3{
+    color: $dark-gray;
+    font-size: 20px;
+    text-align: center;
+    span {
+      color: $olive;
+    }
+  }
+}
+
+.user-leaderboard-tag {
+  width: 100%;
+  min-height: 44px;
+  margin-bottom: 8px;
+
+  background-color: $white;
+  padding: 8px 24px;
+  border-radius: 22px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    color: $dark-gray;
+  }
+
+  .top-7-xp {
+    color: $olive;
+    justify-self: flex-end;
+  }
+
+  .top-7-user-social {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 64px;
+
+    img {
+      margin-right: 4px;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $gray;
+  }
+
+  .top-7-avatar {
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .leaderboard-container {
+    width: 100vw;
+  }
+}

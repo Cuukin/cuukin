@@ -1,0 +1,21 @@
+<div class="leaderboard-container">
+  <h1>Leaderboard</h1>
+  <h3><span>Stars</span> earned in last 7 days</h3>
+
+  <div class="top-7-container">
+    <% @top_7.each do |user| %>
+      <div class="user-leaderboard-tag">
+        <h4><%= @users.find_index(user).ordinalize %></h4>
+        <div class="top-7-user-social">
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, crop: :fill, class: 'top-7-avatar' %>
+          <% else %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{user.first_name}", class: 'top-7-avatar' %>
+          <% end %>
+          <p>@<%= user.username %></p>
+        </div>
+        <h4 class="top-7-xp"><%= user.xp %></h4>
+      </div>
+    <% end %>
+  </div>
+</div>
