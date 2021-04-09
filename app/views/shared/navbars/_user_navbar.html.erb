@@ -36,8 +36,8 @@
     <% end %>
   <% end %>
 
-  <%= link_to community_path, class: 'community-icons' do %>
-    <% if current_page?('/community') %>
+  <%= link_to users_path, class: 'community-icons' do %>
+    <% if current_page?('/users') %>
       <%= image_tag('nb-community-active.svg', id: 'community-active') %>
     <% else %>
       <%= image_tag('nb-community.svg', id: 'community') %>

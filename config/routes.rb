@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # User - Devise & Personal
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
-  resources :users, only: [ :show, :edit, :update ]
+  resources :users, only: [ :show, :edit, :update, :index ]
 
   get 'commitment', to: 'users#commitment'
   patch 'create_commitment', to: 'users#create_commitment'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # Pages
   root to: 'pages#home'
-  get '/community', to: "pages#community"
+  # get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
   # get '/welcome', to: "pages#welcome"
 
