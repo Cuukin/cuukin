@@ -12,6 +12,12 @@
         collection: ["To cook healthier", "To save money", "To impress friends/family", "To learn a skill", "To eat more sustainable food"],
         as: :check_boxes, legend_tag: false %>
 
+      <div class='commitment-progress-bar'>
+        <div class='circle'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+      </div>
+
       <div class="form-actions">
         <p class="primary-btn continueBtn">Continue</p>
         <p class="skip-btn skipBtn">Skip for now</p>
@@ -24,6 +30,12 @@
         collection: ["Vegetarian", "Vegan", "Lactose intolerance", "Celiac (gluten) intolerance", "Kosher"],
         as: :check_boxes, legend_tag: false %>
 
+      <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
+        <div class='circle'></div>
+        <div class='circle circle-disabled'></div>
+      </div>
+
       <div class="form-actions">
         <p class="primary-btn continueBtn">Continue</p>
         <p class="skip-btn skipBtn">Skip for now</p>
@@ -35,6 +47,12 @@
       <%= f.input :weekly_commitment,
         collection: [1, 2, 3, 4, "5 or more"],
         as: :radio_buttons, legend_tag: false %>
+
+      <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle'></div>
+      </div>
 
       <div class="form-actions">
         <%= f.button :submit, "Get Started", class: "primary-btn" %>

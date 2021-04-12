@@ -123,6 +123,24 @@
   }
 }
 
+.commitment-progress-bar {
+  width: 50px;
+  margin: 0 auto 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .circle {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: $dark-gray;
+  }
+  .circle-disabled {
+    background-color: $light-gray;
+  }
+}
+
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .commitment-container {
