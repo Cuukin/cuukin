@@ -1,8 +1,9 @@
 <div class="container-visitor-navbar">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-logo" do %>
     <%= image_tag "logo.png" %>
   <% end %>
+
   <% unless current_user %>
-    <%= link_to "Log In", new_user_session_path %>
+    <%= link_to "Log In", new_user_session_path, class: 'login' %>
   <% end %>
 </div>
