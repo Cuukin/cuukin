@@ -1,18 +1,24 @@
 const createWeeklyCommitment = () => {
   const skipBtns = document.querySelectorAll('.skipBtn');
-  const continueBtn = document.querySelector('#continueBtn');
-  const motivationContainer = document.querySelector('#motivationContainer');
-  const commitmentContainer = document.querySelector('#commitmentContainer');
+  const continueBtns = document.querySelectorAll('.continueBtn');
+  const commitmentContainer = document.querySelector('.commitment-container');
 
-  if (motivationContainer) {
-    const nextSlide = (btn) => {
-      btn.addEventListener('click', () => {
-        motivationContainer.style.display = "none";
-        commitmentContainer.style.display = "block";
+  if (commitmentContainer) {
+    const editContainers = commitmentContainer.querySelectorAll('.form-inputs');
+
+    const nextSlide = (btns) => {
+      let counter = 0;
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          counter += 1;
+          editContainers[counter - 1].style.display = "none";
+          editContainers[counter].style.display = "block";
+        });
       });
     };
-    nextSlide(skipBtns[0]);
-    nextSlide(continueBtn);
+
+    nextSlide(skipBtns);
+    nextSlide(continueBtns);
   };
 };
 

@@ -13,24 +13,24 @@
         as: :check_boxes, legend_tag: false %>
 
       <div class="form-actions">
-        <p class="primary-btn" id="continueBtn">Continue</p>
+        <p class="primary-btn continueBtn">Continue</p>
         <p class="skip-btn skipBtn">Skip for now</p>
       </div>
     </div>
 
-    <div class="form-inputs edit-diet-container" id="dietContainer">
-      <h3>Why do you want to improve your cooking skills?</h3>
-      <%= f.input :motivation,
-        collection: ["To cook healthier", "To save money", "To impress friends/family", "To learn a skill", "To eat more sustainable food"],
+    <div class="form-inputs edit-commitment-container" id="dietContainer" style="display: none;">
+      <h3>Do you have any dietary preferences?</h3>
+      <%= f.input :diet_restrictions,
+        collection: ["Vegetarian", "Vegan", "Lactose intolerance", "Celiac (gluten) intolerance", "Kosher"],
         as: :check_boxes, legend_tag: false %>
 
       <div class="form-actions">
-        <p class="primary-btn" id="continueBtn">Continue</p>
+        <p class="primary-btn continueBtn">Continue</p>
         <p class="skip-btn skipBtn">Skip for now</p>
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container" style="display: none;" id="commitmentContainer">
+    <div class="form-inputs edit-commitment-container" id="commitmentContainer" style="display: none;">
       <h3>How many lesson/meals per week do you aim to cook?</h3>
       <%= f.input :weekly_commitment,
         collection: [1, 2, 3, 4, "5 or more"],
@@ -38,8 +38,8 @@
 
       <div class="form-actions">
         <%= f.button :submit, "Get Started", class: "primary-btn" %>
-        <p class="commitment-message">You can always come back and change this later</p>
         <%= f.button :submit, "Skip for now", class: "skip-btn" %>
+        <p class="commitment-message">You can always come back and change this later</p>
       </div>
     </div>
 
