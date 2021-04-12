@@ -18,6 +18,18 @@
       </div>
     </div>
 
+    <div class="form-inputs edit-diet-container" id="dietContainer">
+      <h3>Why do you want to improve your cooking skills?</h3>
+      <%= f.input :motivation,
+        collection: ["To cook healthier", "To save money", "To impress friends/family", "To learn a skill", "To eat more sustainable food"],
+        as: :check_boxes, legend_tag: false %>
+
+      <div class="form-actions">
+        <p class="primary-btn" id="continueBtn">Continue</p>
+        <p class="skip-btn skipBtn">Skip for now</p>
+      </div>
+    </div>
+
     <div class="form-inputs edit-commitment-container" style="display: none;" id="commitmentContainer">
       <h3>How many lesson/meals per week do you aim to cook?</h3>
       <%= f.input :weekly_commitment,
