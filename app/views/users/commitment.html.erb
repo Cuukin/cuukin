@@ -14,7 +14,7 @@
 
       <div class="form-actions">
         <p class="primary-btn" id="continueBtn">Continue</p>
-        <!-- <p class="skip-btn">Skip for now</p> -->
+        <p class="skip-btn skipBtn">Skip for now</p>
       </div>
     </div>
 
@@ -27,6 +27,7 @@
       <div class="form-actions">
         <%= f.button :submit, "Get Started", class: "primary-btn" %>
         <p class="commitment-message">You can always come back and change this later</p>
+        <%= f.button :submit, "Skip for now", class: "skip-btn" %>
       </div>
     </div>
 

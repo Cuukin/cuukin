@@ -105,9 +105,11 @@
   }
 
   .skip-btn {
-    //margin-top: 8px;
     cursor: pointer;
     color: $cuukin;
+    margin: 12px auto 0;
+    padding: 0 !important;
+    border: 0 !important;
     &:hover, &:active {
       opacity: .8;
     }
@@ -115,7 +117,7 @@
 
   .commitment-message {
     font-size: 14px;
-    margin-top: 12px;
+    margin: 12px auto 0;
     color: $dark-gray;
     font-style: italic;
   }

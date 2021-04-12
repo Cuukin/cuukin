@@ -1,5 +1,5 @@
 const createWeeklyCommitment = () => {
-  // const skipBtns = document.querySelectorAll('.skip-btn');
+  const skipBtns = document.querySelectorAll('.skipBtn');
   const continueBtn = document.querySelector('#continueBtn');
   const motivationContainer = document.querySelector('#motivationContainer');
   const commitmentContainer = document.querySelector('#commitmentContainer');
@@ -11,7 +11,7 @@ const createWeeklyCommitment = () => {
         commitmentContainer.style.display = "block";
       });
     };
-    //nextSlide(skipBtns[0]);
+    nextSlide(skipBtns[0]);
     nextSlide(continueBtn);
   };
 };
