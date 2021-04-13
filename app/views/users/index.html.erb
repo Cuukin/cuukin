@@ -3,20 +3,7 @@
   <h3>Total <span>Stars</span> earned</h3>
 
   <div class="top-3-container">
-    <div class="top-3-user-card">
-      <div class="top-3-avatar-container">
-        <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1617926201/Cuukin%20-%20Badges/circle-silver_gtnvyy.svg", class: 'top-3-avatar-badge') %>
-        <% if @top_3.second.photo.attached? %>
-          <%= cl_image_tag @top_3.second.photo.key, crop: :fill, class: 'top-3-avatar' %>
-        <% else %>
-          <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.second.first_name}", class: 'top-3-avatar' %>
-        <% end %>
-      </div>
-      <h4 class="top-3-user-xp"><%= @top_3.second.xp %></h4>
-      <h4 class="top-3-user-username">@<%= @top_3.second.username %></h4>
-    </div>
-
-    <div class="top-3-user-card">
+    <div class="top-3-user-card top-1">
       <div class="top-3-avatar-container" id="top1AvatarContainer">
         <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1617926201/Cuukin%20-%20Badges/circle-golden_ykq3dr.svg", class: 'top-3-avatar-badge') %>
         <% if @top_3.first.photo.attached? %>
@@ -24,23 +11,37 @@
         <% else %>
           <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.first.first_name}", class: 'top-3-avatar' %>
         <% end %>
-        <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1617927896/golden_hat_njjpvd.svg", class: 'top-1-hat') %>
       </div>
       <h4 class="top-3-user-xp"><%= @top_3.first.xp %></h4>
       <h4 class="top-3-user-username">@<%= @top_3.first.username %></h4>
     </div>
 
-    <div class="top-3-user-card">
-      <div class="top-3-avatar-container">
-        <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1615337341/Cuukin%20-%20Badges/badge_bronze_ingredient_ldselt.svg", class: 'top-3-avatar-badge') %>
-        <% if @top_3.third.photo.attached? %>
-          <%= cl_image_tag @top_3.third.photo.key, crop: :fill, class: 'top-3-avatar' %>
-        <% else %>
-          <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.third.first_name}", class: 'top-3-avatar' %>
-        <% end %>
+    <div class="top-3-wrapper">
+      <div class="top-3-user-card">
+        <div class="top-3-avatar-container">
+          <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1617926201/Cuukin%20-%20Badges/circle-silver_gtnvyy.svg", class: 'top-3-avatar-badge') %>
+          <% if @top_3.second.photo.attached? %>
+            <%= cl_image_tag @top_3.second.photo.key, crop: :fill, class: 'top-3-avatar' %>
+          <% else %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.second.first_name}", class: 'top-3-avatar' %>
+          <% end %>
+        </div>
+        <h4 class="top-3-user-xp"><%= @top_3.second.xp %></h4>
+        <h4 class="top-3-user-username">@<%= @top_3.second.username %></h4>
       </div>
-      <h4 class="top-3-user-xp"><%= @top_3.third.xp %></h4>
-      <h4 class="top-3-user-username">@<%= @top_3.third.username %></h4>
+
+      <div class="top-3-user-card">
+        <div class="top-3-avatar-container">
+          <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1615337341/Cuukin%20-%20Badges/badge_bronze_ingredient_ldselt.svg", class: 'top-3-avatar-badge') %>
+          <% if @top_3.third.photo.attached? %>
+            <%= cl_image_tag @top_3.third.photo.key, crop: :fill, class: 'top-3-avatar' %>
+          <% else %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.third.first_name}", class: 'top-3-avatar' %>
+          <% end %>
+        </div>
+        <h4 class="top-3-user-xp"><%= @top_3.third.xp %></h4>
+        <h4 class="top-3-user-username">@<%= @top_3.third.username %></h4>
+      </div>
     </div>
   </div>
 
