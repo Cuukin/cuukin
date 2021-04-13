@@ -21,8 +21,6 @@
   -webkit-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
-
-  //box-shadow: 0px 4px 22px rgba(0,0,0,0.1);
   background-color: $off-white;
 }
 
@@ -76,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  z-index: 100;
+  z-index: 1000;
 
   img {
     height: 28px;
@@ -86,7 +84,7 @@
 // Expanded Navbar
 
 .expanded-navbar {
-  background-color: $cuukin;
+  background-color: $off-white;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -100,9 +98,7 @@
 
   #close-btn {
     cursor: pointer;
-    height: 24px;
-    // align-self: flex-end;
-    // margin: 32px 32px 0 0;
+    height: 22px;
   }
 
   .expanded-menu {
@@ -125,17 +121,17 @@
     }
 
     li, a {
-      color: $white;
+      color: $cuukin;
 
       a:hover, a:active {
-        color: $light-gray;
+        opacity: .8;
       }
     }
   }
 }
 
 .expanded-nb-div {
-  width: 25px;
+  width: 42px;
 }
 
 // Visitor navbar
