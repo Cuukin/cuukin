@@ -1,8 +1,6 @@
 // User navbar
 
 .container-user-navbar {
-  background-color: $off-white;
-  box-shadow: 0px 4px 22px rgba(0,0,0,0.1);
   display: flex;
   height: 48px;
   justify-content: space-around;
@@ -17,6 +15,11 @@
     height: 20px;
     cursor: pointer;
   }
+}
+
+.user-navbar-top {
+  box-shadow: 0px 4px 22px rgba(0,0,0,0.1);
+  background-color: $off-white;
 }
 
 .nb-user-item {
