@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
   # get '/welcome', to: "pages#welcome"
+  get '/help', to: "pages#help" # route to create help pop up
 
   # Journey, Book, Lesson and Lesson Validation
   resources :books, only: [ :index, :show ]
