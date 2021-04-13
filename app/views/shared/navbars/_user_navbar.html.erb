@@ -21,7 +21,7 @@
 <div class="container-user-navbar-footer">
 
   <%= link_to books_path, class: 'journey-icons' do %>
-    <% if params[:controller] == 'books' || current_page?('/welcome') || params[:controller] == 'lessons' %>
+    <% if params[:controller] == 'books' || params[:controller] == 'lessons' %>
       <%= image_tag('nb-journey-active.svg', id: 'journey-active') %>
     <% else %>
       <%= image_tag('nb-journey.svg', id: 'journey') %>
@@ -37,7 +37,7 @@
   <% end %>
 
   <%= link_to users_path, class: 'community-icons' do %>
-    <% if current_page?('/users') %>
+    <% if current_page?(controller: 'users', action: 'index') %>
       <%= image_tag('nb-community-active.svg', id: 'community-active') %>
     <% else %>
       <%= image_tag('nb-community.svg', id: 'community') %>
@@ -45,7 +45,7 @@
   <% end %>
 
   <%= link_to user_path(current_user), class: 'profile-icons' do %>
-    <% if params[:controller] == 'users' || params[:controller] == 'devise/registrations' %>
+    <% if current_page?(controller: 'users', action: 'show', id: current_user.id) || params[:controller] == 'devise/registrations' %>
       <%= image_tag('nb-profile-active.svg', id: 'profile-active') %>
     <% else %>
       <%= image_tag('nb-profile.svg', id: 'profile') %>
