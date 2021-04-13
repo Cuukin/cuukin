@@ -14,6 +14,21 @@ const helpPopup = () => {
       helpModal.style.display = "none";
     });
   };
+
+  const newHelpModal = document.querySelector('.help-container');
+
+  if (newHelpModal) {
+    const openBtn = document.querySelector('.btn-open-help');
+    const closeBtn = newHelpModal.querySelector('.btn-close');
+
+    openBtn.addEventListener('click', () => {
+      newHelpModal.style.display = "block";
+    });
+
+    closeBtn.addEventListener('click', () => {
+      newHelpModal.style.display = "none";
+    });
+  };
 }
 
 export { helpPopup };
