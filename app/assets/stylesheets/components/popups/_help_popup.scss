@@ -95,7 +95,57 @@
   position: fixed;
   left: 0;
   top: 0;
+
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.4);
 }
+
+// <div class="btn-controls">
+//   <%= image_tag("btn-back.svg", class: 'btn-prev') %>
+//   <%= image_tag("btn-forward.svg", class: 'btn-forward') %>
+// </div>
+
+// .btn-controls {
+//   width: 340px;
+//   display: flex;
+//   justify-content: space-between;
+//   position: absolute;
+//   bottom: 50%;
+//   right: 50%;
+//   transform: translate(50%, 50%);
+
+//   .btn-prev {
+//     visibility: hidden;
+//   }
+
+//   img {
+//     height: 42px;
+//     width: 42px;
+//     cursor: pointer;
+//   }
+// }
+
+// .help-progress-bar {
+//   width: 50px;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   position: absolute;
+//   bottom: 13%;
+//   right: 50%;
+//   transform: translate(50%, 50%);
+
+//   .circle {
+//   width: 11px;
+//   height: 11px;
+//   border-radius: 50%;
+//   background-color: $dark-gray;
+//   }
+//   .circle-disabled {
+//     background-color: $light-gray;
+//   }
+// }
+
 
 .help-card {
   width: 300px;
@@ -106,12 +156,13 @@
   margin: auto;
   position: absolute;
   right: 50%;
-  bottom: 50%;
+  bottom: 52%;
   transform: translate(50%,50%);
   padding: 0 16px;
 
   img {
     height: 100%;
+    width: auto;
   }
 }
 
@@ -119,21 +170,30 @@
   display: flex;
   justify-content: space-between;
 
+  .btn-close {
+    height: 32px;
+    width: auto;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
   .help-content {
+    // arrow
     img {
       height: 108px;
       position: absolute;
       top: 40px;
       left: 56px;
-      transform: rotate(5deg);
+      transform: rotate(8deg);
     }
   }
 
   h1 {
     color: #3F3D56;
     position: relative;
-    top: 48px;
-    padding-left: 40px;
+    top: 80px;
+    padding-left: 38px;
   }
 
   ol {
