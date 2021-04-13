@@ -89,6 +89,12 @@
 
 // NEW HELP VERSION
 
+.btn-open-help {
+  height: 56px;
+  width: auto;
+  cursor: pointer;
+}
+
 .help-container {
   width: 100%;
   height: 100%;
@@ -176,6 +182,7 @@
     position: absolute;
     top: 16px;
     right: 16px;
+    cursor: pointer;
   }
 
   .help-content {
