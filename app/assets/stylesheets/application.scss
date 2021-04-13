@@ -15,7 +15,7 @@
 // Basics UI Configs
 
 body {
-  background-color: $light-gray;
+  background-color: $off-white;
   color: $black;
 
   -ms-overflow-style: none;  /* IE and Edge - hiden scrollbar */
@@ -58,7 +58,8 @@ body::-webkit-scrollbar {
 }
 
 .user-content-container {
-  margin: 64px 0 56px;
+  margin: 48px 0 64px;
+  min-height: 100vh;
 }
 
 .body-white-bg {

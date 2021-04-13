@@ -1,9 +1,8 @@
 // User navbar
 
 .container-user-navbar {
-  background-color: $cuukin;
   display: flex;
-  height: 64px;
+  height: 48px;
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -18,9 +17,20 @@
   }
 }
 
+.user-navbar-top {
+  -webkit-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.1);
+  background-color: $off-white;
+}
+
 .nb-user-item {
   text-align: center;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
   p {
     margin: 0;
@@ -30,21 +40,22 @@
 
   img {
     height: 24px;
+    margin-right: 4px;
   }
 }
 
 // User navbar top icons
 
 #nb-level, #level-h1 {
-  color: #EDEDED;
+  color: $dark-gray;
 }
 
 #nb-xp, #xp-h1 {
-  color: #A4EAD1;
+  color: #49D0A1;
 }
 
 #nb-cuukie, #cuukie-h1 {
-  color: #FFEA65;
+  color: #994C0F;
 }
 
 #nb-dish, #dish-h1 {
@@ -54,26 +65,43 @@
 // User Footer Navbar
 
 .container-user-navbar-footer {
-  height: 56px;
+  height: 64px;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: $light-gray;
-  box-shadow: 0px -4px 30px rgba(0,0,0,0.1);
+  background-color: $off-white;
+  box-shadow: 0px -4px 22px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  z-index: 100;
+  z-index: 1000;
 
   img {
     height: 28px;
+    margin-bottom: 2px;
   }
+
+  p {
+    margin: 0;
+    color: $gray;
+    font-size: 12px;
+  }
+
+  .active {
+    color: $dark-gray;
+  }
+}
+
+.user-navbar-footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // Expanded Navbar
 
 .expanded-navbar {
-  background-color: $cuukin;
+  background-color: $off-white;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -87,9 +115,7 @@
 
   #close-btn {
     cursor: pointer;
-    height: 24px;
-    // align-self: flex-end;
-    // margin: 32px 32px 0 0;
+    height: 22px;
   }
 
   .expanded-menu {
@@ -112,17 +138,17 @@
     }
 
     li, a {
-      color: $white;
+      color: $cuukin;
 
       a:hover, a:active {
-        color: $light-gray;
+        opacity: .8;
       }
     }
   }
 }
 
 .expanded-nb-div {
-  width: 25px;
+  width: 42px;
 }
 
 // Visitor navbar
