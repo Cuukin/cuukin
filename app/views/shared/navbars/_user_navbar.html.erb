@@ -20,35 +20,43 @@
 
 <div class="container-user-navbar-footer">
 
-  <%= link_to books_path, class: 'journey-icons' do %>
+  <%= link_to books_path, class: 'user-navbar-footer-item journey-icons' do %>
     <% if params[:controller] == 'books' || params[:controller] == 'lessons' %>
       <%= image_tag('nb-journey-active.svg', id: 'journey-active') %>
+      <p class="active">Journey</p>
     <% else %>
       <%= image_tag('nb-journey.svg', id: 'journey') %>
+      <p>Journey</p>
     <% end %>
   <% end %>
 
-  <%= link_to user_recipes_path, class: 'book-icons' do %>
+  <%= link_to user_recipes_path, class: 'user-navbar-footer-item book-icons' do %>
     <% if params[:controller] == 'user_recipes' %>
       <%= image_tag('nb-book-active.svg', id: 'book-active') %>
+      <p class="active">CuukBook</p>
     <% else %>
       <%= image_tag('nb-book.svg', id: 'book') %>
+      <p>CuukBook</p>
     <% end %>
   <% end %>
 
-  <%= link_to users_path, class: 'community-icons' do %>
+  <%= link_to users_path, class: 'user-navbar-footer-item community-icons' do %>
     <% if current_page?(controller: 'users', action: 'index') %>
       <%= image_tag('nb-community-active.svg', id: 'community-active') %>
+      <p class="active">Leaderboard</p>
     <% else %>
       <%= image_tag('nb-community.svg', id: 'community') %>
+      <p>Leaderboard</p>
     <% end %>
   <% end %>
 
-  <%= link_to user_path(current_user), class: 'profile-icons' do %>
+  <%= link_to user_path(current_user), class: 'user-navbar-footer-item profile-icons' do %>
     <% if current_page?(controller: 'users', action: 'show', id: current_user.id) || params[:controller] == 'devise/registrations' %>
       <%= image_tag('nb-profile-active.svg', id: 'profile-active') %>
+      <p class="active">Profile</p>
     <% else %>
       <%= image_tag('nb-profile.svg', id: 'profile') %>
+      <p>Profile</p>
     <% end %>
   <% end %>
 
