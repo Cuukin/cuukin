@@ -1,6 +1,21 @@
-<div class="help-container">
+<div class="help-container" style="display: none;">
 
-  <div class="help-card" id="helpCard2">
+  <div class="help-card" id="helpCard1">
+    <%= image_tag("btn-close-rounded.svg", class: 'btn-close') %>
+    <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618349425/Cuukin%20-%20Public/help-1_zuqhqd.svg") %>
+
+    <div class="help-content">
+      <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618350204/Cuukin%20-%20Public/arrow_k27tgg.svg") %>
+      <h1>How does this work?</h1>
+      <ol>
+        <li>Start your <span>Journey</span></li>
+        <li>Open <span>Books</span> to explore lessons</li>
+        <li>Jump on your <span>Lesson</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="help-card" id="helpCard2" style="display: none;">
     <%= image_tag("btn-close-rounded.svg", class: 'btn-close') %>
     <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618497608/Cuukin%20-%20Public/help-2-line_enttwb.svg", class: 'line') %>
 
@@ -13,19 +28,16 @@
     </div>
   </div>
 
-
-  <div class="help-card" id="helpCard1" style="display: none;">
+  <div class="help-card" id="helpCard3" style="display: none;">
     <%= image_tag("btn-close-rounded.svg", class: 'btn-close') %>
-    <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618349425/Cuukin%20-%20Public/help-1_zuqhqd.svg") %>
+    <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618497608/Cuukin%20-%20Public/help-2-line_enttwb.svg", class: 'line') %>
 
     <div class="help-content">
-      <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618350204/Cuukin%20-%20Public/arrow_k27tgg.svg") %>
-      <h1>How does this work?</h1>
-      <ol>
-        <li>Start your <span>Journey</span></li>
-        <li>Open <span>Books</span> to explore lessons</li>
-        <li>Jump on your <span>Lesson</span></li>
-      </ol>
+      <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618514957/Cuukin%20-%20Public/help-3-compete_qcfvg0.svg", class: 'compete') %>
+      <h1>Discover other great features</h1>
+      <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618514957/Cuukin%20-%20Public/help-3-grocery_k3u9ik.svg", class: 'grocery') %>
+      <p class="grocery">Plan better with our grocery list builder</p>
+      <p class="compete">Compete with your friends</p>
     </div>
   </div>
 
