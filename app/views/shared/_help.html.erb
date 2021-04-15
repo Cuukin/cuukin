@@ -1,7 +1,23 @@
-<div class="help-container" style="display: none;">
-  <div class="help-card" id="helpCard1">
+<div class="help-container">
+
+  <div class="help-card" id="helpCard2">
+    <%= image_tag("btn-close-rounded.svg", class: 'btn-close') %>
+    <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618497608/Cuukin%20-%20Public/help-2-line_enttwb.svg", class: 'line') %>
+
+    <div class="help-content">
+      <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618497609/Cuukin%20-%20Public/help-2-phone_y3lrqp.png", class: 'phone') %>
+      <h1>What is a Lesson?</h1>
+      <p>1. Watch short <span>Skill Videos</span></p>
+      <p>2. Buy ingredients for chosen <span>Recipe</span></p>
+      <p>3. <span>Practice</span> by cooking our curated recipes</p>
+    </div>
+  </div>
+
+
+  <div class="help-card" id="helpCard1" style="display: none;">
     <%= image_tag("btn-close-rounded.svg", class: 'btn-close') %>
     <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618349425/Cuukin%20-%20Public/help-1_zuqhqd.svg") %>
+
     <div class="help-content">
       <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618350204/Cuukin%20-%20Public/arrow_k27tgg.svg") %>
       <h1>How does this work?</h1>
@@ -12,4 +28,10 @@
       </ol>
     </div>
   </div>
+
+  <div class="btn-controls">
+    <%= image_tag("btn-back.svg", class: 'btn-prev') %>
+    <%= image_tag("btn-forward.svg", class: 'btn-forward') %>
+  </div>
+
 </div>
