@@ -1,21 +1,22 @@
 <div class="container-user-navbar user-navbar-top">
+
   <div class="nb-user-item" id="nb-level">
     <%= image_tag('nb-level.svg') %>
     <p><%= User.levels[current_user.level] %></p>
   </div>
-  <div class="nb-user-item" id="nb-xp">
+
+  <div class="nb-user-item" id="nb-xp" style="visibility: <%= current_user.xp >= 100 ? "" : "hidden" %>;">
     <%= image_tag('nb-xp.svg') %>
     <p><%= current_user.xp %></p>
   </div>
-  <div class="nb-user-item" id="nb-cuukie">
-    <%= image_tag('nb-cuukie.svg') %>
-    <p><%= current_user.cuukies %></p>
-  </div>
-  <div class="nb-user-item" id="nb-dish">
+
+  <div class="nb-user-item" id="nb-dish" style="visibility: <%= current_user.xp >= 100 ? "" : "hidden" %>;">
     <%= image_tag('nb-dish.svg') %>
     <p><%= current_user.user_recipes.count %></p>
   </div>
+
   <%= image_tag('nb-menu.svg', id: 'open-btn') %>
+
 </div>
 
 <div class="container-user-navbar-footer">
@@ -64,7 +65,6 @@
 
 <div class="expanded-navbar">
   <div class="container-user-navbar">
-    <div class="expanded-nb-div"></div>
     <div class="expanded-nb-div"></div>
     <div class="expanded-nb-div"></div>
     <div class="expanded-nb-div"></div>
