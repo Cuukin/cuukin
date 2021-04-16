@@ -21,15 +21,15 @@
 
           <ul class="recipe-diary-details">
             <li>
-              <%= image_tag('validation-date.svg') %>
+              <%= image_tag('lv-date.svg') %>
               <%= validation.created_at.strftime("%d/%m/%y") %>
             </li>
             <li>
-              <%= image_tag('validation-time.svg') %>
+              <%= image_tag('lv-time.svg') %>
               <%= user_recipe.recipe.prep_time %>
             </li>
             <li>
-              <%= image_tag('validation-level.svg') %>
+              <%= image_tag('lv-level.svg') %>
               Level <%= Book.levels[validation.lesson.book.level] %>
             </li>
           </ul>
@@ -39,7 +39,7 @@
               <h3>Your feedback</h3>
               <% if validation.difficulcy %>
                 <div class="difficulcy-feedback">
-                  <%= image_tag("lesson-validation-icon-#{validation.difficulcy}.svg") %>
+                  <%= image_tag("lv-icon-#{validation.difficulcy}.svg") %>
                   <% if validation.difficulcy == 'easy' %>
                     <p>"Piece of cake"</p>
                   <% elsif validation.difficulcy == 'medium' %>

@@ -1,19 +1,21 @@
 const homeCarousel = () => {
-  const firstItem = document.querySelector('.home-first-item');
-
-  // buttons
   const startCarouselBtn = document.querySelector('#registerBtn');
-  const nextBtn = document.querySelector('#nextBtn');
-  const prevBtn = document.querySelector('#prevBtn');
-  const finishCarouselBtn = document.querySelector('#finishCarouselBtn');
-
-  const carouselNav = document.querySelector('.home-carousel-nav');
-  const progressCircles = document.querySelectorAll('.circle');
 
   // carousel
   const carouselItems = document.querySelectorAll('.home-carousel-item');
 
   if (startCarouselBtn) {
+    const firstItem = document.querySelector('.home-first-item');
+    // buttons
+    const nextBtn = document.querySelector('#nextBtn');
+    const prevBtn = document.querySelector('#prevBtn');
+    const finishCarouselBtn = document.querySelector('#finishCarouselBtn');
+    //nav
+    const carouselNav = document.querySelector('.home-carousel-nav');
+    const progressCircles = document.querySelectorAll('.circle');
+    // carousel
+    const carouselItems = document.querySelectorAll('.home-carousel-item');
+
     let counter = 0;
 
     startCarouselBtn.addEventListener('click', () => {
@@ -77,7 +79,6 @@ const homeCarousel = () => {
         behavior: 'smooth'
       });
     });
-
   };
 }
 

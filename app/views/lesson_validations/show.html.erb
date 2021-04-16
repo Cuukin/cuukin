@@ -9,11 +9,11 @@
 
     <ul class="lesson-completion-details">
       <li>
-        <%= image_tag('validation-time.svg') %>
+        <%= image_tag('lv-time.svg') %>
         <%= @lesson_validation.lesson.recipe.prep_time %>
       </li>
       <li>
-        <%= image_tag('validation-level.svg') %>
+        <%= image_tag('lv-level.svg') %>
         Level <%= Book.levels[@lesson_validation.lesson.book.level] %>
       </li>
     </ul>
