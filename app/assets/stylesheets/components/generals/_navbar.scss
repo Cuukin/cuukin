@@ -90,6 +90,15 @@
   .active {
     color: $dark-gray;
   }
+
+  #submenu {
+    height: 55px;
+    width: auto;
+    position: relative;
+    bottom: 12px;
+    -webkit-filter: drop-shadow( 0px 3px 6px rgba(248, 100, 100, .48));
+    filter: drop-shadow( 0px 3px 6px rgba(248, 100, 100, .40));
+  }
 }
 
 .user-navbar-footer-item {
