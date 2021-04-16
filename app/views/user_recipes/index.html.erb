@@ -21,15 +21,15 @@
 
           <ul class="recipe-diary-details">
             <li>
-              <%= image_tag('validation-date.svg') %>
+              <%= image_tag('lv-date.svg') %>
               <%= validation.created_at.strftime("%d/%m/%y") %>
             </li>
             <li>
-              <%= image_tag('validation-time.svg') %>
+              <%= image_tag('lv-time.svg') %>
               <%= user_recipe.recipe.prep_time %>
             </li>
             <li>
-              <%= image_tag('validation-level.svg') %>
+              <%= image_tag('lv-level.svg') %>
               Level <%= Book.levels[validation.lesson.book.level] %>
             </li>
           </ul>
