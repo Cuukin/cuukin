@@ -4,7 +4,7 @@
   margin: auto;
   overflow: hidden;
   background-color: $white;
-  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+  //box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
   padding: 16px 0 40px;
 }
 
@@ -42,7 +42,8 @@
 }
 
 .carousel-img-0 {
-  height: 264px;
+  //height: 264px;
+  width: 80%;
   margin: 32px 0 56px;
 }
 

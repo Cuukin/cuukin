@@ -9,7 +9,8 @@
       <p>Learn. Cook. Have Fun.</p>
 
       <div class="carousel-primary-btns">
-        <p class="primary-btn" id="registerBtn">Register</p>
+        <!-- <p class="primary-btn" id="registerBtn">Register</p> -->
+        <%= link_to 'Register', new_user_registration_path, class: 'primary-btn'  %>
         <%= link_to 'Log-in', new_user_session_path, class: 'secondary-btn' %>
       </div>
     </div>
