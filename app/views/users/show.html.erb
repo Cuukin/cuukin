@@ -11,7 +11,7 @@
 
     <div class="profile-image-content">
       <%= link_to edit_user_path(current_user) do %>
-        <%= image_tag('edit-photo.svg', class: 'edit-photo-btn') %>
+        <%= image_tag('btn-edit-photo.svg', class: 'edit-photo-btn') %>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img' %>
         <% else %>
