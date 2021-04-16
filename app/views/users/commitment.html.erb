@@ -1,15 +1,13 @@
 <div class="body-white-bg">
   <div class="commitment-container">
 
-  <h1>Help us get to know you</h1>
-
   <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs edit-commitment-container" id="motivationContainer">
-      <h3>Why do you want to improve your cooking skills?</h3>
+      <h3>Why do you want cook better?</h3>
       <%= f.input :motivation,
-        collection: ["To cook healthier", "To save money", "To impress friends/family", "To learn a skill", "To eat more sustainable food"],
+        collection: ["To cook healthier", "To save money", "To impress friends and family", "To eat more sustainable food", "To lose weight", "Other"],
         as: :check_boxes, legend_tag: false %>
 
       <div class='commitment-progress-bar'>
@@ -24,10 +22,10 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container" id="dietContainer" style="display: none;">
-      <h3>Do you have any dietary preferences?</h3>
+    <div class="form-inputs edit-diet-container" id="dietContainer" style="display: none;">
+      <h3>Any dietary preferences?</h3>
       <%= f.input :diet_restrictions,
-        collection: ["Vegetarian", "Vegan", "Lactose intolerance", "Celiac (gluten) intolerance", "Kosher"],
+        collection: ["Vegetarian", "Vegan", "Nut-free", "Gluten-free", "Pescatarian", "Dairy free", "Diabetic", "Low-carb", "Paleo", "Halal", "Kosher", "Other"],
         as: :check_boxes, legend_tag: false %>
 
       <div class='commitment-progress-bar'>
@@ -43,7 +41,8 @@
     </div>
 
     <div class="form-inputs edit-commitment-container" id="commitmentContainer" style="display: none;">
-      <h3>How many lesson/meals per week do you aim to cook?</h3>
+      <h3>Let's choose a weekly goal.</h3>
+      <p>Number of Cuukin meals you plan to cook in a week (each lesson is 25-60 min long)</p>
       <%= f.input :weekly_commitment,
         collection: [1, 2, 3, 4, "5 or more"],
         as: :radio_buttons, legend_tag: false %>
