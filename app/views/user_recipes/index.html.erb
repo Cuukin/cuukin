@@ -11,7 +11,7 @@
     <% @completed_recipes.each do |user_recipe| %>
 
       <div class="recipe-diary-modal userRecipe<%= user_recipe.id %>">
-        <% validation = LessonValidation.find_by(user: current_user, lesson: user_recipe.recipe.lessons.first) %>
+        <% validation = LessonValidation.find_by(user: current_user, recipe: user_recipe.recipe) %>
 
         <div class="recipe-diary-modal-content">
           <%= image_tag('btn-close-rounded.svg', class: 'recipe-diary-modal-close-btn') %>
@@ -67,7 +67,7 @@
             <% end %>
           </div>
 
-          <%= link_to "Make this recipe again", lesson_path(Lesson.find_by(recipe: user_recipe.recipe)), class: 'primary-btn' %>
+          <%= link_to "Make this recipe again", lesson_path(Lesson.find(validation.lesson.id)), class: 'primary-btn' %>
         </div>
       </div>
 

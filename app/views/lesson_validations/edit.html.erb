@@ -25,6 +25,8 @@
           </div>
         </div>
 
+        <%= f.input :recipe_id, label: false, collection: [@lesson.recipe, @lesson.recipes].flatten %>
+
         <h3>Tell us about your lesson</h3>
         <p>How easy did you find it?</p>
 

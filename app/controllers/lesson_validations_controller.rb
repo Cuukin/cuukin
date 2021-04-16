@@ -16,7 +16,7 @@ class LessonValidationsController < ApplicationController
     if @lesson_validation.save
       ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson)
-      TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
+      TransitionExtraRecipesJob.perform_later(current_user, @lesson_validation)
       TransitionAwardsJob.perform_later(current_user)
       redirect_to lesson_validation_path(@lesson_validation)
     else
@@ -33,7 +33,7 @@ class LessonValidationsController < ApplicationController
       @lesson_validation.save
       ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson)
-      TransitionExtraRecipesJob.perform_later(current_user, @lesson.recipe)
+      TransitionExtraRecipesJob.perform_later(current_user, @lesson_validation)
       TransitionAwardsJob.perform_later(current_user)
       redirect_to lesson_validation_path(@lesson_validation)
     else
@@ -53,6 +53,6 @@ class LessonValidationsController < ApplicationController
   end
 
   def lesson_validation_params
-    params.require(:lesson_validation).permit(:difficulcy, :notes, :photo)
+    params.require(:lesson_validation).permit(:difficulcy, :notes, :photo, :recipe_id)
   end
 end

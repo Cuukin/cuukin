@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RecipeConnectionTest < ActiveSupport::TestCase
+class LessonRecipeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
