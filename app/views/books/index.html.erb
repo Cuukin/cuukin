@@ -1,20 +1,3 @@
 <%= render 'shared/help' %>
 
 <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618357659/Cuukin%20-%20Public/help-btn_fdba1q.svg", class: 'btn-open-help') %>
-
-<div class="journey-container">
-    <%= image_tag('journey-map-locate-btn.svg', id: 'locateBtn') %>
-    <%= image_tag('journey-map.svg', class: 'journey-map') %>
-
-    <div id="book1">
-      <%= link_to book_path(1) do %>
-        <%= image_tag('book1-icon.svg', class: 'book-icon') %>
-      <% end %>
-    </div>
-
-    <div id="book2">
-      <%= link_to book_path(2) do %>
-        <%= image_tag('book2-icon.svg', class: 'book-icon') %>
-      <% end %>
-    </div>
-</div>
