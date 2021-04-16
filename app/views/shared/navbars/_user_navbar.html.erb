@@ -41,13 +41,17 @@
     <% end %>
   <% end %>
 
-  <%= link_to users_path, class: 'user-navbar-footer-item community-icons' do %>
-    <% if current_page?(controller: 'users', action: 'index') %>
-      <%= image_tag('nb-community-active.svg', id: 'community-active') %>
-      <p class="active">Leaderboard</p>
+  <%= link_to users_path do %>
+    <%= image_tag("nb-submenu.svg", id: 'submenu') %>
+  <% end %>
+
+  <%= link_to community_path, class: 'user-navbar-footer-item grocery-icons' do %>
+    <% if current_page?('/community') %>
+      <%= image_tag('nb-grocery-active.svg', id: 'grocery-active') %>
+      <p class="active">Grocery list</p>
     <% else %>
-      <%= image_tag('nb-community.svg', id: 'community') %>
-      <p>Leaderboard</p>
+      <%= image_tag('nb-grocery.svg', id: 'grocery') %>
+      <p>Grocery list</p>
     <% end %>
   <% end %>
 

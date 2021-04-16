@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # Pages
   root to: 'pages#home'
-  # get '/community', to: "pages#community"
+  get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
   # get '/welcome', to: "pages#welcome"
   # get '/help', to: "pages#help" # route to create help pop up
