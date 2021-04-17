@@ -1,6 +1,17 @@
 ActiveAdmin.register Lesson do
+  menu parent: "Lesson"
 
   permit_params :title, :xp, :book_id, :recipe_id
+
+  index do
+    selectable_column
+    # column :id
+    column :title
+    column :book
+    column :recipe
+    column :xp
+    actions
+  end
 
   # form do |f|
   #   f.inputs do
