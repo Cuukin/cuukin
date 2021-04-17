@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
     open?
     open_to_unblock?
 
+    @grocery_list = GroceryList.new
     @lesson_validation = LessonValidation.new
     @lesson_unblock = LessonUnblock.new
 
