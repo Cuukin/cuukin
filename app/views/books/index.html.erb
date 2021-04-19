@@ -1,12 +1,19 @@
 <%= render 'shared/help' %>
 
 <div class="journey-container">
+
   <%= image_tag("btn-help.svg", class: 'btn-open-help') %>
   <%= image_tag("journey-map.svg", class: 'journey-map') %>
 
   <div class="journey-books">
-    <%= link_to book_path(1) do %>
-      <%= image_tag("book-0-icon.svg", id: 'book-0') %>
-    <% end %>
+
+    <div class="book-0">
+      <%= link_to book_path(1) do %>
+        <%= image_tag("book-0-icon.svg", id: 'book-0') %>
+      <% end %>
+      <%= render 'book', lessons: @books.first.lessons %>
+    </div>
+
   </div>
+
 </div>
