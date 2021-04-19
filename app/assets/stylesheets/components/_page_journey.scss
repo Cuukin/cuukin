@@ -1,9 +1,10 @@
 .journey-container {
-  width: 100%;
+  width: 80%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 40px 16px;
+  position: relative;
 
   .journey-map {
     width: 200px;
@@ -14,13 +15,18 @@
   height: 60px;
   width: auto;
   cursor: pointer;
+  position: fixed;
+  right: 80px;
 }
 
 .journey-books {
   img {
     height: 88px;
     position: absolute;
-    top: 155px;
+  }
+
+  #book-0 {
+    top: 107px;
     left: 59px;
   }
 }
@@ -29,6 +35,9 @@
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
     width: 100vw;
+  }
+  .btn-open-help {
+    right: 24px;
   }
 }
 
