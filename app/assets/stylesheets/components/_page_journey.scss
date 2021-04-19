@@ -1,83 +1,31 @@
 .journey-container {
-  width: 800px;
+  width: 100%;
   margin: auto;
-  // border-right: 1px solid $black;
-  // border-left: 1px solid $black;
-  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
-  // background-color: $white;
-  overflow: scroll;
-  position: relative;
-  touch-action: pan-x pan-y;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 16px;
 
   .journey-map {
-    width: 1400px;
+    width: 200px;
   }
 }
 
-.book-icon {
-  height: 100px;
-  width: 100px;
-}
-
-.journey-start {
-  width: 100%;
-  margin: 0 auto;
-  padding: 16px;
-  background-color: $white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 10px;
-  }
-
-  p {
-    margin: 0 8px;
-  }
-
-  // #expandJourneyBtn {
-  //   color: $cuukin;
-  //   font-weight: 600;
-  //   margin: 0 8px;
-  // }
-}
-
-#book1 {
-  position: absolute;
-  width: 100%;
-  top: 79px;
-  left: 649px;
-}
-
-#book2 {
-  position: absolute;
-  width: 100%;
-  top: 283px;
-  left: 624px;
-}
-
-.locate-btn-container {
-  position: absolute;
-  width: 500px;
-  height: 100vh;
-  margin: auto;
-}
-
-#locateBtn {
-  position: fixed;
+.btn-open-help {
+  height: 60px;
+  width: auto;
   cursor: pointer;
-  bottom: 80px;
-  right: 24px;
-  //margin: 16px;
-  height: 56px;
-  width: 56px;
-  z-index: 100;
-  -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .12));
-  filter: drop-shadow( 3px 3px 6px rgba(0, 0, 0, .12));
 }
 
-@media (max-width: 800px) {
+.journey-books {
+  img {
+    height: 88px;
+    position: absolute;
+    top: 155px;
+    left: 59px;
+  }
+}
+
+@media (max-width: 880px) {
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
     width: 100vw;
