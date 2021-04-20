@@ -7,4 +7,14 @@ namespace :sprint2 do
     end
   end
 
+  task update_all_user_recipe: :environment do
+    UserRecipe.where(validated: true).each do |ur|
+      lv = LessonValidation.find_by(user: ur.user, recipe: ur.recipe)
+      ur.notes = lv.notes
+      ur.like = lv.like
+      ur.difficulcy = lv.difficulcy
+      ur.photo.attach(lv.photo.blob) if lv.photo.attached?
+      ur.save!
+    end
+  end
 end
