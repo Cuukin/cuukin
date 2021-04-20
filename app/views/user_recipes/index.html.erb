@@ -7,6 +7,10 @@
 
 <div class="recipes-container">
 
+  <% if @completed_recipes.empty? %>
+    <p class="text-center">Oops, you don't have any recipes yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+  <% end %>
+
   <%= render 'unlocked' %>
 
   <div class="recipes-cards-container" id="completedRecipes">

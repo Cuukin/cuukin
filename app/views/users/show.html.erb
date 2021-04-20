@@ -3,7 +3,8 @@
   <div class="profile-info">
     <div class="profile-text-content">
       <h2><%= current_user.username %></h2>
-      <h3>Level <%= current_user.level.capitalize %></h3>
+      <h3>Level <%= User.levels[current_user.level] %></h3>
+      <h4><%= current_user.level.capitalize %></h4>
       <%= link_to edit_user_registration_path(current_user) do %>
         <p><%= icon('fas', 'cog') %>Edit Profile</p>
       <% end %>
