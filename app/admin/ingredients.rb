@@ -14,7 +14,7 @@ ActiveAdmin.register Ingredient do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :badge_id
+      f.input :badge
       f.rich_text_area :content, as: :action_text
       f.button :submit
     end
