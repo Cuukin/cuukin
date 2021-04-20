@@ -3,6 +3,7 @@ namespace :sprint2 do
   task update_all_lesson_validation: :environment do
     LessonValidation.where(validated: true).each do |lv|
       lv.recipe = lv.lesson.recipe
+      lv.save!
     end
   end
 
