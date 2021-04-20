@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :lesson_validations, only: :show
 
-  resources :user_recipes, only: :index
+  resources :user_recipes, only: [ :index, :edit, :update ]
   resources :user_badges, only: :show
   resources :user_awards, only: :show
   resources :badges, only: :show
