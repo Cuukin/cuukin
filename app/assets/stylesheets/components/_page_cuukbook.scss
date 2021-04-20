@@ -60,13 +60,34 @@
   color: $white;
 }
 
-.recipe-card-info {
+.recipe-card-info-time {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   position: absolute;
   bottom: 8px;
+  left: 8px;
+
+  img {
+    width: 20px;
+    margin-right: 6px;
+  }
+
+  p {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.recipe-card-info-url {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  top: 8px;
   left: 8px;
 
   img {
