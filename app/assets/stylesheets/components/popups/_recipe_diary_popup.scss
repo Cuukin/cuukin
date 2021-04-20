@@ -11,6 +11,22 @@
   z-index: 10000;
 }
 
+.unlocked-recipe-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 16px auto 0;
+
+  a {
+    width: 49%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 .recipe-diary-modal-content {
   position: absolute;
   right: 50%;

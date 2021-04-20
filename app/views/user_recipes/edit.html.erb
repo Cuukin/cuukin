@@ -10,7 +10,7 @@
       <div id="recipe-validation-item-1">
         <div class="form-group-photo">
           <h3>Take a photo of your dish</h3>
-          <p>Your photo will verify lesson completition</p>
+          <p>Uploading a photo earns you extra stars</p>
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
           <%= image_tag "", class: "hidden", id: "photo-preview" %>
         </div>
@@ -26,8 +26,8 @@
           </div>
         </div>
 
-        <h3>Tell us about your lesson</h3>
-        <p>How easy did you find it?</p>
+        <h3>Great job!</h3>
+        <p>How difficult was the lesson?</p>
 
         <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
 
@@ -60,10 +60,10 @@
 
         </fieldset>
 
-        <p>Do you want to leave any notes or comments about this lesson?</p>
+        <p>Notes & feedback</p>
         <%= f.input :notes, label: false, input_html: { rows: '5'} %>
 
-        <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
+        <%= f.button :submit, 'Submit', class: 'primary-btn' %>
       </div>
 
     <% end %>

@@ -14,7 +14,7 @@
       <%= render 'recipe_diary', user_recipe: user_recipe %>
 
       <div class="recipe-card" id="userRecipe<%= user_recipe.id %>">
-        <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
+        <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
           <% if user_recipe.recipe.external_url %>
             <div class="recipe-card-info-url">
               <%= image_tag('recipe-url.svg') %>
