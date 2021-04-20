@@ -58,6 +58,10 @@ const skipToRecipe = () => {
       window.scrollTo({
         top: 0
       });
+
+      lessonVideos.forEach((video) => {
+        video.pause();
+      });
     });
   };
 
@@ -72,6 +76,10 @@ const skipToRecipe = () => {
 
         let progressBarWidth = 100 * (counter + 1) / totalItems;
         progressBar.style.width = progressBarWidth + '%';
+
+        lessonVideos.forEach((video) => {
+          video.pause();
+        });
       });
     });
   };
@@ -107,6 +115,10 @@ const skipToRecipe = () => {
         lessonSlide.style.transition = "transform 0.4s ease-in-out";
         lessonSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
       };
+
+      lessonVideos.forEach((video) => {
+        video.pause();
+      });
     });
   };
 
