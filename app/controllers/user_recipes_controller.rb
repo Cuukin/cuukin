@@ -14,6 +14,8 @@ class UserRecipesController < ApplicationController
   def update
     authorize @user_recipe, policy_class: UserRecipePolicy
     if @user_recipe.update(user_recipe_params)
+      @user_recipe.completed = true
+      @user_recipe.save
       redirect_to user_recipes_path
     else
       render :edit

@@ -1,0 +1,72 @@
+<div class="recipe-validation-modal" id="validateSkippedModal">
+  <div class="recipe-validation-modal-content">
+    <%= link_to user_recipes_path, class: 'close-recipe-validation' do %>
+      <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
+    <% end %>
+
+    <%= simple_form_for(@user_recipe, url: user_recipe_path(@user_recipe), method: 'patch') do |f| %>
+      <%= f.error_notification %>
+
+      <div id="recipe-validation-item-1">
+        <div class="form-group-photo">
+          <h3>Take a photo of your dish</h3>
+          <p>Your photo will verify lesson completition</p>
+          <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
+          <%= image_tag "", class: "hidden", id: "photo-preview" %>
+        </div>
+
+        <p class="primary-btn" id="validateLessonNext">Next</p>
+        <p class="devise-p text-center mt-2" id="validateLessonWithoutPhotoNext">Too late... ate it already!</p>
+      </div>
+
+      <div id="recipe-validation-item-2">
+        <div id="rememberPhotoText">
+          <div class="remember-text">
+            <h5>Remember to upload a photo next time!</h5>
+          </div>
+        </div>
+
+        <h3>Tell us about your lesson</h3>
+        <p>How easy did you find it?</p>
+
+        <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
+
+        <fieldset class="form-group radio_buttons optional">
+          <div class="lesson-validation-options-container">
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="easy" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_1">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_1">
+                <%= image_tag('lv-icon-easy.svg') %>
+                <p>Piece of cake</p>
+              </label>
+            </div>
+
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="medium" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_2">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_2">
+                <%= image_tag('lv-icon-medium.svg') %>
+                <p>Just right</p>
+              </label>
+            </div>
+
+            <div class="form-check lesson-validation-options">
+              <input class="form-check-input radio_buttons" type="radio" value="hard" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_3">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_3">
+                <%= image_tag('lv-icon-hard.svg') %>
+                <p>Burnt it all</p>
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <p>Do you want to leave any notes or comments about this lesson?</p>
+        <%= f.input :notes, label: false, input_html: { rows: '5'} %>
+
+        <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

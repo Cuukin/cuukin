@@ -18,7 +18,11 @@
       </li>
       <li>
         <%= image_tag('lv-level.svg') %>
-        Level <%= Book.levels[validation.lesson.book.level] %>
+        <% if user_recipe.recipe.lessons && !(user_recipe.recipe.lessons.empty?) %>
+          Level <%= Book.levels[user_recipe.recipe.lessons.first.book.level] %>
+        <% else %>
+          Level <%= Book.levels[user_recipe.recipe.lesson_recipes.first.lesson.book.level] %>
+        <% end %>
       </li>
     </ul>
 
