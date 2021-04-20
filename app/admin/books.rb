@@ -1,7 +1,7 @@
 ActiveAdmin.register Book do
   menu parent: "Journey"
 
-  permit_params :title, :description, :xp, :level
+  permit_params :title, :description, :xp, :level, :icon_url
 
   index do
     selectable_column

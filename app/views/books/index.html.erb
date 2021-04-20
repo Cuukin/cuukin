@@ -7,12 +7,14 @@
 
   <div class="journey-books">
 
-    <div class="book-0">
-      <%= link_to book_path(1) do %>
-        <%= image_tag("book-0-icon.svg", id: 'book-0') %>
-      <% end %>
-      <%= render 'book', lessons: @books.first.lessons %>
-    </div>
+    <% @books.each do |book| %>
+      <div class="book-<%= book.id %>">
+        <%= link_to book_path(1) do %>
+          <%= image_tag("#{book.icon_url}", id: "book-#{book.id}") %>
+        <% end %>
+        <%= render 'book', lessons: book.lessons %>
+      </div>
+    <% end %>
 
   </div>
 
