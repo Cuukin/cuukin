@@ -1,6 +1,9 @@
 <div class="container-book-lesson">
 
   <div class="book-info">
+    <%= link_to :back do %>
+      <%= image_tag("btn-back.svg") %>
+    <% end %>
     <div class="book-info-text">
       <h1><%= @book.title %></h1>
       <p><%= @book.description %></p>

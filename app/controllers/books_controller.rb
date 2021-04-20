@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :set_validations, only: [ :index, :show ]
 
   def index
-    @books = Book.all
+    @books = Book.where(id: 1).order(:id).includes(:lessons)
   end
 
   def show
