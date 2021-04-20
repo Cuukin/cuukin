@@ -4,7 +4,7 @@ class UserRecipePolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.user == user && !record.completed
   end
 
   class Scope < Scope
