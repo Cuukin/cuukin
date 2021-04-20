@@ -71,3 +71,6 @@ document.addEventListener('turbolinks:load', () => {
   createWeeklyCommitment();
   termsOfService();
 });
+
+require("trix")
+require("@rails/actiontext")
