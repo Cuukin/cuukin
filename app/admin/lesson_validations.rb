@@ -19,10 +19,11 @@ ActiveAdmin.register LessonValidation do
     # column :id
     column :user
     column :lesson
+    column :recipe
     column :validated
     column :difficulcy
     column :notes
-    column :photo, as: :file
+    # column :photo, as: :file
     actions
   end
 
