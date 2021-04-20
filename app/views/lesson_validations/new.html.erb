@@ -19,15 +19,14 @@
       <div id="recipe-validation-item-2">
         <div id="rememberPhotoText">
           <div class="remember-text">
-            <%= image_tag('warning.svg') %>
             <h5>Remember to upload a photo next time!</h5>
           </div>
         </div>
 
         <%= f.input :recipe_id, label: false, collection: [@lesson.recipe, @lesson.recipes].flatten %>
 
-        <h3>Tell us about your lesson</h3>
-        <p>How easy did you find it?</p>
+        <h3>Great job!</h3>
+        <p>How difficult was the lesson?</p>
 
         <fieldset class="form-group radio_buttons optional">
           <div class="lesson-validation-options-container">
@@ -58,7 +57,7 @@
 
         </fieldset>
 
-        <p>Do you want to leave any notes or comments about this lesson?</p>
+        <p>Notes & feedback</p>
         <%= f.input :notes, label: false, input_html: { rows: '5' } %>
 
         <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>

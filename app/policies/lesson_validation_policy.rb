@@ -8,7 +8,7 @@ class LessonValidationPolicy < ApplicationPolicy
   end
 
   def update?
-    !record.validated
+    record.user == user && !record.validated
   end
 
   class Scope < Scope

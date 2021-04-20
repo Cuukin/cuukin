@@ -53,6 +53,6 @@ class LessonValidationsController < ApplicationController
   end
 
   def lesson_validation_params
-    params.require(:lesson_validation).permit(:difficulcy, :notes, :photo, :recipe_id)
+    params.require(:lesson_validation).permit(:difficulcy, :notes, :liked, :photo, :recipe_id)
   end
 end

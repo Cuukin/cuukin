@@ -106,7 +106,7 @@
 }
 
 #lesson_validation_notes {
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 #validateLessonNext {
@@ -129,8 +129,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 24px 0 8px;
-  margin-bottom: 20px;
+  //padding: 0 24px 0 0;
+  margin: 10px 0 20px;
 
   img {
     height: 30px;
@@ -144,6 +144,11 @@
     font-size: 16px;
     margin: 0;
   }
+}
+
+.close-recipe-validation {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (max-width: 360px) {

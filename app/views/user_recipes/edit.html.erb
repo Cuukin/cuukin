@@ -1,14 +1,16 @@
-<div class="recipe-validation-modal" id="validateSkippedModal">
+<div class="recipe-validation-modal" id="validateSkippedModal" style="display: block;">
   <div class="recipe-validation-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidateSkippedModal') %>
+    <%= link_to user_recipes_path, class: 'close-recipe-validation' do %>
+      <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
+    <% end %>
 
-    <%= simple_form_for(@lesson_validation, url: lesson_lesson_validation_path(@lesson), method: 'patch') do |f| %>
+    <%= simple_form_for(@user_recipe, url: user_recipe_path(@user_recipe), method: 'patch') do |f| %>
       <%= f.error_notification %>
 
       <div id="recipe-validation-item-1">
         <div class="form-group-photo">
           <h3>Take a photo of your dish</h3>
-          <p>Your photo will verify lesson completition</p>
+          <p>Uploading a photo earns you extra stars</p>
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
           <%= image_tag "", class: "hidden", id: "photo-preview" %>
         </div>
@@ -24,34 +26,32 @@
           </div>
         </div>
 
-        <%= f.input :recipe_id, label: false, collection: [@lesson.recipe, @lesson.recipes].flatten %>
-
         <h3>Great job!</h3>
-        <p>How difficult was the lesson?</p>
+        <p>How difficult was the recipe?</p>
 
         <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
 
         <fieldset class="form-group radio_buttons optional">
           <div class="lesson-validation-options-container">
             <div class="form-check lesson-validation-options">
-              <input class="form-check-input radio_buttons" type="radio" value="easy" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_1">
-              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_1">
+              <input class="form-check-input radio_buttons" type="radio" value="easy" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_1">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_1">
                 <%= image_tag('lv-icon-easy.svg') %>
                 <p>Piece of cake</p>
               </label>
             </div>
 
             <div class="form-check lesson-validation-options">
-              <input class="form-check-input radio_buttons" type="radio" value="medium" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_2">
-              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_2">
+              <input class="form-check-input radio_buttons" type="radio" value="medium" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_2">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_2">
                 <%= image_tag('lv-icon-medium.svg') %>
                 <p>Just right</p>
               </label>
             </div>
 
             <div class="form-check lesson-validation-options">
-              <input class="form-check-input radio_buttons" type="radio" value="hard" name="lesson_validation[difficulcy]" id="lesson_validation_difficulcy_3">
-              <label class="form-check-label collection_radio_buttons" for="lesson_validation_difficulcy_3">
+              <input class="form-check-input radio_buttons" type="radio" value="hard" name="user_recipe[difficulcy]" id="user_recipe_difficulcy_3">
+              <label class="form-check-label collection_radio_buttons" for="user_recipe_difficulcy_3">
                 <%= image_tag('lv-icon-hard.svg') %>
                 <p>Burnt it all</p>
               </label>
@@ -63,7 +63,7 @@
         <p>Notes & feedback</p>
         <%= f.input :notes, label: false, input_html: { rows: '5'} %>
 
-        <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
+        <%= f.button :submit, 'Submit', class: 'primary-btn' %>
       </div>
 
     <% end %>

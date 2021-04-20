@@ -1,13 +1,24 @@
 .recipes-container {
   max-width: 500px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 116px 16px 40px;
 }
 
-.recipes-navbar {
+.cuukbook-navbar-container {
+  width: 100%;
+  padding: 8px 0 0;
+  z-index: 100;
+  background-color: $off-white;
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 45px;
+}
+
+.cuukbook-navbar-content {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 32px;
 
   h4 {
     font-size: 20px;
@@ -22,7 +33,7 @@
 }
 
 .recipe-navbar-active {
-  border-bottom: 2px solid $cuukin;
+  border-bottom: 4px solid $cuukin;
   color: $cuukin !important;
 }
 
@@ -39,6 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 
   p {
     width: 148px;
@@ -60,7 +72,7 @@
   color: $white;
 }
 
-.recipe-card-info {
+.recipe-card-info-time {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -75,6 +87,52 @@
   }
 
   p {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.recipe-card-info-url {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  img {
+    width: 20px;
+    margin-right: 6px;
+  }
+
+  p {
+    font-weight: 600;
+    color: $turquise;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.recipe-card-info-suggested {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  img {
+    width: 20px;
+    margin-right: 6px;
+  }
+
+  p {
+    font-weight: 600;
+    color: $cuukin;
     margin: 0;
     text-align: left;
     width: 100%;
