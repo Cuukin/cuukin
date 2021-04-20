@@ -10,6 +10,7 @@ ActiveAdmin.register UserRecipe do
       f.input :difficulcy
       f.input :notes
       f.input :photo, as: :file
+      f.input :completed
       f.button :submit
     end
   end
