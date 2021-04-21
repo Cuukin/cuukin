@@ -6,6 +6,18 @@
   justify-content: center;
 }
 
+.user-badges-container {
+  width: 100%;
+  margin: 16px 0;
+
+  h4 {
+    font-size: 16px;
+    color: $dark-gray;
+    //padding: 0 24px;
+    text-align: center;
+  }
+}
+
 .award {
   height: 64px;
   margin: 0 4px 8px;
