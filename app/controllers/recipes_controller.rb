@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
     validated?
     available?
     first?
+    @lesson = @recipe.lessons.first
   end
 
   private

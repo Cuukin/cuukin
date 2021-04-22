@@ -1,5 +1,153 @@
-<% if @validated || @available || @first %>
-  <p>go to lesson</p>
-<% else %>
-  <p>recipe not available yet</p>
-<% end %>
+<div class="container-lesson-overview">
+  <!-- <div class="lesson-prev-btn"> -->
+
+  <div class="lesson-btns">
+    <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
+      <%= link_to user_recipes_path do %>
+        <%= image_tag('btn-back.svg', class: 'btn-back') %>
+      <% end %>
+    <% else %>
+      <%= link_to lesson_path(@recipe.lessons.first) do %>
+        <%= image_tag('btn-back.svg', class: 'btn-back') %>
+      <% end %>
+    <% end %>
+
+    <%= image_tag('btn-help.svg', class: 'btn-help') %>
+  </div>
+
+  <div class="lesson-photo">
+    <%= image_tag("#{@recipe.photo_url}") %>
+  </div>
+
+  <div class="card-lesson-overview">
+    <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
+    <h2 class="text-center"><%= @recipe.title %></h2>
+
+    <ul class="lesson-overview-details">
+      <li>
+        <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
+        <%= @recipe.prep_time %>
+      </li>
+      <li>
+        <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
+        Level <%= Book.levels[@lesson.book.level] %>
+      </li>
+      <li>
+        <%= image_tag('lesson-xp.svg', class: 'lesson-icons') %>
+        <%= @lesson.xp %> Stars
+      </li>
+    </ul>
+
+    <% unless @recipe.dietary_restrictions.empty? %>
+      <ul class="lesson-overview-details dietary-restrictions">
+        <% @recipe.dietary_restrictions.each do |diet| %>
+          <li>
+            <%= image_tag("#{diet.icon}", class: 'lesson-icons') %>
+            <%= diet.name %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="lesson-overview-serving">
+      <%= image_tag('btn-decrease.svg', class: 'serving-btn', id: 'minusBtn') %>
+      <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>
+      <p class="serving-paragraph">1 serving(s)</p>
+      <%= image_tag('btn-increase.svg', class: 'serving-btn', id: 'plusBtn') %>
+    </div>
+
+    <div class="lesson-overview-skills">
+      <h3>Skills practiced</h3>
+      <ul>
+        <% @lesson.skill_chapters.each do |skill_chapter| %>
+          <li>
+            <div class="badge-container badge-btn <%= skill_chapter.badge.id %>">
+              <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
+              <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
+            </div>
+            <p class="lesson-overview-skills-p"><%= skill_chapter.title %></p>
+          </li>
+          <%= render 'lessons/badge', badge: skill_chapter.badge %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="lesson-overview-ingredients">
+
+      <div class="ingredients-header">
+        <h3>Ingredients</h3>
+        <div class="unit-conversion-btn">
+          <span class="unit unitSelected" id="metric-toggle"><p>Metric</p></span>
+          <span class="unit" id="imperial-toggle"><p>Imperial</p></span>
+        </div>
+      </div>
+
+      <table>
+        <% @recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
+          <tr>
+            <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
+              <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
+            </td>
+
+            <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
+
+            <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
+              <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
+              <%= render 'lessons/ingredient_swap_popup', recipe_ingredient: r_ingredient %>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+
+    <div class="lesson-overview-equipment">
+      <h3>Equipment needed</h3>
+      <table>
+        <% @recipe.recipe_tools.order(:id).each do |r_tool| %>
+          <tr>
+            <td class="equipment-name">
+              <% if r_tool.tool.suggested_product %>
+                <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
+                  <%= r_tool.tool.name %>
+                  <%= icon('fas', 'external-link-alt') %>
+                <% end %>
+              <% else %>
+                <%= r_tool.tool.name %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+      <div class="lesson-important">
+        <%= image_tag('lesson-important.svg') %>
+        <p>Don't have one of these? Click on any to see Kin's recommendation on what to get</p>
+      </div>
+    </div>
+
+    <div class="lesson-overview-nutri">
+      <div class="nutri-header">
+        <h3 class="nutri-btn">Nutritional data per serving</h3>
+        <%= image_tag('btn-expand.svg', class: 'nutri-show-btn') %>
+      </div>
+
+      <div class="nutri-content">
+        <ul>
+          <% @recipe.recipe_nutritional_infos.each do |nutri_data| %>
+            <li>
+              <p class="nutri-data"><%= nutri_data.value %></p>
+              <p class="nutri-metric"><%= nutri_data.nutrient %></p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <% if @validated || @available || @first %>
+      <p class="primary-btn">Make Recipe</p>
+    <% else %>
+      <p class="disabled-btn">Recipe locked</p>
+    <% end %>
+  </div>
+</div>
