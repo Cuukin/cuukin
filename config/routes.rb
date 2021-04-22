@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :lesson_unblocks, only: [ :create ]
   end
 
+  resources :recipes, only: [ :show ]
+
   resources :lesson_validations, only: :show
 
   resources :user_recipes, only: [ :index, :edit, :update ]
