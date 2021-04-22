@@ -1,0 +1,15 @@
+<div class="currency-modal" id="<%= award.id %>" style="display: none;">
+  <div class="currency-modal-content">
+    <%= image_tag('btn-close-rounded.svg', class: 'currency-modal-close-btn') %>
+
+    <div class="user-badge-container badge-popup">
+      <%= image_tag("#{award.icon}", id: 'badge-icon') %>
+    </div>
+
+    <h1 class="badge-name"><%= award.name %></h1>
+
+    <div class="currency-text-content">
+      <p><%= award.description %></p>
+    </div>
+  </div>
+</div>
