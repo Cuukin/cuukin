@@ -63,9 +63,9 @@ const unitConversion = () => {
 
       if (counter == 4) {
         addBtn.style.visibility = "hidden";
-        servingNumber.innerText = `${counter} serving(s)`;
+        servingNumber.innerText = `${counter}`;
       } else {
-        servingNumber.innerText = `${counter} serving(s)`;
+        servingNumber.innerText = `${counter}`;
       };
 
       ingredientMeasures.forEach((measure) => {
@@ -93,9 +93,9 @@ const unitConversion = () => {
 
       if (counter == 1) {
         minusBtn.style.visibility = "hidden";
-        servingNumber.innerText = `${counter} serving(s)`;
+        servingNumber.innerText = `${counter}`;
       } else {
-        servingNumber.innerText = `${counter} serving(s)`;
+        servingNumber.innerText = `${counter}`;
       };
 
       ingredientMeasures.forEach((measure) => {

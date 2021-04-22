@@ -17,7 +17,7 @@
   <%= render template: 'lesson_validations/edit' %>
 <% end %>
 
-<div class="container-lesson-overview">
+<div class="container-lesson-overview lesson-page">
   <!-- <div class="lesson-prev-btn"> -->
   <div class="lesson-btns">
     <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>

@@ -14,7 +14,7 @@
 .lesson-btns {
   width: 500px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: fixed;
   padding: 24px 16px 0;
   z-index: 10;
@@ -168,23 +168,35 @@
 .lesson-overview-serving {
   color: $dark-gray;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 24px 0;
 
   p {
-    margin: 0 0 0 10px;
+    font-size: 18px;
+    margin: 0 8px 0 0;
+    padding-top: 4px;
   }
 
   .serving-btn {
     height: 30px;
-    margin: 0 16px;
     cursor: pointer;
   }
 
   .serving-icon {
     height: 20px;
   }
+
+  .serving-minus {
+    margin-right: 12px;
+  }
+
+  .serving-plus {
+    margin-left: 12px;
+  }
+}
+
+.servingDisabled {
+  opacity: 0;
 }
 
 .lesson-overview-skills {
@@ -277,7 +289,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin: 24px 0;
 
   h3 {
     margin: 0;
@@ -413,28 +425,6 @@
   /* For a screen < 540px, this CSS will be read */
   .container-lesson-overview, .lesson-photo, .lesson-btns {
     width: 100vw;
-  }
-
-  // .lesson-overview-details {
-  //   li {
-  //     font-size: 16px;
-  //     display: inline;
-  //   }
-
-  //   .lesson-icons {
-  //     height: 16px;
-  //   }
-  // }
-
-  .lesson-overview-serving {
-    p {
-      margin: 0 0 0 8px;
-    }
-
-    .serving-btn {
-      height: 24px;
-      margin: 0 14px;
-    }
   }
 }
 

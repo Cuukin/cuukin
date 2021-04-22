@@ -19,7 +19,9 @@ const lessonChaptersSlide = () => {
 
   let counter = 0;
 
-  if (lessonOverviewContainer) {
+  const lessonPage = document.querySelector('.lesson-page');
+
+  if (lessonOverviewContainer && lessonPage) {
     lessonContainer.style.display = "none";
   };
 
