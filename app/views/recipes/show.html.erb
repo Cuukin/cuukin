@@ -18,7 +18,7 @@
 
   <div class="card-lesson-overview">
     <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-    <h2 class="text-center"><%= @recipe.title %></h2>
+    <h2 class="text-center <%= "turquise" if @recipe.external_url %>"><%= @recipe.title %></h2>
 
     <ul class="lesson-overview-details">
       <li>
@@ -141,17 +141,26 @@
       </ul>
     </div>
 
-    <% if @validated || @available || @first %>
-      <p class="primary-btn">Make Recipe</p>
-    <% else %>
-      <p class="disabled-btn">Recipe locked</p>
-    <% end %>
+    <div class="double-btn">
+      <p class="secondary-btn mr-1">Add to Grocery list</p>
+      <% if @validated || @available || @first %>
+        <% if @recipe.external_url %>
+          <%= link_to @recipe.external_url, target: '_blank' do %>
+            <p class="primary-btn turquise-bg ml-1">Make Recipe <%= icon('fas', 'external-link-alt') %></p>
+          <% end %>
+        <% else %>
+          <p class="primary-btn ml-1">Make Recipe</p>
+        <% end %>
+      <% else %>
+        <p class="disabled-btn ml-1">Recipe Locked</p>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class="recipe-methods-container">
 
-  <% @recipe.recipe_methods.order(:method_index).each_with_index do |recipe_method, index| %>
+  <% @recipe.recipe_methods&.order(:method_index).each_with_index do |recipe_method, index| %>
     <div class="container-lesson-recipe">
       <div class="lesson-recipe-video">
         <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>

@@ -129,6 +129,10 @@
 .double-btn {
   display: flex;
   justify-content: space-between;
+
+  a {
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
