@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   resources :lesson_validations, only: :show
 
   resources :user_recipes, only: [ :index, :edit, :update ]
-  resources :user_badges, only: :show
-  resources :user_awards, only: :show
-  resources :badges, only: :show
+  #resources :user_badges, only: :show
+  #resources :user_awards, only: :show
+  #resources :badges, only: :show
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
