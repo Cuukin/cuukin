@@ -2,17 +2,16 @@
   <h4>Ingredient badges</h4>
   <div class="user-awards-container">
     <% @ingredient_badges.each do |user_badge| %>
-      <%= link_to user_badge_path(user_badge) do %>
-        <div class="user-badge-container">
-          <% if user_badge.medal == 'white' %>
-            <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
-          <% elsif user_badge.medal == 'bronze' %>
-            <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
-          <% end %>
+      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+        <% if user_badge.medal == 'white' %>
+          <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
+        <% elsif user_badge.medal == 'bronze' %>
+          <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
+        <% end %>
 
-          <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
-        </div>
-      <% end %>
+        <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
+      </div>
+      <%= render 'user_badges/badge', badge: user_badge.badge %>
     <% end %>
   </div>
 </div>
@@ -21,17 +20,16 @@
   <h4>Equipment badges</h4>
   <div class="user-awards-container">
     <% @tool_badges.each do |user_badge| %>
-      <%= link_to user_badge_path(user_badge) do %>
-        <div class="user-badge-container">
-          <% if user_badge.medal == 'white' %>
-            <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
-          <% elsif user_badge.medal == 'bronze' %>
-            <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
-          <% end %>
+      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+        <% if user_badge.medal == 'white' %>
+          <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
+        <% elsif user_badge.medal == 'bronze' %>
+          <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
+        <% end %>
 
-          <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
-        </div>
-      <% end %>
+        <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
+      </div>
+      <%= render 'user_badges/badge', badge: user_badge.badge %>
     <% end %>
   </div>
 </div>
@@ -40,17 +38,16 @@
   <h4>Technique badges</h4>
   <div class="user-awards-container">
     <% @technique_badges.each do |user_badge| %>
-      <%= link_to user_badge_path(user_badge) do %>
-        <div class="user-badge-container">
-          <% if user_badge.medal == 'white' %>
-            <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
-          <% elsif user_badge.medal == 'bronze' %>
-            <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
-          <% end %>
+      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+        <% if user_badge.medal == 'white' %>
+          <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
+        <% elsif user_badge.medal == 'bronze' %>
+          <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
+        <% end %>
 
-          <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
-        </div>
-      <% end %>
+        <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
+      </div>
+      <%= render 'user_badges/badge', badge: user_badge.badge %>
     <% end %>
   </div>
 </div>

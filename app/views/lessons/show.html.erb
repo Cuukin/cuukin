@@ -241,7 +241,7 @@
             <div class="recipe-method-ingredients">
               <h5>Ingredients</h5>
               <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
-                <% if recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
+                <% if recipe_ingredient.recipe_methods && recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
                   <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
                     <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
                   </p>
