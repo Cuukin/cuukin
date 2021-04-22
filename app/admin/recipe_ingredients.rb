@@ -1,7 +1,7 @@
 ActiveAdmin.register RecipeIngredient do
   menu parent: "Recipe"
 
-  permit_params :recipe_id, :ingredient_id, :quantity, :unit, :optional
+  permit_params :recipe_id, :ingredient_id, :quantity, :unit, :optional, :recipe_methods
 
   index do
     selectable_column
@@ -11,6 +11,7 @@ ActiveAdmin.register RecipeIngredient do
     column :quantity
     column :unit
     column :optional
+    column :recipe_methods
     actions
   end
 
