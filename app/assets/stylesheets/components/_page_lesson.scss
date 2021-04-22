@@ -193,10 +193,10 @@
   .serving-plus {
     margin-left: 12px;
   }
-}
 
-.servingDisabled {
-  opacity: 0;
+  .disabled {
+    opacity: .6;
+  }
 }
 
 .lesson-overview-skills {
@@ -288,7 +288,7 @@
 .ingredients-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 24px 0;
 
   h3 {

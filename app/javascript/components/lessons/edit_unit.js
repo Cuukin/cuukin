@@ -54,15 +54,20 @@ const unitConversion = () => {
 
   // EDIT SERVING
   if (addBtn) {
-    minusBtn.style.visibility = "hidden";
+    //minusBtn.style.visibility = "hidden";
+    minusBtn.classList.add('disabled');
 
     addBtn.addEventListener('click', () => {
-      minusBtn.style.visibility = "";
+      //minusBtn.style.visibility = "";
+      minusBtn.classList.remove('disabled');
+      minusBtn.style.pointerEvents = "auto";
 
       counter += 1;
 
       if (counter == 4) {
-        addBtn.style.visibility = "hidden";
+        //addBtn.style.visibility = "hidden";
+        addBtn.classList.add('disabled');
+        addBtn.style.pointerEvents = "none";
         servingNumber.innerText = `${counter}`;
       } else {
         servingNumber.innerText = `${counter}`;
@@ -87,12 +92,16 @@ const unitConversion = () => {
     });
 
     minusBtn.addEventListener('click', () => {
-      addBtn.style.visibility = "";
+      //addBtn.style.visibility = "";
+      addBtn.classList.remove('disabled');
+      addBtn.style.pointerEvents = "auto";
 
       counter -= 1;
 
       if (counter == 1) {
-        minusBtn.style.visibility = "hidden";
+        //minusBtn.style.visibility = "hidden";
+        minusBtn.classList.add('disabled');
+        minusBtn.style.pointerEvents = "none";
         servingNumber.innerText = `${counter}`;
       } else {
         servingNumber.innerText = `${counter}`;
