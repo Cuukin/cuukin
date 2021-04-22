@@ -62,7 +62,7 @@
     <% if user_recipe.recipe.external_url %>
       <%= link_to "Make this recipe again", user_recipe.recipe.external_url, target: '_blank', class: 'primary-btn'  %>
     <% else %>
-      <%= link_to "Make this recipe again", lesson_path(Lesson.find(validation.lesson.id)), class: 'primary-btn' %>
+      <%= link_to "Make this recipe again", recipe_path(user_recipe.recipe), class: 'primary-btn' %>
     <% end %>
   </div>
 </div>

@@ -29,10 +29,6 @@
         <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
         Level <%= Book.levels[@lesson.book.level] %>
       </li>
-      <li>
-        <%= image_tag('lesson-xp.svg', class: 'lesson-icons') %>
-        <%= @lesson.xp %> Stars
-      </li>
     </ul>
 
     <% unless @recipe.dietary_restrictions.empty? %>

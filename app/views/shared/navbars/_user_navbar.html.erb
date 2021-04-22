@@ -5,12 +5,12 @@
     <p><%= User.levels[current_user.level] %></p>
   </div>
 
-  <div class="nb-user-item" id="nb-xp" style="visibility: <%= current_user.xp >= 200 ? "" : "hidden" %>;">
+  <div class="nb-user-item" id="nb-xp" style="visibility: <%= current_user.xp >= 150 ? "" : "hidden" %>;">
     <%= image_tag('nb-xp.svg') %>
     <p><%= current_user.xp %></p>
   </div>
 
-  <div class="nb-user-item" id="nb-dish" style="visibility: <%= current_user.xp >= 200 ? "" : "hidden" %>;">
+  <div class="nb-user-item" id="nb-dish" style="visibility: <%= current_user.xp >= 150 ? "" : "hidden" %>;">
     <%= image_tag('nb-dish.svg') %>
     <p><%= current_user.user_recipes.count %></p>
   </div>
