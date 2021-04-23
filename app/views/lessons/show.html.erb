@@ -14,12 +14,14 @@
   <%= render template: 'lesson_validations/edit' %>
 <% end %>
 
+<%= render 'shared/help' %>
+
 
 <div class="container-lesson-overview">
   <div class="lesson-overview-navbar">
     <%= image_tag('btn-back.svg') %>
     <h1><%= @lesson.title %></h1>
-    <%= image_tag('btn-help.svg') %>
+    <%= image_tag('btn-help.svg', id: 'openHelpBtn') %>
   </div>
 </div>
 

@@ -2,7 +2,7 @@ const helpPopup = () => {
   const newHelpModal = document.querySelector('.help-container');
 
   if (newHelpModal) {
-    const openBtn = document.querySelector('.btn-open-help');
+    const openBtn = document.querySelector('#openHelpBtn');
     const closeBtns = newHelpModal.querySelectorAll('.btn-close');
 
     openBtn.addEventListener('click', () => {
