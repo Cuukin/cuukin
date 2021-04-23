@@ -1,7 +1,7 @@
 // OVERVIEW NAVBAR
 
 .container-lesson-overview {
-  display: none;
+  display: block;
 }
 
 .lesson-overview-navbar {
@@ -78,6 +78,7 @@
   .skill-p {
     color: $dark-gray;
     margin-top: 8px;
+    cursor: pointer;
   }
 }
 

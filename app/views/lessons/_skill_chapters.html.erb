@@ -1,5 +1,7 @@
 <div class="skill-chapters-navbar">
+
   <%= image_tag('btn-back.svg', class: 'nav-btn', id: 'prevChapter') %>
+
   <div class="skill-progression">
     <p>Skill Chapter</p>
     <div class="skill-checklist">
@@ -8,17 +10,20 @@
       <% end %>
     </div>
   </div>
+
   <%= image_tag('btn-forward.svg', class: 'nav-btn', id: 'nextChapter') %>
+
 </div>
 
 <div class="skill-chapters-container">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-    <% unless skill_chapter.users.include?(current_user) %>
-      <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn" %>
-    <% end %>
+    <div class="skill-chapter-card skillChapter-<%= skill_chapter.id %>">
 
-    <div class="skill-chapter-card">
+      <% unless skill_chapter.users.include?(current_user) %>
+        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "userSkill-#{skill_chapter.id}" %>
+      <% end %>
+
       <div class="skill-chapter-video">
         <video class="skillVideo" src="<%= skill_chapter.video_url %>" controls playsinline></video>
       </div>
@@ -28,6 +33,7 @@
         <h2 class="text-center"><%= skill_chapter.title %></h2>
         <p class="skill-description"><%= skill_chapter.description %></p>
       </div>
+
     </div>
 
   <% end %>

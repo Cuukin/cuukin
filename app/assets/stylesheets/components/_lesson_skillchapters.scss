@@ -1,7 +1,7 @@
 // CONTAINER SKILL CHAPTERS SECTION
 
 .container-skill-chapters {
-  display: block;
+  display: none;
 }
 
 // NAVBAR
@@ -49,6 +49,8 @@
 }
 
 .skill-chapter-card {
+  display: none;
+
   width: 500px;
   min-height: 100vh;
   margin: 0 auto;
@@ -83,6 +85,15 @@
   .skill-description {
     white-space: pre-wrap;
   }
+}
+
+// BTNS
+
+.invisible-skill-btn {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  z-index: -20;
 }
 
 @media (max-width: 500px) {
