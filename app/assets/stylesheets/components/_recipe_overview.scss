@@ -1,9 +1,5 @@
 // RECIPE OVERVIEW
 
-.recipe-overview {
-  display: block;
-}
-
 .container-recipe-overview {
   display: block;
   width: 500px;
@@ -113,6 +109,21 @@
   margin-top: 4px !important;
 }
 
+// INGREDIENTS SECTIONS
+
+.ingredients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 24px 0;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+// SERVING CONVERTION
+
 .recipe-overview-serving {
   color: $dark-gray;
   display: flex;
@@ -147,46 +158,7 @@
   }
 }
 
-.recipe-overview-nutri {
-  margin: 24px 0;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  li {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 16px;
-    margin-bottom: 8px;
-    font-size: 14px;
-
-    background-color: $cuukin;
-    border-radius: 12px;
-    padding: 8px;
-  }
-
-  p {
-    margin: 0;
-  }
-}
-
-.ingredients-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 24px 0;
-
-  h3 {
-    margin: 0;
-  }
-}
+// UNIT CONVERTION
 
 .unit-conversion-btn {
   display: flex;
@@ -218,37 +190,7 @@
   }
 }
 
-.nutri-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 8px;
-
-  h3 {
-    margin: 0;
-    cursor: pointer;
-  }
-}
-
-.nutri-content {
-  display: none;
-  opacity: .1;
-  transition: opacity ease-in 0.25s;
-}
-
-.nutri-data {
-  background-color: rgb(246, 234, 234);
-  border-radius: 12px;
-  padding: 8px 12px;
-  text-align: center;
-  font-weight: 600;
-  font-family: 'Nunito', sans-serif;
-}
-
-.nutri-metric {
-  color: $white;
-  padding: 8px 0;
-}
+// INGREDIENTS & EQUIPMENTS SECTION
 
 .recipe-overview-equipment, .recipe-overview-ingredients {
   margin: 24px 0;
@@ -306,6 +248,72 @@
   }
 }
 
+// NUTRITIONAL INFORMATION SECTION
+
+.recipe-overview-nutri {
+  margin: 24px 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+    background-color: $cuukin;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.nutri-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  h3 {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.nutri-content {
+  display: none;
+  opacity: .1;
+  transition: opacity ease-in 0.25s;
+}
+
+.nutri-data {
+  background-color: rgb(246, 234, 234);
+  border-radius: 12px;
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nutri-metric {
+  color: $white;
+  padding: 8px 0;
+}
+
+// SKILLS OVERVIEW SECTION
+
 .recipe-overview-skills {
   margin: 24px 0;
 
@@ -329,7 +337,6 @@
     font-weight: 16px;
     line-height: 1;
     margin: 8px 0 0;
-    // width: 50%;
     text-align: center;
   }
 

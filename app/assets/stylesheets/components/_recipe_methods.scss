@@ -58,7 +58,7 @@
 
 // ALL METHODS CARDS INSIDE THIS CONTAINER
 
-.recipe-methods-container-content {
+.recipe-methods-container-cards {
   position: relative;
   top: 45px;
   padding-bottom: 45px;
@@ -66,7 +66,7 @@
 
 // CARD PER METHOD
 
-.container-lesson-recipe {
+.recipe-method-card {
   display: none;
   width: 500px;
   height: 100%;
@@ -74,7 +74,7 @@
   background-color: $off-white;
 }
 
-.card-lesson-recipe {
+.recipe-method-content-card {
   padding: 16px 16px 24px;
 
   h4 {
@@ -90,7 +90,7 @@
   }
 }
 
-.lesson-recipe-video {
+.recipe-method-video {
   width: 500px;
   display: flex;
   justify-content: center;
@@ -103,7 +103,7 @@
   }
 }
 
-.card-lesson-recipe-header {
+.recipe-method-content-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -155,8 +155,7 @@
 
 
 @media (max-width: 500px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container-lesson-recipe, .lesson-recipe-video {
+  .recipe-method-card, .recipe-method-video {
     width: 100vw;
   }
 }
