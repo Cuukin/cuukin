@@ -72,7 +72,7 @@
 
             <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
               <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
-              <%= render 'lessons/ingredient_swap_popup', recipe_ingredient: r_ingredient %>
+              <%= render 'recipes/ingredient_swap_popup', recipe_ingredient: r_ingredient %>
             <% end %>
           </tr>
         <% end %>
@@ -134,7 +134,7 @@
             </div>
             <p class="skill-p"><%= skill_chapter.title %></p>
           </li>
-          <%= render 'lessons/badge', badge: skill_chapter.badge %>
+          <%= render 'recipes/badge', badge: skill_chapter.badge %>
         <% end %>
       </ul>
     </div>

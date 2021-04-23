@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
 
   def available?
     prev_lesson_id = @recipe.lessons.first.id - 1
-    unless prev_lesson_id = 0
+    unless prev_lesson_id == 0
       @available = @validated_lessons.include?(Lesson.find(prev_lesson_id))
     end
   end
