@@ -32,6 +32,7 @@ import { openBadge } from '../components/popups/open_badge';
 // import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 // import { skipToRecipe } from '../components/lessons/skip_to_recipe';
 import { skillChapters } from '../components/lessons/skill_chapters';
+import { userSkill } from '../components/lessons/user_skill';
 
 // import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
@@ -54,6 +55,7 @@ document.addEventListener('turbolinks:load', () => {
 
   // lesson
   skillChapters();
+  userSkill();
 
   // recipe
   lessonNutriData();
