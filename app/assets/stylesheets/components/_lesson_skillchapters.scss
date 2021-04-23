@@ -1,55 +1,3 @@
-// BTNS
-
-.lesson-btns {
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  padding: 24px 16px 0;
-  z-index: 10;
-}
-
-.btn-back, .btn-help {
-  height: 42px;
-  width: 42px;
-  cursor: pointer;
-}
-
-
-.skill-description-container {
-  overflow: scroll;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 24px;
-  padding-right: 16px;
-  //border-right: 1px solid $gray;
-
-  p {
-    margin-bottom: 0;
-  }
-}
-
-.skill-description {
-  white-space: pre-wrap;
-}
-
-
-// Lesson Overview [FIRST CARD]
-
-@media (max-width: 500px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container-lesson-overview, .lesson-photo, .lesson-btns {
-    width: 100vw;
-  }
-}
-
-@media (max-width: 400px) {
-  /* For a screen < 540px, this CSS will be read */
-  .container-lesson-overview, .lesson-photo, .lesson-btns {
-    width: 100vw;
-  }
-}
-
 // Container overflow SKILL VIDEOS + RECIPE METHODS
 
 .container-lesson {
@@ -60,14 +8,23 @@
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
 }
 
-.lesson-slide {
+// Lesson Skill Chapter [second++ cards]
+
+.skill-description-container {
+  overflow: scroll;
   width: 100%;
-  display: flex;
-  position: relative;
-  top: 16px;
+  height: 300px;
+  margin-bottom: 24px;
+  padding-right: 16px;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
-// Lesson Skill Chapter [second++ cards]
+.skill-description {
+  white-space: pre-wrap;
+}
 
 .container-lesson-chapter {
   width: 500px;
@@ -113,6 +70,21 @@
 
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
+    width: 100vw;
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
   .container-lesson, .container-lesson-chapter, .lesson-skill-video {
     width: 100vw;
   }
@@ -123,8 +95,4 @@
   .container-lesson, .container-lesson-chapter, .lesson-skill-video {
     width: 100vw;
   }
-}
-
-.finish-lesson {
-  margin-top: 24px;
 }

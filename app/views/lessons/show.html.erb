@@ -1,8 +1,5 @@
 <!-- first div with general info + btn to start lesson -->
 
-<%= render 'start_recipe_popup' %>
-<%= render 'start_lesson_popup' %>
-
 <% unless @validated || @skipped %>
   <% if @open_to_unblock %>
     <%= render template: 'lesson_validations/new' %>
@@ -17,266 +14,31 @@
   <%= render template: 'lesson_validations/edit' %>
 <% end %>
 
-<div class="container-lesson-overview lesson-page">
-  <!-- <div class="lesson-prev-btn"> -->
-  <div class="lesson-btns">
-    <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
-      <%= link_to user_recipes_path do %>
-        <%= image_tag('btn-back.svg', class: 'btn-back') %>
-      <% end %>
-    <% else %>
-      <%= link_to book_path(@lesson.book) do %>
-        <%= image_tag('btn-back.svg', class: 'btn-back') %>
-      <% end %>
-    <% end %>
 
-    <%= image_tag('btn-help.svg', class: 'btn-help') %>
-  </div>
+<div class="skill-chapters">
+  <% @lesson.skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-  <div class="lesson-photo">
-    <%= image_tag("#{@lesson.recipe.photo_url}") %>
-  </div>
+    <div class="container-lesson-chapter">
+      <div class="lesson-skill-video">
+        <video class="skillVideo" src="<%= skill_chapter.video_url %>" controls playsinline></video>
+      </div>
 
-  <div class="card-lesson-overview">
-    <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-    <h2 class="text-center"><%= @lesson.title %></h2>
+      <div class="card-lesson-chapter">
+        <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
+        <h2 class="text-center"><%= skill_chapter.title %></h2>
+        <h3>Transcription</h3>
 
-    <ul class="lesson-overview-details">
-      <li>
-        <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
-        <%= @lesson.recipe.prep_time %>
-      </li>
-      <li>
-        <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
-        Level <%= Book.levels[@lesson.book.level] %>
-      </li>
-      <li>
-        <%= image_tag('lesson-xp.svg', class: 'lesson-icons') %>
-        <%= @lesson.xp %> Stars
-      </li>
-    </ul>
-
-    <% unless @lesson.recipe.dietary_restrictions.empty? %>
-      <ul class="lesson-overview-details dietary-restrictions">
-        <% @lesson.recipe.dietary_restrictions.each do |diet| %>
-          <li>
-            <%= image_tag("#{diet.icon}", class: 'lesson-icons') %>
-            <%= diet.name %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <div class="lesson-overview-serving">
-      <%= image_tag('btn-decrease.svg', class: 'serving-btn', id: 'minusBtn') %>
-      <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>
-      <p class="serving-paragraph">1 serving(s)</p>
-      <%= image_tag('btn-increase.svg', class: 'serving-btn', id: 'plusBtn') %>
-    </div>
-
-    <div class="lesson-overview-skills">
-      <h3>Skills practiced</h3>
-      <ul>
-        <% @lesson.skill_chapters.each do |skill_chapter| %>
-          <li>
-            <div class="badge-container badge-btn <%= skill_chapter.badge.id %>">
-              <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
-              <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
-            </div>
-            <p class="lesson-overview-skills-p"><%= skill_chapter.title %></p>
-          </li>
-          <%= render 'badge', badge: skill_chapter.badge %>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="lesson-overview-ingredients">
-
-      <div class="ingredients-header">
-        <h3>Ingredients</h3>
-        <div class="unit-conversion-btn">
-          <span class="unit unitSelected" id="metric-toggle"><p>Metric</p></span>
-          <span class="unit" id="imperial-toggle"><p>Imperial</p></span>
+        <div class="skill-description-container">
+          <p class="skill-description"><%= skill_chapter.description %></p>
         </div>
-      </div>
 
-      <table>
-        <% @lesson.recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
-          <tr>
-            <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
-              <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
-            </td>
-
-            <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
-
-            <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
-              <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
-              <%= render 'ingredient_swap_popup', recipe_ingredient: r_ingredient %>
-            <% end %>
-          </tr>
+        <% unless @lesson.skill_chapters.last == skill_chapter  %>
+          <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
+        <% else %>
+          <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
         <% end %>
-      </table>
-
-    </div>
-
-    <div class="lesson-overview-equipment">
-      <h3>Equipment needed</h3>
-      <table>
-        <% @lesson.recipe.recipe_tools.order(:id).each do |r_tool| %>
-          <tr>
-            <td class="equipment-name">
-              <% if r_tool.tool.suggested_product %>
-                <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
-                  <%= r_tool.tool.name %>
-                  <%= icon('fas', 'external-link-alt') %>
-                <% end %>
-              <% else %>
-                <%= r_tool.tool.name %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-
-      <div class="lesson-important">
-        <%= image_tag('lesson-important.svg') %>
-        <p>Don't have one of these? Click on any to see Kin's recommendation on what to get</p>
       </div>
     </div>
 
-    <div class="lesson-overview-nutri">
-      <div class="nutri-header">
-        <h3 class="nutri-btn">Nutritional data per serving</h3>
-        <%= image_tag('btn-expand.svg', class: 'nutri-show-btn') %>
-      </div>
-
-      <div class="nutri-content">
-        <ul>
-          <% @lesson.recipe.recipe_nutritional_infos.each do |nutri_data| %>
-            <li>
-              <p class="nutri-data"><%= nutri_data.value %></p>
-              <p class="nutri-metric"><%= nutri_data.nutrient %></p>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
-    <% if @validated %>
-      <div class="double-btn">
-        <p class="secondary-btn mr-1" style="cursor: pointer;" id="startLesson">Lesson Skills</p>
-        <p class="primary-btn ml-1" style="cursor: pointer;" id="skipToRecipe">Recipe</p>
-      </div>
-    <% elsif @open || @skipped || @first %>
-      <p class="primary-btn" style="cursor: pointer;" id="startLesson">Start the Lesson</p>
-    <% elsif @open_to_unblock %>
-      <p class="primary-btn" style="cursor: pointer;" id="openUnblockOptionsBtn">Unlock Lesson</p>
-    <% else %>
-      <p class="disabled-btn" style="cursor: pointer;" id="lessonBlocked">Lesson Locked</p>
-    <% end %>
-  </div>
+  <% end %>
 </div>
-
-<!-- overflow hidden container with all skill chapters -->
-<div class="container-lesson">
-  <div class="lesson-btns">
-    <%= image_tag('btn-back.svg', class: 'btn-back', id: 'prev-chap-btn') %>
-    <%= image_tag('btn-back.svg', class: 'btn-back', id: 'skiptorecipe-prev-btn') %>
-    <%= image_tag('btn-help.svg', class: 'btn-help') %>
-  </div>
-
-  <div class="meter">
-    <span class="meter-progression"></span>
-  </div>
-
-  <div class="lesson-slide">
-
-    <% @lesson.skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
-
-      <div class="container-lesson-chapter">
-        <div class="lesson-skill-video">
-          <video class="skillVideo" src="<%= skill_chapter.video_url %>" controls playsinline></video>
-        </div>
-
-        <div class="card-lesson-chapter">
-          <%= image_tag('lesson-dash.svg', class: 'lesson-dash') %>
-          <h2 class="text-center"><%= skill_chapter.title %></h2>
-          <h3>Transcription</h3>
-
-          <div class="skill-description-container">
-            <p class="skill-description"><%= skill_chapter.description %></p>
-          </div>
-
-          <% unless @lesson.skill_chapters.last == skill_chapter  %>
-            <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
-          <% else %>
-            <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
-          <% end %>
-        </div>
-      </div>
-
-    <% end %>
-
-    <% @lesson.recipe.recipe_methods.order(:method_index).each_with_index do |recipe_method, index| %>
-
-      <div class="container-lesson-recipe">
-        <div class="lesson-recipe-video">
-          <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>
-        </div>
-
-        <div class="card-lesson-recipe">
-          <div class="card-lesson-recipe-header">
-            <div class="recipe-header-left">
-              <h4><%= @lesson.title %></h4>
-              <h2><%= "Step #{index + 1} / #{@lesson.recipe.recipe_methods.count} #{recipe_method.title}" %></h2>
-            </div>
-
-            <% unless @lesson.recipe.recipe_methods.last == recipe_method %>
-              <%= image_tag('btn-next.svg', class: 'lesson-next-btn lesson-recipe-next-btn') %>
-              <%= image_tag('btn-next.svg', class: 'recipe-next-btn', style: 'display: none;') %>
-            <% end %>
-          </div>
-
-          <div class="recipe-method-content">
-            <div class="recipe-method-ingredients">
-              <h5>Ingredients</h5>
-              <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
-                <% if recipe_ingredient.recipe_methods && recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
-                  <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
-                    <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
-                  </p>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="recipe-method-description">
-              <p><%= recipe_method.description %></p>
-            </div>
-          </div>
-
-          <% if @lesson.recipe.recipe_methods.last == recipe_method %>
-            <% if @validated %>
-              <%= link_to book_path(@lesson.book) do %>
-                <p class="disabled-btn finish-lesson" style="cursor: pointer;">Lesson Validated</p>
-              <% end %>
-            <% elsif @skipped %>
-              <div class="warning-completion">
-                <h5>Remember to verify lesson completion below</h5>
-              </div>
-              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateSkippedBtn">Complete Lesson</p>
-            <% else %>
-              <div class="warning-completion">
-                <h5>Remember to verify lesson completion below</h5>
-              </div>
-              <p class="primary-btn finish-lesson" style="cursor: pointer;" id="validateLessonBtn">Complete Lesson</p>
-            <% end %>
-          <% end %>
-
-        </div>
-      </div>
-
-    <% end %>
-
-  </div>
-</div>
-
-<!-- overflow hidden container with all recipe methods -->
