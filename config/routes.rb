@@ -16,11 +16,6 @@ Rails.application.routes.draw do
   get 'commitment', to: 'users#commitment'
   patch 'create_commitment', to: 'users#create_commitment'
 
-  # Pages
-
-  get '/community', to: "pages#community"
-  get '/credits', to: "pages#credits"
-
   # Book, Lesson and Lesson Validation
 
   resources :books, only: [ :index, :show ]
@@ -34,6 +29,11 @@ Rails.application.routes.draw do
   resources :recipes, only: [ :show ]
   resources :user_recipes, only: [ :index, :edit, :update ]
   resources :user_skills, only: [ :create ]
+
+  # Static Pages
+
+  get '/community', to: "pages#community"
+  get '/credits', to: "pages#credits"
 
   # Admin, Sidekiq and Blazer
 

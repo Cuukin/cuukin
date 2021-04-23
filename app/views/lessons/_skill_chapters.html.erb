@@ -1,4 +1,7 @@
 <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
+  <% unless skill_chapter.users.include?(current_user) %>
+    <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn" %>
+  <% end %>
 
   <div class="container-lesson-chapter">
     <div class="lesson-skill-video">

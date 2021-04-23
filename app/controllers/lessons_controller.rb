@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
     locked?
 
     @lesson_validation = LessonValidation.new
-    @lesson_unblock = LessonUnblock.new
+    @user_skill = UserSkill.new
 
     authorize @lesson, policy_class: LessonPolicy
   end
