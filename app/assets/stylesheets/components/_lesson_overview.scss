@@ -60,6 +60,14 @@
     flex-direction: column;
     align-items: center;
     margin: 0 4px;
+    position: relative;
+
+    .skill-check {
+      position: absolute;
+      height: 35px;
+      top: 48px;
+      right: -7px;
+    }
   }
 
   .skill-p {

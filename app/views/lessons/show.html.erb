@@ -32,6 +32,9 @@
             <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
             <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
           </div>
+          <% if skill_chapter.users.include?(current_user) %>
+            <%= image_tag('lesson-3-done.svg', class: 'skill-check') %>
+          <% end %>
           <p class="skill-p"><%= skill_chapter.title %></p>
         </div>
         <% end %>
@@ -39,7 +42,7 @@
     </div>
 
     <div class="lesson-overview-recipes">
-      <h1><%= @locked ? icon('fas', 'shopping-cart') : "" %><%= @locked ? " Plan for these recipes" : "Cook a recipe to practice" %></h1>
+      <h1><%= @locked ? icon('fas', 'shopping-cart') : "" %><%= @locked ? " Plan for these recipes" : "Cook a Recipe to Practice" %></h1>
       <h2><%= @locked ? "Add any recipe to your grocerly list" : "Choose a recipe to prepare" %></h2>
 
       <div class="lesson-overview-recipes-cards">

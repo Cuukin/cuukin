@@ -12,6 +12,11 @@ class User < ApplicationRecord
   has_many :user_recipes, dependent: :destroy
   has_many :user_awards, dependent: :destroy
   has_many :user_badges, dependent: :destroy
+  has_many :user_skills, dependent: :destroy
+
+  has_many :skills, through: :user_skills
+  has_many :badges, through: :user_badges
+  has_many :awards, through: :user_awards
 
   enum level: [ "dishwasher", "newbie", "chef in progress", "chef of party", "sous chef", "master chef" ]
 
