@@ -10,6 +10,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_nutritional_infos, dependent: :destroy
   has_many :lesson_recipes
   has_many :lessons, through: :lesson_recipes
+  has_many :user_recipes
 
   has_many :ingredients, through: :recipe_ingredients
   has_many :tools, through: :recipe_tools

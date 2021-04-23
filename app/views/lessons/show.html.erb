@@ -1,13 +1,5 @@
-<!-- first div with general info + btn to start lesson -->
-
 <% unless @validated || @skipped %>
-  <% if @open_to_unblock %>
-    <%= render template: 'lesson_validations/new' %>
-    <%= render template: 'lesson_unblocks/new' %>
-    <%= render 'unblock_recipe_popup' %>
-  <% else %>
-    <%= render template: 'lesson_validations/new' %>
-  <% end %>
+  <%= render template: 'lesson_validations/new' %>
 <% end %>
 
 <% if @skipped %>
@@ -30,8 +22,8 @@
   <div class="lesson-overview-content">
 
     <div class="lesson-overview-skillchapters">
-      <h1>Watch Skill Chapters</h1>
-      <h2>Bite-sized learnings on-the-go</h2>
+      <h1><%= @locked ? icon('fas', 'lock') : "" %><%= @locked ? " Upcoming Skill Chapters" : "Watch Skill Chapters" %></h1>
+      <h2><%= @locked ? "Finish previous lesson to unlock" : "Bite-sized learnings on-the-go" %></h2>
 
       <div class="lesson-overview-skillchapters-cards <%= @lesson.skill_chapters.count > 1 ? "sp-around" : "fx-start" %>">
         <% @lesson.skill_chapters.each do |skill_chapter| %>
@@ -47,48 +39,51 @@
     </div>
 
     <div class="lesson-overview-recipes">
-      <h1>Cook One Practice Recipe</h1>
-      <h2>Choose a recipe to prepare</h2>
+      <h1><%= @locked ? icon('fas', 'shopping-cart') : "" %><%= @locked ? " Plan for these recipes" : "Cook a recipe to practice" %></h1>
+      <h2><%= @locked ? "Add any recipe to your grocerly list" : "Choose a recipe to prepare" %></h2>
 
       <div class="lesson-overview-recipes-cards">
         <% @lesson.recipes.each do |recipe| %>
-        <div class="lesson-overview-recipe-card">
-          <%= link_to recipe_path(recipe) do %>
-            <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
-              <div class="recipe-info">
-                <%= image_tag("#{recipe.external_url ? 'recipe-url' : 'kin-circle'}.svg", class: "mr-1") %>
-                <p class="<%= recipe.external_url ? "turquise" : "" %>"><%= recipe.external_url ? "External link" : "Suggested" %></p>
+          <div class="lesson-overview-recipe-card">
+            <%= link_to recipe_path(recipe) do %>
+              <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
+                <div class="recipe-info">
+                  <%= image_tag("#{recipe.external_url ? 'recipe-url' : 'kin-circle'}.svg", class: "mr-1") %>
+                  <p class="<%= recipe.external_url ? "turquise" : "" %>"><%= recipe.external_url ? "External link" : "Suggested" %></p>
+                </div>
+                <%= UserRecipe.where(user: current_user, completed: true).map {|ur| ur.recipe}.include?(recipe) ? icon('fas', 'check-circle') : "" %>
               </div>
-            </div>
-          <% end %>
-          <h3><%= recipe.title %></h3>
-        </div>
+            <% end %>
+            <h3><%= recipe.title %></h3>
+          </div>
         <% end %>
       </div>
     </div>
 
-    <div class="lesson-overview-validation">
-      <h1><%= @validated ? "Congrats!" : "Complete the Lesson" %></h1>
-      <h2><%= @validated ? "You have already validated this lesson" : "Pics of the finished recipe or it did not happen!" %></h2>
+    <% unless @locked %>
+      <div class="lesson-overview-validation">
+        <h1><%= @validated ? "Congrats!" : "Complete the Lesson" %></h1>
+        <h2><%= @validated ? "You have already validated this lesson" : "Pics of the finished recipe or it did not happen!" %></h2>
 
-      <% if @validated %>
-        <div class="lesson-overview-validation-completed">
-          <%= image_tag('lesson-3-done.svg') %>
-          <p>Lesson completed</p>
-        </div>
-      <% else %>
-        <div class="lesson-overview-validation-cards">
-          <div class="lv-card without-photo mr-1">
-            <%= image_tag('lv-input-nophoto.svg') %>
-            <p>Ups, I already ate it</p>
+        <% if @validated %>
+          <div class="lesson-overview-validation-completed">
+            <%= image_tag('lesson-3-done.svg') %>
+            <p>Lesson completed</p>
           </div>
-          <div class="lv-card with-photo ml-1">
-            <%= image_tag('lv-input-photo.svg') %>
-            <p>Upload a photo</p>
+        <% else %>
+          <div class="lesson-overview-validation-cards">
+            <div class="lv-card without-photo mr-1">
+              <%= image_tag('lv-input-nophoto.svg') %>
+              <p>Ups, I already ate it</p>
+            </div>
+            <div class="lv-card with-photo ml-1">
+              <%= image_tag('lv-input-photo.svg') %>
+              <p>Upload a photo</p>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% end %>
 
   </div>
 </div>
