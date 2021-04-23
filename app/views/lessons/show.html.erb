@@ -15,6 +15,15 @@
 <% end %>
 
 
+<div class="container-lesson-overview">
+  <div class="lesson-overview-navbar">
+    <%= image_tag('btn-back.svg') %>
+    <h1><%= @lesson.title %></h1>
+    <%= image_tag('btn-help.svg') %>
+  </div>
+</div>
+
+
 <div class="skill-chapters">
   <% @lesson.skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
