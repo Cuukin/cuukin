@@ -26,7 +26,7 @@
       <h2><%= @locked ? "Finish previous lesson to unlock" : "Bite-sized learnings on-the-go" %></h2>
 
       <div class="lesson-overview-skillchapters-cards <%= @lesson.skill_chapters.count > 1 ? "sp-around" : "fx-start" %>">
-        <% @lesson.skill_chapters.each do |skill_chapter| %>
+        <% @lesson.skill_chapters.order(:id).each do |skill_chapter| %>
         <div class="lesson-overview-skill-card open-skill-btn" id="<%= skill_chapter.id %>">
           <div class="badge-container">
             <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>

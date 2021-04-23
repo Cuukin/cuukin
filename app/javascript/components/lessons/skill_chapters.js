@@ -13,45 +13,64 @@ const skillChapters = () => {
 
     let counter = 0;
 
+    const backToOverview = (btn) => {
+      btn.addEventListener('click', () => {
+        lessonOverview.style.display = "block";
+        skillsContainer.style.display = "none";
+        cards.forEach((card) => {
+          card.style.display = "none";
+        });
+      })
+    };
+
     skillsBtns.forEach((btn) => {
-      let id = btn.id;
+      let id = parseInt(btn.id);
       let card = document.getElementById(`skillCard-${id}`);
 
-      let otherCards = [];
-      cards.forEach((card) => {
-        if (card.id !== `skillCard-${id}`) {
-          otherCards.push(card);
-        };
-      });
-
       btn.addEventListener('click', () => {
-        counter = 0;
         lessonOverview.style.display = "none";
         skillsContainer.style.display = "block";
         card.style.display = "block";
+        counter = parseInt(card.classList[1]);
+      });
+    });
+
+    if (cardsQuantity > 1) {
+      nextBtn.addEventListener('click', () => {
+        counter += 1;
+
+        if (counter < cardsQuantity) {
+          cards[counter].style.display = "block";
+          cards[counter - 1].style.display = "none";
+        } else {
+          lessonOverview.style.display = "block";
+          skillsContainer.style.display = "none";
+          cards.forEach((card) => {
+            card.style.display = "none";
+          });
+          counter = 0;
+        };
       });
 
-      if (cardsQuantity > 1) {
-        nextBtn.addEventListener('click', () => {
-          counter += 1;
-          card.style.display = "none";
-          otherCards[counter - 1].style.display = "block";
-        });
-      } else {
-        const backToOverview = (btn) => {
-          btn.addEventListener('click', () => {
-            lessonOverview.style.display = "block";
-            skillsContainer.style.display = "none";
-            cards.forEach((card) => {
-              card.style.display = "none";
-            });
-          })
+      prevBtn.addEventListener('click', () => {
+        if (counter > 0) {
+          counter -= 1;
+          cards[counter].style.display = "block";
+          cards[counter + 1].style.display = "none";
+        } else {
+          lessonOverview.style.display = "block";
+          skillsContainer.style.display = "none";
+          cards.forEach((card) => {
+            card.style.display = "none";
+          });
+          counter = 0;
         };
-        backToOverview(prevBtn);
-        backToOverview(nextBtn);
-      };
-
-    });
+      });
+    } else {
+      backToOverview(prevBtn);
+      backToOverview(nextBtn);
+      counter = 0;
+    };
   };
 };
 
