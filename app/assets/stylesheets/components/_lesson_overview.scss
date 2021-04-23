@@ -18,29 +18,108 @@
 
   h1 {
     color: $cuukin;
+    font-size: 20px;
     margin: 0;
   }
 
   img {
-    height: 45px;
+    height: 40px;
     cursor: pointer;
   }
 }
 
-
-// BTNS
-
-.lesson-btns {
+.lesson-overview-content {
+  position: relative;
+  top: 60px;
+  padding: 24px 16px 60px;
   width: 500px;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  padding: 24px 16px 0;
-  z-index: 10;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 200;
+  }
 }
 
-.btn-back, .btn-help {
-  height: 42px;
-  width: 42px;
-  cursor: pointer;
+.lesson-overview-skillchapters {
+  margin-bottom: 24px;
+}
+
+.lesson-overview-skillchapters-cards {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 16px;
+
+  .lesson-overview-skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 4px;
+  }
+
+  .skill-p {
+    color: $dark-gray;
+    margin-top: 8px;
+  }
+}
+
+.fx-start {
+  justify-content: flex-start;
+}
+
+.sp-around {
+  justify-content: space-around;
+}
+
+.lesson-overview-recipes {
+  margin-bottom: 24px;
+}
+
+.lesson-overview-recipes-cards {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+
+  .lesson-overview-recipe-card {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lesson-overview-recipe-image {
+    width: 100%;
+    height: 156px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  h3 {
+    color: $dark-gray;
+    font-size: 14px;
+  }
+
+  a {
+    width: 100%;
+  }
+}
+
+.lesson-overview-validation {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 500px) {
+  .lesson-overview-content {
+    width: 100vw;
+  }
 }

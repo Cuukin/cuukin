@@ -339,17 +339,17 @@
     margin: 8px 0 0;
     text-align: center;
   }
+}
 
-  .badge-container {
-    position: relative;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+.badge-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
 
-    img {
-      height: 77px;
-      width: 77px;
-    }
+  img {
+    height: 77px;
+    width: 77px;
   }
 
   .badge1 {
