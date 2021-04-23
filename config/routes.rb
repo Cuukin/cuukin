@@ -1,37 +1,43 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
 
-  # User - Devise & Personal
+  # Root Paths
+
+  authenticated :user do
+    root to: 'books#index', as: 'authenticated_root'
+  end
+
+  root to: 'pages#home'
+
+  # Users
+
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   resources :users, only: [ :show, :edit, :update, :index ]
 
   get 'commitment', to: 'users#commitment'
   patch 'create_commitment', to: 'users#create_commitment'
 
-  authenticated :user do
-    root to: 'books#index', as: 'authenticated_root'
-  end
-
   # Pages
-  root to: 'pages#home'
+
   get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
 
-  # Journey, Book, Lesson and Lesson Validation
+  # Book, Lesson and Lesson Validation
+
   resources :books, only: [ :index, :show ]
+
   resources :lessons, only: [ :show ] do
     resources :lesson_validations, only: [ :create, :update ]
-    resources :lesson_unblocks, only: [ :create ]
   end
 
+  # Recipes, User Recipes and User Skills
+
   resources :recipes, only: [ :show ]
-
-  resources :lesson_validations, only: :show
-
   resources :user_recipes, only: [ :index, :edit, :update ]
-  #resources :user_badges, only: :show
-  #resources :user_awards, only: :show
-  #resources :badges, only: :show
+  resources :user_skills, only: [ :create ]
+
+  # Admin, Sidekiq and Blazer
+
+  ActiveAdmin.routes(self)
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
