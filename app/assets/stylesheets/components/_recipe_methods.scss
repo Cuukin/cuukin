@@ -1,9 +1,10 @@
-.recipe-overview {
+// RECIPE METHODS CONTAINER
+
+.recipe-methods-container {
   display: none;
 }
 
-.recipe-methods-container {
-}
+// RECIPE METHODS NAVBAR
 
 .recipe-methods-navbar {
   width: 100%;
@@ -19,6 +20,7 @@
 
   img {
     height: 45px;
+    cursor: pointer;
   }
 
   .progression {
@@ -54,10 +56,62 @@
   }
 }
 
+// ALL METHODS CARDS INSIDE THIS CONTAINER
+
 .recipe-methods-container-content {
   position: relative;
   top: 45px;
   padding-bottom: 45px;
+}
+
+// CARD PER METHOD
+
+.container-lesson-recipe {
+  display: none;
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: $off-white;
+}
+
+.card-lesson-recipe {
+  padding: 16px 16px 24px;
+
+  h4 {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  h2 {
+    color: $cuukin;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.lesson-recipe-video {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-lesson-recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+
+  .next-btn {
+    margin: 0;
+  }
 }
 
 .recipe-method-content {
@@ -74,6 +128,7 @@
   h5 {
     font-size: 16px;
     margin-bottom: 8px;
+    color: $blue;
   }
 
   p {
@@ -84,6 +139,9 @@
 .recipe-method-description {
   width: 60%;
   padding-left: 16px;
+  p {
+    white-space: pre-wrap;
+  }
 }
 
 .recipe-method-separator {
@@ -95,6 +153,10 @@
   left: 38%;
 }
 
+
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
+  .container-lesson-recipe, .lesson-recipe-video {
+    width: 100vw;
+  }
 }
