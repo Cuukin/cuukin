@@ -187,7 +187,7 @@
 
           <div class="recipe-method-content">
             <div class="recipe-method-ingredients">
-              <h5>Ingredients</h5>
+              <h5><span><%= image_tag('recipe-ing-icon.svg') %></span> Ingredients</h5>
               <% @recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
                 <% if recipe_ingredient.recipe_methods && recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
                   <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
@@ -196,7 +196,7 @@
                 <% end %>
               <% end %>
 
-              <h5 class="mt-3">Equipments</h5>
+              <h5 class="mt-3"><span><%= image_tag('recipe-tool-icon.svg') %></span> Equipments</h5>
               <% @recipe.recipe_tools.order(:id).each do |recipe_tool| %>
                 <% if recipe_tool.recipe_methods && recipe_tool.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
                   <p><%= recipe_tool.tool.name %></p>
