@@ -55,6 +55,10 @@
         <div class="lesson-overview-recipe-card">
           <%= link_to recipe_path(recipe) do %>
             <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
+              <div class="recipe-info">
+                <%= image_tag("#{recipe.external_url ? 'recipe-url' : 'kin-circle'}.svg", class: "mr-1") %>
+                <p class="<%= recipe.external_url ? "turquise" : "" %>"><%= recipe.external_url ? "External link" : "Suggested" %></p>
+              </div>
             </div>
           <% end %>
           <h3><%= recipe.title %></h3>
