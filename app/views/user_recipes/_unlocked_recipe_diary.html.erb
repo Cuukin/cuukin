@@ -3,14 +3,8 @@
     <%= image_tag('btn-close-rounded.svg', class: 'recipe-diary-modal-close-btn') %>
     <h1>Would you like to...</h1>
     <div class="unlocked-recipe-content">
-      <% if user_recipe.recipe.external_url %>
-        <%= link_to user_recipe.recipe.external_url, target: '_blank' do %>
-          <%= image_tag('recipe-unlocked-01.svg') %>
-        <% end %>
-      <% else %>
-        <%= link_to lesson_path(user_recipe.recipe.lessons) do %>
-          <%= image_tag('recipe-unlocked-01.svg') %>
-        <% end %>
+      <%= link_to recipe_path(user_recipe.recipe) do %>
+        <%= image_tag('recipe-unlocked-01.svg') %>
       <% end %>
       <%= link_to edit_user_recipe_path(user_recipe) do %>
         <%= image_tag('recipe-unlocked-02.svg') %>
