@@ -5,7 +5,7 @@ ActiveAdmin.register Recipe do
 
   index do
     selectable_column
-    # column :id
+    column :id
     column :title
     column :prep_time
     column :photo_url

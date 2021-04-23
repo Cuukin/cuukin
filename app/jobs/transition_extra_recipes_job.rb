@@ -18,7 +18,7 @@ class TransitionExtraRecipesJob < ApplicationJob
     end
 
     lesson = lesson_validation.lesson
-    extra_recipes = [lesson.recipes, lesson.recipe].flatten - [validated_recipe]
+    extra_recipes = lesson.recipes - [validated_recipe]
     extra_recipes.each do |extra_recipe|
       UserRecipe.create(user: user, recipe: extra_recipe, completed: false)
     end

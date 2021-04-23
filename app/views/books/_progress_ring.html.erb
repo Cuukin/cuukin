@@ -1,0 +1,28 @@
+<svg
+  class="progress-ring"
+  id="<%= "progress-book-#{book.id}" %>"
+  height="96"
+  width="96"
+>
+  <circle
+    class="progress-ring__circle"
+    stroke="#F86464"
+    stroke-width="8"
+    stroke-linecap="round"
+    fill="transparent"
+    r="39"
+    cx="48"
+    cy="48"
+    stroke-dasharray="250 250";
+    <% circumference = 238.76 %>
+    <% completed = (val.select {|les| les.book == book}).count %>
+    <% total = book.lessons.count %>
+    <% ratio = completed.to_f / total.to_f %>
+    <% if ratio == 0 %>
+      <% offset = 250; %>
+    <% else %>
+      <% offset = circumference - (ratio * circumference); %>
+    <% end %>
+    stroke-dashoffset="<%= offset %>";
+  />
+</svg>

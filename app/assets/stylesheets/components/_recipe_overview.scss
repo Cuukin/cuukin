@@ -1,0 +1,377 @@
+// RECIPE OVERVIEW
+
+.container-recipe-overview {
+  display: block;
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  background-color: $white;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+  padding-bottom: 280px;
+}
+
+// BUTTONS
+
+.recipe-overview-btn {
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  padding: 24px 16px 0;
+  z-index: 10;
+
+  .btn-back {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+  }
+}
+
+.ingredient-swap-btn {
+  padding: 1px 8px;
+  color: $cuukin;
+  -webkit-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  -moz-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  box-shadow:inset 0px 0px 0px 1px $cuukin;
+  border-radius: 50px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.nutri-show-btn {
+  height: 14px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.4s;
+  transform-origin: 50% 50%;
+}
+
+// RECIPE OVERVIEW DETAILS
+
+.recipe-photo {
+  width: 500px;
+  height: 300px;
+  position: fixed;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-dash {
+  width: 43px;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.card-recipe-overview {
+  background-color: $white;
+  border-radius: 24px 24px 0 0;
+  padding: 10px 16px 16px;
+
+  position: relative;
+  top: 280px;
+
+  h2 {
+    color: $cuukin;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  h3 {
+    color: $black;
+  }
+}
+
+.recipe-overview-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  color: $gray;
+  margin-top: 24px;
+  flex-wrap: wrap;
+
+  li {
+    font-size: 16px;
+    display: inline;
+    margin: 4px 8px;
+  }
+
+  .lesson-icons {
+    height: 18px;
+  }
+}
+
+.dietary-restrictions {
+  margin-top: 4px !important;
+}
+
+// INGREDIENTS SECTIONS
+
+.ingredients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 24px 0;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+// SERVING CONVERTION
+
+.recipe-overview-serving {
+  color: $dark-gray;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  p {
+    font-size: 18px;
+    margin: 0 8px 0 0;
+    padding-top: 4px;
+  }
+
+  .serving-btn {
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .serving-icon {
+    height: 20px;
+  }
+
+  .serving-minus {
+    margin-right: 12px;
+  }
+
+  .serving-plus {
+    margin-left: 12px;
+  }
+
+  .disabled {
+    opacity: .6;
+  }
+}
+
+// UNIT CONVERTION
+
+.unit-conversion-btn {
+  display: flex;
+  background-color: $dark-gray;
+  border-radius: 50px;
+  padding: 4px;
+  cursor: pointer;
+
+  p {
+    margin: 0;
+  }
+}
+
+.unit {
+  border-radius: 50px;
+  padding: 4px 8px;
+  align-text: center;
+
+  p {
+    color: $white;
+  }
+}
+
+.unitSelected {
+  background-color: $white;
+
+  p {
+    color: $dark-gray;
+  }
+}
+
+// INGREDIENTS & EQUIPMENTS SECTION
+
+.recipe-overview-equipment, .recipe-overview-ingredients {
+  margin: 24px 0;
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    font-size: 16px;
+    display: inline-block;
+  }
+
+  a, a:hover {
+    font-weight: 400;
+    color: $black;
+    position: relative;
+
+    i {
+      font-size: 12px;
+      position: absolute;
+      top: 4px;
+      margin-left: 4px;
+      color: $dark-gray;
+    }
+  }
+
+  .ingredient-measure, .equipment-measure {
+    text-align: right;
+    width: 88px;
+    // min-width: 16px;
+  }
+}
+
+.ingredient-name, .equipment-name {
+  padding-left: 16px;
+}
+
+.recipe-important {
+  color: $dark-gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 16px;
+
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 8px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+// NUTRITIONAL INFORMATION SECTION
+
+.recipe-overview-nutri {
+  margin: 24px 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+    background-color: $cuukin;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.nutri-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  h3 {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.nutri-content {
+  display: none;
+  opacity: .1;
+  transition: opacity ease-in 0.25s;
+}
+
+.nutri-data {
+  background-color: rgb(246, 234, 234);
+  border-radius: 12px;
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nutri-metric {
+  color: $white;
+  padding: 8px 0;
+}
+
+// SKILLS OVERVIEW SECTION
+
+.recipe-overview-skills {
+  margin: 24px 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 12px 12px 0;
+  }
+
+  .skill-p {
+    font-weight: 16px;
+    line-height: 1;
+    margin: 8px 0 0;
+    text-align: center;
+  }
+}
+
+.badge-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
+  img {
+    height: 77px;
+    width: 77px;
+  }
+
+  .badge1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .0));
+    filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
+    // padding: 4px;
+  }
+
+  .badge2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // padding: 4px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-recipe-overview, .recipe-photo, .recipe-overview-btn {
+    width: 100vw;
+  }
+}

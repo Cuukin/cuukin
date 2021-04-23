@@ -1,0 +1,102 @@
+// Container overflow SKILL VIDEOS + RECIPE METHODS
+
+.skill-chapters {
+  display: none;
+}
+
+.container-lesson {
+  width: 500px;
+  min-height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
+}
+
+// Lesson Skill Chapter [second++ cards]
+
+.skill-description-container {
+  overflow: scroll;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 24px;
+  padding-right: 16px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.skill-description {
+  white-space: pre-wrap;
+}
+
+.container-lesson-chapter {
+  width: 500px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: $white;
+}
+
+.card-lesson-chapter {
+  width: 100%;
+  background-color: $white;
+  padding: 10px 16px 16px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  top: -10px;
+
+  h2 {
+    color: $cuukin;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    color: $black;
+    margin-bottom: 16px;
+  }
+}
+
+.lesson-skill-video {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 500px;
+
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson-overview, .lesson-photo, .lesson-btns {
+    width: 100vw;
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container-lesson, .container-lesson-chapter, .lesson-skill-video {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container-lesson, .container-lesson-chapter, .lesson-skill-video {
+    width: 100vw;
+  }
+}
