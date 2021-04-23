@@ -1,5 +1,9 @@
 // OVERVIEW NAVBAR
 
+.container-lesson-overview {
+  display: block;
+}
+
 .lesson-overview-navbar {
   width: 100%;
   height: 60px;
@@ -60,11 +64,21 @@
     flex-direction: column;
     align-items: center;
     margin: 0 4px;
+    position: relative;
+
+    .skill-check {
+      cursor: pointer;
+      position: absolute;
+      height: 35px;
+      top: 48px;
+      right: -7px;
+    }
   }
 
   .skill-p {
     color: $dark-gray;
     margin-top: 8px;
+    cursor: pointer;
   }
 }
 

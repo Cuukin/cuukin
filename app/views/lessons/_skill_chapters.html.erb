@@ -1,25 +1,43 @@
-<% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
+<div class="skill-chapters-navbar">
 
-  <div class="container-lesson-chapter">
-    <div class="lesson-skill-video">
-      <video class="skillVideo" src="<%= skill_chapter.video_url %>" controls playsinline></video>
-    </div>
+  <%= image_tag('btn-back.svg', class: 'nav-btn', id: 'prevChapter') %>
 
-    <div class="card-lesson-chapter">
-      <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
-      <h2 class="text-center"><%= skill_chapter.title %></h2>
-      <h3>Transcription</h3>
-
-      <div class="skill-description-container">
-        <p class="skill-description"><%= skill_chapter.description %></p>
-      </div>
-
-      <% unless skill_chapters.last == skill_chapter  %>
-        <p class="primary-btn lesson-next-btn" style="cursor: pointer;">Next video</p>
-      <% else %>
-        <p class="primary-btn" style="cursor: pointer;" id="startRecipe">Ready to Cuuk!</p>
+  <div class="skill-progression">
+    <p>Skill Chapter</p>
+    <div class="skill-checklist">
+      <% skill_chapters.select {|sc| sc.users.include?(current_user)}.count.times do %>
+        <%= image_tag('lesson-3-done.svg', class: 'nav-check') %>
+      <% end %>
+      <% skill_chapters.reject {|sc| sc.users.include?(current_user)}.count.times do %>
+        <%= image_tag('lesson-2-current.svg', class: 'nav-check') %>
       <% end %>
     </div>
   </div>
 
-<% end %>
+  <%= image_tag('btn-forward.svg', class: 'nav-btn', id: 'nextChapter') %>
+
+</div>
+
+<div class="skill-chapters-container">
+  <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
+
+    <div class="skill-chapter-card <%= index %>" id="skillCard-<%= skill_chapter.id %>">
+
+      <% unless skill_chapter.users.include?(current_user) %>
+        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "userSkill-#{skill_chapter.id}" %>
+      <% end %>
+
+      <div class="skill-chapter-video">
+        <video class="skillVideo userSkill-<%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
+      </div>
+
+      <div class="skill-chapter-content">
+        <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
+        <h2 class="text-center"><%= skill_chapter.title %></h2>
+        <p class="skill-description"><%= skill_chapter.description %></p>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>
