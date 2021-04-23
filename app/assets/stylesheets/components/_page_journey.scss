@@ -21,7 +21,7 @@
 
 .journey-books {
   img {
-    height: 88px;
+    height: 86px;
     position: absolute;
   }
 
@@ -30,9 +30,24 @@
     left: 59px;
   }
 
+  #progress-book-1 {
+    top: 102px;
+    left: 54px;
+  }
+
   #book-2 {
     top: 236px;
     left: 116px;
+  }
+
+  .progress-ring {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .progress-ring__circle {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%,
   }
 }
 

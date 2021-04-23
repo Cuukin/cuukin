@@ -10,6 +10,7 @@
     <% @books.each do |book| %>
       <div class="book-<%= book.id %>">
         <%= link_to book_path(book) do %>
+          <%= render 'progress_ring', book: book, val: @validations %>
           <%= image_tag("#{book.icon_url}", id: "book-#{book.id}") %>
         <% end %>
         <%= render 'book', lessons: book.lessons %>
