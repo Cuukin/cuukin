@@ -1,4 +1,4 @@
-<div class="container-lesson-overview">
+<div class="container-lesson-overview recipe-overview">
 
   <div class="lesson-btns">
     <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
@@ -155,43 +155,60 @@
 </div>
 
 <div class="recipe-methods-container">
-
-  <% @recipe.recipe_methods&.order(:method_index).each_with_index do |recipe_method, index| %>
-    <div class="container-lesson-recipe">
-      <div class="lesson-recipe-video">
-        <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>
-      </div>
-
-      <div class="card-lesson-recipe">
-        <div class="card-lesson-recipe-header">
-          <div class="recipe-header-left">
-            <h4><%= @recipe.title %></h4>
-            <h2><%= "Step #{index + 1} / #{@recipe.recipe_methods.count} #{recipe_method.title}" %></h2>
-          </div>
-
-          <% unless @recipe.recipe_methods.last == recipe_method %>
-            <%= image_tag('btn-next.svg', class: 'lesson-next-btn lesson-recipe-next-btn') %>
-            <%= image_tag('btn-next.svg', class: 'recipe-next-btn', style: 'display: none;') %>
-          <% end %>
-        </div>
-
-        <div class="recipe-method-content">
-          <div class="recipe-method-ingredients">
-            <h5>Ingredients</h5>
-            <% recipe_method.recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
-              <% if recipe_ingredient.recipe_methods && recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
-                <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
-                  <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
-                </p>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="recipe-method-description">
-            <p><%= recipe_method.description %></p>
-          </div>
-        </div>
-
+  <div class="recipe-methods-navbar">
+    <%= image_tag('btn-back.svg') %>
+    <div class="progression">
+      <p>Practice</p>
+      <div class="meter">
+        <span class="meter-progression"></span>
       </div>
     </div>
-  <% end %>
+    <%= image_tag('btn-forward.svg') %>
+  </div>
+
+  <div class="recipe-methods-container-content">
+    <% @recipe.recipe_methods&.order(:method_index).each_with_index do |recipe_method, index| %>
+        <div class="container-lesson-recipe">
+          <div class="lesson-recipe-video">
+            <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>
+          </div>
+
+          <div class="card-lesson-recipe">
+            <div class="card-lesson-recipe-header">
+              <div class="recipe-header-left">
+                <h4><%= @recipe.title %></h4>
+                <h2><%= "Step #{index + 1} / #{@recipe.recipe_methods.count} #{recipe_method.title}" %></h2>
+              </div>
+            </div>
+
+            <div class="recipe-method-content">
+              <div class="recipe-method-ingredients">
+                <h5>Ingredients</h5>
+                <% @recipe.recipe_ingredients.order(:id).each do |recipe_ingredient| %>
+                  <% if recipe_ingredient.recipe_methods && recipe_ingredient.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
+                    <p class="ingredient-measure <%= "measure-#{recipe_ingredient.id}" %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">
+                      <span class="ingredient-quantity quantity-<%= recipe_ingredient.id %>"><%= recipe_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= recipe_ingredient.id %>"><%= recipe_ingredient.unit %></span> <span class="ingredient-<%= recipe_ingredient.id %>"><%= recipe_ingredient.ingredient.name %></span>
+                    </p>
+                  <% end %>
+                <% end %>
+
+                <h5 class="mt-3">Equipments</h5>
+                <% @recipe.recipe_tools.order(:id).each do |recipe_tool| %>
+                  <% if recipe_tool.recipe_methods && recipe_tool.recipe_methods.split("-").include?("#{recipe_method.method_index}") %>
+                    <p><%= recipe_tool.tool.name %></p>
+                  <% end %>
+                <% end %>
+              </div>
+
+              <div class="recipe-method-separator"></div>
+
+              <div class="recipe-method-description">
+                <p><%= recipe_method.description %></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>

@@ -488,24 +488,6 @@
   }
 }
 
-.meter {
-  height: 16px;
-  width: 100%;
-  max-width: 500px;
-  padding: 2px 0;
-  background-color: $light-gray;
-  position: fixed;
-  z-index: 10;
-  box-shadow: 0px 3px 6px rgba(30,30,30,0.08);
-
-  span {
-    height: 100%;
-    width: 0;
-    display: block;
-    background-color: $cuukin;
-  }
-}
-
 
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
@@ -571,32 +553,6 @@
   .next-btn {
     margin: 0;
   }
-}
-
-.recipe-method-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.recipe-method-ingredients {
-  padding: 8px;
-  border: 1px dashed $black;
-  width: 40%;
-
-  h5 {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-
-  p {
-    margin-bottom: 8px;
-  }
-}
-
-.recipe-method-description {
-  width: 60%;
-  padding: 0 16px;
 }
 
 .finish-lesson {
