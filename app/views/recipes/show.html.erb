@@ -147,7 +147,7 @@
             <p class="primary-btn turquise-bg ml-1">Make Recipe <%= icon('fas', 'external-link-alt') %></p>
           <% end %>
         <% else %>
-          <p class="primary-btn ml-1">Make Recipe</p>
+          <p class="primary-btn ml-1" id="makeRecipe">Make Recipe</p>
         <% end %>
       <% else %>
         <p class="disabled-btn ml-1">Recipe Locked</p>
@@ -160,14 +160,14 @@
 
 <div class="recipe-methods-container">
   <div class="recipe-methods-navbar">
-    <%= image_tag('btn-back.svg') %>
+    <%= image_tag('btn-back.svg', id: 'prevMethod') %>
     <div class="progression">
       <p>Practice</p>
       <div class="meter">
         <span class="meter-progression"></span>
       </div>
     </div>
-    <%= image_tag('btn-forward.svg') %>
+    <%= image_tag('btn-forward.svg', id: 'nextMethod') %>
   </div>
 
   <div class="recipe-methods-container-cards">
