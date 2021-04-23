@@ -66,6 +66,17 @@
     <div class="lesson-overview-validation">
       <h1>Complete the Lesson</h1>
       <h2>Pics of the finished recipe or it did not happen!</h2>
+
+      <div class="lesson-overview-validation-cards">
+        <div class="lv-card without-photo mr-1">
+          <%= image_tag('lv-input-nophoto.svg') %>
+          <p>Ups, I already ate it</p>
+        </div>
+        <div class="lv-card with-photo ml-1">
+          <%= image_tag('lv-input-photo.svg') %>
+          <p>Upload a photo</p>
+        </div>
+      </div>
     </div>
 
   </div>
