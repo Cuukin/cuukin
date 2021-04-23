@@ -1,8 +1,8 @@
 const skillChapters = () => {
   const lessonOverview = document.querySelector('.container-lesson-overview');
+  const skillsContainer = document.querySelector('.container-skill-chapters');
 
-  if (lessonOverview) {
-    const skillsContainer = document.querySelector('.container-skill-chapters');
+  if (lessonOverview && skillsContainer) {
     const skillsBtns = document.querySelectorAll('.open-skill-btn');
 
     const prevBtn = document.querySelector('#prevChapter');
