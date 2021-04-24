@@ -5,11 +5,11 @@
   <div class="skill-progression">
     <p>Skill Chapter</p>
     <div class="skill-checklist">
-      <% skill_chapters.select {|sc| sc.users.include?(current_user)}.count.times do %>
-        <%= image_tag('lesson-3-done.svg', class: 'nav-check') %>
-      <% end %>
-      <% skill_chapters.reject {|sc| sc.users.include?(current_user)}.count.times do %>
-        <%= image_tag('lesson-2-current.svg', class: 'nav-check') %>
+      <% skill_chapters.count.times do %>
+        <div class="nav-check">
+          <%= image_tag('lesson-3-done.svg', id: 'skillDone') %>
+          <%= image_tag('lesson-2-current.svg', id: 'play') %>
+        </div>
       <% end %>
     </div>
   </div>
