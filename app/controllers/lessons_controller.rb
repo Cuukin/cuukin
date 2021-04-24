@@ -2,7 +2,6 @@ class LessonsController < ApplicationController
   before_action :set_lesson, :set_validations
 
   def show
-    first?
     validated?
     available?
     skipped?
@@ -17,6 +16,7 @@ class LessonsController < ApplicationController
   private
 
   def locked?
+    first?
     @locked = !(@available || @first || @true)
   end
 

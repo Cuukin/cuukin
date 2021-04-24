@@ -6,13 +6,13 @@
       <p>What alternative ingredient can I use?</p>
     </div>
 
-    <p>Pick your preferred substitute for <span style="font-weight: 800;"><%= recipe_ingredient.ingredient.name %></span></p>
+    <p>Pick your preferred ingredient</p>
 
     <% recipe_ingredient.recipe_ingredient_swaps.each do |swap| %>
       <p class="secondary-btn swap-ingredient" id="<%= swap.ingredient.name %>" data-ingredient-quantity="<%= swap.quantity %>" data-ingredient-unit="<%= swap.unit %>"><%= swap.ingredient.name %></p>
     <% end %>
 
-    <p class="secondary-btn swap-ingredient" id="<%= recipe_ingredient.ingredient.name %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>">Keep using <%= recipe_ingredient.ingredient.name %></p>
+    <p class="secondary-btn swap-ingredient" id="<%= recipe_ingredient.ingredient.name %>" data-ingredient-quantity="<%= recipe_ingredient.quantity %>" data-ingredient-unit="<%= recipe_ingredient.unit %>"><%= recipe_ingredient.ingredient.name %></p>
 
   </div>
 </div>
