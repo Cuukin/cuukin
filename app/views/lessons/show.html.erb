@@ -98,3 +98,10 @@
     <%= render 'lessons/skill_chapters', skill_chapters: @lesson.skill_chapters %>
   </div>
 <% end %>
+
+<div class="referrers" style="display: none;">
+  <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'show', controller: 'recipes')}" %>
+    <div id="prevRecipe"></div>
+  <% end %>
+</div>
+
