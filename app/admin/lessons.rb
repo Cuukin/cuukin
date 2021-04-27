@@ -1,14 +1,13 @@
 ActiveAdmin.register Lesson do
   menu parent: "Lesson"
 
-  permit_params :title, :xp, :book_id, :recipe_id
+  permit_params :title, :xp, :book_id
 
   index do
     selectable_column
     # column :id
     column :title
     column :book
-    column :recipe
     column :xp
     actions
   end

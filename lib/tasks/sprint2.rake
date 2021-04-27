@@ -17,4 +17,14 @@ namespace :sprint2 do
       ur.save!
     end
   end
+
+  task update_all_user_skill: :environment do
+    LessonValidation.where(validated: true).each do |lv|
+      user = lv.user
+      lesson = lv.lesson
+      lesson.skill_chapters.each do |skill|
+        UserSkill.create(user: user, skill_chapter: skill)
+      end
+    end
+  end
 end
