@@ -1,9 +1,5 @@
-class BookPolicy < ApplicationPolicy
-  def show?
-    true
-  end
-
-  def index?
+class UserSkillPolicy < ApplicationPolicy
+  def create?
     true
   end
 

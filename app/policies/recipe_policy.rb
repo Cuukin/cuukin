@@ -1,9 +1,5 @@
-class BookPolicy < ApplicationPolicy
+class RecipePolicy < ApplicationPolicy
   def show?
-    true
-  end
-
-  def index?
     true
   end
 
