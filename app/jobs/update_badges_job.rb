@@ -1,8 +1,8 @@
 class UpdateBadgesJob < ApplicationJob
   queue_as :default
 
-  def perform(user, lesson)
-    lesson.recipe.ingredients.each do |ingredient|
+  def perform(user, lesson_validation)
+    lesson_validation.recipe.ingredients.each do |ingredient|
       badge = ingredient.badge
       user_badge = UserBadge.find_by(user_id: user.id, badge_id: badge.id)
       if user_badge
@@ -13,7 +13,7 @@ class UpdateBadgesJob < ApplicationJob
       end
     end
 
-    lesson.recipe.tools.each do |tool|
+    lesson_validation.recipe.tools.each do |tool|
       badge = tool.badge
       user_badge = UserBadge.find_by(user_id: user.id, badge_id: badge.id)
       if user_badge
@@ -24,7 +24,7 @@ class UpdateBadgesJob < ApplicationJob
       end
     end
 
-    lesson.recipe.techniques.each do |technique|
+    lesson_validation.recipe.techniques.each do |technique|
       badge = technique.badge
       user_badge = UserBadge.find_by(user_id: user.id, badge_id: badge.id)
       if user_badge
