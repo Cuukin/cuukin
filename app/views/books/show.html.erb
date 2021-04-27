@@ -18,31 +18,31 @@
           <% if @validated.include?(lesson) %>
             <%= image_tag('lesson-3-done.svg') %>
             <div class="lesson-card">
-              <p>Duration: <%= lesson.recipe.prep_time %></p>
+              <p>Done - Hurray!</p>
               <h2><%= lesson.title %></h2>
             </div>
           <% elsif @skipped.include?(lesson) %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
-              <p>Duration: <%= lesson.recipe.prep_time %></p>
+              <p>Next lesson</p>
               <h2><%= lesson.title %></h2>
             </div>
           <% elsif @lessons.first == lesson  %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
-              <p>Duration: <%= lesson.recipe.prep_time %></p>
+              <p>Next lesson</p>
               <h2><%= lesson.title %></h2>
             </div>
           <% elsif @validated_lessons.include?(Lesson.find(lesson.id - 1)) %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
-              <p>Duration: <%= lesson.recipe.prep_time %></p>
+              <p>Next lesson</p>
               <h2><%= lesson.title %></h2>
             </div>
           <% else %>
             <%= image_tag('lesson-1-blocked.svg') %>
             <div class="lesson-card">
-              <p>Duration: <%= lesson.recipe.prep_time %></p>
+              <p>Check out what's upcoming</p>
               <h2><%= lesson.title %></h2>
             </div>
           <% end %>

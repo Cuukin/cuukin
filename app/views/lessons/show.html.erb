@@ -46,7 +46,7 @@
       <h2><%= @locked ? "Add any recipe to your grocerly list" : "Choose a recipe to prepare" %></h2>
 
       <div class="lesson-overview-recipes-cards">
-        <% @lesson.recipes.each do |recipe| %>
+        <% @lesson.recipes.order(external_url: :desc).each do |recipe| %>
           <div class="lesson-overview-recipe-card">
             <%= link_to recipe_path(recipe) do %>
               <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
