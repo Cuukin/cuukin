@@ -1,7 +1,7 @@
 ActiveAdmin.register Recipe do
   menu parent: "Recipe"
 
-  permit_params :title, :description, :prep_time, :photo_url
+  permit_params :title, :description, :prep_time, :photo_url, :external_url
 
   index do
     selectable_column
@@ -9,6 +9,7 @@ ActiveAdmin.register Recipe do
     column :title
     column :prep_time
     column :photo_url
+    column :external_url
     actions
   end
 
