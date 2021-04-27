@@ -10,7 +10,7 @@
     <ul class="lesson-completion-details">
       <li>
         <%= image_tag('lv-time.svg') %>
-        <%= @lesson_validation.lesson.recipe.prep_time %>
+        <%= @lesson_validation.recipe.prep_time %>
       </li>
       <li>
         <%= image_tag('lv-level.svg') %>
@@ -27,12 +27,12 @@
 
         <div class="currency-item">
           <%= image_tag('nb-xp.svg') %>
-          <h4 class="xp-p"><%= @lesson_validation.lesson.xp %> XP</h4>
+          <h4 class="xp-p"><%= @lesson_validation.photo.attached? ? @lesson_validation.lesson.xp : @lesson_validation.lesson.xp / 2 %> XP</h4>
         </div>
 
         <div class="currency-item">
           <%= image_tag('nb-dish.svg') %>
-          <h4 class="dish-p"><%= @lesson_validation.lesson.recipes.count + 1 %> Dishes</h4>
+          <h4 class="dish-p"><%= @lesson_validation.lesson.recipes.count %> Dishes</h4>
         </div>
 
       </div>

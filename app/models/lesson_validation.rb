@@ -11,10 +11,4 @@ class LessonValidation < ApplicationRecord
   validates :lesson, uniqueness: { scope: :user, message: 'This lesson has already been validated' }
 
   validates :recipe, presence: true
-
-  private
-
-  def check_recipe
-    [self.lesson.recipes, self.lesson.recipe].flatten.include?(self.recipe)
-  end
 end

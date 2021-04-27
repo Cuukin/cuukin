@@ -8,9 +8,9 @@
       <%= image_tag("https://res.cloudinary.com/cuukin/image/upload/v1618350204/Cuukin%20-%20Public/arrow_k27tgg.svg") %>
       <h1>How does this work?</h1>
       <ol>
-        <li>Start your <span>Journey</span></li>
-        <li>Open <span>Books</span> to explore lessons</li>
-        <li>Jump on your <span>Lesson</span></li>
+        <li>Start your <%= link_to "Journey", books_path %></li>
+        <li>Open <%= link_to "Books", books_path %> to explore lessons</li>
+        <li>Jump on your <%= link_to "Lesson", book_path(Book.first) %></li>
       </ol>
     </div>
   </div>
