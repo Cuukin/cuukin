@@ -21,6 +21,7 @@ const skillChapters = () => {
       counter = 0;
       allCards.forEach((card) => {
         card.style.display = "none";
+        card.querySelector('.skillVideo').pause();
         let check = skillChecks[card.classList[1]];
         check.querySelector('#skillDone').classList.add('skill-none');
         check.querySelector('#play').classList.remove('skill-none');
@@ -56,6 +57,7 @@ const skillChapters = () => {
 
         if (counter == 1) {
           firstCard[0].style.display = "none";
+          firstCard[0].querySelector('.skillVideo').pause();
           cards[counter - 1].style.display = "block";
           skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
           skillChecks[counter].querySelector('#play').classList.add('skill-none');
@@ -64,6 +66,7 @@ const skillChapters = () => {
         } else {
           cards[counter - 1].style.display = "block";
           cards[counter - 2].style.display = "none";
+          cards[counter - 2].querySelector('.skillVideo').pause();
           skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
           skillChecks[counter].querySelector('#play').classList.add('skill-none');
         };
@@ -75,12 +78,14 @@ const skillChapters = () => {
         if (counter == 0) {
           firstCard[0].style.display = "block";
           cards[counter].style.display = "none";
+          cards[counter].querySelector('.skillVideo').pause();
           skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
           skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
         } else if (counter == -1) {
           backToOverview();
         } else {
           cards[counter].style.display = "none";
+          cards[counter].querySelector('.skillVideo').pause();
           skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
           skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
           cards[counter - 1].style.display = "block";
