@@ -10,7 +10,8 @@
 	.st4{display:inline;fill:#F86464;}
 	.st5{display:none;fill:#FCFCFA;stroke:#B5CC18;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#B5CC18;stroke-width:4;}
-	.st7{fill:#B5CC18;stroke:#B5CC18;stroke-width:0.25;stroke-miterlimit:10;}
+	.st7{display:none;fill:#B5CC18;}
+	.st8{fill:#B5CC18;}
 </style>
 <g id="Grupo_2055" transform="translate(-65 -281)" class="st0">
 	<g id="Elipse_319" transform="translate(65 281)" class="st1">
@@ -20,12 +21,16 @@
 	<path id="Icon_awesome-play" class="st4" d="M90.1,297.3l-10.4-6.1c-0.7-0.4-1.5-0.2-1.9,0.5c-0.1,0.2-0.2,0.5-0.2,0.7v12.3
 		c0,0.8,0.6,1.4,1.4,1.4c0.3,0,0.5-0.1,0.7-0.2l10.4-6.1c0.7-0.4,0.9-1.3,0.5-1.9C90.4,297.6,90.3,297.4,90.1,297.3z"/>
 </g>
-<g id="Grupo_2055_1_" transform="translate(-65 -281)">
-	<g id="Elipse_319_2_" transform="translate(65 281)">
-		<circle class="st5" cx="17.5" cy="17.5" r="17.5"/>
-		<circle class="st2" cx="17.5" cy="17.5" r="17.5"/>
-		<circle class="st6" cx="17.5" cy="17.5" r="15.5"/>
-	</g>
-	<path id="Icon_material-done" class="st7" d="M80.7,302.4l-5.8-5.8l-1.9,1.9l7.7,7.7l16.6-16.6l-1.9-1.9L80.7,302.4z"/>
+<g id="Elipse_319_2_" transform="translate(65 281)">
+	<circle class="st5" cx="-47.5" cy="-263.5" r="17.5"/>
+	<circle class="st2" cx="-47.5" cy="-263.5" r="17.5"/>
+	<circle class="st6" cx="-47.5" cy="-263.5" r="15.5"/>
+</g>
+<path class="st7" d="M35,17.5C35,27.2,27.2,35,17.5,35S0,27.2,0,17.5C0,7.8,7.8,0,17.5,0C23.6,0,29,3.1,32.1,7.9
+	c0.2,0.3,0.4,0.6,0.5,0.9C34.2,11.3,35,14.3,35,17.5z"/>
+<g id="Icon_material-done">
+	<path class="st8" d="M15.7,21.4l-5.8-5.8L8,17.5l7.7,7.7L32.3,8.6l-1.9-1.9L15.7,21.4z"/>
+	<path class="st8" d="M32.1,7.9l-1.7-1.7L15.7,20.9l-5.8-5.8l-2.4,2.4l8.2,8.2l17-17C32.5,8.5,32.3,8.2,32.1,7.9z M9.9,16.1l5.8,5.8
+		L30.4,7.2l1.4,1.4L15.7,24.7l-7.2-7.2L9.9,16.1z"/>
 </g>
 </svg>
