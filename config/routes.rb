@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   # Recipes, User Recipes and User Skills
 
+  resources :lesson_validations, only: [ :show ]
   resources :recipes, only: [ :show ]
   resources :user_recipes, only: [ :index, :edit, :update ]
   resources :user_skills, only: [ :create ]

@@ -34,7 +34,7 @@ const displayPreview = (input) => {
   const nextBtn = document.getElementById('validateLessonNext');
 
   if (preview.src && skipBtn) {
-    skipBtn.style.display = "none";
+    //skipBtn.style.display = "none";
     nextBtn.style.display = "block";
   };
 

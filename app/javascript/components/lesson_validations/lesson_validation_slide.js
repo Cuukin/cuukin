@@ -3,6 +3,7 @@ const lessonValidationSlide = () => {
   const validateLessonWithoutPhotoNextBtn = document.querySelector('#validateLessonWithoutPhotoNext');
   const validateItem1 = document.querySelector('#recipe-validation-item-1');
   const validateItem2 = document.querySelector('#recipe-validation-item-2');
+  const validateLessonModal = document.querySelector('#validateLessonModal');
 
   const rememberText = document.querySelector('#rememberPhotoText');
 
@@ -17,6 +18,7 @@ const lessonValidationSlide = () => {
 
   if (validateLessonWithoutPhotoNextBtn) {
     validateLessonWithoutPhotoNextBtn.addEventListener('click', () => {
+      validateLessonModal.style.display = "block";
       validateItem1.style.display = "none";
       validateItem2.style.display = "block";
       rememberText.style.display = "block";
