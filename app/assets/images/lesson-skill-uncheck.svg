@@ -9,7 +9,8 @@
 	.st3{fill:none;stroke:#F86464;stroke-width:4;}
 	.st4{display:inline;fill:#F86464;}
 	.st5{display:none;fill:#FCFCFA;stroke:#B5CC18;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#BFBFBF;stroke-width:4;}
+	.st6{display:none;fill:#FFFFFF;}
+	.st7{fill:none;stroke:#BFBFBF;stroke-width:4;}
 </style>
 <g id="Grupo_2055" transform="translate(-65 -281)" class="st0">
 	<g id="Elipse_319" transform="translate(65 281)" class="st1">
@@ -22,8 +23,8 @@
 <g id="Grupo_2055_1_" transform="translate(-65 -281)">
 	<g id="Elipse_319_2_" transform="translate(65 281)">
 		<circle class="st5" cx="17.5" cy="17.5" r="17.5"/>
-		<circle class="st2" cx="17.5" cy="17.5" r="17.5"/>
-		<circle class="st6" cx="17.5" cy="17.5" r="15.5"/>
+		<circle class="st6" cx="17.5" cy="17.5" r="17.5"/>
+		<circle class="st7" cx="17.5" cy="17.5" r="15.5"/>
 	</g>
 </g>
 </svg>
