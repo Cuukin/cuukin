@@ -5,7 +5,7 @@ const lessonValidationSlide = () => {
   const validateItem2 = document.querySelector('#recipe-validation-item-2');
   const validateLessonModal = document.querySelector('#validateLessonModal');
 
-  const rememberText = document.querySelector('#rememberPhotoText');
+  // const rememberText = document.querySelector('#rememberPhotoText');
 
   const validateFunction = (btn) => {
     if (btn) {
@@ -21,7 +21,7 @@ const lessonValidationSlide = () => {
       validateLessonModal.style.display = "block";
       validateItem1.style.display = "none";
       validateItem2.style.display = "block";
-      rememberText.style.display = "block";
+      // rememberText.style.display = "block";
     });
   };
 
