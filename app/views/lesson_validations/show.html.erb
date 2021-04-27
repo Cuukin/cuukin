@@ -27,7 +27,7 @@
 
         <div class="currency-item">
           <%= image_tag('nb-xp.svg') %>
-          <h4 class="xp-p"><%= @lesson_validation.lesson.xp %> XP</h4>
+          <h4 class="xp-p"><%= @lesson_validation.photo.attached? ? @lesson_validation.lesson.xp : @lesson_validation.lesson.xp / 2 %> XP</h4>
         </div>
 
         <div class="currency-item">
