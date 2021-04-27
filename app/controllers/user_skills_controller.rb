@@ -3,6 +3,7 @@ class UserSkillsController < ApplicationController
     @user_skill = UserSkill.new(user_skill_params)
     @user_skill.user = current_user
     @user_skill.completed = true
+    authorize @user_skill, policy_class: UserSkillPolicy
     @user_skill.save
   end
 

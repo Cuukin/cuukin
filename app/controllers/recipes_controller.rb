@@ -6,6 +6,8 @@ class RecipesController < ApplicationController
     available?
     first?
     @lesson = @recipe.lessons.first
+
+    authorize @recipe, policy_class: RecipePolicy
   end
 
   private
