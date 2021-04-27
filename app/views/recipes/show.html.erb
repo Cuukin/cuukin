@@ -211,7 +211,7 @@
             </div>
           </div>
 
-          <% if index == @lesson.recipe.recipe_methods.count - 1 %>
+          <% if index == @recipe.recipe_methods.count - 1 %>
             <%= link_to 'Complete', lesson_path(@recipe.lessons.first), class: 'primary-btn mt-5'  %>
           <% end %>
         </div>
