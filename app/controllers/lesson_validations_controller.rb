@@ -32,7 +32,7 @@ class LessonValidationsController < ApplicationController
       @lesson_validation.validated = true
       @lesson_validation.save
       ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
-      UpdateBadgesJob.perform_later(current_user, @lesson)
+      UpdateBadgesJob.perform_later(current_user, @lesson_validation)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson_validation)
       TransitionAwardsJob.perform_later(current_user)
       redirect_to lesson_validation_path(@lesson_validation)
