@@ -1,14 +1,11 @@
-<div class="container-book-lesson">
+<div class="book-navbar">
+  <%= link_to books_path do %>
+    <%= image_tag("btn-back.svg") %>
+  <% end %>
+  <h1><%= @book.title %></h1>
+</div>
 
-  <div class="book-info">
-    <%= link_to books_path do %>
-      <%= image_tag("btn-back.svg") %>
-    <% end %>
-    <div class="book-info-text">
-      <h1><%= @book.title %></h1>
-      <p><%= @book.description %></p>
-    </div>
-  </div>
+<div class="container-book-lesson">
 
   <div class="container-lessons-cards">
     <% @lessons.each do |lesson| %>

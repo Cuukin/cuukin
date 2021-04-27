@@ -45,83 +45,88 @@
     <% end %>
 
 
-    <div class="ingredients-header">
-      <div class="recipe-overview-serving">
-        <%= image_tag('btn-decrease.svg', class: 'serving-btn serving-minus', id: 'minusBtn') %>
-        <p class="serving-paragraph">1</p>
-        <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>
-        <%= image_tag('btn-increase.svg', class: 'serving-btn serving-plus', id: 'plusBtn') %>
+    <% unless @recipe.recipe_ingredients.empty? %>
+      <div class="ingredients-header">
+        <div class="recipe-overview-serving">
+          <%= image_tag('btn-decrease.svg', class: 'serving-btn serving-minus', id: 'minusBtn') %>
+          <p class="serving-paragraph">1</p>
+          <%= image_tag('lesson-serving.svg', class: 'serving-icon') %>
+          <%= image_tag('btn-increase.svg', class: 'serving-btn serving-plus', id: 'plusBtn') %>
+        </div>
+
+        <div class="unit-conversion-btn">
+          <span class="unit unitSelected" id="metric-toggle"><p>Metric</p></span>
+          <span class="unit" id="imperial-toggle"><p>Imperial</p></span>
+        </div>
       </div>
 
-      <div class="unit-conversion-btn">
-        <span class="unit unitSelected" id="metric-toggle"><p>Metric</p></span>
-        <span class="unit" id="imperial-toggle"><p>Imperial</p></span>
-      </div>
-    </div>
+      <div class="recipe-overview-ingredients">
+        <h3>Ingredients</h3>
+        <table>
+          <% @recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
+            <tr>
+              <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
+                <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
+              </td>
 
-    <div class="recipe-overview-ingredients">
-      <h3>Ingredients</h3>
-      <table>
-        <% @recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
-          <tr>
-            <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
-              <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
-            </td>
+              <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
 
-            <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
-
-            <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
-              <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
-              <%= render 'recipes/ingredient_swap_popup', recipe_ingredient: r_ingredient %>
-            <% end %>
-          </tr>
-        <% end %>
-      </table>
-
-    </div>
-
-    <div class="recipe-overview-equipment">
-      <h3>Equipment needed</h3>
-      <table>
-        <% @recipe.recipe_tools.order(:id).each do |r_tool| %>
-          <tr>
-            <td class="equipment-name">
-              <% if r_tool.tool.suggested_product %>
-                <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
-                  <%= r_tool.tool.name %>
-                  <%= icon('fas', 'external-link-alt') %>
-                <% end %>
-              <% else %>
-                <%= r_tool.tool.name %>
+              <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
+                <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
+                <%= render 'recipes/ingredient_swap_popup', recipe_ingredient: r_ingredient %>
               <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-
-      <div class="recipe-important">
-        <%= image_tag('lesson-important.svg') %>
-        <p>Don't have one of these? Click on any to see Kin's recommendation on what to get</p>
-      </div>
-    </div>
-
-    <div class="recipe-overview-nutri">
-      <div class="nutri-header">
-        <h3 class="nutri-btn">Nutritional data per serving</h3>
-        <%= image_tag('btn-expand.svg', class: 'nutri-show-btn') %>
-      </div>
-
-      <div class="nutri-content">
-        <ul>
-          <% @recipe.recipe_nutritional_infos.each do |nutri_data| %>
-            <li>
-              <p class="nutri-data"><%= nutri_data.value %></p>
-              <p class="nutri-metric"><%= nutri_data.nutrient %></p>
-            </li>
+            </tr>
           <% end %>
-        </ul>
+        </table>
       </div>
-    </div>
+    <% end %>
+
+    <% unless @recipe.recipe_tools.empty? %>
+      <div class="recipe-overview-equipment">
+        <h3>Equipment needed</h3>
+        <table>
+          <% @recipe.recipe_tools.order(:id).each do |r_tool| %>
+            <tr>
+              <td class="equipment-name">
+                <% if r_tool.tool.suggested_product %>
+                  <%= link_to "#{r_tool.tool.suggested_product}", target: "_blank" do %>
+                    <%= r_tool.tool.name %>
+                    <%= icon('fas', 'external-link-alt') %>
+                  <% end %>
+                <% else %>
+                  <%= r_tool.tool.name %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="recipe-important">
+          <%= image_tag('lesson-important.svg') %>
+          <p>Don't have one of these? Click on any to see Kin's recommendation on what to get</p>
+        </div>
+      </div>
+    <% end %>
+
+    <% unless @recipe.recipe_nutritional_infos.empty? %>
+      <div class="recipe-overview-nutri">
+        <div class="nutri-header">
+          <h3 class="nutri-btn">Nutritional data per serving</h3>
+          <%= image_tag('btn-expand.svg', class: 'nutri-show-btn') %>
+        </div>
+
+        <div class="nutri-content">
+          <ul>
+            <% @recipe.recipe_nutritional_infos.each do |nutri_data| %>
+              <li>
+                <p class="nutri-data"><%= nutri_data.value %></p>
+                <p class="nutri-metric"><%= nutri_data.nutrient %></p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
 
     <div class="recipe-overview-skills">
       <h3>Skills practiced</h3>

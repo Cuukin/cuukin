@@ -32,6 +32,7 @@ const recipeMethods = () => {
       window.scrollTo({top: 0});
 
       methodsCards[counter - 1].style.display = "none";
+      methodsCards[counter - 1].querySelector('.methodVideo').pause();
       methodsCards[counter].style.display = "block";
 
       if (counter == methodsCards.length - 1) {
@@ -51,9 +52,11 @@ const recipeMethods = () => {
         counter = 0;
         recipeOverview.style.display = "block";
         methodsContainer.style.display = "none";
-        methodsCards[counter + 1].style.display = "none";
+        methodsCards[counter].style.display = "none";
+        methodsCards[counter].querySelector('.methodVideo').pause();
       } else {
         methodsCards[counter + 1].style.display = "none";
+        methodsCards[counter + 1].querySelector('.methodVideo').pause();
         methodsCards[counter].style.display = "block";
         let progressBarWidth = 100 * (counter + 1) / totalItems;
         progressBar.style.width = progressBarWidth + '%';

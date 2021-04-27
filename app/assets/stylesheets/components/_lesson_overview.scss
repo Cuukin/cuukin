@@ -24,6 +24,7 @@
     color: $cuukin;
     font-size: 20px;
     margin: 0;
+    text-align: center;
   }
 
   img {
@@ -72,6 +73,10 @@
       height: 35px;
       top: 48px;
       right: -7px;
+    }
+
+    .skill-none {
+      display: none;
     }
   }
 
@@ -201,6 +206,7 @@
 
   p {
     margin: 0;
+    text-align: center;
   }
 
   img {
