@@ -6,8 +6,9 @@ ActiveAdmin.register User do
   index do
     selectable_column
     # column :id
+    column :email
     column :username
-    column :first_name
+    column :full_name
     column :level
     column :cuukies
     column :xp

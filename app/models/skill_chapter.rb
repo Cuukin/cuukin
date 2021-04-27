@@ -3,8 +3,6 @@ class SkillChapter < ApplicationRecord
   belongs_to :badge
 
   has_many :user_skills, dependent: :destroy
-  has_many :users, through: :user_skills
 
   validates :title, presence: true
-  # add description and video url with presence true later
 end

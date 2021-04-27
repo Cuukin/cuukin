@@ -9,12 +9,12 @@ class User < ApplicationRecord
 
   has_many :lesson_validations, dependent: :destroy
   has_many :lesson_unblocks, dependent: :destroy
-  has_many :user_recipes, dependent: :destroy
   has_many :user_awards, dependent: :destroy
   has_many :user_badges, dependent: :destroy
+  has_many :user_recipes, dependent: :destroy
   has_many :user_skills, dependent: :destroy
 
-  has_many :skills, through: :user_skills
+  has_many :skill_chapters, through: :user_skills
   has_many :badges, through: :user_badges
   has_many :awards, through: :user_awards
 
@@ -27,28 +27,16 @@ class User < ApplicationRecord
   after_create :set_username
   after_create :welcome_currencies
   after_create :give_welcome_badge
-  # after_create :async_set_avatar
 
   before_update :check_username_presence
-
-  # after_touch :lesson_validation_currencies
-  # after_touch :update_user_level
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  # def self.from_omniauth(auth)
-  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  #     user.email = auth.info.email
-  #     user.password = Devise.friendly_token[0, 20]
-  #     user.name = auth.info.name   # assuming the user model has a name
-  #     user.image = auth.info.photo # assuming the user model has an image
-  #     # If you are using confirmable and the provider(s) you use validate emails,
-  #     # uncomment the line below to skip the confirmation emails.
-  #     user.skip_confirmation!
-  #   end
-  # end
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 
   private
 
@@ -75,23 +63,6 @@ class User < ApplicationRecord
     # Method is called whenever user updates profile
     set_username if !(self.username) || self.username == ""
   end
-
-  # def async_set_avatar
-    # Calls background job to set avatar when user creates profile
-    # SetAvatarJob.perform_later(self)
-  # end
-
-  # def update_user_level
-  #   unless self.lesson_validations.empty?
-  #     if self.lesson_validations.last.lesson.book.level != self.level
-  #       last_book = Book.find_by(level: self.level)
-  #       last_book_xp = last_book.xp
-  #       self.xp += last_book_xp
-  #       self.level = self.lesson_validations.last.lesson.book.level
-  #       self.save
-  #     end
-  #   end
-  # end
 
   def welcome_currencies
     # MVP - user gains 20 cuukies when signs up and in no other circumstance
