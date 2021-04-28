@@ -1,6 +1,6 @@
 <div class="user-awards-container">
   <% @user_awards.each do |user_award| %>
-    <%= image_tag("#{user_award.award.icon}", class: "award badge-btn #{user_award.award.id}") %>
+    <%= image_tag("#{user_award.award.icon}", class: "award badge-btn award#{user_award.award.id}") %>
     <%= render 'user_awards/award', award: user_award.award %>
   <% end %>
 </div>
