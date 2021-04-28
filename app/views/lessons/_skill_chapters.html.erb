@@ -1,6 +1,6 @@
 <div class="skill-chapters-navbar">
 
-  <%= image_tag('btn-back.svg', class: 'nav-btn', id: 'prevChapter') %>
+  <%= image_tag('btn-back.svg', class: 'nav-btn prevChapter', id: 'prevChapter') %>
 
   <div class="skill-progression">
     <p>Skill Chapter</p>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <%= image_tag('btn-forward.svg', class: 'nav-btn', id: 'nextChapter') %>
+  <%= image_tag('btn-forward.svg', class: 'nav-btn nextChapter', id: 'nextChapter') %>
 
 </div>
 
@@ -35,6 +35,7 @@
         <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
         <h2 class="text-center"><%= skill_chapter.title %></h2>
         <p class="skill-description"><%= skill_chapter.description %></p>
+        <p class="primary-btn nextChapter">Next Video</p>
       </div>
 
     </div>

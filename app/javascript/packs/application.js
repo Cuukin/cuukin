@@ -28,6 +28,7 @@ import { currenciesModal } from '../components/popups/currency_popup';
 import { recipeDiary } from '../components/popups/recipe_diary';
 import { helpPopup } from '../components/popups/help_popup';
 import { openBadge } from '../components/popups/open_badge';
+import { profilePhoto } from '../components/popups/profile_photo_popup';
 
 // import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
 // import { skipToRecipe } from '../components/lessons/skip_to_recipe';
@@ -53,6 +54,7 @@ document.addEventListener('turbolinks:load', () => {
   expandedNavbar();
   helpPopup();
   openBadge();
+  profilePhoto();
 
   // lesson
   skillChapters();

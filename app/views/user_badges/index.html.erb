@@ -2,7 +2,7 @@
   <h4>Ingredient badges</h4>
   <div class="user-awards-container">
     <% @ingredient_badges.each do |user_badge| %>
-      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+      <div class="user-badge-container badge-btn badge<%= user_badge.badge.id %>">
         <% if user_badge.medal == 'white' %>
           <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
         <% elsif user_badge.medal == 'bronze' %>
@@ -20,7 +20,7 @@
   <h4>Equipment badges</h4>
   <div class="user-awards-container">
     <% @tool_badges.each do |user_badge| %>
-      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+      <div class="user-badge-container badge-btn badge<%= user_badge.badge.id %>">
         <% if user_badge.medal == 'white' %>
           <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
         <% elsif user_badge.medal == 'bronze' %>
@@ -38,7 +38,7 @@
   <h4>Technique badges</h4>
   <div class="user-awards-container">
     <% @technique_badges.each do |user_badge| %>
-      <div class="user-badge-container badge-btn <%= user_badge.badge.id %>">
+      <div class="user-badge-container badge-btn badge<%= user_badge.badge.id %>">
         <% if user_badge.medal == 'white' %>
           <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
         <% elsif user_badge.medal == 'bronze' %>

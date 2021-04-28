@@ -172,7 +172,7 @@
         <span class="meter-progression"></span>
       </div>
     </div>
-    <%= image_tag('btn-forward.svg', id: 'nextMethod') %>
+    <%= image_tag('btn-forward.svg', class: 'nextMethod', id: 'nextMethod') %>
   </div>
 
   <div class="recipe-methods-container-cards">
@@ -218,6 +218,8 @@
 
           <% if index == @recipe.recipe_methods.count - 1 %>
             <%= link_to 'Complete', lesson_path(@recipe.lessons.first), class: 'primary-btn mt-5'  %>
+          <% else %>
+            <p class="primary-btn mt-5 nextMethod">Next Step</p>
           <% end %>
         </div>
       </div>
