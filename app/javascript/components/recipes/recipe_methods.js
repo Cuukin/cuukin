@@ -7,7 +7,8 @@ const recipeMethods = () => {
     const methodsContainer = document.querySelector('.recipe-methods-container');
 
     // btns
-    const nextMethod = document.querySelector('#nextMethod');
+    const nextMethods = document.querySelectorAll('.nextMethod');
+    const nextBtn = document.querySelector('#nextMethod');
     const prevMethod = document.querySelector('#prevMethod');
     const progressBar = document.querySelector('.meter-progression');
 
@@ -27,25 +28,30 @@ const recipeMethods = () => {
       progressBar.style.width = progressBarWidth + '%';
     });
 
-    nextMethod.addEventListener('click', () => {
-      counter += 1;
-      window.scrollTo({top: 0});
+    nextMethods.forEach((nextMethod) => {
+      nextMethod.addEventListener('click', () => {
+        counter += 1;
+        window.scrollTo({top: 0});
 
-      methodsCards[counter - 1].style.display = "none";
-      methodsCards[counter - 1].querySelector('.methodVideo').pause();
-      methodsCards[counter].style.display = "block";
+        methodsCards[counter - 1].style.display = "none";
+        methodsCards[counter - 1].querySelector('.methodVideo').pause();
+        methodsCards[counter].style.display = "block";
 
-      if (counter == methodsCards.length - 1) {
-        nextMethod.style.pointerEvents = "none";
-      }
+        if (counter == methodsCards.length - 1) {
+          nextBtn.style.pointerEvents = "none";
+        }
 
-      let progressBarWidth = 100 * (counter + 1) / totalItems;
-      progressBar.style.width = progressBarWidth + '%';
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
+      });
     });
 
     prevMethod.addEventListener('click', () => {
       counter -= 1;
-      nextMethod.style.pointerEvents = "auto";
+      nextBtn.style.pointerEvents = "auto";
+      // nextMethods.forEach((nextMethod) => {
+      //   nextMethod.style.pointerEvents = "auto";
+      // });
       window.scrollTo({top: 0});
 
       if (counter == -1) {
