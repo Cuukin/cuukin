@@ -1,4 +1,4 @@
-<div class="form-devise-modal">
+<div class="form-devise-modal" id="editPhotoModal" style="display: none;">
   <div class="form-devise-modal-content">
 
     <%= simple_form_for(current_user, url: user_path(current_user), method: 'patch') do |f| %>
@@ -11,7 +11,7 @@
       </div>
 
       <div class="form-actions double-btn">
-        <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1', id: "photoCancel" %>
+        <p class="secondary-btn mr-1" id="photoCancel">Cancel</p>
         <%= f.button :submit, "Update", class: "primary-btn ml-1", id: "photoUpdate", style: "display: none;" %>
       </div>
     <% end %>

@@ -41,7 +41,6 @@ const displayPreview = (input) => {
   if (preview.src) {
     photoUpload.style.display = "block";
   };
-
 }
 
 export { previewImageOnFileSelect };
