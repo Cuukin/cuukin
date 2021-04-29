@@ -59,7 +59,7 @@
         <p>Notes & feedback</p>
         <%= f.input :notes, label: false, input_html: { rows: '2' } %>
 
-        <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
+        <%= f.button :submit, 'Complete Lesson', class: 'disabled-btn', id: 'submitValidation' %>
       </div>
 
     <% end %>
