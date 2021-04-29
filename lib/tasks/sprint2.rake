@@ -27,4 +27,20 @@ namespace :sprint2 do
       end
     end
   end
+
+  task update_all_pasta_fundamentals_user_recipe: :environment do
+    carbonara_recipe = Recipe.find_by(title: 'Spaghetti Carbonara')
+    UserRecipe.where(recipe: carbonara_recipe, completed: true).each do |ur|
+      user = ur.user
+      user_recipes = user.user_recipes
+      pesto_pasta_recipe = Recipe.find_by(title: 'Pesto Pasta')
+      mushroom_pasta_recipe = Recipe.find_by(title: 'Creamy Mushroom Pasta')
+      unless user_recipes.include?(pesto_pasta_recipe)
+        UserRecipe.create(user: user, recipe: pesto_pasta_recipe, completed: false)
+      end
+      unless user_recipes.include?(mushroom_pasta_recipe)
+        UserRecipe.create(user: user, recipe: mushroom_pasta_recipe, completed: false)
+      end
+    end
+  end
 end

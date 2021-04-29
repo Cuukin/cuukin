@@ -5,9 +5,9 @@
     <%= f.error_notification %>
 
     <div class="form-inputs edit-commitment-container" id="motivationContainer">
-      <h3>Why do you want cook better?</h3>
+      <h3>Why do you want to improve your cooking?</h3>
       <%= f.input :motivation,
-        collection: ["To cook healthier", "To save money", "To impress friends and family", "To eat more sustainable food", "To lose weight", "Other"],
+        collection: ["Eat healthier food", "Save money", "Impress friends and family", "Be more sustainable", "Learn a new skill", "Other"],
         as: :check_boxes, legend_tag: false %>
 
       <div class='commitment-progress-bar'>

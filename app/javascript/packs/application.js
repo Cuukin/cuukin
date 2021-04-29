@@ -40,6 +40,7 @@ import { lessonReferrers } from '../components/lessons/lesson_referrers';
 import { validateLesson } from '../components/lesson_validations/validate_lesson';
 import { validateSkippedLesson } from '../components/lesson_validations/validate_skipped_lesson';
 import { lessonValidationSlide } from '../components/lesson_validations/lesson_validation_slide';
+import { checkRecipeInput } from '../components/lesson_validations/check_recipe_input';
 
 import { recipeMethods } from '../components/recipes/recipe_methods';
 import { lessonNutriData } from '../components/recipes/show_nutri';
@@ -74,6 +75,7 @@ document.addEventListener('turbolinks:load', () => {
   validateLesson();
   validateSkippedLesson();
   lessonValidationSlide();
+  checkRecipeInput();
 
   // devise and other forms
   termsOfService();
