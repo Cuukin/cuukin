@@ -17,15 +17,14 @@
       </div>
 
       <div id="recipe-validation-item-2">
-        <div id="rememberPhotoText">
-          <div class="remember-text">
-            <h5>Remember to upload a photo next time!</h5>
-          </div>
-        </div>
-
-        <%= f.input :recipe_id, label: false, collection: @lesson.recipes %>
 
         <h3>Great job!</h3>
+
+        <div class="lesson-validation-recipes-container">
+          <p style="margin-bottom: 5px;">Which recipe did you cook?</p>
+          <%= f.input :recipe_id, label: false, collection: @lesson.recipes.order(external_url: :desc), as: :radio_buttons, legend_tag: false %>
+        </div>
+
         <p>How difficult was the lesson?</p>
 
         <%= f.input :difficulcy, collection: LessonValidation.difficulcies.keys, label: false, input_html: { class: 'd-none', id: 'difficulcy-input' }, label_html: { class: 'lesson-validation-options' } %>
@@ -60,7 +59,7 @@
         </fieldset>
 
         <p>Notes & feedback</p>
-        <%= f.input :notes, label: false, input_html: { rows: '5'} %>
+        <%= f.input :notes, label: false, input_html: { rows: '2'} %>
 
         <%= f.button :submit, 'Complete Lesson', class: 'primary-btn' %>
       </div>

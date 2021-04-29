@@ -21,7 +21,7 @@
 
         <div class="lesson-validation-recipes-container">
           <p style="margin-bottom: 5px;">Which recipe did you cook?</p>
-          <%= f.input :recipe_id, label: false, collection: @lesson.recipes, as: :radio_buttons, legend_tag: false %>
+          <%= f.input :recipe_id, label: false, collection: @lesson.recipes.order(external_url: :desc), as: :radio_buttons, legend_tag: false %>
         </div>
 
         <p>How difficult was the lesson?</p>
