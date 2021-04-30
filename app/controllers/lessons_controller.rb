@@ -7,6 +7,7 @@ class LessonsController < ApplicationController
     skipped?
     locked?
 
+    @grocery_list = GroceryList.new
     @lesson_validation = LessonValidation.new
     @user_skill = UserSkill.new
 
