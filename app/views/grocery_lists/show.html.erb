@@ -30,11 +30,13 @@
             <tr class="item-<%= item.id %>">
               <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
               <td><%= item.ingredient.name %></td>
-              <td class="item-btns"><%= item.ingredient.content.present? ? icon('fas', 'info-circle') : "" %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
+              <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
             </tr>
           <% end %>
         </table>
       </div>
+
+      <%= render 'grocery_lists/ingredient_info', ingredients: @grocery_list.ingredients %>
     <% end %>
   </div>
 </div>

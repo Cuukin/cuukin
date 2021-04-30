@@ -20,6 +20,21 @@ const groceryListPage = () => {
       });
     });
   };
+
+  const openInfoBtns = document.querySelectorAll('.openInfo');
+
+  if (openInfoBtns) {
+    openInfoBtns.forEach((btn) => {
+      let infoModal = document.querySelector(`.${btn.id}`);
+      btn.addEventListener('click', (event) => {
+        infoModal.style.display = "block";
+      });
+      let closeBtn = infoModal.querySelector('.currency-modal-close-btn');
+      closeBtn.addEventListener('click', (event) => {
+        infoModal.style.display = "none";
+      });
+    });
+  };
 };
 
 export { groceryListPage };
