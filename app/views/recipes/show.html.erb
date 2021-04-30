@@ -1,6 +1,6 @@
 <!-- RECIPE OVERVIEW -->
 
-<div class="container-recipe-overview">
+<div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
   <div class="recipe-overview-btn">
     <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
@@ -65,11 +65,11 @@
         <table>
           <% @recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
             <tr>
-              <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
-                <span class="ingredient-quantity quantity-<%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
+              <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %> <%= r_ingredient.id %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
+                <span class="ingredient-quantity quantity-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
               </td>
 
-              <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
+              <td class="ingredient-name ingredient-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
 
               <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
                 <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>
@@ -78,6 +78,8 @@
             </tr>
           <% end %>
         </table>
+
+        <%= render 'recipes/grocery_list_item_builder', recipe_ingredients: @recipe.recipe_ingredients.order(:id), item: @grocery_list_item %>
       </div>
     <% end %>
 
@@ -145,7 +147,7 @@
     </div>
 
     <div class="double-btn">
-      <p class="secondary-btn mr-1">Add to Grocery list</p>
+      <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery">Add to Grocery List</p>
       <% if @validated || @available || @first %>
         <% if @recipe.external_url %>
           <%= link_to @recipe.external_url, target: '_blank' do %>

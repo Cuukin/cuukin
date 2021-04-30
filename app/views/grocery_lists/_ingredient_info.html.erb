@@ -1,0 +1,23 @@
+<% ingredients.each do |ingredient| %>
+  <% if ingredient.content.present? %>
+
+    <div class="currency-modal info-<%= ingredient.id %>">
+      <div class="currency-modal-content">
+        <%= image_tag('btn-close-rounded.svg', class: 'currency-modal-close-btn') %>
+
+        <% if ingredient.photo.attached? %>
+          <div class="user-badge-container badge-popup">
+            <%= cl_image_tag ingredient.photo.key, class: 'badge-icon' %>
+          </div>
+        <% end %>
+
+        <h1 class="badge-name"><%= ingredient.name %></h1>
+
+        <div class="currency-text-content">
+          <%= ingredient.content %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>

@@ -38,6 +38,14 @@ const unitConversion = () => {
           if (imperialToggle.classList[1] == 'unitSelected') {
             measureUnit.innerText = initialUnit;
             measureQuantity.innerText = initialQuantity * counter;
+
+            let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+            let unitInput = document.getElementById(`unitInput-${measure.classList[2]}`);
+
+            if (quantityInput != null && unitInput != null) {
+              unitInput.value = initialUnit;
+              quantityInput.value = initialQuantity * counter;
+            };
           } else {
             fromMetricToImperial(measureQuantity, measureUnit);
           };
@@ -82,10 +90,20 @@ const unitConversion = () => {
 
           let convertedQuantity = initialQuantity * counter;
 
+          let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+
           if (convertedQuantity % 1 == 0) {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(0);
+            };
           } else {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(1);
+            };
           };
         };
       });
@@ -116,10 +134,20 @@ const unitConversion = () => {
 
           let convertedValue = initialQuantity * counter;
 
+          let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+
           if (convertedValue % 1 == 0) {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(0);
+            };
           } else {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(1);
+            };
           };
         };
       });
@@ -182,17 +210,29 @@ const unitConversion = () => {
           ingredients.forEach((ing) => {
             let newIng = swapIngredient.id;
             updateTextWithOpacity(ing, newIng);
+            let ingInput = document.getElementById(`ingredientInput-${ing.classList[2]}`);
+            if (ingInput != null) {
+              ingInput.value = newIng;
+            };
           });
 
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
               let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
               updateTextWithOpacity(quantity, newQuantity);
+              let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+              if (quantityInput != null) {
+                quantityInput.value = newQuantity;
+              };
               swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
               measureItem.dataset.ingredientQuantity = ingredientQuantity;
             } else {
               let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
               updateTextWithOpacity(quantity, newQuantity);
+              let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+              if (quantityInput != null) {
+                quantityInput.value = newQuantity;
+              };
               swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
               measureItem.dataset.ingredientQuantity = ingredientQuantity;
             };
@@ -201,6 +241,10 @@ const unitConversion = () => {
           units.forEach((unit) => {
             let newUnit = swapIngredient.getAttribute('data-ingredient-unit');
             updateTextWithOpacity(unit, newUnit);
+            let unitInput = document.getElementById(`unitInput-${unit.classList[2]}`);
+            if (unitInput != null) {
+              unitInput.value = newUnit;
+            };
             swapIngredient.dataset.ingredientUnit = ingredientUnit;
             measureItem.dataset.ingredientUnit = ingredientUnit;
           });
@@ -225,16 +269,30 @@ const updateTextWithOpacity = (text, newInfo) => {
 
 const fromMetricToImperial = (quantity, unit) => {
   let quantityValue = Number.parseFloat(quantity.innerText);
+  let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+  let unitInput = document.getElementById(`unitInput-${unit.classList[2]}`);
 
   if (unit.innerText == 'g') {
     unit.innerText = 'oz';
     quantity.innerText = (quantityValue / 28.35).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'oz';
+      quantityInput.value = (quantityValue / 28.35).toFixed(1);
+    };
   } else if (unit.innerText == 'ml') {
     unit.innerText = 'cups';
     quantity.innerText = (quantityValue / 284).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'cups';
+      quantityInput.value = (quantityValue / 284).toFixed(1);
+    };
   } else if (unit.innerText == 'l') {
     unit.innerText == 'cups';
     quantity.innerText = (quantityValue * 3.52).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'cups';
+      quantityInput.value = (quantityValue * 3.52).toFixed(1);
+    };
   };
 };
 

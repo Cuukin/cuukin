@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :recipes, only: [ :show ]
   resources :user_recipes, only: [ :index, :edit, :update ]
   resources :user_skills, only: [ :create ]
+  resources :grocery_list_items, only: [ :create, :destroy ]
+  resources :grocery_lists, only: [ :show, :destroy ]
 
   # Static Pages
 
