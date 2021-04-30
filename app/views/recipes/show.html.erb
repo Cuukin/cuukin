@@ -69,7 +69,7 @@
                 <span class="ingredient-quantity quantity-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
               </td>
 
-              <td class="ingredient-name ingredient-<%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
+              <td class="ingredient-name ingredient-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.ingredient.name %></td>
 
               <% unless r_ingredient.recipe_ingredient_swaps.empty? %>
                 <td class="ingredient-swap-btn <%= r_ingredient.id %>"><%= icon('fas', 'sync-alt') %> Swap</td>

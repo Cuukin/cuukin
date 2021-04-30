@@ -210,17 +210,29 @@ const unitConversion = () => {
           ingredients.forEach((ing) => {
             let newIng = swapIngredient.id;
             updateTextWithOpacity(ing, newIng);
+            let ingInput = document.getElementById(`ingredientInput-${ing.classList[2]}`);
+            if (ingInput != null) {
+              ingInput.value = newIng;
+            };
           });
 
           quantities.forEach((quantity) => {
             if (swapIngredient.getAttribute('data-ingredient-quantity') == "") {
               let newQuantity = swapIngredient.getAttribute('data-ingredient-quantity');
               updateTextWithOpacity(quantity, newQuantity);
+              let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+              if (quantityInput != null) {
+                quantityInput.value = newQuantity;
+              };
               swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
               measureItem.dataset.ingredientQuantity = ingredientQuantity;
             } else {
               let newQuantity = Number.parseFloat(swapIngredient.getAttribute('data-ingredient-quantity')) * counter;
               updateTextWithOpacity(quantity, newQuantity);
+              let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+              if (quantityInput != null) {
+                quantityInput.value = newQuantity;
+              };
               swapIngredient.dataset.ingredientQuantity = ingredientQuantity;
               measureItem.dataset.ingredientQuantity = ingredientQuantity;
             };
@@ -229,6 +241,10 @@ const unitConversion = () => {
           units.forEach((unit) => {
             let newUnit = swapIngredient.getAttribute('data-ingredient-unit');
             updateTextWithOpacity(unit, newUnit);
+            let unitInput = document.getElementById(`unitInput-${unit.classList[2]}`);
+            if (unitInput != null) {
+              unitInput.value = newUnit;
+            };
             swapIngredient.dataset.ingredientUnit = ingredientUnit;
             measureItem.dataset.ingredientUnit = ingredientUnit;
           });
