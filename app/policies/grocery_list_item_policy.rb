@@ -4,7 +4,7 @@ class GroceryListItemPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.grocery_list.user == user
   end
 
   class Scope < Scope

@@ -46,6 +46,7 @@ import { recipeMethods } from '../components/recipes/recipe_methods';
 import { lessonNutriData } from '../components/recipes/show_nutri';
 import { unitConversion } from '../components/recipes/edit_unit';
 import { groceryListItem } from '../components/recipes/grocery_list_item';
+import { groceryListPage } from '../components/recipes/grocery_list_page';
 
 document.addEventListener('turbolinks:load', () => {
   // global
@@ -68,6 +69,7 @@ document.addEventListener('turbolinks:load', () => {
   unitConversion();
   recipeMethods();
   groceryListItem();
+  groceryListPage();
 
   // cuukbook
   cuukbook();
