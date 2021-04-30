@@ -1,6 +1,0 @@
-<% form_remote_tag :url=>{:action => 'save_trainee_evaluation'}, :html => { :onsubmit => "$('content_inner_html').value = $('content').innerHTML;" } do %>
-<%= hidden_field_tag 'content_inner_html', :id => 'content_inner_html' %>
-<div id="content">
-  <%= contract_trainer_trainee.evaluation_template %>
-</div>
-<%= submit_tag 'Opslaan' %>

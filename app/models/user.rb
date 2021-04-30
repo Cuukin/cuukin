@@ -27,6 +27,7 @@ class User < ApplicationRecord
   after_create :set_username
   after_create :welcome_currencies
   after_create :give_welcome_badge
+  after_create :create_grocery_list
 
   before_update :check_username_presence
 
@@ -39,6 +40,11 @@ class User < ApplicationRecord
   end
 
   private
+
+  def create_grocery_list
+    list = GroceryList.new(user: self)
+    list.save
+  end
 
   def create_username
     # Method to generate a random username

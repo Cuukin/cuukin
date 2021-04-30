@@ -1,0 +1,3 @@
+<% @grocery_list.grocery_list_items.each do |list_item| %>
+  <p><%= "#{list_item.quantity} #{list_item.unit} #{list_item.ingredient_name}" %></p>
+<% end %>
