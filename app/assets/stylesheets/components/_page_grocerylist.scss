@@ -76,6 +76,7 @@
     p {
       color: $cuukin;
       margin: 0;
+      cursor: pointer;
     }
     h2 {
       margin: 0;
@@ -98,6 +99,11 @@
   .item-btns {
     text-align: right;
     padding-right: 4px;
+    i {
+      cursor: pointer;
+      color: $dark-gray;
+      padding-left: 2px;
+    }
   }
 }
 
