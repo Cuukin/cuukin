@@ -1,10 +1,12 @@
 <div class="grocery-list-item-creator" style="display: none">
   <% recipe_ingredients.each do |r_ingredient| %>
-    <%= simple_form_for(item, url: grocery_list_items_path, method: 'post', remote: true) do |f| %>
-      <%= f.input :ingredient_name, input_html: {value: r_ingredient.ingredient.name, id: "ingredientInput-#{r_ingredient.id}"}, label: false %>
-      <%= f.input :quantity, input_html: {value: r_ingredient.quantity, id: "quantityInput-#{r_ingredient.id}"}, label: false %>
-      <%= f.input :unit, input_html: {value: r_ingredient.unit, id: "unitInput-#{r_ingredient.id}"}, label: false %>
-      <%= f.button :submit, class: 'add-grocery-list-item' %>
+    <% unless r_ingredient.ingredient.cupboard %>
+      <%= simple_form_for(item, url: grocery_list_items_path, method: 'post', remote: true) do |f| %>
+        <%= f.input :ingredient_name, input_html: {value: r_ingredient.ingredient.name, id: "ingredientInput-#{r_ingredient.id}"}, label: false %>
+        <%= f.input :quantity, input_html: {value: r_ingredient.quantity, id: "quantityInput-#{r_ingredient.id}"}, label: false %>
+        <%= f.input :unit, input_html: {value: r_ingredient.unit, id: "unitInput-#{r_ingredient.id}"}, label: false %>
+        <%= f.button :submit, class: 'add-grocery-list-item' %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
