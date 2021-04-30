@@ -38,6 +38,14 @@ const unitConversion = () => {
           if (imperialToggle.classList[1] == 'unitSelected') {
             measureUnit.innerText = initialUnit;
             measureQuantity.innerText = initialQuantity * counter;
+
+            let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+            let unitInput = document.getElementById(`unitInput-${measure.classList[2]}`);
+
+            if (quantityInput != null && unitInput != null) {
+              unitInput.value = initialUnit;
+              quantityInput.value = initialQuantity * counter;
+            };
           } else {
             fromMetricToImperial(measureQuantity, measureUnit);
           };
@@ -82,10 +90,20 @@ const unitConversion = () => {
 
           let convertedQuantity = initialQuantity * counter;
 
+          let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+
           if (convertedQuantity % 1 == 0) {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(0);
+            };
           } else {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(1);
+            };
           };
         };
       });
@@ -116,10 +134,20 @@ const unitConversion = () => {
 
           let convertedValue = initialQuantity * counter;
 
+          let quantityInput = document.getElementById(`quantityInput-${measure.classList[2]}`);
+
           if (convertedValue % 1 == 0) {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(0);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(0);
+            };
           } else {
             measureQuantity.innerText = (initialQuantity * counter).toFixed(1);
+
+            if (quantityInput != null) {
+              quantityInput.value = (initialQuantity * counter).toFixed(1);
+            };
           };
         };
       });
@@ -225,16 +253,30 @@ const updateTextWithOpacity = (text, newInfo) => {
 
 const fromMetricToImperial = (quantity, unit) => {
   let quantityValue = Number.parseFloat(quantity.innerText);
+  let quantityInput = document.getElementById(`quantityInput-${quantity.classList[2]}`);
+  let unitInput = document.getElementById(`unitInput-${unit.classList[2]}`);
 
   if (unit.innerText == 'g') {
     unit.innerText = 'oz';
     quantity.innerText = (quantityValue / 28.35).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'oz';
+      quantityInput.value = (quantityValue / 28.35).toFixed(1);
+    };
   } else if (unit.innerText == 'ml') {
     unit.innerText = 'cups';
     quantity.innerText = (quantityValue / 284).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'cups';
+      quantityInput.value = (quantityValue / 284).toFixed(1);
+    };
   } else if (unit.innerText == 'l') {
     unit.innerText == 'cups';
     quantity.innerText = (quantityValue * 3.52).toFixed(1);
+    if (quantityInput != null && unitInput != null) {
+      unitInput.value = 'cups';
+      quantityInput.value = (quantityValue * 3.52).toFixed(1);
+    };
   };
 };
 

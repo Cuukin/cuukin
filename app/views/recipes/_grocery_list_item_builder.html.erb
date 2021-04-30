@@ -1,9 +1,11 @@
 <div class="grocery-list-item-creator" style="display: none">
   <% recipe_ingredients.each do |r_ingredient| %>
     <%= simple_form_for(@grocery_list_item, url: grocery_list_items_path, method: 'post', remote: true) do |f| %>
-      <%= f.input :ingredient, input_html: {value: r_ingredient.ingredient, class: 'test'}, label: false %>
-      <%= f.input :quantity, input_html: {value: r_ingredient.quantity}, label: false %>
-      <%= f.input :unit, input_html: {value: r_ingredient.unit}, label: false %>
+      <%= f.input :ingredient_id, input_html: {value: r_ingredient.ingredient.id, class: 'test'}, label: false %>
+      <div class="ri<%= r_ingredient.id %>">
+        <%= f.input :quantity, input_html: {value: r_ingredient.quantity, id: "quantityInput-#{r_ingredient.id}"}, label: false %>
+        <%= f.input :unit, input_html: {value: r_ingredient.unit, id: "unitInput-#{r_ingredient.id}"}, label: false %>
+      </div>
       <%= f.button :submit, class: 'add-grocery-list-item' %>
     <% end %>
   <% end %>
