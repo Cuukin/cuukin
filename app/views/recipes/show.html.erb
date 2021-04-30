@@ -1,6 +1,6 @@
 <!-- RECIPE OVERVIEW -->
 
-<div class="container-recipe-overview">
+<div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
   <div class="recipe-overview-btn">
     <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
@@ -78,6 +78,8 @@
             </tr>
           <% end %>
         </table>
+
+        <%= render 'recipes/grocery_list_item_builder', recipe_ingredients: @recipe.recipe_ingredients.order(:id) %>
       </div>
     <% end %>
 
@@ -145,7 +147,7 @@
     </div>
 
     <div class="double-btn">
-      <p class="secondary-btn mr-1">Add to Grocery list</p>
+      <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery">Add to Grocery List</p>
       <% if @validated || @available || @first %>
         <% if @recipe.external_url %>
           <%= link_to @recipe.external_url, target: '_blank' do %>
