@@ -2,11 +2,11 @@ class GroceryListItemsController < ApplicationController
   before_action :set_grocery_list
 
   def create
-    @grocery_list_item = GroceryListItems.new(grocery_list_item_params)
+    @grocery_list_item = GroceryListItem.new(grocery_list_item_params)
     ingredient = Ingredient.find_by(name: @grocery_list_item.ingredient_name)
     if @grocery_list.ingredients.include?(ingredient)
       existing_item = @grocery_list.grocery_list_items.find_by(ingredient: ingredient)
-      existing_item.quantity += @grocery_list_item.quantity if existing_item.unit == @grocery_list_item.unit
+      existing_item.quantity = existing_item.quantity.to_i + @grocery_list_item.quantity.to_i if existing_item.unit == @grocery_list_item.unit
       existing_item.save
     else
       @grocery_list_item.ingredient = ingredient

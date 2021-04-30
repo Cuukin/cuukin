@@ -79,7 +79,7 @@
           <% end %>
         </table>
 
-        <%= render 'recipes/grocery_list_item_builder', recipe_ingredients: @recipe.recipe_ingredients.order(:id) %>
+        <%= render 'recipes/grocery_list_item_builder', recipe_ingredients: @recipe.recipe_ingredients.order(:id), item: @grocery_list_item %>
       </div>
     <% end %>
 
