@@ -1,3 +1,38 @@
-<% @grocery_list.grocery_list_items.each do |list_item| %>
-  <p><%= "#{list_item.quantity} #{list_item.unit} #{list_item.ingredient_name}" %></p>
-<% end %>
+<div class="grocery-list-navbar">
+  <div class="nb-builder">
+    <h1>Build your list</h1>
+  </div>
+  <div class="nb-list active">
+    <h1>Your Grocery List</h1>
+  </div>
+</div>
+
+<div class="container-grocery-list">
+  <% if @grocery_list.scheduled_reminder %>
+    <p>Kin will email the list on <span><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at 5 PM (%Z)")%></span></p>
+  <% else %>
+    <div class="reminder-container">
+      <h2>Set a reminber</h2>
+      <p>Kin will email you at...</p>
+    </div>
+  <% end %>
+
+  <div class="list-container">
+    <div class="list-container-header">
+      <h2>This week's list</h2>
+      <p>Clear list</p>
+    </div>
+
+    <div class="list-content">
+      <table>
+        <% @grocery_list.grocery_list_items.each do |item| %>
+          <tr>
+            <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
+            <td><%= item.ingredient.name %></td>
+            <td class="item-btns"><%= item.ingredient.content.present? ? icon('fas', 'info-circle') : "" %> <%= icon('far', 'trash-alt') %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
