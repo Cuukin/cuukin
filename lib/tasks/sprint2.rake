@@ -43,4 +43,11 @@ namespace :sprint2 do
       end
     end
   end
+
+  task create_all_user_grocery_list: :environment do
+    User.all.each do |user|
+      list = GroceryList.list(user: user)
+      list.save
+    end
+  end
 end
