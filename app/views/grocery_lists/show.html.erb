@@ -20,16 +20,16 @@
   <div class="list-container">
     <div class="list-container-header">
       <h2>This week's list</h2>
-      <p>Clear list</p>
+      <%= link_to "Clear list", grocery_list_path(@grocery_list.id), method: :delete, remote: true, id: "destroyList" %>
     </div>
 
     <div class="list-content">
       <table>
         <% @grocery_list.grocery_list_items.each do |item| %>
-          <tr>
+          <tr id="<%= item.id %>">
             <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
             <td><%= item.ingredient.name %></td>
-            <td class="item-btns"><%= item.ingredient.content.present? ? icon('fas', 'info-circle') : "" %> <%= icon('far', 'trash-alt') %></td>
+            <td class="item-btns"><%= item.ingredient.content.present? ? icon('fas', 'info-circle') : "" %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, id: "destroyItem-#{item.id}" %></td>
           </tr>
         <% end %>
       </table>

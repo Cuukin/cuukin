@@ -7,6 +7,12 @@ class GroceryListsController < ApplicationController
     #@items = items.includes(:ingredient).order("ingredients.badge desc")
   end
 
+  def destroy
+    @list = GroceryList.find(params[:id])
+    authorize @list, policy_class: GroceryListPolicy
+    @list.grocery_list_items.each {|item| item.destroy}
+  end
+
   private
 
   def set_grocery_list

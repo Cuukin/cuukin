@@ -16,6 +16,12 @@ class GroceryListItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = GroceryListItem.find(params[:id])
+    authorize @item, policy_class: GroceryListItemPolicy
+    @item.destroy
+  end
+
   private
 
   def set_grocery_list
