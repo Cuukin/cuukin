@@ -45,8 +45,8 @@
     <%= image_tag("nb-submenu.svg", id: 'submenu') %>
   <% end %>
 
-  <%= link_to community_path, class: 'user-navbar-footer-item grocery-icons' do %>
-    <% if current_page?('/community') %>
+  <%= link_to grocery_list_path(GroceryList.find_by(user: current_user)), class: 'user-navbar-footer-item grocery-icons' do %>
+    <% if current_page?(controller: 'grocery_lists', action: 'show', id: GroceryList.find_by(user: current_user).id) %>
       <%= image_tag('nb-grocery-active.svg', id: 'grocery-active') %>
       <p class="active">Grocery list</p>
     <% else %>

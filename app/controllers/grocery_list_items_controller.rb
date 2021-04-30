@@ -3,6 +3,7 @@ class GroceryListItemsController < ApplicationController
 
   def create
     @grocery_list_item = GroceryListItem.new(grocery_list_item_params)
+    authorize @grocery_list, policy_class: GroceryListItemPolicy
     ingredient = Ingredient.find_by(name: @grocery_list_item.ingredient_name)
     if @grocery_list.ingredients.include?(ingredient)
       existing_item = @grocery_list.grocery_list_items.find_by(ingredient: ingredient)
