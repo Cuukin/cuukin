@@ -2,7 +2,7 @@ class GroceryListsController < ApplicationController
   before_action :set_grocery_list
 
   def show
-
+    authorize @grocery_list, policy_class: GroceryListPolicy
   end
 
   private
