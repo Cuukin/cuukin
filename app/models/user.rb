@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :user_badges, dependent: :destroy
   has_many :user_recipes, dependent: :destroy
   has_many :user_skills, dependent: :destroy
+  has_many :grocery_lists, dependent: :destroy
 
   has_many :skill_chapters, through: :user_skills
   has_many :badges, through: :user_badges
