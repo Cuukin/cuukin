@@ -1,3 +1,16 @@
+<div class="grocery-list-navbar">
+  <div class="nb-builder <%= "active" if current_page?('/community') %>">
+    <%= link_to community_path do %>
+      <h1>Build your list</h1>
+    <% end %>
+  </div>
+  <div class="nb-list <%= "active" unless current_page?('/community') %>">
+    <%= link_to grocery_list_path(GroceryList.find_by(user: current_user)) do %>
+      <h1>Your Grocery List</h1>
+    <% end %>
+  </div>
+</div>
+
 <div class="container-center-pages">
   <div class="center-pages-content">
     <h1>Sorry we are still cooking up this page</h1>
