@@ -56,13 +56,20 @@
     font-weight: 800;
     margin-bottom: 4px;
   }
+}
 
-  .reminder-container {
-    margin-bottom: 24px;
+.reminder-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
 
-    p {
-      margin-bottom: 0;
-    }
+  p {
+    margin-bottom: 0;
+  }
+
+  .d-none {
+    display: none;
   }
 }
 
@@ -81,6 +88,10 @@
     }
     h2 {
       margin: 0;
+    }
+
+    .unclickable {
+      pointer-events: none;
     }
   }
 

@@ -6,7 +6,7 @@ const initFlatpickr = () => {
     allowInput: true,
     enableTime: true,
     minDate: "today",
-    dateFormat: "d.m.Y"
+    //dateFormat: "d.m.Y"
   });
 }
 

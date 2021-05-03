@@ -16,6 +16,8 @@ class GroceryListsController < ApplicationController
     @list = GroceryList.find(params[:id])
     authorize @list, policy_class: GroceryListPolicy
     @list.grocery_list_items.each {|item| item.destroy}
+    @list.scheduled_reminder = nil
+    @list.save
   end
 
   private
