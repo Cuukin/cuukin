@@ -46,7 +46,7 @@
   <% end %>
 
   <%= link_to grocery_list_path(GroceryList.find_by(user: current_user)), class: 'user-navbar-footer-item grocery-icons' do %>
-    <% if current_page?(controller: 'grocery_lists', action: 'show', id: GroceryList.find_by(user: current_user).id) %>
+    <% if current_page?(controller: 'grocery_lists', action: 'show', id: GroceryList.find_by(user: current_user).id) || current_page?('/community') %>
       <%= image_tag('nb-grocery-active.svg', id: 'grocery-active') %>
       <p class="active">Grocery list</p>
     <% else %>
