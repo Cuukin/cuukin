@@ -13,8 +13,9 @@ class GroceryListsController < ApplicationController
       redirect_to grocery_list_path(@grocery_list)
     else
       @grocery_list.update(grocery_list_params)
+      scheduled_time = @grocery_list.scheduled_reminder
+      GroceryListReminderJob.set(wait_until: scheduled_time).perform_later(@grocery_list, scheduled_time)
       redirect_to grocery_list_path(@grocery_list)
-      GroceryListReminderJob.set(wait_until: @grocery_list.scheduled_reminder).perform_later(@grocery_list)
     end
   end
 
