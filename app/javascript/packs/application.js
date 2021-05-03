@@ -9,6 +9,8 @@ require("@rails/actiontext")
 // External imports
 import "bootstrap";
 
+import { initFlatpickr } from "../plugins/flatpickr";
+
 // Internal imports, e.g:
 // import { homeCarousel } from '../components/home_carousel';
 // import { journeyMap } from '../components/journey_map';
@@ -49,6 +51,8 @@ import { groceryListItem } from '../components/recipes/grocery_list_item';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
 
 document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
+
   // global
   preventSelectDoubleClick();
 
