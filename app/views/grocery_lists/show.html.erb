@@ -12,7 +12,7 @@
 <div class="container-grocery-list">
   <div class="reminder-container">
     <div class="reminder-left">
-      <p class="reminder-text <%= "d-none" unless @grocery_list.scheduled_reminder %>">Kin will email the list on <span><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at %-l:%M %p (%Z)") if @grocery_list.scheduled_reminder%></span></p>
+      <p class="reminder-text <%= "d-none" unless @grocery_list.scheduled_reminder %>">Kin will email the list on <span id="editDateBtn"><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at %-l:%M %p (%Z)") if @grocery_list.scheduled_reminder%></span></p>
       <div class="create-reminder <%= "d-none" if @grocery_list.scheduled_reminder %>">
         <h2>Set a reminber</h2>
         <p>Kin will email you at...</p>

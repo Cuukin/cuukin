@@ -35,6 +35,15 @@ const groceryListPage = () => {
       });
     });
   };
+
+  const editDate = document.querySelector('#editDateBtn');
+
+  if (editDate) {
+    let reminderForm = document.querySelector('.reminder-right');
+    editDate.addEventListener('click', (event) => {
+      reminderForm.classList.remove('d-none');
+    });
+  };
 };
 
 export { groceryListPage };

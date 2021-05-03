@@ -9,7 +9,10 @@ class GroceryListsController < ApplicationController
 
   def update
     authorize @grocery_list, policy_class: GroceryListPolicy
-    if @grocery_list.update(grocery_list_params)
+    if grocery_list_params["scheduled_reminder"] == @grocery_list.scheduled_reminder
+      redirect_to grocery_list_path(@grocery_list)
+    else
+      @grocery_list.update(grocery_list_params)
       redirect_to grocery_list_path(@grocery_list)
       GroceryListReminderJob.set(wait_until: @grocery_list.scheduled_reminder).perform_later(@grocery_list)
     end
