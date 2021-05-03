@@ -7,6 +7,11 @@ class GroceryListsController < ApplicationController
     #@items = items.includes(:ingredient).order("ingredients.badge desc")
   end
 
+  def update
+    authorize @grocery_list, policy_class: GroceryListPolicy
+    @grocery_list.update(grocery_list_params)
+  end
+
   def destroy
     @list = GroceryList.find(params[:id])
     authorize @list, policy_class: GroceryListPolicy
@@ -19,5 +24,9 @@ class GroceryListsController < ApplicationController
     # list = GroceryList.find_by(user: current_user)
     # @grocery_list = list ? list : GroceryList.create(user: current_user)
     @grocery_list = GroceryList.find(params[:id])
+  end
+
+  def grocery_list_params
+    params.require(:grocery_list).permit(:scheduled_reminder)
   end
 end
