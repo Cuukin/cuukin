@@ -9,7 +9,7 @@ class GroceryListsController < ApplicationController
 
   def update
     authorize @grocery_list, policy_class: GroceryListPolicy
-    @grocery_list.update(grocery_list_params)
+    redirect_to grocery_list_path(@grocery_list) if @grocery_list.update(grocery_list_params)
   end
 
   def destroy
@@ -17,7 +17,7 @@ class GroceryListsController < ApplicationController
     authorize @list, policy_class: GroceryListPolicy
     @list.grocery_list_items.each {|item| item.destroy}
     @list.scheduled_reminder = nil
-    @list.save
+    redirect_to grocery_list_path(@grocery_list) if @list.save
   end
 
   private
