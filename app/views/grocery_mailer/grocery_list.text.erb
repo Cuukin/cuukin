@@ -1,0 +1,10 @@
+Hey, <%= @user.first_name %>
+
+This is your grocery list:
+
+<% @grocery.grocery_list_items.each do |item| %>
+  <%= "#{item.quantity} #{item.unit} - #{item.ingredient_name}" %>
+<% end %>
+
+xoxo,
+Kin
