@@ -20,6 +20,10 @@ class GroceryListItemsController < ApplicationController
     @item = GroceryListItem.find(params[:id])
     authorize @item, policy_class: GroceryListItemPolicy
     @item.destroy
+    if @grocery_list.grocery_list_items.count == 0
+      @grocery_list.scheduled_reminder = nil
+      @grocery_list.save
+    end
   end
 
   private
