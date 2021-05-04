@@ -25,6 +25,10 @@ class UserPolicy < ApplicationPolicy
     user.sign_in_count <= 1
   end
 
+  def profile?
+    true
+  end
+
   def owner?
     record == user
   end

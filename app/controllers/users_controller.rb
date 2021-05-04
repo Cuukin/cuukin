@@ -42,10 +42,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+    @user = User.friendly.find(params[:user_id])
+    authorize @user
+  end
+
   private
 
   def find_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     authorize @user
   end
 
