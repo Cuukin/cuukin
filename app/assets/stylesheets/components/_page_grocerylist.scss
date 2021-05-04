@@ -82,7 +82,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 
     a {
       color: $cuukin;
@@ -99,8 +99,17 @@
     }
   }
 
+  h3 {
+    font-family: proxima-nova, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: $dark-gray;
+    margin: 0;
+  }
+
   table {
     width: 100%;
+    margin-bottom: 24px;
   }
 
   td {
@@ -111,6 +120,7 @@
   .item-measure {
     text-align: right;
     padding-right: 16px;
+    width: 120px;
   }
   .item-btns {
     text-align: right;

@@ -34,15 +34,18 @@
 
     <% unless @grocery_list.grocery_list_items.empty? %>
       <div class="list-content">
-        <table>
-          <% @grocery_list.grocery_list_items.each do |item| %>
-            <tr class="item-<%= item.id %>">
-              <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
-              <td><%= item.ingredient.name %></td>
-              <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
-            </tr>
-          <% end %>
-        </table>
+        <% @ordered_items.each do |badge, items| %>
+          <h3><%= badge.name %></h3>
+          <table>
+            <% items.each do |item| %>
+              <tr class="item-<%= item.id %>">
+                <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
+                <td><%= item.ingredient.name %></td>
+                <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
+              </tr>
+            <% end %>
+          </table>
+        <% end %>
       </div>
 
       <%= render 'grocery_lists/ingredient_info', ingredients: @grocery_list.ingredients %>
