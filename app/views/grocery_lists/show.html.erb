@@ -47,5 +47,9 @@
 
       <%= render 'grocery_lists/ingredient_info', ingredients: @grocery_list.ingredients %>
     <% end %>
+
+    <% unless @grocery_list.grocery_list_items.empty? %>
+      <p class="tag-btn">Copy to clipboard</p>
+    <% end %>
   </div>
 </div>

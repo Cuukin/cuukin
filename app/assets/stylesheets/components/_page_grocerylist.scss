@@ -75,6 +75,9 @@
 }
 
 .list-container {
+  display: flex;
+  flex-direction: column;
+
   .list-container-header {
     display: flex;
     justify-content: space-between;
