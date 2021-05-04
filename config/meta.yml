@@ -1,5 +1,6 @@
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "Cuukin"
+meta_title: "Cuukin | Cooking School at Your Fingertips"
+meta_description: "Learn the secrets of home cooking with a structured, fun and rewarding journey."
+meta_image: "og_tt.jpg"
+meta_wp_image: "og_wp.jpg"
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
