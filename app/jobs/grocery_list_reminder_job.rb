@@ -3,9 +3,9 @@ class GroceryListReminderJob < ApplicationJob
 
   def perform(grocery_list, scheduled_time)
     if scheduled_time == grocery_list.scheduled_reminder && !grocery_list.grocery_list_items.empty?
-      GroceryMailer.grocery_list(grocery_list).deliver_later
+      GroceryMailer.grocery_list(grocery_list).deliver_now
       grocery_list.grocery_list_items.each {|item| item.destroy }
-      grocery_list.scheduled_time = nil
+      grocery_list.scheduled_reminder = nil
       grocery_list.save
     end
   end
