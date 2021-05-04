@@ -1,12 +1,16 @@
 const groceryListPage = () => {
   const clearListBtn = document.getElementById('destroyList');
+  const copyBtn = document.querySelector('.tag-btn');
 
   if (clearListBtn) {
     clearListBtn.addEventListener('click', (event) => {
-      let items = document.querySelector('.list-content').querySelectorAll('tr');
-      items.forEach((item) => {
-        item.style.display = "none";
-      });
+      // let items = document.querySelector('.list-content').querySelectorAll('tr');
+      // items.forEach((item) => {
+      //   item.style.display = "none";
+      // });
+      let content = document.querySelector('.list-content');
+      content.style.display = "none";
+      copyBtn.remove();
     });
   };
 
@@ -15,8 +19,22 @@ const groceryListPage = () => {
   if (destroyItemBtns) {
     destroyItemBtns.forEach((btn) => {
       let item = document.querySelector(`.${btn.id}`);
+
       btn.addEventListener('click', (event) => {
-        item.style.display = "none";
+        item.remove();
+
+        let otherItemsOnBadge = document.querySelectorAll(`.${item.classList[1]}`);
+        if (otherItemsOnBadge.length == 0) {
+          let itemBadge = document.getElementById(item.classList[1]);
+          itemBadge.remove();
+          let table = document.querySelector(`.table-${itemBadge.id}`);
+          table.remove();
+        };
+
+        let totalItems = document.querySelectorAll('table');
+        if (totalItems.length == 0) {
+          copyBtn.remove();
+        };
       });
     });
   };

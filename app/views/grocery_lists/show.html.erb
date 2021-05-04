@@ -35,10 +35,10 @@
     <% unless @grocery_list.grocery_list_items.empty? %>
       <div class="list-content">
         <% @ordered_items.each do |badge, items| %>
-          <h3><%= badge.name %></h3>
-          <table>
+          <h3 id="badge-<%= badge.id %>"><%= badge.name %></h3>
+          <table class="table-badge-<%= badge.id %>">
             <% items.each do |item| %>
-              <tr class="item-<%= item.id %>">
+              <tr class="item-<%= item.id %> badge-<%= item.ingredient.badge.id %>">
                 <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
                 <td><%= item.ingredient.name %></td>
                 <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
