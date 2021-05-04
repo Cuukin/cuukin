@@ -22,7 +22,7 @@ class TransitionAwardsJob < ApplicationJob
     end
 
     # strike_awards
-    if user_validations.last(3)[2].updated_at - user_validations.last(3)[0].updated_at < 6.days
+    if user_validations.count >= 3 && user_validations.last(3)[2].updated_at - user_validations.last(3)[0].updated_at < 6.days
       UserAward.create(user: user, award: Award.find_by(name: "Sizzlin' Hot"))
     end
   end
