@@ -12,16 +12,16 @@
 <div class="container-grocery-list">
   <div class="reminder-container">
     <div class="reminder-left">
-      <p class="reminder-text <%= "d-none" unless @grocery_list.scheduled_reminder %>">Kin will email the list on <span id="editDateBtn"><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at %-l:%M %p (%Z)") if @grocery_list.scheduled_reminder%></span></p>
+      <p class="reminder-text <%= "d-none" unless @grocery_list.scheduled_reminder %>">Kin will email the list on <span id="editDateBtn"><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at %-l:%M %p") if @grocery_list.scheduled_reminder%></span></p>
       <div class="create-reminder <%= "d-none" if @grocery_list.scheduled_reminder %>">
         <h2>Set a reminber</h2>
         <p>Kin will email you at...</p>
       </div>
     </div>
     <div class="reminder-right <%= "d-none" if @grocery_list.scheduled_reminder %>">
-      <%= simple_form_for(@grocery_list, url: grocery_list_path(@grocery_list.id), method: 'patch', id: 'editGroceryForm') do |f| %>
+      <%= simple_form_for(@grocery_list, url: grocery_list_path(@grocery_list.id), method: 'patch', remote: true, id: 'editGroceryForm') do |f| %>
         <%= f.input :scheduled_reminder, as: :string, label: false, input_html: {class: 'datepicker'} %>
-        <%= f.button :submit, 'Save', class: 'primary-btn' %>
+        <%= f.button :submit, 'Save', class: 'primary-btn', id: 'saveDateBtn' %>
       <% end %>
     </div>
   </div>

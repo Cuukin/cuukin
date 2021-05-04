@@ -43,6 +43,10 @@ const groceryListPage = () => {
     editDate.addEventListener('click', (event) => {
       reminderForm.classList.remove('d-none');
     });
+    let saveBtn = document.querySelector('#saveDateBtn');
+    saveBtn.addEventListener('click', (event) => {
+      reminderForm.classList.add('d-none');
+    });
   };
 
   const copyList = document.querySelector('.tag-btn');
