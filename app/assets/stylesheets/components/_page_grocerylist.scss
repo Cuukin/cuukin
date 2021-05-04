@@ -44,29 +44,40 @@
 .container-grocery-list {
   position: relative;
   top: 60px;
-  padding: 24px 16px 60px;
+  padding: 24px 16px 96px;
   width: 500px;
   margin: 0 auto;
 
   span {
     color: $cuukin;
+    cursor: pointer;
   }
 
   h2 {
     font-weight: 800;
     margin-bottom: 4px;
   }
+}
 
-  .reminder-container {
-    margin-bottom: 24px;
+.reminder-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
 
-    p {
-      margin-bottom: 0;
-    }
+  p {
+    margin-bottom: 0;
+  }
+
+  .d-none {
+    display: none;
   }
 }
 
 .list-container {
+  display: flex;
+  flex-direction: column;
+
   .list-container-header {
     display: flex;
     justify-content: space-between;
@@ -81,6 +92,10 @@
     }
     h2 {
       margin: 0;
+    }
+
+    .unclickable {
+      pointer-events: none;
     }
   }
 

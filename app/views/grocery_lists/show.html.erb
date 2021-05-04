@@ -1,26 +1,35 @@
 <div class="grocery-list-navbar">
-  <div class="nb-builder">
-    <h1>Build your list</h1>
+  <div class="nb-builder <%= "active" if current_page?('/community') %>">
+    <%= link_to community_path do %>
+      <h1>Build your list</h1>
+    <% end %>
   </div>
-  <div class="nb-list active">
+  <div class="nb-list <%= "active" unless current_page?('/community') %>">
     <h1>Your Grocery List</h1>
   </div>
 </div>
 
 <div class="container-grocery-list">
-  <% if @grocery_list.scheduled_reminder %>
-    <p>Kin will email the list on <span><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at 5 PM (%Z)")%></span></p>
-  <% else %>
-    <div class="reminder-container">
-      <h2>Set a reminber</h2>
-      <p>Kin will email you at...</p>
+  <div class="reminder-container">
+    <div class="reminder-left">
+      <p class="reminder-text <%= "d-none" unless @grocery_list.scheduled_reminder %>">Kin will email the list on <span id="editDateBtn"><%= @grocery_list.scheduled_reminder.strftime(" %d/%m/%y at %-l:%M %p (%Z)") if @grocery_list.scheduled_reminder%></span></p>
+      <div class="create-reminder <%= "d-none" if @grocery_list.scheduled_reminder %>">
+        <h2>Set a reminber</h2>
+        <p>Kin will email you at...</p>
+      </div>
     </div>
-  <% end %>
+    <div class="reminder-right <%= "d-none" if @grocery_list.scheduled_reminder %>">
+      <%= simple_form_for(@grocery_list, url: grocery_list_path(@grocery_list.id), method: 'patch', id: 'editGroceryForm') do |f| %>
+        <%= f.input :scheduled_reminder, as: :string, label: false, input_html: {class: 'datepicker'} %>
+        <%= f.button :submit, 'Save', class: 'primary-btn' %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="list-container">
     <div class="list-container-header">
       <h2>This week's list</h2>
-      <%= link_to "Clear list", grocery_list_path(@grocery_list.id), method: :delete, remote: true, id: "destroyList" %>
+      <%= link_to "Clear list", grocery_list_path(@grocery_list.id), method: :delete, remote: true, id: "destroyList", class: "#{@grocery_list.grocery_list_items.empty? ? "unclickable" : ""}" %>
     </div>
 
     <% unless @grocery_list.grocery_list_items.empty? %>
@@ -37,6 +46,10 @@
       </div>
 
       <%= render 'grocery_lists/ingredient_info', ingredients: @grocery_list.ingredients %>
+    <% end %>
+
+    <% unless @grocery_list.grocery_list_items.empty? %>
+      <p class="tag-btn">Copy to clipboard</p>
     <% end %>
   </div>
 </div>
