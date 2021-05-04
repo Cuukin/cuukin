@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@recipe.title} on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Learn how to make #{@recipe.title}" %>
+<% content_for :meta_image, @recipe.photo_url %>
+
 <!-- RECIPE OVERVIEW -->
 
 <div class="container-recipe-overview recipe-<%= @recipe.id %>">
