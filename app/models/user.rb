@@ -10,6 +10,12 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
+  has_many :following, through: :following_relationships, source: :following
+
   has_many :lesson_validations, dependent: :destroy
   has_many :lesson_unblocks, dependent: :destroy
   has_many :user_awards, dependent: :destroy
