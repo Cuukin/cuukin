@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_awards = UserAward.where(user_id: current_user.id).includes(:award)
-    # @user_badges = UserBadge.where(user_id: current_user.id).includes(:badge).sort_by {|ub| ub.badge.category}
-    @ingredient_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'ingredient'}).includes(:badge)
-    @technique_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'technique'}).includes(:badge)
-    @tool_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'tool'}).includes(:badge)
+    @user_awards = UserAward.where(user: current_user).includes(:award)
+    @user_badges = UserBadge.where(user: current_user).group_by {|ub| ub.badge.category}
+    # @ingredient_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'ingredient'}).includes(:badge)
+    # @technique_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'technique'}).includes(:badge)
+    # @tool_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'tool'}).includes(:badge)
   end
 
   def edit
