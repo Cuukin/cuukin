@@ -49,6 +49,19 @@ class User < ApplicationRecord
     "#{self.first_name} #{self.last_name}"
   end
 
+  def follow(user_id)
+    following_relationships.create(following_id: user_id)
+  end
+
+  def unfollow(user_id)
+    following_relationships.find_by(following_id: user_id).destroy
+  end
+
+  def is_following?(user_id)
+    relationship = Follow.find_by(follower_id: id, following_id: user_id)
+    return true if relationship
+  end
+
   private
 
   def should_generate_new_friendly_id?

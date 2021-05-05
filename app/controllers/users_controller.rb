@@ -44,7 +44,26 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.friendly.find(params[:user_id])
+    @users = User.where.not(id: current_user.id)
     authorize @user
+  end
+
+  def follow
+    if current_user.follow(@user.id)
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
+    end
+  end
+
+  def unfollow
+    if current_user.unfollow(@user.id)
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render action: :follow }
+      end
+    end
   end
 
   private
