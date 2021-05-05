@@ -30,6 +30,6 @@ class UserRecipesController < ApplicationController
   end
 
   def user_recipe_params
-    params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo)
+    params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo, :public)
   end
 end

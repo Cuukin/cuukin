@@ -8,7 +8,7 @@
       <p class="text-center">Oops, looks like this chef hasn't made any dishes yet.</p>
     <% else %>
       <% @user.user_recipes.each do |recipe| %>
-        <% if recipe.photo.attached? %>
+        <% if recipe.photo.attached? && recipe.public %>
           <%= cl_image_tag recipe.photo.key, crop: :fill, class: 'feed-photo' %>
         <% end %>
       <% end %>

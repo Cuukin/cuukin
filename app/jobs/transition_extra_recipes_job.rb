@@ -6,9 +6,10 @@ class TransitionExtraRecipesJob < ApplicationJob
     notes = lesson_validation.notes
     like = lesson_validation.like
     difficulcy = lesson_validation.difficulcy
+    public_check = lesson_validation.public
 
     user_recipe = UserRecipe.create(user: user, recipe: validated_recipe, completed: true,
-            notes: notes, like: like, difficulcy: difficulcy)
+            notes: notes, like: like, difficulcy: difficulcy, public: public_check)
 
     if lesson_validation.photo.attached?
       # photo_url = lesson_validation.photo.service_url

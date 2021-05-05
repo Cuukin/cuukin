@@ -18,7 +18,9 @@ const lessonValidationSlide = () => {
 
   if (validateLessonWithoutPhotoNextBtn) {
     validateLessonWithoutPhotoNextBtn.addEventListener('click', () => {
-      validateLessonModal.style.display = "block";
+      if (validateLessonModal) {
+        validateLessonModal.style.display = "block";
+      };
       validateItem1.style.display = "none";
       validateItem2.style.display = "block";
       // rememberText.style.display = "block";
