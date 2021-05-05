@@ -91,6 +91,10 @@
     color: $gray;
     width: 116px;
     word-break: break-all;
+
+    a {
+      color: $gray;
+    }
   }
 
   .top-3-avatar-container {
