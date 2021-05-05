@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [ :show, :edit, :update, :follow, :unfollow ]
+  before_action :find_user, only: [ :show, :edit, :update, :profile, :follow, :unfollow ]
 
   def index
     @users = User.order(xp: :desc).limit(10)
@@ -10,11 +10,7 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
-    @user_awards = UserAward.where(user: current_user).includes(:award)
-    @user_badges = UserBadge.where(user: current_user).group_by {|ub| ub.badge.category}
-    # @ingredient_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'ingredient'}).includes(:badge)
-    # @technique_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'technique'}).includes(:badge)
-    # @tool_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'tool'}).includes(:badge)
+    @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
   end
 
   def edit
@@ -24,31 +20,16 @@ class UsersController < ApplicationController
   def update
     authorize @user
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'Your profile has been updated.'
+      redirect_to profile_user_path(@user), notice: 'Your profile has been updated.'
     else
       render :edit
     end
   end
 
-  def commitment
-    @user = current_user
-    authorize @user
-  end
-
-  def create_commitment
-    @user = current_user
-    authorize @user
-    if @user.update(user_params)
-      redirect_to root_path
-    else
-      render :commitment
-    end
-  end
-
   def profile
-    @user = User.friendly.find(params[:user_id])
-    @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
     authorize @user
+    @user_awards = UserAward.where(user: current_user).includes(:award)
+    @user_badges = UserBadge.where(user: current_user).group_by {|ub| ub.badge.category}
   end
 
   def follow
@@ -66,6 +47,21 @@ class UsersController < ApplicationController
         format.html { redirect_to root_path }
         format.js { render action: :follow }
       end
+    end
+  end
+
+  def commitment
+    @user = current_user
+    authorize @user
+  end
+
+  def create_commitment
+    @user = current_user
+    authorize @user
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render :commitment
     end
   end
 

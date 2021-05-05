@@ -55,8 +55,8 @@
     <% end %>
   <% end %>
 
-  <%= link_to user_path(current_user), class: 'user-navbar-footer-item profile-icons' do %>
-    <% if current_page?(controller: 'users', action: 'show', id: current_user.id) || params[:controller] == 'devise/registrations' %>
+  <%= link_to profile_user_path(current_user), class: 'user-navbar-footer-item profile-icons' do %>
+    <% if current_page?(controller: 'users', action: 'profile', id: current_user.slug) || params[:controller] == 'registrations' %>
       <%= image_tag('nb-profile-active.svg', id: 'profile-active') %>
       <p class="active">Profile</p>
     <% else %>

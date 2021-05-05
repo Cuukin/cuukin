@@ -10,7 +10,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    owner?
+    true
   end
 
   def update?
@@ -26,7 +26,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def profile?
-    true
+    owner?
   end
 
   def owner?

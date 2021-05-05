@@ -1,55 +1,6 @@
-<%= render template: 'users/edit' %>
+<h1>this is <%= @user.full_name %> profile</h1>
 
-<div class="profile-container">
-
-  <div class="profile-info">
-    <div class="profile-text-content">
-      <h2><%= current_user.username %></h2>
-      <h3>Level <%= User.levels[current_user.level] %></h3>
-      <h4><%= current_user.level.capitalize %></h4>
-      <%= link_to edit_user_registration_path(current_user) do %>
-        <p><%= icon('fas', 'cog') %>Edit Profile</p>
-      <% end %>
-    </div>
-
-    <div class="profile-image-content">
-      <%= image_tag('btn-edit-photo.svg', class: 'edit-photo-btn openEditPhoto') %>
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'user-img openEditPhoto' %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img openEditPhoto' %>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- <hr class=""> -->
-
-  <div class="profile-heading">
-    <hr>
-    <h4>AWARDS</h4>
-    <hr>
-  </div>
-
-  <% unless current_user.user_awards.empty? %>
-    <%= render template: 'user_awards/index' %>
-  <% else %>
-    <div class="empty-container">
-      <p>Oops, you don't have any awards yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
-    </div>
-  <% end %>
-
-  <div class="profile-heading">
-    <hr>
-    <h4>BADGES</h4>
-    <hr>
-  </div>
-
-  <% unless current_user.user_badges.empty? %>
-    <%= render template: 'user_badges/index' %>
-  <% else %>
-    <div class="empty-container">
-      <p>Oops, you don't have any badges yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
-    </div>
-  <% end %>
-
-</div>
+<h1>Users:</h1>
+<ul>
+  <%= render @users %>
+</ul>

@@ -12,10 +12,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   resources :users, only: [ :show, :edit, :update, :index ] do
-    get 'profile', to: 'users#profile'
     member do
       post :follow
       post :unfollow
+      get 'profile', to: 'users#profile'
     end
   end
 
