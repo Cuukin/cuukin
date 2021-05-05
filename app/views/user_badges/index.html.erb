@@ -4,16 +4,18 @@
     <div class="user-awards-container">
       <% user_badges.each do |user_badge| %>
         <div class="user-badge-container badge-btn badge<%= user_badge.badge.id %>">
-          <% if user_badge.medal == 'white' %>
+          <% medal = user_badge.medal %>
+          <% case medal %>
+          <% when 'white' %>
             <%= image_tag("#{user_badge.badge.white}", class: 'badge1') %>
-          <% elsif user_badge.medal == 'bronze' %>
+          <% when 'bronze' %>
             <%= image_tag("#{user_badge.badge.bronze}", class: 'badge1') %>
           <% end %>
 
           <%= image_tag("#{user_badge.badge.icon}", class: 'badge2') %>
         </div>
 
-        <%= render 'user_badges/badge', badge: user_badge.badge %>
+        <%= render 'user_badges/badge', badge: user_badge %>
       <% end %>
     </div>
   <% end %>
