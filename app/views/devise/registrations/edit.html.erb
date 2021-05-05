@@ -27,7 +27,7 @@
         <%= f.input :email_nudges, label: 'I want to receive reminders on my e-mail', input_html: { class: "toggle" } %>
 
         <div class="form-actions mt-3 double-btn edit-user-btns">
-          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+          <%= link_to "Cancel", profile_user_path(current_user), class: 'secondary-btn mr-1' %>
           <%= f.button :submit, "Update", class: "primary-btn" %>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <%= f.input :weekly_commitment, collection: [1, 2, 3, 4, "5 or more"], as: :radio_buttons, legend_tag: false %>
 
         <div class="form-actions double-btn edit-user-btns">
-          <%= link_to "Cancel", user_path(current_user), class: 'secondary-btn mr-1' %>
+          <%= link_to "Cancel", profile_user_path(current_user), class: 'secondary-btn mr-1' %>
           <%= f.button :submit, "Update", class: "primary-btn" %>
         </div>
       </div>

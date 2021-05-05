@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   # Users
 
   devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
-  resources :users, only: [ :show, :edit, :update, :index ]
+  resources :users, only: [ :show, :edit, :update, :index ] do
+    member do
+      post :follow
+      post :unfollow
+      get 'profile', to: 'users#profile'
+    end
+  end
 
   get 'commitment', to: 'users#commitment'
   patch 'create_commitment', to: 'users#create_commitment'

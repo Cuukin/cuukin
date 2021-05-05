@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   menu parent: "User"
 
-  permit_params :admin, :level, :cuukies, :xp
+  permit_params :first_name, :last_name, :username, :photo, :level, :cuukies, :xp, :admin
 
   index do
     selectable_column
@@ -17,5 +17,19 @@ ActiveAdmin.register User do
     column :last_sign_in_at
     # column :admin
     actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :first_name
+      f.input :last_name
+      f.input :username
+      f.input :photo, as: :file
+      f.input :level
+      f.input :cuukies
+      f.input :xp
+      f.input :admin
+      f.button :submit
+    end
   end
 end

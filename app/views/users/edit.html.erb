@@ -1,7 +1,7 @@
 <div class="form-devise-modal" id="editPhotoModal" style="display: none;">
   <div class="form-devise-modal-content">
 
-    <%= simple_form_for(current_user, url: user_path(current_user), method: 'patch') do |f| %>
+    <%= simple_form_for(@user, url: user_path(@user), method: 'patch') do |f| %>
       <%= f.error_notification %>
 
       <div class="form-group-photo">

@@ -10,7 +10,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    owner?
+    true
   end
 
   def update?
@@ -23,6 +23,10 @@ class UserPolicy < ApplicationPolicy
 
   def create_commitment?
     user.sign_in_count <= 1
+  end
+
+  def profile?
+    owner?
   end
 
   def owner?
