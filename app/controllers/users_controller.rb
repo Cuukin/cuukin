@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [ :show, :edit, :update ]
+  before_action :find_user, only: [ :show, :edit, :update, :follow, :unfollow ]
 
   def index
     @users = User.order(xp: :desc).limit(10)
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    authorize @user
     @user_awards = UserAward.where(user: current_user).includes(:award)
     @user_badges = UserBadge.where(user: current_user).group_by {|ub| ub.badge.category}
     # @ingredient_badges = UserBadge.joins(:badge).where(user: current_user, badges: {category: 'ingredient'}).includes(:badge)
@@ -17,9 +18,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authorize @user
   end
 
   def update
+    authorize @user
     if @user.update(user_params)
       redirect_to user_path(@user), notice: 'Your profile has been updated.'
     else
@@ -44,7 +47,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.friendly.find(params[:user_id])
-    @users = User.where.not(id: current_user.id)
+    @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
     authorize @user
   end
 
@@ -70,7 +73,6 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.friendly.find(params[:id])
-    authorize @user
   end
 
   def user_params
