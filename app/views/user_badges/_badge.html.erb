@@ -1,16 +1,22 @@
-<div class="currency-modal" id="badge<%= badge.id %>" style="display: none;">
+<div class="currency-modal" id="badge<%= badge.badge.id %>" style="display: none;">
   <div class="currency-modal-content">
     <%= image_tag('btn-close-rounded.svg', class: 'currency-modal-close-btn') %>
 
     <div class="user-badge-container badge-popup">
-      <%= image_tag("#{badge.white}", class: 'badge1 badge-icon') %>
-      <%= image_tag("#{badge.icon}", class: 'badge2 badge-icon') %>
+      <% medal = badge.medal %>
+      <% case medal %>
+      <% when 'white' %>
+        <%= image_tag(badge.badge.white, class: 'b-icon badge1 badge-icon') %>
+      <% when 'bronze' %>
+        <%= image_tag(badge.badge.bronze, class: 'b-icon badge1 badge-icon') %>
+      <% end %>
+      <%= image_tag(badge.badge.icon, class: 'b-icon badge2 badge-icon') %>
     </div>
 
-    <h1 class="badge-name"><%= badge.name %></h1>
+    <h1 class="badge-name"><%= badge.badge.name %></h1>
 
     <div class="currency-text-content">
-      <p><%= badge.description %></p>
+      <p><%= badge.badge.description %></p>
     </div>
   </div>
 </div>
