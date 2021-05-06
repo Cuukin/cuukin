@@ -1,5 +1,5 @@
 const recipeDiary = () => {
-  const recipesCards = document.querySelectorAll('.recipe-card');
+  const recipesCards = document.querySelectorAll('.open-recipe-card');
 
   if (recipesCards) {
     recipesCards.forEach((card) => {
