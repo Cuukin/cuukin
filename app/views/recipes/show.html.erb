@@ -4,6 +4,10 @@
 
 <!-- RECIPE OVERVIEW -->
 
+<% if @validated && !@user_recipe.completed %>
+  <%= render template: 'user_recipes/edit' %>
+<% end %>
+
 <div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
   <div class="recipe-overview-btn">
@@ -158,9 +162,7 @@
       <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery">Add to Grocery List</p>
       <% if @validated || @available || @first %>
         <% if @recipe.external_url %>
-          <%= link_to @recipe.external_url, target: '_blank' do %>
-            <p class="primary-btn turquise-bg ml-1">Make Recipe <%= icon('fas', 'external-link-alt') %></p>
-          <% end %>
+          <%= link_to "Make Recipe", @recipe.external_url, target: '_blank', class: 'primary-btn turquise-bg ml-1' %>
         <% else %>
           <p class="primary-btn ml-1" id="makeRecipe">Make Recipe</p>
         <% end %>
@@ -168,6 +170,12 @@
         <p class="disabled-btn ml-1">Recipe Locked</p>
       <% end %>
     </div>
+
+    <% if @validated && !@user_recipe.completed %>
+      <div class="a-btn-container">
+        <p class="a-btn" id="openEditUserRecipe">Upload photo for extra rewards</p>
+      </div>
+    <% end %>
   </div>
 </div>
 

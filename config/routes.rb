@@ -34,7 +34,12 @@ Rails.application.routes.draw do
 
   resources :lesson_validations, only: [ :show ]
   resources :recipes, only: [ :show ]
-  resources :user_recipes, only: [ :index, :edit, :update ]
+  resources :user_recipes, only: [ :index, :edit, :update ] do
+    member do
+      patch 'archive', to: 'user_recipes#archive'
+      put 'archive', to: 'user_recipes#archive'
+    end
+  end
   get 'feed', to: 'user_recipes#feed'
   resources :user_skills, only: [ :create ]
   resources :grocery_list_items, only: [ :create, :destroy ]

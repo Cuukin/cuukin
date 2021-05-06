@@ -1,5 +1,5 @@
 class UserRecipesController < ApplicationController
-  before_action :set_user_recipe, only: [ :edit, :update ]
+  before_action :set_user_recipe, only: [ :edit, :update, :archive ]
 
   def index
     @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
@@ -24,9 +24,19 @@ class UserRecipesController < ApplicationController
   end
 
   def feed
-    @user_recipes = UserRecipe.all.select {|ur| ur.photo.attached?}
-    @friends_user_recipes = @user_recipes.select { |ur| current_user.is_following?(ur.user.id) }
-    authorize @user_recipes, policy_class: UserRecipePolicy
+    @posts = UserRecipe.where(public: true).select {|post| post.photo.attached?}
+    @friends_posts = @posts.select { |post| current_user.is_following?(post.user.id) }
+    authorize @posts, policy_class: UserRecipePolicy
+  end
+
+  def archive
+    authorize @user_recipe, policy_class: UserRecipePolicy
+    if @user_recipe.update(archive_post_params)
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render action: :archive }
+      end
+    end
   end
 
   private
@@ -37,5 +47,9 @@ class UserRecipesController < ApplicationController
 
   def user_recipe_params
     params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo, :public)
+  end
+
+  def archive_post_params
+    params.require(:user_recipe).permit(:public)
   end
 end

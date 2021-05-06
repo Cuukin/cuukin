@@ -1,16 +1,17 @@
 const recipeDiary = () => {
-  const recipesCards = document.querySelectorAll('.recipe-card');
+  const recipesCards = document.querySelectorAll('.open-recipe-card');
 
   if (recipesCards) {
     recipesCards.forEach((card) => {
-      card.addEventListener('click', () => {
-        let recipeModal = document.querySelector(`.${card.id}`);
-        recipeModal.style.display = "block";
+      let recipeModal = document.querySelector(`.${card.id}`);
+      let closeBtn = recipeModal.querySelector('.recipe-diary-modal-close-btn');
 
-        let closeBtn = recipeModal.querySelector('.recipe-diary-modal-close-btn');
-        closeBtn.addEventListener('click', () => {
-          recipeModal.style.display = "none";
-        });
+      card.addEventListener('click', () => {
+        recipeModal.style.display = "block";
+      });
+
+      closeBtn.addEventListener('click', () => {
+        recipeModal.style.display = "none";
       });
     });
   };

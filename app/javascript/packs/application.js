@@ -21,6 +21,7 @@ import { cuukbook } from '../components/cuukbook';
 import { editWeeklyCommitment } from '../components/edit_weekly_commitment';
 import { createWeeklyCommitment } from '../components/create_weekly_commitment';
 import { termsOfService } from '../components/terms_of_service';
+import { toggleFriends } from '../components/toggle_friends';
 
 // import { recipeModal } from '../components/popups/start_recipe_popup';
 // import { lessonModal } from '../components/popups/start_lesson_popup';
@@ -49,12 +50,14 @@ import { lessonNutriData } from '../components/recipes/show_nutri';
 import { unitConversion } from '../components/recipes/edit_unit';
 import { groceryListItem } from '../components/recipes/grocery_list_item';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
+import { editUserRecipe } from '../components/recipes/edit_user_recipe';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 
   // global
   preventSelectDoubleClick();
+  toggleFriends();
 
   // pop ups
   currenciesModal();
@@ -74,6 +77,7 @@ document.addEventListener('turbolinks:load', () => {
   recipeMethods();
   groceryListItem();
   groceryListPage();
+  editUserRecipe();
 
   // cuukbook
   cuukbook();

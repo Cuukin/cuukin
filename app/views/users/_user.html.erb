@@ -24,6 +24,7 @@
         <%= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true, class: 'follow-btn' %>
       <% end %>
     <% end %>
+
   </div>
 
   <% if @user.photo.attached? %>

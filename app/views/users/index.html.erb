@@ -1,3 +1,12 @@
+<div class="community-navbar">
+  <%= link_to feed_path, class: "feed-link #{"active" if current_page?('/feed')}" do %>
+    <h1>Feed</h1>
+  <% end %>
+  <%= link_to users_path, class: "feed-link #{"active" if current_page?('/users')}" do %>
+    <h1>Leaderboard</h1>
+  <% end %>
+</div>
+
 <div class="leaderboard-container">
   <h1>Leaderboard</h1>
   <h3>Total <span>Stars</span> earned</h3>
@@ -10,7 +19,7 @@
           <% if @top_3.second.photo.attached? %>
             <%= cl_image_tag @top_3.second.photo.key, crop: :fill, class: 'top-3-avatar' %>
           <% else %>
-            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.second.first_name}", class: 'top-3-avatar' %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.second.full_name}", class: 'top-3-avatar' %>
           <% end %>
         <% end %>
       </div>
@@ -25,7 +34,7 @@
           <% if @top_3.first.photo.attached? %>
             <%= cl_image_tag @top_3.first.photo.key, crop: :fill, class: 'top-3-avatar' %>
           <% else %>
-            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.first.first_name}", class: 'top-3-avatar' %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.first.full_name}", class: 'top-3-avatar' %>
           <% end %>
         <% end %>
         <%= image_tag("https://res.cloudinary.com/juliaf1/image/upload/v1617927896/golden_hat_njjpvd.svg", class: 'top-1-hat') %>
@@ -41,7 +50,7 @@
           <% if @top_3.third.photo.attached? %>
             <%= cl_image_tag @top_3.third.photo.key, crop: :fill, class: 'top-3-avatar' %>
           <% else %>
-            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.third.first_name}", class: 'top-3-avatar' %>
+            <%= image_tag "https://ui-avatars.com/api/?name=#{@top_3.third.full_name}", class: 'top-3-avatar' %>
           <% end %>
         <% end %>
       </div>
@@ -59,7 +68,7 @@
             <% if user.photo.attached? %>
               <%= cl_image_tag user.photo.key, crop: :fill, class: 'top-7-user-avatar' %>
             <% else %>
-              <%= image_tag "https://ui-avatars.com/api/?name=#{user.first_name}", class: 'top-7-user-avatar' %>
+              <%= image_tag "https://ui-avatars.com/api/?name=#{user.full_name}", class: 'top-7-user-avatar' %>
             <% end %>
             <p>@<%= user.username %></p>
           </div>

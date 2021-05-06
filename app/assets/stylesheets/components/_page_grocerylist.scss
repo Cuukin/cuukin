@@ -21,15 +21,29 @@
     text-align: center;
   }
 
-  .nb-list, .nb-builder {
+  .community-link {
+    display: block;
     width: 50%;
+    height: 100%;
+    border-bottom: 5px solid transparent;
+  }
+
+  .nb-builder {
+    width: 100%;
+  }
+
+  .nb-list {
+    width: 50%;
+    border-bottom: 5px solid transparent;
+  }
+
+  .nb-list, .nb-builder {
     height: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 5px solid transparent;
   }
 
   .active {

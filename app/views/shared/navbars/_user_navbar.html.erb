@@ -32,7 +32,7 @@
   <% end %>
 
   <%= link_to user_recipes_path, class: 'user-navbar-footer-item book-icons' do %>
-    <% if params[:controller] == 'user_recipes' %>
+    <% if current_page?(controller: 'user_recipes', action: 'index') %>
       <%= image_tag('nb-book-active.svg', id: 'book-active') %>
       <p class="active">CuukBook</p>
     <% else %>
@@ -41,7 +41,7 @@
     <% end %>
   <% end %>
 
-  <%= link_to users_path do %>
+  <%= link_to feed_path do %>
     <%= image_tag("nb-submenu.svg", id: 'submenu') %>
   <% end %>
 

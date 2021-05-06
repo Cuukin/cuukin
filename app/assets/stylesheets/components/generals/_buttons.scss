@@ -14,6 +14,7 @@
   transition: box-shadow .2s ease-in-out;
 
   &:hover, &:active {
+    font-weight: 500;
     color: $white;
     -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
     -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
@@ -49,6 +50,7 @@
   cursor: pointer;
 
   &:hover, &:active {
+    font-weight: 500;
     background-color: $gray;
     color: $light-gray;
   }
@@ -73,6 +75,7 @@
   cursor: pointer;
 
   &:hover, &:active {
+    font-weight: 500;
   color: $black;
   -webkit-box-shadow:inset 0px 0px 0px 3px #707070;
   -moz-box-shadow:inset 0px 0px 0px 3px #707070;
@@ -112,5 +115,45 @@
     -webkit-box-shadow:inset 0px 0px 0px 2px $cuukin;
     -moz-box-shadow:inset 0px 0px 0px 2px $cuukin;
     box-shadow:inset 0px 0px 0px 2px $cuukin;
+  }
+}
+
+.hide-post-btn {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  i {
+    font-size: 30px;
+    margin-right: 4px;
+  }
+
+  &:hover, &:active {
+    font-weight: 500;
+  }
+}
+
+.a-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.a-btn {
+  margin-top: 20px;
+  text-align: center;
+  color: $cuukin;
+  font-size: 16px;
+  font-weight: 500;
+  //letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid $cuukin;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    color: $cuukin;
+    font-weight: 500;
+    opacity: .7;
   }
 }
