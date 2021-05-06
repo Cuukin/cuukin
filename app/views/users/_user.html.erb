@@ -1,8 +1,34 @@
-<li data-user=<%= user.id %>>
-  <%= user.email %>
-  <% if current_user.is_following?(user.id) %>
-    <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
+<div class="public-profile-navbar" data-user=<%= @user.id %>>
+  <div class="public-profile-navbar-left">
+    <h1>@<%= @user.username %></h1>
+
+    <div class="stats">
+      <div class="stat" id="first-stat">
+        <h3>Level</h3>
+        <h4><%= User.levels[@user.level] %></h4>
+      </div>
+      <div class="stat" id="middle-stat">
+        <h3>Stars</h3>
+        <h4><%= @user.xp %></h4>
+      </div>
+      <div class="stat" id="last-stat">
+        <h3>Rank</h3>
+        <h4>#<%= User.order(xp: :desc).find_index(@user) + 1 %></h4>
+      </div>
+    </div>
+
+    <% unless @user == current_user %>
+      <% if current_user.is_following?(@user.id) %>
+        <%= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true, class: 'follow-btn' %>
+      <% else %>
+        <%= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true, class: 'follow-btn' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, crop: :fill, class: 'user-img' %>
   <% else %>
-    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+    <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img' %>
   <% end %>
-</li>
+</div>

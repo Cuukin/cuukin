@@ -10,7 +10,9 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
-    @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
+    # @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
+    # @users = User.order(xp: :desc)
+    # @rank = @users.find_index(@user) + 1
   end
 
   def edit

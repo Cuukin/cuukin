@@ -92,3 +92,25 @@
   cursor: pointer;
   align-self: flex-end;
 }
+
+.follow-btn {
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: $cuukin;
+  -webkit-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  -moz-box-shadow:inset 0px 0px 0px 1px $cuukin;
+  box-shadow:inset 0px 0px 0px 1px $cuukin;
+  cursor: pointer;
+  font-weight: 400;
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover, &:active {
+    font-weight: 400;
+    -webkit-box-shadow:inset 0px 0px 0px 2px $cuukin;
+    -moz-box-shadow:inset 0px 0px 0px 2px $cuukin;
+    box-shadow:inset 0px 0px 0px 2px $cuukin;
+  }
+}

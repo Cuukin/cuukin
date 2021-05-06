@@ -11,8 +11,12 @@
       <%= link_to user_recipes_path do %>
         <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
       <% end %>
-    <% else %>
+    <% elsif request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'show', controller: 'lessons', id: @recipe.lessons.first.id)}" %>
       <%= link_to lesson_path(@recipe.lessons.first) do %>
+        <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
+      <% end %>
+    <% else %>
+      <%= link_to :back do %>
         <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
       <% end %>
     <% end %>

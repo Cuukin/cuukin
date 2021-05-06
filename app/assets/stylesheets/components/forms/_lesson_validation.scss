@@ -151,6 +151,12 @@
   justify-content: flex-end;
 }
 
+.user_recipe_public, .lesson_validation_public {
+  .form-check {
+    padding: 0;
+  }
+}
+
 @media (max-width: 360px) {
   .recipe-validation-modal-content {
     width: 88%;

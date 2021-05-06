@@ -23,6 +23,12 @@ class UserRecipesController < ApplicationController
     end
   end
 
+  def feed
+    @user_recipes = UserRecipe.all.select {|ur| ur.photo.attached?}
+    @friends_user_recipes = @user_recipes.select { |ur| current_user.is_following?(ur.user.id) }
+    authorize @user_recipes, policy_class: UserRecipePolicy
+  end
+
   private
 
   def set_user_recipe
@@ -30,6 +36,6 @@ class UserRecipesController < ApplicationController
   end
 
   def user_recipe_params
-    params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo)
+    params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo, :public)
   end
 end

@@ -1,6 +1,20 @@
-<h1>this is <%= @user.full_name %> profile</h1>
+<div class="public-profile-container">
+  <div class="public-profile-navbar-container">
+    <%= render @user %>
+  </div>
 
-<h1>Users:</h1>
-<ul>
-  <%= render @users %>
-</ul>
+  <div class="public-profile-feed">
+    <% if @user.user_recipes.empty? %>
+      <p class="text-center">Oops, looks like this chef hasn't made any dishes yet.</p>
+    <% else %>
+      <% @user.user_recipes.each do |recipe| %>
+        <% if recipe.photo.attached? && recipe.public %>
+          <%= link_to recipe_path(recipe.recipe) do %>
+            <%= cl_image_tag recipe.photo.key, crop: :fill, class: 'feed-photo' %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
