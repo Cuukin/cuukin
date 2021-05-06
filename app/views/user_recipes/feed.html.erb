@@ -9,13 +9,22 @@
 
   <div class="feed-cards-container">
     <% @user_recipes.each do |ur| %>
-      <div class="feed-card">
-        <div class="feed-card-header">
-          <h5>@<%= ur.user.username %></h5>
-          <p><%= "Lesson #{ur.recipe.lessons.first.book.id}. | #{ur.recipe.title}" %></p>
+      <%= link_to user_path(ur.user) do %>
+        <div class="feed-card">
+          <div class="feed-card-header">
+            <% if ur.user.photo.attached? %>
+              <%= cl_image_tag ur.user.photo.key, crop: :fill, class: 'user-img' %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/cuukin/image/upload/v1610757107/Cuukin%20-%20Avatar/ck_av_7_dkpysc.png", class: 'user-img' %>
+            <% end %>
+            <div class="card-header-text-info">
+              <h5>@<%= ur.user.username %></h5>
+              <p><%= "Lesson #{ur.recipe.lessons.first.book.id}.#{ur.recipe.lessons.first.order_in_book} | #{ur.recipe.title}" %></p>
+            </div>
+          </div>
+          <div class="feed-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= ur.photo.service_url %>')"></div>
         </div>
-        <div class="feed-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= ur.photo.service_url %>')"></div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
