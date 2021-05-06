@@ -7,6 +7,10 @@ class UserRecipePolicy < ApplicationPolicy
     record.user == user && !record.completed
   end
 
+  def feed?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all

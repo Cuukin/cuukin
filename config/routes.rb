@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :lesson_validations, only: [ :show ]
   resources :recipes, only: [ :show ]
   resources :user_recipes, only: [ :index, :edit, :update ]
+  get 'feed', to: 'user_recipes#feed'
   resources :user_skills, only: [ :create ]
   resources :grocery_list_items, only: [ :create, :destroy ]
   resources :grocery_lists, only: [ :show, :update, :destroy ]
