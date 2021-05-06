@@ -11,8 +11,8 @@
   <div class="feed-header">
     <h1>Feeding the feed</h1>
     <div class="friends-toggle">
-      <span class="feed feedSelected"><p>All</p></span>
-      <span class="feed"><p>Friends</p></span>
+      <span class="feed feedSelected" id="publicToggle"><p>All</p></span>
+      <span class="feed" id="friendsToggle"><p>Friends</p></span>
     </div>
   </div>
 
@@ -37,5 +37,7 @@
     <% end %>
   </div>
 
-  <div class="friends-feed-container"></div>
+  <div class="friends-feed-container d-none">
+    <h1>friends posts here</h1>
+  </div>
 </div>
