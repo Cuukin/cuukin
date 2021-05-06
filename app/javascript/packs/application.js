@@ -21,6 +21,7 @@ import { cuukbook } from '../components/cuukbook';
 import { editWeeklyCommitment } from '../components/edit_weekly_commitment';
 import { createWeeklyCommitment } from '../components/create_weekly_commitment';
 import { termsOfService } from '../components/terms_of_service';
+import { toggleFriends } from '../components/toggle_friends';
 
 // import { recipeModal } from '../components/popups/start_recipe_popup';
 // import { lessonModal } from '../components/popups/start_lesson_popup';
@@ -55,6 +56,7 @@ document.addEventListener('turbolinks:load', () => {
 
   // global
   preventSelectDoubleClick();
+  toggleFriends();
 
   // pop ups
   currenciesModal();
