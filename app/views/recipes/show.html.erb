@@ -158,9 +158,7 @@
       <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery">Add to Grocery List</p>
       <% if @validated || @available || @first %>
         <% if @recipe.external_url %>
-          <%= link_to @recipe.external_url, target: '_blank' do %>
-            <p class="primary-btn turquise-bg ml-1">Make Recipe <%= icon('fas', 'external-link-alt') %></p>
-          <% end %>
+          <%= link_to "Make Recipe", @recipe.external_url, target: '_blank', class: 'primary-btn turquise-bg ml-1' %>
         <% else %>
           <p class="primary-btn ml-1" id="makeRecipe">Make Recipe</p>
         <% end %>
@@ -168,6 +166,12 @@
         <p class="disabled-btn ml-1">Recipe Locked</p>
       <% end %>
     </div>
+
+    <% if (@validated || @available || @first) && (!@recipe.user_recipes.find_by(user: current_user, completed: true)) %>
+      <div class="a-btn-container">
+        <%= link_to 'Upload photo for extra rewards', edit_user_recipe_path(@recipe.user_recipes.find_by(user: current_user)), class: "a-btn #{'a-turquise-btn' if @recipe.external_url}" %>
+      </div>
+    <% end %>
   </div>
 </div>
 

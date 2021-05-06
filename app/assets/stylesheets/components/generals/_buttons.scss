@@ -14,6 +14,7 @@
   transition: box-shadow .2s ease-in-out;
 
   &:hover, &:active {
+    font-weight: 500;
     color: $white;
     -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
     -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
@@ -49,6 +50,7 @@
   cursor: pointer;
 
   &:hover, &:active {
+    font-weight: 500;
     background-color: $gray;
     color: $light-gray;
   }
@@ -73,6 +75,7 @@
   cursor: pointer;
 
   &:hover, &:active {
+    font-weight: 500;
   color: $black;
   -webkit-box-shadow:inset 0px 0px 0px 3px #707070;
   -moz-box-shadow:inset 0px 0px 0px 3px #707070;
@@ -128,5 +131,29 @@
 
   &:hover, &:active {
     font-weight: 500;
+  }
+}
+
+.a-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.a-btn {
+  margin-top: 20px;
+  text-align: center;
+  color: $blue;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $blue;
+
+  &:hover, &:focus {
+    color: $blue;
+    font-weight: 400;
+    opacity: .7;
   }
 }
