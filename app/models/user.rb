@@ -64,9 +64,9 @@ class User < ApplicationRecord
 
   private
 
-  # def should_generate_new_friendly_id?
-  #   username_changed?
-  # end
+  def should_generate_new_friendly_id?
+    username_changed?
+  end
 
   def create_grocery_list
     list = GroceryList.new(user: self)
