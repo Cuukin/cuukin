@@ -30,6 +30,7 @@ class UserRecipesController < ApplicationController
   end
 
   def archive
+    authorize @user_recipe, policy_class: UserRecipePolicy
     @user_recipe.update(archive_post_params)
   end
 

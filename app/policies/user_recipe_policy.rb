@@ -11,6 +11,10 @@ class UserRecipePolicy < ApplicationPolicy
     true
   end
 
+  def archive?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
