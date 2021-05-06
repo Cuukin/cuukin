@@ -24,7 +24,7 @@ class UserRecipesController < ApplicationController
   end
 
   def feed
-    @posts = UserRecipe.where(public: true).select {|post| post.photo.attached?}
+    @posts = UserRecipe.where(public: true).order(updated_at: :desc).select {|post| post.photo.attached?}
     @friends_posts = @posts.select { |post| current_user.is_following?(post.user.id) }
     authorize @posts, policy_class: UserRecipePolicy
   end
