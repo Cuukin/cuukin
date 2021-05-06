@@ -9,7 +9,9 @@
     <% else %>
       <% @user.user_recipes.each do |recipe| %>
         <% if recipe.photo.attached? && recipe.public %>
-          <%= cl_image_tag recipe.photo.key, crop: :fill, class: 'feed-photo' %>
+          <%= link_to recipe_path(recipe.recipe) do %>
+            <%= cl_image_tag recipe.photo.key, crop: :fill, class: 'feed-photo' %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
