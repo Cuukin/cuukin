@@ -114,3 +114,19 @@
     box-shadow:inset 0px 0px 0px 2px $cuukin;
   }
 }
+
+.hide-post-btn {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+
+  i {
+    font-size: 30px;
+    margin-right: 4px;
+  }
+
+  &:hover, &:active {
+    font-weight: 400;
+  }
+}

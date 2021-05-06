@@ -1,5 +1,5 @@
 class UserRecipesController < ApplicationController
-  before_action :set_user_recipe, only: [ :edit, :update ]
+  before_action :set_user_recipe, only: [ :edit, :update, :archive ]
 
   def index
     @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
@@ -29,6 +29,10 @@ class UserRecipesController < ApplicationController
     authorize @posts, policy_class: UserRecipePolicy
   end
 
+  def archive
+    @user_recipe.update(archive_post_params)
+  end
+
   private
 
   def set_user_recipe
@@ -37,5 +41,9 @@ class UserRecipesController < ApplicationController
 
   def user_recipe_params
     params.require(:user_recipe).permit(:difficulcy, :notes, :liked, :photo, :public)
+  end
+
+  def archive_post_params
+    params.require(:user_recipe).permit(:public)
   end
 end
