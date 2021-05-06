@@ -12,7 +12,6 @@ const recipeDiary = () => {
 
       closeBtn.addEventListener('click', () => {
         recipeModal.style.display = "none";
-        console.log(recipeModal);
       });
     });
   };
