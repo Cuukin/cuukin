@@ -52,7 +52,7 @@
               <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
                 <div class="recipe-info">
                   <%= image_tag("#{recipe.external_url ? 'recipe-url' : 'kin-circle'}.svg", class: "mr-1") %>
-                  <p class="<%= recipe.external_url ? "turquise" : "" %>"><%= recipe.external_url ? "External link" : "Suggested" %></p>
+                  <p class="<%= recipe.external_url ? "turquise" : "" %>"><%= recipe.external_url ? "BBC Foods" : "Suggested" %></p>
                 </div>
               </div>
             <% end %>
