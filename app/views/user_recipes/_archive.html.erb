@@ -1,0 +1,9 @@
+<% if user_recipe.public %>
+  <%= link_to archive_user_recipe_path(user_recipe, user_recipe: { public: false }), method: :patch, remote: true, class: 'hide-post-btn' do %>
+    <%= icon('fas', 'toggle-on') %> Hide from feed
+  <% end %>
+<% else %>
+  <%= link_to archive_user_recipe_path(user_recipe, user_recipe: { public: true }), method: :patch, remote: true, class: 'hide-post-btn' do %>
+    <%= icon('fas', 'toggle-off') %> Make it public
+  <% end %>
+<% end %>

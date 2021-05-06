@@ -1,0 +1,12 @@
+function renderArchive(archiveHTML) {
+  const userRecipe = document.querySelector("[data-user-recipe='<%= @user_recipe.id %>']");
+  userRecipe.outerHTML = archiveHTML;
+
+  let userRecipeModal = document.querySelector(`.userRecipe${userRecipe.getAttribute('data-user-recipe')}`)
+  let closeBtn = userRecipeModal.querySelector('.recipe-diary-modal-close-btn');
+  closeBtn.addEventListener('click', () => {
+    userRecipeModal.style.display = "none";
+  });
+}
+
+renderArchive('<%= j render @user_recipe %>');

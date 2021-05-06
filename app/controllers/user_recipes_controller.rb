@@ -31,7 +31,12 @@ class UserRecipesController < ApplicationController
 
   def archive
     authorize @user_recipe, policy_class: UserRecipePolicy
-    @user_recipe.update(archive_post_params)
+    if @user_recipe.update(archive_post_params)
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render action: :archive }
+      end
+    end
   end
 
   private
