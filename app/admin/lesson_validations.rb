@@ -1,7 +1,7 @@
 ActiveAdmin.register LessonValidation do
   menu parent: "User"
 
-  permit_params :user_id, :lesson_id, :difficulcy, :notes, :like, :photo
+  permit_params :user_id, :lesson_id, :difficulcy, :notes, :like, :photo, :validated, :public
 
   form do |f|
     f.inputs do
@@ -11,6 +11,8 @@ ActiveAdmin.register LessonValidation do
       f.input :notes
       f.input :photo, as: :file
       f.input :like
+      f.input :validated
+      f.input :public
       f.button :submit
     end
   end

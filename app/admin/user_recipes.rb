@@ -1,7 +1,7 @@
 ActiveAdmin.register UserRecipe do
   menu parent: "User"
 
-  permit_params :user_id, :recipe_id, :difficulcy, :notes, :like, :photo, :completed
+  permit_params :user_id, :recipe_id, :difficulcy, :notes, :like, :photo, :completed, :public
 
   form do |f|
     f.inputs do
@@ -10,7 +10,9 @@ ActiveAdmin.register UserRecipe do
       f.input :difficulcy
       f.input :notes
       f.input :photo, as: :file
+      f.input :like
       f.input :completed
+      f.input :public
       f.button :submit
     end
   end
