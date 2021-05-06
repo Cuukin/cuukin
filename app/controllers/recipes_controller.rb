@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
     available?
     first?
     @lesson = @recipe.lessons.first
+    @user_recipe = @recipe.user_recipes.find_by(user: current_user)
 
     @grocery_list_item = GroceryListItem.new
 

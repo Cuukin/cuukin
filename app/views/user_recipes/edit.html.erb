@@ -1,8 +1,6 @@
-<div class="recipe-validation-modal" id="validateSkippedModal" style="display: block;">
+<div class="recipe-validation-modal" id="validateSkippedModal" style="display: none;">
   <div class="recipe-validation-modal-content">
-    <%= link_to user_recipes_path, class: 'close-recipe-validation' do %>
-      <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
-    <% end %>
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
 
     <%= simple_form_for(@user_recipe, url: user_recipe_path(@user_recipe), method: 'patch') do |f| %>
       <%= f.error_notification %>

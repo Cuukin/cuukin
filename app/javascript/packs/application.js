@@ -50,6 +50,7 @@ import { lessonNutriData } from '../components/recipes/show_nutri';
 import { unitConversion } from '../components/recipes/edit_unit';
 import { groceryListItem } from '../components/recipes/grocery_list_item';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
+import { editUserRecipe } from '../components/recipes/edit_user_recipe';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
@@ -76,6 +77,7 @@ document.addEventListener('turbolinks:load', () => {
   recipeMethods();
   groceryListItem();
   groceryListPage();
+  editUserRecipe();
 
   // cuukbook
   cuukbook();

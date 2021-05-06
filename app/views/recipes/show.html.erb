@@ -4,6 +4,10 @@
 
 <!-- RECIPE OVERVIEW -->
 
+<% if @validated && !@user_recipe.completed %>
+  <%= render template: 'user_recipes/edit' %>
+<% end %>
+
 <div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
   <div class="recipe-overview-btn">
@@ -167,9 +171,9 @@
       <% end %>
     </div>
 
-    <% if (@validated || @available || @first) && (!@recipe.user_recipes.find_by(user: current_user, completed: true)) %>
+    <% if (@validated || @available || @first) && !@user_recipe.completed %>
       <div class="a-btn-container">
-        <%= link_to 'Upload photo for extra rewards', edit_user_recipe_path(@recipe.user_recipes.find_by(user: current_user)), class: "a-btn #{'a-turquise-btn' if @recipe.external_url}" %>
+        <p class="a-btn" id="openEditUserRecipe">Upload photo for extra rewards</p>
       </div>
     <% end %>
   </div>
