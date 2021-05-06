@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div class="feed-cards-container">
+  <div class="public-feed-container">
     <% @user_recipes.each do |ur| %>
       <%= link_to user_path(ur.user) do %>
         <div class="feed-card">
@@ -27,4 +27,6 @@
       <% end %>
     <% end %>
   </div>
+
+  <div class="friends-feed-container"></div>
 </div>
