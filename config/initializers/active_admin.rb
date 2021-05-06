@@ -337,13 +337,13 @@ ActiveAdmin.setup do |config|
   #
   # config.use_webpacker = true
 
-  ActiveAdmin::ResourceController.class_eval do
-    def find_resource
-      if resource_class.is_a?(FriendlyId)
-        scoped_collection.friendly.find(params[:id])
-      else
-        scoped_collection.find(params[:id])
-      end
-    end
-  end
+  # ActiveAdmin::ResourceController.class_eval do
+  #   def find_resource
+  #     if resource_class.is_a?(FriendlyId)
+  #       scoped_collection.friendly.find(params[:id])
+  #     else
+  #       scoped_collection.find(params[:id])
+  #     end
+  #   end
+  # end
 end
