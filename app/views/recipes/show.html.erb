@@ -171,7 +171,7 @@
       <% end %>
     </div>
 
-    <% if (@validated || @available || @first) && !@user_recipe.completed %>
+    <% if @validated && !@user_recipe.completed %>
       <div class="a-btn-container">
         <p class="a-btn" id="openEditUserRecipe">Upload photo for extra rewards</p>
       </div>
