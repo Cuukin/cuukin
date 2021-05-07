@@ -5,7 +5,7 @@
     <%= simple_form_for(@user_recipe, url: user_recipe_path(@user_recipe), method: 'patch') do |f| %>
       <%= f.error_notification %>
 
-      <div id="recipe-validation-item-1">
+      <div class="validation-item" id="recipe-validation-item-photo" style="display: none;">
         <div class="form-group-photo">
           <h3>Take a photo of your dish</h3>
           <p>Uploading a photo earns you extra stars</p>
@@ -13,15 +13,10 @@
           <%= image_tag "", class: "hidden", id: "photo-preview" %>
         </div>
 
-        <p class="primary-btn" id="validateLessonNext">Next</p>
+        <p class="primary-btn" id="validateLessonConfirmPhoto">Next</p>
       </div>
 
-      <div id="recipe-validation-item-2">
-        <div id="rememberPhotoText">
-          <div class="remember-text">
-            <h5>Remember to upload a photo next time!</h5>
-          </div>
-        </div>
+      <div class="validation-item" id="recipe-validation-item-notes" style="display: none;">
 
         <h3>Great job!</h3>
         <p>How difficult was the recipe?</p>
