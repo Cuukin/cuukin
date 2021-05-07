@@ -5,8 +5,6 @@ class RecipesController < ApplicationController
     validated?
     available?
     first?
-    @lesson = @recipe.lessons.first
-    @user_recipe = @recipe.user_recipes.find_by(user: current_user)
 
     @grocery_list_item = GroceryListItem.new
 
@@ -16,26 +14,27 @@ class RecipesController < ApplicationController
   private
 
   def validated?
-    @validated = @validated_recipes.include?(@recipe)
+    @validated = @validated_lessons.include?(@lesson)
+    @user_recipe = @recipe.user_recipes.find_by(user: current_user)
   end
 
   def available?
-    prev_lesson_id = @recipe.lessons.first.id - 1
-    unless prev_lesson_id == 0
-      @available = @validated_lessons.include?(Lesson.find(prev_lesson_id))
+    prev_lesson = @lesson.order_in_book - 1
+    unless prev_lesson == 0
+      @available = @validated_lessons.include?(Lesson.find_by(order_in_book: prev_lesson))
     end
   end
 
   def first?
-    @first = @recipe.lessons.first.id == 1
+    @first = @lesson.order_in_book == 1
   end
 
   def set_validations
-    @validated_recipes = UserRecipe.includes(:recipe).where(user: current_user).map {|val| val.recipe}
     @validated_lessons = LessonValidation.includes(:lesson).where(user: current_user).map {|val| val.lesson}
   end
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+    @lesson = @recipe.lesson
   end
 end

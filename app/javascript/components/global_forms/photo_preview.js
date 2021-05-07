@@ -30,11 +30,9 @@ const displayPreview = (input) => {
   // photoUpload.style.display = "none";
 
   const preview = document.getElementById('photo-preview');
-  const skipBtn = document.getElementById('validateLessonWithoutPhotoNext');
   const nextBtn = document.getElementById('validateLessonNext');
 
-  if (preview.src && skipBtn) {
-    //skipBtn.style.display = "none";
+  if (preview.src && nextBtn) {
     nextBtn.style.display = "block";
   };
 

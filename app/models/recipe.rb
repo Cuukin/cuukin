@@ -12,8 +12,8 @@ class Recipe < ApplicationRecord
   has_many :techniques, through: :recipe_techniques
   has_many :dietary_restrictions, through: :recipe_dietary_restrictions
 
-  has_many :lesson_recipes
-  has_many :lessons, through: :lesson_recipes
+  has_one :lesson_recipe
+  has_one :lesson, through: :lesson_recipe
   has_many :user_recipes
 
   validates :title, :prep_time, :photo_url, presence: true

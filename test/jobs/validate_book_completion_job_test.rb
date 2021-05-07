@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ValidateBookCompletionJobTest < ActiveJob::TestCase
+class TransitionLessonStarsJobTest < ActiveJob::TestCase
   # test "the truth" do
   #   assert true
   # end

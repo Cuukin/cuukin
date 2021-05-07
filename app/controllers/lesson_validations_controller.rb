@@ -14,7 +14,7 @@ class LessonValidationsController < ApplicationController
     authorize @lesson_validation, policy_class: LessonValidationPolicy
 
     if @lesson_validation.save
-      ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
+      TransitionLessonStarsJob.perform_later(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson_validation)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson_validation)
       TransitionAwardsJob.perform_later(current_user)
@@ -31,7 +31,7 @@ class LessonValidationsController < ApplicationController
     if @lesson_validation.update(lesson_validation_params)
       @lesson_validation.validated = true
       @lesson_validation.save
-      ValidateBookCompletionJob.perform_now(current_user, @lesson_validation)
+      TransitionLessonStarsJob.perform_now(current_user, @lesson_validation)
       UpdateBadgesJob.perform_later(current_user, @lesson_validation)
       TransitionExtraRecipesJob.perform_later(current_user, @lesson_validation)
       TransitionAwardsJob.perform_later(current_user)

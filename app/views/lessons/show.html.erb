@@ -1,12 +1,8 @@
 <% content_for :meta_title, "#{@lesson.title} | #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Learn all about #{@lesson.title.downcase}" %>
 
-<% unless @validated || @skipped %>
+<% unless @validated %>
   <%= render template: 'lesson_validations/new' %>
-<% end %>
-
-<% if @skipped %>
-  <%= render template: 'lesson_validations/edit' %>
 <% end %>
 
 <%= render 'shared/help' %>
@@ -77,7 +73,7 @@
           </div>
         <% else %>
           <div class="lesson-overview-validation-cards">
-            <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoNext">
+            <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoBtn">
               <%= image_tag('lv-input-nophoto.svg') %>
               <p>Oops, I already ate it</p>
             </div>
