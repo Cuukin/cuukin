@@ -40,12 +40,9 @@ import { userSkill } from '../components/lessons/user_skill';
 import { lessonReferrers } from '../components/lessons/lesson_referrers';
 
 // Validations
-import { validateLesson } from '../components/validations/validate_lesson';
-import { validateSkippedLesson } from '../components/validations/validate_skipped_lesson';
-import { lessonValidationSlide } from '../components/validations/lesson_validation_slide';
 import { checkRecipeInput } from '../components/validations/check_recipe_input';
-import { editUserRecipe } from '../components/validations/edit_user_recipe';
-
+import { openLessonValidation } from '../components/validations/open_lesson_validation';
+import { closeLessonValidation } from '../components/validations/close_lesson_validation';
 
 // Recipe
 import { recipeMethods } from '../components/recipes/recipe_methods';
@@ -81,11 +78,9 @@ document.addEventListener('turbolinks:load', () => {
   groceryListPage();
 
   // Validations
-  validateLesson();
-  validateSkippedLesson();
-  lessonValidationSlide();
   checkRecipeInput();
-  editUserRecipe();
+  openLessonValidation();
+  closeLessonValidation();
 
   // Global Forms
   termsOfService();
