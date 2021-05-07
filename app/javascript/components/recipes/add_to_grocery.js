@@ -1,4 +1,4 @@
-const groceryListItem = () => {
+const addToGrocery = () => {
   const addToGroceryBtn = document.querySelector('#addToGrocery');
   const addGroceryItemBtns = document.querySelectorAll('.add-grocery-list-item');
 
@@ -15,4 +15,4 @@ const groceryListItem = () => {
   };
 };
 
-export { groceryListItem };
+export { addToGrocery };

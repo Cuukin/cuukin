@@ -1,4 +1,4 @@
-const createWeeklyCommitment = () => {
+const onboardingSegmentationForm = () => {
   const skipBtns = document.querySelectorAll('.skipBtn');
   const continueBtns = document.querySelectorAll('.continueBtn');
   const commitmentContainer = document.querySelector('.commitment-container');
@@ -22,4 +22,4 @@ const createWeeklyCommitment = () => {
   };
 };
 
-export { createWeeklyCommitment };
+export { onboardingSegmentationForm };

@@ -46,6 +46,20 @@ const recipeMethods = () => {
       });
     });
 
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'ArrowRight' && counter < methodsCards.length - 1) {
+        counter += 1;
+        window.scrollTo({top: 0});
+
+        methodsCards[counter - 1].style.display = "none";
+        methodsCards[counter - 1].querySelector('.methodVideo').pause();
+        methodsCards[counter].style.display = "block";
+
+        let progressBarWidth = 100 * (counter + 1) / totalItems;
+        progressBar.style.width = progressBarWidth + '%';
+      };
+    });
+
     prevMethod.addEventListener('click', () => {
       counter -= 1;
       nextBtn.style.pointerEvents = "auto";
@@ -66,6 +80,31 @@ const recipeMethods = () => {
         methodsCards[counter].style.display = "block";
         let progressBarWidth = 100 * (counter + 1) / totalItems;
         progressBar.style.width = progressBarWidth + '%';
+      };
+    });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'ArrowLeft') {
+        counter -= 1;
+        nextBtn.style.pointerEvents = "auto";
+        // nextMethods.forEach((nextMethod) => {
+        //   nextMethod.style.pointerEvents = "auto";
+        // });
+        window.scrollTo({top: 0});
+
+        if (counter == -1) {
+          counter = 0;
+          recipeOverview.style.display = "block";
+          methodsContainer.style.display = "none";
+          methodsCards[counter].style.display = "none";
+          methodsCards[counter].querySelector('.methodVideo').pause();
+        } else {
+          methodsCards[counter + 1].style.display = "none";
+          methodsCards[counter + 1].querySelector('.methodVideo').pause();
+          methodsCards[counter].style.display = "block";
+          let progressBarWidth = 100 * (counter + 1) / totalItems;
+          progressBar.style.width = progressBarWidth + '%';
+        };
       };
     });
   };

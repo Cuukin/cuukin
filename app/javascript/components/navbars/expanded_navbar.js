@@ -23,6 +23,14 @@ const expandedNavbar = () => {
         expandedNB.style.opacity = "0";
         expandedNB.style.visibility = "hidden";
       });
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          expandedNB.style.transition = "opacity 0s linear";
+          expandedNB.style.zIndex = "-10000";
+          expandedNB.style.opacity = "0";
+          expandedNB.style.visibility = "hidden";
+        };
+      });
     };
   };
 }

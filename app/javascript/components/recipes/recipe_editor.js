@@ -1,4 +1,4 @@
-const unitConversion = () => {
+const recipeEditor = () => {
   // GENERAL VARIABLES
   // REUSED ALL OVER THE FUNCTION
 
@@ -184,6 +184,12 @@ const unitConversion = () => {
         icon.style.transform = 'rotate(' + current_rotation + 'deg)';
       });
 
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          swapModal.style.display = "none";
+        };
+      });
+
       swapIngredientBtns.forEach((swapIngredient) => {
 
         swapIngredient.addEventListener('click', () => {
@@ -311,4 +317,4 @@ const fromMetricToImperialDataset = (element, quantity, unit) => {
   };
 };
 
-export { unitConversion };
+export { recipeEditor };

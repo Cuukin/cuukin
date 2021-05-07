@@ -1,4 +1,4 @@
-const recipeDiary = () => {
+const recipeDiaryPopup = () => {
   const recipesCards = document.querySelectorAll('.open-recipe-card');
 
   if (recipesCards) {
@@ -13,8 +13,20 @@ const recipeDiary = () => {
       closeBtn.addEventListener('click', () => {
         recipeModal.style.display = "none";
       });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          recipeModal.style.display = "none";
+        };
+      });
+
+      recipeModal.addEventListener('click', (event) => {
+        if (event.target == recipeModal) {
+          recipeModal.style.display = "none";
+        };
+      });
     });
   };
 }
 
-export { recipeDiary };
+export { recipeDiaryPopup };

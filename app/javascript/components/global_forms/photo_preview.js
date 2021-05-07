@@ -38,7 +38,7 @@ const displayPreview = (input) => {
     nextBtn.style.display = "block";
   };
 
-  if (preview.src) {
+  if (preview.src && photoUpload) {
     photoUpload.style.display = "block";
   };
 }

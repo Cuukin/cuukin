@@ -8,91 +8,93 @@ require("@rails/actiontext")
 
 // External imports
 import "bootstrap";
-
 import { initFlatpickr } from "../plugins/flatpickr";
 
-// Internal imports, e.g:
-// import { homeCarousel } from '../components/home_carousel';
-// import { journeyMap } from '../components/journey_map';
-import { togglePasswordVisibility } from '../components/password_visibility_toggle';
-import { previewImageOnFileSelect } from '../components/photo_preview';
+// Internal Imports
+
+// Global
 import { preventSelectDoubleClick } from '../components/prevent_select_click';
-import { cuukbook } from '../components/cuukbook';
-import { editWeeklyCommitment } from '../components/edit_weekly_commitment';
-import { createWeeklyCommitment } from '../components/create_weekly_commitment';
-import { termsOfService } from '../components/terms_of_service';
 import { toggleFriends } from '../components/toggle_friends';
 
-// import { recipeModal } from '../components/popups/start_recipe_popup';
-// import { lessonModal } from '../components/popups/start_lesson_popup';
-// import { badgePopup } from '../components/popups/badge_popup';
-import { expandedNavbar } from '../components/popups/expanded_navbar';
-import { currenciesModal } from '../components/popups/currency_popup';
-import { recipeDiary } from '../components/popups/recipe_diary';
-import { helpPopup } from '../components/popups/help_popup';
-import { openBadge } from '../components/popups/open_badge';
-import { profilePhoto } from '../components/popups/profile_photo_popup';
+// Navbars
+import { cuukbookNavbar } from '../components/navbars/cuukbook_navbar';
+import { expandedNavbar } from '../components/navbars/expanded_navbar';
 
-// import { lessonChaptersSlide } from '../components/lessons/lesson_slide';
-// import { skipToRecipe } from '../components/lessons/skip_to_recipe';
+// Global Forms
+import { togglePasswordVisibility } from '../components/global_forms/password_visibility_toggle';
+import { previewImageOnFileSelect } from '../components/global_forms/photo_preview';
+import { termsOfService } from '../components/global_forms/terms_of_service';
+import { editWeeklyCommitment } from '../components/global_forms/edit_weekly_commitment';
+import { onboardingSegmentationForm } from '../components/global_forms/onboarding_segmentation_form';
+
+// Pop Ups
+import { currenciesPopup } from '../components/popups/currency_popup';
+import { recipeDiaryPopup } from '../components/popups/recipe_diary_popup';
+import { helpPopup } from '../components/popups/help_popup';
+import { badgePopup } from '../components/popups/badge_popup';
+import { editProfilePhotoPopup } from '../components/popups/edit_profile_photo_popup';
+
+// Lesson
 import { skillChapters } from '../components/lessons/skill_chapters';
 import { userSkill } from '../components/lessons/user_skill';
 import { lessonReferrers } from '../components/lessons/lesson_referrers';
 
-// import { unblockLesson } from '../components/lesson_validations/unblock_lesson';
-import { validateLesson } from '../components/lesson_validations/validate_lesson';
-import { validateSkippedLesson } from '../components/lesson_validations/validate_skipped_lesson';
-import { lessonValidationSlide } from '../components/lesson_validations/lesson_validation_slide';
-import { checkRecipeInput } from '../components/lesson_validations/check_recipe_input';
+// Validations
+import { validateLesson } from '../components/validations/validate_lesson';
+import { validateSkippedLesson } from '../components/validations/validate_skipped_lesson';
+import { lessonValidationSlide } from '../components/validations/lesson_validation_slide';
+import { checkRecipeInput } from '../components/validations/check_recipe_input';
+import { editUserRecipe } from '../components/validations/edit_user_recipe';
 
+
+// Recipe
 import { recipeMethods } from '../components/recipes/recipe_methods';
-import { lessonNutriData } from '../components/recipes/show_nutri';
-import { unitConversion } from '../components/recipes/edit_unit';
-import { groceryListItem } from '../components/recipes/grocery_list_item';
+import { showNutriData } from '../components/recipes/show_nutri_data';
+import { recipeEditor } from '../components/recipes/recipe_editor';
+import { addToGrocery } from '../components/recipes/add_to_grocery';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
-import { editUserRecipe } from '../components/recipes/edit_user_recipe';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 
-  // global
-  preventSelectDoubleClick();
-  toggleFriends();
-
-  // pop ups
-  currenciesModal();
+  // Navbars
   expandedNavbar();
-  helpPopup();
-  openBadge();
-  profilePhoto();
+  cuukbookNavbar();
 
-  // lesson
+  // Pop ups
+  currenciesPopup();
+  helpPopup();
+  badgePopup();
+  editProfilePhotoPopup();
+  recipeDiaryPopup();
+
+  // Lesson
   skillChapters();
   userSkill();
   lessonReferrers();
 
-  // recipe
-  lessonNutriData();
-  unitConversion();
+  // Recipe
+  recipeEditor();
+  showNutriData();
+  addToGrocery();
   recipeMethods();
-  groceryListItem();
   groceryListPage();
-  editUserRecipe();
 
-  // cuukbook
-  cuukbook();
-  recipeDiary();
-
-  // lesson validations
+  // Validations
   validateLesson();
   validateSkippedLesson();
   lessonValidationSlide();
   checkRecipeInput();
+  editUserRecipe();
 
-  // devise and other forms
+  // Global Forms
   termsOfService();
   togglePasswordVisibility();
   previewImageOnFileSelect();
+  onboardingSegmentationForm();
   editWeeklyCommitment();
-  createWeeklyCommitment();
+
+  // Global Buttons
+  preventSelectDoubleClick();
+  toggleFriends();
 });

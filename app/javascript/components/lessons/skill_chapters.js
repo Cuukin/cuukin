@@ -78,6 +78,29 @@ const skillChapters = () => {
         });
       });
 
+      document.addEventListener('keyup', (event) => {
+        if (event.key === 'ArrowRight') {
+          counter += 1;
+          window.scrollTo({top: 0});
+
+          if (counter == 1) {
+            firstCard[0].style.display = "none";
+            firstCard[0].querySelector('.skillVideo').pause();
+            cards[counter - 1].style.display = "block";
+            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
+            skillChecks[counter].querySelector('#play').classList.add('skill-none');
+          } else if (counter == cardsQuantity) {
+            backToOverview();
+          } else {
+            cards[counter - 1].style.display = "block";
+            cards[counter - 2].style.display = "none";
+            cards[counter - 2].querySelector('.skillVideo').pause();
+            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
+            skillChecks[counter].querySelector('#play').classList.add('skill-none');
+          };
+        };
+      });
+
       prevBtn.addEventListener('click', () => {
         counter -= 1;
         window.scrollTo({top: 0});
@@ -98,14 +121,48 @@ const skillChapters = () => {
           cards[counter - 1].style.display = "block";
         };
       });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === 'ArrowLeft') {
+          counter -= 1;
+          window.scrollTo({top: 0});
+
+          if (counter == 0) {
+            firstCard[0].style.display = "block";
+            cards[counter].style.display = "none";
+            cards[counter].querySelector('.skillVideo').pause();
+            skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
+            skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
+          } else if (counter == -1) {
+            backToOverview();
+          } else {
+            cards[counter].style.display = "none";
+            cards[counter].querySelector('.skillVideo').pause();
+            skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
+            skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
+            cards[counter - 1].style.display = "block";
+          };
+        };
+      });
     } else {
       prevBtn.addEventListener('click', (event) => {
         backToOverview();
       });
+      document.addEventListener('keyup', (event) => {
+        if (event.key === 'ArrowLeft') {
+          backToOverview();
+        };
+      });
+
       nextBtns.forEach((nextBtn) => {
         nextBtn.addEventListener('click', (event) => {
           backToOverview();
         });
+      });
+      document.addEventListener('keyup', (event) => {
+        if (event.key === 'ArrowRight') {
+          backToOverview();
+        };
       });
     };
   };
