@@ -34,6 +34,12 @@ const currenciesModal = () => {
       btn.addEventListener('click', () => {
         modal.style.display = 'none';
       });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          modal.style.display = 'none';
+        };
+      });
     };
   }
 

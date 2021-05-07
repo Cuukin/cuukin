@@ -13,6 +13,12 @@ const recipeDiary = () => {
       closeBtn.addEventListener('click', () => {
         recipeModal.style.display = "none";
       });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          recipeModal.style.display = "none";
+        };
+      });
     });
   };
 }

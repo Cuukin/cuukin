@@ -20,6 +20,12 @@ const openBadge = () => {
       closeBtn.addEventListener('click', () => {
         badgeModal.style.display = "none";
       });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          badgeModal.style.display = "none";
+        };
+      });
     });
   };
 };

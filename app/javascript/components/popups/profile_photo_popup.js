@@ -1,9 +1,9 @@
 const profilePhoto = () => {
   const openEditPhotoBtns = document.querySelectorAll('.openEditPhoto');
   const cancelBtn = document.getElementById('photoCancel');
+  const editPhotoModal = document.getElementById('editPhotoModal');
 
   if (openEditPhotoBtns) {
-    const editPhotoModal = document.getElementById('editPhotoModal');
     openEditPhotoBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         editPhotoModal.style.display = "block";
@@ -16,6 +16,12 @@ const profilePhoto = () => {
       editPhotoModal.style.display = "none";
     });
   };
+
+  document.addEventListener('keyup', (event) => {
+    if (editPhotoModal && event.key === "Escape") {
+      editPhotoModal.style.display = "none";
+    };
+  });
 };
 
 export { profilePhoto };

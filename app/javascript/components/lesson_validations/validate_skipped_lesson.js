@@ -19,6 +19,13 @@ const validateSkippedLesson = () => {
       validateItem2.style.display = "none";
       // rememberText.style.display = "none";
     });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === "Escape") {
+        validateSkippedModal.style.display = "none";
+        validateItem2.style.display = "none";
+      };
+    });
   };
 }
 

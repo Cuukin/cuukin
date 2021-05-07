@@ -17,6 +17,14 @@ const editUserRecipe = () => {
       content2.style.display = "none";
       content1.style.display = "block";
     });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === "Escape") {
+        editModal.style.display = "none";
+        content2.style.display = "none";
+        content1.style.display = "block";
+      };
+    });
   };
 };
 

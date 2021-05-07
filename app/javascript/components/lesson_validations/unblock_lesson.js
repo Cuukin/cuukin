@@ -21,6 +21,12 @@ const unblockLesson = () => {
     closeBtn.addEventListener('click', () => {
       unblockModal.style.display = "none";
     });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === "Escape") {
+        unblockModal.style.display = "none";
+      };
+    });
   };
 }
 
