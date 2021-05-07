@@ -30,7 +30,7 @@ const displayPreview = (input) => {
   // photoUpload.style.display = "none";
 
   const preview = document.getElementById('photo-preview');
-  const nextBtn = document.getElementById('validateLessonNext');
+  const nextBtn = document.getElementById('validateLessonConfirmPhoto');
 
   if (preview.src && nextBtn) {
     nextBtn.style.display = "block";

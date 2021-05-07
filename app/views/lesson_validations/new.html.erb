@@ -5,17 +5,17 @@
     <%= simple_form_for(@lesson_validation, url: lesson_lesson_validations_path(@lesson), method: 'post') do |f| %>
       <%= f.error_notification %>
 
-      <div id="recipe-validation-item-1">
+      <div class="validation-item" id="recipe-validation-item-photo" style="display: none;">
         <h3>Take a photo of your dish</h3>
         <p>Your photo will verify lesson completition</p>
         <div class="form-group-photo">
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo' }, label: 'Add a photo' %>
           <%= image_tag "", class: "hidden", id: "photo-preview" %>
         </div>
-        <p class="primary-btn" id="validateLessonNext">Upload Photo</p>
+        <p class="primary-btn" id="validateLessonConfirmPhoto">Confirm Photo</p>
       </div>
 
-      <div id="recipe-validation-item-2">
+      <div class="validation-item" id="recipe-validation-item-recipe" style="display: none;">
 
         <h3>Great job!</h3>
 
@@ -23,6 +23,11 @@
           <p style="margin-bottom: 5px;">Which recipe did you cook?</p>
           <%= f.input :recipe_id, label: false, collection: @lesson.recipes.order(external_url: :desc), as: :radio_buttons, legend_tag: false %>
         </div>
+
+        <p class="disabled-btn" id="validateLessonRecipeInput">Next</p>
+      </div>
+
+      <div class="validation-item" id="recipe-validation-item-notes" style="display: none;">
 
         <p>How difficult was the lesson?</p>
 
