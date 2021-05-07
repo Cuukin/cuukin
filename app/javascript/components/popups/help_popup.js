@@ -43,6 +43,21 @@ const helpPopup = () => {
       };
     });
 
+    newHelpModal.addEventListener('click', (event) => {
+      if (event.target == newHelpModal) {
+        newHelpModal.style.display = "none";
+
+        helpCards[0].style.display = "flex";
+        helpCards[1].style.display = "none";
+        helpCards[2].style.display = "none";
+
+        btnPrev.style.visibility = "hidden";
+        btnNext.style.visibility = "visible";
+
+        counter = 0;
+      };
+    });
+
     let counter = 0;
 
     btnNext.addEventListener('click', () => {

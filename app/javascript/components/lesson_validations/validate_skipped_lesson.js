@@ -26,6 +26,13 @@ const validateSkippedLesson = () => {
         validateItem2.style.display = "none";
       };
     });
+
+    validateSkippedModal.addEventListener('click', (event) => {
+      if (event.target == validateSkippedModal) {
+        validateSkippedModal.style.display = "none";
+        validateItem2.style.display = "none";
+      };
+    });
   };
 }
 

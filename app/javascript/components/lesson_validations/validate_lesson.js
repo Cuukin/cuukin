@@ -26,6 +26,13 @@ const validateLesson = () => {
         validateItem2.style.display = "none";
       };
     });
+
+    validateLessonModal.addEventListener('click', (event) => {
+      if (event.target == validateLessonModal) {
+        validateLessonModal.style.display = "none";
+        validateItem2.style.display = "none";
+      };
+    });
   };
 }
 

@@ -17,11 +17,19 @@ const profilePhoto = () => {
     });
   };
 
-  document.addEventListener('keyup', (event) => {
-    if (editPhotoModal && event.key === "Escape") {
-      editPhotoModal.style.display = "none";
-    };
-  });
+  if (editPhotoModal) {
+    document.addEventListener('keyup', (event) => {
+      if (event.key === "Escape") {
+        editPhotoModal.style.display = "none";
+      };
+    });
+
+    editPhotoModal.addEventListener('click', (event) => {
+      if (event.target == editPhotoModal) {
+        editPhotoModal.style.display = "none";
+      };
+    });
+  };
 };
 
 export { profilePhoto };

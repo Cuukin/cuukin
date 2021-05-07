@@ -26,6 +26,12 @@ const openBadge = () => {
           badgeModal.style.display = "none";
         };
       });
+
+      badgeModal.addEventListener('click', (event) => {
+        if (event.target == badgeModal) {
+          badgeModal.style.display = "none";
+        };
+      });
     });
   };
 };

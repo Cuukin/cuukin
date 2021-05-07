@@ -19,6 +19,12 @@ const recipeDiary = () => {
           recipeModal.style.display = "none";
         };
       });
+
+      recipeModal.addEventListener('click', (event) => {
+        if (event.target == recipeModal) {
+          recipeModal.style.display = "none";
+        };
+      });
     });
   };
 }

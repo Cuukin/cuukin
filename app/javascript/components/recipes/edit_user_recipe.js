@@ -25,6 +25,14 @@ const editUserRecipe = () => {
         content1.style.display = "block";
       };
     });
+
+    editModal.addEventListener('click', (event) => {
+      if (event.target == editModal) {
+        editModal.style.display = "none";
+        content2.style.display = "none";
+        content1.style.display = "block";
+      };
+    });
   };
 };
 
