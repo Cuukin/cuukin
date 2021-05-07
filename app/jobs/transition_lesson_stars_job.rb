@@ -1,4 +1,4 @@
-class ValidateBookCompletionJob < ApplicationJob
+class TransitionLessonStarsJob < ApplicationJob
   queue_as :default
 
   def perform(user, lesson_validation)
