@@ -1,5 +1,5 @@
 const openLessonValidation = () => {
-  const validationModal = document.getElementById('validateLessonModal');
+  const validationModal = document.querySelector('.recipe-validation-modal');
 
   if (validationModal) {
     const withPhotoBtn = document.getElementById('validateLessonBtn');

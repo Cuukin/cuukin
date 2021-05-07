@@ -1,5 +1,5 @@
 const closeLessonValidation = () => {
-  const validationModal = document.getElementById('validateLessonModal');
+  const validationModal = document.querySelector('.recipe-validation-modal');
 
   if (validationModal) {
     const closeBtn = validationModal.querySelector('.modal-close-btn');
