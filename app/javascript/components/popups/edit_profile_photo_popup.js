@@ -1,4 +1,4 @@
-const profilePhoto = () => {
+const editProfilePhotoPopup = () => {
   const openEditPhotoBtns = document.querySelectorAll('.openEditPhoto');
   const cancelBtn = document.getElementById('photoCancel');
   const editPhotoModal = document.getElementById('editPhotoModal');
@@ -32,4 +32,4 @@ const profilePhoto = () => {
   };
 };
 
-export { profilePhoto };
+export { editProfilePhotoPopup };

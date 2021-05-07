@@ -1,4 +1,4 @@
-const unitConversion = () => {
+const recipeEditor = () => {
   // GENERAL VARIABLES
   // REUSED ALL OVER THE FUNCTION
 
@@ -317,4 +317,4 @@ const fromMetricToImperialDataset = (element, quantity, unit) => {
   };
 };
 
-export { unitConversion };
+export { recipeEditor };

@@ -1,4 +1,4 @@
-const lessonNutriData = () => {
+const showNutriData = () => {
   const showBtn = document.querySelector('.nutri-show-btn');
   const hideBtn = document.querySelector('.nutri-hide-btn');
   const nutriData = document.querySelector('.nutri-content');
@@ -41,4 +41,4 @@ const lessonNutriData = () => {
   };
 }
 
-export { lessonNutriData };
+export { showNutriData };

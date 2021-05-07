@@ -1,4 +1,4 @@
-const cuukbook = () => {
+const cuukbookNavbar = () => {
   const unlockedBtn = document.querySelector('#unlockedBtn');
   const unlockedContainer = document.querySelector('#unlockedRecipes');
 
@@ -25,4 +25,4 @@ const cuukbook = () => {
   };
 }
 
-export { cuukbook };
+export { cuukbookNavbar };

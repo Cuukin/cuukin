@@ -1,4 +1,4 @@
-const recipeDiary = () => {
+const recipeDiaryPopup = () => {
   const recipesCards = document.querySelectorAll('.open-recipe-card');
 
   if (recipesCards) {
@@ -29,4 +29,4 @@ const recipeDiary = () => {
   };
 }
 
-export { recipeDiary };
+export { recipeDiaryPopup };

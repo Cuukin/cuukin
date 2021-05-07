@@ -1,4 +1,4 @@
-const currenciesModal = () => {
+const currenciesPopup = () => {
   const levelBtn = document.querySelector('#nb-level');
   const levelModal = document.querySelector('#level-modal');
 
@@ -55,4 +55,4 @@ const currenciesModal = () => {
   closeModal(dishesClose, dishesModal);
 }
 
-export { currenciesModal };
+export { currenciesPopup };
