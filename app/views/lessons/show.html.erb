@@ -1,12 +1,8 @@
 <% content_for :meta_title, "#{@lesson.title} | #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Learn all about #{@lesson.title.downcase}" %>
 
-<% unless @validated || @skipped %>
+<% unless @validated %>
   <%= render template: 'lesson_validations/new' %>
-<% end %>
-
-<% if @skipped %>
-  <%= render template: 'lesson_validations/edit' %>
 <% end %>
 
 <%= render 'shared/help' %>
