@@ -3,7 +3,7 @@
 .container-recipe-overview {
   display: block;
   width: 500px;
-  height: auto;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: $white;
   box-shadow: 1px 1px 8px rgba(30,30,30,0.1);
@@ -70,7 +70,7 @@
   border-radius: 24px 24px 0 0;
   padding: 10px 16px 32px;
 
-  min-height: 100vh;
+  //min-height: 100vh;
   position: relative;
   top: 280px;
 

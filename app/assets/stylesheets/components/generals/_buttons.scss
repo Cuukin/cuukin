@@ -124,9 +124,14 @@
   align-items: center;
   font-weight: 500;
 
-  i {
-    font-size: 30px;
+  img {
+    height: 20px;
     margin-right: 4px;
+  }
+
+  p {
+    margin: 0;
+    color: $black;
   }
 
   &:hover, &:active {
