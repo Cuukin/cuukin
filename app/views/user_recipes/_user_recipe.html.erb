@@ -54,11 +54,13 @@
 
   <% if user_recipe.public %>
     <%= link_to archive_user_recipe_path(user_recipe, user_recipe: { public: false }), method: :patch, remote: true, class: 'hide-post-btn' do %>
-      <%= icon('fas', 'toggle-off') %> Hidden from feed
+      <%= image_tag('toggle-off.svg') %>
+      <p>Hidden from feed</p>
     <% end %>
   <% else %>
     <%= link_to archive_user_recipe_path(user_recipe, user_recipe: { public: true }), method: :patch, remote: true, class: 'hide-post-btn' do %>
-      <%= icon('fas', 'toggle-on') %> Hidden from feed
+      <%= image_tag('toggle-on.svg') %>
+      <p>Hidden from feed</p>
     <% end %>
   <% end %>
 
