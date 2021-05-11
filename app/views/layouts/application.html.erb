@@ -27,10 +27,11 @@
 
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/currencies/stars_popup' %>
-    <%= render 'shared/currencies/level_popup' %>
-    <%= render 'shared/currencies/dishes_popup' %>
-    <%= render 'shared/currencies/cuukies_popup' %>
+    <%= render 'shared/popups/stars_popup' %>
+    <%= render 'shared/popups/level_popup' %>
+    <%= render 'shared/popups/dishes_popup' %>
+    <%= render 'shared/popups/cuukies_popup' %>
+    <%= render 'shared/popups/beta_popup' %>
 
     <% if current_page?('/commitment') %>
       <%= render 'shared/navbars/visitor_navbar' %>
