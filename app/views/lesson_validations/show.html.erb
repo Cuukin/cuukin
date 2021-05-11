@@ -6,6 +6,6 @@
   <% if @lesson_validation.photo.attached? %>
     <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{@lesson_validation.photo.key}.jpeg" %>')"></div>
   <% else %>
-    <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= @lesson_validation.lesson.recipe.photo_url %>')"></div>
+    <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_path("#{@lesson_validation.recipe.photo_url}") %>')"></div>
   <% end %>
 </div>

@@ -9,7 +9,7 @@
     <% else %>
       <% @user.user_recipes.each do |recipe| %>
         <% if recipe.photo.attached? && recipe.public %>
-          <div class="feed-photo" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= recipe.photo.service_url %>')"></div>
+          <div class="feed-photo" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{recipe.photo.key}.jpeg" %>')"></div>
         <% end %>
       <% end %>
     <% end %>
