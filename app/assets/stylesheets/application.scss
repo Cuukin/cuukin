@@ -70,7 +70,7 @@ body::-webkit-scrollbar {
   background-color: $white;
 }
 
-.is-valid, .was-validated .custom-select:valid {
+.is-valid, .was-validated .custom-select:valid, .custom-select:invalid, .is-invalid {
   // removing boostrap validation icons!
   background-image: none !important;
 }
