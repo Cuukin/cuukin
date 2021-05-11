@@ -22,7 +22,23 @@ const videoPlayer = () => {
           backwardBtn.classList.remove('explain-video-control-backward');
         };
       });
+
+      backwardBtn.addEventListener('click', (event) => {
+        playVideo(video);
+      });
+
+      forwardBtn.addEventListener('click', (event) => {
+        playVideo(video);
+      });
     });
+  };
+};
+
+const playVideo = (video) => {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
   };
 };
 
