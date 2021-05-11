@@ -78,15 +78,42 @@
 .public-profile-feed {
   padding: 32px 16px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  resize: horizontal;
 
-  img {
-    width: 167px;
-    height: 167px;
-    object-fit: cover;
+  .feed-photo {
+    width: 48%;
+    padding-bottom: 48%;
+    background-size: cover;
+    background-position: center;
     border-radius: 20px;
     -webkit-filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
     filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .public-profile-navbar {
+    transform-origin: center left;
+    transform: scale(0.95);
+
+    .user-img {
+      margin-left: 8px;
+    }
+  }
+}
+
+@media (max-width: 352px) {
+  .public-profile-navbar {
+    transform: scale(0.88);
+  }
+}
+
+@media (max-width: 328px) {
+  .public-profile-navbar {
+    transform: scale(0.82);
   }
 }
