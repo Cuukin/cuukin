@@ -28,6 +28,10 @@
       <% end %>
 
       <div class="skill-chapter-video">
+        <div class="skill-chapter-controls">
+          <%= image_tag('video-back10.svg') %>
+          <%= image_tag('video-forward10.svg') %>
+        </div>
         <video class="skillVideo userSkill-<%= skill_chapter.id %> <%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
       </div>
 

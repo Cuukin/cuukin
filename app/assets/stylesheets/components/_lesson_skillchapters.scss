@@ -52,8 +52,8 @@
 
 .skill-chapters-container {
   position: relative;
-  top: 45px;
-  padding-bottom: 45px;
+  top: 60px;
+  padding-bottom: 60px;
 }
 
 .skill-chapter-card {
@@ -67,11 +67,27 @@
 
 .skill-chapter-video {
   width: 500px;
+  position: relative;
 
   video {
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+  .skill-chapter-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: flex-start;
+
+    img {
+      height: 22px;
+    }
   }
 }
 
