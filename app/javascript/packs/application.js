@@ -38,6 +38,7 @@ import { editProfilePhotoPopup } from '../components/popups/edit_profile_photo_p
 import { skillChapters } from '../components/lessons/skill_chapters';
 import { userSkill } from '../components/lessons/user_skill';
 import { lessonReferrers } from '../components/lessons/lesson_referrers';
+import { videoPlayer } from '../components/lessons/video_player';
 
 // Validations
 import { checkRecipeInput } from '../components/validations/check_recipe_input';
@@ -69,6 +70,7 @@ document.addEventListener('turbolinks:load', () => {
   skillChapters();
   userSkill();
   lessonReferrers();
+  videoPlayer();
 
   // Recipe
   recipeEditor();
