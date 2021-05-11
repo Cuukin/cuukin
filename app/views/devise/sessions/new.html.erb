@@ -1,3 +1,5 @@
+<%= render 'shared/flashes' %>
+
 <div class="body-white-bg">
   <div class="form-devise register-devise">
 
@@ -15,13 +17,16 @@
                     label: false,
                     placeholder: 'Email',
                     input_html: { autocomplete: "email" } %>
-        <i class="far fa-eye-slash toggle-password"></i>
-        <%= f.input :password,
-                    required: true,
-                    label: false,
-                    placeholder: 'Password',
-                    input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+        <div class="password-holder">
+          <i class="far fa-eye-slash toggle-password"></i>
+          <%= f.input :password,
+                      required: true,
+                      label: false,
+                      placeholder: 'Password',
+                      input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
       </div>
 
       <div class="form-actions double-btn mt-3">
@@ -29,9 +34,9 @@
       </div>
     <% end %>
 
-    <div class="devise-extra-links">
-      <%= link_to "Forgot password?", new_user_password_path, class: 'devise-p mt-4' %>
-      <%= link_to "No account? Sign Up", new_user_registration_path, class: 'devise-p mt-1'  %>
+    <div class="devise-extra-links mt-4">
+      <p class="text-center">Forgot your password?<br><%= link_to "Get recovery email", new_user_password_path, class: 'devise-p' %></p>
+      <p class="text-center">Don't have an account?<br><%= link_to "Sign Up", new_user_registration_path, class: 'devise-p'  %></p>
     </div>
   </div>
 </div>

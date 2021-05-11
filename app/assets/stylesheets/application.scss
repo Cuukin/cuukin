@@ -69,3 +69,8 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   background-color: $white;
 }
+
+.is-valid, .was-validated .custom-select:valid, .custom-select:invalid, .is-invalid {
+  // removing boostrap validation icons!
+  background-image: none !important;
+}
