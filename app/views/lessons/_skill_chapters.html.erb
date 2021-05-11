@@ -29,8 +29,8 @@
 
       <div class="skill-chapter-video">
         <div class="skill-chapter-controls">
-          <div id="backward10"></div>
-          <div id="forward10"></div>
+          <div class="<%= current_user.user_skills.count < 1 ? "explain-video-control-backward" : "" %>" id="backward10"></div>
+          <div class="<%= current_user.user_skills.count < 1 ? "explain-video-control-forward" : "" %>" id="forward10"></div>
         </div>
         <video class="skillVideo userSkill-<%= skill_chapter.id %> <%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
       </div>
