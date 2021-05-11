@@ -80,13 +80,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4px;
-    background-color: rgba(0, 0, 0, .4);
+    height: 50%;
+    //background-color: rgba(0, 0, 0, .2);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    z-index: 100;
+
+    #backward10, #forward10 {
+      width: 50%;
+    }
 
     img {
-      height: 22px;
+      height: 40px;
     }
   }
 }
