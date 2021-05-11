@@ -9,7 +9,7 @@ const userSkill = () => {
       video.addEventListener('play', () => {
         btn.click();
         tag.querySelector('.skill-check').classList.remove('skill-none');
-      })
+      });
     });
   };
 };
