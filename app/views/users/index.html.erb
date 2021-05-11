@@ -63,7 +63,7 @@
     <% @top_7.each do |user| %>
       <%= link_to user_path(user) do %>
         <div class="top-7-user-card">
-          <h4><%= @users.find_index(user).ordinalize %></h4>
+          <h4><%= (@users.find_index(user) + 1).ordinalize %></h4>
           <div class="top-7-user-social">
             <% if user.photo.attached? %>
               <%= cl_image_tag user.photo.key, crop: :fill, class: 'top-7-user-avatar' %>
