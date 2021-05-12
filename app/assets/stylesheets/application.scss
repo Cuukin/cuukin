@@ -67,6 +67,10 @@ body::-webkit-scrollbar {
 .body-white-bg {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: $white;
 }
 
