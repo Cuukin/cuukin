@@ -11,4 +11,12 @@ class LessonValidation < ApplicationRecord
   validates :lesson, uniqueness: { scope: :user, message: 'This lesson has already been validated' }
 
   validates :recipe, presence: true
+
+  before_save :define_photo_present
+
+  private
+
+  def define_photo_present
+    self.photo_present = true if self.photo.attached?
+  end
 end
