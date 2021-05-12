@@ -1,5 +1,9 @@
 let counter = 0;
 
+// large containers
+const methodsContainer = document.querySelector('.recipe-methods-container');
+const recipeOverview = document.querySelector('.container-recipe-overview');
+
 // method cards
 const methodsCards = document.querySelectorAll('.recipe-method-card');
 const progressBar = document.querySelector('.meter-progression');
@@ -9,10 +13,6 @@ const recipeMethods = () => {
   const makeRecipe = document.querySelector('#makeRecipe');
 
   if (makeRecipe) {
-    // large containers
-    const recipeOverview = document.querySelector('.container-recipe-overview');
-    const methodsContainer = document.querySelector('.recipe-methods-container');
-
     // btns
     const nextMethods = document.querySelectorAll('.nextMethod');
     const prevMethod = document.querySelector('#prevMethod');
@@ -40,7 +40,7 @@ const recipeMethods = () => {
 
         if (counter == methodsCards.length - 1) {
           nextBtn.style.pointerEvents = "none";
-        }
+        };
 
         let progressBarWidth = 100 * (counter + 1) / totalItems;
         progressBar.style.width = progressBarWidth + '%';
@@ -55,6 +55,10 @@ const recipeMethods = () => {
         methodsCards[counter - 1].style.display = "none";
         methodsCards[counter - 1].querySelector('.methodVideo').pause();
         methodsCards[counter].style.display = "block";
+
+        if (counter == methodsCards.length - 1) {
+          nextBtn.style.pointerEvents = "none";
+        };
 
         let progressBarWidth = 100 * (counter + 1) / totalItems;
         progressBar.style.width = progressBarWidth + '%';
@@ -133,47 +137,63 @@ const swipe = () => {
         yDown = firstTouch.clientY;
     };
 
+    if (methodsCards[methodsCards.length - 1].style.display !== "block") {
+
+    };
+
     function handleTouchMove(evt) {
-        if ( ! xDown || ! yDown ) {
-          return;
-        }
+      if ( ! xDown || ! yDown ) {
+        return;
+      }
 
-        let xUp = evt.touches[0].clientX;
-        let yUp = evt.touches[0].clientY;
+      let xUp = evt.touches[0].clientX;
+      let yUp = evt.touches[0].clientY;
 
-        let xDiff = xDown - xUp;
-        let yDiff = yDown - yUp;
+      let xDiff = xDown - xUp;
+      let yDiff = yDown - yUp;
 
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            if ( xDiff > 0 ) {
-              counter += 1;
+      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+          if ( xDiff > 0 ) {
+            counter += 1;
+            if (counter >= methodsCards.length) {
+              counter = methodsCards.length - 1;
+              nextBtn.style.pointerEvents = "none";
+            } else {
               window.scrollTo({top: 0});
-
               methodsCards[counter - 1].style.display = "none";
               methodsCards[counter - 1].querySelector('.methodVideo').pause();
               methodsCards[counter].style.display = "block";
-
-              if (counter == methodsCards.length - 1) {
-                nextBtn.style.pointerEvents = "none";
-                swipeArea.removeEventListener('touchstart', handleTouchStart);
-                swipeArea.removeEventListener('touchmove', handleTouchMove);
-              };
-
               let progressBarWidth = 100 * (counter + 1) / totalItems;
               progressBar.style.width = progressBarWidth + '%';
-            } else {
-                console.log('right swipe');
             };
-        } else {
-            if ( yDiff > 0 ) {
-                /* up swipe */
+          } else {
+            counter -= 1;
+            window.scrollTo({top: 0});
+            nextBtn.style.pointerEvents = "auto";
+            if (counter == -1) {
+              counter = 0;
+              recipeOverview.style.display = "block";
+              methodsContainer.style.display = "none";
+              methodsCards[counter].style.display = "none";
+              methodsCards[counter].querySelector('.methodVideo').pause();
             } else {
-                /* down swipe */
+              methodsCards[counter + 1].style.display = "none";
+              methodsCards[counter + 1].querySelector('.methodVideo').pause();
+              methodsCards[counter].style.display = "block";
+              let progressBarWidth = 100 * (counter + 1) / totalItems;
+              progressBar.style.width = progressBarWidth + '%';
             };
-        };
-        /* reset values */
-        xDown = null;
-        yDown = null;
+          };
+      } else {
+          if ( yDiff > 0 ) {
+              /* up swipe */
+          } else {
+              /* down swipe */
+          };
+      };
+      /* reset values */
+      xDown = null;
+      yDown = null;
     };
   };
 };
