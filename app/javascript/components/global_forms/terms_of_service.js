@@ -11,8 +11,8 @@ const termsOfService = () => {
         top: 0,
         behavior: 'smooth'
       });
-      serviceContainer.style.display = "block";
-      registrationContainer.style.display = "none";
+      serviceContainer.classList.remove('d-none');
+      registrationContainer.classList.add('d-none');
     });
 
     prevBtn.addEventListener('click', () => {
@@ -20,8 +20,8 @@ const termsOfService = () => {
         top: 0,
         behavior: 'smooth'
       });
-      serviceContainer.style.display = "none";
-      registrationContainer.style.display = "block";
+      serviceContainer.classList.add('d-none');
+      registrationContainer.classList.remove('d-none');
     });
   };
 };

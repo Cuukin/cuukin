@@ -18,8 +18,17 @@
   }
 }
 
+.terms-of-service-container {
+  max-width: 500px;
+  margin: 0 auto;
+
+  img {
+    cursor: pointer;
+  }
+}
+
 #termsOfService {
-  display: none;
+  background-color: $white;
 
   h1 {
     text-align: center;
