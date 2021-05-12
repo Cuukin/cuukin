@@ -1,3 +1,10 @@
+let counter = 0;
+
+// method cards
+const methodsCards = document.querySelectorAll('.recipe-method-card');
+const progressBar = document.querySelector('.meter-progression');
+const nextBtn = document.querySelector('#nextMethod');
+
 const recipeMethods = () => {
   const makeRecipe = document.querySelector('#makeRecipe');
 
@@ -8,14 +15,8 @@ const recipeMethods = () => {
 
     // btns
     const nextMethods = document.querySelectorAll('.nextMethod');
-    const nextBtn = document.querySelector('#nextMethod');
     const prevMethod = document.querySelector('#prevMethod');
-    const progressBar = document.querySelector('.meter-progression');
 
-    // method cards
-    const methodsCards = document.querySelectorAll('.recipe-method-card');
-
-    let counter = 0;
     let totalItems = methodsCards.length;
 
     makeRecipe.addEventListener('click', () => {
@@ -110,4 +111,72 @@ const recipeMethods = () => {
   };
 };
 
-export { recipeMethods };
+const swipe = () => {
+  const swipeArea = document.querySelector('.recipe-methods-container-cards');
+
+  if (swipeArea) {
+    swipeArea.addEventListener('touchstart', handleTouchStart, {passive: true});
+    swipeArea.addEventListener('touchmove', handleTouchMove, {passive: true});
+
+    let totalItems = methodsCards.length;
+
+    let xDown = null;
+    let yDown = null;
+
+    function getTouches(evt) {
+      return evt.touches
+    };
+
+    function handleTouchStart(evt) {
+        const firstTouch = getTouches(evt)[0];
+        xDown = firstTouch.clientX;
+        yDown = firstTouch.clientY;
+    };
+
+    function handleTouchMove(evt) {
+        if ( ! xDown || ! yDown ) {
+          return;
+        }
+
+        let xUp = evt.touches[0].clientX;
+        let yUp = evt.touches[0].clientY;
+
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
+
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+            if ( xDiff > 0 ) {
+              counter += 1;
+              window.scrollTo({top: 0});
+
+              methodsCards[counter - 1].style.display = "none";
+              methodsCards[counter - 1].querySelector('.methodVideo').pause();
+              methodsCards[counter].style.display = "block";
+
+              if (counter == methodsCards.length - 1) {
+                nextBtn.style.pointerEvents = "none";
+                swipeArea.removeEventListener('touchstart', handleTouchStart);
+                swipeArea.removeEventListener('touchmove', handleTouchMove);
+              };
+
+              let progressBarWidth = 100 * (counter + 1) / totalItems;
+              progressBar.style.width = progressBarWidth + '%';
+            } else {
+                console.log('right swipe');
+            };
+        } else {
+            if ( yDiff > 0 ) {
+                /* up swipe */
+            } else {
+                /* down swipe */
+            };
+        };
+        /* reset values */
+        xDown = null;
+        yDown = null;
+    };
+  };
+};
+
+
+export { recipeMethods, swipe };
