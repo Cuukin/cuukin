@@ -13,6 +13,7 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // Internal Imports
 
 // Global
+// import { playground } from '../components/playground'
 import { preventSelectDoubleClick } from '../components/prevent_select_click';
 import { toggleFriends } from '../components/toggle_friends';
 
@@ -47,13 +48,14 @@ import { closeLessonValidation } from '../components/validations/close_lesson_va
 import { lessonAnimation } from '../components/validations/lesson_animation';
 
 // Recipe
-import { recipeMethods } from '../components/recipes/recipe_methods';
+import { recipeMethods, swipe } from '../components/recipes/recipe_methods';
 import { showNutriData } from '../components/recipes/show_nutri_data';
 import { recipeEditor } from '../components/recipes/recipe_editor';
 import { addToGrocery } from '../components/recipes/add_to_grocery';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
 
 document.addEventListener('turbolinks:load', () => {
+  // playground();
   initFlatpickr();
 
   // Navbars
@@ -79,6 +81,7 @@ document.addEventListener('turbolinks:load', () => {
   addToGrocery();
   recipeMethods();
   groceryListPage();
+  swipe();
 
   // Validations
   checkRecipeInput();
