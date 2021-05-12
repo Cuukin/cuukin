@@ -13,7 +13,7 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // Internal Imports
 
 // Global
-import { playground } from '../components/playground'
+// import { playground } from '../components/playground'
 import { preventSelectDoubleClick } from '../components/prevent_select_click';
 import { toggleFriends } from '../components/toggle_friends';
 
@@ -55,7 +55,7 @@ import { addToGrocery } from '../components/recipes/add_to_grocery';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
 
 document.addEventListener('turbolinks:load', () => {
-  playground();
+  // playground();
   initFlatpickr();
 
   // Navbars
