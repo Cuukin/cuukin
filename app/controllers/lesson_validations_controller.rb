@@ -1,8 +1,10 @@
 class LessonValidationsController < ApplicationController
   before_action :set_lesson, only: [ :create, :update ]
+  before_action :set_lesson_validation, :set_user_validations, only: [ :show, :book_completed? ]
 
   def show
-    @lesson_validation = LessonValidation.find(params[:id])
+    book_completed?
+
     authorize @lesson_validation, policy_class: LessonValidationPolicy
   end
 
@@ -42,6 +44,19 @@ class LessonValidationsController < ApplicationController
   end
 
   private
+
+  def book_completed?
+    @book_completed = @validated_lessons.count == @book.lessons.count
+  end
+
+  def set_user_validations
+    @validated_lessons = LessonValidation.includes(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
+  end
+
+  def set_lesson_validation
+    @lesson_validation = LessonValidation.find(params[:id])
+    @book = @lesson_validation.lesson.book
+  end
 
   def set_lesson
     @lesson = Lesson.find(params[:lesson_id])

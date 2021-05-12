@@ -1,57 +1,56 @@
-<div class="lesson-completion-modal" style="display: block;">
+<div class="lesson-validation-navbar">
+  <h1><%= @lesson_validation.lesson.title %></h1>
+</div>
 
-  <div class="lesson-completion-modal-content">
-    <%= link_to book_path(@lesson_validation.lesson.book), class: 'close-btn-a' do %>
-      <%= image_tag('btn-close-rounded.svg', class: 'lesson-completion-modal-close-btn') %>
-    <% end %>
+<div class="lesson-validation-image-container">
+  <% if @lesson_validation.photo.attached? %>
+    <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{@lesson_validation.photo.key}.jpeg" %>')"></div>
+  <% else %>
+    <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_path("#{@lesson_validation.recipe.photo_url}") %>')"></div>
+  <% end %>
+</div>
 
-    <h2><%= @lesson_validation.lesson.title %></h2>
+<div class="lesson-validation-cards-container">
 
-    <ul class="lesson-completion-details">
-      <li>
-        <%= image_tag('lv-time.svg') %>
-        <%= @lesson_validation.recipe.prep_time %>
-      </li>
-      <li>
-        <%= image_tag('lv-level.svg') %>
-        Level <%= Book.levels[@lesson_validation.lesson.book.level] %>
-      </li>
-    </ul>
-
-    <div class="lesson-completion-items-container">
-
-      <h1>Lesson Completed</h1>
-      <h2>You've earned</h2>
-
-      <div class="currencies">
-
-        <div class="currency-item">
-          <%= image_tag('nb-xp.svg') %>
-          <h4 class="xp-p"><%= @lesson_validation.photo.attached? ? @lesson_validation.lesson.xp : @lesson_validation.lesson.xp / 2 %> XP</h4>
-        </div>
-
-        <div class="currency-item">
-          <%= image_tag('nb-dish.svg') %>
-          <h4 class="dish-p"><%= @lesson_validation.lesson.recipes.count %> Dishes</h4>
-        </div>
-
-      </div>
-
-      <div class="badges">
-        <% @lesson_validation.lesson.skill_chapters.each do |chapter| %>
-          <div class="badge-item">
-            <div class="user-badge-container">
-              <%= image_tag("#{chapter.badge.bronze}", class: 'badge1') %>
-              <%= image_tag("#{chapter.badge.icon}", class: 'badge2') %>
-            </div>
-            <h4><%= chapter.badge.name %></h4>
-          </div>
-        <% end %>
-      </div>
-
-      </div>
-
-      <%= image_tag('kin.svg', class: 'kin') %>
-
+  <div class="lesson-validation-card-animation">
+    <%= image_tag('level-up.svg', id: 'levelUpIcon') %>
+    <h2>Congrats, you just finished a lesson!</h2>
+    <%= render 'lesson_validations/celebration' %>
   </div>
+
+  <div class="lesson-validation-card-awards">
+    <div class="validation-text">
+      <h2>Lesson Completed</h2>
+      <p>You've earned</p>
+    </div>
+    <div class="lesson-validation-awards-container">
+      <div class="award">
+        <%= image_tag('nb-xp.svg') %>
+        <h3 class="xp-p">+<%= @lesson_validation.photo.attached? ? @lesson_validation.lesson.xp : @lesson_validation.lesson.xp / 2 %></h3>
+      </div>
+      <div class="award">
+        <%= image_tag('nb-dish.svg') %>
+        <h3 class="dish-p">+<%= @lesson_validation.lesson.recipes.count %> dishes</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson-validation-card-badges">
+    <div class="validation-text">
+      <h2>Lesson Completed</h2>
+      <p>You've earned</p>
+    </div>
+    <div class="lesson-validation-badges-container">
+      <% @lesson_validation.lesson.skill_chapters.each do |skill| %>
+        <div class="badge-item">
+          <%= image_tag("#{skill.badge.bronze}", class: 'badge1') %>
+          <%= image_tag("#{skill.badge.icon}", class: 'badge2') %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to root_path do %>
+      <p class="primary-btn">Continue</p>
+    <% end %>
+  </div>
+
 </div>

@@ -1,0 +1,187 @@
+.lesson-validation-navbar {
+  width: 100%;
+  height: 60px;
+  background-color: $off-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 45px;
+  z-index: 100;
+
+  h1 {
+    color: $cuukin;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.lesson-validation-image-container {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  top: 60px;
+  z-index: -10;
+}
+
+.lesson-validation-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.lesson-validation-cards-container {
+  width: 340px;
+  height: 360px;
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 20px;
+  z-index: 10;
+  position: relative;
+  top: -16px;
+}
+
+.lesson-validation-card-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  svg {
+    width: 100%;
+    padding: 0 8px;
+    z-index: 0;
+  }
+
+  img {
+    width: 200px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(.1);
+    transform-origin: 50% 50%;
+    z-index: 5;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: $cuukin;
+    text-align: center;
+    position: absolute;
+    bottom: 24px;
+    padding: 0 24px;
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
+.lesson-validation-card-awards, .lesson-validation-card-badges {
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+
+  h2 {
+    color: $cuukin;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+
+  a {
+    width: 100%;
+  }
+}
+
+.lesson-validation-card-awards {
+  justify-content: flex-start !important;
+}
+
+.lesson-validation-awards-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+
+  .award {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100px;
+      z-index: 1;
+      margin-bottom: 8px;
+    }
+    h3 {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      z-index: 5;
+      margin: 0;
+    }
+    .xp-p {
+      color: #49D0A1;
+    }
+    .dish-p {
+      color: #0D6E9A;
+    }
+  }
+}
+
+.lesson-validation-badges-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .badge-item {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 8px 8px;
+  }
+  img {
+    height: 70px;
+  }
+  .badge1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(150, 150, 150, .0));
+    filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, .16));
+  }
+  .badge2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .lesson-validation-image-container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 360px) {
+  .lesson-validation-cards-container {
+    width: 90%;
+  }
+}
