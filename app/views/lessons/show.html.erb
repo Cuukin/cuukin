@@ -5,7 +5,7 @@
   <%= render template: 'lesson_validations/new' %>
 <% end %>
 
-<%= render 'shared/help' %>
+<%= render 'shared/help_lesson' %>
 
 <div class="container-lesson-overview">
 
@@ -14,7 +14,7 @@
       <%= image_tag('btn-back.svg') %>
     <% end %>
     <h1><%= @lesson.title %></h1>
-    <%= image_tag('btn-help.svg', id: 'openHelpBtn') %>
+    <%= image_tag('btn-help.svg', id: 'lessonHelpBtn') %>
   </div>
 
   <div class="lesson-overview-content">

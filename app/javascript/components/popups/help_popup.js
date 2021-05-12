@@ -2,11 +2,12 @@ const helpPopup = () => {
   const newHelpModal = document.querySelector('.help-container');
 
   if (newHelpModal) {
-    const openBtn = document.querySelector('#openHelpBtn');
+    const openBtn = document.querySelector(`#${newHelpModal.id}Btn`);
     const closeBtns = newHelpModal.querySelectorAll('.btn-close');
 
     openBtn.addEventListener('click', () => {
-      newHelpModal.style.display = "block";
+      newHelpModal.classList.remove('d-none');
+      helpCards[0].classList.remove('d-none');
     });
 
     const helpCards = newHelpModal.querySelectorAll('.help-card');
@@ -15,11 +16,9 @@ const helpPopup = () => {
 
     closeBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        newHelpModal.style.display = "none";
-
-        helpCards[0].style.display = "flex";
-        helpCards[1].style.display = "none";
-        helpCards[2].style.display = "none";
+        newHelpModal.classList.add('d-none');
+        helpCards[1].classList.add('d-none');
+        helpCards[1].classList.add('d-none');
 
         btnPrev.style.visibility = "hidden";
         btnNext.style.visibility = "visible";
@@ -30,11 +29,9 @@ const helpPopup = () => {
 
     document.addEventListener('keyup', (event) => {
       if (event.key === "Escape") {
-        newHelpModal.style.display = "none";
-
-        helpCards[0].style.display = "flex";
-        helpCards[1].style.display = "none";
-        helpCards[2].style.display = "none";
+        newHelpModal.classList.add('d-none');
+        helpCards[1].classList.add('d-none');
+        helpCards[1].classList.add('d-none');
 
         btnPrev.style.visibility = "hidden";
         btnNext.style.visibility = "visible";
@@ -45,11 +42,9 @@ const helpPopup = () => {
 
     newHelpModal.addEventListener('click', (event) => {
       if (event.target == newHelpModal) {
-        newHelpModal.style.display = "none";
-
-        helpCards[0].style.display = "flex";
-        helpCards[1].style.display = "none";
-        helpCards[2].style.display = "none";
+        newHelpModal.classList.add('d-none');
+        helpCards[1].classList.add('d-none');
+        helpCards[1].classList.add('d-none');
 
         btnPrev.style.visibility = "hidden";
         btnNext.style.visibility = "visible";
@@ -62,26 +57,20 @@ const helpPopup = () => {
 
     btnNext.addEventListener('click', () => {
       counter += 1;
-      if (counter < 2) {
-        helpCards[counter - 1].style.display = "none";
-        helpCards[counter].style.display = "block";
+      if (counter == 1) {
+        helpCards[counter - 1].classList.add('d-none');
+        helpCards[counter].classList.remove('d-none');
         btnPrev.style.visibility = "visible";
-      } else {
         btnNext.style.visibility = "hidden";
-        helpCards[counter - 1].style.display = "none";
-        helpCards[counter].style.display = "block";
       };
     });
 
     btnPrev.addEventListener('click', () => {
       counter -= 1;
-      if (counter > 0) {
-        helpCards[counter + 1].style.display = "none";
-        helpCards[counter].style.display = "block";
+      if (counter == 0) {
+        helpCards[counter + 1].classList.add('d-none');
+        helpCards[counter].classList.remove('d-none');
         btnNext.style.visibility = "visible";
-      } else {
-        helpCards[counter + 1].style.display = "none";
-        helpCards[counter].style.display = "flex";
         btnPrev.style.visibility = "hidden";
       };
     });
