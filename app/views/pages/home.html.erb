@@ -1,12 +1,12 @@
-<div class="body-white-bg">
+<div class="home-body">
   <div class="home-carousel-container" >
 
-    <%= image_tag('btn-back.svg', class: 'home-btn-back', id: 'prevBtn') %>
-
     <div class="home-first-item">
-      <%= image_tag('home.svg', class:'carousel-img-0') %>
-      <h2>Cooking school at your fingertips</h2>
-      <p>Learn. Cook. Have Fun.</p>
+      <div class="home-header">
+        <%= image_tag('home.svg', class:'carousel-img-0') %>
+        <h2>Cooking school at your fingertips</h2>
+        <p>Learn. Cook. Have Fun.</p>
+      </div>
 
       <div class="carousel-primary-btns">
         <%= link_to 'Register', new_user_registration_path, class: 'primary-btn'  %>

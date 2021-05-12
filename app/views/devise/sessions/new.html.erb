@@ -3,40 +3,44 @@
 <div class="body-white-bg">
   <div class="form-devise register-devise">
 
-    <div class="devise-header mb-3">
-      <h2>Welcome back!</h2>
-      <%= image_tag('devise-login.svg', class: 'devise-img') %>
-    </div>
+    <div class="wrapper-registration">
+      <div class="devise-header">
+        <h2 class="mb-3">Welcome back!</h2>
+        <%= image_tag('devise-login.svg', class: 'devise-img') %>
+      </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+      <div class="wrapper-form">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    label: false,
-                    placeholder: 'Email',
-                    input_html: { autocomplete: "email" } %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        label: false,
+                        placeholder: 'Email',
+                        input_html: { autocomplete: "email" } %>
 
-        <div class="password-holder">
-          <i class="far fa-eye-slash toggle-password"></i>
-          <%= f.input :password,
-                      required: true,
-                      label: false,
-                      placeholder: 'Password',
-                      input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <div class="password-holder">
+              <i class="far fa-eye-slash toggle-password"></i>
+              <%= f.input :password,
+                          required: true,
+                          label: false,
+                          placeholder: 'Password',
+                          input_html: { autocomplete: "current-password", class: "my-password mb-2" } %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+          </div>
+
+          <div class="form-actions double-btn mt-3">
+            <%= f.button :submit, "Log In", class: 'primary-btn' %>
+          </div>
+        <% end %>
+
+        <div class="devise-extra-links mt-4">
+          <p class="text-center">Forgot your password?<br><%= link_to "Get recovery email", new_user_password_path, class: 'devise-p' %></p>
+          <p class="text-center">Don't have an account?<br><%= link_to "Sign Up", new_user_registration_path, class: 'devise-p'  %></p>
         </div>
       </div>
-
-      <div class="form-actions double-btn mt-3">
-        <%= f.button :submit, "Log In", class: 'primary-btn' %>
-      </div>
-    <% end %>
-
-    <div class="devise-extra-links mt-4">
-      <p class="text-center">Forgot your password?<br><%= link_to "Get recovery email", new_user_password_path, class: 'devise-p' %></p>
-      <p class="text-center">Don't have an account?<br><%= link_to "Sign Up", new_user_registration_path, class: 'devise-p'  %></p>
     </div>
   </div>
 </div>
