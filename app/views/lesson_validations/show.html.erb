@@ -9,3 +9,48 @@
     <div class="lesson-validation-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= image_path("#{@lesson_validation.recipe.photo_url}") %>')"></div>
   <% end %>
 </div>
+
+<div class="lesson-validation-cards-container">
+
+  <div class="lesson-validation-card-animation">
+    <%= image_tag('level-up.svg', id: 'levelUpIcon') %>
+    <h2>Congrats, you just finished a lesson!</h2>
+    <%= render 'lesson_validations/celebration' %>
+  </div>
+
+  <div class="lesson-validation-card-awards">
+    <div class="validation-text">
+      <h2>Lesson Completed</h2>
+      <p>You've earned</p>
+    </div>
+    <div class="lesson-validation-awards-container">
+      <div class="award">
+        <%= image_tag('nb-xp.svg') %>
+        <h3 class="xp-p">+<%= @lesson_validation.photo.attached? ? @lesson_validation.lesson.xp : @lesson_validation.lesson.xp / 2 %></h3>
+      </div>
+      <div class="award">
+        <%= image_tag('nb-dish.svg') %>
+        <h3 class="dish-p">+<%= @lesson_validation.lesson.recipes.count %> dishes</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson-validation-card-badges">
+    <div class="validation-text">
+      <h2>Lesson Completed</h2>
+      <p>You've earned</p>
+    </div>
+    <div class="lesson-validation-badges-container">
+      <% @lesson_validation.lesson.skill_chapters.each do |skill| %>
+        <div class="badge-item">
+          <%= image_tag("#{skill.badge.bronze}", class: 'badge1') %>
+          <%= image_tag("#{skill.badge.icon}", class: 'badge2') %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to root_path do %>
+      <p class="primary-btn">Continue</p>
+    <% end %>
+  </div>
+
+</div>
