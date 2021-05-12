@@ -31,7 +31,7 @@ class User < ApplicationRecord
   enum level: [ "dishwasher", "newbie", "chef in progress", "chef of party", "sous chef", "master chef" ]
 
   validates :first_name, presence: true
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, length: { maximum: 16, message: "shouldn't be longer than 15 characters" }
   validates :terms_of_service, acceptance: true
 
   after_create :set_username
@@ -75,9 +75,9 @@ class User < ApplicationRecord
 
   def create_username
     # Method to generate a random username
-    nouns = %w( Happy Crazy Amazing Cool Lovely Cheery Glorious )
-    foods = %w( Carrot Potato Spinach Garlic Broccoli Zucchini Mushroom )
-    "#{nouns.sample}#{foods.sample}#{rand(1..10000)}"
+    nouns = %w( Happy Crazy Juicy Cool Cheery Glorious )
+    foods = %w( Mango Kiwi Onion Lemon Peach Chili Basil )
+    "#{nouns.sample}#{foods.sample}#{rand(1..99)}"
   end
 
   def set_username
@@ -90,11 +90,20 @@ class User < ApplicationRecord
     self.save
   end
 
+  def username_pattern
+    self.username = self.username.gsub(" ", "_")
+    self.save
+  end
+
   def check_username_presence
     # Checks if user has a username, in case user edits profile and assigns an empty string as username
     # If user doesn't have username, then calls set username function
     # Method is called whenever user updates profile
-    set_username if !(self.username) || self.username == ""
+    if !(self.username) || self.username == "" || self.username == " "
+      set_username
+    elsif self.username.split("").include?(" ")
+      username_pattern
+    end
   end
 
   def welcome_currencies
