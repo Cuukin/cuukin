@@ -2,6 +2,9 @@ class UserRecipe < ApplicationRecord
   belongs_to :user
   belongs_to :recipe
 
+  has_many :recipe_ingredients, through: :recipe
+  has_many :ingredient, through: :recipe_ingredients
+
   has_one_attached :photo
 
   enum difficulcy: { easy: 0, medium: 1, hard: 2 }
@@ -12,9 +15,9 @@ class UserRecipe < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    # against: [ :title, :synopsis ],
     associated_against: {
-      recipe: [ :title ]
+      recipe: :title,
+      ingredient: :name
     },
     using: {
       tsearch: { prefix: true }

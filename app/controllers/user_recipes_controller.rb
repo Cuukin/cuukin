@@ -2,16 +2,14 @@ class UserRecipesController < ApplicationController
   before_action :set_user_recipe, only: [ :edit, :update, :archive ]
 
   def index
+    @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
+    @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
+
     if params[:query].present?
-      @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
-      @completed_recipes = UserRecipe.global_search(params[:query]).select {|user_recipe| user_recipe.user == current_user}
+      @search_recipes = UserRecipe.global_search(params[:query]).select {|user_recipe| user_recipe.user == current_user}
       respond_to do |format|
         format.js { render partial: 'search_results'}
       end
-      puts "this is yo params #{params[:query]}"
-    else
-      @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
-      @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
     end
 
     authorize @completed_recipes, policy_class: UserRecipePolicy

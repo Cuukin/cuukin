@@ -17,12 +17,21 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control search-form-control",
-          placeholder: "Find a recipe" %>
+          placeholder: "Find a recipe by title or ingredient" %>
         <%= submit_tag "Search", class: "primary-btn", id: 'searchRecipe' %>
       </div>
     <% end %>
-    <%= render 'unlocked_recipes' %>
-    <%= render 'completed_recipes' %>
+
+    <div class="recipes-cards-container" id="completedRecipes">
+      <%= render 'completed_recipes' %>
+    </div>
+
+    <div class="recipes-cards-container d-none" id="unlockedRecipes">
+      <%= render 'unlocked_recipes' %>
+    </div>
+
+    <div class="recipes-cards-container d-none" id="searchedRecipes">
+    </div>
   <% end %>
 
 </div>

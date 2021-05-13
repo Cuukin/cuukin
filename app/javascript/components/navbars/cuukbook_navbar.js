@@ -5,6 +5,9 @@ const cuukbookNavbar = () => {
   const completedBtn = document.querySelector('#completedBtn');
   const completedContainer = document.querySelector('#completedRecipes');
 
+  const searchInput = document.querySelector('.search-form-control');
+  const searchRecipe = document.querySelector('#searchedRecipes');
+
   if (completedContainer) {
     if (unlockedContainer.classList.contains('d-none')) {
       unlockedBtn.addEventListener('click', () => {
@@ -12,12 +15,16 @@ const cuukbookNavbar = () => {
         completedBtn.classList.remove('recipe-navbar-active');
         unlockedContainer.classList.remove('d-none');
         completedContainer.classList.add('d-none');
+        searchRecipe.classList.add('d-none');
+        searchInput.value = "";
       });
       completedBtn.addEventListener('click', () => {
         unlockedBtn.classList.remove('recipe-navbar-active');
         completedBtn.classList.add('recipe-navbar-active');
         unlockedContainer.classList.add('d-none');
         completedContainer.classList.remove('d-none');
+        searchRecipe.classList.add('d-none');
+        searchInput.value = "";
       });
     };
   };
