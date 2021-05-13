@@ -1,10 +1,10 @@
 <% @completed_recipes.each do |user_recipe| %>
 
-  <div class="recipe-diary-modal userRecipe<%= user_recipe.id %>">
+  <div class="recipe-diary-modal" data-user-recipe="<%= user_recipe.id %>">
     <%= render user_recipe %>
   </div>
 
-  <div class="recipe-card open-recipe-card" id="userRecipe<%= user_recipe.id %>">
+  <div class="recipe-card open-recipe-card" data-user-recipe="<%= user_recipe.id %>">
     <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
       <% if user_recipe.recipe.external_url %>
         <div class="recipe-card-info-url">

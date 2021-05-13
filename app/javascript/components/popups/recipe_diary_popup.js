@@ -1,9 +1,11 @@
 const recipeDiaryPopup = () => {
-  const recipesCards = document.querySelectorAll('.open-recipe-card');
+  const completedRecipesContainer = document.querySelector('#completedRecipes');
+  const searchedRecipesContainer = document.querySelector('#searchedRecipes');
 
-  if (recipesCards) {
+  if (completedRecipesContainer && !completedRecipesContainer.classList.contains('d-none')) {
+    let recipesCards = completedRecipesContainer.querySelectorAll('.open-recipe-card');
     recipesCards.forEach((card) => {
-      let recipeModal = document.querySelector(`.${card.id}`);
+      let recipeModal = completedRecipesContainer.querySelector(`[data-user-recipe="${card.getAttribute('data-user-recipe')}"]`);
       let closeBtn = recipeModal.querySelector('.recipe-diary-modal-close-btn');
 
       card.addEventListener('click', () => {
