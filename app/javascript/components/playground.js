@@ -1,53 +1,26 @@
-const playground = () => {
-  const swipeArea = document.querySelector('.touch-area-container');
+// const playground = () => {
+//   const completedRecipesContainer = document.querySelector('#completedRecipes');
+//   const unlockedRecipesContainer = document.querySelector('#unlockedRecipes');
 
-  if (swipeArea) {
-    swipeArea.addEventListener('touchstart', handleTouchStart, false);
-    swipeArea.addEventListener('touchmove', handleTouchMove, false);
+//   if (completedRecipesContainer) {
+//     const searchRecipesContainer = document.querySelector('#searchedRecipes');
+//     const searchInput = document.querySelector('.search-form-control');
+//     const searchBtn = document.querySelector('#searchRecipe');
 
-    let xDown = null;
-    let yDown = null;
+//     document.addEventListener('keyup', (event) => {
+//       searchBtn.click();
 
-    function getTouches(evt) {
-      return evt.touches ||             // browser API
-             evt.originalEvent.touches; // jQuery
-    }
+//       if (searchInput.value == "") {
+//         searchRecipesContainer.classList.add('d-none');
 
-    function handleTouchStart(evt) {
-        const firstTouch = getTouches(evt)[0];
-        xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
-    };
+//         if (completedRecipesContainer.classList.contains('d-none')) {
+//           unlockedRecipesContainer.classList.remove('d-none');
+//         } else {
+//           completedRecipesContainer.classList.remove('d-none');
+//         };
+//       };
+//     });
+//   };
+// };
 
-    function handleTouchMove(evt) {
-        if ( ! xDown || ! yDown ) {
-            return;
-        }
-
-        let xUp = evt.touches[0].clientX;
-        let yUp = evt.touches[0].clientY;
-
-        let xDiff = xDown - xUp;
-        let yDiff = yDown - yUp;
-
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            if ( xDiff > 0 ) {
-                console.log('left swipe');
-            } else {
-                console.log('right swipe');
-            }
-        } else {
-            if ( yDiff > 0 ) {
-                /* up swipe */
-            } else {
-                /* down swipe */
-            }
-        }
-        /* reset values */
-        xDown = null;
-        yDown = null;
-    };
-  };
-};
-
-export { playground };
+// export { playground };

@@ -1,4 +1,4 @@
-<div class="recipe-diary-modal-content" data-user-recipe="<%= user_recipe.id %>">
+<div class="recipe-diary-modal-content" data-user-recipe-modal="<%= user_recipe.id %>">
   <%= image_tag('btn-close-rounded.svg', class: 'recipe-diary-modal-close-btn') %>
 
   <h1>Recipe Diary Entry</h1>
@@ -45,7 +45,7 @@
 
   <div class="recipe-diary-notes">
     <h3>Your notes</h3>
-    <% if user_recipe.notes.empty? %>
+    <% unless user_recipe.notes && user_recipe.notes.empty? %>
       <p>Looks like you didn't leave any notes :(</p>
     <% else %>
       <p><%= user_recipe.notes %></p>

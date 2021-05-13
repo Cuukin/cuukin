@@ -5,21 +5,26 @@ const cuukbookNavbar = () => {
   const completedBtn = document.querySelector('#completedBtn');
   const completedContainer = document.querySelector('#completedRecipes');
 
-  if (completedContainer) {
-    unlockedContainer.style.display = "none";
+  const searchInput = document.querySelector('.search-form-control');
+  const searchRecipe = document.querySelector('#searchedRecipes');
 
-    if (unlockedContainer.style.display == "none") {
+  if (completedContainer) {
+    if (unlockedContainer.classList.contains('d-none')) {
       unlockedBtn.addEventListener('click', () => {
         unlockedBtn.classList.add('recipe-navbar-active');
         completedBtn.classList.remove('recipe-navbar-active');
-        unlockedContainer.style.display = "flex";
-        completedContainer.style.display = "none";
+        unlockedContainer.classList.remove('d-none');
+        completedContainer.classList.add('d-none');
+        searchRecipe.classList.add('d-none');
+        searchInput.value = "";
       });
       completedBtn.addEventListener('click', () => {
         unlockedBtn.classList.remove('recipe-navbar-active');
         completedBtn.classList.add('recipe-navbar-active');
-        unlockedContainer.style.display = "none";
-        completedContainer.style.display = "flex";
+        unlockedContainer.classList.add('d-none');
+        completedContainer.classList.remove('d-none');
+        searchRecipe.classList.add('d-none');
+        searchInput.value = "";
       });
     };
   };

@@ -1,4 +1,4 @@
-<% @unlocked_recipes.each do |user_recipe| %>
+<% @search_recipes.each do |user_recipe| %>
 
   <div class="recipe-card" id="userRecipe<%= user_recipe.id %>">
     <%= link_to recipe_path(user_recipe.recipe) do %>

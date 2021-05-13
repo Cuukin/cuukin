@@ -53,6 +53,7 @@ import { showNutriData } from '../components/recipes/show_nutri_data';
 import { recipeEditor } from '../components/recipes/recipe_editor';
 import { addToGrocery } from '../components/recipes/add_to_grocery';
 import { groceryListPage } from '../components/recipes/grocery_list_page';
+import { recipeSearch } from '../components/recipes/recipe_search';
 
 document.addEventListener('turbolinks:load', () => {
   // playground();
@@ -81,6 +82,7 @@ document.addEventListener('turbolinks:load', () => {
   addToGrocery();
   recipeMethods();
   groceryListPage();
+  recipeSearch();
 
   // Validations
   checkRecipeInput();
