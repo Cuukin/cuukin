@@ -2,6 +2,9 @@ const recipeSearch = () => {
   const completedRecipesContainer = document.querySelector('#completedRecipes');
   const unlockedRecipesContainer = document.querySelector('#unlockedRecipes');
 
+  const unlockedBtn = document.querySelector('#unlockedBtn');
+  const completedBtn = document.querySelector('#completedBtn');
+
   if (completedRecipesContainer) {
     const searchRecipesContainer = document.querySelector('#searchedRecipes');
     const searchInput = document.querySelector('.search-form-control');
@@ -13,10 +16,10 @@ const recipeSearch = () => {
       if (searchInput.value == "") {
         searchRecipesContainer.classList.add('d-none');
 
-        if (completedRecipesContainer.classList.contains('d-none')) {
-          unlockedRecipesContainer.classList.remove('d-none');
-        } else {
+        if (completedBtn.classList.contains('recipe-navbar-active')) {
           completedRecipesContainer.classList.remove('d-none');
+        } else {
+          unlockedRecipesContainer.classList.remove('d-none');
         };
       };
     });
