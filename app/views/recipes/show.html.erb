@@ -172,22 +172,22 @@
     </div>
 
     <% if @validated && !@user_recipe.completed %>
+      <div class="container-user-recipe-validation">
+        <hr>
+        <h3 class="text-center">Already done this recipe?</h3>
+        <p class="text-center">Upload a photo to gain extra rewards</p>
 
-      <hr>
-      <h3 class="text-center">Already done this recipe?</h3>
-      <p class="text-center">Upload a photo to gain extra rewards</p>
-
-      <div class="lesson-overview-validation-cards">
-        <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoBtn">
-          <%= image_tag('lv-input-nophoto.svg') %>
-          <p>Oops, I already ate it</p>
-        </div>
-        <div class="lv-card with-photo ml-1" id="validateLessonBtn">
-          <%= image_tag('lv-input-photo.svg') %>
-          <p>Upload a photo</p>
+        <div class="lesson-overview-validation-cards">
+          <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoBtn">
+            <%= image_tag('lv-input-nophoto.svg') %>
+            <p>Oops, I already ate it</p>
+          </div>
+          <div class="lv-card with-photo ml-1" id="validateLessonBtn">
+            <%= image_tag('lv-input-photo.svg') %>
+            <p>Upload a photo</p>
+          </div>
         </div>
       </div>
-
     <% end %>
 
   </div>

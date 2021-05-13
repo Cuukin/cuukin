@@ -190,6 +190,12 @@ const recipeEditor = () => {
         };
       });
 
+      swapModal.addEventListener('click', (event) => {
+        if (event.target == swapModal) {
+          swapModal.style.display = "none";
+        };
+      });
+
       swapIngredientBtns.forEach((swapIngredient) => {
 
         swapIngredient.addEventListener('click', () => {
