@@ -10,6 +10,16 @@ class UserRecipe < ApplicationRecord
 
   before_save :define_photo_present
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    # against: [ :title, :synopsis ],
+    associated_against: {
+      recipe: [ :title ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
   private
 
   def define_photo_present

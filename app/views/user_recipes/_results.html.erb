@@ -1,0 +1,26 @@
+<div class="recipes-cards-container" id="completedRecipes">
+  <% @completed_recipes.each do |user_recipe| %>
+
+    <div class="recipe-card open-recipe-card" id="userRecipe<%= user_recipe.id %>">
+      <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
+        <% if user_recipe.recipe.external_url %>
+          <div class="recipe-card-info-url">
+            <%= image_tag('recipe-url.svg') %>
+            <p>BBC Foods</p>
+          </div>
+        <% else %>
+          <div class="recipe-card-info-suggested">
+            <%= image_tag('kin-circle.svg') %>
+            <p>Suggested</p>
+          </div>
+        <% end %>
+        <div class="recipe-card-info-time">
+          <%= image_tag('recipe-time.svg') %>
+          <p><%= user_recipe.recipe.prep_time %></p>
+        </div>
+      </div>
+      <p><%= user_recipe.recipe.title %></p>
+    </div>
+
+  <% end %>
+</div>

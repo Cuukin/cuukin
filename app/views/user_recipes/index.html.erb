@@ -11,38 +11,19 @@
 
   <% if @completed_recipes.empty? %>
     <p class="text-center">Oops, you don't have any recipes yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+  <% else %>
+    <%= form_tag(user_recipes_path, method: :get, remote: true) do %>
+      <div class="search-double-form">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-form-control",
+          placeholder: "Find a recipe" %>
+        <%= submit_tag "Search", class: "primary-btn", id: 'searchRecipe' %>
+      </div>
+    <% end %>
+    <%= render 'unlocked_recipes' %>
+    <%= render 'completed_recipes' %>
   <% end %>
 
-  <%= render 'unlocked_recipes' %>
-
-  <div class="recipes-cards-container" id="completedRecipes">
-    <% @completed_recipes.each do |user_recipe| %>
-      <div class="recipe-diary-modal userRecipe<%= user_recipe.id %>">
-        <%= render user_recipe %>
-      </div>
-
-      <div class="recipe-card open-recipe-card" id="userRecipe<%= user_recipe.id %>">
-        <div class="recipe-card-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= image_path("#{user_recipe.recipe.photo_url}") %>')">
-          <% if user_recipe.recipe.external_url %>
-            <div class="recipe-card-info-url">
-              <%= image_tag('recipe-url.svg') %>
-              <p>BBC Foods</p>
-            </div>
-          <% else %>
-            <div class="recipe-card-info-suggested">
-              <%= image_tag('kin-circle.svg') %>
-              <p>Suggested</p>
-            </div>
-          <% end %>
-          <div class="recipe-card-info-time">
-            <%= image_tag('recipe-time.svg') %>
-            <p><%= user_recipe.recipe.prep_time %></p>
-          </div>
-        </div>
-        <p><%= user_recipe.recipe.title %></p>
-      </div>
-
-    <% end %>
-  </div>
 </div>
 
