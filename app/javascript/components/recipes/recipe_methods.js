@@ -137,10 +137,6 @@ const swipe = () => {
         yDown = firstTouch.clientY;
     };
 
-    if (methodsCards[methodsCards.length - 1].style.display !== "block") {
-
-    };
-
     function handleTouchMove(evt) {
       if ( ! xDown || ! yDown ) {
         return;
