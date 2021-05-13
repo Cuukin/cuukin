@@ -1,15 +1,13 @@
-let counter = 0;
-
-// large containers
-const methodsContainer = document.querySelector('.recipe-methods-container');
-const recipeOverview = document.querySelector('.container-recipe-overview');
-
-// method cards
-const methodsCards = document.querySelectorAll('.recipe-method-card');
-const progressBar = document.querySelector('.meter-progression');
-const nextBtn = document.querySelector('#nextMethod');
-
 const recipeMethods = () => {
+  let counter = 0;
+
+  // large containers
+  const methodsContainer = document.querySelector('.recipe-methods-container');
+  const recipeOverview = document.querySelector('.container-recipe-overview');
+
+  const methodsCards = document.querySelectorAll('.recipe-method-card');
+  const progressBar = document.querySelector('.meter-progression');
+  const nextBtn = document.querySelector('#nextMethod');
   const makeRecipe = document.querySelector('#makeRecipe');
 
   if (makeRecipe) {
@@ -113,9 +111,9 @@ const recipeMethods = () => {
       };
     });
   };
-};
 
-const swipe = () => {
+  // SWIPE
+
   const swipeArea = document.querySelector('.recipe-methods-container-cards');
 
   if (swipeArea) {
@@ -192,7 +190,87 @@ const swipe = () => {
       yDown = null;
     };
   };
+
 };
 
+// const swipe = () => {
+//   const swipeArea = document.querySelector('.recipe-methods-container-cards');
 
-export { recipeMethods, swipe };
+//   if (swipeArea) {
+//     swipeArea.addEventListener('touchstart', handleTouchStart, {passive: true});
+//     swipeArea.addEventListener('touchmove', handleTouchMove, {passive: true});
+
+//     let totalItems = methodsCards.length;
+
+//     let xDown = null;
+//     let yDown = null;
+
+//     function getTouches(evt) {
+//       return evt.touches
+//     };
+
+//     function handleTouchStart(evt) {
+//         const firstTouch = getTouches(evt)[0];
+//         xDown = firstTouch.clientX;
+//         yDown = firstTouch.clientY;
+//     };
+
+//     function handleTouchMove(evt) {
+//       if ( ! xDown || ! yDown ) {
+//         return;
+//       }
+
+//       let xUp = evt.touches[0].clientX;
+//       let yUp = evt.touches[0].clientY;
+
+//       let xDiff = xDown - xUp;
+//       let yDiff = yDown - yUp;
+
+//       if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+//           if ( xDiff > 0 ) {
+//             counter += 1;
+//             if (counter >= methodsCards.length) {
+//               counter = methodsCards.length - 1;
+//               nextBtn.style.pointerEvents = "none";
+//             } else {
+//               window.scrollTo({top: 0});
+//               methodsCards[counter - 1].style.display = "none";
+//               methodsCards[counter - 1].querySelector('.methodVideo').pause();
+//               methodsCards[counter].style.display = "block";
+//               let progressBarWidth = 100 * (counter + 1) / totalItems;
+//               progressBar.style.width = progressBarWidth + '%';
+//             };
+//           } else {
+//             counter -= 1;
+//             window.scrollTo({top: 0});
+//             nextBtn.style.pointerEvents = "auto";
+//             if (counter == -1) {
+//               counter = 0;
+//               recipeOverview.style.display = "block";
+//               methodsContainer.style.display = "none";
+//               methodsCards[counter].style.display = "none";
+//               methodsCards[counter].querySelector('.methodVideo').pause();
+//             } else {
+//               methodsCards[counter + 1].style.display = "none";
+//               methodsCards[counter + 1].querySelector('.methodVideo').pause();
+//               methodsCards[counter].style.display = "block";
+//               let progressBarWidth = 100 * (counter + 1) / totalItems;
+//               progressBar.style.width = progressBarWidth + '%';
+//             };
+//           };
+//       } else {
+//           if ( yDiff > 0 ) {
+//               /* up swipe */
+//           } else {
+//               /* down swipe */
+//           };
+//       };
+//       /* reset values */
+//       xDown = null;
+//       yDown = null;
+//     };
+//   };
+// };
+
+
+export { recipeMethods };

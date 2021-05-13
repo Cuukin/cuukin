@@ -48,7 +48,7 @@ import { closeLessonValidation } from '../components/validations/close_lesson_va
 import { lessonAnimation } from '../components/validations/lesson_animation';
 
 // Recipe
-import { recipeMethods, swipe } from '../components/recipes/recipe_methods';
+import { recipeMethods } from '../components/recipes/recipe_methods';
 import { showNutriData } from '../components/recipes/show_nutri_data';
 import { recipeEditor } from '../components/recipes/recipe_editor';
 import { addToGrocery } from '../components/recipes/add_to_grocery';
@@ -81,7 +81,6 @@ document.addEventListener('turbolinks:load', () => {
   addToGrocery();
   recipeMethods();
   groceryListPage();
-  swipe();
 
   // Validations
   checkRecipeInput();
