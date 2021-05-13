@@ -152,11 +152,21 @@
   }
 }
 
-// @media (max-width: 370px) {
-//   .recipes-navbar {
-//     h4 {
-//       font-size: 16px;
-//       max-width: 100px;
-//     }
-//   }
-// }
+.search-double-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .search-form-control {
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 15px;
+    height: auto;
+    margin: 0 2px;
+  }
+  .primary-btn {
+    width: 90px;
+    margin: 0 2px;
+  }
+}
