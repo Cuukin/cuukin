@@ -66,10 +66,6 @@ const recipeMethods = () => {
     prevMethod.addEventListener('click', () => {
       counter -= 1;
       nextBtn.style.pointerEvents = "auto";
-      // nextMethods.forEach((nextMethod) => {
-      //   nextMethod.style.pointerEvents = "auto";
-      // });
-      window.scrollTo({top: 0});
 
       if (counter == -1) {
         counter = 0;
@@ -77,7 +73,9 @@ const recipeMethods = () => {
         methodsContainer.style.display = "none";
         methodsCards[counter].style.display = "none";
         methodsCards[counter].querySelector('.methodVideo').pause();
+        window.scrollTo({top: 680});
       } else {
+        window.scrollTo({top: 0});
         methodsCards[counter + 1].style.display = "none";
         methodsCards[counter + 1].querySelector('.methodVideo').pause();
         methodsCards[counter].style.display = "block";
@@ -93,7 +91,6 @@ const recipeMethods = () => {
         // nextMethods.forEach((nextMethod) => {
         //   nextMethod.style.pointerEvents = "auto";
         // });
-        window.scrollTo({top: 0});
 
         if (counter == -1) {
           counter = 0;
@@ -101,7 +98,9 @@ const recipeMethods = () => {
           methodsContainer.style.display = "none";
           methodsCards[counter].style.display = "none";
           methodsCards[counter].querySelector('.methodVideo').pause();
+          window.scrollTo({top: 680});
         } else {
+          window.scrollTo({top: 0});
           methodsCards[counter + 1].style.display = "none";
           methodsCards[counter + 1].querySelector('.methodVideo').pause();
           methodsCards[counter].style.display = "block";
@@ -151,6 +150,13 @@ const recipeMethods = () => {
             counter += 1;
             if (counter >= methodsCards.length) {
               counter = methodsCards.length - 1;
+            } else if (counter >= methodsCards.length - 1) {
+              window.scrollTo({top: 0});
+              methodsCards[counter - 1].style.display = "none";
+              methodsCards[counter - 1].querySelector('.methodVideo').pause();
+              methodsCards[counter].style.display = "block";
+              let progressBarWidth = 100 * (counter + 1) / totalItems;
+              progressBar.style.width = progressBarWidth + '%';
               nextBtn.style.pointerEvents = "none";
             } else {
               window.scrollTo({top: 0});
@@ -162,7 +168,6 @@ const recipeMethods = () => {
             };
           } else {
             counter -= 1;
-            window.scrollTo({top: 0});
             nextBtn.style.pointerEvents = "auto";
             if (counter == -1) {
               counter = 0;
@@ -170,7 +175,9 @@ const recipeMethods = () => {
               methodsContainer.style.display = "none";
               methodsCards[counter].style.display = "none";
               methodsCards[counter].querySelector('.methodVideo').pause();
+              window.scrollTo({top: 680});
             } else {
+              window.scrollTo({top: 0});
               methodsCards[counter + 1].style.display = "none";
               methodsCards[counter + 1].querySelector('.methodVideo').pause();
               methodsCards[counter].style.display = "block";
