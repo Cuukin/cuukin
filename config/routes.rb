@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   # Users
 
-  devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
+  devise_for :users, controllers: { confirmations: 'confirmations', omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations', sessions: 'sessions' }
+
   resources :users, only: [ :show, :edit, :update, :index ] do
     member do
       post :follow
