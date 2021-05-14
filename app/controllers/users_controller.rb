@@ -6,9 +6,11 @@ class UsersController < ApplicationController
     authorize @users
     @top_3 = @users.first(3)
     @top_7 = @users - @top_3
+    @feedback = Feedback.new
   end
 
   def show
+    @feedback = Feedback.new
     authorize @user
     # @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
     # @users = User.order(xp: :desc)
@@ -32,6 +34,7 @@ class UsersController < ApplicationController
     authorize @user
     @user_awards = UserAward.where(user: current_user).includes(:award)
     @user_badges = UserBadge.where(user: current_user).group_by {|ub| ub.badge.category}
+    @feedback = Feedback.new
   end
 
   def follow

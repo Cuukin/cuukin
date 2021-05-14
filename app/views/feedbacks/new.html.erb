@@ -1,0 +1,12 @@
+<div class="feedback-modal d-none" id="feedbackModal">
+  <div class="feedback-modal-content">
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
+
+    <%= render @feedback %>
+
+    <div class="feedback-sent d-none">
+      <h1>Thank you <i class="fas fa-heart"></i></h1>
+      <p>Your feedback was recorded.</p>
+    </div>
+  </div>
+</div>

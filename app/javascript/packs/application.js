@@ -27,6 +27,7 @@ import { previewImageOnFileSelect } from '../components/global_forms/photo_previ
 import { termsOfService } from '../components/global_forms/terms_of_service';
 import { editWeeklyCommitment } from '../components/global_forms/edit_weekly_commitment';
 import { onboardingSegmentationForm } from '../components/global_forms/onboarding_segmentation_form';
+import { feedback } from '../components/global_forms/feedback';
 
 // Pop Ups
 import { currenciesPopup } from '../components/popups/currency_popup';
@@ -96,6 +97,7 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   onboardingSegmentationForm();
   editWeeklyCommitment();
+  feedback();
 
   // Global Buttons
   preventSelectDoubleClick();

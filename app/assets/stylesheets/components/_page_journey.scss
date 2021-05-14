@@ -51,12 +51,12 @@
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1000px) {
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
     width: 100vw;
   }
-  .btn-open-help {
+  .btn-open-help, .btn-open-feedback {
     right: 24px;
   }
 }

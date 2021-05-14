@@ -9,6 +9,9 @@
 
 <div class="container-lesson-overview">
 
+  <%= render template: 'feedbacks/new' %>
+  <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
+
   <div class="lesson-overview-navbar">
     <%= link_to book_path(@lesson.book) do %>
       <%= image_tag('btn-back.svg') %>
