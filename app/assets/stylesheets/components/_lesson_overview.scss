@@ -206,6 +206,7 @@
   cursor: pointer;
 
   p {
+    font-size: 14px;
     margin: 0;
     text-align: center;
   }
@@ -217,7 +218,7 @@
 }
 
 .without-photo {
-  background: $white;
+  background: transparent;
   -webkit-box-shadow:inset 0px 0px 0px 1px $dark-gray;
   -moz-box-shadow:inset 0px 0px 0px 1px $dark-gray;
   box-shadow:inset 0px 0px 0px 1px $dark-gray;

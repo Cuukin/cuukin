@@ -10,6 +10,33 @@
   padding-bottom: 280px;
 }
 
+.container-user-recipe-validation {
+  position: fixed;
+  bottom: -230px;
+  width: 500px;
+  background-color: $light-gray;
+  padding: 16px 16px 32px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 2px 0px 6px rgba(30,30,30,0.4);
+  cursor: pointer;
+
+  i {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: $gray;
+    margin: 4px 0 22px;
+  }
+
+  .swipe-p {
+    font-size: 12px;
+    color: $gray;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
 // BUTTONS
 
 .recipe-overview-btn {
@@ -43,6 +70,27 @@
   cursor: pointer;
   transition: transform ease-in-out 0.4s;
   transform-origin: 50% 50%;
+}
+
+.grocery-btn-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#addToGrocery {
+  width: 188px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0 !important;
+  color: $dark-gray;
+  font-size: 14px;
+
+  i {
+    margin-right: 8px;
+  }
 }
 
 // RECIPE OVERVIEW DETAILS
@@ -372,7 +420,7 @@
 
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
-  .container-recipe-overview, .recipe-photo, .recipe-overview-btn {
+  .container-recipe-overview, .recipe-photo, .recipe-overview-btn, .container-user-recipe-validation {
     width: 100vw;
   }
 }
