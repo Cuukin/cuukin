@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
     first?
 
     @grocery_list_item = GroceryListItem.new
+    @feedback = Feedback.new
 
     authorize @recipe, policy_class: RecipePolicy
   end
