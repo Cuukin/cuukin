@@ -82,6 +82,7 @@ const groceryListPage = () => {
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
+      copyList.innerText = "Copied to Clipboard";
     });
   };
 };
