@@ -1,12 +1,13 @@
-<div class="recipe-validation-modal" id="feedbackModal" style="display: block;">
-  <div class="recipe-validation-modal-content">
-    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn', id: 'closeValidateModal') %>
+<div class="feedback-modal d-none" id="feedbackModal">
+  <div class="feedback-modal-content">
+    <%= image_tag('btn-close-rounded.svg', class: 'modal-close-btn') %>
 
     <%= simple_form_for(@feedback, url: feedbacks_path(@feedback), method: 'post') do |f| %>
       <%= f.error_notification %>
 
         <h3>Let's talk!</h3>
-        <p>Thank you for using Cuukin. We would love to hear your amazing thoughts and suggestions.</p>
+        <p>Thank you for using Cuukin. We would love to hear any of your amazing thoughts and suggestions
+        to improve the product.</p>
 
         <%= f.input :email,
           labal: "Contact email",
@@ -14,9 +15,9 @@
 
         <%= f.input :description,
           label: "Leave a feedback",
-          input_html: { rows: '8' } %>
+          input_html: { rows: '8', id: 'feedbackInput' } %>
 
-        <%= f.button :submit, 'Send feedback', class: 'primary-btn' %>
+        <%= f.button :submit, 'Send feedback', class: 'disabled-btn', id: 'sendFeedbackBtn' %>
 
     <% end %>
   </div>
