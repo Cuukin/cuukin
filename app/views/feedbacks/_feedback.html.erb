@@ -1,0 +1,20 @@
+<div class="feedback-form">
+  <%= simple_form_for(@feedback, url: feedbacks_path(@feedback), method: 'post', remote: true) do |f| %>
+    <%= f.error_notification %>
+
+      <h3>Let's talk!</h3>
+      <p>Thank you for using Cuukin. We would love to hear any of your amazing thoughts and suggestions
+      to improve the product.</p>
+
+      <%= f.input :email,
+        labal: "Contact email",
+        input_html: {value: f.object.email || current_user.email} %>
+
+      <%= f.input :description,
+        label: "Leave a feedback",
+        input_html: { rows: '8', id: 'feedbackInput' } %>
+
+      <%= f.button :submit, 'Send feedback', class: 'disabled-btn', id: 'sendFeedbackBtn' %>
+
+  <% end %>
+</div>

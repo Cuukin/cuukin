@@ -1,8 +1,40 @@
 function renderFeedbackForm(feedbackFormHTML) {
-  const feedbackForm = document.querySelector(".feedback-form");
+  const feedbackModal = document.querySelector('.feedback-modal');
+  const feedbackForm = document.querySelector('.feedback-form');
+
   setTimeout(function() {
+    feedbackModal.classList.add('d-none');
     feedbackForm.outerHTML = feedbackFormHTML;
-  }, 3000);
+  }, 2000);
+
+  setTimeout(function() {
+    const newFeedbackForm = document.querySelector('.feedback-form');
+    const feedbackInput = document.querySelector('#feedbackInput');
+    const sendFeedback = document.querySelector('#sendFeedbackBtn');
+    const feedbackSent = document.querySelector('.feedback-sent');
+
+    sendFeedback.style.pointerEvents = "none";
+
+    document.addEventListener('keyup', (event) => {
+      console.log('a');
+      if (feedbackInput.value == "") {
+        sendFeedback.style.pointerEvents = "none";
+        sendFeedback.classList.add('disabled-btn');
+        sendFeedback.classList.remove('primary-btn');
+      } else {
+        sendFeedback.classList.remove('disabled-btn');
+        sendFeedback.classList.add('primary-btn');
+        sendFeedback.style.pointerEvents = "auto";
+      };
+    });
+
+    sendFeedback.addEventListener('click', (event) => {
+      if (feedbackInput.value !== "") {
+        newFeedbackForm.classList.add('d-none');
+        feedbackSent.classList.remove('d-none');
+      };
+    });
+  }, 2200);
 };
 
-renderArchive('<%= j render @feedback_form %>');
+renderFeedbackForm('<%= j render @feedback %>');

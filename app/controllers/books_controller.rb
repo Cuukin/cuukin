@@ -12,6 +12,7 @@ class BooksController < ApplicationController
     skipped_lessons(@validations)
     validated_lessons(@validations)
     authorize @lessons, policy_class: BookPolicy
+    @feedback = Feedback.new
   end
 
   private
