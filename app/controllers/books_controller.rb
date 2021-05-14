@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.where(id: 1).order(:id).includes(:lessons)
     @validations = LessonValidation.joins(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
+    @feedback = Feedback.new
   end
 
   def show

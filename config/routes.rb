@@ -46,6 +46,8 @@ Rails.application.routes.draw do
   resources :grocery_list_items, only: [ :create, :destroy ]
   resources :grocery_lists, only: [ :show, :update, :destroy ]
 
+  resources :feedbacks, only: [ :create ]
+
   # Static Pages
 
   get '/community', to: "pages#community"
