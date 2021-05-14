@@ -10,9 +10,6 @@
 
 <div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
-  <%= render template: 'feedbacks/new' %>
-  <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
-
   <div class="recipe-overview-btn">
     <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
       <%= link_to user_recipes_path do %>
