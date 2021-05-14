@@ -47,6 +47,7 @@ import { checkRecipeInput } from '../components/validations/check_recipe_input';
 import { openLessonValidation } from '../components/validations/open_lesson_validation';
 import { closeLessonValidation } from '../components/validations/close_lesson_validation';
 import { lessonAnimation } from '../components/validations/lesson_animation';
+import { recipeSwipeCard } from '../components/validations/recipe_swipe_card';
 
 // Recipe
 import { recipeMethods } from '../components/recipes/recipe_methods';
@@ -90,6 +91,7 @@ document.addEventListener('turbolinks:load', () => {
   openLessonValidation();
   closeLessonValidation();
   lessonAnimation();
+  recipeSwipeCard();
 
   // Global Forms
   termsOfService();

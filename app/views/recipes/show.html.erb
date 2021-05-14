@@ -92,6 +92,10 @@
         </table>
 
         <%= render 'recipes/grocery_list_item_builder', recipe_ingredients: @recipe.recipe_ingredients.order(:id), item: @grocery_list_item %>
+
+        <div class="grocery-btn-container">
+          <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery"><i class="fas fa-shopping-cart"></i> Add to Grocery</p>
+        </div>
       </div>
     <% end %>
 
@@ -159,7 +163,9 @@
     </div>
 
     <div class="double-btn">
-      <p class="secondary-btn mr-1 recipe-<%= @recipe.id %>" id="addToGrocery">Add to Grocery List</p>
+      <% if @validated && !@user_recipe.completed %>
+        <p class="secondary-btn" id="markAsComplete">Mark as Done</p>
+      <% end %>
       <% if @validated || @available || @first %>
         <% if @recipe.external_url %>
           <%= link_to "Make Recipe", @recipe.external_url, target: '_blank', class: 'primary-btn turquise-bg ml-1' %>
@@ -171,26 +177,27 @@
       <% end %>
     </div>
 
-    <% if @validated && !@user_recipe.completed %>
-      <div class="container-user-recipe-validation">
-        <hr>
-        <h3 class="text-center">Already done this recipe?</h3>
-        <p class="text-center">Upload a photo to gain extra rewards</p>
+  </div>
 
-        <div class="lesson-overview-validation-cards">
-          <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoBtn">
-            <%= image_tag('lv-input-nophoto.svg') %>
-            <p>Oops, I already ate it</p>
-          </div>
-          <div class="lv-card with-photo ml-1" id="validateLessonBtn">
-            <%= image_tag('lv-input-photo.svg') %>
-            <p>Upload a photo</p>
-          </div>
+  <% if @validated && !@user_recipe.completed %>
+    <div class="container-user-recipe-validation">
+      <p class="swipe-p">Swipe down or click to close</p>
+      <i class="far fa-arrow-alt-circle-down"></i>
+      <h3 class="text-center mt-2">Already done this recipe?</h3>
+      <p class="text-center">Upload a photo to gain extra rewards</p>
+
+      <div class="lesson-overview-validation-cards">
+        <div class="lv-card without-photo mr-1" id="validateLessonWithoutPhotoBtn">
+          <%= image_tag('lv-input-nophoto.svg') %>
+          <p>Oops, already ate it</p>
+        </div>
+        <div class="lv-card with-photo ml-1" id="validateLessonBtn">
+          <%= image_tag('lv-input-photo.svg') %>
+          <p>Upload a photo</p>
         </div>
       </div>
-    <% end %>
-
-  </div>
+    </div>
+  <% end %>
 </div>
 
 <!-- RECIPE METHODS -->
