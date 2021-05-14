@@ -1,0 +1,8 @@
+function renderFeedbackForm(feedbackFormHTML) {
+  const feedbackForm = document.querySelector(".feedback-form");
+  setTimeout(function() {
+    feedbackForm.outerHTML = feedbackFormHTML;
+  }, 3000);
+};
+
+renderArchive('<%= j render @feedback_form %>');

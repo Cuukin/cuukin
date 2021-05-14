@@ -33,11 +33,15 @@
   }
 }
 
-.modal-close-btn {
-  height: 42px;
-  width: 42px;
-  align-self: flex-end;
-  cursor: pointer;
+.feedback-sent {
+  text-align: center;
+
+  h1 {
+    color: $cuukin;
+  }
+  p {
+    color: $dark-gray;
+  }
 }
 
 

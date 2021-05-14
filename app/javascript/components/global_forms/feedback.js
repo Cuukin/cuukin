@@ -6,9 +6,15 @@ const feedback = () => {
     const sendFeedback = document.querySelector('#sendFeedbackBtn');
     const feedbackInput = document.querySelector('#feedbackInput');
     const closeFeedback = feedbackModal.querySelector('.modal-close-btn');
+    const feedbackForm = feedbackModal.querySelector('.feedback-form');
+    const feedbackSent = feedbackModal.querySelector('.feedback-sent');
+
+    sendFeedback.style.pointerEvents = "none";
 
     openFeedback.addEventListener('click', (event) => {
       feedbackModal.classList.remove('d-none');
+      feedbackForm.classList.remove('d-none');
+      feedbackSent.classList.add('d-none');
     });
 
     closeFeedback.addEventListener('click', (event) => {
@@ -36,6 +42,13 @@ const feedback = () => {
         sendFeedback.classList.remove('disabled-btn');
         sendFeedback.classList.add('primary-btn');
         sendFeedback.style.pointerEvents = "auto";
+      };
+    });
+
+    sendFeedback.addEventListener('click', (event) => {
+      if (feedbackInput.value !== "") {
+        feedbackForm.classList.add('d-none');
+        feedbackSent.classList.remove('d-none');
       };
     });
   };

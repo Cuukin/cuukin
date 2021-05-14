@@ -6,14 +6,12 @@ class FeedbacksController < ApplicationController
 
     authorize @feedback, policy_class: FeedbackPolicy
 
-    @feedback.save
-
-    # if @feedback.save
-    #   respond_to do |format|
-    #     format.html { redirect_to root_path }
-    #     format.js { render action: :feedback }
-    #   end
-    # end
+    if @feedback.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { render action: :feedback }
+      end
+    end
   end
 
   private
