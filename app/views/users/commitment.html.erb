@@ -7,9 +7,8 @@
     <div class="form-inputs edit-diet-container" id="acquisitionContainer">
       <h3>How did you hear about us?</h3>
       <%= f.input :acquisition,
-        collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google",
-          "Friends and family", "LinkedIn", "Reddit", "Email", "Event"],
-        as: :check_boxes, legend_tag: false %>
+        collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google", "Friends and family", "LinkedIn", "Reddit", "Email", "Event"],
+        as: :radio_buttons, legend_tag: false %>
 
       <div class='commitment-progress-bar'>
         <div class='circle'></div>
