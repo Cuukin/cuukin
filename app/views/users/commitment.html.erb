@@ -4,13 +4,33 @@
   <%= simple_form_for(@user, url: create_commitment_path(@user), method: 'patch') do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs edit-commitment-container" id="motivationContainer">
+    <div class="form-inputs edit-diet-container" id="acquisitionContainer">
+      <h3>How did you hear about us?</h3>
+      <%= f.input :acquisition,
+        collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google", "Friends and family", "LinkedIn", "Reddit", "Email", "Event"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class='commitment-progress-bar'>
+        <div class='circle'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+      </div>
+
+      <div class="form-actions">
+        <p class="primary-btn continueBtn">Continue</p>
+        <!-- <p class="skip-btn skipBtn">Skip for now</p> -->
+      </div>
+    </div>
+
+    <div class="form-inputs edit-commitment-container" id="motivationContainer" style="display: none;">
       <h3>Why do you want to improve your cooking?</h3>
       <%= f.input :motivation,
         collection: ["Eat healthier food", "Save money", "Impress friends and family", "Be more sustainable", "Learn a new skill", "Other"],
         as: :check_boxes, legend_tag: false %>
 
       <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
         <div class='circle'></div>
         <div class='circle circle-disabled'></div>
         <div class='circle circle-disabled'></div>
@@ -30,6 +50,7 @@
 
       <div class='commitment-progress-bar'>
         <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
         <div class='circle'></div>
         <div class='circle circle-disabled'></div>
       </div>
@@ -48,6 +69,7 @@
         as: :radio_buttons, legend_tag: false %>
 
       <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
         <div class='circle circle-disabled'></div>
         <div class='circle circle-disabled'></div>
         <div class='circle'></div>
