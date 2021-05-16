@@ -4,7 +4,7 @@ class GroceryListsController < ApplicationController
   def show
     @feedback = Feedback.new
     authorize @grocery_list, policy_class: GroceryListPolicy
-    @ordered_items = @grocery_list.grocery_list_items.group_by { |item| item.ingredient.badge }
+    @ordered_items = @grocery_list.grocery_list_items.group_by { |item| item.ingredient.badge.category }
   end
 
   def update

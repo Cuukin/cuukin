@@ -25,12 +25,16 @@
       </div>
     <% end %>
 
-    <div class="recipes-cards-container" id="completedRecipes">
+    <div class="recipes-cards-container d-none" id="completedRecipes">
       <%= render 'completed_recipes' %>
     </div>
 
     <div class="recipes-cards-container d-none" id="unlockedRecipes">
       <%= render 'unlocked_recipes' %>
+    </div>
+
+    <div class="user-skills-container" id="userSkills">
+      <%= render template: 'user_skills/index' %>
     </div>
 
     <div class="recipes-cards-container d-none" id="searchedRecipes">
