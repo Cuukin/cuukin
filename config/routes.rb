@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
   get 'feed', to: 'user_recipes#feed'
-  resources :user_skills, only: [ :create ]
+  resources :user_skills, only: [ :create, :index ]
   resources :grocery_list_items, only: [ :create, :destroy ]
   resources :grocery_lists, only: [ :show, :update, :destroy ]
 

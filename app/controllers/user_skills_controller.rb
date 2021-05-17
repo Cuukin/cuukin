@@ -1,4 +1,7 @@
 class UserSkillsController < ApplicationController
+  def index
+  end
+
   def create
     @user_skill = UserSkill.new(user_skill_params)
     @user_skill.user = current_user
