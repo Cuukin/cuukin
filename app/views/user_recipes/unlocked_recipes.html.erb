@@ -2,13 +2,17 @@
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
 <div class="cuukbook-navbar-container">
-  <div class="recipe-navbar recipe-navbar-active" id="completedBtn">
-    <h1>Completed Recipes</h1>
-  </div>
+  <%= link_to completed_recipes_path do %>
+    <div class="recipe-navbar" id="completedBtn">
+      <h1>Completed Recipes</h1>
+    </div>
+  <% end %>
 
-  <div class="recipe-navbar" id="unlockedBtn">
-    <h1>Unlocked Recipes</h1>
-  </div>
+  <%= link_to unlocked_recipes_path do %>
+    <div class="recipe-navbar recipe-navbar-active" id="unlockedBtn">
+      <h1>Unlocked Recipes</h1>
+    </div>
+  <% end %>
 
   <%= link_to user_skills_path do %>
     <div class="recipe-navbar" id="skillsBtn">
@@ -19,11 +23,11 @@
 
 <div class="recipes-container">
 
-  <% if @completed_recipes.empty? %>
+  <% if @unlocked_recipes.empty? %>
     <p class="text-center">Oops, you don't have any recipes yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
   <% else %>
 
-    <%= form_tag(user_recipes_path, method: :get, remote: true) do %>
+    <%= form_tag(unlocked_recipes_path, method: :get, remote: true) do %>
       <div class="search-double-form">
         <%= text_field_tag :query,
           params[:query],
@@ -33,11 +37,7 @@
       </div>
     <% end %>
 
-    <div class="recipes-cards-container" id="completedRecipes">
-      <%= render 'completed_recipes' %>
-    </div>
-
-    <div class="recipes-cards-container d-none" id="unlockedRecipes">
+    <div class="recipes-cards-container" id="unlockedRecipes">
       <%= render 'unlocked_recipes' %>
     </div>
 
@@ -46,4 +46,3 @@
   <% end %>
 
 </div>
-

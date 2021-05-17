@@ -1,17 +1,23 @@
 <%= render template: 'feedbacks/new' %>
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
-<div class="community-navbar">
-  <%= link_to user_recipes_path, class: "feed-link" do %>
-    <h1>Completed Recipes</h1>
+<div class="cuukbook-navbar-container">
+  <%= link_to completed_recipes_path do %>
+    <div class="recipe-navbar" id="completedBtn">
+      <h1>Completed Recipes</h1>
+    </div>
   <% end %>
 
-  <%= link_to user_recipes_path, class: "feed-link" do %>
-    <h1>Unlocked Recipes</h1>
+  <%= link_to unlocked_recipes_path do %>
+    <div class="recipe-navbar" id="unlockedBtn">
+      <h1>Unlocked Recipes</h1>
+    </div>
   <% end %>
 
-  <%= link_to user_skills_path, class: "feed-link active" do %>
-    <h1>Acquired Skills</h1>
+  <%= link_to user_skills_path do %>
+    <div class="recipe-navbar recipe-navbar-active" id="skillsBtn">
+      <h1>Acquired Skills</h1>
+    </div>
   <% end %>
 </div>
 

@@ -1,8 +1,8 @@
 document.querySelector('#searchedRecipes').innerHTML = '<%= escape_javascript(render :partial => 'search_recipes') %>'
 document.querySelector('#searchedRecipes').classList.remove('d-none');
 
-if (document.querySelector("#completedRecipes").classList.contains('d-none')) {
-  document.querySelector("#unlockedRecipes").classList.add('d-none');
-} else {
+if (document.querySelector("#completedRecipes")) {
   document.querySelector("#completedRecipes").classList.add('d-none');
+} else {
+  document.querySelector("#unlockedRecipes").classList.add('d-none');
 };
