@@ -31,20 +31,22 @@
       </div>
     <% end %>
 
-    <div class="user-skills-tags">
+    <!-- <div class="user-skills-tags">
       <p class="secondary-btn">Techniques</p>
       <p class="secondary-btn">Ingredients</p>
       <p class="secondary-btn">Equipments</p>
-    </div>
+    </div> -->
 
     <div class="recipes-cards-container">
       <% @skills.each do |skill| %>
         <div class="recipe-card" data-user-recipe="<%= skill.id %>">
-          <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
-            <div class="recipe-card-info-url">
-              <p><%= skill.skill_chapter.badge.name %></p>
+          <%= link_to lesson_path(skill.skill_chapter.lesson) do %>
+            <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
+              <div class="recipe-card-info-url">
+                <p><%= skill.skill_chapter.badge.name %></p>
+              </div>
             </div>
-          </div>
+          <% end %>
           <p><%= skill.skill_chapter.title %></p>
         </div>
       <% end %>
