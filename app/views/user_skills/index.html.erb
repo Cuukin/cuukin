@@ -1,22 +1,55 @@
-<div class="user-skills-tags">
-  <p class="secondary-btn">Techniques</p>
-  <p class="secondary-btn">Ingredients</p>
-  <p class="secondary-btn">Equipments</p>
+<%= render template: 'feedbacks/new' %>
+<%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
+
+<div class="community-navbar">
+  <%= link_to user_recipes_path, class: "feed-link" do %>
+    <h1>Completed Recipes</h1>
+  <% end %>
+
+  <%= link_to user_recipes_path, class: "feed-link" do %>
+    <h1>Unlocked Recipes</h1>
+  <% end %>
+
+  <%= link_to user_skills_path, class: "feed-link active" do %>
+    <h1>Acquired Skills</h1>
+  <% end %>
 </div>
 
-<% @skills.each do |category, skills| %>
+<div class="recipes-container">
 
-  <div class="recipes-cards-container" id="<%= category %>Container">
-    <% skills.each do |skill| %>
-      <div class="recipe-card" data-user-recipe="<%= skill.id %>">
-        <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
-          <div class="recipe-card-info-url">
-            <p><%= skill.skill_chapter.badge.name %></p>
-          </div>
-        </div>
-        <p><%= skill.skill_chapter.title %></p>
+  <% if @skills.empty? %>
+    <p class="text-center">Oops, you don't have any skills yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+  <% else %>
+
+    <%= form_tag(user_skills_path, method: :get, remote: true) do %>
+      <div class="search-double-form">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-form-control",
+          placeholder: "Find a skill" %>
+        <%= submit_tag "Search", class: "primary-btn", id: 'searchSkill' %>
       </div>
     <% end %>
-  </div>
 
-<% end %>
+    <div class="user-skills-tags">
+      <p class="secondary-btn">Techniques</p>
+      <p class="secondary-btn">Ingredients</p>
+      <p class="secondary-btn">Equipments</p>
+    </div>
+
+    <div class="recipes-cards-container">
+      <% @skills.each do |skill| %>
+        <div class="recipe-card" data-user-recipe="<%= skill.id %>">
+          <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
+            <div class="recipe-card-info-url">
+              <p><%= skill.skill_chapter.badge.name %></p>
+            </div>
+          </div>
+          <p><%= skill.skill_chapter.title %></p>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+</div>

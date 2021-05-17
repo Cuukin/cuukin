@@ -1,7 +1,7 @@
 class UserSkillsController < ApplicationController
   def index
     @feedback = Feedback.new
-    @skills = UserSkill.includes(:skill_chapter).where(user: current_user).group_by { |skill| skill.skill_chapter.badge.category }
+    @skills = UserSkill.includes(:skill_chapter).where(user: current_user)
     authorize @skills, policy_class: UserSkillPolicy
 
     if params[:query].present?
