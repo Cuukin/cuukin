@@ -2,6 +2,7 @@ class UserRecipesController < ApplicationController
   before_action :set_user_recipe, only: [ :edit, :update, :archive ]
 
   def index
+    @feedback = Feedback.new
     @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
     @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
 

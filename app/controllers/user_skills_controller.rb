@@ -3,6 +3,13 @@ class UserSkillsController < ApplicationController
     @feedback = Feedback.new
     @skills = UserSkill.includes(:skill_chapter).where(user: current_user).group_by { |skill| skill.skill_chapter.badge.category }
     authorize @skills, policy_class: UserSkillPolicy
+
+    if params[:query].present?
+      @search_skills = UserSkill.global_search(params[:query]).select {|skills| skill.user == current_user}
+      respond_to do |format|
+        format.js { render partial: 'search_results'}
+      end
+    end
   end
 
   def create

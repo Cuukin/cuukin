@@ -15,6 +15,7 @@
   <% if @completed_recipes.empty? %>
     <p class="text-center">Oops, you don't have any recipes yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
   <% else %>
+
     <%= form_tag(user_recipes_path, method: :get, remote: true) do %>
       <div class="search-double-form">
         <%= text_field_tag :query,
@@ -25,16 +26,12 @@
       </div>
     <% end %>
 
-    <div class="recipes-cards-container d-none" id="completedRecipes">
+    <div class="recipes-cards-container" id="completedRecipes">
       <%= render 'completed_recipes' %>
     </div>
 
     <div class="recipes-cards-container d-none" id="unlockedRecipes">
       <%= render 'unlocked_recipes' %>
-    </div>
-
-    <div class="user-skills-container" id="userSkills">
-      <%= render template: 'user_skills/index' %>
     </div>
 
     <div class="recipes-cards-container d-none" id="searchedRecipes">
