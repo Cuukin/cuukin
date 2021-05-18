@@ -1,13 +1,11 @@
 .journey-container {
   width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: flex-start;
+  margin: 0 auto;
   padding: 40px 16px;
   position: relative;
 
   .journey-map {
-    width: 200px;
+    width: 205px;
   }
 }
 
@@ -26,13 +24,13 @@
   }
 
   #book-1 {
-    top: 107px;
-    left: 59px;
+    top: 111px;
+    left: 61px;
   }
 
   #progress-book-1 {
-    top: 102px;
-    left: 54px;
+    top: 106px;
+    left: 56px;
   }
 
   #book-2 {
@@ -61,9 +59,8 @@
   }
 }
 
-@media (max-width: 400px) {
-  /* For a screen < 540px, this CSS will be read */
-  .journey-container {
-    width: 100vw;
-  }
-}
+// @media (max-width: 400px) {
+//   .journey-container {
+//     width: 100vw;
+//   }
+// }
