@@ -8,7 +8,7 @@ ActiveAdmin.register Tool do
     # column :id
     column :name
     column :badge
-    column :suggested_product
+    # column :suggested_product
     actions
   end
 
