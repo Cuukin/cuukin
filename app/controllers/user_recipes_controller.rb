@@ -54,7 +54,7 @@ class UserRecipesController < ApplicationController
       TransitionRecipeStarsJob.perform_later(current_user, @user_recipe)
       @user_recipe.completed = true
       @user_recipe.save
-      redirect_to user_recipes_path
+      redirect_to completed_recipes_path
     else
       render :edit
     end

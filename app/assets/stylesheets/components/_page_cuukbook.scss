@@ -24,6 +24,7 @@
     font-size: 18px;
     margin: 0;
     text-align: center;
+    // padding: 0 8px;
   }
 
   .recipe-navbar {
@@ -194,5 +195,13 @@
   .primary-btn {
     width: 90px;
     margin: 0 2px;
+  }
+}
+
+@media (max-width: 540px) {
+  .cuukbook-navbar-container {
+    h1 {
+      width: 110px;
+    }
   }
 }
