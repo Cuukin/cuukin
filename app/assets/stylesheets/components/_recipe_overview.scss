@@ -11,26 +11,27 @@
 }
 
 .container-user-recipe-validation {
+  z-index: 50;
   position: fixed;
   bottom: -230px;
   width: 500px;
   background-color: $light-gray;
   padding: 16px 16px 32px;
   border-radius: 20px 20px 0 0;
-  box-shadow: 2px 0px 6px rgba(30,30,30,0.4);
+  box-shadow: 0px -1px 8px rgba(30,30,30,0.1);
   cursor: pointer;
 
   i {
     font-size: 20px;
     display: flex;
     justify-content: center;
-    color: $gray;
+    color: $dark-gray;
     margin: 4px 0 22px;
   }
 
   .swipe-p {
     font-size: 12px;
-    color: $gray;
+    color: $dark-gray;
     text-align: center;
     font-weight: 500;
     margin-bottom: 8px;
