@@ -15,7 +15,6 @@ const recipeSearch = () => {
     });
 
     clearBtn.addEventListener('click', (event) => {
-      console.log('AI');
       clearBtn.style.visibility = "hidden";
       searchInput.value = "";
       completedContainer.classList.remove('d-none');
