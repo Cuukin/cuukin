@@ -1,4 +1,17 @@
 class UserSkillsController < ApplicationController
+  def index
+    @feedback = Feedback.new
+    @skills = UserSkill.includes(:skill_chapter).where(user: current_user)
+    authorize @skills, policy_class: UserSkillPolicy
+
+    if params[:query].present?
+      @search_skills = UserSkill.skill_search(params[:query]).select {|skill| skill.user == current_user}
+      respond_to do |format|
+        format.js { render partial: 'search_results'}
+      end
+    end
+  end
+
   def create
     @user_skill = UserSkill.new(user_skill_params)
     @user_skill.user = current_user

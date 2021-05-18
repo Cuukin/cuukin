@@ -1,9 +1,23 @@
 class UserRecipesController < ApplicationController
   before_action :set_user_recipe, only: [ :edit, :update, :archive ]
 
-  def index
+  # def index
+  #   @feedback = Feedback.new
+  #   @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
+  #   @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
+
+  #   if params[:query].present?
+  #     @search_recipes = UserRecipe.global_search(params[:query]).select {|user_recipe| user_recipe.user == current_user}
+  #     respond_to do |format|
+  #       format.js { render partial: 'search_results'}
+  #     end
+  #   end
+
+  #   authorize @completed_recipes, policy_class: UserRecipePolicy
+  # end
+
+  def completed_recipes
     @feedback = Feedback.new
-    @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
     @completed_recipes = UserRecipe.where(user_id: current_user.id, completed: true).includes(:recipe)
 
     if params[:query].present?
@@ -16,6 +30,20 @@ class UserRecipesController < ApplicationController
     authorize @completed_recipes, policy_class: UserRecipePolicy
   end
 
+  def unlocked_recipes
+    @feedback = Feedback.new
+    @unlocked_recipes = UserRecipe.where(user_id: current_user.id, completed: false).includes(:recipe)
+
+    if params[:query].present?
+      @search_recipes = UserRecipe.global_search(params[:query]).select {|user_recipe| user_recipe.user == current_user}
+      respond_to do |format|
+        format.js { render partial: 'search_results'}
+      end
+    end
+
+    authorize @unlocked_recipes, policy_class: UserRecipePolicy
+  end
+
   def edit
     authorize @user_recipe, policy_class: UserRecipePolicy
   end
@@ -26,7 +54,7 @@ class UserRecipesController < ApplicationController
       TransitionRecipeStarsJob.perform_later(current_user, @user_recipe)
       @user_recipe.completed = true
       @user_recipe.save
-      redirect_to user_recipes_path
+      redirect_to completed_recipes_path
     else
       render :edit
     end

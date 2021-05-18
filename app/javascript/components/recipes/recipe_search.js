@@ -1,27 +1,24 @@
 const recipeSearch = () => {
-  const completedRecipesContainer = document.querySelector('#completedRecipes');
-  const unlockedRecipesContainer = document.querySelector('#unlockedRecipes');
+  const completedContainer = document.querySelector('.cuukbook-complete-container');
+  const searchedContainer = document.querySelector('.cuukbook-search-container');
 
-  const unlockedBtn = document.querySelector('#unlockedBtn');
-  const completedBtn = document.querySelector('#completedBtn');
+  if (completedContainer) {
+    const searchForm = document.querySelector('#searchForm')
+    const searchInput = searchForm.querySelector('.search-form-control');
+    const searchBtn = searchForm.querySelector('#searchBtn');
+    const clearBtn = document.querySelector('#clearBtn');
 
-  if (completedRecipesContainer) {
-    const searchRecipesContainer = document.querySelector('#searchedRecipes');
-    const searchInput = document.querySelector('.search-form-control');
-    const searchBtn = document.querySelector('#searchRecipe');
-
-    document.addEventListener('keyup', (event) => {
-      searchBtn.click();
-
-      if (searchInput.value == "") {
-        searchRecipesContainer.classList.add('d-none');
-
-        if (completedBtn.classList.contains('recipe-navbar-active')) {
-          completedRecipesContainer.classList.remove('d-none');
-        } else {
-          unlockedRecipesContainer.classList.remove('d-none');
-        };
+    searchBtn.addEventListener('click', (event) => {
+      if (!searchInput.value == "") {
+        clearBtn.style.visibility = "visible";
       };
+    });
+
+    clearBtn.addEventListener('click', (event) => {
+      clearBtn.style.visibility = "hidden";
+      searchInput.value = "";
+      completedContainer.classList.remove('d-none');
+      searchedContainer.classList.add('d-none');
     });
   };
 };

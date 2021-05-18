@@ -15,6 +15,14 @@ class UserRecipePolicy < ApplicationPolicy
     record.user == user
   end
 
+  def completed_recipes?
+    true
+  end
+
+  def unlocked_recipes?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all

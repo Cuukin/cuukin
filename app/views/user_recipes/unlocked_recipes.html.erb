@@ -1,0 +1,49 @@
+<%= render template: 'feedbacks/new' %>
+<%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
+
+<div class="cuukbook-navbar-container">
+  <%= link_to completed_recipes_path do %>
+    <div class="recipe-navbar" id="completedBtn">
+      <h1>Completed Recipes</h1>
+    </div>
+  <% end %>
+
+  <%= link_to unlocked_recipes_path do %>
+    <div class="recipe-navbar recipe-navbar-active" id="unlockedBtn">
+      <h1>Unlocked Recipes</h1>
+    </div>
+  <% end %>
+
+  <%= link_to user_skills_path do %>
+    <div class="recipe-navbar" id="skillsBtn">
+      <h1>Acquired Skills</h1>
+    </div>
+  <% end %>
+</div>
+
+<div class="recipes-container">
+
+  <% if @unlocked_recipes.empty? %>
+    <p class="text-center">Oops, you don't have any recipes yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
+  <% else %>
+
+    <%= form_tag(unlocked_recipes_path, method: :get, remote: true, id: 'searchForm') do %>
+      <div class="search-double-form">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-form-control",
+          placeholder: "Search recipes by name or ingredient" %>
+        <%= submit_tag "Search", class: "primary-btn", id: 'searchBtn' %>
+      </div>
+      <p class="text-center" id="clearBtn">Clear</p>
+    <% end %>
+
+    <div class="recipes-cards-container cuukbook-complete-container" id="unlockedRecipes">
+      <%= render 'unlocked_recipes' %>
+    </div>
+
+    <div class="recipes-cards-container cuukbook-search-container d-none" id="searchedRecipes">
+    </div>
+  <% end %>
+
+</div>

@@ -11,18 +11,8 @@
 <div class="container-recipe-overview recipe-<%= @recipe.id %>">
 
   <div class="recipe-overview-btn">
-    <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'index', controller: 'user_recipes')}" %>
-      <%= link_to user_recipes_path do %>
-        <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
-      <% end %>
-    <% elsif request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'show', controller: 'lessons', id: @recipe.lesson.id)}" %>
-      <%= link_to lesson_path(@recipe.lesson) do %>
-        <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
-      <% end %>
-    <% else %>
-      <%= link_to :back do %>
-        <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
-      <% end %>
+    <%= link_to :back do %>
+      <%= image_tag('btn-close-rounded.svg', class: 'btn-back') %>
     <% end %>
   </div>
 

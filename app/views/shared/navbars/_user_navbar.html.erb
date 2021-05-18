@@ -34,8 +34,10 @@
     <% end %>
   <% end %>
 
-  <%= link_to user_recipes_path, class: 'user-navbar-footer-item book-icons' do %>
-    <% if current_page?(controller: 'user_recipes', action: 'index') %>
+  <%= link_to completed_recipes_path, class: 'user-navbar-footer-item book-icons' do %>
+    <% if current_page?(controller: 'user_recipes', action: 'completed_recipes') ||
+    current_page?(controller: 'user_recipes', action: 'unlocked_recipes') ||
+    current_page?(controller: 'user_skills', action: 'index') %>
       <%= image_tag('nb-book-active.svg', id: 'book-active') %>
       <p class="active">CuukBook</p>
     <% else %>
