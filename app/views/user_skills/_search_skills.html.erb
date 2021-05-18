@@ -1,1 +1,12 @@
-
+<% @search_skills.each do |skill| %>
+  <div class="recipe-card" data-user-recipe="<%= skill.id %>">
+    <%= link_to lesson_path(skill.skill_chapter.lesson) do %>
+      <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
+        <div class="recipe-card-info-url">
+          <p><%= skill.skill_chapter.badge.name %></p>
+        </div>
+      </div>
+    <% end %>
+    <p><%= skill.skill_chapter.title %></p>
+  </div>
+<% end %>

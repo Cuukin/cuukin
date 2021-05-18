@@ -5,7 +5,7 @@ class UserSkillsController < ApplicationController
     authorize @skills, policy_class: UserSkillPolicy
 
     if params[:query].present?
-      @search_skills = UserSkill.global_search(params[:query]).select {|skills| skill.user == current_user}
+      @search_skills = UserSkill.skill_search(params[:query]).select {|skill| skill.user == current_user}
       respond_to do |format|
         format.js { render partial: 'search_results'}
       end

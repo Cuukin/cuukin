@@ -94,6 +94,8 @@
 
 .user-skill-img {
   p {
+    font-size: 14px;
+    font-weight: 400 !important;
     padding-left: 8px !important;
     color: $dark-gray !important;
     max-width: 100% !important;
@@ -179,11 +181,22 @@
   }
 }
 
+#searchForm {
+  margin-bottom: 20px;
+
+  #clearBtn {
+    margin-bottom: 0;
+    color: $cuukin;
+    visibility: hidden;
+    cursor: pointer;
+  }
+}
+
 .search-double-form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
 
   .search-form-control {
     border-radius: 10px;

@@ -32,9 +32,10 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control search-form-control",
-          placeholder: "Find a skill" %>
+          placeholder: "Search skills by name, badge or lesson" %>
         <%= submit_tag "Search", class: "primary-btn", id: 'searchBtn' %>
       </div>
+      <p class="text-center" id="clearBtn">Clear</p>
     <% end %>
 
     <!-- <div class="user-skills-tags">
