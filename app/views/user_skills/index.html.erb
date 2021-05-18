@@ -27,13 +27,13 @@
     <p class="text-center">Oops, you don't have any skills yet.<br><%= link_to "Start cooking", books_path %> to earn some.</p>
   <% else %>
 
-    <%= form_tag(user_skills_path, method: :get, remote: true) do %>
+    <%= form_tag(user_skills_path, method: :get, remote: true, id: 'searchForm') do %>
       <div class="search-double-form">
         <%= text_field_tag :query,
           params[:query],
           class: "form-control search-form-control",
           placeholder: "Find a skill" %>
-        <%= submit_tag "Search", class: "primary-btn", id: 'searchSkill' %>
+        <%= submit_tag "Search", class: "primary-btn", id: 'searchBtn' %>
       </div>
     <% end %>
 
@@ -43,19 +43,11 @@
       <p class="secondary-btn">Equipments</p>
     </div> -->
 
-    <div class="recipes-cards-container">
-      <% @skills.each do |skill| %>
-        <div class="recipe-card" data-user-recipe="<%= skill.id %>">
-          <%= link_to lesson_path(skill.skill_chapter.lesson) do %>
-            <div class="recipe-card-image user-skill-img" style="background-image: url('<%= image_path("#{skill.skill_chapter.badge.icon}") %>')">
-              <div class="recipe-card-info-url">
-                <p><%= skill.skill_chapter.badge.name %></p>
-              </div>
-            </div>
-          <% end %>
-          <p><%= skill.skill_chapter.title %></p>
-        </div>
-      <% end %>
+    <div class="recipes-cards-container cuukbook-complete-container" id="acquiredSkills">
+      <%= render 'acquired_skills' %>
+    </div>
+
+    <div class="recipes-cards-container cuukbook-search-container d-none" id="searchedSkills">
     </div>
 
   <% end %>
