@@ -2,9 +2,11 @@ class GroceryListItemsController < ApplicationController
   before_action :set_grocery_list
 
   def create
-    @grocery_list_item = GroceryListItem.new(grocery_list_item_params)
     authorize @grocery_list, policy_class: GroceryListItemPolicy
+
+    @grocery_list_item = GroceryListItem.new(grocery_list_item_params)
     ingredient = Ingredient.find_by(name: @grocery_list_item.ingredient_name)
+
     if @grocery_list.ingredients.include?(ingredient)
       existing_item = @grocery_list.grocery_list_items.find_by(ingredient: ingredient)
       existing_item.quantity = existing_item.quantity.to_i + @grocery_list_item.quantity.to_i if existing_item.unit == @grocery_list_item.unit
@@ -13,6 +15,11 @@ class GroceryListItemsController < ApplicationController
       @grocery_list_item.ingredient = ingredient
       @grocery_list_item.grocery_list = @grocery_list
       @grocery_list_item.save
+    end
+
+    if @grocery_list.scheduled_reminder
+      @grocery_list.scheduled_reminder = nil
+      @grocery_list.save
     end
   end
 
