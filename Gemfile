@@ -35,6 +35,8 @@ gem 'friendly_id', '~> 5.4.0' # generate friendly ids on routes
 
 gem 'pg_search', '~> 2.3.0' # research gem
 
+gem 'postmark-rails' # smtp to handle transaction emails
+
 # Authentication & Authorization Gems
 # gem 'devise'
 gem 'pundit'
