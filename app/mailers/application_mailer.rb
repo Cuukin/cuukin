@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'cuukin.app@gmail.com'
+  default from: 'contact@cuukin.app'
   layout 'mailer'
 end
