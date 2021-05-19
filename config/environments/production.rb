@@ -63,18 +63,22 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Mailer for production
-  config.action_mailer.delivery_method = :smtp
-  host = 'cuukin.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'cuukin.herokuapp.com'
+  # config.action_mailer.default_url_options = { host: host }
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_APP_PASSWORD'],
-    authentication: "plain",
-    enable_starttls_auto: true
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   user_name: ENV['GMAIL_ADDRESS'],
+  #   password: ENV['GMAIL_APP_PASSWORD'],
+  #   authentication: "plain",
+  #   enable_starttls_auto: true
+  # }
+
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
+  config.action_mailer.default_url_options = { host: "cuukin.herokuapp.com" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

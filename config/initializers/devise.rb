@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'cuukin.app@gmail.com'
+  config.mailer_sender = 'contact@cuukin.app'
   config.allow_unconfirmed_access_for = 365.days
 
   # Configure the class responsible to send e-mails.
