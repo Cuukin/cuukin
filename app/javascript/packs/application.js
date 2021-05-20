@@ -16,6 +16,7 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // import { playground } from '../components/playground'
 import { preventSelectDoubleClick } from '../components/prevent_select_click';
 import { toggleFriends } from '../components/toggle_friends';
+import { timezone } from '../components/grocerylist_timezone';
 
 // Navbars
 import { cuukbookNavbar } from '../components/navbars/cuukbook_navbar';
@@ -60,6 +61,7 @@ import { recipeSearch } from '../components/recipes/recipe_search';
 document.addEventListener('turbolinks:load', () => {
   // playground();
   initFlatpickr();
+  timezone();
 
   // Navbars
   expandedNavbar();
