@@ -11,7 +11,7 @@ class GroceryListsController < ApplicationController
     authorize @grocery_list, policy_class: GroceryListPolicy
 
     if @grocery_list.update(grocery_list_params)
-      time_zone = Time.local(grocery_list_params['scheduled_reminder']).zone.to_i
+      time_zone = grocery_list_params['scheduled_reminder'].in_time_zone(params[:query]).formatted_offset.to_i
       scheduled_time = @grocery_list.scheduled_reminder + -time_zone.hours
       items = @grocery_list.grocery_list_items.as_json
       GroceryListReminderJob.set(wait_until: scheduled_time).perform_later(@grocery_list, items, scheduled_time) unless items.empty?
