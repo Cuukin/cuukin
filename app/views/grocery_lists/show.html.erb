@@ -24,6 +24,7 @@
     <div class="reminder-right <%= "d-none" if @grocery_list.scheduled_reminder %>">
       <%= simple_form_for(@grocery_list, url: grocery_list_path(@grocery_list.id), method: 'patch', remote: true, id: 'editGroceryForm') do |f| %>
         <%= f.input :scheduled_reminder, as: :string, label: false, input_html: {class: 'datepicker'} %>
+        <%= text_field_tag :query, params[:query], class: 'd-none', id: 'timezoneQuery' %>
         <%= f.button :submit, 'Save', class: 'primary-btn', id: 'saveDateBtn' %>
       <% end %>
     </div>
