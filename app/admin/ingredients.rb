@@ -15,6 +15,9 @@ ActiveAdmin.register Ingredient do
     f.inputs do
       f.input :name
       f.input :badge
+      f.input :score_1
+      f.input :score_2
+      f.input :score_3
       f.input :cupboard
       f.input :photo, as: :file
       f.rich_text_area :content, as: :action_text
