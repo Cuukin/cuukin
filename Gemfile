@@ -58,7 +58,9 @@ gem 'blazer'
 
 #OmniAuth - external authentication
 gem 'devise' # , github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 # gem 'omniauth-rails_csrf_protection', '~> 0.1.2' # prevent OmniAuth::AuthenticityError with :post method
 

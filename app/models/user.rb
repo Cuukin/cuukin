@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :confirmable, :trackable, :lockable,
-         :omniauthable, omniauth_providers: %i[facebook]
+         :omniauthable, omniauth_providers: %i[facebook twitter]
 
   has_one_attached :photo
 
@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :user_skills, dependent: :destroy
   has_many :grocery_lists, dependent: :destroy
   has_many :user_sign_ins, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
 
   has_many :skill_chapters, through: :user_skills
   has_many :badges, through: :user_badges
