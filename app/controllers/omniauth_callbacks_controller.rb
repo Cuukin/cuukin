@@ -42,6 +42,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_with "Twitter"
   end
 
+  def google_oauth2
+    sign_in_with "Google"
+  end
+
   def failure
     redirect_to root_path
   end
