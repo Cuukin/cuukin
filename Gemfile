@@ -57,9 +57,13 @@ gem 'activeadmin_addons'
 gem 'blazer'
 
 #OmniAuth - external authentication
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'devise' # , github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-rails_csrf_protection', '~> 0.1.2' # prevent OmniAuth::AuthenticityError with :post method
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+# gem 'omniauth-rails_csrf_protection', '~> 0.1.2' # prevent OmniAuth::AuthenticityError with :post method
 
 group :development, :test do
   gem 'pry-byebug'
