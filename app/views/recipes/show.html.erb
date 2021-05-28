@@ -17,17 +17,17 @@
   </div>
 
   <div class="recipe-photo">
-    <%= image_tag("#{@recipe.photo_url}") %>
+    <%= image_tag("#{@recipe.photo_url}", itemprop: "image") %>
   </div>
 
   <div class="card-recipe-overview">
     <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
-    <h2 class="text-center <%= "turquise" if @recipe.external_url %>"><%= @recipe.title %></h2>
+    <h2 class="text-center <%= "turquise" if @recipe.external_url %>" itemprop="name"><%= @recipe.title %></h2>
 
     <ul class="recipe-overview-details">
       <li>
         <%= image_tag('lesson-time.svg', class: 'lesson-icons') %>
-        <%= @recipe.prep_time %>
+        <%= @recipe.prep_time, itemprop="cookTime" %>
       </li>
       <li>
         <%= image_tag('lesson-level.svg', class: 'lesson-icons') %>
@@ -66,7 +66,7 @@
         <h3>Ingredients</h3>
         <table>
           <% @recipe.recipe_ingredients.order(:id).each do |r_ingredient| %>
-            <tr>
+            <tr itemprop="recipeIngredient">
               <td class="ingredient-measure <%= "measure-#{r_ingredient.id}" %> <%= r_ingredient.id %>" data-ingredient-quantity="<%= r_ingredient.quantity %>" data-ingredient-unit="<%= r_ingredient.unit %>">
                 <span class="ingredient-quantity quantity-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.quantity %></span> <span class="ingredient-unit unit-<%= r_ingredient.id %> <%= r_ingredient.id %>"><%= r_ingredient.unit %></span>
               </td>
