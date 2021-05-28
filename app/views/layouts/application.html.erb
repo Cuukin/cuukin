@@ -23,6 +23,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
     <%= render 'layouts/head_js' %>
+
+    <%= render 'grocery_lists/grocery_list_script' if current_page?(controller: 'grocery_lists', action: 'show', id: GroceryList.find_by(user: current_user).id) %>
   </head>
 
   <body>

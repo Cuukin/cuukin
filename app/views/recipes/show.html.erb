@@ -8,7 +8,7 @@
   <%= render template: 'user_recipes/edit' %>
 <% end %>
 
-<div class="container-recipe-overview recipe-<%= @recipe.id %>">
+<div class="container-recipe-overview recipe-<%= @recipe.id %>" itemscope itemtype="https://schema.org/Recipe">
 
   <div class="recipe-overview-btn">
     <%= link_to :back do %>
