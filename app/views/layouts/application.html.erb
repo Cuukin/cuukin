@@ -24,7 +24,7 @@
 
     <%= render 'layouts/head_js' %>
 
-    <%= render 'grocery_lists/grocery_list_script' if current_page?(controller: 'grocery_lists', action: 'show', id: GroceryList.find_by(user: current_user).id) %>
+    <%= render 'grocery_lists/grocery_list_script' if params[:controller] == 'grocery_lists' %>
   </head>
 
   <body>
