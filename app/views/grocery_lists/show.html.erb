@@ -1,5 +1,5 @@
 <%= render 'grocery_lists/grocery_list_script' %>
-<%= render template: 'feedbacks/new' %>
+<%= render template: 'feedbacks/new' if current_user %>
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
 <div class="grocery-list-navbar">
