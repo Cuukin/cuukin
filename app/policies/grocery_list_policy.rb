@@ -1,6 +1,7 @@
 class GroceryListPolicy < ApplicationPolicy
   def show?
-    record.user == user
+    # record.user == user
+    true
   end
 
   def update?

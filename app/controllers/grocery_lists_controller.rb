@@ -1,9 +1,10 @@
 class GroceryListsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :set_grocery_list
 
   def show
     @feedback = Feedback.new
-    authorize @grocery_list, policy_class: GroceryListPolicy
+    # authorize @grocery_list, policy_class: GroceryListPolicy
     @ordered_items = @grocery_list.grocery_list_items.group_by { |item| item.ingredient.badge }
   end
 
