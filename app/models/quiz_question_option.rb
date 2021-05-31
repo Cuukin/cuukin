@@ -1,5 +1,6 @@
 class QuizQuestionOption < ApplicationRecord
   belongs_to :quiz_question
+  has_many :quiz_results, dependent: :destroy
 
   has_one_attached :photo
 
