@@ -11,6 +11,7 @@
 </script>
 
 <div itemscope itemtype="https://schema.org/Recipe" class="d-none">
+  <span itemprop="name">Cuukin - Grocery List #<%= GroceryList.where(user: @grocery_list.user).count %></span>
   Ingredients:
   <% @grocery_list.grocery_list_items.each do |item| %>
     <span itemprop="recipeIngredient"><%= "#{item.quantity} #{item.unit} #{item.ingredient.name}" %></span>
