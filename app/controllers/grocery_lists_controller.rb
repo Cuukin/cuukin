@@ -23,9 +23,11 @@ class GroceryListsController < ApplicationController
   def destroy
     @list = GroceryList.find(params[:id])
     authorize @list, policy_class: GroceryListPolicy
-    @list.grocery_list_items.each {|item| item.destroy}
-    @list.scheduled_reminder = nil
-    redirect_to grocery_list_path(@grocery_list) if @list.save
+    # @list.grocery_list_items.each {|item| item.destroy}
+    # @list.scheduled_reminder = nil
+    new_list = GroceryList.new(user: current_user)
+    redirect_to grocery_list_path(new_list) if new_list.save
+    # redirect_to grocery_list_path(new_list) if @list.destroy
   end
 
   private

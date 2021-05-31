@@ -50,7 +50,7 @@
     <%= image_tag("nb-submenu.svg", id: 'submenu') %>
   <% end %>
 
-  <%= link_to grocery_list_path(GroceryList.find_by(user: current_user)), class: 'user-navbar-footer-item grocery-icons' do %>
+  <%= link_to grocery_list_path(GroceryList.where(user: current_user).last), class: 'user-navbar-footer-item grocery-icons' do %>
     <% if params[:controller] == 'grocery_lists' || current_page?('/community') %>
       <%= image_tag('nb-grocery-active.svg', id: 'grocery-active') %>
       <p class="active">Grocery list</p>

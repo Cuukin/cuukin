@@ -39,7 +39,7 @@ class GroceryListItemsController < ApplicationController
   private
 
   def set_grocery_list
-    list = GroceryList.find_by(user: current_user)
+    list = GroceryList.where(user: current_user).last
     @grocery_list = list ? list : GroceryList.create(user: current_user)
   end
 
