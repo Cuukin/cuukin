@@ -33,7 +33,9 @@
   <div class="list-container">
     <div class="list-container-header">
       <h2>This week's list</h2>
-      <%= link_to "Clear list", grocery_list_path(@grocery_list.id), method: :delete, remote: true, id: "destroyList", class: "#{@grocery_list.grocery_list_items.empty? ? "unclickable" : ""}" %>
+      <% if @grocery_list.user == current_user %>
+        <%= link_to "Clear list", grocery_list_path(@grocery_list.id), method: :delete, remote: true, id: "destroyList", class: "#{@grocery_list.grocery_list_items.empty? ? "unclickable" : ""}" %>
+      <% end %>
     </div>
 
     <% unless @grocery_list.grocery_list_items.empty? %>
