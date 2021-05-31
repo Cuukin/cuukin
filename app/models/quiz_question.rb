@@ -5,4 +5,8 @@ class QuizQuestion < ApplicationRecord
   has_rich_text :answer
 
   validates :question, :xp, presence: true
+
+  def display_name
+    "#{self.skill_chapter.title} - #{self.question}"
+  end
 end
