@@ -1,3 +1,17 @@
+<% if !@grocery_list.grocery_list_items.empty? %>
+  <% content_for :for_head do %>
+    <script async="true" src="https://cdn.whisk.com/sdk/shopping-list.js" type="text/javascript"></script>
+    <script>
+      var whisk = whisk || {};
+      whisk.queue = whisk.queue || [];
+
+      whisk.queue.push(function () {
+        whisk.shoppingList.defineWidget("GLZJ-DMUX-TFPB-ZNGX");
+      });
+    </script>
+  <% end %>
+<% end %>
+
 <%= render 'grocery_lists/grocery_list_script', grocery_list: @grocery_list %>
 <%= render template: 'feedbacks/new' if current_user %>
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
@@ -50,7 +64,7 @@
               <tr class="item-<%= item.id %> badge-<%= item.ingredient.badge.id %>">
                 <td class="item-measure"><%= "#{item.quantity} #{item.unit}" %></td>
                 <td><%= item.ingredient.name %></td>
-                <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" %></td>
+                <td class="item-btns"><%= icon('fas', 'info-circle', class: 'openInfo', id: "info-#{item.ingredient.id}") if item.ingredient.content.present? %> <%= link_to icon('far', 'trash-alt'), grocery_list_item_path(item.id), method: :delete, remote: true, class: "destroyItem", id: "item-#{item.id}" if item.grocery_list.user == current_user %></td>
               </tr>
             <% end %>
           </table>
