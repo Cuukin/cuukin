@@ -3,5 +3,5 @@ class GroceryList < ApplicationRecord
   has_many :grocery_list_items, dependent: :destroy
   has_many :ingredients, through: :grocery_list_items
 
-  validates :user, uniqueness: true
+  # validates :user, uniqueness: true
 end
