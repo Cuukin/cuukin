@@ -60,7 +60,7 @@
       <%= render 'grocery_lists/ingredient_info', ingredients: @grocery_list.ingredients %>
     <% end %>
 
-    <% unless @grocery_list.grocery_list_items.empty? && !(@grocery_list.user == current_user) %>
+    <% if !(@grocery_list.grocery_list_items.empty?) && @grocery_list.user == current_user %>
       <p class="tag-btn">Copy to clipboard</p>
 
       <div class="mt-3" id="GLZJ-DMUX-TFPB-ZNGX">
