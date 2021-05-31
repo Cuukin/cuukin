@@ -49,6 +49,13 @@
   }
 }
 
+.journey-onboarding-message {
+  position: absolute;
+  top: 108px;
+  left: 150px;
+  width: 208px;
+}
+
 @media (max-width: 1000px) {
   /* For a screen < 720px, this CSS will be read */
   .journey-container {
