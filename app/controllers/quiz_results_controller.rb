@@ -2,7 +2,7 @@ class QuizResultsController < ApplicationController
   def create
     @quiz_result = QuizResult.new(quiz_result_params)
     @quiz_result.user = current_user
-    # authorize @user_skill, policy_class: QuizResultPolicy
+    authorize @quiz_result, policy_class: QuizResultPolicy
     @quiz_result.save
   end
 
