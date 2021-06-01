@@ -17,6 +17,9 @@
   position: fixed;
   top: 45px;
   z-index: 100;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
 
   .nav-btn {
     height: 48px;
@@ -60,7 +63,7 @@
   display: none;
 
   width: 500px;
-  min-height: 100vh;
+  min-height: calc(100vh - 172px);
   margin: 0 auto;
   background-color: $white;
 }
