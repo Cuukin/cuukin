@@ -3,7 +3,7 @@
   width: 500px;
   min-height: calc(100vh - 172px);
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 16px;
 
   .quiz-card {
     width: 100%;
@@ -59,7 +59,7 @@
   .quiz-answer {
     width: 49%;
     height: 120px;
-    background-color: $light-gray;
+    background-color: rgba(237, 237, 237, .6);
     border-radius: 20px;
     margin: 4px 0;
     padding: 4px;
