@@ -1,10 +1,10 @@
-<% skill_chapter.quiz_questions.each do |quiz_question| %>
+<% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
   <div class="quiz-container">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
         <h3>Quiz - <%= skill_chapter.title %></h3>
-        <h4><span class="current">1</span> / <%= skill_chapter.quiz_questions.count %></h4>
+        <h4><span class="current"><%= index + 1 %></span> / <%= skill_chapter.quiz_questions.count %></h4>
       </div>
 
       <h1 class="quiz-question"><%= quiz_question.question %></h1>
@@ -17,10 +17,10 @@
         <% end %>
       </div>
 
-      <p class="skip-quiz d-none">Skip</p>
-      <p class="next-question primary-btn">Next</p>
+      <p class="skip-quiz">Skip</p>
+      <p class="next-question primary-btn d-none">Next</p>
 
-      <p class="quiz-answer-content">
+      <p class="quiz-answer-content d-none">
         <span>Answer:</span> Trust your paladar and add little salt as you cook.
       </p>
 

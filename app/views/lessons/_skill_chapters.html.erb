@@ -20,7 +20,6 @@
 
 <div class="skill-chapters-container">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
-    <%= render template: 'quiz_results/new' %>
 
     <div class="skill-chapter-card <%= index %>" id="skillCard-<%= skill_chapter.id %>">
 
@@ -44,6 +43,8 @@
       </div>
 
     </div>
+
+    <%= render 'lessons/quiz_questions', skill_chapter: skill_chapter %>
 
   <% end %>
 </div>
