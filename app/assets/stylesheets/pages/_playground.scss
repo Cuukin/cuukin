@@ -54,10 +54,14 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+
+    a {
+      width: 49%;
+    }
   }
 
   .quiz-answer {
-    width: 49%;
+    width: 100%;
     height: 120px;
     background-color: rgba(237, 237, 237, .6);
     border-radius: 20px;

@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
     @lesson_validation = LessonValidation.new
     @user_skill = UserSkill.new
     @feedback = Feedback.new
+    @quiz_result = QuizResult.new
 
     authorize @lesson, policy_class: LessonPolicy
   end

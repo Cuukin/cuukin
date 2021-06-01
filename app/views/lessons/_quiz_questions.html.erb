@@ -11,9 +11,13 @@
 
       <div class="quiz-answer-container">
         <% quiz_question.quiz_question_options.each do |option| %>
-          <div class="quiz-answer">
-           <p><%= option.option %></p>
-          </div>
+
+          <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true do %>
+            <div class="quiz-answer">
+             <p><%= option.option %></p>
+            </div>
+          <% end %>
+
         <% end %>
       </div>
 
