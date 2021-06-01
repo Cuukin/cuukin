@@ -92,6 +92,14 @@ const skillChapters = () => {
         moveToNextCard();
       });
     });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'ArrowLeft') {
+        moveToPrevCard();
+      } else if (event.key === 'ArrowRight') {
+        moveToNextCard();
+      };
+    });
   };
 };
 
