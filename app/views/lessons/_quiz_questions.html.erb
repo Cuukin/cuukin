@@ -1,5 +1,5 @@
 <% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
-  <div class="quiz-container">
+  <div class="quiz-container skill-item" data-skill-type="quiz" data-skill-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
@@ -13,12 +13,14 @@
         <% quiz_question.quiz_question_options.each do |option| %>
 
           <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true do %>
-            <div class="quiz-answer">
+            <div class="quiz-answer" data-answer="<%= option.is_correct ? 1 : 0 %>">
              <p><%= option.option %></p>
             </div>
           <% end %>
 
         <% end %>
+
+
       </div>
 
       <p class="skip-quiz">Skip</p>

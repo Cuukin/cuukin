@@ -21,7 +21,7 @@
 <div class="skill-chapters-container">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-    <div class="skill-chapter-card <%= index %>" id="skillCard-<%= skill_chapter.id %>">
+    <div class="skill-chapter-card skill-item <%= index %>" id="skillCard-<%= skill_chapter.id %>" data-skill-type="video" data-skill-id="<%= skill_chapter.id %>">
 
       <% unless skill_chapter.users.include?(current_user) %>
         <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "userSkill-#{skill_chapter.id}" %>
