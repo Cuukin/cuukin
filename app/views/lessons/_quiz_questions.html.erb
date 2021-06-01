@@ -1,10 +1,11 @@
-<% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
+<% quiz_questions = skill_chapter.quiz_questions.reject {|question| QuizResult.find_by(user: current_user, quiz_question: question)} %>
+<% quiz_questions.each_with_index do |quiz_question, index| %>
   <div class="quiz-container skill-item" data-skill-type="quiz" data-skill-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
         <h3>Quiz - <%= skill_chapter.title %></h3>
-        <h4><span class="current"><%= index + 1 %></span> / <%= skill_chapter.quiz_questions.count %></h4>
+        <h4><span class="current"><%= index + 1 %></span> / <%= quiz_questions.count %></h4>
       </div>
 
       <h1 class="quiz-question"><%= quiz_question.question %></h1>

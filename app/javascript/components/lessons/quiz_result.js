@@ -1,0 +1,5 @@
+const quizResult = () => {
+
+};
+
+export { quizResult };

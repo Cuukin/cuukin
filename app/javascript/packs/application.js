@@ -42,6 +42,7 @@ import { skillChapters } from '../components/lessons/skill_chapters';
 import { userSkill } from '../components/lessons/user_skill';
 import { lessonReferrers } from '../components/lessons/lesson_referrers';
 import { videoPlayer } from '../components/lessons/video_player';
+import { quizResult } from '../components/lessons/quiz_result';
 
 // Validations
 import { checkRecipeInput } from '../components/validations/check_recipe_input';
@@ -79,6 +80,7 @@ document.addEventListener('turbolinks:load', () => {
   userSkill();
   lessonReferrers();
   videoPlayer();
+  quizResult();
 
   // Recipe
   recipeEditor();
