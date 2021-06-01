@@ -3,168 +3,95 @@ const skillChapters = () => {
   const skillsContainer = document.querySelector('.container-skill-chapters');
 
   if (lessonOverview && skillsContainer) {
-    let skillChecks = document.querySelectorAll('.nav-check');
-    const skillsBtns = document.querySelectorAll('.open-skill-btn');
+    const btns = document.querySelectorAll('.open-skill-btn');
+    let cards = document.querySelectorAll('.skill-chapter-card');
+    const checks = document.querySelectorAll('.nav-check');
 
-    const allCards = document.querySelectorAll('.skill-chapter-card');
-    const cardsQuantity = allCards.length;
-
-    let cards = [];
-    let firstCard = [];
-
-    let cardIndex = 0;
     let counter = 0;
 
-    const backToOverview = () => {
-      lessonOverview.style.display = "block";
-      skillsContainer.style.display = "none";
+    const openCard = (card) => {
       counter = 0;
       window.scrollTo({top: 0});
-      allCards.forEach((card) => {
-        card.style.display = "none";
-        card.querySelector('.skillVideo').pause();
-        let check = skillChecks[card.classList[1]];
-        check.querySelector('#skillDone').classList.add('skill-none');
-        check.querySelector('#play').classList.remove('skill-none');
-      });
+      lessonOverview.classList.add('d-none');
+      skillsContainer.classList.remove('d-none');
+      card.classList.remove('d-none');
+      checks[counter].querySelector('#skillDone').classList.remove('d-none');
+      checks[counter].querySelector('#skillPlay').classList.add('d-none');
+      cards = Array.prototype.slice.call(cards); // turn cards node list into an array
+      cards.splice(parseInt(card.dataset.cardIndex), 1); // remove card from that array
+      cards = [card, cards].flat(); // reassign cards to an array with card at the beggining
     };
 
-    skillsBtns.forEach((btn) => {
-      let id = parseInt(btn.id);
-      let card = document.getElementById(`skillCard-${id}`);
+    const backToOverview = () => {
+      counter = 0;
+      window.scrollTo({top: 0});
+      lessonOverview.classList.remove('d-none');
+      skillsContainer.classList.add('d-none');
 
-      btn.addEventListener('click', () => {
-        counter = 0;
+      cards.forEach((card) => {
+        card.classList.add('d-none');
+        card.querySelector('.skill-video').pause();
+      });
 
-        window.scrollTo({top: 0});
+      checks.forEach((check) => {
+        check.querySelector('#skillDone').classList.add('d-none');
+        check.querySelector('#skillPlay').classList.remove('d-none');
+      });
 
-        lessonOverview.style.display = "none";
-        skillsContainer.style.display = "block";
-        card.style.display = "block";
+      cards = document.querySelectorAll('.skill-chapter-card'); // reassign cards to nodelist of skill chapter cards
+    };
 
-        skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
-        skillChecks[counter].querySelector('#play').classList.add('skill-none');
+    const moveToNextCard = () => {
+      counter += 1;
+      window.scrollTo({top: 0});
 
-        cards = Array.prototype.slice.call(document.querySelectorAll('.skill-chapter-card'));
-        cardIndex = parseInt(card.classList[1]);
-        firstCard = cards.splice(cardIndex, 1);
+      if (counter == cards.length) {
+        backToOverview();
+      } else {
+        cards[counter].classList.remove('d-none');
+        cards[counter - 1].classList.add('d-none');
+        cards[counter - 1].querySelector('.skill-video').pause();
+        checks[counter].querySelector('#skillDone').classList.remove('d-none');
+        checks[counter].querySelector('#skillPlay').classList.add('d-none');
+      };
+    };
+
+    const moveToPrevCard = () => {
+      counter -= 1;
+      window.scrollTo({top: 0});
+
+      if (counter == -1) {
+        backToOverview();
+      } else {
+        cards[counter].classList.remove('d-none');
+        cards[counter + 1].classList.add('d-none');
+        cards[counter + 1].querySelector('.skill-video').pause();
+        checks[counter].querySelector('#skillDone').classList.remove('d-none');
+        checks[counter].querySelector('#skillPlay').classList.add('d-none');
+        checks[counter + 1].querySelector('#skillDone').classList.add('d-none');
+        checks[counter + 1].querySelector('#skillPlay').classList.remove('d-none');
+      };
+    };
+
+    btns.forEach((btn) => {
+      let card = document.querySelector(`[data-card-skill-id='${btn.dataset.btnSkillId}']`);
+      btn.addEventListener('click', (event) => {
+        openCard(card);
       });
     });
 
     const prevBtn = document.querySelector('#prevChapter');
     const nextBtns = document.querySelectorAll('.nextChapter');
 
-    if (cardsQuantity > 1) {
-      nextBtns.forEach((nextBtn) => {
-        nextBtn.addEventListener('click', () => {
-          counter += 1;
-          window.scrollTo({top: 0});
+    prevBtn.addEventListener('click', (event) => {
+      moveToPrevCard();
+    });
 
-          if (counter == 1) {
-            firstCard[0].style.display = "none";
-            firstCard[0].querySelector('.skillVideo').pause();
-            cards[counter - 1].style.display = "block";
-            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
-            skillChecks[counter].querySelector('#play').classList.add('skill-none');
-          } else if (counter == cardsQuantity) {
-            backToOverview();
-          } else {
-            cards[counter - 1].style.display = "block";
-            cards[counter - 2].style.display = "none";
-            cards[counter - 2].querySelector('.skillVideo').pause();
-            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
-            skillChecks[counter].querySelector('#play').classList.add('skill-none');
-          };
-        });
+    nextBtns.forEach((nextBtn) => {
+      nextBtn.addEventListener('click', (event) => {
+        moveToNextCard();
       });
-
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'ArrowRight') {
-          counter += 1;
-          window.scrollTo({top: 0});
-
-          if (counter == 1) {
-            firstCard[0].style.display = "none";
-            firstCard[0].querySelector('.skillVideo').pause();
-            cards[counter - 1].style.display = "block";
-            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
-            skillChecks[counter].querySelector('#play').classList.add('skill-none');
-          } else if (counter == cardsQuantity) {
-            backToOverview();
-          } else {
-            cards[counter - 1].style.display = "block";
-            cards[counter - 2].style.display = "none";
-            cards[counter - 2].querySelector('.skillVideo').pause();
-            skillChecks[counter].querySelector('#skillDone').classList.remove('skill-none');
-            skillChecks[counter].querySelector('#play').classList.add('skill-none');
-          };
-        };
-      });
-
-      prevBtn.addEventListener('click', () => {
-        counter -= 1;
-        window.scrollTo({top: 0});
-
-        if (counter == 0) {
-          firstCard[0].style.display = "block";
-          cards[counter].style.display = "none";
-          cards[counter].querySelector('.skillVideo').pause();
-          skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
-          skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
-        } else if (counter == -1) {
-          backToOverview();
-        } else {
-          cards[counter].style.display = "none";
-          cards[counter].querySelector('.skillVideo').pause();
-          skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
-          skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
-          cards[counter - 1].style.display = "block";
-        };
-      });
-
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'ArrowLeft') {
-          counter -= 1;
-          window.scrollTo({top: 0});
-
-          if (counter == 0) {
-            firstCard[0].style.display = "block";
-            cards[counter].style.display = "none";
-            cards[counter].querySelector('.skillVideo').pause();
-            skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
-            skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
-          } else if (counter == -1) {
-            backToOverview();
-          } else {
-            cards[counter].style.display = "none";
-            cards[counter].querySelector('.skillVideo').pause();
-            skillChecks[counter + 1].querySelector('#skillDone').classList.add('skill-none');
-            skillChecks[counter + 1].querySelector('#play').classList.remove('skill-none');
-            cards[counter - 1].style.display = "block";
-          };
-        };
-      });
-    } else {
-      prevBtn.addEventListener('click', (event) => {
-        backToOverview();
-      });
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'ArrowLeft') {
-          backToOverview();
-        };
-      });
-
-      nextBtns.forEach((nextBtn) => {
-        nextBtn.addEventListener('click', (event) => {
-          backToOverview();
-        });
-      });
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'ArrowRight') {
-          backToOverview();
-        };
-      });
-    };
+    });
   };
 };
 
