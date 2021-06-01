@@ -15,7 +15,6 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
   }
 
@@ -101,25 +100,19 @@
   }
 
   .next-question {
-    margin: 0 0 8px !important;
+    margin: 0 !important;
   }
 
   .correct-answer {
     transition: box-shadow .2s ease-in-out;
-    background-color: rgba(181, 204, 24, .06);
-    color: $olive;
-    -webkit-box-shadow:inset 0px 0px 0px 2px #B5CC18;
-    -moz-box-shadow:inset 0px 0px 0px 2px #B5CC18;
-    box-shadow:inset 0px 0px 0px 2px #B5CC18;
+    background-color: rgba(181, 204, 24, .06) !important;
+    color: $olive !important;
+    -webkit-box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
+    -moz-box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
+    box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
 
     p {
       font-weight: 600;
-    }
-
-    &:hover {
-      -webkit-box-shadow:inset 0px 0px 0px 2px #B5CC18;
-      -moz-box-shadow:inset 0px 0px 0px 2px #B5CC18;
-      box-shadow:inset 0px 0px 0px 2px #B5CC18;
     }
   }
 
@@ -130,21 +123,19 @@
     -webkit-box-shadow:inset 0px 0px 0px 2px #AB3333;
     -moz-box-shadow:inset 0px 0px 0px 2px #AB3333;
     box-shadow:inset 0px 0px 0px 2px #AB3333;
-
-    &:hover {
-      -webkit-box-shadow:inset 0px 0px 0px 2px #AB3333;
-      -moz-box-shadow:inset 0px 0px 0px 2px #AB3333;
-      box-shadow:inset 0px 0px 0px 2px #AB3333;
-    }
   }
 
   .quiz-answer-content {
-    margin: 0;
+    margin-bottom: 14px;
 
     span {
       color: $cuukin;
       font-weight: 600;
     }
+  }
+
+  .unclickable {
+    pointer-events: none;
   }
 }
 

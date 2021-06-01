@@ -1,11 +1,11 @@
-<% quiz_questions = skill_chapter.quiz_questions.reject {|question| QuizResult.find_by(user: current_user, quiz_question: question)} %>
-<% quiz_questions.each_with_index do |quiz_question, index| %>
+<% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
+  <% completed = QuizResult.find_by(user: current_user, quiz_question: quiz_question) %>
   <div class="quiz-container skill-item" data-skill-type="quiz" data-skill-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
         <h3>Quiz - <%= skill_chapter.title %></h3>
-        <h4><span class="current"><%= index + 1 %></span> / <%= quiz_questions.count %></h4>
+        <h4><span class="current"><%= index + 1 %></span> / <%= skill_chapter.quiz_questions.count %></h4>
       </div>
 
       <h1 class="quiz-question"><%= quiz_question.question %></h1>
@@ -13,23 +13,21 @@
       <div class="quiz-answer-container">
         <% quiz_question.quiz_question_options.each do |option| %>
 
-          <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true do %>
-            <div class="quiz-answer" data-answer="<%= option.is_correct ? 1 : 0 %>">
+          <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
+            <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>" data-answer="<%= option.is_correct ? 1 : 0 %>">
              <p><%= option.option %></p>
             </div>
           <% end %>
 
         <% end %>
-
-
       </div>
 
-      <p class="skip-quiz">Skip</p>
-      <p class="next-question primary-btn d-none">Next</p>
+      <div class="quiz-answer-content <%= completed ? '' : 'd-none' %>">
+        <span>Answer:</span> <%= quiz_question.answer %>
+      </div>
 
-      <p class="quiz-answer-content d-none">
-        <span>Answer:</span> Trust your paladar and add little salt as you cook.
-      </p>
+      <p class="skip-quiz <%= completed ? 'd-none' : '' %>">Skip</p>
+      <p class="next-question primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
 
     </div>
   </div>
