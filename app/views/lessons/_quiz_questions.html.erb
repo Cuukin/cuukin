@@ -1,6 +1,7 @@
 <% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
   <% completed = QuizResult.find_by(user: current_user, quiz_question: quiz_question) %>
-  <div class="quiz-container skill-item" data-skill-type="quiz" data-skill-id="<%= skill_chapter.id %>">
+
+  <div class="quiz-container skill-item" data-type="quiz" data-skill-id="<%= skill_chapter.id %>" data-quiz-completed="<%= completed ? true : false %>">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
@@ -15,7 +16,7 @@
 
           <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
             <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>" data-answer="<%= option.is_correct ? 1 : 0 %>">
-             <p><%= option.option %></p>
+              <p><%= option.option %></p>
             </div>
           <% end %>
 
