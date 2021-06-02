@@ -9,11 +9,15 @@ const quizResult = () => {
         let nbCuukie = document.querySelector('#nb-cuukie p');
         let userCuukies = quiz.parentElement;
         let cuukies = parseInt(userCuukies.dataset.userCurrency);
+
+        let nbXp = document.querySelector('#nb-xp p');
+        let userXp = parseInt(nbXp.innerText);
+
         let options = quiz.querySelectorAll('.quiz-answer');
         let skip = quiz.querySelector('.skip-quiz-btn');
         let next = quiz.querySelector('.next-card');
         let answer = quiz.querySelector('.quiz-answer-content');
-        let correctOption = quiz.querySelector("[data-answer='0']");
+        let correctOption = quiz.querySelector("[data-answer='1']");
 
         skip.addEventListener('click', (event) => {
           if (cuukies >= 1) {
@@ -40,7 +44,9 @@ const quizResult = () => {
             next.classList.remove('d-none');
 
             if (option.dataset.answer == "0") {
-              option.classList.add('incorrect-answer');
+              option.classList.add('incorrect-answer'); // if user option is wrong then highlights with red style
+            } else {
+              nbXp.innerText = userXp + 10; // if user option is right then updates nb xp
             };
 
             options.forEach((option) => {
