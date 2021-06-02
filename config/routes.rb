@@ -57,6 +57,7 @@ Rails.application.routes.draw do
 
   get '/community', to: "pages#community"
   get '/credits', to: "pages#credits"
+  get '/privacy', to: "pages#privacy"
   # get '/playground', to: "pages#playground"
 
   # Admin, Sidekiq and Blazer
