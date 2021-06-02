@@ -19,6 +19,18 @@ const quizResult = () => {
         let answer = quiz.querySelector('.quiz-answer-content');
         let correctOption = quiz.querySelector("[data-answer='1']");
 
+        // functions (spend cuukie or gain xp)
+
+        const spendCuukies = () => {
+
+        };
+
+        const gainXp = () => {
+
+        };
+
+        // event listeners
+
         skip.addEventListener('click', (event) => {
           if (cuukies >= 1) {
             correctOption.classList.add('correct-answer');

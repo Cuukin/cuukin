@@ -4,6 +4,16 @@
   <div class="quiz-container skill-item d-none" data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>" data-quiz-completed="<%= completed ? true : false %>" data-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
+      <div class="quiz-transition-currencies transition-cuukies d-none">
+        <h5>-1</h5>
+        <%= image_tag('nb-cuukie.svg') %>
+      </div>
+
+      <div class="quiz-transition-currencies transition-xp d-none">
+        <h5>+10</h5>
+        <%= image_tag('nb-xp.svg') %>
+      </div>
+
       <div class="quiz-card-header">
         <h3>Quiz - <%= skill_chapter.title %></h3>
         <h4><span class="current"><%= index + 1 %></span> / <%= skill_chapter.quiz_questions.count %></h4>
