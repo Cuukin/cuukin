@@ -15,13 +15,13 @@
 
   </div>
 
-  <%= image_tag('btn-forward.svg', class: 'nav-btn nextChapter', id: 'nextChapter') %>
+  <%= image_tag('btn-forward.svg', class: 'nav-btn next-card next-chapter') %>
 </div>
 
 <div class="skill-chapters-container">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-    <div class="skill-chapter-card skill-item d-none" data-type="video" data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>">
+    <div class="skill-chapter-card skill-item d-none" data-type="video" data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>" data-id="<%= skill_chapter.id %>">
 
       <% unless skill_chapter.users.include?(current_user) %>
         <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "#{skill_chapter.id}" %>
@@ -40,7 +40,7 @@
         <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
         <h2 class="text-center"><%= skill_chapter.title %></h2>
         <p class="skill-description"><%= skill_chapter.description %></p>
-        <p class="primary-btn nextChapter">Next Video</p>
+        <p class="primary-btn next-chapter next-card">Next Video</p>
       </div>
 
     </div>

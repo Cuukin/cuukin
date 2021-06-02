@@ -1,7 +1,7 @@
 <% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
   <% completed = QuizResult.find_by(user: current_user, quiz_question: quiz_question) %>
 
-  <div class="quiz-container skill-item d-none" data-type="quiz" data-skill-id="<%= skill_chapter.id %>" data-quiz-completed="<%= completed ? true : false %>">
+  <div class="quiz-container skill-item d-none" data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>" data-quiz-completed="<%= completed ? true : false %>" data-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
       <div class="quiz-card-header">
@@ -28,7 +28,7 @@
       </div>
 
       <p class="skip-quiz <%= completed ? 'd-none' : '' %>">Skip</p>
-      <p class="next-question primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
+      <p class="next-card primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
 
     </div>
   </div>

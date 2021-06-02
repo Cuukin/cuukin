@@ -8,7 +8,7 @@ const quizResult = () => {
       if (quiz.dataset.quizCompleted == 'false') {
         let options = quiz.querySelectorAll('.quiz-answer');
         let skip = quiz.querySelector('.skip-quiz');
-        let next = quiz.querySelector('.next-question');
+        let next = quiz.querySelector('.next-card');
         let answer = quiz.querySelector('.quiz-answer-content');
         let correctOption = quiz.querySelector("[data-answer='0']");
 
