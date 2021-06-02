@@ -27,7 +27,15 @@
         <span>Answer:</span> <%= quiz_question.answer %>
       </div>
 
-      <p class="skip-quiz <%= completed ? 'd-none' : '' %>">Skip</p>
+
+      <div class="skip-quiz <%= completed ? 'd-none' : '' %>">
+        <p>Show Answer</p>
+        <div class="currency-cost">
+          <h5>-1</h5>
+          <%= image_tag('nb-cuukie.svg') %>
+        </div>
+      </div>
+
       <p class="next-card primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
 
     </div>
