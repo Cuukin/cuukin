@@ -73,7 +73,9 @@ class UsersController < ApplicationController
   def update_currency
     @user = current_user
     authorize @user
-    @user.update(user_params)
+    if @user.cuukies >= 1
+      @user.update(user_params)
+    end
   end
 
   private
