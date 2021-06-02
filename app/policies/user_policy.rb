@@ -25,6 +25,10 @@ class UserPolicy < ApplicationPolicy
     user.sign_in_count <= 1
   end
 
+  def update_currency?
+    record == user
+  end
+
   def profile?
     owner?
   end

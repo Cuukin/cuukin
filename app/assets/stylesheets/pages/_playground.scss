@@ -163,6 +163,13 @@
   .unclickable {
     pointer-events: none;
   }
+
+  .quiz-error {
+    text-align: center;
+    margin: 8px 0 0;
+    color: $cuukin;
+    font-weight: 200;
+  }
 }
 
 .d-none {
