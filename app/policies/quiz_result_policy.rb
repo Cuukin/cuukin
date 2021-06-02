@@ -3,6 +3,10 @@ class QuizResultPolicy < ApplicationPolicy
     true
   end
 
+  def skip?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all

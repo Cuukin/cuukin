@@ -28,13 +28,15 @@
       </div>
 
 
-      <div class="skip-quiz <%= completed ? 'd-none' : '' %>">
-        <p>Show Answer</p>
-        <div class="currency-cost">
-          <h5>-1</h5>
-          <%= image_tag('nb-cuukie.svg') %>
+      <%= link_to skip_quiz_question_path(quiz_result: { quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'd-none' : ''}" do %>
+        <div class="skip-quiz">
+          <p>Show Answer</p>
+          <div class="currency-cost">
+            <h5>-5</h5>
+            <%= image_tag('nb-cuukie.svg') %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
       <p class="next-card primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
 

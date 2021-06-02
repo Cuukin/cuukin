@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   resources :grocery_list_items, only: [ :create, :destroy ]
   resources :grocery_lists, only: [ :show, :update, :destroy ]
   resources :quiz_results, only: [ :create ]
+  post 'skip_quiz_question', to: 'quiz_results#skip'
 
   get 'completed_recipes', to: 'user_recipes#completed_recipes'
   get 'unlocked_recipes', to: 'user_recipes#unlocked_recipes'
