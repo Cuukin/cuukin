@@ -70,6 +70,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_currency
+    @user = current_user
+    authorize @user
+    @user.update(user_params)
+  end
+
   private
 
   def find_user
@@ -77,6 +83,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :acquisition, :weekly_commitment, :motivation => [], :diet_restrictions => [])
+    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :acquisition, :weekly_commitment, :cuukies, :motivation => [], :diet_restrictions => [])
   end
 end

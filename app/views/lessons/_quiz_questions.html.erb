@@ -14,7 +14,7 @@
       <div class="quiz-answer-container">
         <% quiz_question.quiz_question_options.each do |option| %>
 
-          <%= link_to quiz_results_path(quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
+          <%= link_to quiz_results_path(@quiz_result, quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
             <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>" data-answer="<%= option.is_correct ? 1 : 0 %>">
               <p><%= option.option %></p>
             </div>
@@ -27,7 +27,17 @@
         <span>Answer:</span> <%= quiz_question.answer %>
       </div>
 
-      <p class="skip-quiz <%= completed ? 'd-none' : '' %>">Skip</p>
+
+      <%= link_to update_currency_path(user: { cuukies: current_user.cuukies }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
+        <div class="skip-quiz">
+          <p>Show Answer</p>
+          <div class="currency-cost">
+            <h5>-5</h5>
+            <%= image_tag('nb-cuukie.svg') %>
+          </div>
+        </div>
+      <% end %>
+
       <p class="next-card primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
 
     </div>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get 'commitment', to: 'users#commitment'
   patch 'create_commitment', to: 'users#create_commitment'
+  patch 'update_currency', to: 'users#update_currency'
 
   # Book, Lesson and Lesson Validation
 
