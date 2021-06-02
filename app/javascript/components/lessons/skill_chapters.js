@@ -36,7 +36,6 @@ const skillChapters = () => {
       let index = cards.indexOf(card);
       cards.splice(index, 1); // remove card from that array
       cards = [card, cards].flat(); // reassign cards to an array with card at the beggining
-      console.log(cards);
     };
 
     const backToOverview = () => {
@@ -64,21 +63,24 @@ const skillChapters = () => {
     };
 
     const moveToNextCard = () => {
-      counter += 1;
-      window.scrollTo({top: 0});
-
-      if (counter == cards.length) {
-        backToOverview();
+      if ((cards[counter].dataset.type == 'quiz') && (cards[counter].dataset.quizCompleted == 'false')) {
+        console.log('finish quiz');
       } else {
-        cards[counter].classList.remove('d-none');
-        cards[counter - 1].classList.add('d-none');
+        counter += 1;
 
-        pauseVideo(cards[counter - 1]);
+        if (counter == cards.length) {
+          backToOverview();
+        } else {
+          window.scrollTo({top: 0});
+          cards[counter].classList.remove('d-none');
+          cards[counter - 1].classList.add('d-none');
+          pauseVideo(cards[counter - 1]);
 
-        if (cards[counter].dataset.id !== cards[counter - 1].dataset.id) {
-          skillsCounter += 1;
-          checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
-          checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
+          if (cards[counter].dataset.id !== cards[counter - 1].dataset.id) {
+            skillsCounter += 1;
+            checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
+            checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
+          };
         };
       };
     };

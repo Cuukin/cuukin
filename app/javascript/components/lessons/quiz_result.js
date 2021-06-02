@@ -26,6 +26,8 @@ const quizResult = () => {
             options.forEach((option) => {
               option.parentElement.classList.add('unclickable');
             });
+
+            quiz.dataset.quizCompleted = "true";
           });
         });
       };
