@@ -64,7 +64,6 @@ const skillChapters = () => {
 
     const moveToNextCard = () => {
       if ((cards[counter].dataset.type == 'quiz') && (cards[counter].dataset.quizCompleted == 'false')) {
-        console.log('finish quiz');
       } else {
         counter += 1;
 

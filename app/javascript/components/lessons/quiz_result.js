@@ -6,9 +6,8 @@ const quizResult = () => {
     quizContainers.forEach((quiz) => {
 
       if (quiz.dataset.quizCompleted == 'false') {
-        let nbCuukie = document.querySelector('#nb-cuukie p');
-        let userCuukies = quiz.parentElement;
-        let cuukies = parseInt(userCuukies.dataset.userCurrency);
+        let nbCuukies = document.querySelector('#nb-cuukie p');
+        let cuukies = parseInt(nbCuukies.innerText);
 
         let nbXp = document.querySelector('#nb-xp p');
         let userXp = parseInt(nbXp.innerText);
@@ -20,6 +19,7 @@ const quizResult = () => {
         let correctOption = quiz.querySelector("[data-answer='1']");
 
         let cuukiesContainer = quiz.querySelector('.transition-cuukies');
+        let xpContainer = quiz.querySelector('.transition-xp');
 
         // functions (spend cuukie or gain xp)
 
@@ -37,19 +37,34 @@ const quizResult = () => {
             cuukiesContainer.style.bottom = '480px';
           }, 800);
           setTimeout(function() {
-            cuukies -= 1;
-            userCuukies.dataset.userCurrency = cuukies;
-            nbCuukie.innerText = cuukies;
-          }, 900);
+            cuukies = parseInt(nbCuukies.innerText);
+            nbCuukies.innerText = cuukies - 1;
+          }, 950);
         };
 
         const gainXp = () => {
-
+          setTimeout(function() {
+            xpContainer.classList.remove('d-none');
+          }, 0);
+          setTimeout(function() {
+            xpContainer.style.transition = 'all ease-in-out .7s';
+            xpContainer.style.opacity = '1';
+            xpContainer.style.bottom = '440px';
+          }, 50);
+          setTimeout(function() {
+            xpContainer.style.opacity = '0';
+            xpContainer.style.bottom = '480px';
+          }, 800);
+          setTimeout(function() {
+            userXp = parseInt(nbXp.innerText);
+            nbXp.innerText = userXp + 10;
+          }, 950);
         };
 
         // event listeners
 
         skip.addEventListener('click', (event) => {
+          cuukies = parseInt(nbCuukies.innerText);
           if (cuukies >= 1) {
             correctOption.classList.add('correct-answer');
             skip.classList.add('d-none');
@@ -74,7 +89,7 @@ const quizResult = () => {
             if (option.dataset.answer == "0") {
               option.classList.add('incorrect-answer'); // if user option is wrong then highlights with red style
             } else {
-              nbXp.innerText = userXp + 10; // if user option is right then updates nb xp
+              gainXp();
             };
 
             options.forEach((option) => {
