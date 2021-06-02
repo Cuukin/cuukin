@@ -16,13 +16,13 @@ const quizResult = () => {
         let correctOption = quiz.querySelector("[data-answer='0']");
 
         skip.addEventListener('click', (event) => {
-          if (cuukies >= 5) {
+          if (cuukies >= 1) {
             correctOption.classList.add('correct-answer');
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
             quiz.dataset.quizCompleted = "true";
-            cuukies -= 5;
+            cuukies -= 1;
             userCuukies.dataset.userCurrency = cuukies;
             nbCuukie.innerText = cuukies;
           } else {

@@ -28,11 +28,11 @@
       </div>
 
 
-      <%= link_to update_currency_path(user: { cuukies: current_user.cuukies }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
+      <%= link_to update_currency_path(user: { cuukies: current_user.cuukies - 1 }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
         <div class="skip-quiz">
           <p>Show Answer</p>
           <div class="currency-cost">
-            <h5>-5</h5>
+            <h5>-1</h5>
             <%= image_tag('nb-cuukie.svg') %>
           </div>
         </div>
