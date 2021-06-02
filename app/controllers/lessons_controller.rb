@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
     @user_skill = UserSkill.new
     @feedback = Feedback.new
     @quiz_result = QuizResult.new
+    @user = current_user
 
     authorize @lesson, policy_class: LessonPolicy
   end

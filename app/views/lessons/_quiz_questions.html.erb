@@ -27,15 +27,16 @@
         <span>Answer:</span> <%= quiz_question.answer %>
       </div>
 
-
-      <%= link_to update_currency_path(user: { cuukies: current_user.cuukies - 1 }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
-        <div class="skip-quiz">
-          <p>Show Answer</p>
-          <div class="currency-cost">
-            <h5>-1</h5>
-            <%= image_tag('nb-cuukie.svg') %>
+      <% unless completed %>
+        <%= link_to update_currency_path(@user, user: { cuukies: current_user.cuukies - 1 }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
+          <div class="skip-quiz">
+            <p>Show Answer</p>
+            <div class="currency-cost">
+              <h5>-1</h5>
+              <%= image_tag('nb-cuukie.svg') %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
 
       <p class="next-card primary-btn <%= completed ? '' : 'd-none' %>">Next</p>
