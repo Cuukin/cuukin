@@ -1,30 +1,30 @@
 <div class="skill-chapters-navbar">
-
   <%= image_tag('btn-back.svg', class: 'nav-btn prevChapter', id: 'prevChapter') %>
 
   <div class="skill-progression">
     <p>Skill Chapter</p>
+
     <div class="skill-checklist">
       <% skill_chapters.count.times do %>
         <div class="nav-check">
-          <%= image_tag('lesson-3-done.svg', class: 'skill-none', id: 'skillDone') %>
-          <%= image_tag('lesson-skill-uncheck.svg', id: 'play') %>
+          <%= image_tag('lesson-3-done.svg', class: 'd-none', id: 'skillDone') %>
+          <%= image_tag('lesson-skill-uncheck.svg', id: 'skillPlay') %>
         </div>
       <% end %>
     </div>
+
   </div>
 
-  <%= image_tag('btn-forward.svg', class: 'nav-btn nextChapter', id: 'nextChapter') %>
-
+  <%= image_tag('btn-forward.svg', class: 'nav-btn next-card next-chapter') %>
 </div>
 
 <div class="skill-chapters-container">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-    <div class="skill-chapter-card <%= index %>" id="skillCard-<%= skill_chapter.id %>">
+    <div class="skill-chapter-card skill-item d-none" data-type="video" data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>" data-id="<%= skill_chapter.id %>">
 
       <% unless skill_chapter.users.include?(current_user) %>
-        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "userSkill-#{skill_chapter.id}" %>
+        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "#{skill_chapter.id}" %>
       <% end %>
 
       <div class="skill-chapter-video">
@@ -32,17 +32,20 @@
           <div class="<%= current_user.user_skills.count < 1 ? "explain-video-control-backward" : "" %>" id="backward10"></div>
           <div class="<%= current_user.user_skills.count < 1 ? "explain-video-control-forward" : "" %>" id="forward10"></div>
         </div>
-        <video class="skillVideo userSkill-<%= skill_chapter.id %> <%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
+
+        <video class="skill-video" data-video-skill-id="<%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
       </div>
 
       <div class="skill-chapter-content">
         <%= image_tag('lesson-dash.svg', class: 'card-dash') %>
         <h2 class="text-center"><%= skill_chapter.title %></h2>
         <p class="skill-description"><%= skill_chapter.description %></p>
-        <p class="primary-btn nextChapter">Next Video</p>
+        <p class="primary-btn next-chapter next-card">Next Video</p>
       </div>
 
     </div>
+
+    <%= render 'lessons/quiz_questions', skill_chapter: skill_chapter %>
 
   <% end %>
 </div>

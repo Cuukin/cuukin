@@ -1,17 +1,16 @@
 const userSkill = () => {
   const userSkillBtns = document.querySelectorAll('.invisible-skill-btn');
-  //const skillVideos = document.querySelectorAll('.skillVideo');
 
   if (userSkillBtns) {
     userSkillBtns.forEach((btn) => {
-      let video = document.querySelector(`.${btn.id}`);
-      let tag = document.getElementById(`${video.classList[2]}`);
+      let video = document.querySelector(`[data-video-skill-id='${btn.id}']`);
+      let tag = document.querySelector(`[data-btn-skill-id='${btn.id}']`);
       let backwardBtns = document.querySelectorAll('.explain-video-control-backward');
       let forwardBtns = document.querySelectorAll('.explain-video-control-forward');
 
       video.addEventListener('play', () => {
         btn.click();
-        tag.querySelector('.skill-check').classList.remove('skill-none');
+        tag.querySelector('.skill-check').classList.remove('d-none');
 
         backwardBtns.forEach((btn) => {
           if (btn) {

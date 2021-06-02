@@ -3,7 +3,7 @@ const videoPlayer = () => {
 
   if (videoContainers) {
     videoContainers.forEach((container) => {
-      let video = container.querySelector('.skillVideo');
+      let video = container.querySelector('.skill-video');
       let backwardBtn = container.querySelector('#backward10');
       let forwardBtn = container.querySelector('#forward10');
 

@@ -1,41 +1,47 @@
 <% content_for :meta_title, "#{@lesson.title} | #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Learn all about #{@lesson.title.downcase}" %>
 
+<%= render 'shared/help_lesson' %>
+<%= render template: 'feedbacks/new' %>
+
 <% unless @validated || @locked %>
   <%= render template: 'lesson_validations/new' %>
 <% end %>
 
-<%= render 'shared/help_lesson' %>
-
 <div class="container-lesson-overview">
 
-  <%= render template: 'feedbacks/new' %>
   <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
   <div class="lesson-overview-navbar">
     <%= link_to :back do %>
       <%= image_tag('btn-back.svg') %>
     <% end %>
+
     <h1><%= @lesson.title %></h1>
+
     <%= image_tag('btn-help.svg', id: 'lessonHelpBtn') %>
   </div>
 
   <div class="lesson-overview-content">
-
     <div class="lesson-overview-skillchapters">
+
       <h1><%= @locked ? icon('fas', 'lock') : "" %><%= @locked ? " Upcoming Skill Chapters" : "Watch Skill Chapters" %></h1>
       <h2><%= @locked ? "Finish previous lesson to unlock" : "Bite-sized learnings on-the-go" %></h2>
 
       <div class="lesson-overview-skillchapters-cards <%= @lesson.skill_chapters.count > 1 ? "sp-around" : "fx-start" %>">
         <% @lesson.skill_chapters.order(:id).each do |skill_chapter| %>
-        <div class="lesson-overview-skill-card open-skill-btn" id="<%= skill_chapter.id %>">
-          <div class="badge-container">
-            <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
-            <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
+
+          <div class="lesson-overview-skill-card open-skill-btn" data-btn-skill-id="<%= skill_chapter.id %>">
+            <div class="badge-container">
+              <%= image_tag("#{skill_chapter.badge.white}", class: 'badge1') %>
+              <%= image_tag("#{skill_chapter.badge.icon}", class: 'badge2') %>
+            </div>
+
+            <%= image_tag('lesson-3-done.svg', class: "skill-check #{skill_chapter.users.include?(current_user) ? "" : "d-none"}") %>
+
+            <p class="skill-p"><%= skill_chapter.title %></p>
           </div>
-          <%= image_tag('lesson-3-done.svg', class: "skill-check #{skill_chapter.users.include?(current_user) ? "" : "skill-none"}") %>
-          <p class="skill-p"><%= skill_chapter.title %></p>
-        </div>
+
         <% end %>
       </div>
     </div>
@@ -47,6 +53,7 @@
       <div class="lesson-overview-recipes-cards">
         <% @lesson.recipes.order(external_url: :desc).each do |recipe| %>
           <div class="lesson-overview-recipe-card">
+
             <%= link_to recipe_path(recipe) do %>
               <div class="lesson-overview-recipe-image" style="background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,0)), url('<%= image_path("#{recipe.photo_url}") %>')">
                 <div class="recipe-info">
@@ -55,10 +62,13 @@
                 </div>
               </div>
             <% end %>
+
             <% if UserRecipe.where(user: current_user, completed: true).map {|ur| ur.recipe}.include?(recipe) %>
               <%= image_tag('lesson-3-done.svg', class: 'recipe-check') %>
             <% end %>
+
             <h3><%= recipe.title %></h3>
+
           </div>
         <% end %>
       </div>
@@ -66,6 +76,7 @@
 
     <% unless @locked %>
       <div class="lesson-overview-validation">
+
         <h1><%= @validated ? "Congrats!" : "Complete the Lesson" %></h1>
         <h2><%= @validated ? "You have already validated this lesson" : "Pics of the finished recipe or it did not happen!" %></h2>
 
@@ -86,6 +97,7 @@
             </div>
           </div>
         <% end %>
+
       </div>
     <% end %>
 
@@ -93,12 +105,12 @@
 </div>
 
 <% unless @locked %>
-  <div class="container-skill-chapters">
+  <div class="container-skill-chapters d-none">
     <%= render 'lessons/skill_chapters', skill_chapters: @lesson.skill_chapters %>
   </div>
 <% end %>
 
-<div class="referrers" style="display: none;">
+<div class="referrers d-none">
   <% if request.referrer == "#{request.protocol}#{request.host_with_port}#{url_for(action: 'show', controller: 'recipes')}" %>
     <div id="prevRecipe"></div>
   <% end %>
