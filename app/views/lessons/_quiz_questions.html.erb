@@ -1,7 +1,10 @@
 <% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
   <% completed = QuizResult.find_by(user: current_user, quiz_question: quiz_question) %>
 
-  <div class="quiz-container skill-item d-none" data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>" data-quiz-completed="<%= completed ? true : false %>" data-id="<%= skill_chapter.id %>">
+  <div class="quiz-container skill-item d-none"
+      data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>"
+      data-quiz-completed="<%= completed ? true : false %>"
+      data-id="<%= skill_chapter.id %>">
     <div class="quiz-card">
 
       <div class="quiz-transition-currencies transition-cuukies d-none">
@@ -19,18 +22,26 @@
         <h4><span class="current"><%= index + 1 %></span> / <%= skill_chapter.quiz_questions.count %></h4>
       </div>
 
-      <h1 class="quiz-question"><%= quiz_question.question %></h1>
+      <div class="quiz-card-content-container">
+        <h1 class="quiz-question"><%= quiz_question.question %></h1>
 
-      <div class="quiz-answer-container">
-        <% quiz_question.quiz_question_options.each do |option| %>
-
-          <%= link_to quiz_results_path(@quiz_result, quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
-            <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>" data-answer="<%= option.is_correct ? 1 : 0 %>">
-              <p><%= option.option %></p>
-            </div>
+        <div class="quiz-answer-container">
+          <% quiz_question.quiz_question_options.each do |option| %>
+            <%= link_to quiz_results_path(@quiz_result,
+                    quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }),
+                    method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
+              <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %>
+                    <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>"
+                    data-answer="<%= option.is_correct ? 1 : 0 %>"
+                    <% if option.photo.attached? %>
+                      style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                            url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{option.photo.key}.jpeg" %>')"
+                    <% end %>>
+                <p><%= option.option %></p>
+              </div>
+            <% end %>
           <% end %>
-
-        <% end %>
+        </div>
       </div>
 
       <div class="quiz-answer-content <%= completed ? '' : 'd-none' %>">
@@ -38,7 +49,9 @@
       </div>
 
       <% unless completed %>
-        <%= link_to update_currency_path(@user, user: { cuukies: current_user.cuukies - 1 }), method: :patch, remote: true, class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
+        <%= link_to update_currency_path(@user,
+            user: { cuukies: current_user.cuukies - 1 }), method: :patch, remote: true,
+            class: "skip-quiz-btn #{completed ? 'd-none' : ''}" do %>
           <div class="skip-quiz">
             <p>Show Answer</p>
             <div class="currency-cost">

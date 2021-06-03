@@ -47,9 +47,22 @@ const groceryListPage = () => {
       btn.addEventListener('click', (event) => {
         infoModal.style.display = "block";
       });
+
       let closeBtn = infoModal.querySelector('.currency-modal-close-btn');
       closeBtn.addEventListener('click', (event) => {
         infoModal.style.display = "none";
+      });
+
+      document.addEventListener('keyup', (event) => {
+        if (event.key === "Escape") {
+          infoModal.style.display = "none";
+        };
+      });
+
+      infoModal.addEventListener('click', (event) => {
+        if (event.target == infoModal) {
+          infoModal.style.display = "none";
+        };
       });
     });
   };
