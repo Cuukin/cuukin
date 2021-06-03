@@ -30,11 +30,11 @@ const quizResult = () => {
           setTimeout(function() {
             cuukiesContainer.style.transition = 'all ease-in-out .7s';
             cuukiesContainer.style.opacity = '1';
-            cuukiesContainer.style.bottom = '440px';
+            cuukiesContainer.style.top = '20px';
           }, 50);
           setTimeout(function() {
             cuukiesContainer.style.opacity = '0';
-            cuukiesContainer.style.bottom = '480px';
+            cuukiesContainer.style.top = '-10px';
           }, 800);
           setTimeout(function() {
             cuukies = parseInt(nbCuukies.innerText);
@@ -49,11 +49,11 @@ const quizResult = () => {
           setTimeout(function() {
             xpContainer.style.transition = 'all ease-in-out .7s';
             xpContainer.style.opacity = '1';
-            xpContainer.style.bottom = '440px';
+            xpContainer.style.top = '20px';
           }, 50);
           setTimeout(function() {
             xpContainer.style.opacity = '0';
-            xpContainer.style.bottom = '480px';
+            xpContainer.style.top = '-10px';
           }, 800);
           setTimeout(function() {
             userXp = parseInt(nbXp.innerText);
