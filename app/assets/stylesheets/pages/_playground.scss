@@ -69,6 +69,8 @@
     padding: 4px;
     cursor: pointer;
     transition: box-shadow .2s ease-in-out;
+    background-size: cover;
+    background-position: center;
 
     display: flex;
     flex-direction: column;
@@ -134,9 +136,9 @@
     transition: box-shadow .2s ease-in-out;
     background-color: rgba(181, 204, 24, .06) !important;
     color: $olive !important;
-    -webkit-box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
-    -moz-box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
-    box-shadow:inset 0px 0px 0px 2px #B5CC18 !important;
+    -webkit-box-shadow:inset 0px 0px 0px 5px #B5CC18 !important;
+    -moz-box-shadow:inset 0px 0px 0px 5px #B5CC18 !important;
+    box-shadow:inset 0px 0px 0px 5px #B5CC18 !important;
 
     p {
       font-weight: 600;
@@ -147,9 +149,9 @@
     transition: box-shadow .2s ease-in-out;
     background-color: rgba(171, 51, 51, .06);
     color: $dark-red;
-    -webkit-box-shadow:inset 0px 0px 0px 2px #AB3333;
-    -moz-box-shadow:inset 0px 0px 0px 2px #AB3333;
-    box-shadow:inset 0px 0px 0px 2px #AB3333;
+    -webkit-box-shadow:inset 0px 0px 0px 5px #AB3333;
+    -moz-box-shadow:inset 0px 0px 0px 5px #AB3333;
+    box-shadow:inset 0px 0px 0px 5px #AB3333;
   }
 
   .quiz-answer-content {

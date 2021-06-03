@@ -25,7 +25,9 @@
         <% quiz_question.quiz_question_options.each do |option| %>
 
           <%= link_to quiz_results_path(@quiz_result, quiz_result: { quiz_question_option_id: option.id, quiz_question_id: quiz_question.id }), method: :post, remote: true, class: "#{completed ? 'unclickable' : ''}" do %>
-            <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>" data-answer="<%= option.is_correct ? 1 : 0 %>">
+            <div class="quiz-answer <%= completed && option.is_correct ? 'correct-answer' : '' %> <%= completed && option == completed.quiz_question_option ? 'incorrect-answer' : '' %>"
+                  data-answer="<%= option.is_correct ? 1 : 0 %>"
+                  <% if option.photo.attached? %>style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{option.photo.key}.jpeg" %>')"<% end %>>
               <p><%= option.option %></p>
             </div>
           <% end %>

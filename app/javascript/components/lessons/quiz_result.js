@@ -64,6 +64,7 @@ const quizResult = () => {
         // event listeners
 
         skip.addEventListener('click', (event) => {
+          window.scrollTo({top: 0});
           cuukies = parseInt(nbCuukies.innerText);
           if (cuukies >= 1) {
             correctOption.classList.add('correct-answer');
@@ -81,6 +82,7 @@ const quizResult = () => {
 
         options.forEach((option) => {
           option.addEventListener('click', (event) => {
+            window.scrollTo({top: 0});
             correctOption.classList.add('correct-answer');
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
