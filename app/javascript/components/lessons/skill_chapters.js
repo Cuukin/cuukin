@@ -33,9 +33,14 @@ const skillChapters = () => {
       checks[counter].querySelector('#skillDone').classList.remove('d-none');
       checks[counter].querySelector('#skillPlay').classList.add('d-none');
       cards = Array.prototype.slice.call(cards); // turn cards node list into an array
-      let index = cards.indexOf(card);
-      cards.splice(index, 1); // remove card from that array
-      cards = [card, cards].flat(); // reassign cards to an array with card at the beggining
+      let related_cards = document.querySelectorAll(`[data-id='${card.dataset.id}']`);
+      let index = 0;
+      related_cards = Array.prototype.slice.call(related_cards); // turn cards node list into an array
+      related_cards.forEach((related_card) => {
+        index = cards.indexOf(related_card);
+        cards.splice(index, 1); // remove card from that array
+      });
+      cards = [related_cards, cards].flat(); // reassign cards to an array with card at the beggining
     };
 
     const backToOverview = () => {
