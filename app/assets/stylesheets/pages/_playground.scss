@@ -66,7 +66,7 @@
     background-color: rgba(237, 237, 237, .6);
     border-radius: 20px;
     margin: 4px 0;
-    padding: 4px;
+    padding: 12px;
     cursor: pointer;
     transition: box-shadow .2s ease-in-out;
     background-size: cover;
@@ -179,8 +179,7 @@
   position: absolute;
   display: flex;
   align-items: flex-end;
-  left: 200px;
-  // bottom: 410px;
+  left: 40%;
   top: 50px;
   opacity: 0;
 
@@ -210,6 +209,12 @@
 
 .d-none {
   display: none !important;
+}
+
+.trix-content {
+  strong {
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 500px) {
