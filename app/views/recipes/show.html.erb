@@ -209,7 +209,8 @@
       <% @recipe.recipe_methods&.order(:method_index).each_with_index do |recipe_method, index| %>
         <div class="recipe-method-card">
           <div class="recipe-method-video">
-            <video class="methodVideo" src="<%= recipe_method.video_url %>" controls playsinline loop></video>
+            <video class="methodVideo" src="<%= recipe_method.video_url %>"
+                poster="<%= recipe_method.poster_url %>" controls playsinline loop></video>
           </div>
 
           <div class="recipe-method-content-card">

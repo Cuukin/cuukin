@@ -21,10 +21,13 @@
 <div class="skill-chapters-container" data-user-currency="<%= current_user.cuukies %>">
   <% skill_chapters.order(:id).each_with_index do |skill_chapter, index| %>
 
-    <div class="skill-chapter-card skill-item d-none" data-type="video" data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>" data-id="<%= skill_chapter.id %>">
+    <div class="skill-chapter-card skill-item d-none" data-type="video"
+          data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>"
+          data-id="<%= skill_chapter.id %>">
 
       <% unless skill_chapter.users.include?(current_user) %>
-        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }), method: :post, remote: true, class: "invisible-skill-btn", id: "#{skill_chapter.id}" %>
+        <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }),
+            method: :post, remote: true, class: "invisible-skill-btn", id: "#{skill_chapter.id}" %>
       <% end %>
 
       <div class="skill-chapter-video">
@@ -33,7 +36,8 @@
           <div class="<%= current_user.user_skills.count < 1 ? "explain-video-control-forward" : "" %>" id="forward10"></div>
         </div>
 
-        <video class="skill-video" data-video-skill-id="<%= skill_chapter.id %>"  src="<%= skill_chapter.video_url %>" controls playsinline></video>
+        <video class="skill-video" data-video-skill-id="<%= skill_chapter.id %>"
+            poster="<%= skill_chapter.poster_url %>" src="<%= skill_chapter.video_url %>" controls playsinline></video>
       </div>
 
       <div class="skill-chapter-content">
