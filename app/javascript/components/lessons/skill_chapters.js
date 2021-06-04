@@ -145,9 +145,9 @@ const skillChapters = () => {
     });
 
     document.addEventListener('keyup', (event) => {
-      if (event.key === 'ArrowLeft') {
+      if (event.key === 'ArrowLeft' && lessonOverview.classList.contains('d-none')) {
         moveToPrevCard();
-      } else if (event.key === 'ArrowRight') {
+      } else if (event.key === 'ArrowRight' && lessonOverview.classList.contains('d-none')) {
         moveToNextCard();
       };
     });
