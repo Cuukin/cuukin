@@ -1,68 +1,68 @@
-badge_name,name,score1,score2,score3
-Chopping,Roughly chopping,15,2,0
-Chopping,Dicing 1,15,2,0
-Chopping,Dicing 2,15,2,0
-Chopping,Batonnet,15,2,0
-Chopping,Mincing 1,15,2,0
-Chopping,Mincing 2,15,2,0
-Chopping,Chopping herbs,15,2,0
-Chopping,Chopping Mushroom,15,2,0
-Chopping,Chopping fruits,15,2,0
-Chopping,Slicing,15,2,0
-Seasoning,Salting 1,15,2,0
-Seasoning,Salting 2,15,2,0
-Seasoning,Salting 3,15,2,0
-Seasoning,Seasoning 1,15,2,0
-Seasoning,Seasoning 2,15,2,0
-Seasoning,Seasoning 3,15,2,0
-Seasoning,Marinating 1,15,2,0
-Seasoning,Marinating 2,15,2,0
-Seasoning,Infusing,15,2,0
-Preserving,Freezing,15,2,0
-Preserving,Curing,15,2,0
-Preserving,Pickling,15,2,0
-Preserving,Refrigerating,15,2,0
-Mixing,Blending,15,2,0
-Mixing,Mixing,15,2,0
-Mixing,Whisking 1,15,2,0
-Mixing,Whisking 2,15,2,0
-Prepping techniques,Tenderizing,15,2,0
-Prepping techniques,Kneading,15,2,0
-Prepping techniques,Drying,15,2,0
-Prepping techniques,Rehidrating,15,2,0
-Prepping techniques,Mashing,15,2,0
-Prepping techniques,Squeezing,15,2,0
-Oven cooking,Roasting,15,2,0
-Oven cooking,Baking 1,15,2,0
-Oven cooking,Baking 2,15,2,0
-Oven cooking,Baking 3,15,2,0
-Oven cooking,Grating,15,2,0
-Stove-top cooking,Pan frying 1,15,2,0
-Stove-top cooking,Pan frying 2,15,2,0
-Stove-top cooking,Grilling,15,2,0
-Stove-top cooking,Sauteeing 1,15,2,0
-Stove-top cooking,Sauteeing 2,15,2,0
-Stove-top cooking,Searing,15,2,0
-Stove-top cooking,Braising,15,2,0
-Stove-top cooking,Flambing,15,2,0
-Stove-top cooking,Deep frying,15,2,0
-Stove-top cooking,Stir Frying 1,15,2,0
-Stove-top cooking,Stir Frying 2,15,2,0
-Stove-top cooking,Steaming,15,2,0
-Stove-top cooking,Boiling,15,2,0
-Stove-top cooking,Simmering,15,2,0
-Stove-top cooking,Poaching,15,2,0
-Stove-top cooking,Caramelising 1,15,2,0
-Stove-top cooking,Caramelising 2,15,2,0
-Stove-top cooking,Deglazing 1,15,2,0
-Stove-top cooking,Deglazing 2,15,2,0
-Stove-top cooking,Water-bathing,15,2,0
-Stove-top cooking,Reducing,15,2,0
-Stove-top cooking,Bain-marie,15,2,0
-Stove-top cooking,Double boiler,15,2,0
-Alternative cooking techniques,Air-frying,15,2,0
-Alternative cooking techniques,Microwaving,15,2,0
-Alternative cooking techniques,Toasting,15,2,0
-Alternative cooking techniques,Smoking,15,2,0
-Plating,Plating,15,2,0
-Prepping techniques,Measuring,15,2,0
+﻿Id,Name,Score 1,Score 2,Score 3,Created at,Updated at
+67,Measuring,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+66,Plating,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+65,Smoking,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+64,Toasting,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+63,Microwaving,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+62,Air Frying,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+61,Double Boiler,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+60,Bain Marie,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+59,Reducing,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+58,Water Bathing,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+57,Deglazing 2,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+56,Deglazing 1,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+55,Caramelising 2,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+54,Caramelising 1,15,2,0,2021-03-13 17:53:26 UTC,2021-03-13 17:53:26 UTC
+53,Poaching,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+52,Simmering,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+51,Boiling,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+50,Steaming,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+49,Stir Frying 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+48,Stir Frying 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+47,Deep Frying,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+46,Flambing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+45,Braising,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+44,Searing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+43,Sauteeing 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+42,Sauteeing 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+41,Grilling,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+40,Pan Frying 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+39,Pan Frying 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+38,Grating,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+37,Baking 3,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+36,Baking 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+35,Baking 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+34,Roasting,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+33,Squeezing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+32,Mashing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+31,Rehidrating,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+30,Drying,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+29,Kneading,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+28,Tenderizing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+27,Whisking 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+26,Whisking 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+25,Mixing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+24,Blending,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+23,Refrigerating,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+22,Pickling,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+21,Curing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+20,Freezing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+19,Infusing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+18,Marinating 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+17,Marinating 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+16,Seasoning 3,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+15,Seasoning 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+14,Seasoning 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+13,Salting 3,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+12,Salting 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+11,Salting 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+10,Slicing,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+9,Chopping Fruits,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+8,Chopping Mushroom,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+7,Chopping Herbs,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+6,Mincing 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+5,Mincing 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+4,Batonnet,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+3,Dicing 2,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+2,Dicing 1,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC
+1,Roughly Chopping,15,2,0,2021-03-13 17:53:25 UTC,2021-03-13 17:53:25 UTC

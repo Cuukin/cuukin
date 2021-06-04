@@ -1,0 +1,22 @@
+[
+  {
+    "id": 2,
+    "title": "Kitchen Basics",
+    "description": "You have the essentials down, lets move onto some new recipes. Don't worry, we're taking it easy on you still!",
+    "xp": 500,
+    "level": "newbie",
+    "created_at": "2021-03-13T17:53:26.255Z",
+    "updated_at": "2021-04-27T03:22:49.374Z",
+    "icon_url": "https://res.cloudinary.com/cuukin/image/upload/v1619189401/Cuukin%20-%20Book%20-%20Icons/book-1_aitoac.svg"
+  },
+  {
+    "id": 1,
+    "title": "Kitchen SOS",
+    "description": "New to cooking? Don't worry, we got your back. These basic recipes are a perfect starting point.",
+    "xp": 500,
+    "level": "newbie",
+    "created_at": "2021-03-13T17:53:26.248Z",
+    "updated_at": "2021-04-27T03:23:05.272Z",
+    "icon_url": "https://res.cloudinary.com/cuukin/image/upload/v1619189400/Cuukin%20-%20Book%20-%20Icons/book-0_ppxwtu.svg"
+  }
+]

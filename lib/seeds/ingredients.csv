@@ -1,176 +1,191 @@
-badge_name,name,score1,score2,score3
-Root Vegetables,Potato,5,1,0
-Root Vegetables,Sweet potato,5,1,0
-Root Vegetables,Carrot,5,1,0
-Root Vegetables,Radish,5,1,0
-Root Vegetables,Ginger,5,1,0
-Bulbs,Onion,5,1,0
-Bulbs,Garlic,5,1,0
-Bulbs,Green Onion,5,1,0
-Bulbs,Red Onion,5,1,0
-Greens,Lettuce,5,1,0
-Greens,Kale,5,1,0
-Greens,Spinach,5,1,0
-Greens,Watercress,5,1,0
-Greens,Salad,5,1,0
-Greens,Cabbage,5,1,0
-Greens,Broccoli,5,1,0
-Greens,Asparagus,5,1,0
-Greens,Celery,5,1,0
-(not) Veggies,Pepper,5,1,0
-(not) Veggies,Cucumber,5,1,0
-(not) Veggies,Tomato,5,1,0
-(not) Veggies,Butternut Squash,5,1,0
-(not) Veggies,Zucchini,5,1,0
-(not) Veggies,Cherry tomato,5,1,0
-(not) Veggies,Red pepper,5,1,0
-(not) Veggies,Aubergine,5,1,0
-(not) Veggies,Bell pepper,5,1,0
-Fruits,Apple,5,1,0
-Fruits,Banana,5,1,0
-Fruits,Pear,5,1,0
-Fruits,Strawberry,5,1,0
-Fruits,Lemon,5,1,0
-Fruits,Avocado,5,1,0
-Fresh herbs,Oregano,5,1,0
-Fresh herbs,Basil,5,1,0
-Fresh herbs,Parsley,5,1,0
-Fresh herbs,Coriander,5,1,0
-Fresh herbs,Thyme,5,1,0
-Fresh herbs,Sage,5,1,0
-Fresh herbs,Fresh Mint,5,1,0
-Fresh herbs,Dill,5,1,0
-Seeds and Grains,White rice,5,1,0
-Seeds and Grains,Cashew nut,5,1,0
-Seeds and Grains,Pine nut,5,1,0
-Seeds and Grains,Sesame seed,5,1,0
-Seeds and Grains,Risotto rice,5,1,0
-Seeds and Grains,Pistacchio,5,1,0
-Seeds and Grains,Sushi rice,5,1,0
-Seeds and Grains,Medium grain rice,5,1,0
-Legumes,Chickpea,5,1,0
-Legumes,Black bean,5,1,0
-Legumes,Red lentil,5,1,0
-Legumes,Frozen pea,5,1,0
-Legumes,Kidney bean,5,1,0
-Funghi,Shimeji Mushroom,5,1,0
-Funghi,Portobello Mushroom,5,1,0
-Funghi,Shitake Mushroom,5,1,0
-Funghi,White Mushroom,5,1,0
-Funghi,Chestnut Mushroom,5,1,0
-Funghi,Dried porccini Mushroom,5,1,0
-Chicken,Chicken thigh,5,1,0
-Chicken,Chicken breast,5,1,0
-Beef,Ground beef,5,1,0
-Beef,Sirloin steak,5,1,0
-Beef,Filet mignon,5,1,0
-Beef,Burger,5,1,0
-Pork,Bacon,5,1,0
-Pork,Pork ribs,5,1,0
-Pork,Pepperoni,5,1,0
-Pork,Prosciutto,5,1,0
-Pork,Ham,5,1,0
-Pork,Minced pork,5,1,0
-Pork,Sausage,5,1,0
-Pork,Pork chop,5,1,0
-Pork,Pancetta,5,1,0
-Fish,Salmon,5,1,0
-Fish,Cod,5,1,0
-Fish,Tuna steak,5,1,0
-Fish,Fresh fish,5,1,0
-Fish,Canned tuna,5,1,0
-Seafood,Prawn,5,1,0
-Seafood,Oyster,5,1,0
-Seafood,Tiger King Prawn,5,1,0
-Seafood,Clam,5,1,0
-Seafood,Mussel,5,1,0
-Eggs,Egg,5,1,0
-Dairy,Milk,5,1,0
-Dairy,Mozzarella cheese,5,1,0
-Dairy,Heavy Cream,5,1,0
-Dairy,Parmesan cheese,5,1,0
-Dairy,Soured cream,5,1,0
-Dairy,Goat cheese,5,1,0
-Dairy,Cheese,5,1,0
-Dairy,Pecorino cheese,5,1,0
-Dairy,Alternative milk,5,1,0
-Dairy,Feta cheese,5,1,0
-Dairy,Coconut cream,5,1,0
-Dairy,Mature cheddar cheese,5,1,0
-Fats and oils,Butter,5,1,0
-Fats and oils,Olive oil,5,1,0
-Fats and oils,Coconut oil,5,1,0
-Fats and oils,Cooking oil,5,1,0
-Condiments,Apple vinegar,5,1,0
-Condiments,White wine vinegar,5,1,0
-Condiments,Dijon mustard,5,1,0
-Condiments,Ketchup,5,1,0
-Condiments,Vanilla extract,5,1,0
-Condiments,Oyster sauce,5,1,0
-Condiments,Soy sauce,5,1,0
-Condiments,Olive,5,1,0
-Condiments,Balsamic vinegar,5,1,0
-Condiments,Mayonnaise,5,1,0
-Condiments,Curry paste,5,1,0
-Dry herbs and spices,Dried oregano,5,1,0
-Dry herbs and spices,Dried mint,5,1,0
-Dry herbs and spices,Salt,5,1,0
-Dry herbs and spices,Sea salt,5,1,0
-Dry herbs and spices,Black pepper,5,1,0
-Dry herbs and spices,Paprika,5,1,0
-Dry herbs and spices,Flaky salt,5,1,0
-Dry herbs and spices,Red chilli,5,1,0
-Dry herbs and spices,Japanese curry cube,5,1,0
-Dry herbs and spices,Mixed herbs,5,1,0
-Dry herbs and spices,Red chili,5,1,0
-Dry herbs and spices,Cumin,5,1,0
-Dry herbs and spices,Cinnamon,5,1,0
-Cooking alcohols,Brandy,5,1,0
-Cooking alcohols,White wine,5,1,0
-Cooking alcohols,Red wine,5,1,0
-Stocks and sauces,Tomato sauce,5,1,0
-Stocks and sauces,Bechamel sauce,5,1,0
-Stocks and sauces,Tartar sauce,5,1,0
-Stocks and sauces,Vegetable stock,5,1,0
-Stocks and sauces,Beef Stock,5,1,0
-Stocks and sauces,Curry sauce,5,1,0
-Stocks and sauces,Worcestershire sauce,5,1,0
-Stocks and sauces,Fish stock,5,1,0
-Stocks and sauces,Chicken stock,5,1,0
-Stocks and sauces,Coconut milk,5,1,0
-Stocks and sauces,Pesto,5,1,0
-Stocks and sauces,Canned tomatoes,5,1,0
-Sweeteners and chocolate,Sugar,5,1,0
-Sweeteners and chocolate,Chocolate,5,1,0
-Sweeteners and chocolate,Dark Chocolate,5,1,0
-Sweeteners and chocolate,Nutella,5,1,0
-Sweeteners and chocolate,Honey,5,1,0
-Sweeteners and chocolate,Light Brown Sugar,5,1,0
-Sweeteners and chocolate,Chocolate chip,5,1,0
-Sweeteners and chocolate,Cocoa powder,5,1,0
-"Bread, flour and pasta",Sliced Bread,5,1,0
-"Bread, flour and pasta",Focaccia,5,1,0
-"Bread, flour and pasta",Baguette,5,1,0
-"Bread, flour and pasta",Yeast,5,1,0
-"Bread, flour and pasta",Fresh bread,5,1,0
-"Bread, flour and pasta",Puff Pastry,5,1,0
-"Bread, flour and pasta",Bread,5,1,0
-"Bread, flour and pasta",English muffin,5,1,0
-"Bread, flour and pasta",Pitta bread,5,1,0
-"Bread, flour and pasta",Burger bun,5,1,0
-"Bread, flour and pasta",Dried spaghetti,5,1,0
-"Bread, flour and pasta",Dried pasta,5,1,0
-"Bread, flour and pasta",Lasagne Sheet,5,1,0
-"Bread, flour and pasta",Panko,5,1,0
-"Bread, flour and pasta",Corn Flour,5,1,0
-"Bread, flour and pasta",Wheat Flour,5,1,0
-"Bread, flour and pasta",Breading flour,5,1,0
-"Bread, flour and pasta",Flour,5,1,0
-"Bread, flour and pasta",Baking soda,5,1,0
-"Bread, flour and pasta",Fusilli,5,1,0
-"Bread, flour and pasta",Baking powder,5,1,0
-Pork,Guanciale,5,1,0
-Dry herbs and spices,Chili flakes,5,1,0
-Dairy,Double cream,5,1,0
-Sweeteners and chocolate,Dark chocolate chips,5,1,0
-Sweeteners and chocolate,White chocolate chips,5,1,0
+﻿Id,Name,Created at,Updated at,Score 1,Score 2,Score 3,Cupboard
+191,Smoked salmon,2021-04-26 10:52:44 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+190,Smoked mackerel,2021-04-26 10:52:10 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+189,Peanut butter,2021-04-26 10:48:18 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+188,Parmigiano cheese,2021-04-26 10:47:19 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+186,Jam,2021-04-26 10:44:29 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+185,Ice cream,2021-04-26 10:43:39 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+184,Horseradish sauce,2021-04-26 10:42:13 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+183,English mustard,2021-04-26 10:40:52 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+182,Cream cheese,2021-04-26 10:39:12 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+181,Chives,2021-04-26 10:38:16 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+180,Cherry,2021-04-26 10:36:21 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+179,Caster sugar,2021-04-26 10:35:33 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+178,Blue Cheese,2021-04-26 10:32:49 UTC,2021-05-21 21:23:09 UTC,5,1,0,false
+177,Lemon Zest,2021-04-05 19:08:11 UTC,2021-04-05 19:08:11 UTC,5,1,0,false
+176,Breadcrumbs,2021-03-31 22:33:14 UTC,2021-03-31 22:33:14 UTC,5,1,0,false
+175,White Chocolate Chips,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+174,Dark Chocolate Chips,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+173,Double Cream,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+172,Chili Flakes,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+171,Guanciale,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+170,Baking Powder,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+169,Fusilli,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+168,Baking Soda,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+167,Flour,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+166,Breading Flour,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+165,Wheat Flour,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+164,Corn Flour,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+163,Panko,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+162,Lasagne Sheet,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+161,Dried Pasta,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+160,Dried Spaghetti,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+159,Burger Bun,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+158,Pitta Bread,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+157,English Muffin,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+156,Bread,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+155,Puff Pastry,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+154,Fresh Bread,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+153,Yeast,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+152,Baguette,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+151,Focaccia,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+150,Sliced Bread,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+149,Cocoa Powder,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+148,Chocolate Chip,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+147,Light Brown Sugar,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+146,Honey,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+145,Nutella,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+144,Dark Chocolate,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+143,Chocolate,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+142,Sugar,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+141,Canned Tomatoes,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+140,Pesto,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+139,Coconut Milk,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+138,Chicken Stock,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+137,Fish Stock,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+136,Worcestershire Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+135,Curry Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+134,Beef Stock,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+133,Vegetable Stock,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+132,Tartar Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+131,Bechamel Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+130,Tomato Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+129,Red Wine,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+128,White Wine,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+127,Brandy,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+126,Cinnamon,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+125,Cumin,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+124,Red Chili,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+123,Mixed Herbs,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+122,Japanese Curry Cube,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+121,Red Chilli,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+120,Flaky Salt,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+119,Paprika,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+118,Black Pepper,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+117,Sea Salt,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+116,Salt,2021-03-13 17:53:24 UTC,2021-04-30 23:51:59 UTC,5,1,0,true
+115,Dried Mint,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+114,Dried Oregano,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+113,Curry Paste,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+112,Mayonnaise,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+111,Balsamic Vinegar,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+110,Olive,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+109,Soy Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+108,Oyster Sauce,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+107,Vanilla Extract,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+106,Ketchup,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+105,Dijon Mustard,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+104,White Wine Vinegar,2021-03-13 17:53:24 UTC,2021-03-13 17:53:24 UTC,5,1,0,false
+103,Apple Vinegar,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+102,Cooking Oil,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+101,Coconut Oil,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+100,Olive Oil,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+99,Butter,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+98,Mature Cheddar Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+97,Coconut Cream,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+96,Feta Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+95,Alternative Milk,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+94,Pecorino Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+93,Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+92,Goat Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+91,Soured Cream,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+90,Parmesan Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+89,Heavy Cream,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+88,Mozzarella Cheese,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+87,Milk,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+86,Egg,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+85,Mussel,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+84,Clam,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+83,Tiger King Prawn,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+82,Oyster,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+81,Prawn,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+80,Canned Tuna,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+79,Fresh Fish,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+78,Tuna Steak,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+77,Cod,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+76,Salmon,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+75,Pancetta,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+74,Pork Chop,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+73,Sausage,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+72,Minced Pork,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+71,Ham,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+70,Prosciutto,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+69,Pepperoni,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+68,Pork Ribs,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+67,Bacon,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+66,Burger,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+65,Filet Mignon,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+64,Sirloin Steak,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+63,Ground Beef,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+62,Chicken Breast,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+61,Chicken Thigh,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+60,Dried Porccini Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+59,Chestnut Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+58,White Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+57,Shitake Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+56,Portobello Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+55,Shimeji Mushroom,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+54,Kidney Bean,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+53,Frozen Pea,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+52,Red Lentil,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+51,Black Bean,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+50,Chickpea,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+49,Medium Grain Rice,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+48,Sushi Rice,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+47,Pistacchio,2021-03-13 17:53:23 UTC,2021-03-13 17:53:23 UTC,5,1,0,false
+46,Risotto Rice,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+45,Sesame Seed,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+44,Pine Nut,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+43,Cashew Nut,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+42,White Rice,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+41,Dill,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+40,Fresh Mint,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+39,Sage,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+38,Thyme,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+37,Coriander,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+36,Parsley,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+35,Basil,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+34,Oregano,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+33,Avocado,2021-03-13 17:53:22 UTC,2021-04-30 23:52:27 UTC,5,1,0,false
+32,Lemon,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+31,Strawberry,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+30,Pear,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+29,Banana,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+28,Apple,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+27,Bell Pepper,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+26,Aubergine,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+25,Red Pepper,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+24,Cherry Tomato,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+23,Zucchini,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+22,Butternut Squash,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+21,Tomato,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+20,Cucumber,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+19,Pepper,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+18,Celery,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+17,Asparagus,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+16,Broccoli,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+15,Cabbage,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+14,Salad,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+13,Watercress,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+12,Spinach,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+11,Kale,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+10,Lettuce,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+9,Red Onion,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+8,Green Onion,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+7,Garlic,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+6,Onion,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+5,Ginger,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+4,Radish,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+3,Carrot,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+2,Sweet Potato,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false
+1,Potato,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,5,1,0,false

@@ -1,41 +1,44 @@
-id,badge_name,name,score1,score2,score3,suggested_buy_link
-1,Cutting tools,Knife,10,1,0,https://www.amazon.co.uk/Chef-Knife-Universal-Ergonomic-Professional/dp/B07GL19QJY/ref=sr_1_7?dchild=1&keywords=Chefs+knife&qid=1608755754&sr=8-7
-2,Cutting tools,Peeler,10,1,0,https://www.amazon.co.uk/Chef-Aid-10E10426-Peeler/dp/B00VFNIG1Q/ref=sr_1_19?dchild=1&keywords=peeler&qid=1608756453&s=kitchen&sr=1-19&th=1
-3,Cutting tools,Grater,10,1,0,https://www.amazon.co.uk/Kitchen-Lemon-Zester-Cheese-Grater/dp/B089394C71/ref=sxin_11_trfob_1?cv_ct_cx=cheese+Grater&dchild=1&keywords=cheese+Grater&pd_rd_i=B089394C71&pd_rd_r=58fd4bd7-99e8-4ae1-ba7d-bc888f6f6640&pd_rd_w=Pd15D&pd_rd_wg=76Ei3&pf_rd_p=dd03f270-1051-48e0-8026-dd0ab5be82a3&pf_rd_r=BP2PEXPW1QSM8R6Q8R4B&qid=1615473364&sr=1-2-cc7a04fe-cc55-42ad-b883-1b910070c86a
-4,Utensils,Spatula,10,1,0,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6
-5,Utensils,Whisk,10,1,0,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6
-6,Utensils,Cutting board,10,1,0,https://www.amazon.co.uk/Chopping-Pre-Oiled-Vegetables-SKY-LIGHT-Medium/dp/B083B5R4X8/ref=sr_1_5?dchild=1&keywords=Chopping%2Bboard&qid=1608756330&s=kitchen&sr=1-5&th=1
-7,Utensils,Spoon,10,1,0,
-8,Utensils,Fork,10,1,0,
-9,Utensils,Measuring cups,10,1,0,
-10,Utensils,Measuring spoons,10,1,0,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6
-11,Utensils,Slotted spoon,10,1,0,
-12,Pots and pans,Frying pan,10,1,0,https://www.amazon.co.uk/OXO-Softworks-Soft-Touch-Induction-Dishwasher/dp/B073TXCT5Y/ref=sr_1_4?dchild=1&keywords=Frying+pan+oxo&qid=1608756893&s=kitchen&sr=1-4
-13,Pots and pans,Sautese,10,1,0,
-14,Pots and pans,Pot,10,1,0,https://www.amazon.co.uk/MasterClass-Induction-Safe-Stainless-Steel-Silver/dp/B000NZNO78/ref=sr_1_3_mod_primary_new?dchild=1&keywords=cooking%2Bpot&qid=1608757517&s=kitchen&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-3&th=1
-15,Pots and pans,Saucepan,10,1,0,
-16,Pots and pans,Preassure pot,10,1,0,
-17,Pots and pans,Wok,10,1,0,
-18,Containers,Baking tray,10,1,0,https://www.amazon.co.uk/Prestige-Aerolift-Cushion-Freezer-Dishwasher/dp/B08G55LKQR/ref=sr_1_6?crid=2QZP9ONE7NG53&dchild=1&keywords=baking+tray+non+stick&qid=1615473529&s=kitchen&sprefix=baking+tray+no%2Ckitchen%2C158&sr=1-6
-19,Containers,Bowl,10,1,0,https://www.amazon.co.uk/Piece-Mixing-Bowl-Set-Lid/dp/B072BC73L4/ref=sr_1_2_sspa?dchild=1&keywords=Bowl&qid=1615473585&s=kitchen&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExS1QwQ0JQMVIxTDlTJmVuY3J5cHRlZElkPUEwNjM3MDQ2Mk5ZNkxCNTRWOFFIOCZlbmNyeXB0ZWRBZElkPUEwMTc5NDI4MlVCR1pBRUhSU0o1UyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=
-20,Containers,Colander,10,1,0,https://www.amazon.co.uk/BasicForm-Micro-Perforated-Colander-Handle-Stainless/dp/B074J8JQC2/ref=sr_1_5?dchild=1&keywords=colander&qid=1608757654&s=kitchen&sr=1-5
-21,Containers,Ovenproof container,10,1,0,
-22,Disposables,Cling film,10,1,0,
-23,Disposables,Paper towels,10,1,0,
-24,Disposables,Parchment paper,10,1,0,
-25,Disposables,Aluminum foil,10,1,0,
-26,Heating equipment,Microwave,10,1,0,https://www.amazon.co.uk/Russell-Hobbs-RHFM2001B-Flatbed-Microwave/dp/B01N16BG31/ref=sr_1_21?dchild=1&keywords=Microwave&qid=1615473665&s=kitchen&sr=1-21
-27,Heating equipment,Stove,10,1,0,
-28,Heating equipment,Oven,10,1,0,
-29,Heating equipment,Airfryer,10,1,0,
-30,Storage,Fridge,10,1,0,
-31,Storage,Freezer,10,1,0,
-32,Appliances,Food processor,10,1,0,https://www.amazon.co.uk/Ninja-NJ1002UKBK-NINJA-Chopper-Black/dp/B01B81R34U/ref=sr_1_19?dchild=1&keywords=food+processor+ninja&qid=1608761692&s=kitchen&sr=1-19
-33,Appliances,Suvid,10,1,0,
-34,Appliances,Blender,10,1,0,
-35,Appliances,Thermometer,10,1,0,
-36,Appliances,Scale,10,1,0,https://www.amazon.co.uk/Eono-Amazon-Weighing-Stainless-Guarantee/dp/B088QY2JR5/ref=sr_1_5_mod_primary_lightning_deal?dchild=1&keywords=kitchen+scale&qid=1615474126&s=kitchen&sbo=Tc8eqSFhUl4VwMzbE4fw%2Fw%3D%3D&smid=A14W0J5BSTPQ5Z&sr=1-5
-37,Utensils,Rolling pin,10,1,0,
-38,Utensils,Tong,10,1,0,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6
-39,Containers,Glasses,10,1,0,
-40,Cutting tools,Serrated Knife,10,1,0,
+﻿Id,Name,Suggested product,Created at,Updated at,Score 1,Score 2,Score 3
+43,Toaster,"",2021-04-26 11:07:17 UTC,2021-04-26 11:07:17 UTC,10,1,0
+42,Mug,"",2021-04-26 11:05:11 UTC,2021-04-26 11:05:11 UTC,10,1,0
+41,Dish,"",2021-04-26 10:59:56 UTC,2021-04-26 10:59:56 UTC,10,1,0
+40,Serrated Knife,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+39,Glasses,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+38,Tong,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+37,Rolling Pin,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+36,Scale,https://www.amazon.co.uk/Eono-Amazon-Weighing-Stainless-Guarantee/dp/B088QY2JR5/ref=sr_1_5_mod_primary_lightning_deal?dchild=1&keywords=kitchen+scale&qid=1615474126&s=kitchen&sbo=Tc8eqSFhUl4VwMzbE4fw%2Fw%3D%3D&smid=A14W0J5BSTPQ5Z&sr=1-5,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+35,Thermometer,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+34,Blender,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+33,Suvid,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+32,Food Processor,https://www.amazon.co.uk/Ninja-NJ1002UKBK-NINJA-Chopper-Black/dp/B01B81R34U/ref=sr_1_19?dchild=1&keywords=food+processor+ninja&qid=1608761692&s=kitchen&sr=1-19,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+31,Freezer,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+30,Fridge,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+29,Airfryer,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+28,Oven,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+27,Stove,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+26,Microwave,https://www.amazon.co.uk/Russell-Hobbs-RHFM2001B-Flatbed-Microwave/dp/B01N16BG31/ref=sr_1_21?dchild=1&keywords=Microwave&qid=1615473665&s=kitchen&sr=1-21,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+25,Aluminum Foil,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+24,Parchment Paper,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+23,Paper Towels,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+22,Cling Film,,2021-03-13 17:53:22 UTC,2021-03-13 17:53:22 UTC,10,1,0
+21,Ovenproof Container,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+20,Colander,https://www.amazon.co.uk/BasicForm-Micro-Perforated-Colander-Handle-Stainless/dp/B074J8JQC2/ref=sr_1_5?dchild=1&keywords=colander&qid=1608757654&s=kitchen&sr=1-5,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+19,Bowl,https://www.amazon.co.uk/Piece-Mixing-Bowl-Set-Lid/dp/B072BC73L4/ref=sr_1_2_sspa?dchild=1&keywords=Bowl&qid=1615473585&s=kitchen&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExS1QwQ0JQMVIxTDlTJmVuY3J5cHRlZElkPUEwNjM3MDQ2Mk5ZNkxCNTRWOFFIOCZlbmNyeXB0ZWRBZElkPUEwMTc5NDI4MlVCR1pBRUhSU0o1UyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+18,Baking Tray,https://www.amazon.co.uk/Prestige-Aerolift-Cushion-Freezer-Dishwasher/dp/B08G55LKQR/ref=sr_1_6?crid=2QZP9ONE7NG53&dchild=1&keywords=baking+tray+non+stick&qid=1615473529&s=kitchen&sprefix=baking+tray+no%2Ckitchen%2C158&sr=1-6,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+17,Wok,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+16,Preassure Pot,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+15,Saucepan,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+14,Pot,https://www.amazon.co.uk/MasterClass-Induction-Safe-Stainless-Steel-Silver/dp/B000NZNO78/ref=sr_1_3_mod_primary_new?dchild=1&keywords=cooking%2Bpot&qid=1608757517&s=kitchen&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-3&th=1,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+13,Sautese,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+12,Frying Pan,https://www.amazon.co.uk/OXO-Softworks-Soft-Touch-Induction-Dishwasher/dp/B073TXCT5Y/ref=sr_1_4?dchild=1&keywords=Frying+pan+oxo&qid=1608756893&s=kitchen&sr=1-4,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+11,Slotted Spoon,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+10,Measuring Spoons,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+9,Measuring Cups,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+8,Fork,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+7,Spoon,,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+6,Cutting Board,https://www.amazon.co.uk/Chopping-Pre-Oiled-Vegetables-SKY-LIGHT-Medium/dp/B083B5R4X8/ref=sr_1_5?dchild=1&keywords=Chopping%2Bboard&qid=1608756330&s=kitchen&sr=1-5&th=1,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+5,Whisk,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+4,Spatula,https://www.amazon.co.uk/Silicone-Utensils-GO-LILI-Non-Stick-Resistant/dp/B08FNFP632/ref=sr_1_6?crid=H9RGDZZ1ZL2L&dchild=1&keywords=cooking+utensils+set&qid=1615473973&s=kitchen&sprefix=Cooking+ut%2Ckitchen%2C150&sr=1-6,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+3,Grater,https://www.amazon.co.uk/Kitchen-Lemon-Zester-Cheese-Grater/dp/B089394C71/ref=sxin_11_trfob_1?cv_ct_cx=cheese+Grater&dchild=1&keywords=cheese+Grater&pd_rd_i=B089394C71&pd_rd_r=58fd4bd7-99e8-4ae1-ba7d-bc888f6f6640&pd_rd_w=Pd15D&pd_rd_wg=76Ei3&pf_rd_p=dd03f270-1051-48e0-8026-dd0ab5be82a3&pf_rd_r=BP2PEXPW1QSM8R6Q8R4B&qid=1615473364&sr=1-2-cc7a04fe-cc55-42ad-b883-1b910070c86a,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+2,Peeler,https://www.amazon.co.uk/Chef-Aid-10E10426-Peeler/dp/B00VFNIG1Q/ref=sr_1_19?dchild=1&keywords=peeler&qid=1608756453&s=kitchen&sr=1-19&th=1,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0
+1,Knife,https://www.amazon.co.uk/Chef-Knife-Universal-Ergonomic-Professional/dp/B07GL19QJY/ref=sr_1_7?dchild=1&keywords=Chefs+knife&qid=1608755754&sr=8-7,2021-03-13 17:53:21 UTC,2021-03-13 17:53:21 UTC,10,1,0

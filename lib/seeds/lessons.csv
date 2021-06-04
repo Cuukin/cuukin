@@ -1,9 +1,9 @@
-book_name,recipe_name,title
-Kitchen SOS,Avotoast,Avotoast
-Kitchen SOS,Chocolate kissed strawberries,Chocolate kissed strawberries
-Kitchen SOS,Baked Portobello,Baked Portobello
-Kitchen SOS,Spaghetti Alla Carbonara,Spaghetti Alla Carbonara
-Kitchen basics,Honey Mustard Salmon,Honey Mustard Salmon
-Kitchen basics,Stuffed mushroom with sauteed spinach,Stuffed mushroom with sauteed spinach
-Kitchen basics,Chicken salad with homemade pesto,Chicken salad with homemade pesto
-Kitchen basics,American style pancakes,American style pancakes
+﻿Id,Title,Xp,Created at,Updated at,Order in book
+8,American Style Pancakes,100,2021-03-13 17:53:28 UTC,2021-03-13 17:53:28 UTC,
+7,Chicken Salad With Homemade Pesto,100,2021-03-13 17:53:28 UTC,2021-03-13 17:53:28 UTC,
+6,Stuffed Mushroom With Sauteed Spinach,100,2021-03-13 17:53:28 UTC,2021-03-13 17:53:28 UTC,
+5,Honey Mustard Salmon,100,2021-03-13 17:53:28 UTC,2021-03-13 17:53:28 UTC,
+4,Stove and pasta,100,2021-03-13 17:53:28 UTC,2021-05-21 19:45:17 UTC,3
+3,Oven,100,2021-03-13 17:53:28 UTC,2021-05-21 19:45:33 UTC,2
+2,Microwave Deserts,100,2021-03-13 17:53:28 UTC,2021-05-21 19:38:54 UTC,2
+1,Seasoning magic,100,2021-03-13 17:53:28 UTC,2021-05-21 19:45:55 UTC,1
