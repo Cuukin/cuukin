@@ -1,7 +1,7 @@
 ActiveAdmin.register SkillChapter do
   menu parent: "Lesson"
 
-  permit_params :title, :description, :video_url, :lesson_id
+  permit_params :title, :description, :video_url, :poster_url, :lesson_id
 
   index do
     selectable_column
