@@ -90,3 +90,13 @@ body::-webkit-scrollbar {
   background-color: rgba(140,140,140,0.4);
   z-index: 40;
 }
+
+.d-none {
+  display: none !important;
+}
+
+.trix-content {
+  strong {
+    font-weight: 600;
+  }
+}
