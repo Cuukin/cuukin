@@ -13,4 +13,15 @@ ActiveAdmin.register SkillChapter do
     actions
   end
 
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :lesson
+      f.input :description
+      f.input :video_url
+      f.input :poster_url
+      f.button :submit
+    end
+  end
+
 end
