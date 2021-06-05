@@ -95,7 +95,7 @@ const skillChapters = () => {
     const moveToNextCard = () => {
       if (counter == cards.length - 1) {
         backToOverview();
-      } else if ((cards[counter].dataset.skippable == 'true') && (cards[counter].dataset.id !== cards[counter + 1].dataset.id)) {
+      } else if ((cards[counter].dataset.cardSkippable == 'true') && (cards[counter].dataset.id !== cards[counter + 1].dataset.id)) {
         counter += 1;
         window.scrollTo({top: 0});
 
@@ -115,7 +115,7 @@ const skillChapters = () => {
         checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
 
         markAsCompleted(cards[counter]);
-      } else if ((cards[counter].dataset.skippable == 'true') && (cards[counter].dataset.id == cards[counter + 1].dataset.id)) {
+      } else if ((cards[counter].dataset.cardSkippable == 'true') && (cards[counter].dataset.id == cards[counter + 1].dataset.id)) {
         counter += 1;
         window.scrollTo({top: 0});
 

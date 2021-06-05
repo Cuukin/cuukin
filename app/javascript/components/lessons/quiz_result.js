@@ -84,7 +84,7 @@ const quizResult = () => {
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
             quiz.dataset.quizCompleted = "true";
-            quiz.dataset.skippable = "true";
+            quiz.dataset.cardSkippable = "true";
             options.forEach((option) => {
               option.parentElement.classList.add('unclickable');
             });
@@ -121,7 +121,7 @@ const quizResult = () => {
             });
 
             quiz.dataset.quizCompleted = "true";
-            quiz.dataset.skippable = "true";
+            quiz.dataset.cardSkippable = "true";
             markAsComplete();
           });
         });

@@ -1,11 +1,11 @@
 <% skill_chapter.quiz_questions.each_with_index do |quiz_question, index| %>
   <% completed = QuizResult.find_by(user: current_user, quiz_question: quiz_question) %>
 
-  <div class="quiz-container skill-item d-none"
-      data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>"
+  <div class="quiz-container skill-item d-none" data-type="quiz"
+      data-quiz-skill-id="<%= skill_chapter.id %>" data-quiz-index="<%= index %>"
       data-quiz-completed="<%= completed ? true : false %>"
-      data-id="<%= skill_chapter.id %>" data-quiz-index="<%= index %>"
-      data-card-current="0" data-skippable="<%= completed ? true : false %>">
+      data-id="<%= skill_chapter.id %>" data-card-current="0"
+      data-card-skippable="<%= completed ? true : false %>">
     <div class="quiz-card">
 
       <div class="quiz-transition-currencies transition-cuukies d-none">
