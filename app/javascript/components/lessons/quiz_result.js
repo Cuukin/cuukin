@@ -74,9 +74,9 @@ const quizResult = () => {
             quiz.dataset.quizCompleted = "true";
             spendCuukies();
           } else {
+            skip.classList.add('unclickable');
             let error = '<p class="quiz-error">Not enough cuukies</p>'
             quiz.querySelector('.quiz-card').insertAdjacentHTML('beforeend', error);
-            skip.classList.add('unclickable');
           };
         });
 
@@ -87,6 +87,8 @@ const quizResult = () => {
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
+            let error = document.querySelector('.quiz-error');
+            error.remove();
 
             if (option.dataset.answer == "0") {
               option.classList.add('incorrect-answer'); // if user option is wrong then highlights with red style
