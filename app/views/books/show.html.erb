@@ -23,13 +23,7 @@
               <p>Done - Hurray!</p>
               <h2><%= lesson.title %></h2>
             </div>
-          <% elsif lesson.order_in_book == 1 %>
-            <%= image_tag('lesson-2-current.svg') %>
-            <div class="lesson-card-current">
-              <p>Next lesson</p>
-              <h2><%= lesson.title %></h2>
-            </div>
-          <% elsif @validated_lessons.include?(previous_lesson) %>
+          <% elsif lesson.order_in_book == 1 || @validated_lessons.include?(previous_lesson) %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
               <p>Next lesson</p>
