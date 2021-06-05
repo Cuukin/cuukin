@@ -21,7 +21,7 @@ const skillChapters = () => {
 
     const markQuizAsCompleted = (card) => {
       if (card.dataset.quizCompleted == 'true' && card.dataset.cardCurrent == "1") {
-        let check = document.querySelector("[data-current='1']");
+        let check = document.querySelector("[data-navbar-current='1']");
         let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${card.dataset.quizSkillId}']`);
         if (card.dataset.quizIndex == otherQuizQuestions.length - 1) {
           check.querySelector('#skillProgress').classList.add('d-none');
@@ -42,7 +42,7 @@ const skillChapters = () => {
       window.scrollTo({top: 0});
 
       // checks[0].querySelector('#skillCompleted').classList.remove('d-none');
-      checks[0].dataset.current = "1";
+      checks[0].dataset.navbarCurrent = "1";
       checks[0].querySelector('#skillProgress').classList.remove('d-none');
       checks[0].querySelector('#skillNotStarted').classList.add('d-none');
 
@@ -82,7 +82,7 @@ const skillChapters = () => {
       });
 
       checks.forEach((check) => {
-        check.dataset.current = "0";
+        check.dataset.navbarCurrent = "0";
         check.querySelector('#skillProgress').classList.add('d-none');
         check.querySelector('#skillCompleted').classList.add('d-none');
         check.querySelector('#skillNotStarted').classList.remove('d-none');
@@ -107,8 +107,8 @@ const skillChapters = () => {
         cards[counter - 1].dataset.cardCurrent = "0";
 
         skillsCounter += 1;
-        checks[skillsCounter - 1].dataset.current = "0";
-        checks[skillsCounter].dataset.current = "1";
+        checks[skillsCounter - 1].dataset.navbarCurrent = "0";
+        checks[skillsCounter].dataset.navbarCurrent = "1";
 
         checks[skillsCounter - 1].querySelector('#skillProgress').classList.add('d-none');
         checks[skillsCounter - 1].querySelector('#skillCompleted').classList.remove('d-none');
@@ -145,8 +145,8 @@ const skillChapters = () => {
         cards[counter + 1].dataset.cardCurrent = "0";
 
         skillsCounter -= 1;
-        checks[skillsCounter].dataset.current = "1";
-        checks[skillsCounter + 1].dataset.current = "0";
+        checks[skillsCounter].dataset.navbarCurrent = "1";
+        checks[skillsCounter + 1].dataset.navbarCurrent = "0";
 
         checks[skillsCounter].querySelector('#skillProgress').classList.remove('d-none');
         checks[skillsCounter].querySelector('#skillCompleted').classList.add('d-none');
@@ -169,7 +169,7 @@ const skillChapters = () => {
         cards[counter + 1].dataset.cardCurrent = "1";
 
         if (cards[counter].dataset.type == "video") {
-          let check = document.querySelector("[data-current='1']");
+          let check = document.querySelector("[data-navbar-current='1']");
           check.querySelector('#skillProgress').classList.remove('d-none');
           check.querySelector('#skillCompleted').classList.add('d-none');
         };

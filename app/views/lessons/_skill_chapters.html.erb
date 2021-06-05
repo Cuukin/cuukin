@@ -6,7 +6,7 @@
 
     <div class="skill-checklist">
       <% skill_chapters.count.times do %>
-        <div class="nav-check" data-current="0">
+        <div class="nav-check" data-navbar-current="0">
           <%= image_tag('lesson-3-done.svg', class: 'd-none', id: 'skillCompleted') %>
           <%= image_tag('lesson-2-current.svg', class: 'd-none', id: 'skillProgress') %>
           <%= image_tag('lesson-skill-uncheck.svg', id: 'skillNotStarted') %>
