@@ -9,8 +9,12 @@ const userSkill = () => {
       let forwardBtns = document.querySelectorAll('.explain-video-control-forward');
 
       video.addEventListener('play', () => {
-        btn.click();
-        tag.querySelector('.skill-check').classList.remove('d-none');
+        setTimeout(function() {
+          if (!video.paused) {
+            btn.click();
+            tag.querySelector('.skill-check').classList.remove('d-none');
+          };
+        }, 200);
 
         backwardBtns.forEach((btn) => {
           if (btn) {
