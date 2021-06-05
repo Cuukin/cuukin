@@ -14,27 +14,22 @@
   <div class="container-lessons-cards">
     <% @lessons.each do |lesson| %>
       <%= link_to lesson_path(lesson) do %>
+        <% previous_lesson = @lessons.detect {|l| l.order_in_book == lesson.order_in_book - 1} %>
 
         <div class="container-lesson-card">
-          <% if @validated.include?(lesson) %>
+          <% if @validated_lessons.include?(lesson) %>
             <%= image_tag('lesson-3-done.svg') %>
             <div class="lesson-card">
               <p>Done - Hurray!</p>
               <h2><%= lesson.title %></h2>
             </div>
-          <% elsif @skipped.include?(lesson) %>
+          <% elsif lesson.order_in_book == 1 %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
               <p>Next lesson</p>
               <h2><%= lesson.title %></h2>
             </div>
-          <% elsif @lessons.first == lesson  %>
-            <%= image_tag('lesson-2-current.svg') %>
-            <div class="lesson-card-current">
-              <p>Next lesson</p>
-              <h2><%= lesson.title %></h2>
-            </div>
-          <% elsif @validated_lessons.include?(Lesson.find(lesson.id - 1)) %>
+          <% elsif @validated_lessons.include?(previous_lesson) %>
             <%= image_tag('lesson-2-current.svg') %>
             <div class="lesson-card-current">
               <p>Next lesson</p>

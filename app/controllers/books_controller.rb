@@ -9,8 +9,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    skipped_lessons(@validations)
-    validated_lessons(@validations)
     authorize @lessons, policy_class: BookPolicy
     @feedback = Feedback.new
   end
@@ -28,8 +26,8 @@ class BooksController < ApplicationController
   end
 
   def set_validations
-    @validations = LessonValidation.joins(:lesson).where(user: current_user)
-    @validated_lessons = @validations.map {|val| val.lesson}
+    validations = LessonValidation.joins(:lesson).where(user: current_user)
+    @validated_lessons = validations.map {|val| val.lesson}
   end
 
   def set_book
