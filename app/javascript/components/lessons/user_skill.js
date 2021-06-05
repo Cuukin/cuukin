@@ -3,6 +3,7 @@ const userSkill = () => {
 
   if (userSkillBtns) {
     userSkillBtns.forEach((btn) => {
+      let card = document.querySelector(`[data-card-skill-id='${btn.id}']`);
       let video = document.querySelector(`[data-video-skill-id='${btn.id}']`);
       let tag = document.querySelector(`[data-btn-skill-id='${btn.id}']`);
       let backwardBtns = document.querySelectorAll('.explain-video-control-backward');
@@ -13,8 +14,9 @@ const userSkill = () => {
           if (!video.paused) {
             btn.click();
             tag.querySelector('.skill-check').classList.remove('d-none');
+            card.dataset.videoCompleted = "true";
           };
-        }, 200);
+        }, 20000);
 
         backwardBtns.forEach((btn) => {
           if (btn) {
