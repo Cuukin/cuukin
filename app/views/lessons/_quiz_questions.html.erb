@@ -4,7 +4,8 @@
   <div class="quiz-container skill-item d-none"
       data-type="quiz" data-quiz-skill-id="<%= skill_chapter.id %>"
       data-quiz-completed="<%= completed ? true : false %>"
-      data-id="<%= skill_chapter.id %>">
+      data-id="<%= skill_chapter.id %>" data-quiz-index="<%= index %>"
+      data-card-current="0" data-skippable="<%= completed ? true : false %>">
     <div class="quiz-card">
 
       <div class="quiz-transition-currencies transition-cuukies d-none">

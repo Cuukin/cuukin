@@ -24,6 +24,15 @@ const quizResult = () => {
 
         // functions (spend cuukie or gain xp)
 
+        const markAsComplete = () => {
+          let check = document.querySelector("[data-current='1']");
+          let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${quiz.dataset.quizSkillId}']`);
+          if (quiz.dataset.quizIndex == otherQuizQuestions.length - 1) {
+            check.querySelector('#skillProgress').classList.add('d-none');
+            check.querySelector('#skillDone').classList.remove('d-none');
+          };
+        };
+
         const spendCuukies = () => {
           setTimeout(function() {
             cuukiesContainer.classList.remove('d-none');
@@ -75,10 +84,12 @@ const quizResult = () => {
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
             quiz.dataset.quizCompleted = "true";
+            quiz.dataset.skippable = "true";
             options.forEach((option) => {
               option.parentElement.classList.add('unclickable');
             });
             spendCuukies();
+            markAsComplete();
           } else {
             skip.classList.add('unclickable');
             let error = '<p class="quiz-error">Not enough Cuukies</p>'
@@ -110,6 +121,8 @@ const quizResult = () => {
             });
 
             quiz.dataset.quizCompleted = "true";
+            quiz.dataset.skippable = "true";
+            markAsComplete();
           });
         });
       };
