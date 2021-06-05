@@ -45,7 +45,7 @@
       </div>
 
       <div class="quiz-answer-content <%= completed ? '' : 'd-none' %>">
-        <span>Answer:</span> <%= quiz_question.answer %>
+        <%= quiz_question.answer %>
       </div>
 
       <% unless completed %>

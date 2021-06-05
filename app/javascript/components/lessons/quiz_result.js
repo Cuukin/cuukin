@@ -75,7 +75,7 @@ const quizResult = () => {
             spendCuukies();
           } else {
             skip.classList.add('unclickable');
-            let error = '<p class="quiz-error">Not enough cuukies</p>'
+            let error = '<p class="quiz-error">Not enough Cuukies</p>'
             quiz.querySelector('.quiz-card').insertAdjacentHTML('beforeend', error);
           };
         });
@@ -87,8 +87,11 @@ const quizResult = () => {
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
+
             let error = document.querySelector('.quiz-error');
-            error.remove();
+            if (error) {
+              error.remove();
+            }
 
             if (option.dataset.answer == "0") {
               option.classList.add('incorrect-answer'); // if user option is wrong then highlights with red style
