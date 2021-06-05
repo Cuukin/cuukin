@@ -1,0 +1,86 @@
+﻿[
+  {
+    "id": 12,
+    "name": "Kosher",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/kosher_bwm5re.svg",
+    "created_at": "2021-03-13T17:53:26.217Z",
+    "updated_at": "2021-03-13T17:53:26.217Z"
+  },
+  {
+    "id": 11,
+    "name": "Halal",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/halal_rsv5ep.svg",
+    "created_at": "2021-03-13T17:53:26.210Z",
+    "updated_at": "2021-03-13T17:53:26.210Z"
+  },
+  {
+    "id": 10,
+    "name": "Low Fat",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/lowfat_xuve1a.svg",
+    "created_at": "2021-03-13T17:53:26.203Z",
+    "updated_at": "2021-03-13T17:53:26.203Z"
+  },
+  {
+    "id": 9,
+    "name": "Low Sugar",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/lowsugar_moqpep.svg",
+    "created_at": "2021-03-13T17:53:26.198Z",
+    "updated_at": "2021-03-13T17:53:26.198Z"
+  },
+  {
+    "id": 8,
+    "name": "Vegan",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/vegan_mohegz.svg",
+    "created_at": "2021-03-13T17:53:26.192Z",
+    "updated_at": "2021-03-13T17:53:26.192Z"
+  },
+  {
+    "id": 7,
+    "name": "Vegetarian",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/veggie_tbvw1y.svg",
+    "created_at": "2021-03-13T17:53:26.186Z",
+    "updated_at": "2021-03-13T17:53:26.186Z"
+  },
+  {
+    "id": 6,
+    "name": "Shellfish",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/shellfish_msezlr.svg",
+    "created_at": "2021-03-13T17:53:26.180Z",
+    "updated_at": "2021-03-13T17:53:26.180Z"
+  },
+  {
+    "id": 5,
+    "name": "Nuts",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/nuts_a5kkpn.svg",
+    "created_at": "2021-03-13T17:53:26.175Z",
+    "updated_at": "2021-03-13T17:53:26.175Z"
+  },
+  {
+    "id": 4,
+    "name": "Soy",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163944/Cuukin%20-%20Dietary%20Restrictions/soy_eh96vh.svg",
+    "created_at": "2021-03-13T17:53:26.169Z",
+    "updated_at": "2021-03-13T17:53:26.169Z"
+  },
+  {
+    "id": 3,
+    "name": "Dairy",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/dairy_mtcdrd.svg",
+    "created_at": "2021-03-13T17:53:26.164Z",
+    "updated_at": "2021-03-13T17:53:26.164Z"
+  },
+  {
+    "id": 2,
+    "name": "Eggs",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/egg_qqrhsl.svg",
+    "created_at": "2021-03-13T17:53:26.158Z",
+    "updated_at": "2021-03-13T17:53:26.158Z"
+  },
+  {
+    "id": 1,
+    "name": "Gluten",
+    "icon": "https://res.cloudinary.com/cuukin/image/upload/v1615163942/Cuukin%20-%20Dietary%20Restrictions/gluten_cwkiry.svg",
+    "created_at": "2021-03-13T17:53:26.151Z",
+    "updated_at": "2021-03-13T17:53:26.151Z"
+  }
+]
