@@ -29,10 +29,12 @@ const quizResult = () => {
           quiz.dataset.cardSkippable = "true";
           let check = document.querySelector("[data-navbar-current='1']");
           let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${quiz.dataset.quizSkillId}']`);
-          if (quiz.dataset.quizIndex == otherQuizQuestions.length - 1) {
-            check.querySelector('#skillProgress').classList.add('d-none');
-            check.querySelector('#skillCompleted').classList.remove('d-none');
-          };
+          check.querySelector('#skillProgress').classList.add('d-none');
+          check.querySelector('#skillCompleted').classList.remove('d-none');
+          // if (quiz.dataset.quizIndex == otherQuizQuestions.length - 1) {
+          //   check.querySelector('#skillProgress').classList.add('d-none');
+          //   check.querySelector('#skillCompleted').classList.remove('d-none');
+          // };
         };
 
         const spendCuukies = () => {
