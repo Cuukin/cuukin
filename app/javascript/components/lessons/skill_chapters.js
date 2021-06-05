@@ -29,7 +29,8 @@ const skillChapters = () => {
     const openCard = (card) => {
       window.scrollTo({top: 0});
 
-      checks[0].querySelector('#skillDone').classList.remove('d-none');
+      // checks[0].querySelector('#skillDone').classList.remove('d-none');
+      checks[0].querySelector('#skillProgress').classList.remove('d-none');
       checks[0].querySelector('#skillPlay').classList.add('d-none');
 
       lessonOverview.classList.add('d-none');
@@ -66,6 +67,7 @@ const skillChapters = () => {
       });
 
       checks.forEach((check) => {
+        check.querySelector('#skillProgress').classList.add('d-none');
         check.querySelector('#skillDone').classList.add('d-none');
         check.querySelector('#skillPlay').classList.remove('d-none');
       });
@@ -87,7 +89,9 @@ const skillChapters = () => {
         cards[counter - 1].classList.add('d-none');
 
         skillsCounter += 1;
-        checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
+        checks[skillsCounter - 1].querySelector('#skillProgress').classList.add('d-none');
+        checks[skillsCounter].querySelector('#skillProgress').classList.remove('d-none');
+        checks[skillsCounter - 1].querySelector('#skillDone').classList.remove('d-none');
         checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
       } else if ((cards[counter].dataset.quizCompleted == 'true') && (cards[counter].dataset.id == cards[counter + 1].dataset.id)) {
         counter += 1;
@@ -111,9 +115,11 @@ const skillChapters = () => {
         cards[counter + 1].classList.add('d-none');
 
         skillsCounter -= 1;
-        checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
-        checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
+        checks[skillsCounter].querySelector('#skillProgress').classList.remove('d-none');
+        checks[skillsCounter].querySelector('#skillDone').classList.add('d-none');
+        // checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
         checks[skillsCounter + 1].querySelector('#skillDone').classList.add('d-none');
+        checks[skillsCounter + 1].querySelector('#skillProgress').classList.add('d-none');
         checks[skillsCounter + 1].querySelector('#skillPlay').classList.remove('d-none');
       } else {
         counter -= 1;
