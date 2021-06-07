@@ -3,7 +3,7 @@
 
 <div class="journey-container">
 
-  <% if current_user.sign_in_count <= 1 %>
+  <% if current_user.sign_in_count <= 1 && current_user.xp <= 100 %>
     <%= image_tag("journey-onboarding-msg.svg", class: 'journey-onboarding-message') %>
   <% end %>
 
