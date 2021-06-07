@@ -9,12 +9,17 @@ const userSkill = () => {
       let backwardBtns = document.querySelectorAll('.explain-video-control-backward');
       let forwardBtns = document.querySelectorAll('.explain-video-control-forward');
 
+      let nbXp = document.querySelector('#nb-xp p');
+      let userXp = parseInt(nbXp.innerText);
+
       video.addEventListener('play', () => {
         setTimeout(function() {
           if (!video.paused) {
             btn.click();
             tag.querySelector('.skill-check').classList.remove('d-none');
             card.dataset.videoCompleted = "true";
+            userXp = parseInt(nbXp.innerText);
+            nbXp.innerText = userXp + 10;
           };
         }, 20000);
 
