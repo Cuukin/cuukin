@@ -29,12 +29,14 @@ const skillChapters = () => {
     const openCard = (card) => {
       window.scrollTo({top: 0});
 
-      checks[0].querySelector('#skillDone').classList.remove('d-none');
-      checks[0].querySelector('#skillPlay').classList.add('d-none');
+      checks[0].dataset.navbarCurrent = "1";
+      checks[0].querySelector('#skillProgress').classList.remove('d-none');
+      checks[0].querySelector('#skillNotStarted').classList.add('d-none');
 
       lessonOverview.classList.add('d-none');
       skillsContainer.classList.remove('d-none');
       card.classList.remove('d-none');
+      card.dataset.cardCurrent = "1";
 
       cards = Array.prototype.slice.call(cards); // turn cards node list into an array
       related_cards = document.querySelectorAll(`[data-id='${card.dataset.id}']`);
@@ -62,12 +64,15 @@ const skillChapters = () => {
 
       cards.forEach((card) => {
         card.classList.add('d-none');
+        card.dataset.cardCurrent = "0";
         pauseVideo(card);
       });
 
       checks.forEach((check) => {
-        check.querySelector('#skillDone').classList.add('d-none');
-        check.querySelector('#skillPlay').classList.remove('d-none');
+        check.dataset.navbarCurrent = "0";
+        check.querySelector('#skillProgress').classList.add('d-none');
+        check.querySelector('#skillCompleted').classList.add('d-none');
+        check.querySelector('#skillNotStarted').classList.remove('d-none');
       });
 
       nextChapterBtns.forEach((nextChapter) => {
@@ -78,24 +83,35 @@ const skillChapters = () => {
     const moveToNextCard = () => {
       if (counter == cards.length - 1) {
         backToOverview();
-      } else if ((cards[counter].dataset.quizCompleted == 'true') && (cards[counter].dataset.id !== cards[counter + 1].dataset.id)) {
+      } else if ((cards[counter].dataset.cardSkippable == 'true') && (cards[counter].dataset.id !== cards[counter + 1].dataset.id)) {
         counter += 1;
         window.scrollTo({top: 0});
 
         pauseVideo(cards[counter - 1]);
         cards[counter].classList.remove('d-none');
         cards[counter - 1].classList.add('d-none');
+        cards[counter].dataset.cardCurrent = "1";
+        cards[counter - 1].dataset.cardCurrent = "0";
 
         skillsCounter += 1;
-        checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
-        checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
-      } else if ((cards[counter].dataset.quizCompleted == 'true') && (cards[counter].dataset.id == cards[counter + 1].dataset.id)) {
+        checks[skillsCounter - 1].dataset.navbarCurrent = "0";
+        checks[skillsCounter].dataset.navbarCurrent = "1";
+
+        checks[skillsCounter - 1].querySelector('#skillProgress').classList.add('d-none');
+        checks[skillsCounter - 1].querySelector('#skillCompleted').classList.remove('d-none');
+
+        checks[skillsCounter].querySelector('#skillNotStarted').classList.add('d-none');
+        checks[skillsCounter].querySelector('#skillProgress').classList.remove('d-none');
+      } else if ((cards[counter].dataset.cardSkippable == 'true') && (cards[counter].dataset.id == cards[counter + 1].dataset.id)) {
         counter += 1;
         window.scrollTo({top: 0});
 
         pauseVideo(cards[counter - 1]);
         cards[counter].classList.remove('d-none');
         cards[counter - 1].classList.add('d-none');
+
+        cards[counter].dataset.cardCurrent = "1";
+        cards[counter - 1].dataset.cardCurrent = "0";
       };
     };
 
@@ -109,12 +125,18 @@ const skillChapters = () => {
         pauseVideo(cards[counter + 1]);
         cards[counter].classList.remove('d-none');
         cards[counter + 1].classList.add('d-none');
+        cards[counter].dataset.cardCurrent = "1";
+        cards[counter + 1].dataset.cardCurrent = "0";
 
         skillsCounter -= 1;
-        checks[skillsCounter].querySelector('#skillDone').classList.remove('d-none');
-        checks[skillsCounter].querySelector('#skillPlay').classList.add('d-none');
-        checks[skillsCounter + 1].querySelector('#skillDone').classList.add('d-none');
-        checks[skillsCounter + 1].querySelector('#skillPlay').classList.remove('d-none');
+        checks[skillsCounter].dataset.navbarCurrent = "1";
+        checks[skillsCounter + 1].dataset.navbarCurrent = "0";
+
+        checks[skillsCounter].querySelector('#skillCompleted').classList.add('d-none');
+        checks[skillsCounter].querySelector('#skillProgress').classList.remove('d-none');
+
+        checks[skillsCounter + 1].querySelector('#skillProgress').classList.add('d-none');
+        checks[skillsCounter + 1].querySelector('#skillNotStarted').classList.remove('d-none');
       } else {
         counter -= 1;
         window.scrollTo({top: 0});
@@ -122,6 +144,9 @@ const skillChapters = () => {
         pauseVideo(cards[counter + 1]);
         cards[counter].classList.remove('d-none');
         cards[counter + 1].classList.add('d-none');
+
+        cards[counter].dataset.cardCurrent = "1";
+        cards[counter + 1].dataset.cardCurrent = "0";
       };
     };
 

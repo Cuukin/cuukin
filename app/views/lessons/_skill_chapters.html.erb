@@ -6,9 +6,10 @@
 
     <div class="skill-checklist">
       <% skill_chapters.count.times do %>
-        <div class="nav-check">
-          <%= image_tag('lesson-3-done.svg', class: 'd-none', id: 'skillDone') %>
-          <%= image_tag('lesson-skill-uncheck.svg', id: 'skillPlay') %>
+        <div class="nav-check" data-navbar-current="0">
+          <%= image_tag('lesson-3-done.svg', class: 'd-none', id: 'skillCompleted') %>
+          <%= image_tag('lesson-2-current.svg', class: 'd-none', id: 'skillProgress') %>
+          <%= image_tag('lesson-skill-uncheck.svg', id: 'skillNotStarted') %>
         </div>
       <% end %>
     </div>
@@ -23,7 +24,8 @@
 
     <div class="skill-chapter-card skill-item d-none" data-type="video"
           data-card-skill-id="<%= skill_chapter.id %>" data-card-index="<%= index %>"
-          data-id="<%= skill_chapter.id %>" data-quiz-completed="true">
+          data-video-completed="<%= skill_chapter.users.include?(current_user) ? true : false %>"
+          data-id="<%= skill_chapter.id %>" data-card-current="0" data-card-skippable="true">
 
       <% unless skill_chapter.users.include?(current_user) %>
         <%= link_to "Completed", user_skills_path(user_skill: { skill_chapter_id: skill_chapter.id }),

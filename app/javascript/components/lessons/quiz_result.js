@@ -1,4 +1,5 @@
 const quizResult = () => {
+  const skillsContainer = document.querySelector('.skill-chapters-container');
   const quizContainers = document.querySelectorAll('.quiz-container');
 
   if (quizContainers) {
@@ -21,7 +22,12 @@ const quizResult = () => {
         let cuukiesContainer = quiz.querySelector('.transition-cuukies');
         let xpContainer = quiz.querySelector('.transition-xp');
 
-        // functions (spend cuukie or gain xp)
+        // FUNCTIONS
+
+        const markAsComplete = () => {
+          quiz.dataset.quizCompleted = "true";
+          quiz.dataset.cardSkippable = "true";
+        };
 
         const spendCuukies = () => {
           setTimeout(function() {
@@ -39,6 +45,7 @@ const quizResult = () => {
           setTimeout(function() {
             cuukies = parseInt(nbCuukies.innerText);
             nbCuukies.innerText = cuukies - 1;
+            skillsContainer.dataset.userCurrency = cuukies - 1;
           }, 950);
         };
 
@@ -61,18 +68,23 @@ const quizResult = () => {
           }, 950);
         };
 
-        // event listeners
+        // EVENT LISTENERS
 
         skip.addEventListener('click', (event) => {
-          window.scrollTo({top: 0});
-          cuukies = parseInt(nbCuukies.innerText);
+          cuukies = parseInt(skillsContainer.dataset.userCurrency);
           if (cuukies >= 1) {
+            window.scrollTo({top: 0});
             correctOption.classList.add('correct-answer');
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
-            quiz.dataset.quizCompleted = "true";
+
+            options.forEach((option) => {
+              option.parentElement.classList.add('unclickable');
+            });
+
             spendCuukies();
+            markAsComplete();
           } else {
             skip.classList.add('unclickable');
             let error = '<p class="quiz-error">Not enough Cuukies</p>'
@@ -103,7 +115,7 @@ const quizResult = () => {
               option.parentElement.classList.add('unclickable');
             });
 
-            quiz.dataset.quizCompleted = "true";
+            markAsComplete();
           });
         });
       };
