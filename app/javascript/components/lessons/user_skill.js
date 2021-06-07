@@ -14,12 +14,13 @@ const userSkill = () => {
 
       video.addEventListener('play', () => {
         setTimeout(function() {
-          if (!video.paused) {
+          if (!video.paused && card.dataset.videoCompleted == "false") {
             btn.click();
             tag.querySelector('.skill-check').classList.remove('d-none');
             card.dataset.videoCompleted = "true";
             userXp = parseInt(nbXp.innerText);
             nbXp.innerText = userXp + 10;
+            btn.remove();
           };
         }, 20000);
 
