@@ -12,4 +12,13 @@ class UserSkill < ApplicationRecord
     }
 
   validates :skill_chapter, uniqueness: { scope: :user, message: 'This user already completed this skill chapter' }
+
+  after_create :set_result
+
+  private
+
+  def set_result
+    self.user.xp += 10
+    self.user.save
+  end
 end
