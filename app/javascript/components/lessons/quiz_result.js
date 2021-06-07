@@ -27,10 +27,10 @@ const quizResult = () => {
         const markAsComplete = () => {
           quiz.dataset.quizCompleted = "true";
           quiz.dataset.cardSkippable = "true";
-          let check = document.querySelector("[data-navbar-current='1']");
-          let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${quiz.dataset.quizSkillId}']`);
-          check.querySelector('#skillProgress').classList.add('d-none');
-          check.querySelector('#skillCompleted').classList.remove('d-none');
+          // let check = document.querySelector("[data-navbar-current='1']");
+          // let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${quiz.dataset.quizSkillId}']`);
+          // check.querySelector('#skillProgress').classList.add('d-none');
+          // check.querySelector('#skillCompleted').classList.remove('d-none');
           // if (quiz.dataset.quizIndex == otherQuizQuestions.length - 1) {
           //   check.querySelector('#skillProgress').classList.add('d-none');
           //   check.querySelector('#skillCompleted').classList.remove('d-none');
