@@ -19,24 +19,6 @@ const skillChapters = () => {
 
     // FUNCTIONS
 
-    // const markQuizAsCompleted = (card) => {
-    //   let check = document.querySelector("[data-navbar-current='1']");
-    //   // let otherQuizQuestions = document.querySelectorAll(`[data-quiz-skill-id='${card.dataset.quizSkillId}']`);
-    //   if (card.dataset.quizCompleted == 'true' && card.dataset.cardCurrent == "1") {
-    //     check.querySelector('#skillProgress').classList.add('d-none');
-    //     check.querySelector('#skillNotStarted').classList.add('d-none');
-    //     check.querySelector('#skillCompleted').classList.remove('d-none');
-    //   } else if ((card.dataset.videoCompleted == 'false' || card.dataset.quizCompleted == 'false') && card.dataset.cardCurrent == "1") {
-    //     check.querySelector('#skillProgress').classList.remove('d-none');
-    //     check.querySelector('#skillNotStarted').classList.add('d-none');
-    //     check.querySelector('#skillCompleted').classList.add('d-none');
-    //   } else if (card.dataset.videoCompleted == 'true' && card.dataset.cardCurrent == "1") {
-    //     check.querySelector('#skillProgress').classList.add('d-none');
-    //     check.querySelector('#skillNotStarted').classList.add('d-none');
-    //     check.querySelector('#skillCompleted').classList.remove('d-none');
-    //   };
-    // };
-
     const pauseVideo = (card) => {
       let video = card.querySelector('.skill-video');
       if (video) {
