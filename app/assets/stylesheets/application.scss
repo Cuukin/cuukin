@@ -91,6 +91,12 @@ body::-webkit-scrollbar {
   z-index: 40;
 }
 
+.centered-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
 .d-none {
   display: none !important;
 }
@@ -98,5 +104,11 @@ body::-webkit-scrollbar {
 .trix-content {
   strong {
     font-weight: 600;
+  }
+}
+
+@media (max-width: 500px) {
+  .centered-container {
+    width: 100vw;
   }
 }
