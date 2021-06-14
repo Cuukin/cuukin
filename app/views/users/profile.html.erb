@@ -1,5 +1,9 @@
 <%= render template: 'users/edit' %>
 <%= render template: 'feedbacks/new' %>
+<% if !current_user.residence_country? %>
+  <%= render 'users/optional_info_nudge' %>
+<% end %>
+
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
 <div class="profile-container">
