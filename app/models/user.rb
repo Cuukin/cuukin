@@ -123,10 +123,12 @@ class User < ApplicationRecord
   end
 
   def check_profile_completed
-    if !self.profile_completed && self.last_name && self.bio && self.residence_country && self.relationship_status && self.occupation
-      self.cuukies += 2
-      self.profile_completed = true
-      self.save
+    if !self.profile_completed
+      if self.last_name? && self.last_name != "" && self.bio? && self.bio != "" && self.residence_country? && self.residence_country != "" && self.relationship_status? && self.relationship_status != "" && self.occupation? && self.occupation != ""
+        self.cuukies += 2
+        self.profile_completed = true
+        self.save
+      end
     end
   end
 
