@@ -43,6 +43,7 @@ class User < ApplicationRecord
   after_create :create_grocery_list
 
   before_update :check_username_presence
+  before_update :check_profile_completed
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -118,6 +119,14 @@ class User < ApplicationRecord
       set_username
     elsif self.username.split("").include?(" ")
       username_pattern
+    end
+  end
+
+  def check_profile_completed
+    if !self.profile_completed && self.last_name && self.bio && self.residence_country && self.relationship_status && self.occupation
+      self.cuukies += 2
+      self.profile_completed = true
+      self.save
     end
   end
 

@@ -1,8 +1,12 @@
 <%= render template: 'users/edit' %>
 <%= render template: 'feedbacks/new' %>
+<% if !current_user.profile_completed %>
+  <%= render 'users/optional_info_nudge' %>
+<% end %>
+
 <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
-<div class="profile-container">
+<div class="profile-container <%= current_user.profile_completed ? "profile-container-without-nudge" : "profile-container-with-nudge" %>">
 
   <div class="profile-info">
     <div class="profile-text-content">
