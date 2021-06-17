@@ -8,16 +8,6 @@
   <%= render template: 'lesson_validations/new' %>
 <% end %>
 
-<p class="d-none">
-  first: <%= @first %>
-  validated: <%= @validated %>
-  locked: <%= @locked %>
-  available: <%= @available %>
-
-  validated lessons:
-  <%= @validated_lessons %>
-</p>
-
 <div class="container-lesson-overview">
 
   <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
