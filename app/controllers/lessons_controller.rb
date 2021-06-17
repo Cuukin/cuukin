@@ -38,7 +38,8 @@ class LessonsController < ApplicationController
   end
 
   def set_validations
-    @validated_lessons = LessonValidation.includes(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
+    validated_lessons = LessonValidation.includes(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
+    @validated_lessons = validated_lessons.select {|lesson| lesson.book == @book}
   end
 
   def set_lesson
