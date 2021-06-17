@@ -19,6 +19,8 @@ class LessonsController < ApplicationController
 
   def locked?
     first?
+    available?
+    validated?
     @locked = !(@validated || @available || @first)
   end
 
