@@ -13,7 +13,7 @@
   <%= image_tag("btn-feedback.svg", class: 'btn-open-feedback', id: 'openFeedbackBtn') %>
 
   <div class="lesson-overview-navbar">
-    <%= link_to :back do %>
+    <%= link_to book_path(@book) do %>
       <%= image_tag('btn-back.svg') %>
     <% end %>
 
