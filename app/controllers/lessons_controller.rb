@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
 
   def locked?
     first?
-    @locked = !(@available || @first || @validated)
+    @locked = !(@validated || @available || @first)
   end
 
   def validated?
@@ -38,6 +38,7 @@ class LessonsController < ApplicationController
   end
 
   def set_validations
+    set_lesson
     validated_lessons = LessonValidation.includes(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
     @validated_lessons = validated_lessons.select {|lesson| lesson.book == @book}
   end
