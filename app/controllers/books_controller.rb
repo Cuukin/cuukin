@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [ :show ]
-  before_action :set_validations, only: [ :index, :show ]
+  before_action :set_validations, only: [ :show ]
 
   def index
     @books = Book.where(id: 1).order(:id).includes(:lessons)
@@ -15,19 +15,11 @@ class BooksController < ApplicationController
 
   private
 
-  def skipped_lessons(validations)
-    skipped_lessons = validations.reject {|val| val.validated}
-    @skipped = skipped_lessons.map {|val| val.lesson}
-  end
-
-  def validated_lessons(validations)
-    validated_lessons = validations.select {|val| val.validated}
-    @validated = validated_lessons.map {|val| val.lesson}
-  end
-
   def set_validations
+    set_book
     validations = LessonValidation.joins(:lesson).where(user: current_user)
-    @validated_lessons = validations.map {|val| val.lesson}
+    validations = validations.map {|val| val.lesson}
+    @validated_lessons = validations.select {|lesson| lesson.book == @book}
   end
 
   def set_book
