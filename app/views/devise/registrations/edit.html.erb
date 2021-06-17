@@ -23,7 +23,7 @@
                     input_html: { rows: '2'},
                     label: 'Say something about yourself' %>
         <%= f.input :relationship_status,
-                    as: :select, collection: ["Single", "Married", "Domestic Partnership", "Divorced", "Widowed"],
+                    as: :select, collection: ["Single", "Married", "Domestic Partnership", "Divorced", "Widowed", "Other"],
                     label: 'Relationship Status' %>
         <%= f.input :residence_country,
                     as: :select, collection: countries,
