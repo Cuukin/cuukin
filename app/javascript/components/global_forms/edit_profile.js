@@ -29,13 +29,13 @@ const editProfile = () => {
     submit.addEventListener('click', (event) => {
       inputs.forEach((input) => {
         if (input.value == "") {
-          formCompleted = false;
+          formCompleted = (formCompleted && false);
         } else {
-          formCompleted = true;
+          formCompleted = (formCompleted && true);
         };
       });
 
-      if (!(profileCompleted == false) && formCompleted == true) {
+      if (profileCompleted == 'false' && formCompleted == true) {
         gainCuukies();
         setTimeout(function() {
           editProfileForm.submit();
