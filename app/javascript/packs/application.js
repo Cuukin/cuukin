@@ -29,6 +29,7 @@ import { termsOfService } from '../components/global_forms/terms_of_service';
 import { editWeeklyCommitment } from '../components/global_forms/edit_weekly_commitment';
 import { onboardingSegmentationForm } from '../components/global_forms/onboarding_segmentation_form';
 import { feedback } from '../components/global_forms/feedback';
+import { editProfile } from '../components/global_forms/edit_profile';
 
 // Pop Ups
 import { currenciesPopup } from '../components/popups/currency_popup';
@@ -104,6 +105,7 @@ document.addEventListener('turbolinks:load', () => {
   onboardingSegmentationForm();
   editWeeklyCommitment();
   feedback();
+  editProfile();
 
   // Global Buttons
   preventSelectDoubleClick();
