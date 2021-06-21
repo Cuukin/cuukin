@@ -19,8 +19,8 @@ const quizResult = () => {
         let answer = quiz.querySelector('.quiz-answer-content');
         let correctOption = quiz.querySelector("[data-answer='1']");
 
-        let cuukiesContainer = quiz.querySelector('.transition-cuukies');
-        let xpContainer = quiz.querySelector('.transition-xp');
+        let cuukiesContainer = document.querySelector('.transition-cuukies');
+        let xpContainer = document.querySelector('.transition-xp');
 
         // FUNCTIONS
 
