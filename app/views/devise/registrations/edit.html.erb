@@ -4,7 +4,7 @@
   <div class="form-devise-modal-content">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-      <div class="form-inputs edit-user-main-container">
+      <div class="form-inputs edit-user-main-container" data-user-completed="<%= current_user.profile_completed %>">
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -51,6 +51,6 @@
       </div>
     <% end %>
 
-    <p class="text-center mt-3">Want to delete your account? <br> <%= link_to "See instructions here", forget_path %></p>
+    <p class="text-center mt-3 mb-0">Want to delete your account? <br> <%= link_to "See instructions here", forget_path %></p>
   </div>
 </div>
