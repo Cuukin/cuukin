@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="34" viewBox="0 0 206 34">
+  <g id="Unfollow" transform="translate(-16 -224)">
+    <g id="Rectangle_1102" data-name="Rectangle 1102" transform="translate(16 224)" fill="#fff" stroke="#b5cc18" stroke-width="2">
+      <rect width="206" height="34" rx="10" stroke="none"/>
+      <rect x="1" y="1" width="204" height="32" rx="9" fill="none"/>
+    </g>
+    <text id="Following" transform="translate(141.125 246)" fill="#b5cc18" font-size="16" font-family="Nunito-Bold, Nunito" font-weight="700"><tspan x="-36.928" y="0">Following</tspan></text>
+    <g id="Icon_ionic-md-person-add" data-name="Icon ionic-md-person-add" transform="translate(54 227)">
+      <path id="Path_6696" data-name="Path 6696" d="M17.375,14a4.75,4.75,0,1,0-4.75-4.75A4.764,4.764,0,0,0,17.375,14Zm0,2.375c-3.147,0-9.5,1.6-9.5,4.75V23.5h19V21.125C26.875,17.978,20.522,16.375,17.375,16.375Z" transform="translate(-2)" fill="#b5cc18"/>
+      <path id="Icon_material-done" data-name="Icon material-done" d="M8.409,14.663,5.927,12.181l-.827.827,3.309,3.309,7.09-7.09L14.671,8.4Z" transform="translate(22.784 0.85)" fill="#b5cc18" stroke="#b5cc18" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

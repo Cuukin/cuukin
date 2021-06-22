@@ -19,9 +19,13 @@
 
     <% unless @user == current_user %>
       <% if current_user.is_following?(@user.id) %>
-        <%= link_to "Unfollow", unfollow_user_path(@user.id), method: :post, remote: true, class: 'follow-btn' %>
+        <%= link_to unfollow_user_path(@user.id), method: :post, remote: true do %>
+          <%= image_tag('social-unfollow.svg', class: 'follow-btn') %>
+        <% end %>
       <% else %>
-        <%= link_to "Follow", follow_user_path(@user.id), method: :post, remote: true, class: 'follow-btn' %>
+        <%= link_to follow_user_path(@user.id), method: :post, remote: true do %>
+          <%= image_tag('social-follow.svg', class: 'follow-btn') %>
+        <% end %>
       <% end %>
     <% end %>
 
