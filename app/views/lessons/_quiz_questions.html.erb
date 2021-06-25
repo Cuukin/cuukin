@@ -16,6 +16,13 @@
       <div class="quiz-card-content-container">
         <h1 class="quiz-question"><%= quiz_question.question %></h1>
 
+        <% if quiz_question.photo.attached? %>
+          <div class="quiz-question-image"
+              style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+              url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{quiz_question.photo.key}.jpeg" %>')">
+          </div>
+        <% end %>
+
         <div class="quiz-answer-container">
           <% quiz_question.quiz_question_options.each do |option| %>
             <%= link_to quiz_results_path(@quiz_result,
