@@ -18,6 +18,7 @@ const quizResult = () => {
         let next = quiz.querySelector('.next-card');
         let answer = quiz.querySelector('.quiz-answer-content');
         let correctOption = quiz.querySelector("[data-answer='1']");
+        let correctIcon = correctOption.querySelector('.quiz-option-icon');
 
         let cuukiesContainer = document.querySelector('.transition-cuukies');
         let xpContainer = document.querySelector('.transition-xp');
@@ -75,6 +76,7 @@ const quizResult = () => {
           if (cuukies >= 1) {
             window.scrollTo({top: 0});
             correctOption.classList.add('correct-answer');
+            correctIcon.classList.remove('d-none');
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
@@ -96,6 +98,7 @@ const quizResult = () => {
           option.addEventListener('click', (event) => {
             window.scrollTo({top: 0});
             correctOption.classList.add('correct-answer');
+            correctIcon.classList.remove('d-none');
             skip.classList.add('d-none');
             answer.classList.remove('d-none');
             next.classList.remove('d-none');
@@ -107,6 +110,8 @@ const quizResult = () => {
 
             if (option.dataset.answer == "0") {
               option.classList.add('incorrect-answer'); // if user option is wrong then highlights with red style
+              let wrongIcon = option.querySelector('.quiz-option-icon');
+              wrongIcon.classList.remove('d-none');
             } else {
               gainXp();
             };

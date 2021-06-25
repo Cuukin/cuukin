@@ -97,6 +97,11 @@
           Sharing is Caring <%= icon('fas', 'external-link-alt') %>
         <% end %>
       </li>
+      <li>
+        <%=link_to 'https://www.instagram.com/cuukin.app/', target: '_blank' do %>
+          Follow Kin <%= icon('fas', 'external-link-alt') %>
+        <% end %>
+      </li>
       <li><%= link_to 'Credits', credits_path %></li>
       <li><%=link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
     </ul>
