@@ -29,6 +29,8 @@
                             url('<%= "https://res.cloudinary.com/cuukin/image/upload/#{option.photo.key}.jpeg" %>')"
                     <% end %>>
                 <p><%= option.option %></p>
+                <%= image_tag('lesson-3-done.svg', class: "correct-answer-icon quiz-option-icon #{completed ? '' : 'd-none' }") if option.is_correct %>
+                <%= image_tag('lesson-wrong.svg', class: "incorrect-answer-icon quiz-option-icon #{completed && option == completed.quiz_question_option ? '' : 'd-none'}") if !option.is_correct %>
               </div>
             <% end %>
           <% end %>
