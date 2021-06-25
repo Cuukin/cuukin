@@ -26,6 +26,8 @@ class User < ApplicationRecord
   has_many :user_sign_ins, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :quiz_results, dependent: :destroy
+  has_many :user_classifications, dependent: :destroy
+  has_many :user_recommendations, dependent: :destroy
 
   has_many :skill_chapters, through: :user_skills
   has_many :badges, through: :user_badges
