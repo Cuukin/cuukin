@@ -19,14 +19,11 @@ from selenium.webdriver.support import expected_conditions as EC
 # Libraries for the connection with DB
 import psycopg2
 
-
 class Recommendation_Algorithm():
 
     def __init__(self):
-        '''
-        Initializing empty data frames, inputing the data base access configuration
-        and connecting to that DB
-        '''
+        # Initializing empty data frames, inputing the data base access configuration
+        # and connecting to that DB
 
         self.recipes_raw = pd.DataFrame()
         self.recipes = pd.DataFrame()
@@ -45,18 +42,16 @@ class Recommendation_Algorithm():
 
     # Recommendation model algorithm
     def initialize_model(self):
-        '''
-        This method initializes the recommendation model by creating a matrix containing in the
-        cell i, j the simmilarity between the ith and jth recipes in the self.recipes dataframe.
+        # This method initializes the recommendation model by creating a matrix containing in the
+        # cell i, j the simmilarity between the ith and jth recipes in the self.recipes dataframe.
 
-        This matrix is the stored as an numpy array on the self.similarity_matrix attribute.
+        # This matrix is the stored as an numpy array on the self.similarity_matrix attribute.
 
-        This data frame is supposed to be loaded  by the initialize_tables method
+        # This data frame is supposed to be loaded  by the initialize_tables method
 
-        The similarity is calculated using sklearn's cossine similarity with the features/words in the "soup" column
+        # The similarity is calculated using sklearn's cossine similarity with the features/words in the "soup" column
 
-        The soup column aggregates information from a recipe category (breakfast, desert, ...), cuisine and keywords
-        '''
+        # The soup column aggregates information from a recipe category (breakfast, desert, ...), cuisine and keywords
 
         # Creating counting matrix (counts all features)
         count_matrix = CountVectorizer(stop_words='english').fit_transform(self.recipes['soup'])
@@ -68,28 +63,26 @@ class Recommendation_Algorithm():
         self.similarity_matrix = np.array(cosine_sim)
 
     def sort_recommended_recipes(self, user_id, users_table="user_classifications"):
-        '''
-        This is the main method of this class. It sorts the recommended recipes for a given user.
+        # This is the main method of this class. It sorts the recommended recipes for a given user.
 
-        The user retrieved from the Data Base "user_classifications" table using the given user_id.
+        # The user retrieved from the Data Base "user_classifications" table using the given user_id.
 
-        All the recipes classifications are retrieved from the "user_recommendations" table, which contains
-        classifications 0(dislike), 1(like) and 2(love) for each recipe.
+        # All the recipes classifications are retrieved from the "user_recommendations" table, which contains
+        # classifications 0(dislike), 1(like) and 2(love) for each recipe.
 
-        This scores are used to multiply and filter the similarity matrix calculated in the initialize_model method
-        to create a score vector.
+        # This scores are used to multiply and filter the similarity matrix calculated in the initialize_model method
+        # to create a score vector.
 
-        The score vector contains the scores for each recipe for a given user. Sorting this vector yields us the ids of the
-        recommended recipes.
+        # The score vector contains the scores for each recipe for a given user. Sorting this vector yields us the ids of the
+        # recommended recipes.
 
-        Some id translation is necessary because the similarity matrix operates with indexes
-        from 0 to the number of recipes considered and the recipes table in the data base contains recipes
-        that are not to be considered in this program. Hence the ids are all different.
+        # Some id translation is necessary because the similarity matrix operates with indexes
+        # from 0 to the number of recipes considered and the recipes table in the data base contains recipes
+        # that are not to be considered in this program. Hence the ids are all different.
 
-        After this recommendation is calculated, the list of recipes ids is transformed into a list and
-        inserted into the "user_recommendations" in the data base. If a user already has a recommendation list,
-        this list is updated.
-        '''
+        # After this recommendation is calculated, the list of recipes ids is transformed into a list and
+        # inserted into the "user_recommendations" in the data base. If a user already has a recommendation list,
+        # this list is updated.
 
         ## Fetching table from db
         cursor = self.connection.cursor()
@@ -155,18 +148,16 @@ class Recommendation_Algorithm():
 
     # Data managing methods
     def initialize_tables(self, recipe_raw_path=None, users_path=None, recipes_path=None, recipe_table_name=None, users_table_name=None):
-        '''
-        This method simply initializes tables inside our recommendation model.
+        # This method simply initializes tables inside our recommendation model.
 
-        It can load different tables:
-        - recipes_raw: the raw recipes data from the bbc. This table is used as the basis for the creation of the
-            cleaned recipes table
-        - recipes: the cleaned recipes table with only important columns
-        - users: the users classifications table locally. Used mainly for development/debugging
+        # It can load different tables:
+        # - recipes_raw: the raw recipes data from the bbc. This table is used as the basis for the creation of the
+        #     cleaned recipes table
+        # - recipes: the cleaned recipes table with only important columns
+        # - users: the users classifications table locally. Used mainly for development/debugging
 
-        If a path is given the table is loaded from the local directory either from csv or from json formats.
-        If the table name is given, the table will be retrieved from the data base
-        '''
+        # If a path is given the table is loaded from the local directory either from csv or from json formats.
+        # If the table name is given, the table will be retrieved from the data base
 
         if not recipe_raw_path == None:
             if recipe_raw_path.endswith('.csv'):
@@ -215,11 +206,9 @@ class Recommendation_Algorithm():
             self.connection.commit()
 
     def get_image_links(self):
-        '''
-        Simple webscraper script used for retrieving the recipe images link, written with the selenium framework.
+        # Simple webscraper script used for retrieving the recipe images link, written with the selenium framework.
 
-        It uses chrome to access the bbc foods link and the copies the image link from the html.
-        '''
+        # It uses chrome to access the bbc foods link and the copies the image link from the html.
 
         # Importing chrome driver
         driver_path = os.path.join(os.getcwd(), 'chromedriver')
@@ -257,14 +246,14 @@ class Recommendation_Algorithm():
         self.recipes['imageLink'] = image_links
 
     def clean_data(self, ratings_count_treshold=10, ratings_value_treshold=3.0):
-        '''
-        Method for prepping/cleaning the imported tables.
 
-        If there is a raw recipes table, a cleaned recipes table csv will be exported. Be aware that the ratings count and value filter
-        are applied and can be modified if necessary. The default values yields around 500 recipes
+        # Method for prepping/cleaning the imported tables.
 
-        If there is a users table the data types will be fixed and saved in the same attribute as before.
-        '''
+        # If there is a raw recipes table, a cleaned recipes table csv will be exported. Be aware that the ratings count and value filter
+        # are applied and can be modified if necessary. The default values yields around 500 recipes
+
+        # If there is a users table the data types will be fixed and saved in the same attribute as before.
+
         if not self.recipes_raw.empty:
             self._clean_recipe_table(ratings_count_treshold, ratings_value_treshold)
         if not self.users.empty:
@@ -278,11 +267,10 @@ class Recommendation_Algorithm():
         self.recipes.to_csv(path, index=False)
 
     def connect_to_db(self):
-        '''
-        This method connects with the postgresql data base whose configurations are given in the __init__ method.
 
-        The connection is stored as an atribute to later access.
-        '''
+        # This method connects with the postgresql data base whose configurations are given in the __init__ method.
+
+        # The connection is stored as an atribute to later access.
 
         self.connection = psycopg2.connect(
             database=self.configurations['database'],
@@ -295,22 +283,22 @@ class Recommendation_Algorithm():
         self.connection.commit()
 
     def close_connection_to_db(self):
-        '''
-        Closes the db connection. Its a good practice
-        '''
+
+        # Closes the db connection. Its a good practice
+
         self.connection.close()
 
     # Miscelanious methods
     def _clean_recipe_table(self, ratings_count_treshold, ratings_value_treshold):
-        '''
-        This method cleans the raw recipe table:
 
-        - adjusts the ids
-        - fix rating values formating (to 1 decimal point)
-        - drop unuseful columns
-        - create a soup from keywords, cuisine and category atributes
-        - shuffles to later use
-        '''
+        # This method cleans the raw recipe table:
+
+        # - adjusts the ids
+        # - fix rating values formating (to 1 decimal point)
+        # - drop unuseful columns
+        # - create a soup from keywords, cuisine and category atributes
+        # - shuffles to later use
+
 
         recipes = self.recipes_raw
 
@@ -348,44 +336,37 @@ class Recommendation_Algorithm():
         self.recipes = recipes.reset_index(drop=True)
 
     def _clean_users_table(self):
-        '''
-        Fixes type of data in users columns
-        '''
+        # Fixes type of data in users columns
+
         self.users[['recipe_id','classification']].astype('int64', copy=False)
 
     def get_rating(self, number):
-        '''
-        Fixes the rating format by transforming
-        459820008 -> 4.5
-        '''
+        # Fixes the rating format by transforming
+        # 459820008 -> 4.5
 
         string = str(number)[:2]
         rating = float(string)/10
         return rating
 
     def reduce_string(self, string):
-        '''
-        Reduces/glues strings together for use in the soup.
-        e.g.
-        Main course -> maincourse
-        '''
+        # Reduces/glues strings together for use in the soup.
+        # e.g.
+        # Main course -> maincourse
+
 
         if type(string) != 'str': string = str(string)
         return string.lower().replace(' ', '')
 
     def reduce_keywords(self, string):
-        '''
-        Reduces each keyword from the list of keywords to a simpler form
-        '''
+        # Reduces each keyword from the list of keywords to a simpler form
+
         str_list = string.split(',')
         reduced = [self.reduce_string(key) for key in str_list]
         return ' '.join(reduced)
 
     def create_soup(self, table):
-        '''
-        Creates the soup by merging the given labels.
-        This method is supposed to be used only as a map for the recipes data frame
-        '''
+        # Creates the soup by merging the given labels.
+        # This method is supposed to be used only as a map for the recipes data frame
 
         labels = ['recipeCategory_merged', 'recipeCuisine_merged','keywords_merged']
         return ' '.join([table[label] for label in labels])
