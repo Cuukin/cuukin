@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :set_validations, only: [ :show ]
 
   def index
-    @books = Book.where(id: 1).order(:id).includes(:lessons)
+    @books = Book.where(index_reference: 1).order(:index_reference).includes(:lessons)
     @validations = LessonValidation.joins(:lesson).where(user: current_user, validated: true).map {|val| val.lesson}
     @feedback = Feedback.new
   end
