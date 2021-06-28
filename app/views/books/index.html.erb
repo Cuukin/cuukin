@@ -15,10 +15,10 @@
   <div class="journey-books">
 
     <% @books.each do |book| %>
-      <div class="book-<%= book.id %>">
+      <div class="book-<%= book.index_reference %>">
         <%= link_to book_path(book) do %>
           <%= render 'progress_ring', book: book, val: @validations %>
-          <%= image_tag("#{book.icon_url}", id: "book-#{book.id}") %>
+          <%= image_tag("#{book.icon_url}", id: "book-#{book.index_reference}") %>
         <% end %>
         <%= render 'book', lessons: book.lessons %>
       </div>
