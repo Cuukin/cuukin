@@ -1,5 +1,6 @@
+# 1. Creating RECIPES from BBC Recipes CSV
+
 require 'csv'
-require 'json'
 
 bbc_recipes_csv = File.read(Rails.root.join('lib', 'seeds', 'bbc_recipes.csv'))
 bbc_recipes_csv = CSV.parse(bbc_recipes_csv, :headers => true, :encoding => 'ISO-8859-1')

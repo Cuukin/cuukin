@@ -1,3 +1,6 @@
+# IMPORTANT NOTE:
+# Only run this file on STAGING or LOCAL envs
+
 require 'csv'
 require 'json'
 

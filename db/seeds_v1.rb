@@ -1,3 +1,9 @@
+# IMPORTANT NOTE:
+# Only run this file on STAGING or LOCAL envs
+
+# 1. Solving issues from INGREDIENT, TOOLS and TECHNIQUES badge connections
+# 2. Copying SKILL CHAPTERS and RECIPE METHODS from production DB (without descriptions)
+
 require 'csv'
 
 # ingredients
