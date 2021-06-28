@@ -1,7 +1,7 @@
 class RecipeMethod < ApplicationRecord
   belongs_to :recipe
 
-  validates :title, :description, :method_index, presence: true # add video url here later
+  validates :title, :method_index, presence: true
   validates :method_index, uniqueness: { scope: :recipe, message: 'Recipe already has this method index' }
 
   def display_name
