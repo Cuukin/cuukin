@@ -59,7 +59,7 @@ Rails.application.routes.draw do
   get '/credits', to: "pages#credits"
   get '/privacy', to: "pages#privacy"
   get '/forget', to: "pages#forget"
-  # get '/playground', to: "pages#playground"
+  get '/playground', to: "pages#playground"
 
   # Admin, Sidekiq and Blazer
 
