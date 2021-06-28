@@ -16,5 +16,5 @@ class Recipe < ApplicationRecord
   has_one :lesson, through: :lesson_recipe
   has_many :user_recipes
 
-  validates :title, :prep_time, :photo_url, presence: true
+  validates :title, :photo_url, presence: true
 end

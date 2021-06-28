@@ -1,6 +1,5 @@
 ﻿[
   {
-    "id": 9,
     "name": "Samurai",
     "description": "You have mastered all the chopping techniques in Cuukin v1.0 -- quite impressive!\nYou would make a stellar samurai...",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-samurai_mgycxs.svg",
@@ -8,7 +7,6 @@
     "updated_at": "2021-03-13T17:53:31.259Z"
   },
   {
-    "id": 8,
     "name": "Oh hi there!",
     "description": "This is your first ever log in, welcome my future chef!\nHave this award, you deserve it.",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-login_dueama.svg",
@@ -16,7 +14,6 @@
     "updated_at": "2021-03-13T17:53:31.254Z"
   },
   {
-    "id": 7,
     "name": "Supporter",
     "description": "Thank you for making a donation to our Patreon site. Kin sends his love.\nxoxoxx\nKin",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-patreon_edny9i.svg",
@@ -24,7 +21,6 @@
     "updated_at": "2021-03-13T17:53:31.248Z"
   },
   {
-    "id": 6,
     "name": "First book",
     "description": "Just like our first love, we will remember you dearly.\nCongrats on finishing the first book!",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-book_jqy52w.svg",
@@ -32,7 +28,6 @@
     "updated_at": "2021-03-13T17:53:31.242Z"
   },
   {
-    "id": 5,
     "name": "Not a recipe virgin",
     "description": "Congrats, first recipe is now done and dusted.\nWasn't that bad right?!",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-first_tggawv.svg",
@@ -40,7 +35,6 @@
     "updated_at": "2021-03-13T17:53:31.237Z"
   },
   {
-    "id": 4,
     "name": "Fire Dancer",
     "description": "You have mastered all Cuukin v1.0 heating techniques -- like a cool(ass) fire dancer.",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815612/Cuukin%20-%20Awards/award-fire_o24654.svg",
@@ -48,7 +42,6 @@
     "updated_at": "2021-03-13T17:53:31.231Z"
   },
   {
-    "id": 3,
     "name": "Bookworm",
     "description": "But like, a cute one, like Hermione!\nYou finished all the books of Cuukin v1.0. Congrats! More will come and we will inform you when they do!",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-worm_seqtdd.svg",
@@ -56,7 +49,6 @@
     "updated_at": "2021-03-13T17:53:31.225Z"
   },
   {
-    "id": 2,
     "name": "Cuukin up a Storm",
     "description": "A storm is brewing...\nYou visited Cuukin for 3 days in a row, keep it coming to not lose this award!",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-storm_alb40e.svg",
@@ -64,7 +56,6 @@
     "updated_at": "2021-03-13T17:53:31.213Z"
   },
   {
-    "id": 1,
     "name": "Sizzlin' Hot",
     "description": "You cooked 3+ recipes this week!\nKeep it up to keep this award badge",
     "icon": "https://res.cloudinary.com/cuukin/image/upload/v1614815614/Cuukin%20-%20Awards/award-sizzlin_hy3yzi.svg",
