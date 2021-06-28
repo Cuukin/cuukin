@@ -24,6 +24,6 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
-    @lessons = Lesson.where(book_id: @book.id).order(:id)
+    @lessons = Lesson.where(book_id: @book.id).order(:order_in_book)
   end
 end
