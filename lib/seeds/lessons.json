@@ -1,6 +1,5 @@
 [
   {
-    "id": 8,
     "title": "American Style Pancakes",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.192Z",
@@ -9,7 +8,6 @@
     "order_in_book": null
   },
   {
-    "id": 7,
     "title": "Chicken Salad With Homemade Pesto",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.181Z",
@@ -18,7 +16,6 @@
     "order_in_book": null
   },
   {
-    "id": 6,
     "title": "Stuffed Mushroom With Sauteed Spinach",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.170Z",
@@ -27,7 +24,6 @@
     "order_in_book": null
   },
   {
-    "id": 5,
     "title": "Honey Mustard Salmon",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.159Z",
@@ -36,7 +32,6 @@
     "order_in_book": null
   },
   {
-    "id": 4,
     "title": "Stove and pasta",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.141Z",
@@ -45,7 +40,6 @@
     "order_in_book": 3
   },
   {
-    "id": 3,
     "title": "Oven",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.131Z",
@@ -54,7 +48,6 @@
     "order_in_book": 2
   },
   {
-    "id": 2,
     "title": "Microwave Deserts",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.121Z",
@@ -63,7 +56,6 @@
     "order_in_book": 2
   },
   {
-    "id": 1,
     "title": "Seasoning magic",
     "xp": 100,
     "created_at": "2021-03-13T17:53:28.109Z",

@@ -16,14 +16,14 @@ require 'json'
 
 # Badges CSV
 
-badges_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'badges.csv'))
+badges_csv = File.read(Rails.root.join('lib', 'seeds', 'badges.csv'))
 badges_csv = CSV.parse(badges_csv, :headers => true, :encoding => 'ISO-8859-1')
 
 puts "✨ Creating Badges... ✨"
 
 badges_csv.each do |row|
   b = Badge.new
-  b.id = row['Id']
+  # b.id = row['Id']
   b.name = row['Name']
   b.category = row['Category']
   b.description = row['Description']
@@ -54,6 +54,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 tools = JSON.parse(serialized)
 
 tools.each do |tool|
+  tool.except!("id")
   new_tool = Tool.new(tool)
   new_tool.save!
   puts "Created - #{new_tool.name} - #{new_tool.badge.name}"
@@ -67,6 +68,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 ingredients = JSON.parse(serialized)
 
 ingredients.each do |ingredient|
+  ingredient.except!("id")
   new_ingredient = Ingredient.new(ingredient)
   new_ingredient.save!
   puts "Created - #{new_ingredient.name} - #{new_ingredient.badge.name}"
@@ -80,6 +82,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 techniques = JSON.parse(serialized)
 
 techniques.each do |technique|
+  technique.except!("id")
   new_technique = Technique.new(technique)
   new_technique.save!
   puts "Created - #{new_technique.name} - #{new_technique.badge.name}"
@@ -93,6 +96,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 books = JSON.parse(serialized)
 
 books.each do |book|
+  book.except!("id")
   new_book = Book.new(book)
   new_book.save!
   puts "Created - #{new_book.title}"
@@ -106,6 +110,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipes = JSON.parse(serialized)
 
 recipes.each do |recipe|
+  recipe.except!("id")
   new_recipe = Recipe.new(recipe)
   new_recipe.save!
   puts "Created - #{new_recipe.title}"
@@ -119,6 +124,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 lessons = JSON.parse(serialized)
 
 lessons.each do |lesson|
+  lesson.except!("id")
   new_lesson = Lesson.new(lesson)
   new_lesson.save!
   puts "Created - #{new_lesson.title}"
@@ -132,6 +138,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 skill_chapters = JSON.parse(serialized)
 
 skill_chapters.each do |skill_chapter|
+  skill_chapter.except!("id")
   new_skill_chapter = SkillChapter.new(skill_chapter)
   new_skill_chapter.save!
   puts "Created - #{new_skill_chapter.title}"
@@ -145,6 +152,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 lesson_recipes = JSON.parse(serialized)
 
 lesson_recipes.each do |lesson_recipe|
+  lesson_recipe.except!("id")
   new_lesson_recipe = LessonRecipe.new(lesson_recipe)
   new_lesson_recipe.save!
   puts "Created - #{new_lesson_recipe.recipe.title} - #{new_lesson_recipe.lesson.title}"
@@ -158,6 +166,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_methods = JSON.parse(serialized)
 
 recipe_methods.each do |recipe_method|
+  recipe_method.except!("id")
   new_recipe_method = RecipeMethod.new(recipe_method)
   new_recipe_method.save!
   puts "Created - #{new_recipe_method.title} - #{new_recipe_method.recipe.title}"
@@ -171,7 +180,13 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_ingredients = JSON.parse(serialized)
 
 recipe_ingredients.each do |recipe_ingredient|
-  new_recipe_ingredient = RecipeIngredient.new(recipe_ingredient)
+  recipe_ingredient.except!("id")
+  if recipe_ingredient["ingredient_id"] > Ingredient.last.id
+    recipe_ingredient["ingredient_id"] = 1
+    new_recipe_ingredient = RecipeIngredient.new(recipe_ingredient)
+  else
+    new_recipe_ingredient = RecipeIngredient.new(recipe_ingredient)
+  end
   new_recipe_ingredient.save!
   puts "Created - #{new_recipe_ingredient.recipe.title} - #{new_recipe_ingredient.ingredient.name}"
 end
@@ -184,6 +199,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_tools = JSON.parse(serialized)
 
 recipe_tools.each do |recipe_tool|
+  recipe_tool.except!("id")
   new_recipe_tool = RecipeTool.new(recipe_tool)
   new_recipe_tool.save!
   puts "Created - #{new_recipe_tool.recipe.title} - #{new_recipe_tool.tool.name}"
@@ -197,6 +213,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_techniques = JSON.parse(serialized)
 
 recipe_techniques.each do |recipe_technique|
+  recipe_technique.except!("id")
   new_recipe_technique = RecipeTechnique.new(recipe_technique)
   new_recipe_technique.save!
   puts "Created - #{new_recipe_technique.recipe.title} - #{new_recipe_technique.technique.name}"
@@ -210,6 +227,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_ingredient_swaps = JSON.parse(serialized)
 
 recipe_ingredient_swaps.each do |recipe_ingredient_swap|
+  recipe_ingredient_swap.except!("id")
   new_recipe_ingredient_swap = RecipeIngredientSwap.new(recipe_ingredient_swap)
   new_recipe_ingredient_swap.save!
   puts "Created - #{new_recipe_ingredient_swap.recipe_ingredient.display_name} - #{new_recipe_ingredient_swap.ingredient.name}"
@@ -223,6 +241,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_nutritional_infos = JSON.parse(serialized)
 
 recipe_nutritional_infos.each do |recipe_nutritional_info|
+  recipe_nutritional_info.except!("id")
   new_recipe_nutritional_info = RecipeNutritionalInfo.new(recipe_nutritional_info)
   new_recipe_nutritional_info.save!
   puts "Created - #{new_recipe_nutritional_info.recipe.title} - #{new_recipe_nutritional_info.value} - #{new_recipe_nutritional_info.nutrient}"
@@ -241,7 +260,7 @@ puts "✨ Creating Dietary Restrictions... ✨"
 #   puts "Created - #{new_dietary_restriction.name}"
 # end
 
-dietary_restrictions_csv = csv_text = File.read(Rails.root.join('lib', 'seeds', 'dietary_restrictions.csv'))
+dietary_restrictions_csv = File.read(Rails.root.join('lib', 'seeds', 'dietary_restrictions.csv'))
 dietary_restrictions_csv = CSV.parse(dietary_restrictions_csv, :headers => true, :encoding => 'ISO-8859-1')
 
 dietary_restrictions_csv.each do |row|
@@ -260,6 +279,7 @@ serialized = File.read(Rails.root.join('lib', 'seeds', "#{filepath}"))
 recipe_dietary_restrictions = JSON.parse(serialized)
 
 recipe_dietary_restrictions.each do |recipe_dietary_restriction|
+  recipe_dietary_restriction.except!("id")
   new_recipe_dietary_restriction = RecipeDietaryRestriction.new(recipe_dietary_restriction)
   new_recipe_dietary_restriction.save!
   puts "Created - #{new_recipe_dietary_restriction.recipe.title} - #{new_recipe_dietary_restriction.dietary_restriction.name}"
@@ -414,4 +434,34 @@ all_users = User.all
 
 all_users.each do |user|
   UserAward.create(award: Award.find_by(name: 'Oh hi there!'), user: user)
+end
+
+# BBC Recipes
+
+bbc_recipes_csv = File.read(Rails.root.join('lib', 'seeds', 'bbc_recipes.csv'))
+bbc_recipes_csv = CSV.parse(bbc_recipes_csv, :headers => true, :encoding => 'ISO-8859-1')
+
+puts "✨ Seeding BBC Recipes... ✨"
+
+bbc_recipes_csv.each do |row|
+  unless row['imageLink']
+    row['imageLink'] = "https://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/creamy_mushroom_pasta_41818_16x9.jpg"
+  end
+
+  recipe = Recipe.new
+  recipe.title = row['title']
+  recipe.description = row['description']
+  recipe.photo_url = row['imageLink']
+  recipe.external_url = row['recipeLink']
+  recipe.keywords = row['keywords']
+  recipe.category = row['recipeCategory']
+  recipe.cuisine = row['recipeCuisine']
+  recipe.soup = row['soup']
+  recipe.rating = row['ratingValue'].to_f
+  recipe.rating_count = row['ratingCount'].to_i
+  recipe.diet = row['suitableForDiet']
+  recipe.bbc = true
+  recipe.save!
+
+  puts "Created BBC Recipe - #{recipe.title}"
 end

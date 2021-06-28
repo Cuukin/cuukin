@@ -1,6 +1,5 @@
 [
   {
-    "id": 12,
     "lesson_id": 1,
     "recipe_id": 1,
     "extra": false,
@@ -8,7 +7,6 @@
     "updated_at": "2021-04-27T03:25:34.669Z"
   },
   {
-    "id": 11,
     "lesson_id": 3,
     "recipe_id": 3,
     "extra": false,
@@ -16,7 +14,6 @@
     "updated_at": "2021-04-27T03:25:22.027Z"
   },
   {
-    "id": 10,
     "lesson_id": 2,
     "recipe_id": 2,
     "extra": false,
@@ -24,7 +21,6 @@
     "updated_at": "2021-04-27T03:25:09.447Z"
   },
   {
-    "id": 9,
     "lesson_id": 4,
     "recipe_id": 4,
     "extra": false,
@@ -32,7 +28,6 @@
     "updated_at": "2021-04-27T03:25:00.863Z"
   },
   {
-    "id": 8,
     "lesson_id": 4,
     "recipe_id": 15,
     "extra": true,
@@ -40,7 +35,6 @@
     "updated_at": "2021-04-20T16:48:54.836Z"
   },
   {
-    "id": 7,
     "lesson_id": 4,
     "recipe_id": 16,
     "extra": true,
@@ -48,7 +42,6 @@
     "updated_at": "2021-04-20T16:48:39.115Z"
   },
   {
-    "id": 6,
     "lesson_id": 3,
     "recipe_id": 13,
     "extra": true,
@@ -56,7 +49,6 @@
     "updated_at": "2021-04-20T16:48:20.693Z"
   },
   {
-    "id": 5,
     "lesson_id": 3,
     "recipe_id": 14,
     "extra": true,
@@ -64,7 +56,6 @@
     "updated_at": "2021-04-27T21:31:11.791Z"
   },
   {
-    "id": 4,
     "lesson_id": 2,
     "recipe_id": 12,
     "extra": true,
@@ -72,7 +63,6 @@
     "updated_at": "2021-04-20T16:47:53.930Z"
   },
   {
-    "id": 3,
     "lesson_id": 2,
     "recipe_id": 11,
     "extra": true,
@@ -80,7 +70,6 @@
     "updated_at": "2021-04-20T16:47:44.507Z"
   },
   {
-    "id": 2,
     "lesson_id": 1,
     "recipe_id": 10,
     "extra": true,
@@ -88,7 +77,6 @@
     "updated_at": "2021-04-20T16:47:32.876Z"
   },
   {
-    "id": 1,
     "lesson_id": 1,
     "recipe_id": 9,
     "extra": true,
