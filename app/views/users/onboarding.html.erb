@@ -41,6 +41,24 @@
       </div>
     </div>
 
+    <div class="form-inputs edit-diet-container" id="motivationContainer" style="display: none;">
+      <h3>How experienced are you at cookin?</h3>
+      <%= f.input :level,
+        collection: ["Never cooked", "Beginner", "Intermediate", "Advanced"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle'></div>
+        <div class='circle circle-disabled'></div>
+      </div>
+
+      <div class="form-actions">
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
     <div class="form-inputs edit-commitment-container" id="commitmentContainer" style="display: none;">
       <h3>Let's choose a weekly goal.</h3>
       <p>Number of Cuukin meals you plan to cook in a week:</p>
