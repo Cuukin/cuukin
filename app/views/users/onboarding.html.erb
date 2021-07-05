@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-inputs" id="levelContainer" style="display: none;">
-      <h3>How experienced are you at cookin?</h3>
+      <h3>How experienced are you at cooking?</h3>
 
       <fieldset class="form-group radio_buttons optional">
 
@@ -51,7 +51,8 @@
             <input class="form-check-input radio_buttons" type="radio" value="dishwasher" name="user[level]" id="user_level_1">
             <label class="form-check-label collection_radio_buttons" for="user_level_1">
               <%= image_tag('lv1.svg') %>
-              <p>Never cooked</p>
+              <p class="level-title">Never cooked</p>
+              <p class="level-description">I can butter my toast with no issue</p>
             </label>
           </div>
 
@@ -59,7 +60,8 @@
             <input class="form-check-input radio_buttons" type="radio" value="newbie" name="user[level]" id="user_level_2">
             <label class="form-check-label collection_radio_buttons" for="user_level_2">
               <%= image_tag('lv2.svg') %>
-              <p>Beginner</p>
+              <p class="level-title">Beginner</p>
+              <p class="level-description">I can manage instant noodles like a pro</p>
             </label>
           </div>
 
@@ -67,7 +69,8 @@
             <input class="form-check-input radio_buttons" type="radio" value="chef in progress" name="user[level]" id="user_level_3">
             <label class="form-check-label collection_radio_buttons" for="user_level_3">
               <%= image_tag('lv3.svg') %>
-              <p>Intermediate</p>
+              <p class="level-title">Intermediate</p>
+              <p class="level-description">I can follow recipes like roasted veggies easily</p>
             </label>
           </div>
 
@@ -75,7 +78,8 @@
             <input class="form-check-input radio_buttons" type="radio" value="chef of party" name="user[level]" id="user_level_4">
             <label class="form-check-label collection_radio_buttons" for="user_level_4">
               <%= image_tag('lv4.svg') %>
-              <p>Advanced</p>
+              <p class="level-title">Advanced</p>
+              <p class="level-description">I can whip up a Beef Wellington without recipe</p>
             </label>
           </div>
         </div>

@@ -14,10 +14,11 @@
 
   .form-check-label {
     width: 100%;
+    margin-bottom: 4px;
   }
 
-  .form-check-input:checked {
-    p {
+  .form-check-input:checked + label {
+    .level-title {
       -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
       -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
       box-shadow:inset 0px 0px 0px 3px $cuukin;
@@ -26,7 +27,7 @@
 }
 
 .user-level-options {
-  width: 48%;
+  width: 45%;
   // margin: 0 2px;
 
   display: flex;
@@ -37,21 +38,26 @@
   cursor: pointer;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin-bottom: 8px;
   }
 
-  p {
+  .level-title {
     font-weight: 600;
     text-align: center;
     padding: 10px 15px;
     border-radius: 12px;
+    margin: 0 auto 8px;
     -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
     box-shadow:inset 0px 0px 0px 1px #AFAFAF;
   }
 
+  .level-description {
+    font-size: 14px;
+    color: $dark-gray;
+  }
 }
 
 
