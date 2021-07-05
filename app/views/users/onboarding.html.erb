@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container" id="phoneContainer" style="display: none;">
+    <div class="form-inputs edit-commitment-container d-none" id="phoneContainer">
       <h3>Hey, I just met you and this is crazy.<br><span>But what's your WhatsApp number?</span> I'll msg* you, maybe.</h3>
       <%= f.input :phone, label: false, placeholder: 'Ex: +44 7911 123456' %>
 
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-diet-container" id="motivationContainer" style="display: none;">
+    <div class="form-inputs edit-diet-container d-none" id="motivationContainer">
       <h3>How did you hear about us?</h3>
       <%= f.input :acquisition,
         collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google", "Friends", "LinkedIn", "Reddit", "Email", "Event", "Other"],
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="form-inputs" id="levelContainer" style="display: none;">
+    <div class="form-inputs d-none" id="levelContainer">
       <h3>How experienced are you at cooking?</h3>
 
       <fieldset class="form-group radio_buttons optional">
@@ -125,7 +125,7 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container" id="commitmentContainer" style="display: none;">
+    <div class="form-inputs edit-commitment-container d-none" id="commitmentContainer">
       <h3>Let's choose a weekly goal.</h3>
       <p>Number of Cuukin meals you plan to cook in a week:</p>
       <%= f.input :weekly_commitment,

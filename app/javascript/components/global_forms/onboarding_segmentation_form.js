@@ -11,13 +11,13 @@ const onboardingSegmentationForm = () => {
       btns.forEach((btn) => {
         btn.addEventListener('click', () => {
           counter += 1;
-          editContainers[counter - 1].style.display = "none";
-          editContainers[counter].style.display = "block";
+          editContainers[counter - 1].classList.add('d-none');
+          editContainers[counter].classList.remove('d-none');
         });
       });
     };
 
-    nextSlide(skipBtns);
+    // nextSlide(skipBtns);
     nextSlide(continueBtns);
   };
 };
