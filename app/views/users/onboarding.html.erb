@@ -4,27 +4,25 @@
   <%= simple_form_for(@user, url: create_onboarding_path(@user), method: 'patch') do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs edit-commitment-container" id="acquisitionContainer">
+    <div class="form-inputs edit-commitment-container onboarding-section" id="acquisitionContainer">
       <h3>Why do you want to improve your cooking?</h3>
       <%= f.input :motivation,
         collection: ["Eat healthier food", "Save money", "Impress friends and family", "Be more sustainable", "Learn a new skill", "Other"],
         as: :check_boxes, legend_tag: false %>
 
-      <div class='commitment-progress-bar'>
-        <div class='circle'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-      </div>
-
       <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
         <p class="primary-btn continueBtn">Continue</p>
-        <!-- <p class="skip-btn skipBtn">Skip for now</p> -->
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container d-none" id="phoneContainer">
+    <div class="form-inputs edit-commitment-container onboarding-section d-none" id="phoneContainer">
       <h3>Hey, I just met you and this is crazy.<br><span>But what's your WhatsApp number?</span> I'll msg* you, maybe.</h3>
       <%= f.input :phone, label: false, placeholder: 'Ex: +44 7911 123456' %>
 
@@ -34,40 +32,37 @@
 
       <p class="sidenote">*We might send some cooking tips, but promise not to spam you. You can always opt out of this service later. </p>
 
-      <div class='commitment-progress-bar'>
-        <div class='circle circle-disabled'></div>
-        <div class='circle'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-      </div>
-
       <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
         <p class="primary-btn continueBtn">Continue</p>
-        <!-- <p class="skip-btn skipBtn">Skip for now</p> -->
       </div>
     </div>
 
-    <div class="form-inputs edit-diet-container d-none" id="motivationContainer">
+    <div class="form-inputs edit-diet-container onboarding-section d-none" id="motivationContainer">
       <h3>How did you hear about us?</h3>
       <%= f.input :acquisition,
         collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google", "Friends", "LinkedIn", "Reddit", "Email", "Event", "Other"],
         as: :radio_buttons, legend_tag: false %>
 
-      <div class='commitment-progress-bar'>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-      </div>
-
       <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
         <p class="primary-btn continueBtn">Continue</p>
       </div>
     </div>
 
-    <div class="form-inputs d-none" id="levelContainer">
+    <div class="form-inputs onboarding-section d-none" id="levelContainer">
       <h3>How experienced are you at cooking?</h3>
 
       <fieldset class="form-group radio_buttons optional">
@@ -112,37 +107,34 @@
 
       </fieldset>
 
-      <div class='commitment-progress-bar'>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle'></div>
-        <div class='circle circle-disabled'></div>
-      </div>
-
       <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
         <p class="primary-btn continueBtn">Continue</p>
       </div>
     </div>
 
-    <div class="form-inputs edit-commitment-container d-none" id="commitmentContainer">
+    <div class="form-inputs edit-commitment-container onboarding-section d-none" id="commitmentContainer">
       <h3>Let's choose a weekly goal.</h3>
       <p>Number of Cuukin meals you plan to cook in a week:</p>
       <%= f.input :weekly_commitment,
         collection: [1, 2, 3, 4, "5 or more"],
         as: :radio_buttons, legend_tag: false %>
 
-      <div class='commitment-progress-bar'>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle'></div>
-      </div>
-
       <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+        </div>
         <input type="submit" value="Get Started" class="primary-btn">
-        <p class="commitment-message">You can always change this on your profile settings</p>
       </div>
     </div>
 
