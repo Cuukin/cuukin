@@ -1,0 +1,152 @@
+<div class="body-white-bg profile-setup">
+  <div class="commitment-container">
+
+  <%= simple_form_for(@user, url: create_onboarding_path(@user), method: 'patch') do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs edit-commitment-container onboarding-section" id="acquisitionContainer">
+      <h3>Why do you want to improve your cooking?</h3>
+      <%= f.input :motivation,
+        collection: ["Eat healthier food", "Save money", "Impress friends and family", "Be more sustainable", "Learn a new skill", "Other"],
+        as: :check_boxes, legend_tag: false %>
+
+      <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
+    <div class="form-inputs edit-commitment-container onboarding-section d-none" id="phoneContainer">
+      <h3>Hey, I just met you and this is crazy. <span>But what's your WhatsApp number?</span> I'll msg* you, maybe.</h3>
+      <%= f.input :phone, label: false, placeholder: 'Ex: +44 7911 123456' %>
+
+      <div class="kin-tip-container">
+        <div class="kin-tip">
+          <%= image_tag('speech-bubble.svg', class: 'speech-bubble') %>
+          <div class="kin-tip-text">
+            <h4>Did you know?</h4>
+            <p>A meal made at home on average costs £3.56 in the UK</p>
+          </div>
+        </div>
+        <%= image_tag('kin-wink.svg', class: 'kin-icon') %>
+      </div>
+
+      <p class="sidenote">*We might send some cooking tips, but promise not to spam you. You can always opt out of this service later. </p>
+
+      <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
+    <div class="form-inputs edit-diet-container onboarding-section d-none" id="motivationContainer">
+      <h3>How did you hear about us?</h3>
+      <%= f.input :acquisition,
+        collection: ["Instagram", "LBS Foodie Club", "Other LBS Club", "Google", "Friends", "LinkedIn", "Reddit", "Email", "Event", "Other"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
+    <div class="form-inputs onboarding-section d-none" id="levelContainer">
+      <h3>How experienced are you at cooking?</h3>
+
+      <fieldset class="form-group radio_buttons optional">
+
+        <div class="user-level-options-container">
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="dishwasher" name="user[level]" id="user_level_1">
+            <label class="form-check-label collection_radio_buttons" for="user_level_1">
+              <%= image_tag('lv1.svg') %>
+              <p class="level-title">Never cooked</p>
+              <p class="level-description">I can butter my toast with no issue</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="newbie" name="user[level]" id="user_level_2">
+            <label class="form-check-label collection_radio_buttons" for="user_level_2">
+              <%= image_tag('lv2.svg') %>
+              <p class="level-title">Beginner</p>
+              <p class="level-description">I can manage instant noodles like a pro</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="chef in progress" name="user[level]" id="user_level_3">
+            <label class="form-check-label collection_radio_buttons" for="user_level_3">
+              <%= image_tag('lv3.svg') %>
+              <p class="level-title">Intermediate</p>
+              <p class="level-description">I can follow recipes like roasted veggies easily</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="chef of party" name="user[level]" id="user_level_4">
+            <label class="form-check-label collection_radio_buttons" for="user_level_4">
+              <%= image_tag('lv4.svg') %>
+              <p class="level-title">Advanced</p>
+              <p class="level-description">I can whip up a Beef Wellington without recipe</p>
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+          <div class='circle circle-disabled'></div>
+        </div>
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
+    <div class="form-inputs edit-commitment-container onboarding-section d-none" id="commitmentContainer">
+      <h3>Let's choose a weekly goal.</h3>
+      <p>Number of Cuukin meals you plan to cook in a week:</p>
+      <%= f.input :weekly_commitment,
+        collection: [1, 2, 3, 4, "5 or more"],
+        as: :radio_buttons, legend_tag: false %>
+
+      <div class="form-actions">
+        <div class='commitment-progress-bar'>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle circle-disabled'></div>
+          <div class='circle'></div>
+        </div>
+        <input type="submit" value="Get Started" class="primary-btn">
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+
+</div>

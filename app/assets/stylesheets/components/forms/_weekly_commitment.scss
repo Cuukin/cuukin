@@ -20,21 +20,12 @@
     margin-top: 8px;
   }
   .form-check-input:checked + label {
-    color: $white;
-    background-color: $cuukin;
-    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    box-shadow:inset 0px 0px 0px 3px $dark-red;
-  }
-
-  h3 {
-    margin-bottom: 12px;
+    color: $cuukin;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    box-shadow:inset 0px 0px 0px 3px $cuukin;
   }
 }
-
-// .user_weekly_commitment {
-//   margin-bottom: 0 !important;
-// }
 
 .user_email_nudges {
   .form-check {
@@ -93,11 +84,10 @@
 .commitment-container {
   width: 500px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 24px 16px;
   text-align: center;
 
   h3 {
-    margin-bottom: 16px;
     font-size: 20px;
   }
 
@@ -121,17 +111,17 @@
 }
 
 .commitment-progress-bar {
-  width: 60px;
-  margin: 20px auto 16px;
+  width: 64px;
+  margin: 16px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
 
   .circle {
-  width: 11px;
-  height: 11px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: $dark-gray;
+  background-color: $cuukin;
   }
   .circle-disabled {
     background-color: $light-gray;
@@ -166,15 +156,10 @@
     margin-top: 8px;
   }
   .form-check-input:checked + label {
-    color: $white;
-    background-color: $cuukin;
-    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    box-shadow:inset 0px 0px 0px 3px $dark-red;
-  }
-
-  h3 {
-    margin-bottom: 16px;
+    color: $cuukin;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    box-shadow:inset 0px 0px 0px 3px $cuukin;
   }
 }
 
@@ -182,7 +167,7 @@
   p {
     font-size: 18px;
     font-style: italic;
-    margin-bottom: 16px;
+    margin: 0;
   }
 }
 
@@ -190,5 +175,14 @@
   /* For a screen < 720px, this CSS will be read */
   .commitment-container {
     width: 100vw;
+  }
+}
+
+@media (max-width: 344px) {
+  /* For a screen < 720px, this CSS will be read */
+  .edit-diet-container {
+    .form-check {
+      width: 100%;
+    }
   }
 }

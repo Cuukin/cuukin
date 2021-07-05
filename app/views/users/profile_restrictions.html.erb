@@ -1,0 +1,29 @@
+<div class="body-white-bg">
+  <div class="commitment-container">
+
+  <%= simple_form_for(@user, url: create_onboarding_path(@user), method: 'patch') do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs edit-diet-container" id="dietContainer" style="display: none;">
+      <h3>Any dietary preferences?</h3>
+      <%= f.input :diet_restrictions,
+        collection: ["Vegetarian", "Vegan", "Nut-free", "Gluten-free", "Pescatarian", "Dairy free", "Diabetic", "Low-carb", "Paleo", "Halal", "Kosher", "Other"],
+        as: :check_boxes, legend_tag: false %>
+
+      <div class='commitment-progress-bar'>
+        <div class='circle circle-disabled'></div>
+        <div class='circle circle-disabled'></div>
+        <div class='circle'></div>
+        <div class='circle circle-disabled'></div>
+      </div>
+
+      <div class="form-actions">
+        <p class="primary-btn continueBtn">Continue</p>
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37 58" style="enable-background:new 0 0 37 58;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.26;fill:#FFD21C;enable-background:new    ;}
+	.st1{fill:#D2D5D7;}
+	.st2{fill:#F86464;}
+	.st3{fill:#E6E6E6;}
+</style>
+<g id="Grupo_2512" transform="translate(-79.995 -440)">
+	<circle id="Elipse_1015" class="st0" cx="98.5" cy="468.5" r="17.5"/>
+	<g id="fork" transform="translate(55.995 440)">
+		<path id="Caminho_7413" class="st1" d="M29,31c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v29C30,30.6,29.6,31,29,31z"/>
+		<path id="Caminho_7414" class="st1" d="M29,19c-2.8,0-5-2.2-5-5V1c0-0.6,0.4-1,1-1s1,0.4,1,1v13c0,1.7,1.3,3,3,3s3-1.3,3-3V1
+			c0-0.6,0.4-1,1-1s1,0.4,1,1v13C34,16.8,31.8,19,29,19z"/>
+		<path id="Caminho_7415" class="st2" d="M29,58L29,58c-1.7,0-3-1.3-3-3V33c0-1.7,1.3-3,3-3l0,0c1.7,0,3,1.3,3,3v22
+			C32,56.7,30.7,58,29,58z"/>
+		<path id="Caminho_7416" class="st1" d="M29,36L29,36c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C30,35.6,29.6,36,29,36z"/>
+		<path id="Caminho_7417" class="st1" d="M29,40L29,40c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C30,39.6,29.6,40,29,40z"/>
+	</g>
+	<g id="spoon" transform="translate(70.495 441)">
+		<path id="Caminho_7425" class="st1" d="M28.5,30c-0.6,0-1-0.4-1-1v-9c0-0.6,0.4-1,1-1s1,0.4,1,1v9C29.5,29.6,29.1,30,28.5,30z"/>
+		<ellipse id="Elipse_1031" class="st3" cx="28.5" cy="10" rx="6" ry="10"/>
+		<path id="Caminho_7426" class="st2" d="M28.5,57L28.5,57c-1.7,0-3-1.3-3-3V32c0-1.7,1.3-3,3-3l0,0c1.7,0,3,1.3,3,3v22
+			C31.5,55.7,30.2,57,28.5,57z"/>
+		<path id="Caminho_7427" class="st1" d="M28.5,35L28.5,35c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C29.5,34.6,29.1,35,28.5,35z"/>
+		<path id="Caminho_7428" class="st1" d="M28.5,39L28.5,39c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C29.5,38.6,29.1,39,28.5,39z"/>
+	</g>
+	<g id="knife" transform="translate(85 441)">
+		<path id="Caminho_7480" class="st1" d="M29,30c3.1-3.1,3-9.3,3-17s0.5-13-6-13v31L29,30z"/>
+		<path id="Caminho_7481" class="st2" d="M28,57L28,57c-1.7,0-3-1.3-3-3V32c0-1.7,1.3-3,3-3l0,0c1.7,0,3,1.3,3,3v22
+			C31,55.7,29.7,57,28,57z"/>
+		<path id="Caminho_7482" class="st1" d="M28,35L28,35c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C29,34.6,28.6,35,28,35z"/>
+		<path id="Caminho_7483" class="st1" d="M28,39L28,39c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1l0,0c0.6,0,1,0.4,1,1l0,0
+			C29,38.6,28.6,39,28,39z"/>
+	</g>
+</g>
+</svg>

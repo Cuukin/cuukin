@@ -28,6 +28,10 @@
         <%= f.input :bio,
                     input_html: { rows: '2', class: 'editUserInput'},
                     label: 'Say something about yourself' %>
+        <%= f.input :phone,
+                    input_html: { autocomplete: "phone", class: 'editUserInput' },
+                    label: 'Your WhatsApp number',
+                    placeholder: '+44 7911 123456' %>
         <%= f.input :relationship_status,
                     as: :select, collection: ["Single", "Married", "Domestic Partnership", "Divorced", "Widowed", "Other"],
                     label: 'Relationship Status', input_html: { class: 'editUserInput' } %>

@@ -12,9 +12,6 @@ class UsersController < ApplicationController
   def show
     @feedback = Feedback.new
     authorize @user
-    # @users = User.where.not(id: current_user.id) # to test response on follow and unfollow
-    # @users = User.order(xp: :desc)
-    # @rank = @users.find_index(@user) + 1
   end
 
   def edit
@@ -55,12 +52,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def commitment
+  def onboarding
     @user = current_user
     authorize @user
   end
 
-  def create_commitment
+  def create_onboarding
     @user = current_user
     authorize @user
     if @user.update(user_params)
@@ -85,6 +82,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :acquisition, :weekly_commitment, :cuukies, :motivation => [], :diet_restrictions => [])
+    params.require(:user).permit(:first_name, :last_name, :photo, :bio, :username, :acquisition, :weekly_commitment, :cuukies, :level, :phone, :motivation => [], :diet_restrictions => [])
   end
 end

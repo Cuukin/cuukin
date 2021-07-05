@@ -1,0 +1,150 @@
+.user-level-options-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .form-check {
+    padding: 0;
+  }
+
+  .form-check-input {
+    position: absolute;
+    transform: scale(0);
+  }
+
+  .form-check-label {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .form-check-input:checked + label {
+    .level-title {
+      -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
+      -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
+      box-shadow:inset 0px 0px 0px 3px $cuukin;
+    }
+  }
+}
+
+.user-level-options {
+  width: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  cursor: pointer;
+
+  img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 8px;
+  }
+
+  .level-title {
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin: 0 auto 8px;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    -moz-box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+    box-shadow:inset 0px 0px 0px 1px #AFAFAF;
+  }
+
+  .level-description {
+    font-size: 14px;
+    color: $dark-gray;
+    margin: 0;
+  }
+}
+
+#phoneContainer {
+  h3 {
+    font-weight: 300;
+    margin-bottom: 16px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .sidenote {
+    color: $dark-gray;
+    margin: 0;
+  }
+}
+
+.onboarding-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  min-height: 480px;
+
+  fieldset {
+    width: 100%;
+    margin: 0;
+  }
+
+  .form-actions, .form-group {
+    width: 100%;
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.kin-tip-container {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+
+  .kin-icon {
+    width: 100px;
+    position: relative;
+    top: -55px;
+  }
+
+  .kin-tip {
+    position: relative;
+    top: 20px;
+    color: $dark-gray;
+    text-align: center;
+
+    .speech-bubble {
+      width: 200px;
+    }
+
+    .kin-tip-text {
+      position: absolute;
+      width: 180px;
+      top: 56px;
+      left: 10px;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 100;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 340px) {
+  .user-level-options {
+    width: 90%;
+  }
+}

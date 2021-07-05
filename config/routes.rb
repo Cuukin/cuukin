@@ -20,8 +20,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'commitment', to: 'users#commitment'
-  patch 'create_commitment', to: 'users#create_commitment'
+  get 'onboarding', to: 'users#onboarding'
+  patch 'create_onboarding', to: 'users#create_onboarding'
+
   patch 'update_currency', to: 'users#update_currency'
 
   # Book, Lesson and Lesson Validation
