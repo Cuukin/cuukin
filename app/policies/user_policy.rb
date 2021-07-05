@@ -17,16 +17,17 @@ class UserPolicy < ApplicationPolicy
     owner?
   end
 
-  def commitment?
-    create_commitment?
+  def onboarding?
+    create_onboarding?
   end
 
-  def create_commitment?
+  def create_onboarding?
     user.sign_in_count <= 1
+    owner?
   end
 
   def update_currency?
-    record == user
+    owner?
   end
 
   def profile?
