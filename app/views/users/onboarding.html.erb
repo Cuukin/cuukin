@@ -23,11 +23,18 @@
     </div>
 
     <div class="form-inputs edit-commitment-container onboarding-section d-none" id="phoneContainer">
-      <h3>Hey, I just met you and this is crazy.<br><span>But what's your WhatsApp number?</span> I'll msg* you, maybe.</h3>
+      <h3>Hey, I just met you and this is crazy. <span>But what's your WhatsApp number?</span> I'll msg* you, maybe.</h3>
       <%= f.input :phone, label: false, placeholder: 'Ex: +44 7911 123456' %>
 
-      <div class="kin-tip">
-
+      <div class="kin-tip-container">
+        <div class="kin-tip">
+          <%= image_tag('speech-bubble.svg', class: 'speech-bubble') %>
+          <div class="kin-tip-text">
+            <h4>Did you know?</h4>
+            <p>A meal made at home on average costs £3.56 in the UK</p>
+          </div>
+        </div>
+        <%= image_tag('kin-wink.svg', class: 'kin-icon') %>
       </div>
 
       <p class="sidenote">*We might send some cooking tips, but promise not to spam you. You can always opt out of this service later. </p>
