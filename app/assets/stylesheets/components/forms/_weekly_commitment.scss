@@ -192,3 +192,12 @@
     width: 100vw;
   }
 }
+
+@media (max-width: 344px) {
+  /* For a screen < 720px, this CSS will be read */
+  .edit-diet-container {
+    .form-check {
+      width: 100%;
+    }
+  }
+}
