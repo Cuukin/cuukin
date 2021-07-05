@@ -41,11 +41,46 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-diet-container" id="motivationContainer" style="display: none;">
+    <div class="form-inputs" id="levelContainer" style="display: none;">
       <h3>How experienced are you at cookin?</h3>
-      <%= f.input :level,
-        collection: ["Never cooked", "Beginner", "Intermediate", "Advanced"],
-        as: :radio_buttons, legend_tag: false %>
+
+      <fieldset class="form-group radio_buttons optional">
+
+        <div class="user-level-options-container">
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="dishwasher" name="user[level]" id="user_level_1">
+            <label class="form-check-label collection_radio_buttons" for="user_level_1">
+              <%= image_tag('lv1.svg') %>
+              <p>Never cooked</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="newbie" name="user[level]" id="user_level_2">
+            <label class="form-check-label collection_radio_buttons" for="user_level_2">
+              <%= image_tag('lv2.svg') %>
+              <p>Beginner</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="chef in progress" name="user[level]" id="user_level_3">
+            <label class="form-check-label collection_radio_buttons" for="user_level_3">
+              <%= image_tag('lv3.svg') %>
+              <p>Intermediate</p>
+            </label>
+          </div>
+
+          <div class="form-check user-level-options">
+            <input class="form-check-input radio_buttons" type="radio" value="chef of party" name="user[level]" id="user_level_4">
+            <label class="form-check-label collection_radio_buttons" for="user_level_4">
+              <%= image_tag('lv4.svg') %>
+              <p>Advanced</p>
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
 
       <div class='commitment-progress-bar'>
         <div class='circle circle-disabled'></div>
