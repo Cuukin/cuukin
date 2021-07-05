@@ -186,6 +186,10 @@
   }
 }
 
+.profile-setup {
+  justify-content: flex-start !important;
+}
+
 @media (max-width: 500px) {
   /* For a screen < 720px, this CSS will be read */
   .commitment-container {

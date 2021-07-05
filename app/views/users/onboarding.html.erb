@@ -1,4 +1,4 @@
-<div class="body-white-bg">
+<div class="body-white-bg profile-setup">
   <div class="commitment-container">
 
   <%= simple_form_for(@user, url: create_onboarding_path(@user), method: 'patch') do |f| %>
@@ -41,27 +41,9 @@
       </div>
     </div>
 
-    <div class="form-inputs edit-diet-container" id="dietContainer" style="display: none;">
-      <h3>Any dietary preferences?</h3>
-      <%= f.input :diet_restrictions,
-        collection: ["Vegetarian", "Vegan", "Nut-free", "Gluten-free", "Pescatarian", "Dairy free", "Diabetic", "Low-carb", "Paleo", "Halal", "Kosher", "Other"],
-        as: :check_boxes, legend_tag: false %>
-
-      <div class='commitment-progress-bar'>
-        <div class='circle circle-disabled'></div>
-        <div class='circle circle-disabled'></div>
-        <div class='circle'></div>
-        <div class='circle circle-disabled'></div>
-      </div>
-
-      <div class="form-actions">
-        <p class="primary-btn continueBtn">Continue</p>
-      </div>
-    </div>
-
     <div class="form-inputs edit-commitment-container" id="commitmentContainer" style="display: none;">
       <h3>Let's choose a weekly goal.</h3>
-      <p>Number of Cuukin meals you plan to cook in a week (each lesson is 25-60 min long)</p>
+      <p>Number of Cuukin meals you plan to cook in a week:</p>
       <%= f.input :weekly_commitment,
         collection: [1, 2, 3, 4, "5 or more"],
         as: :radio_buttons, legend_tag: false %>
@@ -75,7 +57,7 @@
 
       <div class="form-actions">
         <input type="submit" value="Get Started" class="primary-btn">
-        <p class="commitment-message">You can always come back and change this later</p>
+        <p class="commitment-message">You can always change this on your profile settings</p>
       </div>
     </div>
 
