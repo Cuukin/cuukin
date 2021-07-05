@@ -20,11 +20,10 @@
     margin-top: 8px;
   }
   .form-check-input:checked + label {
-    color: $white;
-    background-color: $cuukin;
-    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    box-shadow:inset 0px 0px 0px 3px $dark-red;
+    color: $cuukin;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    box-shadow:inset 0px 0px 0px 3px $cuukin;
   }
 
   h3 {
@@ -166,11 +165,10 @@
     margin-top: 8px;
   }
   .form-check-input:checked + label {
-    color: $white;
-    background-color: $cuukin;
-    -webkit-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    -moz-box-shadow:inset 0px 0px 0px 3px $dark-red;
-    box-shadow:inset 0px 0px 0px 3px $dark-red;
+    color: $cuukin;
+    -webkit-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    -moz-box-shadow:inset 0px 0px 0px 3px $cuukin;
+    box-shadow:inset 0px 0px 0px 3px $cuukin;
   }
 
   h3 {
