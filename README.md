@@ -1,5 +1,33 @@
-# Cuukin - MVP 2021
+<div align="center">
 
-Work in progress to release the first MVP of [Cuukin](https://www.cuukin.app/).
+[PTBR](#português) | [EN](#english)
+  
+# Cooking School At Your Fingertips
 
-Rails project was generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+<img src="https://github.com/Cuukin/cuukin/blob/main/public/cover.png" width="100%">
+</div>
+
+#### Português
+## ✨ Projeto
+
+[Cuukin](https://www.linkedin.com/company/cuukin/) é uma plataforma educacional que ensina pessoas a cozinharem a comida que amam através de uma jornada personalizada.
+
+O projeto do website foi desenvolvido em 2021.
+
+## 🚀 Tecnologias
+
+O website foi desenvolvido com Ruby on Rails, banco de dados relacional, cachê em Redis e background jobs gerenciados com Sidekiq. O front-end usa Sass faz uso intensivo de manipulação de DOM com Javascript.
+
+***
+<br/>
+
+#### English
+## ✨ Project
+
+[Cuukin](https://www.linkedin.com/company/cuukin/) is an educational plataform that teaches people how to cook the food they love through a personalized journey.
+
+Their web plataform was developed in 2021.
+
+## 🚀 Technologies
+
+The webapp was developed with Ruby on Rails, relational database, Redis cache and background jobs managed with Sidekiq. Front-end uses Sass and vanilla Javascript for DOM manipulation.
