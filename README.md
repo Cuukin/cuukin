@@ -24,7 +24,7 @@ O website foi desenvolvido com Ruby on Rails, banco de dados relacional, cachê 
 #### English
 ## ✨ Project
 
-[Cuukin](https://www.linkedin.com/company/cuukin/) is an educational plataform that teaches people how to cook the food they love through a personalized journey.
+[Cuukin](https://www.linkedin.com/company/cuukin/) is an educational platform that teaches people how to cook the food they love through a personalized journey.
 
 Their web plataform was developed in 2021.
 
